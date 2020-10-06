@@ -23,7 +23,7 @@ yarn add comento-ui
 ```vue
 import Vue from 'vue';
 import ComentoUI from 'comento-ui';
-import 'comento/ui/dist/comento-ui.css';
+import 'comento-ui/dist/comento-ui.css';
 
 Vue.use(ComentoUI);
 ```
