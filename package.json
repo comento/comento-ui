@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/comento/comento-ui.git"
   },
-  "homepage": "https://github.com/comento/comento-ui#readme",
+  "homepage": "https://github.com/comento/comento-ui",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name comento-ui src/main.js",
