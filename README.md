@@ -14,16 +14,16 @@ Vue UI components used in Comento
 
 ## Installation
 ```
-npm install @comento-ui
+npm install comento-ui
 
-yarn add @comento-ui
+yarn add comento-ui
 ```
 
 ## How to use
 ```vue
 import Vue from 'vue';
-import ComentoUI from '@comento-ui';
-import '@comento/ui/dist/@comento-ui.css';
+import ComentoUI from 'comento-ui';
+import 'comento/ui/dist/comento-ui.css';
 
 Vue.use(ComentoUI);
 ```
