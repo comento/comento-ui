@@ -1,0 +1,242 @@
+// 간격 조절
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-16 {
+  margin-top: 16px !important;
+}
+
+.mt-24 {
+  margin-top: 24px !important;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-70 {
+  margin-top: 70px;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+.mb-64 {
+  margin-bottom: 64px;
+}
+
+.ml-2 {
+  margin-left: 2px;
+}
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+.mr-2 {
+  margin-right: 2px;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
+.mx_auto {
+  margin: 0 auto;
+}
+
+.mr-24 {
+  margin-right: 24px;
+}
+
+.mx-auto {
+  margin: 0 auto !important;
+}
+
+.mx-8 {
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+}
+
+.mx-24 {
+  margin-left: 24px !important;
+  margin-right: 24px !important;
+}
+
+.my-4 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.my-16 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.pt-32 {
+  padding-top: 32px;
+}
+.pa-16 {
+  padding: 16px;
+}
+
+// 텍스트 정렬
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-primary {
+  color: $primary;
+}
+.text-success {
+  color: $success !important;
+}
+
+.highlight {
+  &-text {
+    background-color: #fffcc0;
+  }
+}
+
+.text-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  word-wrap: normal !important;
+}
+
+// position
+.p-absolute {
+  position: absolute;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+  &.flex-row {
+    flex-direction: row;
+  }
+  &.flex-column {
+    flex-direction: column;
+  }
+  &.justify-content-center {
+    justify-content: center;
+  }
+  &.justify-content-between {
+    justify-content: space-between;
+  }
+  &.justify-content-end {
+    justify-content: right;
+  }
+  &.align-items-center {
+    align-items: center;
+  }
+}
+
+// display
+.d-block {
+  display: block;
+}
+.d-inline-block {
+  display: inline-block;
+}
+
+// cursor
+.c-pointer {
+  cursor: pointer;
+}
+
+.h-screen {
+  min-height: 100vh;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.f-thin {
+  font-weight: $thin;
+}
+
+.f-light {
+  font-weight: $light;
+}
+
+.f-normal {
+  font-weight: $normal;
+}
+
+.f-medi {
+  font-weight: $medi;
+}
+
+.f-bold {
+  font-weight: $bold;
+}

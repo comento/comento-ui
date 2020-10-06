@@ -1,0 +1,108 @@
+@import '../base/color';
+@import '../base/mixins';
+.v-popover {
+  *:focus {
+    outline: 0;
+  }
+}
+
+.c-tooltip, .c-popover {
+  display: block !important;
+  z-index: 9997;
+
+  &:focus {
+    outline: 0;
+  }
+
+  .c-tooltip_arrow, .c-popover_arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: $white;
+    filter: drop-shadow(0px 1px 9px rgba(0, 0, 0, 0.1));
+    z-index: 3;
+  }
+
+  //&[x-placement^='top'] {
+  //  margin-bottom: 5px;
+  //
+  //  .tooltip-arrow {
+  //    border-width: 5px 5px 0 5px;
+  //    border-left-color: transparent !important;
+  //    border-right-color: transparent !important;
+  //    border-bottom-color: transparent !important;
+  //    bottom: -5px;
+  //    left: calc(50% - 5px);
+  //    margin-top: 0;
+  //    margin-bottom: 0;
+  //  }
+  //}
+
+  &[x-placement^='bottom'] {
+    padding-top: 10px;
+
+    .c-popover_arrow, .c-tooltip_arrow {
+      border-width: 0 4.5px 8px 4.5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: 2px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  //&[x-placement^='right'] {
+  //  margin-left: 5px;
+  //
+  //  .tooltip-arrow {
+  //    border-width: 5px 5px 5px 0;
+  //    border-left-color: transparent !important;
+  //    border-top-color: transparent !important;
+  //    border-bottom-color: transparent !important;
+  //    left: -5px;
+  //    top: calc(50% - 5px);
+  //    margin-left: 0;
+  //    margin-right: 0;
+  //  }
+  //}
+
+  //&[x-placement^='left'] {
+  //  margin-right: 5px;
+  //
+  //  .tooltip-arrow {
+  //    border-width: 5px 0 5px 5px;
+  //    border-top-color: transparent !important;
+  //    border-right-color: transparent !important;
+  //    border-bottom-color: transparent !important;
+  //    right: -5px;
+  //    top: calc(50% - 5px);
+  //    margin-left: 0;
+  //    margin-right: 0;
+  //  }
+  //}
+
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s, visibility 0.15s;
+  }
+
+  &[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.15s;
+  }
+
+  .c-popover_inner, .c-tooltip_inner {
+    background-color: $white;
+    border-radius: 4px;
+    position: absolute;
+    padding: 8px 12px;
+    z-index: 3;
+    @include shadow1();
+  }
+}
