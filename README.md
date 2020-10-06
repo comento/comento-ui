@@ -19,7 +19,7 @@ npm install @comento-ui
 yarn add @comento-ui
 ```
 
-### How to use
+## How to use
 ```vue
 import Vue from 'vue';
 import ComentoUI from '@comento-ui';
@@ -28,5 +28,5 @@ import '@comento/ui/dist/@comento-ui.css';
 Vue.use(ComentoUI);
 ```
 
-### License
+## License
 MIT
