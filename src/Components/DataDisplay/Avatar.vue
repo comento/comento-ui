@@ -1,0 +1,104 @@
+<template>
+	<div class="c-application c-avatar_container">
+		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
+		<Typography class="mt-8" type="caption1" color="gray800" align="center">
+			{{ text }}
+		</Typography>
+	</div>
+</template>
+
+<script>
+import Typography from '@/src/Elements/Core/Typography/Typography';
+export default {
+	name: 'Avatar',
+	props: {
+		// user, img
+		type: {
+			type: String,
+			default: 'user',
+		},
+		// 사이즈
+		size: {
+			type: String,
+			default: 'medium',
+		},
+		// type : user일 경우 색상
+		color: {
+			type: String,
+			default: 'gainsboro',
+		},
+		// type : user일 경우 문구
+		text: {
+			type: String,
+			default: null,
+		},
+		// type : img 일 경우 이미지
+		src: {
+			type: String,
+			default: null,
+		},
+	},
+	computed: {
+		computedType() {
+			return `${this.type}`;
+		},
+		computedSize() {
+			return `${this.size}`;
+		},
+		computedStyle() {
+			if (this.type === 'user') {
+				return {
+					'background-color': this.color,
+					// 'background-image': `url(${this.randomAvatarSrc(this.getRandomArbitrary(1, 30))})`,
+				};
+			} else {
+				return {
+					'background-image': `url(${this.src})`,
+				};
+			}
+		},
+	},
+	components: { Typography },
+};
+</script>
+
+<style scoped lang="scss">
+/*@import '@/assets/style/base/main';*/
+
+.c-avatar {
+	&_container {
+		display: inline-block;
+		text-align: center;
+	}
+	display: inline-block;
+	text-align: center;
+	font-size: 15px;
+	color: $white;
+	font-weight: bold;
+	font-style: normal;
+	border-radius: 100%;
+	/*사이즈*/
+	&.medium {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+	}
+	&.large {
+		width: 48px;
+		height: 48px;
+		line-height: 48px;
+	}
+	&.xlarge {
+		width: 68px;
+		height: 68px;
+		line-height: 68px;
+	}
+	&.user {
+		border: 1px solid $gray100;
+		background-image: url('../../../assets/images/avatar/my_anonymous_' + (random(29) + 1) + '.svg');
+	}
+	&.img {
+		background-size: contain;
+	}
+}
+</style>
