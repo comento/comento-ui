@@ -154,8 +154,11 @@ export default {
 		background: transparent;
 		border: none;
 		color: $gray500;
+		&.success {
+			color: $blue600;
+		}
 		&.error {
-			color: $red400;
+			color: $red600;
 		}
 		&:hover {
 			background-color: $gray100;
