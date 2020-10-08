@@ -1,5 +1,5 @@
 <template>
-	<div class="box_component" :class="[computedBorder, computedBorderColor, computedBg]">
+	<div class="c-box_component" :class="[computedBorder, computedBorderColor, computedBg]">
 		<slot />
 	</div>
 </template>
