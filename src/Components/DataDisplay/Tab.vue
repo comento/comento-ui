@@ -1,10 +1,10 @@
 <template>
-	<div class="tab_menu_wrapper">
-		<div class="tab_menu_container">
+	<div class="c-tab_menu_wrapper">
+		<div class="c-tab_menu_container">
 			<button
 				v-for="(item, index) in items"
 				:key="`tab-item-${item}`"
-				class="tab_menu_button"
+				class="c-tab_menu_button"
 				:class="{ active: index === selectedNo }"
 				@click="setSelectedNo(index)"
 			>
@@ -47,7 +47,7 @@ button {
 	cursor: pointer;
 	color: $gray800;
 }
-.tab_menu {
+.c-tab_menu {
 	&_wrapper {
 		background-color: $white;
 	}
