@@ -1,7 +1,7 @@
 <template>
 	<button
 		class="c-application c-button c-pointer"
-		:class="[computedSize, computedColor, computedFull, computedType, computedDisabled]"
+		:class="[computedSize, computedColor, computedFull, computedType]"
 		v-bind="$attrs"
 		:disabled="disabled"
 		v-on="$listeners"
@@ -77,13 +77,6 @@ export default {
 		computedFull() {
 			return this.full ? 'full' : '';
 		},
-		computedDisabled() {
-			if (this.disabled) {
-				return 'disabled';
-			} else {
-				return null;
-			}
-		},
 		computedIconName() {
 			const size = this.size.charAt(0).toUpperCase() + this.size.slice(1);
 			return `IconSpinner${size}`;
@@ -104,7 +97,7 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	&.disabled {
+	&:disabled {
 		cursor: not-allowed !important;
 		pointer-events: none;
 	}
@@ -168,7 +161,7 @@ export default {
 	&:hover {
 		background-color: $green800;
 	}
-	&.disabled {
+	&:disabled {
 		background-color: $green100;
 	}
 	&.outlined {
