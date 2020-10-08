@@ -1,9 +1,9 @@
 <template>
-	<div class="c-application c-tab_menu_wrapper">
+	<div class="c-tab_menu_wrapper">
 		<div class="c-tab_menu_container">
 			<button
 				v-for="(item, index) in items"
-				:key="`c-tab-item-${item}`"
+				:key="`tab-item-${item}`"
 				class="c-tab_menu_button"
 				:class="{ active: index === selectedNo }"
 				@click="setSelectedNo(index)"
@@ -21,7 +21,7 @@ export default {
 		items: {
 			type: Array,
 			default() {
-				return ['채치수', '강백호', '서태웅', '송태섭', '정대만', '권준호', '양호열'];
+				return ['item1', 'item2', 'item3', 'item4', 'item5'];
 			},
 		},
 	},
@@ -33,15 +33,13 @@ export default {
 	methods: {
 		setSelectedNo(index) {
 			this.selectedNo = index;
-			this.$emit('changeTabIndex', index);
+			this.$emit('changeSelectedNo', index);
 		},
 	},
 };
 </script>
 
 <style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
 button {
 	background: none;
 	border: 0;

@@ -7,18 +7,20 @@
     "type": "git",
     "url": "https://github.com/comento/comento-ui.git"
   },
-  "homepage": "https://github.com/comento/comento-ui#readme",
+  "homepage": "https://github.com/comento/comento-ui",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name comento-ui src/main.js",
     "lint": "vue-cli-service lint",
     "release": "shipjs prepare",
-    "storybook": "start-storybook -p 6006 -c .storybook"
+    "storybook": "start-storybook -p 6006 -c .storybook",
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
     "v-tooltip": "^2.0.3",
+    "vue": "^2.6.11",
     "vue-svg-loader": "^0.16.0"
   },
   "devDependencies": {
@@ -30,6 +32,7 @@
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "chromatic": "^5.2.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.1.0",
@@ -40,11 +43,11 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
+    "prettier": "^2.1.2",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "shipjs": "0.21.1",
-    "vue-template-compiler": "^2.6.11",
-    "prettier": "^2.1.2"
+    "vue-template-compiler": "^2.6.11"
   },
   "files": [
     "dist/*",

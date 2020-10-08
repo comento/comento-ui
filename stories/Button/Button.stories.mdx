@@ -1,0 +1,99 @@
+import { ArgsTable, Meta, Story, Props } from "@storybook/addon-docs/blocks";
+import Button from "@/src/Components/Button/Button";
+
+<Meta
+  title="Button"
+  component={Button}
+  argTypes={{
+    label: {
+      description: "버튼에 들어갈 텍스트",
+      defaultValue: "답변 추가하기",
+      control: { type: "text" },
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    size: {
+      description: "버튼의 크기<br/>`String`",
+      table: {
+        type: {
+          summary: "목록",
+          detail: '"small" "medium" "large" "xlarge"',
+        },
+      },
+      control: {
+        type: "select",
+        options: ["small", "medium", "large", "xlarge"],
+      },
+    },
+    color: {
+      description: "버튼의 색상 타입<br/>`String`",
+      table: {
+        type: {
+          summary: "목록",
+          detail: '"primary" "success" "gray"',
+        },
+      },
+      control: {
+        type: "select",
+        options: ["primary", "success", "gray"],
+      },
+    },
+    type: {
+      description: "버튼의 타입<br/>`String`",
+      table: {
+        type: {
+          summary: "목록",
+          detail: '"fill" "outlined" "text"',
+        },
+      },
+      control: {
+        type: "select",
+        options: ["fill", "outlined", "text"],
+      },
+    },
+    full: {
+      description: "버튼의 너비가 부모컴포넌트의 100%를 차지할지<br/>`Boolean`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    disabled: {
+      description: "버튼의 disabled 상태<br/>`Boolean`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    loading: {
+      description: "버튼의 loading 상태<br/>`Boolean`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Button },
+  template:
+    '<Button :size="size" :color="color" :type="type" :full="full" :disabled="disabled" :loading="loading">{{label}}</Button>',
+});
+
+# Button
+
+**Button** 컴포넌트의 문서입니다.
+
+<Story name="docs" height="100px">
+  {Template.bind({})}
+</Story>
+
+<ArgsTable story="docs" />

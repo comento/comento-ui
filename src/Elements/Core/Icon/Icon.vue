@@ -31,6 +31,7 @@ import IconCloseMediumLine from '@/assets/images/icon/icon-close-medium-line.svg
 import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline';
 import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
 import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
+import IconPlusLargeLine from '@/assets/images/icon/icon-plus-large-line.svg?inline';
 import { colors } from '@/src/Elements/Core/Colors';
 
 export default {
@@ -120,6 +121,7 @@ export default {
 		IconSpinnerSmall,
 		IconSpinnerMedium,
 		IconSpinnerLarge,
+		IconPlusLargeLine,
 	},
 };
 </script>
