@@ -3,6 +3,7 @@
 		class="c-application c-button c-pointer"
 		:class="[computedSize, computedColor, computedFull, computedType, computedDisabled]"
 		v-bind="$attrs"
+		:disabled="disabled"
 		v-on="$listeners"
 	>
 		<template v-if="loading">
