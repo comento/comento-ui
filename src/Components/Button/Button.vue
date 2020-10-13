@@ -1,7 +1,7 @@
 <template>
 	<button
 		class="c-application c-button c-pointer"
-		:class="[computedSize, computedColor, computedFull, computedType]"
+		:class="[computedSize, computedColor, computedFull, computedType, { loading: loading }]"
 		v-bind="$attrs"
 		:disabled="disabled"
 		v-on="$listeners"
@@ -97,7 +97,8 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	&:disabled {
+	&:disabled,
+	.loading {
 		cursor: not-allowed !important;
 		pointer-events: none;
 	}
@@ -207,5 +208,8 @@ export default {
 			background-color: $white;
 		}
 	}
+}
+.loading {
+	@include disabled();
 }
 </style>
