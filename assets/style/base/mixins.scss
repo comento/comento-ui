@@ -171,3 +171,8 @@
   word-wrap: break-word;
   word-break: $word-break;
 }
+
+@mixin disabled {
+  cursor: not-allowed !important;
+  pointer-events: none;
+}

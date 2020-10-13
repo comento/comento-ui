@@ -131,5 +131,6 @@ export default {
 
 .c-icon {
 	cursor: pointer;
+	background: transparent !important;
 }
 </style>
