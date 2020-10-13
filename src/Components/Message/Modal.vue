@@ -139,6 +139,7 @@ export default {
 	},
 	methods: {
 		close() {
+			this.checkMessage = null;
 			this.$emit('update:show', false);
 		},
 	},
