@@ -36,6 +36,7 @@
 					v-if="type !== 'permission'"
 					size="large"
 					:disabled="type === 'withForm' && !canSubmit"
+					:loading="loading"
 					full
 					@click="successCallback"
 				>
@@ -99,6 +100,11 @@ export default {
 			default: 'center',
 		},
 		fullscreen: {
+			type: Boolean,
+			default: false,
+		},
+		// 버튼 로딩
+		loading: {
 			type: Boolean,
 			default: false,
 		},
