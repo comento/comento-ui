@@ -84,8 +84,7 @@ export default {
 			position: absolute;
 			min-width: 0;
 			padding: 3px 5px;
-			@include flexbox();
-			@include align-items(center);
+			@include inline-block();
 
 			&.circle {
 				@include border-radius(28px);
