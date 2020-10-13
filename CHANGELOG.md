@@ -1,3 +1,7 @@
+# [0.1.0-alpha.1](https://github.com/comento/comento-ui/compare/v0.1.0-rc.5...v0.1.0-alpha.1) (2020-10-13)
+
+
+
 # [0.1.0-rc.5](https://github.com/comento/comento-ui/compare/v0.1.0-rc.4...v0.1.0-rc.5) (2020-10-08)
 
 
