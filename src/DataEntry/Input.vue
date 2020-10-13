@@ -6,7 +6,7 @@
 			v-model="sync_value"
 			autocomplete="off"
 			type="text"
-			class="c-inputbox full"
+			class="inputbox full"
 			:class="[computedAlign]"
 			:placeholder="placeholder"
 			:style="computedStyle"
@@ -63,8 +63,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
 .c-input-motion-box {
 	@include clearfix();
 	position: relative;
