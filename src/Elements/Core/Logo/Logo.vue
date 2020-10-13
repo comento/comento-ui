@@ -38,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 /*@import '@/assets/style/base/main';*/
 .c-logo_container > a {
-	@include flexbox();
-	@include justify-content(center);
+	@include inline-block();
+	vertical-align: middle;
 }
 </style>
