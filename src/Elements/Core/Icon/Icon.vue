@@ -4,9 +4,11 @@
 		<component
 			:is="name"
 			ref="icon"
+			v-bind="$attrs"
 			class="c-application c-icon"
 			:class="computedSpinnerColor"
 			:style="computedStyle"
+			v-on="$listeners"
 		/>
 	</keep-alive>
 </template>
