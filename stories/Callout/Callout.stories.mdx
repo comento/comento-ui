@@ -1,0 +1,81 @@
+import {
+  ArgsTable,
+  Preview,
+  Meta,
+  Story,
+  Props,
+} from "@storybook/addon-docs/blocks";
+import Callout from "@/src/Components/Message/Callout";
+
+<Meta
+  title="Callout"
+  component={Callout}
+  argTypes={{
+    label: {
+      description: "Callout에 들어갈 텍스트",
+      defaultValue:
+        "과제 내용과 멘토님의 피드백은 PEER 학습 효과를 위해 모든 참여자에게 공개됩니다.",
+      control: { type: "text" },
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    type: {
+      description: "정보 타입",
+      defaultValue: "information",
+      control: { type: "text" },
+      table: {
+        type: {
+          summary: "목록",
+          detail: '"information" "alert" "success"',
+        },
+      },
+      control: {
+        type: "select",
+        options: ["information", "alert", "success"],
+      },
+    },
+    size: {
+      description: "크기",
+      table: {
+        type: {
+          summary: "목록",
+          detail: '"x-small", "small" "medium"',
+        },
+      },
+      control: {
+        type: "select",
+        options: ["x-small", "small", "medium"],
+      },
+    },
+    full: {
+      description: "버튼의 너비가 부모컴포넌트의 100%를 차지할지<br/>`Boolean`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Callout },
+  template:
+    '<Callout :type="type" :size="size" :full="full">{{label}}</Callout>',
+});
+
+# Callout
+
+**Callout** 컴포넌트의 문서입니다.
+
+<Story name="docs">{Template.bind({})}</Story>
+
+<ArgsTable story="docs" />
+
+<Preview height="100%">
+  <Story id="callout--callout"></Story>
+</Preview>

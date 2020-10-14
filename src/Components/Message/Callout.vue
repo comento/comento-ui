@@ -16,19 +16,26 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 export default {
 	name: 'Callout',
 	props: {
-		// information, alert, success
 		type: {
 			type: String,
 			default: 'information',
+			validator(value) {
+				return ['information', 'alert', 'success'].indexOf(value) !== -1;
+			},
 		},
-		// small, medium
 		size: {
 			type: String,
 			default: 'small',
+			validator(value) {
+				return ['x-small', 'small', 'medium'].indexOf(value) !== -1;
+			},
 		},
 		full: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	computed: {
