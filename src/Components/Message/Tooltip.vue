@@ -19,7 +19,7 @@
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
 export default {
-	name: 'TooltipNew',
+	name: 'Tooltip',
 	props: {
 		placement: {
 			type: String,
