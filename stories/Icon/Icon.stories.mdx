@@ -1,0 +1,74 @@
+import { ArgsTable, Meta, Story, Props } from "@storybook/addon-docs/blocks";
+import Icon from "@/src/Elements/Core/Icon/Icon";
+
+<Meta
+  title="Icon"
+  component={Icon}
+  argTypes={{
+    name: {
+      description: "아이콘 이름<br/>`String`",
+      defaultValue: "IconSearchLargeLine",
+      control: {
+        type: "select",
+        options: ["IconSearchLargeLine", "IconProfileLargeLine", "IconAlarmLargeLine", "IconArrowLargeLine", "IconMentoringLargeLine", "IconVodLargeLine", "IconAnswerLargeLine", "IconEduLargeLine", "IconCloseMediumFill", "IconExclamationSmallFill", "IconExclamationMediumLine", "IconExclamationLargeLine", "IconSelectedLargeLine", "IconKeylineLarge", "IconOverflowSmallFill", "IconCloseMediumLine", "IconSpinnerSmall", "IconSpinnerMedium", "IconSpinnerLarge", "IconPlusLargeLine"],
+      },
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    color: {
+      description: "아이콘 색상<br/>`String`",
+      table: {
+        type: {
+          summary: "목록",
+          detail: '"black", "gray900", "gray800", "gray700", "gray600", "gray500", "gray400", "gray300", "gray200", "gray100", "gray000", "white", "green800", "green600", "green400", "green100", "green000", "red800", "red600", "red400", "red100", "red000", "blue800", "blue600", "blue400", "blue100", "blue000", "yellow700", "yellow400", "yellow100"',
+        },
+      },
+      control: {
+        type: "select",
+        options: ["black", "gray900", "gray800", "gray700", "gray600", "gray500", "gray400", "gray300", "gray200", "gray100", "gray000", "white", "green800", "green600", "green400", "green100", "green000", "red800", "red600", "red400", "red100", "red000", "blue800", "blue600", "blue400", "blue100", "blue000", "yellow700", "yellow400", "yellow100"],
+      },
+    },
+    loading: {
+      description: "로딩 스피너<br/>`Boolean`",
+      defaultValue: false,
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    spinnerColor: {
+      description: "스피너의 색상<br/>`String`",
+      table: {
+        type: {
+          summary: "목록",
+          detail: '"gray" "primary" "success"',
+        },
+      },
+      control: {
+        type: "select",
+        options: ["gray", "primary", "success"],
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Icon },
+  template:
+    '<Icon :name="name" :color="color" :loading="loading" :spinnerColor="spinnerColor"></Icon>',
+});
+
+# Icon
+
+**Icon** 컴포넌트의 문서입니다.
+
+<Story name="docs" height="100px">
+  {Template.bind({})}
+</Story>
+
+<ArgsTable story="docs" />
