@@ -15,9 +15,11 @@
     "release": "shipjs prepare",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token"
+    "chromatic": "npx chromatic --project-token",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
+    "@storybook/storybook-deployer": "^2.8.7",
     "core-js": "^3.6.5",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",

@@ -93,7 +93,7 @@ export default {
 	},
 	methods: {
 		hideSearchDropdown() {
-			this.$emit('update:showSearchDropdown', false);
+			if (this.showSearchDropdown) this.$emit('update:showSearchDropdown', false);
 		},
 		handleTyping(e) {
 			this.isTyping = true;
