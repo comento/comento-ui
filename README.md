@@ -46,6 +46,8 @@ Vue.use(ComentoUI);
 - Colors
 
 - `<c-button>`
+- `<c-callout>`
+- `<c-icon>`
 
 ## Docs in the works
 
@@ -65,7 +67,6 @@ Vue.use(ComentoUI);
 - `<c-dropdown>`
 - `<c-input>`
 - `<c-search-input>`
-- `<c-icon>`
 - `<c-logo>`
 - `<c-typography>`
 - `<c-divider>`
