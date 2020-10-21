@@ -52,7 +52,6 @@ export default {
 					this.motionStyle = toast.style.bottom = -bottom + 'px';
 				}
 			}, this.time);
-
 		},
 	},
 	components: {
@@ -76,7 +75,6 @@ export default {
 	&.information {
 		background: $gray900;
 		color: $white;
-
 	}
 	&.alert {
 		background: $red600;
