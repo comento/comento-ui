@@ -45,6 +45,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
     "node-sass": "^4.12.0",
     "prettier": "^2.1.2",
     "sass": "^1.26.11",
@@ -60,5 +62,13 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "lint-staged": {
+    "*.{js,vue}": "vue-cli-service lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
