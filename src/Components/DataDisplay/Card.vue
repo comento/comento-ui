@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Typography from '../Elements/Core/Typography/Typography';
+import Typography from '@/src/Elements/Core/Typography/Typography';
 export default {
 	name: 'EduCard',
 	props: {

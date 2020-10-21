@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue';
 import Grid from '@/src/Components/Layout/Grid';
 import Row from '@/src/Components/Layout/Row';
 import StyleCol from '@/src/Components/Layout/StyleCol';
-import Card from '@/src/DataDisplay/Card';
+import Card from '@/src/Components/DataDisplay/Card';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 storiesOf('Card', module).add('Card', () => ({
