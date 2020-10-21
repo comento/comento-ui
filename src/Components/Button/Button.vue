@@ -173,9 +173,11 @@ export default {
 		border: 1px solid $primary;
 		color: $primary;
 		&:hover {
-			background-color: $green100;
+			background-color: $blue000;
 		}
 		&:disabled {
+			color: $green100;
+			border: 1px solid $green100;
 			background-color: $white;
 		}
 	}
@@ -187,6 +189,19 @@ export default {
 	}
 	&:disabled {
 		background-color: $blue100;
+	}
+	&.outlined {
+		background-color: $white;
+		border: 1px solid $blue600;
+		color: $blue600;
+		&:hover {
+			background-color: $blue000;
+		}
+		&:disabled {
+			color: $blue100;
+			border: 1px solid $blue100;
+			background-color: $white;
+		}
 	}
 }
 .gray {

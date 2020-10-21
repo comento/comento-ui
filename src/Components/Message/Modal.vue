@@ -29,7 +29,7 @@
 					class="text-center mb-24"
 					float="none"
 					align="center"
-					placeholder="제출합니다"
+					:placeholder="placeholder"
 				/>
 				<!--Button 영역-->
 				<Button
@@ -81,6 +81,19 @@ export default {
 			type: String,
 			default: 'default',
 		},
+		placeholder: {
+			type: String,
+			default: 'placeholder',
+			validator(value) {
+				return typeof value === 'string';
+			},
+		},
+		formValidator: {
+			type: Function,
+			validator(value) {
+				return typeof value === 'function';
+			},
+		},
 		leftButtonColor: {
 			type: String,
 			default: 'gray600',
@@ -121,7 +134,7 @@ export default {
 			},
 		},
 		canSubmit() {
-			return this.checkMessage === '제출합니다';
+			return this.formValidator(this.checkMessage);
 		},
 		computedType() {
 			return this.type;
