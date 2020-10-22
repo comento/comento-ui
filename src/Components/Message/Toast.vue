@@ -66,7 +66,7 @@ export default {
 	position: fixed;
 	bottom: 16px;
 	left: 50%;
-	padding: 0 16px;
+	padding: 13.5px 16px;
 	text-align: center;
 	transform: translateX(-50%);
 	@include border-radius(2px);
