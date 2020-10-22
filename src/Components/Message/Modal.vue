@@ -32,8 +32,8 @@
 					:placeholder="placeholder"
 				/>
 				<!--기타 영역-->
-				<template v-if="othderContents">
-					<slot name="othder-contents"></slot>
+				<template>
+					<slot name="other-contents"></slot>
 				</template>
 				<!--Button 영역-->
 				<Button
@@ -117,10 +117,6 @@ export default {
 			default: 'center',
 		},
 		fullscreen: {
-			type: Boolean,
-			default: false,
-		},
-		othderContents: {
 			type: Boolean,
 			default: false,
 		},
