@@ -31,6 +31,10 @@
 					align="center"
 					:placeholder="placeholder"
 				/>
+				<!--기타 영역-->
+				<template>
+					<slot name="other-contents"></slot>
+				</template>
 				<!--Button 영역-->
 				<Button
 					v-if="type !== 'permission'"
