@@ -40,7 +40,7 @@ export default {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				return ['primary', 'success', 'gray'].indexOf(value) !== -1;
+				return ['primary', 'success', 'gray', 'error'].indexOf(value) !== -1;
 			},
 		},
 		type: {
@@ -149,15 +149,6 @@ export default {
 		background: transparent;
 		border: none;
 		color: $gray500;
-		&.success {
-			color: $blue600;
-		}
-		&.error {
-			color: $red600;
-		}
-		&:hover {
-			background-color: $gray100;
-		}
 	}
 }
 .primary {
@@ -168,12 +159,18 @@ export default {
 	&:disabled {
 		background-color: $green100;
 	}
+	&.text {
+		color: $primary;
+		&:hover {
+			background-color: $green100;
+		}
+	}
 	&.outlined {
 		background-color: $white;
 		border: 1px solid $primary;
 		color: $primary;
 		&:hover {
-			background-color: $blue000;
+			background-color: $blue100;
 		}
 		&:disabled {
 			color: $green100;
@@ -190,12 +187,18 @@ export default {
 	&:disabled {
 		background-color: $blue100;
 	}
+	&.text {
+		color: $blue600;
+		&:hover {
+			background-color: $blue100;
+		}
+	}
 	&.outlined {
 		background-color: $white;
 		border: 1px solid $blue600;
 		color: $blue600;
 		&:hover {
-			background-color: $blue000;
+			background-color: $blue100;
 		}
 		&:disabled {
 			color: $blue100;
@@ -212,14 +215,48 @@ export default {
 	&:disabled {
 		background-color: $gray100;
 	}
+	&.text {
+		color: $gray500;
+		&:hover {
+			background-color: $gray100;
+		}
+	}
 	&.outlined {
 		background-color: $white;
 		border: 1px solid $gray400;
 		color: $gray500;
 		&:hover {
-			background-color: $gray000;
+			background-color: $gray100;
 		}
 		&:disabled {
+			background-color: $white;
+		}
+	}
+}
+.error {
+	background-color: $red600;
+	&:hover {
+		background-color: $red800;
+	}
+	&:disabled {
+		background-color: $red100;
+	}
+	&.text {
+		color: $red600;
+		&:hover {
+			background-color: $red100;
+		}
+	}
+	&.outlined {
+		background-color: $white;
+		border: 1px solid $red600;
+		color: $red600;
+		&:hover {
+			background-color: $red100;
+		}
+		&:disabled {
+			color: $red100;
+			border: 1px solid $red100;
 			background-color: $white;
 		}
 	}

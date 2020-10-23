@@ -72,6 +72,9 @@ export default {
 	@include border-radius(2px);
 	@include shadow4();
 	@include transition(all 2s ease-in-out);
+	&_message {
+		margin: 0;
+	}
 	&.information {
 		background: $gray900;
 		color: $white;

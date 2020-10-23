@@ -44,7 +44,7 @@
 					full
 					@click="successCallback"
 				>
-					확인
+					{{ successMessage }}
 				</Button>
 				<template v-else>
 					<div class="c-modal_button_group">
@@ -52,7 +52,9 @@
 							<Typography type="body1" :color="leftButtonColor" align="center">취소</Typography>
 						</div>
 						<div class="c-modal_confirm_button c-pointer" @click="successCallback">
-							<Typography type="body1" :color="rightButtonColor" align="center">확인</Typography>
+							<Typography type="body1" :color="rightButtonColor" align="center">{{
+								successMessage
+							}}</Typography>
 						</div>
 					</div>
 				</template>
@@ -111,6 +113,10 @@ export default {
 			default() {
 				return () => console.log('success');
 			},
+		},
+		successMessage: {
+			type: String,
+			default: '확인',
 		},
 		align: {
 			type: String,
