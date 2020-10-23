@@ -2,7 +2,7 @@
 	<div class="c-application c-callout_container" :class="[computedSize, computedType, computedFull]">
 		<div class="c-callout_wrapper">
 			<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
-			<Typography class="c-callout_message" color="gray700" :type="size === 'medium' ? 'body2' : 'caption1'">
+			<Typography class="c-callout_message" color="gray700" :type="computedFontType">
 				<slot />
 			</Typography>
 		</div>
@@ -55,6 +55,14 @@ export default {
 		},
 		computedType() {
 			return this.type;
+		},
+		computedFontType() {
+			const mapSizeToFontType = {
+				medium: 'body2',
+				small: 'caption1',
+				'x-small': 'caption2',
+			};
+			return mapSizeToFontType[this.size];
 		},
 	},
 	methods: {
