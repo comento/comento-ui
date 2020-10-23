@@ -4,10 +4,10 @@
 		<component
 			:is="name"
 			ref="icon"
-			v-bind="$attrs"
 			class="c-application c-icon"
 			:class="computedSpinnerColor"
 			:style="computedStyle"
+			v-bind="$attrs"
 			v-on="$listeners"
 		/>
 	</keep-alive>
@@ -94,16 +94,123 @@ export default {
 			type: String,
 			default: '',
 			validator(value) {
-				return ['gray', 'primary', 'success'].indexOf(value) !== -1;
+				return (
+					[
+						'IconPlusSmallLine',
+						'IconArrowSmallLine',
+						'IconOverflowSmallFill',
+						'IconTextArrowSmallFill',
+						'IconOfficialSmallFill',
+						'IconExclamationSmallFill',
+						'IconProfileSmallFill',
+						'IconCheckSmallFill',
+						'IconCheckMediumFill',
+						'IconQuestionMediumLine',
+						'IconLikeMediumFill',
+						'IconCommentMediumLine',
+						'IconCheckMediumLine',
+						'IconPlusMediumLine',
+						'IconExclamationMediumLine',
+						'IconArrowMediumLine',
+						'IconTextArrowMediumLine',
+						'IconFileMediumLine',
+						'IconTrashMediumLine',
+						'IconDownloadMediumLine',
+						'IconOverflowMediumFill',
+						'IconHourglassMediumLine',
+						'IconCloseMediumFill',
+						'IconInfoMediumFill',
+						'IconInfoMediumLine',
+						'IconCloseMediumLine',
+						'IconCheckCircleMediumFill',
+						'IconFilterMediumLine',
+						'IconResumeMediumLine',
+						'IconJobWikiMediumLine',
+						'IconAnalyticsMediumLine',
+						'IconProfileLargeFill',
+						'IconSelectedLargeLine',
+						'IconReplyLargeLine',
+						'IconPlusLargeLine',
+						'IconProfileLargeLine',
+						'IconAlarmLargeLine',
+						'IconSearchLargeLine',
+						'IconBackwardLargeLine',
+						'IconArrowLargeLine',
+						'IconTextArrowLargeLine',
+						'IconCloseLargeLine',
+						'IconKeylineLargeLine',
+						'IconExclamationLargeLine',
+						'IconFilterLargeLine',
+						'IconCheckLargeFill',
+						'IconAnalyticsLargeLine',
+						'IconInterviewLargeLine',
+						'IconEssayLargeLine',
+						'IconArrowXLargeLine',
+						'IconCloseXLargeLine',
+						'IconQuestionXLargeLine',
+						'IconAdoptXLargeLine',
+						'IconCreditPlusXLargeLine',
+						'IconCreditMinusXLargeLine',
+						'IconCelebrateXLargeLine',
+						'IconAnswerXLargeLine',
+						'IconMegaphoneXLargeLine',
+						'IconSpinnerSmall',
+						'IconSpinnerMedium',
+						'IconSpinnerLarge',
+						'IconMentoringLargeLine',
+						'IconVodLargeLine',
+						'IconAnswerLargeLine',
+						'IconEduLargeLine',
+					].indexOf(value) !== -1
+				);
 			},
 		},
 		color: {
 			type: String,
 			default: '',
+			validator(value) {
+				return (
+					[
+						'black',
+						'gray900',
+						'gray800',
+						'gray700',
+						'gray600',
+						'gray500',
+						'gray400',
+						'gray300',
+						'gray200',
+						'gray100',
+						'gray000',
+						'white',
+						'green800',
+						'green600',
+						'green400',
+						'green100',
+						'green000',
+						'red800',
+						'red600',
+						'red400',
+						'red100',
+						'red000',
+						'blue800',
+						'blue600',
+						'blue400',
+						'blue100',
+						'blue000',
+						'yellow700',
+						'yellow400',
+						'yellow100',
+					].indexOf(value) !== -1
+				);
+			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		spinnerColor: {
 			type: String,
@@ -115,6 +222,9 @@ export default {
 		reversed: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	computed: {
@@ -238,8 +348,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/*@import '@/assets/style/base/main';*/
-
 .c-icon {
 	cursor: pointer;
 	background: transparent !important;
