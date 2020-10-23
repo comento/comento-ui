@@ -21,6 +21,9 @@ export default {
 		size: {
 			type: String,
 			default: 'medium',
+			validator(value) {
+				return ['small', 'medium', 'large'].indexOf(value) !== -1;
+			},
 		},
 		// type : user일 경우 색상
 		color: {
@@ -78,17 +81,17 @@ export default {
 	font-style: normal;
 	border-radius: 100%;
 	/*사이즈*/
-	&.medium {
+	&.small {
 		width: 40px;
 		height: 40px;
 		line-height: 40px;
 	}
-	&.large {
+	&.medium {
 		width: 48px;
 		height: 48px;
 		line-height: 48px;
 	}
-	&.xlarge {
+	&.large {
 		width: 68px;
 		height: 68px;
 		line-height: 68px;
