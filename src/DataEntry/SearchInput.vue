@@ -38,7 +38,7 @@
 					tabindex="1"
 					name="IconSearchLargeLine"
 					size="large"
-					color="primary"
+					color="green600"
 					class="icon_search ml-8"
 				/>
 			</div>
