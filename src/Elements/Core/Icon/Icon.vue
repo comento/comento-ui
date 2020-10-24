@@ -92,7 +92,7 @@ export default {
 	props: {
 		name: {
 			type: String,
-			default: '',
+			default: null,
 			validator(value) {
 				return (
 					[
@@ -167,7 +167,7 @@ export default {
 		},
 		color: {
 			type: String,
-			default: '',
+			default: null,
 			validator(value) {
 				return (
 					[
@@ -201,6 +201,8 @@ export default {
 						'yellow700',
 						'yellow400',
 						'yellow100',
+						'primary',
+						'success',
 					].indexOf(value) !== -1
 				);
 			},
@@ -232,7 +234,11 @@ export default {
 			if (this.loading) {
 				return { fill: none };
 			} else {
-				return { fill: colors[this.color] };
+				if (this.color) {
+					return { fill: colors[this.color] };
+				} else {
+					return null;
+				}
 			}
 		},
 		computedSpinnerColor() {
