@@ -171,7 +171,9 @@ export default {
 		right: 0;
 		top: 50%;
 		transform: translateY(-50%);
-		@include inline-block();
+		@include flexbox();
+		@include flex-direction(row);
+		@include align-items(center);
 
 		.icon_reset {
 			cursor: pointer;
