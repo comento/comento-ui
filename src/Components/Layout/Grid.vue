@@ -7,12 +7,13 @@ ex) <grid> <- 이부분
     </grid>
 -->
 <template>
-	<div class="c-application c-grid" :class="[computedFluid, computedColor]">
+	<div class="c-application c-grid" :class="[computedFluid]" :style="[computedBgColor]">
 		<slot />
 	</div>
 </template>
 
 <script>
+import { colors } from '@/src/Elements/Core/Colors';
 export default {
 	name: 'Grid',
 	props: {
@@ -36,12 +37,13 @@ export default {
 		computedFluid() {
 			return `grid_type_${this.fluid ? 'fluid' : 'container'}`;
 		},
-		computedColor() {
-			if (this.gridColor !== '') {
-				return `grid_color_${this.gridColor}`;
-			} else {
-				return null;
-			}
+		computedBgColor() {
+			return {
+				backgroundColor: this.mappedColor,
+			};
+		},
+		mappedColor() {
+			return this.gridColor ? colors[this.gridColor] : 'inherit';
 		},
 	},
 };
@@ -58,15 +60,7 @@ export default {
 	margin-right: auto;
 	margin-left: auto;
 	width: 100%;
-	&.grid_color_white {
-		background: $white;
-	}
-	&.grid_color_gray000 {
-		background: $gray000;
-	}
-	&.grid_color_gray100 {
-		background: $gray100;
-	}
+	box-sizing: border-box;
 	&.grid_type_fluid {
 		width: 100%;
 		padding: 0;
@@ -77,7 +71,8 @@ export default {
 		padding-right: 24px;
 		padding-left: 24px;
 		&.grid_type_container {
-			width: 1170px;
+			max-width: 1170px;
+			width: 100%;
 		}
 	}
 }
