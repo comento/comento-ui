@@ -82,7 +82,7 @@ export default {
 		},
 		computedStyle() {
 			// 그리드 안의 사이 간격
-			return this.offsetBetweenItems ? { 'padding-right': `${this.offsetBetweenItems}px` } : null;
+			return this.offsetBetweenItems ? { padding: `0 ${this.offsetBetweenItems}px` } : null;
 		},
 	},
 };
@@ -122,9 +122,14 @@ export default {
 	width: 100%;
 	padding-right: 16px;
 	padding-left: 16px;
+	box-sizing: border-box;
 	&.no_gutters {
 		padding-left: 0;
 		padding-right: 0;
+	}
+	@include pc {
+		padding-right: 24px;
+		padding-left: 24px;
 	}
 }
 .col_1 {
