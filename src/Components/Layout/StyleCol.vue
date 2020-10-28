@@ -122,9 +122,14 @@ export default {
 	width: 100%;
 	padding-right: 16px;
 	padding-left: 16px;
+	box-sizing: border-box;
 	&.no_gutters {
 		padding-left: 0;
 		padding-right: 0;
+	}
+	@include pc {
+		padding-right: 24px;
+		padding-left: 24px;
 	}
 }
 .col_1 {
