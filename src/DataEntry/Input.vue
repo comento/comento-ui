@@ -63,6 +63,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+input {
+	&::placeholder {
+		@include body1();
+		color: $gray300;
+	}
+}
 .c-input-motion-box {
 	@include clearfix();
 	position: relative;
