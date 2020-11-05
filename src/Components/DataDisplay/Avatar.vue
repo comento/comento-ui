@@ -1,7 +1,12 @@
 <template>
 	<div class="c-application c-avatar_container">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
-		<Typography class="mt-8" type="caption1" :color="mappedColor" align="center" v-html="text" />
+		<Typography class="mt-8" type="caption1" :color="mappedColor" align="center">
+			{{ text }}
+			<div :style="$slots['right-icon'] ? 'margin-left: 2px;' : ''">
+				<slot name="text-right-icon" />
+			</div>
+		</Typography>
 	</div>
 </template>
 
