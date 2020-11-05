@@ -1,14 +1,14 @@
 <template>
 	<div class="c-application c-avatar_container">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
-		<Typography class="mt-8" type="caption1" color="gray800" align="center">
-			{{ text }}
-		</Typography>
+		<Typography class="mt-8" type="caption1" :color="mappedColor" align="center" v-html="text" />
 	</div>
 </template>
 
 <script>
+import { colors } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
+
 export default {
 	name: 'Avatar',
 	props: {
@@ -30,6 +30,10 @@ export default {
 			type: String,
 			default: 'gainsboro',
 		},
+		textColor: {
+			type: String,
+			default: 'gray800',
+		},
 		// type : user일 경우 문구
 		text: {
 			type: String,
@@ -42,6 +46,9 @@ export default {
 		},
 	},
 	computed: {
+		mappedColor() {
+			return this.textColor ? colors[this.textColor] : 'inherit';
+		},
 		computedType() {
 			return `${this.type}`;
 		},
