@@ -1,0 +1,11 @@
+name: 'Bulid Test'
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Test
+        run: yarn run build
