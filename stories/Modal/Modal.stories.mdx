@@ -1,0 +1,106 @@
+import { ArgsTable, Preview, Meta, Story, Props } from "@storybook/addon-docs/blocks";
+import BasicModal from "@/src/Components/Message/Modal/BasicModal";
+
+<Meta
+    title="Modal/BasicModal"
+    component={ BasicModal }
+    argTypes={{
+        show: {
+            description: "모달 활성화",
+            defaultValue: true,
+            control: {
+                type: "boolean",
+            },
+        },
+        align: {
+            description: "정렬",
+            defaultValue: "center",
+            control: {
+                type: "select",
+                options: ["center", "left", "right"]
+            },
+            table: {
+                type: {
+                    summary: "string",
+                    detail: '"center" "left" "right"',
+                },
+            },
+        },
+        loading: {
+            description: "버튼 로딩",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        successMessage: {
+            description: "버튼명",
+            defaultValue: "확인",
+            control: {
+                type: "text",
+            },
+        },
+        showActionButton: {
+            description: "버튼 보이기",
+            defaultValue: true,
+            control: {
+                type: "boolean",
+            },
+        },
+        showCloseButton: {
+            description: "닫기 버튼 보이기",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        persistent: {
+            description: "mask 클릭해도 모달 닫지 않기",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        maxWidth: {
+            description: "모달 최대 width",
+            defaultValue: "420px",
+            control: {
+                type: "text",
+            },
+        }
+    }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { BasicModal },
+    template:
+        `<BasicModal
+            :show.sync="show"
+            :show-close-button="showCloseButton"
+            :persistent="persistent"
+            :align="align"
+            :loading="loading"
+            :success-message="successMessage"
+            :show-action-button="showActionButton"
+            :max-width="maxWidth"
+        >
+            <template v-slot:title>
+                Basic Modal
+            </template>
+            <template v-slot:contents>
+                <div>본문을 작성하세요.</div>
+                <div>문단을 분리할 때에는 margin:8px로 구분합니다.</div>
+            </template>
+        </BasicModal>`
+});
+
+# BasicModal
+
+**BasicModal** 컴포넌트의 문서입니다.
+
+<Story name="docs" height="100px">
+    {Template.bind({})}
+</Story>
+
+<ArgsTable story="docs" />

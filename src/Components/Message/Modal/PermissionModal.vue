@@ -66,7 +66,7 @@ export default {
 			default: false,
 		},
 		maxWidth: {
-			type: [String, Number],
+			type: String,
 		},
 	},
 	methods: {

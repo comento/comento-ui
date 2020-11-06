@@ -36,6 +36,9 @@ export default {
 		align: {
 			type: String,
 			default: 'center',
+			validator(value) {
+				return ['center', 'left', 'right'].indexOf(value) !== -1;
+			},
 		},
 		// 버튼 로딩
 		loading: {
@@ -65,7 +68,7 @@ export default {
 			default: false,
 		},
 		maxWidth: {
-			type: [String, Number],
+			type: String,
 		},
 	},
 	components: {
