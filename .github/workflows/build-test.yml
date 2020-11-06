@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: yarn
+      - name: Package install
+        run: yarn
       - name: Build Test
-      - run: yarn run build
+        run: yarn run build
