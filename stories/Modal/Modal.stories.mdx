@@ -67,6 +67,16 @@ import BasicModal from "@/src/Components/Message/Modal/BasicModal";
             control: {
                 type: "text",
             },
+        },
+        title: {
+            description: "모달 제목",
+            defaultValue: "Basic Modal",
+            control: { type: "text" },
+        },
+        contents: {
+            description: "모달 내용",
+            defaultValue: ['본문을 작성하세요.', '문단을 분리할 때에는 margin:8px로 구분합니다.'],
+            control: { type: "array" },
         }
     }}
 />
@@ -86,11 +96,10 @@ export const Template = (args, { argTypes }) => ({
             :max-width="maxWidth"
         >
             <template v-slot:title>
-                Basic Modal
+                {{ title }}
             </template>
             <template v-slot:contents>
-                <div>본문을 작성하세요.</div>
-                <div>문단을 분리할 때에는 margin:8px로 구분합니다.</div>
+                <div v-for="content in contents" v-html="content" />
             </template>
         </BasicModal>`
 });
