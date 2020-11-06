@@ -1,12 +1,12 @@
 <template>
-	<div class="c-application c-input-motion-box" :class="[computedAlign]">
+	<div class="c-application c-input-motion-box" :class="[computedAlign, computedFull, computedType]">
 		<input
 			id="title"
 			ref="question"
 			v-model="sync_value"
 			autocomplete="off"
 			type="text"
-			class="inputbox full"
+			class="c-input-box full"
 			:class="[computedAlign]"
 			:placeholder="placeholder"
 			:style="computedStyle"
@@ -35,6 +35,17 @@ export default {
 			type: String,
 			default: 'left',
 		},
+		full: {
+			type: Boolean,
+			default: false,
+		},
+		type: {
+			type: String,
+			default: 'outlined',
+			validator(value) {
+				return ['outlined', 'underlined'].indexOf(value) !== -1;
+			},
+		},
 	},
 	computed: {
 		computedStyle() {
@@ -53,6 +64,12 @@ export default {
 		computedAlign() {
 			return this.align;
 		},
+		computedType() {
+			return this.type;
+		},
+		computedFull() {
+			return this.full && 'full';
+		},
 	},
 	methods: {
 		typing(e) {
@@ -69,11 +86,30 @@ input {
 		color: $gray300;
 	}
 }
+
 .c-input-motion-box {
 	@include clearfix();
 	position: relative;
 
-	.inputbox {
+	&.full {
+		width: 100%;
+		.c-input-box {
+			width: 100%;
+		}
+	}
+
+	&.underlined {
+		.c-input-box {
+			border-top: 0;
+			border-left: 0;
+			border-right: 0;
+			height: 36px;
+			padding: 0 4px;
+		}
+	}
+
+	.c-input-box {
+		box-sizing: border-box;
 		height: 40px;
 		line-height: 24px;
 		padding: 0 12px;
@@ -87,17 +123,15 @@ input {
 		&-lg {
 			height: 48px;
 		}
+
+		@include pc {
+			margin: 0;
+		}
 	}
 	+ .input-motion-box {
 		margin-top: 8px;
 		@include pc {
 			margin-top: 12px;
-		}
-	}
-
-	@include pc {
-		.inputbox {
-			margin: 0;
 		}
 	}
 }
