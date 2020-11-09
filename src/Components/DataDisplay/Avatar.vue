@@ -1,12 +1,7 @@
 <template>
 	<div class="c-application c-avatar_container">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
-		<Typography
-			class="flex flex-row justify-content-center mt-8"
-			type="caption1"
-			:color="mappedColor"
-			align="center"
-		>
+		<Typography class="flex flex-row justify-content-center mt-8" type="caption1" :color="textColor" align="center">
 			{{ text }}
 			<div :style="$slots['text-right-icon'] ? 'margin-left: 2px;' : ''">
 				<slot name="text-right-icon" />
@@ -16,7 +11,6 @@
 </template>
 
 <script>
-import { colors } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export default {
@@ -56,9 +50,6 @@ export default {
 		},
 	},
 	computed: {
-		mappedColor() {
-			return this.textColor ? colors[this.textColor] : 'inherit';
-		},
 		computedType() {
 			return `${this.type}`;
 		},
