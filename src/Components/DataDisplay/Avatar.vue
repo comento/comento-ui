@@ -1,9 +1,14 @@
 <template>
 	<div class="c-application c-avatar_container">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
-		<Typography class="mt-8" type="caption1" :color="mappedColor" align="center">
+		<Typography
+			class="flex flex-row justify-content-center mt-8"
+			type="caption1"
+			:color="mappedColor"
+			align="center"
+		>
 			{{ text }}
-			<div :style="$slots['right-icon'] ? 'margin-left: 2px;' : ''">
+			<div :style="$slots['text-right-icon'] ? 'margin-left: 2px;' : ''">
 				<slot name="text-right-icon" />
 			</div>
 		</Typography>
