@@ -1,0 +1,52 @@
+import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
+import FullscreenModal from "@/src/Components/Message/Modal/FullscreenModal";
+
+<Meta
+    title="DESIGN SYSTEM/Modal/FullscreenModal"
+    component={ FullscreenModal }
+    argTypes={{
+        show: {
+            description: "모달 활성화",
+            defaultValue: true,
+            control: {
+                type: "boolean",
+            },
+        },
+        showCloseButton: {
+            description: "닫기 버튼 보이기",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        contents: {
+            description: "모달 내용",
+            defaultValue: "FullscreenModal",
+            control: { type: "text" },
+        },
+    }}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { FullscreenModal },
+    template:
+        `<FullscreenModal
+            :show.sync="show"
+            :show-close-button="showCloseButton"
+        >
+            <template>
+                {{ contents }}
+            </template>
+        </FullscreenModal>`
+});
+
+# FullscreenModal
+
+**FullscreenModal** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
