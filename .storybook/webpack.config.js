@@ -29,10 +29,21 @@ module.exports = ({config}) => {
     // allow SCSS
     config.module.rules.push({
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', {
-            loader: 'sass-loader',
-            options: {
-              additionalData: `@import "assets/style/base/main.scss";`
+        use: ['style-loader', 'css-loader',
+            {
+                loader: 'postcss-loader',
+                options: {
+                    postcssOptions: {
+                            plugins: [require('autoprefixer')],
+                    },
+                    sourceMap: true,
+                }
+            },
+            {
+                loader: 'sass-loader',
+                options: {
+                  additionalData: `@import "assets/style/base/main.scss";`,
+                    sourceMap: true,
             }
         }],
         include: path.resolve(__dirname, '../'),

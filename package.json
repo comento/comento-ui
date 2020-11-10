@@ -37,6 +37,7 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/test-utils": "^1.1.0",
+    "autoprefixer": "^10.0.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "chromatic": "^5.2.0",
@@ -54,6 +55,8 @@
     "jest-serializer-vue": "^2.0.2",
     "lint-staged": "^10.4.2",
     "node-sass": "^4.12.0",
+    "postcss": "^8.1.4",
+    "postcss-loader": "^4.0.4",
     "prettier": "^2.1.2",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
@@ -66,9 +69,12 @@
     "plugins/*"
   ],
   "browserslist": [
-    "> 1%",
+    "defaults",
+    "not ie < 11",
     "last 2 versions",
-    "not dead"
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
   ],
   "storybook-deployer": {
     "gitUsername": "donghoon-song",
