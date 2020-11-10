@@ -1,9 +1,9 @@
 <template>
 	<div class="c-application c-avatar_container">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
-		<Typography class="flex flex-row justify-content-center mt-8" type="caption1" :color="textColor" align="center">
+		<Typography class="flex mt-8" :class="[computedAlign]" type="caption1" :color="textColor">
 			{{ text }}
-			<div :style="$slots['text-right-icon'] ? 'margin-left: 2px;' : ''">
+			<div class="c-avatar_icon" :style="$slots['text-right-icon'] ? 'margin-left: 2px;' : ''">
 				<slot name="text-right-icon" />
 			</div>
 		</Typography>
@@ -48,6 +48,13 @@ export default {
 			type: String,
 			default: null,
 		},
+		align: {
+			type: String,
+			default: 'center',
+			validator(value) {
+				return ['center', 'left', 'right'].indexOf(value) !== -1;
+			},
+		},
 	},
 	computed: {
 		computedType() {
@@ -55,6 +62,14 @@ export default {
 		},
 		computedSize() {
 			return `${this.size}`;
+		},
+		computedAlign() {
+			const alignItem = {
+				center: 'justify-center',
+				left: 'justify-start',
+				right: 'justify-end',
+			};
+			return alignItem[this.align];
 		},
 		computedStyle() {
 			if (this.type === 'user') {
@@ -110,6 +125,10 @@ export default {
 	}
 	&.img {
 		background-size: contain;
+	}
+	&_icon {
+		display: inline-block;
+		vertical-align: middle;
 	}
 }
 </style>
