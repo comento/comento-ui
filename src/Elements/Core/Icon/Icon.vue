@@ -232,7 +232,7 @@ export default {
 	computed: {
 		computedStyle() {
 			if (this.loading) {
-				return { fill: none };
+				return { fill: 'none' };
 			} else {
 				if (this.color) {
 					return { fill: colors[this.color] };
