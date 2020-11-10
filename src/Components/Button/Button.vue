@@ -78,7 +78,9 @@ export default {
 			return this.full ? 'full' : '';
 		},
 		computedIconName() {
-			const size = this.size.charAt(0).toUpperCase() + this.size.slice(1);
+			let size = this.size.charAt(0).toUpperCase() + this.size.slice(1);
+			if (size === 'Xlarge') size = 'Large';
+
 			return `IconSpinner${size}`;
 		},
 	},
