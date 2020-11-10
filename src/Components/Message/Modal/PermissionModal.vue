@@ -1,5 +1,5 @@
 <template>
-	<Modal :show.sync="show" :show-close-button="false" :max-width="maxWidth" :persistent="persistent">
+	<Modal :show.sync="show" :show-close-button="false" :max-width="maxWidth" :persistent="persistent" @close="close">
 		<!-- title 영역 -->
 		<Typography class="mb-8" type="body1" :align="align">
 			<slot name="title" />
@@ -15,7 +15,7 @@
 		<!-- button 영역 -->
 		<div class="c-modal_button_group">
 			<!-- 취소 버튼 -->
-			<div class="c-modal_cancel_button c-pointer" @click="closeModal">
+			<div class="c-modal_cancel_button c-pointer" @click="close">
 				<Typography type="body1" :color="leftButtonColor" align="center">취소</Typography>
 			</div>
 			<!-- 확인 버튼 -->
@@ -70,7 +70,7 @@ export default {
 		},
 	},
 	methods: {
-		closeModal() {
+		close() {
 			this.$emit('update:show', false);
 		},
 	},

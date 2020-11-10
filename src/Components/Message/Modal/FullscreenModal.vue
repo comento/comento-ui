@@ -1,5 +1,5 @@
 <template>
-	<Modal :show.sync="show" :show-close-button="showCloseButton">
+	<Modal :show.sync="show" :show-close-button="showCloseButton" @close="close">
 		<slot />
 	</Modal>
 </template>
@@ -17,6 +17,11 @@ export default {
 		showCloseButton: {
 			type: Boolean,
 			default: false,
+		},
+	},
+	methods: {
+		close() {
+			this.$emit('update:show', false);
 		},
 	},
 	components: { Modal },

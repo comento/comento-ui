@@ -1,7 +1,7 @@
 <template>
-	<div v-show="sync_showModal" class="c-application c-modal_mask" @click="handleCloseModal">
+	<div v-show="sync_show" class="c-application c-modal_mask" @click="handleCloseModal">
 		<div class="c-modal_container" :style="[computedStyle]" @click.stop>
-			<div v-if="showCloseButton" class="c-modal_close_button" @click="closeModal">
+			<div v-if="showCloseButton" class="c-modal_close_button" @click="close">
 				<Icon name="IconCloseXLargeLine" color="gray400" />
 			</div>
 			<slot />
@@ -32,7 +32,7 @@ export default {
 		},
 	},
 	computed: {
-		sync_showModal: {
+		sync_show: {
 			get() {
 				return this.show;
 			},
@@ -46,18 +46,18 @@ export default {
 	mounted() {
 		document.addEventListener('keydown', e => {
 			if (this.show && e.keyCode === 27) {
-				this.closeModal();
+				this.close();
 			}
 		});
 	},
 	methods: {
 		handleCloseModal() {
 			if (!this.persistent) {
-				this.closeModal();
+				this.close();
 			}
 		},
-		closeModal() {
-			this.$emit('update:show', false);
+		close() {
+			this.$emit('close');
 		},
 	},
 	components: { Icon },
