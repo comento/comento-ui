@@ -1,5 +1,5 @@
 <template>
-	<Modal :show.sync="show" :show-close-button="false" :max-width="maxWidth" :persistent="persistent" @close="close">
+	<Modal :show="show" :show-close-button="false" :max-width="maxWidth" :persistent="persistent" @close="close">
 		<!-- title 영역 -->
 		<Typography class="mb-8" type="body1" :align="align">
 			<slot name="title" />

@@ -77,11 +77,6 @@ import PermissionModal from "@/src/Components/Message/Modal/PermissionModal";
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { PermissionModal },
-    data() {
-        return {
-            showModal: true,
-        }
-    },
     template:
         `<PermissionModal
             :show.sync="show"

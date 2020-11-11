@@ -1,5 +1,5 @@
 <template>
-	<div v-show="sync_show" class="c-application c-modal_mask" @click="handleCloseModal">
+	<div v-show="show" class="c-application c-modal_mask" @click="handleCloseModal">
 		<div class="c-modal_container" :style="[computedStyle]" @click.stop>
 			<div v-if="showCloseButton" class="c-modal_close_button" @click="close">
 				<Icon name="IconCloseXLargeLine" color="gray400" />
@@ -32,11 +32,6 @@ export default {
 		},
 	},
 	computed: {
-		sync_show: {
-			get() {
-				return this.show;
-			},
-		},
 		computedStyle() {
 			return {
 				'max-width': this.maxWidth,

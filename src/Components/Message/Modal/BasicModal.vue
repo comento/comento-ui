@@ -1,6 +1,6 @@
 <template>
 	<Modal
-		:show.sync="show"
+		:show="show"
 		:show-close-button="showCloseButton"
 		:max-width="maxWidth"
 		:persistent="persistent"

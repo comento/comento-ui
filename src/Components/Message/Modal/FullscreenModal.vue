@@ -1,5 +1,5 @@
 <template>
-	<Modal :show.sync="show" :show-close-button="showCloseButton" @close="close">
+	<Modal :show="show" :show-close-button="showCloseButton" @close="close">
 		<slot />
 	</Modal>
 </template>
