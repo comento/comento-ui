@@ -87,6 +87,7 @@ export default {
 	&_mask {
 		&::v-deep .c-modal_container {
 			padding: 32px 32px 0 32px;
+			width: 343px;
 		}
 	}
 
