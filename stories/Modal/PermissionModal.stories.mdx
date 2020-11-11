@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
 import PermissionModal from "@/src/Components/Message/Modal/PermissionModal";
+import Button from "@/src/Components/Button/Button";
 
 <Meta
     title="DESIGN SYSTEM/Modal/PermissionModal"
@@ -7,7 +8,7 @@ import PermissionModal from "@/src/Components/Message/Modal/PermissionModal";
     argTypes={{
         show: {
             description: "모달 활성화",
-            defaultValue: true,
+            defaultValue: false,
             control: {
                 type: "boolean",
             },
@@ -76,24 +77,27 @@ import PermissionModal from "@/src/Components/Message/Modal/PermissionModal";
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { PermissionModal },
-    template:
-        `<PermissionModal
-            :show.sync="show"
-            :align="align"
-            :left-button-color="leftButtonColor"
-            :right-button-color="rightButtonColor"
-            :persistent="persistent"
-            :success-message="successMessage"
-            :max-width="maxWidth"
-        >
-            <template v-slot:title>
-                {{ title }}
-            </template>
-            <template v-slot:contents>
-                <div v-for="content in contents" v-html="content" />
-            </template>
-        </PermissionModal>`
+    components: { PermissionModal, Button },
+    template: `
+        <div>
+            <Button @click="show = true">Open</Button>
+            <PermissionModal
+                :show.sync="show"
+                :align="align"
+                :left-button-color="leftButtonColor"
+                :right-button-color="rightButtonColor"
+                :persistent="persistent"
+                :success-message="successMessage"
+                :max-width="maxWidth"
+            >
+                <template v-slot:title>
+                    {{ title }}
+                </template>
+                <template v-slot:contents>
+                    <div v-for="content in contents" v-html="content" />
+                </template>
+            </PermissionModal>
+        </div>`
 });
 
 # PermissionModal
