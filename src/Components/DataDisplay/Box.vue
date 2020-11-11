@@ -26,7 +26,7 @@ export default {
 		paddings: {
 			type: Array,
 			default() {
-				return [16, 16, 16, 16];
+				return null;
 			},
 		},
 		hasShadow: {
@@ -42,17 +42,19 @@ export default {
 		},
 		styles() {
 			let paddings;
-			if (this.paddings) {
+			if (!this.paddings) {
 				if (this.isMobile) {
 					paddings = [16, 16, 16, 16];
 				} else {
 					paddings = [16, 20, 16, 20];
 				}
+			} else {
+				paddings = this.paddings;
 			}
 			return {
 				...(this.backgroundColor && this.$_setBackgroundColor(this.backgroundColor)),
 				...(this.borderColor && this.$_setBorderColor(this.borderColor)),
-				...(paddings && this.$_setPadding(paddings)),
+				...this.$_setPadding(paddings),
 			};
 		},
 	},
