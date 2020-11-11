@@ -1,12 +1,12 @@
 <template>
-	<div class="c-application c-input-motion-box" :class="[computedAlign, computedFull, computedType]">
+	<div class="c-application c-input_motion_box" :class="[computedAlign, computedFull, computedType]">
 		<input
 			id="title"
 			ref="question"
 			v-model="sync_value"
 			autocomplete="off"
 			type="text"
-			class="c-input-box full"
+			class="c-input_box full"
 			:class="[computedAlign]"
 			:placeholder="placeholder"
 			:style="computedStyle"
@@ -87,19 +87,19 @@ input {
 	}
 }
 
-.c-input-motion-box {
+.c-input_motion_box {
 	@include clearfix();
 	position: relative;
 
 	&.full {
 		width: 100%;
-		.c-input-box {
+		.c-input_box {
 			width: 100%;
 		}
 	}
 
 	&.underlined {
-		.c-input-box {
+		.c-input_box {
 			border-top: 0;
 			border-left: 0;
 			border-right: 0;
@@ -108,7 +108,7 @@ input {
 		}
 	}
 
-	.c-input-box {
+	.c-input_box {
 		box-sizing: border-box;
 		height: 40px;
 		line-height: 24px;
@@ -126,12 +126,6 @@ input {
 
 		@include pc {
 			margin: 0;
-		}
-	}
-	+ .input-motion-box {
-		margin-top: 8px;
-		@include pc {
-			margin-top: 12px;
 		}
 	}
 }
