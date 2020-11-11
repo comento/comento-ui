@@ -1,72 +1,72 @@
 <template>
-	<div class="c-box_component" :class="[computedBorder, computedBorderColor, computedBg]">
+	<div class="c-box" :class="classes" :style="styles">
 		<slot />
 	</div>
 </template>
 
 <script>
+import colorMixin from '../../../mixins/colorMixin';
+import paddingMixin from '../../../mixins/paddingMixin';
+
 export default {
 	name: 'Box',
+	mixins: [colorMixin, paddingMixin],
 	props: {
-		border: {
+		hasBorder: {
 			type: Boolean,
 			default: false,
 		},
-		boxBg: {
+		backgroundColor: {
 			type: String,
 			default: 'white',
 		},
-		/* boxBorderColor
-		 * '기본색상' : gray100
-		 * 기타 생성되면 추가 예정
-		 * */
-		boxBorderColor: {
+		borderColor: {
 			type: String,
-			default: 'gray100',
+		},
+		paddings: {
+			type: Array,
+			default() {
+				return [16, 16, 16, 16];
+			},
+		},
+		hasShadow: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	computed: {
-		computedBorder() {
-			if (this.border) {
-				return `${this.border}`;
-			} else {
-				return null;
-			}
+		classes() {
+			return {
+				'c-box--has-border': this.hasBorder,
+			};
 		},
-		computedBg() {
-			if (this.boxBg !== 'white') {
-				return `box_bg_${this.boxBg}`;
-			} else {
-				return null;
+		styles() {
+			let paddings;
+			if (this.paddings) {
+				if (this.isMobile) {
+					paddings = [16, 16, 16, 16];
+				} else {
+					paddings = [16, 20, 16, 20];
+				}
 			}
-		},
-		computedBorderColor() {
-			if (this.boxType !== 'default') {
-				return `box_border_${this.boxBorderColor}`;
-			} else {
-				return null;
-			}
+			return {
+				...(this.backgroundColor && this.$_setBackgroundColor(this.backgroundColor)),
+				...(this.borderColor && this.$_setBorderColor(this.borderColor)),
+				...(paddings && this.$_setPadding(paddings)),
+			};
 		},
 	},
 };
 </script>
 
-<style scoped lang="scss">
-.box_component {
-	/*기본 패딩은 pc, mobile 16px*/
-	padding: 16px;
-	background: $white;
-	&.border {
+<style lang="scss" scoped>
+.c-box {
+	&--has-border {
 		border: 1px solid;
 		border-radius: 2px;
 	}
-	&.box_border_gray100 {
-		border-color: $gray100;
-	}
-	/*배경색상 있을 경우 추가*/
-
-	@include pc {
-		padding: 16px 20px;
+	&--has-shadow {
+		@include shadow2();
 	}
 }
 </style>
