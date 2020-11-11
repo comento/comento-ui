@@ -7,38 +7,21 @@ import LinkButton from "@/src/Components/Button/LinkButton";
     argTypes={{
         label: {
             description: "버튼에 들어갈 텍스트",
-            defaultValue: "적용하기",
+            defaultValue: "링크 버튼",
             control: { type: "text" },
-            table: {
-                type: {
-                    summary: null,
-                },
-            },
         },
-        type: {
-            description: "버튼의 색상 타입<br/>`String`",
-            table: {
-                type: {
-                    summary: "목록",
-                    detail: '"gray400" "gray600"',
-                },
-            },
+        element: {
+            description: "태그 타입",
+            defaultValue: "div",
             control: {
-                type: "select",
-                options: ["gray400", "gray600"],
+                type: "text",
             },
         },
         to: {
-            description: "버튼의 색상 타입<br/>`String`",
-            table: {
-                type: {
-                    summary: "목록",
-                    detail: '"gray400" "gray600"',
-                },
-            },
+            description: "이동할 url",
+            defaultValue: "javascript:void();",
             control: {
-                type: "select",
-                options: ["gray400", "gray600"],
+                type: "text",
             },
         },
     }}
@@ -70,7 +53,8 @@ export const Basic = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <LinkButton>적용하기</LinkButton>
+                    <LinkButton>이동하지 않는 링크 버튼</LinkButton>
+                    <LinkButton to="#">맨위로 이동하기</LinkButton>
                     <LinkButton to="https://comento.kr">코멘토로 이동하기</LinkButton>
                 </div>
         `,

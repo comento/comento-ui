@@ -13,10 +13,13 @@ export default {
 	name: 'LinkButton',
 	inheritAttrs: false,
 	props: {
-		type: String,
+		element: {
+			type: String,
+			default: 'div',
+		},
 		to: {
 			type: String,
-			default: '#none',
+			default: 'javascript:void();',
 		},
 	},
 	components: { Typography },
