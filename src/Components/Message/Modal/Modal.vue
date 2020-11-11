@@ -39,13 +39,17 @@ export default {
 		},
 	},
 	mounted() {
-		document.addEventListener('keydown', e => {
+		document.addEventListener('keydown', e => this.handleCloseKeycode(e));
+	},
+	beforeDestroy() {
+		document.removeEventListener('keydown', e => this.handleCloseKeycode(e));
+	},
+	methods: {
+		handleCloseKeycode(e) {
 			if (this.show && e.keyCode === 27) {
 				this.close();
 			}
-		});
-	},
-	methods: {
+		},
 		handleCloseModal() {
 			if (!this.persistent) {
 				this.close();
