@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-input-motion-box" :class="[computedAlign]">
 		<input
-			id="title"
+			:id="computedId"
 			ref="question"
 			v-model="sync_value"
 			autocomplete="off"
@@ -35,6 +35,10 @@ export default {
 			type: String,
 			default: 'left',
 		},
+		id: {
+			type: String,
+			default: '',
+		},
 	},
 	computed: {
 		computedStyle() {
@@ -52,6 +56,9 @@ export default {
 		},
 		computedAlign() {
 			return this.align;
+		},
+		computedId() {
+			return this.id || `input-${this._uid}`;
 		},
 	},
 	methods: {
