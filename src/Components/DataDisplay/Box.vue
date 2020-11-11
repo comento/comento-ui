@@ -38,6 +38,7 @@ export default {
 		classes() {
 			return {
 				'c-box--has-border': this.hasBorder,
+				'c-box--has-shadow': this.hasShadow,
 			};
 		},
 		styles() {
