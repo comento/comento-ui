@@ -1,0 +1,81 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import LinkButton from "@/src/Components/Button/LinkButton";
+
+<Meta
+    title="DESIGN SYSTEM/Button/LinkButton"
+    component={ LinkButton }
+    argTypes={{
+        label: {
+            description: "버튼에 들어갈 텍스트",
+            defaultValue: "적용하기",
+            control: { type: "text" },
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+        },
+        type: {
+            description: "버튼의 색상 타입<br/>`String`",
+            table: {
+                type: {
+                    summary: "목록",
+                    detail: '"gray400" "gray600"',
+                },
+            },
+            control: {
+                type: "select",
+                options: ["gray400", "gray600"],
+            },
+        },
+        to: {
+            description: "버튼의 색상 타입<br/>`String`",
+            table: {
+                type: {
+                    summary: "목록",
+                    detail: '"gray400" "gray600"',
+                },
+            },
+            control: {
+                type: "select",
+                options: ["gray400", "gray600"],
+            },
+        },
+    }}
+/>
+
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { LinkButton },
+    template:
+        `<LinkButton :type="type" :to="to">{{label}}</LinkButton>`,
+});
+
+# LinkButton
+
+**LinkButton** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                    <LinkButton>적용하기</LinkButton>
+                    <LinkButton to="https://comento.kr">코멘토로 이동하기</LinkButton>
+                </div>
+        `,
+            components: { LinkButton },
+        }}
+    </Story>
+</Canvas>
+
