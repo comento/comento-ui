@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/vue';
 import Avatar from '@/src/Components/DataDisplay/Avatar';
+import Icon from '@/src/Elements/Core/Icon/Icon';
 
 storiesOf('DataDisplay', module).add('Avatar', () => ({
-	components: { Avatar },
+	components: { Avatar, Icon },
 	template: `<div>
 			<Avatar type="user" size="small" text="small" class="mr-24"/>
 			<Avatar type="user" size="medium" text="medium" class="mr-24"/>
@@ -16,5 +17,20 @@ storiesOf('DataDisplay', module).add('Avatar', () => ({
 			<Avatar type="img" size="medium" text="medium" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg"/>
 			<Avatar type="img" size="large" text="large" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg"/>
 			<hr class="mt-8 mb-8">
+			<Avatar type="img" size="small" class="mr-24" text="리드멘토" text-color="gray500" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg">
+				<template v-slot:text-right-icon>
+					<Icon name="IconCheckSmallFill"/>
+				</template>
+			</Avatar>
+			<Avatar type="img" size="medium" class="mr-24" text="리드멘토" text-color="gray500" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg">
+				<template v-slot:text-right-icon>
+					<Icon name="IconCheckSmallFill"/>
+				</template>
+			</Avatar>
+			<Avatar type="img" size="large" text="리드멘토" text-color="gray500" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg">
+				<template v-slot:text-right-icon>
+					<Icon name="IconCheckSmallFill"/>
+				</template>
+			</Avatar>
 		</div>`,
 }));
