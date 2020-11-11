@@ -12,18 +12,18 @@
 		</Typography>
 
 		<!-- contents 영역 -->
-		<Typography class="mb-20" type="body2" :align="align" color="gray700">
+		<Typography type="body2" :align="align" color="gray700">
 			<div class="c-modal_contents_wrapper">
 				<slot name="contents" />
 			</div>
 		</Typography>
 
 		<!-- button 영역 -->
-		<template v-if="showActionButton">
+		<div v-if="showActionButton" class="mt-20">
 			<Button size="large" :loading="loading" full @click="successCallback">
 				{{ successMessage }}
 			</Button>
-		</template>
+		</div>
 	</Modal>
 </template>
 

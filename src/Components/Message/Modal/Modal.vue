@@ -82,9 +82,6 @@ export default {
 		padding: 40px 32px;
 		background-color: $white;
 		border-radius: 4px;
-		/*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);*/
-		/*transition: all 0.3s ease;*/
-		/*font-family: Helvetica, Arial, sans-serif;*/
 		position: absolute;
 		top: 50%;
 		left: 50%;
