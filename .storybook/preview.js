@@ -1,4 +1,5 @@
-import '../plugins/v-tooltip'
+import '@/plugins/v-tooltip'
+import '@/mixins';
 import { addParameters } from '@storybook/vue';
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 

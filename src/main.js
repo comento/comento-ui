@@ -2,6 +2,7 @@ import * as components from './Components';
 import * as dataEntry from './DataEntry';
 import * as elements from './Elements';
 import '@/plugins';
+import '@/mixins';
 
 const ComponentLibrary = {
 	// eslint-disable-next-line no-unused-vars
