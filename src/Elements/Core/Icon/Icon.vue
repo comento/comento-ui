@@ -218,7 +218,7 @@ export default {
 			type: String,
 			default: 'gray',
 			validator(value) {
-				return ['gray', 'primary', 'success'].indexOf(value) !== -1;
+				return ['gray', 'primary', 'success', 'error'].indexOf(value) !== -1;
 			},
 		},
 		reversed: {
@@ -265,6 +265,14 @@ export default {
 			},
 			successReversed: {
 				stroke: '#0074CC',
+				fill: 'white',
+			},
+			error: {
+				stroke: '#E8EAED',
+				fill: '#FA5252',
+			},
+			errorReversed: {
+				stroke: '#CC0000',
 				fill: 'white',
 			},
 		};
