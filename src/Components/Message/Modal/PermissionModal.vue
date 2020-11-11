@@ -53,9 +53,7 @@ export default {
 		},
 		successCallback: {
 			type: Function,
-			default() {
-				return () => console.log('success');
-			},
+			default: () => {},
 		},
 		successMessage: {
 			type: String,

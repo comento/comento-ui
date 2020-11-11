@@ -53,9 +53,7 @@ export default {
 		},
 		successCallback: {
 			type: Function,
-			default() {
-				return () => console.log('success');
-			},
+			default: () => {},
 		},
 		successMessage: {
 			type: String,
@@ -63,11 +61,11 @@ export default {
 		},
 		showCloseButton: {
 			type: Boolean,
-			default: false,
+			default: true,
 		},
 		showActionButton: {
 			type: Boolean,
-			default: true,
+			default: false,
 		},
 		persistent: {
 			type: Boolean,

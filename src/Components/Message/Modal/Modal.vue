@@ -21,7 +21,7 @@ export default {
 		},
 		showCloseButton: {
 			type: Boolean,
-			default: false,
+			default: true,
 		},
 		maxWidth: {
 			type: String,
