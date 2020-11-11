@@ -16,7 +16,7 @@ export default {
 		},
 		showCloseButton: {
 			type: Boolean,
-			default: false,
+			default: true,
 		},
 	},
 	methods: {
