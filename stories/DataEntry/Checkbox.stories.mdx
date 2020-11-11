@@ -1,0 +1,67 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Checkbox from "@/src/DataEntry/Checkbox";
+
+<Meta
+    title="DESIGN SYSTEM/DataEntry/Checkbox"
+    component={ Checkbox }
+    argTypes={{
+        label: {
+            description: "체크박스에 들어갈 텍스트",
+            defaultValue: "이용약관 및 유의사항 동의",
+            control: { type: "text" },
+        },
+        value: {
+            description: "체크박스의 값",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        disabled: {
+            description: "체크박스 비활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        id: {
+            description: "체크박스 ID (값이 없으면 input-uid로 생성됨)",
+            defaultValue: "",
+            control: { type: "text" },
+        }
+    }}
+/>
+
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Checkbox },
+    template:
+        `<Checkbox :value.sync="value" :disabled="disabled">{{label}}</Checkbox>`,
+});
+
+# Checkbox
+
+**Checkbox** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                    <Checkbox :value="false">Unchecked</Checkbox>
+                    <Checkbox :value="true">Checked</Checkbox>
+                    <Checkbox disabled>Unchecked Disabled</Checkbox>
+                    <Checkbox :value="true" disabled>Checked Disabled</Checkbox>
+                </div>
+        `,
+            components: { Checkbox },
+        }}
+    </Story>
+</Canvas>
+
