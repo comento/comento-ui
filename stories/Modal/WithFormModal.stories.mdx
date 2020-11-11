@@ -1,4 +1,4 @@
-import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import WithFormModal from "@/src/Components/Message/Modal/WithFormModal";
 import Input from "@/src/DataEntry/Input";
 import Button from "@/src/Components/Button/Button";
@@ -9,7 +9,7 @@ import Button from "@/src/Components/Button/Button";
     argTypes={{
         show: {
             description: "모달 활성화",
-            defaultValue: true,
+            defaultValue: false,
             control: {
                 type: "boolean",
             },
@@ -88,31 +88,28 @@ import Button from "@/src/Components/Button/Button";
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { WithFormModal, Input, Button },
-    template:
-        `<WithFormModal
-            :show.sync="show"
-            :show-close-button="showCloseButton"
-            :persistent="persistent"
-            :align="align"
-            :loading="loading"
-            :success-message="successMessage"
-            :show-action-button="showActionButton"
-            :max-width="maxWidth"
-        >
-            <template v-slot:title>
-                {{ title }}
-            </template>
-            <template v-slot:contents>
-                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between" class="mb-12">
-                    <Input type="underlined" placeholder="underlined input: 버튼 height: 36px" full class="mr-4" />
-                    <Button type="outlined">버튼1</Button>
-                </div>
-                <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-                    <Input full placeholder="outlined input: 버튼 height 40px" class="mr-4" />
-                    <Button type="outlined">버튼2</Button>
-                </div>
-            </template>
-        </WithFormModal>`
+    template: `
+        <div>
+            <Button @click="show = true">Open</Button>
+            <WithFormModal
+                :show.sync="show"
+                :show-close-button="showCloseButton"
+                :persistent="persistent"
+                :align="align"
+                :loading="loading"
+                :success-message="successMessage"
+                :show-action-button="showActionButton"
+                :max-width="maxWidth"
+            >
+                <template v-slot:title>
+                    {{ title }}
+                </template>
+                <template v-slot:contents>
+                  <div class="mb-12">title 아래 여백이 20px로 증가한다.</div>
+                  <Input full />
+                </template>
+            </WithFormModal>
+        </div>`
 });
 
 # WithFormModal
@@ -124,3 +121,100 @@ export const Basic = (args, { argTypes }) => ({
 </Story>
 
 <ArgsTable story="Basic" />
+
+## Stories
+### InputGroup
+<Canvas>
+    <Story name="InputGroup" height="100px">
+        {{
+            data: () => ({
+                show: false,
+            }),
+            methods: {
+                handleSubmitModal() {
+                    this.show = false;
+                },
+            },
+            template: `
+                <div>
+                    <Button @click="show = true">Open</Button>
+                    <WithFormModal
+                        :show.sync="show"
+                        :show-close-button="true"
+                        :persistent="false"
+                        align="center"
+                        :success-callback="handleSubmitModal"
+                    >
+                        <template v-slot:title>
+                          InputGroup
+                        </template>
+                        <template v-slot:contents>
+                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between" class="mb-12">
+                                <Input type="underlined" placeholder="underlined input: 버튼 height: 36px" full class="mr-4" />
+                                <Button type="outlined" @click="handleSubmitModal">버튼1</Button>
+                            </div>
+                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
+                                <Input full placeholder="outlined input: 버튼 height 40px" class="mr-4" />
+                                <Button type="outlined" @click="handleSubmitModal">버튼2</Button>
+                            </div>
+                        </template>
+                    </WithFormModal>
+                </div>
+            `,
+            components: {
+                WithFormModal, Input, Button
+            }
+        }}
+    </Story>
+</Canvas>
+
+### Form Input Validation
+<Canvas>
+    <Story name="FormInputValidation" height="100px">
+        {{
+            data: () => ({
+                show: false,
+                checkValue: '',
+            }),
+            computed: {
+                handleDisabled() {
+                    return this.checkValue !== '제출합니다';
+                },
+            },
+            methods: {
+                handleSubmitModal() {
+                    this.show = false;
+                },
+            },
+            template: `
+                <div>
+                    <Button @click="show = true">Open</Button>
+                    <WithFormModal
+                        :show.sync="show"
+                        :show-close-button="true"
+                        :persistent="false"
+                        align="center"
+                        :disabled="handleDisabled"
+                        :success-callback="handleSubmitModal"
+                        :show-action-button="true"
+                    >
+                        <template v-slot:title>
+                          과제 제출 확인
+                        </template>
+                        <template v-slot:contents>
+                            <div>한 번 제출된 과제는 수정할 수 없으니 제출 전 다시 한번 확인해주세요 :)</div>
+                            <div>제출을 원한다면 아래 문구를 작성하세요.</div>
+                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
+                                <Input :value.sync="checkValue" full placeholder="제출합니다" align="center" class="mr-4" />
+                            </div>
+                        </template>
+                    </WithFormModal>
+                </div>
+            `,
+            components: {
+                WithFormModal, Input, Button
+            }
+        }}
+    </Story>
+</Canvas>
+
