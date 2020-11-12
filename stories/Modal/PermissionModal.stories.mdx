@@ -1,0 +1,111 @@
+import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
+import PermissionModal from "@/src/Components/Message/Modal/PermissionModal";
+import Button from "@/src/Components/Button/Button";
+
+<Meta
+    title="DESIGN SYSTEM/Modal/PermissionModal"
+    component={ PermissionModal }
+    argTypes={{
+        show: {
+            description: "모달 활성화",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        align: {
+            description: "정렬",
+            defaultValue: "center",
+            control: {
+                type: "select",
+                options: ["center", "left", "right"]
+            },
+            table: {
+                type: {
+                    summary: "string",
+                    detail: '"center" "left" "right"',
+                },
+            },
+        },
+        successMessage: {
+            description: "버튼명",
+            defaultValue: "확인",
+            control: {
+                type: "text",
+            },
+        },
+        leftButtonColor: {
+            description: "취소버튼 색상",
+            defaultValue: "gray600",
+            control: {
+                type: "text"
+            }
+        },
+        rightButtonColor: {
+            description: "확인버튼 색상",
+            defaultValue: "gray600",
+            control: {
+                type: "text"
+            }
+        },
+        persistent: {
+            description: "overlay 클릭해도 모달 닫지 않기",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        maxWidth: {
+            description: "모달 최대 width",
+            defaultValue: "420px",
+            control: {
+                type: "text",
+            },
+        },
+        title: {
+            description: "모달 제목",
+            defaultValue: "Permission Modal",
+            control: { type: "text" },
+        },
+        contents: {
+            description: "모달 내용",
+            defaultValue: ['본문은 없거나 두 줄을 초과할 수 없습니다.'],
+            control: { type: "array" },
+        },
+    }}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { PermissionModal, Button },
+    template: `
+        <div>
+            <Button @click="show = true">Open</Button>
+            <PermissionModal
+                :show.sync="show"
+                :align="align"
+                :left-button-color="leftButtonColor"
+                :right-button-color="rightButtonColor"
+                :persistent="persistent"
+                :success-message="successMessage"
+                :max-width="maxWidth"
+            >
+                <template v-slot:title>
+                    {{ title }}
+                </template>
+                <template v-slot:contents>
+                    <div v-for="content in contents" v-html="content" />
+                </template>
+            </PermissionModal>
+        </div>`
+});
+
+# PermissionModal
+
+**PermissionModal** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
