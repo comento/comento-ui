@@ -38,7 +38,7 @@ export default {
 		id: {
 			type: String,
 			default: '',
-    },
+		},
 		full: {
 			type: Boolean,
 			default: false,
@@ -70,7 +70,7 @@ export default {
 		},
 		computedId() {
 			return this.id || `input-${this._uid}`;
-    },
+		},
 		computedType() {
 			return this.type;
 		},
