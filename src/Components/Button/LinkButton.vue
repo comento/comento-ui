@@ -13,9 +13,9 @@ export default {
 	name: 'LinkButton',
 	inheritAttrs: false,
 	props: {
-		element: {
+		type: {
 			type: String,
-			default: 'div',
+			default: 'body1',
 		},
 		to: {
 			type: String,
