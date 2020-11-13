@@ -1,13 +1,13 @@
-import { ArgsTable, Meta, Story, Props } from "@storybook/addon-docs/blocks";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Button from "@/src/Components/Button/Button";
 
 <Meta
-  title="Button"
-  component={Button}
+  title="DESIGN SYSTEM/Button/Button"
+  component={ Button }
   argTypes={{
     label: {
       description: "버튼에 들어갈 텍스트",
-      defaultValue: "답변 추가하기",
+      defaultValue: "버튼",
       control: { type: "text" },
       table: {
         type: {
@@ -81,19 +81,117 @@ import Button from "@/src/Components/Button/Button";
   }}
 />
 
-export const Template = (args, { argTypes }) => ({
+export const Basic = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Button },
   template:
-    '<Button :size="size" :color="color" :type="type" :full="full" :disabled="disabled" :loading="loading">{{label}}</Button>',
+    `<Button :size="size" :color="color" :type="type" :full="full" :disabled="disabled" :loading="loading">
+      {{label}}
+    </Button>`,
 });
 
 # Button
 
 **Button** 컴포넌트의 문서입니다.
 
-<Story name="docs" height="100px">
-  {Template.bind({})}
+<Story name="Basic" height="100px">
+  {Basic.bind({})}
 </Story>
 
-<ArgsTable story="docs" />
+<ArgsTable story="Basic" />
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex">
+                    <Button color="primary">Fill Primary</Button>
+                    <Button color="success">Fill Success</Button>
+                    <Button color="error">Fill Error</Button>
+                    <Button color="gray">Fill Gray</Button>
+                  </div>
+                  <div style="display: flex">
+                    <Button color="primary" type="outlined">Outlined Primary</Button>
+                    <Button color="success" type="outlined">Outlined Success</Button>
+                    <Button color="error" type="outlined">Outlined Error</Button>
+                    <Button color="gray" type="outlined">Outlined Gray</Button>
+                  </div>
+                  <div style="display: flex">
+                    <Button color="primary" type="text">Text Primary</Button>
+                    <Button color="success" type="text">Text Success</Button>
+                    <Button color="error" type="text">Text Error</Button>
+                    <Button color="gray" type="text">Text Gray</Button>
+                  </div>
+                </div>
+        `,
+            components: { Button },
+        }}
+    </Story>
+</Canvas>
+
+
+### Sizes
+<Canvas>
+    <Story name="Sizes" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex">
+                    <Button size="small">Small</Button>
+                    <Button size="medium">Medium</Button>
+                    <Button size="large">Large</Button>
+                    <Button size="xlarge">XLarge</Button>
+                  </div>
+                </div>
+        `,
+            components: { Button },
+        }}
+    </Story>
+</Canvas>
+
+### Loading
+<Canvas>
+    <Story name="Loading" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex">
+                    <Button color="primary" type="fill" size="medium" loading>Fill Primary</Button>
+                    <Button color="success" type="fill" size="medium" loading>Fill Success</Button>
+                    <Button color="error" type="fill" size="medium" loading>Fill Gray</Button>
+                    <Button color="gray" type="fill" size="medium" loading>Fill Gray</Button>
+                  </div>
+                  <div style="display: flex">
+                    <Button color="primary" type="outlined" size="medium" loading>Fill Primary</Button>
+                    <Button color="success" type="outlined" size="medium" loading>Fill Success</Button>
+                    <Button color="error" type="outlined" size="medium" loading>Fill Gray</Button>
+                    <Button color="gray" type="outlined" size="medium" loading>Fill Gray</Button>
+                  </div>
+                </div>
+        `,
+            components: { Button },
+        }}
+    </Story>
+</Canvas>
+
+### Disabled
+<Canvas>
+    <Story name="Disabled" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex">
+                    <Button color="primary" type="fill" size="medium" disabled>Fill Primary</Button>
+                    <Button color="success" type="fill" size="medium" disabled>Fill Success</Button>
+                    <Button color="error" type="fill" size="medium" disabled>Fill Gray</Button>
+                    <Button color="gray" type="fill" size="medium" disabled>Fill Gray</Button>
+                  </div>
+                </div>
+        `,
+            components: { Button },
+        }}
+    </Story>
+</Canvas>

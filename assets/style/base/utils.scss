@@ -7,6 +7,10 @@
   margin-top: 16px !important;
 }
 
+.mt-20 {
+  margin-top: 20px !important;
+}
+
 .mt-24 {
   margin-top: 24px !important;
 }
@@ -185,16 +189,19 @@
   &.flex-column {
     flex-direction: column;
   }
-  &.justify-content-center {
+  &.justify-center {
     justify-content: center;
   }
-  &.justify-content-between {
+  &.justify-between {
     justify-content: space-between;
   }
-  &.justify-content-end {
-    justify-content: right;
+  &.justify-start {
+    justify-content: flex-start;
   }
-  &.align-items-center {
+  &.justify-end {
+    justify-content: flex-end;
+  }
+  &.align-center {
     align-items: center;
   }
 }
