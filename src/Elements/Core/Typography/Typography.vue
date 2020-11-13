@@ -124,7 +124,7 @@ p {
 }
 .c_body2 {
 	font-size: 14px;
-	line-height: 150%;
+	line-height: 145%;
 	font-weight: normal;
 }
 .c_caption1 {

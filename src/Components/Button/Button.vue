@@ -7,19 +7,17 @@
 		v-on="$listeners"
 	>
 		<template v-if="loading">
-			<div class="loading">
+			<div class="c-button_loading">
 				<Icon :name="computedIconName" :reversed="type === 'fill'" loading :spinner-color="color" />
 			</div>
 		</template>
-		<template v-else>
-			<div :style="$slots['left-icon'] ? 'margin-right: 2px;' : ''">
-				<slot name="left-icon"> </slot>
-			</div>
-			<slot />
-			<div :style="$slots['right-icon'] ? 'margin-left: 2px;' : ''">
-				<slot name="right-icon"></slot>
-			</div>
-		</template>
+		<div :style="$slots['left-icon'] ? 'margin-right: 2px;' : ''">
+			<slot name="left-icon"> </slot>
+		</div>
+		<slot />
+		<div :style="$slots['right-icon'] ? 'margin-left: 2px;' : ''">
+			<slot name="right-icon"></slot>
+		</div>
 	</button>
 </template>
 
@@ -78,7 +76,9 @@ export default {
 			return this.full ? 'full' : '';
 		},
 		computedIconName() {
-			const size = this.size.charAt(0).toUpperCase() + this.size.slice(1);
+			let size = this.size.charAt(0).toUpperCase() + this.size.slice(1);
+			if (size === 'Xlarge') size = 'Large';
+
 			return `IconSpinner${size}`;
 		},
 	},
@@ -97,10 +97,17 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 	&:disabled,
 	.loading {
 		cursor: not-allowed !important;
 		pointer-events: none;
+	}
+	.c-button_loading {
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: center;
 	}
 	&.small {
 		height: 24px;
@@ -141,6 +148,10 @@ export default {
 		min-width: 76px;
 		@include headline5;
 		font-weight: bold;
+		.loading {
+			padding: 0 9.5px;
+			line-height: 90%;
+		}
 	}
 	&.full {
 		width: 100%;
@@ -149,6 +160,10 @@ export default {
 		background: transparent;
 		border: none;
 		color: $gray500;
+
+		.c-button_loading {
+			background-color: $white;
+		}
 	}
 }
 .primary {
@@ -158,7 +173,14 @@ export default {
 	}
 	&:disabled {
 		background-color: $green100;
+		.c-button_loading {
+			background-color: $green100;
+		}
 	}
+	.c-button_loading {
+		background-color: $primary;
+	}
+
 	&.text {
 		color: $primary;
 		&:hover {
@@ -177,6 +199,9 @@ export default {
 			border: 1px solid $green100;
 			background-color: $white;
 		}
+		.c-button_loading {
+			background-color: $white;
+		}
 	}
 }
 .success {
@@ -186,6 +211,12 @@ export default {
 	}
 	&:disabled {
 		background-color: $blue100;
+		.c-button_loading {
+			background-color: $blue100;
+		}
+	}
+	.c-button_loading {
+		background-color: $success;
 	}
 	&.text {
 		color: $blue600;
@@ -205,6 +236,9 @@ export default {
 			border: 1px solid $blue100;
 			background-color: $white;
 		}
+		.c-button_loading {
+			background-color: $white;
+		}
 	}
 }
 .gray {
@@ -214,6 +248,12 @@ export default {
 	}
 	&:disabled {
 		background-color: $gray100;
+		.c-button_loading {
+			background-color: $gray100;
+		}
+	}
+	.c-button_loading {
+		background-color: $gray600;
 	}
 	&.text {
 		color: $gray500;
@@ -231,6 +271,9 @@ export default {
 		&:disabled {
 			background-color: $white;
 		}
+		.c-button_loading {
+			background-color: $white;
+		}
 	}
 }
 .error {
@@ -240,6 +283,12 @@ export default {
 	}
 	&:disabled {
 		background-color: $red100;
+		.c-button_loading {
+			background-color: $red100;
+		}
+	}
+	.c-button_loading {
+		background-color: $red600;
 	}
 	&.text {
 		color: $red600;
@@ -257,6 +306,9 @@ export default {
 		&:disabled {
 			color: $red100;
 			border: 1px solid $red100;
+			background-color: $white;
+		}
+		.c-button_loading {
 			background-color: $white;
 		}
 	}

@@ -43,6 +43,8 @@ export const yellow100 = '#FFFACC';
 // Primary
 export const primary = green600;
 export const success = blue600;
+export const error = red600;
+export const gray = gray600;
 
 export const colors = {
     black: black,
@@ -77,4 +79,6 @@ export const colors = {
     yellow100: yellow100,
     primary: primary,
     success: success,
-}
+    error: error,
+    gray: gray,
+};

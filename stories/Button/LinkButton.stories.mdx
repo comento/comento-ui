@@ -1,0 +1,65 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import LinkButton from "@/src/Components/Button/LinkButton";
+
+<Meta
+    title="DESIGN SYSTEM/Button/LinkButton"
+    component={ LinkButton }
+    argTypes={{
+        label: {
+            description: "버튼에 들어갈 텍스트",
+            defaultValue: "링크 버튼",
+            control: { type: "text" },
+        },
+        type: {
+            description: "글자 크기",
+            defaultValue: "body1",
+            control: {
+                type: "text",
+            },
+        },
+        to: {
+            description: "이동할 url",
+            defaultValue: "javascript:void();",
+            control: {
+                type: "text",
+            },
+        },
+    }}
+/>
+
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { LinkButton },
+    template:
+        `<LinkButton :type="type" :to="to">{{label}}</LinkButton>`,
+});
+
+# LinkButton
+
+**LinkButton** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                    <LinkButton>이동하지 않는 링크 버튼</LinkButton>
+                    <LinkButton to="#">맨위로 이동하기</LinkButton>
+                    <LinkButton to="https://comento.kr">코멘토로 이동하기</LinkButton>
+                </div>
+        `,
+            components: { LinkButton },
+        }}
+    </Story>
+</Canvas>
+

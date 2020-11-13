@@ -1,0 +1,68 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import NarrowButton from "@/src/Components/Button/NarrowButton";
+
+<Meta
+  title="DESIGN SYSTEM/Button/NarrowButton"
+  component={NarrowButton}
+  argTypes={{
+    label: {
+      description: "버튼에 들어갈 텍스트",
+      defaultValue: "약관 확인 >",
+      control: { type: "text" },
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    color: {
+      description: "버튼의 색상 타입<br/>`String`",
+      table: {
+        type: {
+          summary: "목록",
+          detail: '"gray400" "gray600"',
+        },
+      },
+      control: {
+        type: "select",
+        options: ["gray400", "gray600"],
+      },
+    },
+  }}
+/>
+
+
+export const Basic = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { NarrowButton },
+  template:
+    `<NarrowButton :color="color">{{label}}</NarrowButton>`,
+});
+
+# NarrowButton
+
+**NarrowButton** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+  {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+            <div>
+                <NarrowButton color="gray400">약관 확인 ></NarrowButton>
+                <NarrowButton color="gray600">약관 확인 ></NarrowButton>
+            </div>
+        `,
+            components: { NarrowButton },
+        }}
+    </Story>
+</Canvas>
+
