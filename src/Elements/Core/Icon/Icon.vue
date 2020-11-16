@@ -47,6 +47,7 @@ import IconFilterMediumLine from '@/assets/images/icon/icon-filter-medium-line.s
 import IconResumeMediumLine from '@/assets/images/icon/icon-resume-medium-line.svg?inline';
 import IconJobWikiMediumLine from '@/assets/images/icon/icon-jobWiki-medium-line.svg?inline';
 import IconAnalyticsMediumLine from '@/assets/images/icon/icon-analytics-medium-line.svg?inline';
+import IconSecurityLargeFill from '@/assets/images/icon/icon-security-large-fill.svg?inline';
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/icon-selected-large-line.svg?inline';
@@ -161,6 +162,7 @@ export default {
 						'IconVodLargeLine',
 						'IconAnswerLargeLine',
 						'IconEduLargeLine',
+						'IconSecurityLargeFill',
 					].indexOf(value) !== -1
 				);
 			},
@@ -319,6 +321,7 @@ export default {
 		IconResumeMediumLine,
 		IconJobWikiMediumLine,
 		IconAnalyticsMediumLine,
+		IconSecurityLargeFill,
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,

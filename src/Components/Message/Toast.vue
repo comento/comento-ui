@@ -1,9 +1,17 @@
 <template>
-	<aside ref="toast" class="c-toast c-toast_container" :class="[computedType]" :style="motionStyle">
-		<Typography class="c-toast_message" element="p" type="body2">
-			<slot />
-		</Typography>
-	</aside>
+	<transition name="slide-fade">
+		<aside v-if="show" ref="toast" class="c-toast" :class="[computedType, computedPosition]">
+			<Typography class="c-toast--message" element="p" type="body2">
+				<div class="c-toast--icon" :style="$slots['left-icon'] && 'margin-right: 4px'">
+					<slot name="left-icon" />
+				</div>
+				<slot />
+				<div class="c-toast--icon" :style="$slots['right-icon'] && 'margin-left: 4px'">
+					<slot name="right-icon" />
+				</div>
+			</Typography>
+		</aside>
+	</transition>
 </template>
 
 <script>
@@ -12,20 +20,27 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 export default {
 	name: 'Toast',
 	props: {
+		show: {
+			type: Boolean,
+			default: false,
+		},
 		type: {
 			type: String,
-			default: 'information',
+			default: 'basic',
 			validator(value) {
-				return ['information', 'alert', 'success'].indexOf(value) !== -1;
+				return ['basic', 'error', 'success'].indexOf(value) !== -1;
 			},
 		},
 		time: {
 			type: Number,
-			default: 4000,
+			default: 3000,
 		},
-		motion: {
+		position: {
 			type: String,
-			default: 'slideDown',
+			default: 'top',
+			validator(value) {
+				return ['top', 'bottom'].indexOf(value) !== -1;
+			},
 		},
 	},
 	data() {
@@ -37,21 +52,22 @@ export default {
 		computedType() {
 			return this.type;
 		},
+		computedPosition() {
+			return `position-${this.position}`;
+		},
 	},
-	watch: {},
-	mounted() {
-		this.setMotion();
+	watch: {
+		show() {
+			this.show && this.handleShow();
+		},
 	},
 	methods: {
-		setMotion() {
-			const toast = this.$refs.toast;
-			const bottom = toast.getBoundingClientRect().bottom;
-			/*toast의 절대 위치값을 구한 후 -값 만큼 안보이도록 이동한다*/
-			setTimeout(() => {
-				if (this.motion === 'slideDown') {
-					this.motionStyle = toast.style.bottom = -bottom + 'px';
-				}
-			}, this.time);
+		handleShow() {
+			this.$nextTick(() => {
+				setTimeout(() => {
+					this.$emit('update:show', false);
+				}, this.time);
+			});
 		},
 	},
 	components: {
@@ -60,26 +76,32 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
+<style lang="scss" scoped>
 .c-toast {
 	position: fixed;
 	bottom: 16px;
 	left: 50%;
-	padding: 13.5px 16px;
+	padding: 14px 16px;
 	text-align: center;
-	transform: translateX(-50%);
-	@include border-radius(2px);
+	z-index: 9999;
+	@include border-radius(4px);
 	@include shadow4();
-	@include transition(all 2s ease-in-out);
-	&_message {
+
+	&--message {
 		margin: 0;
+		@include flexbox();
+		@include align-items(center);
 	}
-	&.information {
+
+	&--icon {
+		@include flexbox();
+	}
+
+	&.basic {
 		background: $gray900;
 		color: $white;
 	}
-	&.alert {
+	&.error {
 		background: $red600;
 		color: $white;
 	}
@@ -87,8 +109,33 @@ export default {
 		background: $blue600;
 		color: $white;
 	}
+
 	@include pc {
 		bottom: 32px;
+	}
+
+	&.position-top {
+		top: 32px;
+		bottom: auto;
+
+		@include pc {
+			top: 100px;
+		}
+	}
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+	@include transition(all 0.3s ease-in-out);
+	position: fixed;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+	opacity: 0;
+	transform: translateY(10px);
+	&.position-top {
+		transform: translateY(-20px);
 	}
 }
 </style>
