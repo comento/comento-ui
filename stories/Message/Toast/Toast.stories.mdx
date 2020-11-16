@@ -1,0 +1,115 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Toast from "@/src/Components/Message/Toast";
+import Button from "@/src/Components/Button/Button";
+import Icon from "@/src/Elements/Core/Icon/Icon";
+
+<Meta
+    title="DESIGN SYSTEM/Message/Toast"
+    component={ Toast }
+    argTypes={{
+        label: {
+            description: "Toast에 들어갈 텍스트",
+            defaultValue: "메시지가 들어가는 자리입니다.",
+            control: { type: "text" },
+        },
+        show: {
+            description: "활성화",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        type: {
+            description: "종류",
+            defaultValue: 'basic',
+            control: {
+                type: "select",
+                options: ["basic", "error", "success"],
+            },
+            table: {
+                type: {
+                    summary: "string",
+                    detail: '"basic" "error" "success"',
+                },
+            },
+        },
+        time: {
+            description: "시간",
+            defaultValue: 3000,
+            control: {
+                type: "text",
+            },
+        },
+        position: {
+            description: "방향",
+            defaultValue: "bottom",
+            control: {
+                type: "select",
+                options: ["top", "bottom"],
+            },
+            table: {
+                type: {
+                    summary: "string",
+                    detail: '"top" "bottom"',
+                }
+            }
+        },
+    }}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Button, Toast },
+    template: `
+        <div>
+            <Button @click="show = true">Open</Button>
+            <Toast
+                :show.sync="show"
+                :type="type"
+                :time="time"
+                :position="position"
+            >
+                {{ label }}
+            </Toast>
+        </div>`
+});
+
+# Toast
+
+**Toast** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+## Stories
+### With Icon
+<Canvas>
+    <Story name="WithIcon" height="100px">
+        {{
+            data: () => ({
+                show: false,
+            }),
+            template: `
+                <div>
+                    <Button @click="show = true">Open</Button>
+                    <Toast
+                      :show.sync="show"
+                      position="top"
+                      type="success"
+                    >
+                        <template v-slot:left-icon>
+                            <Icon name="IconSecurityLargeFill" color="white" size="large" />
+                        </template>
+                      결제 정보 암호화 중
+                    </Toast>
+                </div>
+            `,
+            components: {
+                Toast, Button, Icon
+            }
+        }}
+    </Story>
+</Canvas>
