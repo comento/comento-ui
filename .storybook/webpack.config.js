@@ -11,8 +11,10 @@ module.exports = ({config}) => {
         }
         return rule;
     });
+
     config.module.rules.push({
-            test: /\.svg$/,
+        test: /\.svg$/,
+        use: ['babel-loader'],
         oneOf: [
             {
                 resourceQuery: /inline/,

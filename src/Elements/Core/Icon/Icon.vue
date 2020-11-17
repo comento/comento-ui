@@ -71,6 +71,9 @@ import IconEduLargeLine from '@/assets/images/icon/icon-edu-large-line.svg?inlin
 import IconAnalyticsLargeLine from '@/assets/images/icon/icon-analytics-large-line.svg?inline';
 import IconInterviewLargeLine from '@/assets/images/icon/icon-interview-large-line.svg?inline';
 import IconEssayLargeLine from '@/assets/images/icon/icon-essay-large-line.svg?inline';
+import IconDownloadLargeLine from '@/assets/images/icon/icon-download-large-line.svg?inline';
+import IconCheckLargeLine from '@/assets/images/icon/icon-check-large-line.svg?inline';
+
 // x-large
 import IconArrowXLargeLine from '@/assets/images/icon/icon-arrow-xlarge-line.svg?inline';
 import IconCloseXLargeLine from '@/assets/images/icon/icon-close-xlarge-line.svg?inline';
@@ -163,6 +166,8 @@ export default {
 						'IconAnswerLargeLine',
 						'IconEduLargeLine',
 						'IconSecurityLargeFill',
+						'IconDownloadLargeLine',
+						'IconCheckLargeLine',
 					].indexOf(value) !== -1
 				);
 			},
@@ -341,6 +346,8 @@ export default {
 		IconAnalyticsLargeLine,
 		IconInterviewLargeLine,
 		IconEssayLargeLine,
+		IconDownloadLargeLine,
+		IconCheckLargeLine,
 		// x-large
 		IconArrowXLargeLine,
 		IconCloseXLargeLine,
