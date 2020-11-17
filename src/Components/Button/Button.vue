@@ -11,12 +11,12 @@
 				<Icon :name="computedIconName" :reversed="type === 'fill'" loading :spinner-color="color" />
 			</div>
 		</template>
-		<div :style="$slots['left-icon'] ? 'margin-right: 2px;' : ''">
-			<slot name="left-icon"> </slot>
+		<div class="c-button--icon" :style="$slots['left-icon'] && `margin-right: ${computedIconMargin}`">
+			<slot name="left-icon" />
 		</div>
 		<slot />
-		<div :style="$slots['right-icon'] ? 'margin-left: 2px;' : ''">
-			<slot name="right-icon"></slot>
+		<div class="c-button--icon" :style="$slots['right-icon'] && `margin-left: ${computedIconMargin}`">
+			<slot name="right-icon" />
 		</div>
 	</button>
 </template>
@@ -81,6 +81,10 @@ export default {
 
 			return `IconSpinner${size}`;
 		},
+		computedIconMargin() {
+			const isMoreThanLarge = this.size.indexOf('large') !== -1;
+			return isMoreThanLarge ? '4px' : '2px';
+		},
 	},
 	components: { Icon },
 };
@@ -112,6 +116,10 @@ export default {
 		@include align-items(center);
 		@include justify-content(center);
 	}
+	&--icon {
+		@include flexbox();
+	}
+
 	&.small {
 		height: 24px;
 		padding: 0 8px;
