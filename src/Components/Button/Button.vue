@@ -203,7 +203,7 @@ export default {
 		border: 1px solid $primary;
 		color: $primary;
 		&:hover {
-			background-color: $blue100;
+			background-color: $green100;
 		}
 		&:disabled {
 			color: $green100;
