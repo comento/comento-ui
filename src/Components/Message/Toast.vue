@@ -1,6 +1,6 @@
 <template>
 	<transition name="slide-fade">
-		<aside v-if="show" ref="toast" class="c-toast" :class="[computedType, computedPosition]">
+		<aside v-if="sync_show" class="c-toast" :class="[computedType, computedPosition]">
 			<Typography class="c-toast--message" element="p" type="body2">
 				<div class="c-toast--icon" :style="$slots['left-icon'] && 'margin-right: 4px'">
 					<slot name="left-icon" />
@@ -37,7 +37,7 @@ export default {
 		},
 		position: {
 			type: String,
-			default: 'top',
+			default: 'bottom',
 			validator(value) {
 				return ['top', 'bottom'].indexOf(value) !== -1;
 			},
@@ -49,6 +49,11 @@ export default {
 		};
 	},
 	computed: {
+		sync_show: {
+			get() {
+				return this.show;
+			},
+		},
 		computedType() {
 			return this.type;
 		},
@@ -81,6 +86,7 @@ export default {
 	position: fixed;
 	bottom: 16px;
 	left: 50%;
+	transform: translateX(-50%);
 	padding: 14px 16px;
 	text-align: center;
 	z-index: 9999;
