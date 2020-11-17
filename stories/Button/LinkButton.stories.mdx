@@ -24,6 +24,14 @@ import LinkButton from "@/src/Components/Button/LinkButton";
                 type: "text",
             },
         },
+        color: {
+            description: "버튼 색상",
+            defaultValue: "blue600",
+            control: {
+                type: "select",
+                options: ["blue600", "blue400"],
+            },
+        }
     }}
 />
 
@@ -32,7 +40,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { LinkButton },
     template:
-        `<LinkButton :type="type" :to="to">{{label}}</LinkButton>`,
+        `<LinkButton :type="type" :to="to" :color="color">{{label}}</LinkButton>`,
 });
 
 # LinkButton
@@ -54,7 +62,7 @@ export const Basic = (args, { argTypes }) => ({
             template: `
                 <div>
                     <LinkButton>이동하지 않는 링크 버튼</LinkButton>
-                    <LinkButton to="#">맨위로 이동하기</LinkButton>
+                    <LinkButton to="#" color="blue400">맨위로 이동하기</LinkButton>
                     <LinkButton to="https://comento.kr">코멘토로 이동하기</LinkButton>
                 </div>
         `,
