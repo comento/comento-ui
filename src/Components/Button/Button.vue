@@ -7,7 +7,7 @@
 		v-on="$listeners"
 	>
 		<template v-if="loading">
-			<div class="c-button_loading">
+			<div class="c-button--loading">
 				<Icon :name="computedIconName" :reversed="type === 'fill'" loading :spinner-color="color" />
 			</div>
 		</template>
@@ -107,7 +107,7 @@ export default {
 		cursor: not-allowed !important;
 		pointer-events: none;
 	}
-	.c-button_loading {
+	&--loading {
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -148,7 +148,7 @@ export default {
 		@include body1;
 		font-weight: bold;
 		.loading {
-			padding: 0px 14.5px;
+			padding: 0 14.5px;
 			line-height: 90%;
 		}
 	}
@@ -172,7 +172,7 @@ export default {
 		border: none;
 		color: $gray500;
 
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
@@ -184,11 +184,11 @@ export default {
 	}
 	&:disabled {
 		background-color: $green100;
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $green100;
 		}
 	}
-	.c-button_loading {
+	.c-button--loading {
 		background-color: $primary;
 	}
 
@@ -210,7 +210,7 @@ export default {
 			border: 1px solid $green100;
 			background-color: $white;
 		}
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
@@ -222,11 +222,11 @@ export default {
 	}
 	&:disabled {
 		background-color: $blue100;
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $blue100;
 		}
 	}
-	.c-button_loading {
+	.c-button--loading {
 		background-color: $success;
 	}
 	&.text {
@@ -247,7 +247,7 @@ export default {
 			border: 1px solid $blue100;
 			background-color: $white;
 		}
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
@@ -259,11 +259,11 @@ export default {
 	}
 	&:disabled {
 		background-color: $gray100;
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $gray100;
 		}
 	}
-	.c-button_loading {
+	.c-button--loading {
 		background-color: $gray600;
 	}
 	&.text {
@@ -282,7 +282,7 @@ export default {
 		&:disabled {
 			background-color: $white;
 		}
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
@@ -294,11 +294,11 @@ export default {
 	}
 	&:disabled {
 		background-color: $red100;
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $red100;
 		}
 	}
-	.c-button_loading {
+	.c-button--loading {
 		background-color: $red600;
 	}
 	&.text {
@@ -319,7 +319,7 @@ export default {
 			border: 1px solid $red100;
 			background-color: $white;
 		}
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
