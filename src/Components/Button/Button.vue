@@ -93,10 +93,10 @@ export default {
 	color: $white;
 	background-color: $primary;
 	border: none;
-	border-radius: 4px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@include border-radius(4px);
+	@include flexbox();
+	@include align-items(center);
+	@include justify-content(center);
 	position: relative;
 	&:disabled,
 	.loading {
@@ -106,8 +106,11 @@ export default {
 	.c-button_loading {
 		position: absolute;
 		width: 100%;
-		display: flex;
-		justify-content: center;
+		height: 100%;
+		@include border-radius(4px);
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(center);
 	}
 	&.small {
 		height: 24px;
