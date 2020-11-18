@@ -1,8 +1,8 @@
 <template>
 	<div class="c-application c-dropdown--container">
 		<slot />
-		<div v-if="$slots['content']" class="c-dropdown--wrapper" :style="computedStyle">
-			<slot name="content" />
+		<div v-if="$slots['contents']" class="c-dropdown--wrapper" :style="computedStyle">
+			<slot name="contents" />
 		</div>
 	</div>
 </template>
