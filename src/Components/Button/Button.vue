@@ -154,10 +154,9 @@ export default {
 	}
 	&.xlarge {
 		height: 60px;
-		padding: 0 60px;
-		// 디자인 작업중
-		min-width: 76px;
-		@include headline5;
+		padding: 0 26px;
+		min-width: 130px;
+		@include headline6;
 		font-weight: bold;
 		.loading {
 			padding: 0 9.5px;
