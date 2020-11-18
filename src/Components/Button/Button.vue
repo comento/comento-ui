@@ -7,16 +7,16 @@
 		v-on="$listeners"
 	>
 		<template v-if="loading">
-			<div class="c-button_loading">
+			<div class="c-button--loading">
 				<Icon :name="computedIconName" :reversed="type === 'fill'" loading :spinner-color="color" />
 			</div>
 		</template>
-		<div :style="$slots['left-icon'] ? 'margin-right: 2px;' : ''">
-			<slot name="left-icon"> </slot>
+		<div class="c-button--icon" :style="$slots['left-icon'] && `margin-right: ${computedIconMargin}`">
+			<slot name="left-icon" />
 		</div>
 		<slot />
-		<div :style="$slots['right-icon'] ? 'margin-left: 2px;' : ''">
-			<slot name="right-icon"></slot>
+		<div class="c-button--icon" :style="$slots['right-icon'] && `margin-left: ${computedIconMargin}`">
+			<slot name="right-icon" />
 		</div>
 	</button>
 </template>
@@ -81,6 +81,10 @@ export default {
 
 			return `IconSpinner${size}`;
 		},
+		computedIconMargin() {
+			const isMoreThanLarge = this.size.indexOf('large') !== -1;
+			return isMoreThanLarge ? '4px' : '2px';
+		},
 	},
 	components: { Icon },
 };
@@ -103,7 +107,7 @@ export default {
 		cursor: not-allowed !important;
 		pointer-events: none;
 	}
-	.c-button_loading {
+	&--loading {
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -112,6 +116,10 @@ export default {
 		@include align-items(center);
 		@include justify-content(center);
 	}
+	&--icon {
+		@include flexbox();
+	}
+
 	&.small {
 		height: 24px;
 		padding: 0 8px;
@@ -140,16 +148,15 @@ export default {
 		@include body1;
 		font-weight: bold;
 		.loading {
-			padding: 0px 14.5px;
+			padding: 0 14.5px;
 			line-height: 90%;
 		}
 	}
 	&.xlarge {
 		height: 60px;
-		padding: 0 60px;
-		// 디자인 작업중
-		min-width: 76px;
-		@include headline5;
+		padding: 0 26px;
+		min-width: 130px;
+		@include headline6;
 		font-weight: bold;
 		.loading {
 			padding: 0 9.5px;
@@ -164,7 +171,7 @@ export default {
 		border: none;
 		color: $gray500;
 
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
@@ -176,11 +183,11 @@ export default {
 	}
 	&:disabled {
 		background-color: $green100;
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $green100;
 		}
 	}
-	.c-button_loading {
+	.c-button--loading {
 		background-color: $primary;
 	}
 
@@ -195,14 +202,14 @@ export default {
 		border: 1px solid $primary;
 		color: $primary;
 		&:hover {
-			background-color: $blue100;
+			background-color: $green100;
 		}
 		&:disabled {
 			color: $green100;
 			border: 1px solid $green100;
 			background-color: $white;
 		}
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
@@ -214,11 +221,11 @@ export default {
 	}
 	&:disabled {
 		background-color: $blue100;
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $blue100;
 		}
 	}
-	.c-button_loading {
+	.c-button--loading {
 		background-color: $success;
 	}
 	&.text {
@@ -239,7 +246,7 @@ export default {
 			border: 1px solid $blue100;
 			background-color: $white;
 		}
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
@@ -251,11 +258,11 @@ export default {
 	}
 	&:disabled {
 		background-color: $gray100;
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $gray100;
 		}
 	}
-	.c-button_loading {
+	.c-button--loading {
 		background-color: $gray600;
 	}
 	&.text {
@@ -274,7 +281,7 @@ export default {
 		&:disabled {
 			background-color: $white;
 		}
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
@@ -286,17 +293,17 @@ export default {
 	}
 	&:disabled {
 		background-color: $red100;
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $red100;
 		}
 	}
-	.c-button_loading {
+	.c-button--loading {
 		background-color: $red600;
 	}
 	&.text {
 		color: $red600;
 		&:hover {
-			background-color: $red100;
+			background-color: $red000;
 		}
 	}
 	&.outlined {
@@ -311,7 +318,7 @@ export default {
 			border: 1px solid $red100;
 			background-color: $white;
 		}
-		.c-button_loading {
+		.c-button--loading {
 			background-color: $white;
 		}
 	}
