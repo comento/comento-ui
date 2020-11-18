@@ -123,7 +123,6 @@ $--c-drawer-close-width: 14px !default;
 	background: $white;
 	// common
 	position: fixed;
-	overflow: auto;
 	@include shadow1();
 
 	&.closeable {
@@ -153,10 +152,6 @@ $--c-drawer-close-width: 14px !default;
 	}
 
 	&--close-button {
-		// position: relative;
-		// margin: auto;
-		// margin-top: 100px;
-		// cursor: pointer;
 		position: absolute;
 		right: 25px;
 		top: 25px;
@@ -173,22 +168,11 @@ $--c-drawer-close-width: 14px !default;
 }
 .mask {
 	position: fixed;
-	background: $gray100;
-	opacity: 0.5;
+	background: $black;
+	opacity: 0.6;
 	width: 100%;
 	left: 0;
 	top: 0;
 	height: 100%;
-	&::before {
-		content: '';
-		position: absolute;
-		background: $gray100;
-		opacity: 0.5;
-		width: 100%;
-		left: 0;
-		top: 0;
-		height: 100%;
-		// z-index: 98;
-	}
 }
 </style>

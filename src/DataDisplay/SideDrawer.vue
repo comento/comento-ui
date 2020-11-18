@@ -80,6 +80,7 @@ export default {
 <style lang="scss" scoped>
 ::v-deep .c-drawer {
 	width: 315px;
+	height: 100%;
 	@include pc {
 		width: 374px;
 	}
