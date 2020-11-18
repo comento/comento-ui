@@ -1,7 +1,6 @@
 <template>
-	<div class="c-application c-list_container" :style="computedStyle">
-		<slot name="label"></slot>
-		<slot></slot>
+	<div class="c-application c-list--container" :class="computedSpacing">
+		<slot />
 	</div>
 </template>
 
@@ -9,39 +8,37 @@
 export default {
 	name: 'List',
 	props: {
-		maxItemsLengthToShow: {
-			type: Number,
-			default: null,
-		},
-		itemHeight: {
-			type: Number,
-			default: null,
+		spacing: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	computed: {
-		computedStyle() {
-			if (this.maxItemsLengthToShow && this.itemHeight) {
-				return {
-					height: `${this.maxItemsLengthToShow * this.itemHeight}px`,
-					'overflow-y': 'auto',
-				};
-			} else {
-				return null;
-			}
+		computedSpacing() {
+			return this.spacing && 'spacing';
 		},
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-/*@import '@/assets/style/base/main';*/
+.c-list {
+	&--container {
+		background: $white;
 
-.c-list_container {
-	background: $white;
-
-	> li {
-		&:last-child > hr {
+		hr:last-child {
 			display: none;
+		}
+
+		&.spacing {
+			> .c-list-item--container {
+				margin: 6px 0;
+
+				&:first-child,
+				&:last-child {
+					margin-top: 0;
+				}
+			}
 		}
 	}
 }
