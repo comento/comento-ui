@@ -91,11 +91,7 @@ export default {
 <style lang="scss" scoped>
 .c-modal {
 	&_contents_wrapper {
-		&::v-deep > * + * {
-			margin-top: 8px;
-		}
-
-		&::v-deep .c-input-motion-box.outlined ~ button {
+		&::v-deep .c-input--motion-box.outlined ~ button {
 			height: 40px;
 		}
 	}
