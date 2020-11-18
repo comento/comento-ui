@@ -20,6 +20,9 @@ export default {
 		type: {
 			type: String,
 			default: 'user',
+			validator(value) {
+				return ['user', 'img'].indexOf(value) !== -1;
+			},
 		},
 		// 사이즈
 		size: {
@@ -28,11 +31,6 @@ export default {
 			validator(value) {
 				return ['small', 'medium', 'large'].indexOf(value) !== -1;
 			},
-		},
-		// type : user일 경우 색상
-		color: {
-			type: String,
-			default: 'gainsboro',
 		},
 		textColor: {
 			type: String,
@@ -72,16 +70,12 @@ export default {
 			return alignItem[this.align];
 		},
 		computedStyle() {
-			if (this.type === 'user') {
-				return {
-					'background-color': this.color,
-					// 'background-image': `url(${this.randomAvatarSrc(this.getRandomArbitrary(1, 30))})`,
-				};
-			} else {
+			if (this.type === 'img') {
 				return {
 					'background-image': `url(${this.src})`,
 				};
 			}
+			return {};
 		},
 	},
 	components: { Typography },

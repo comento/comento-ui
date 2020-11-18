@@ -39,13 +39,6 @@ import Icon from '@/src/Elements/Core/Icon/Icon';
                 options: ["user", "img"],
             },
         },
-        color: {
-            description: "type이 user일 경우 색상 타입",
-            defaultValue: "gainsboro",
-            control: {
-                type: "text",
-            },
-        },
         textColor: {
             description: "텍스트 색상 타입",
             defaultValue: "gray800",
@@ -81,7 +74,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Avatar },
     template:
-        `<Avatar :type="type" :color="color" :text="text" :text-color="textColor" :src="src" :align="align" :size="size">
+        `<Avatar :type="type" :text="text" :text-color="textColor" :src="src" :align="align" :size="size">
         </Avatar>`,
 });
 
