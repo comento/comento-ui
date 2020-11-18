@@ -1,12 +1,12 @@
 <template>
-	<div class="c-application c-input_motion_box" :class="[computedAlign, computedFull, computedType]">
+	<div class="c-application c-input--motion-box" :class="[computedAlign, computedFull, computedType]">
 		<input
 			:id="computedId"
 			ref="question"
 			v-model="sync_value"
 			autocomplete="off"
 			type="text"
-			class="c-input_box full"
+			class="c-input--box full"
 			:class="[computedAlign]"
 			:placeholder="placeholder"
 			:style="computedStyle"
@@ -86,7 +86,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 input {
 	&::placeholder {
 		@include body1();
@@ -94,52 +94,54 @@ input {
 	}
 }
 
-.c-input_motion_box {
-	@include clearfix();
-	position: relative;
+.c-input {
+	&--motion-box {
+		@include clearfix();
+		position: relative;
 
-	&.full {
-		width: 100%;
-		.c-input_box {
+		&.full {
 			width: 100%;
+			.c-input--box {
+				width: 100%;
+			}
+		}
+
+		&.underlined {
+			.c-input--box {
+				border-top: 0;
+				border-left: 0;
+				border-right: 0;
+				height: 36px;
+				padding: 0 4px;
+			}
+		}
+
+		.c-input--box {
+			box-sizing: border-box;
+			height: 40px;
+			line-height: 24px;
+			padding: 0 12px;
+			font-size: 16px;
+			border: 1px solid $gray200;
+			@include border-radius(3px);
+			-webkit-appearance: none;
+			@include inline-block();
+			vertical-align: top;
+			@include transition(all 0.2s ease);
+			&-lg {
+				height: 48px;
+			}
+
+			@include pc {
+				margin: 0;
+			}
 		}
 	}
 
-	&.underlined {
-		.c-input_box {
-			border-top: 0;
-			border-left: 0;
-			border-right: 0;
-			height: 36px;
-			padding: 0 4px;
+	.center {
+		input {
+			text-align: center;
 		}
-	}
-
-	.c-input_box {
-		box-sizing: border-box;
-		height: 40px;
-		line-height: 24px;
-		padding: 0 12px;
-		font-size: 16px;
-		border: 1px solid $gray200;
-		@include border-radius(3px);
-		-webkit-appearance: none;
-		@include inline-block();
-		vertical-align: top;
-		@include transition(all 0.2s ease);
-		&-lg {
-			height: 48px;
-		}
-
-		@include pc {
-			margin: 0;
-		}
-	}
-}
-
-.center {
-	input {
-		text-align: center;
 	}
 }
 </style>
