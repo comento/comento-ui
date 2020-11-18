@@ -303,7 +303,7 @@ export default {
 	&.text {
 		color: $red600;
 		&:hover {
-			background-color: $red100;
+			background-color: $red000;
 		}
 	}
 	&.outlined {
