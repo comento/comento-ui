@@ -1,7 +1,7 @@
 <template>
-	<div v-if="show" class="c-application c-modal_mask" @click="handleCloseModal">
-		<div class="c-modal_container" :style="[computedStyle]" @click.stop>
-			<div v-if="showCloseButton" class="c-modal_close_button" @click="close">
+	<div v-if="show" class="c-application c-modal--mask" @click="handleCloseModal">
+		<div class="c-modal--container" :style="[computedStyle]" @click.stop>
+			<div v-if="showCloseButton" class="c-modal--close-button" @click="close">
 				<Icon name="IconCloseXLargeLine" color="gray400" />
 			</div>
 			<slot />
@@ -30,11 +30,15 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		maxHeight: {
+			type: String,
+		},
 	},
 	computed: {
 		computedStyle() {
 			return {
-				'max-width': this.maxWidth,
+				'max-width': !this.isMobile && this.maxWidth,
+				'max-height': this.maxHeight,
 			};
 		},
 	},
@@ -65,7 +69,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-modal {
-	&_mask {
+	&--mask {
 		position: fixed;
 		z-index: 9998;
 		top: 0;
@@ -75,7 +79,7 @@ export default {
 		background-color: rgba(0, 0, 0, 0.7);
 		transition: opacity 0.3s ease;
 	}
-	&_container {
+	&--container {
 		max-width: 90%;
 		width: 100%;
 		margin: 0 auto;
@@ -92,7 +96,7 @@ export default {
 			max-width: 420px;
 		}
 	}
-	&_close_button {
+	&--close-button {
 		position: absolute;
 		top: 12px;
 		right: 12px;

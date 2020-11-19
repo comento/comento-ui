@@ -86,7 +86,7 @@ export default {
 	position: fixed;
 	bottom: 16px;
 	left: 50%;
-	transform: translateX(-50%);
+	@include transform(translate(-50%));
 	padding: 14px 16px;
 	text-align: center;
 	z-index: 9999;
@@ -139,9 +139,9 @@ export default {
 .slide-fade-enter,
 .slide-fade-leave-to {
 	opacity: 0;
-	transform: translateY(10px);
+	@include transform(translate(-50%, 10px));
 	&.position-top {
-		transform: translateY(-20px);
+		@include transform(translate(-50%, -20px));
 	}
 }
 </style>

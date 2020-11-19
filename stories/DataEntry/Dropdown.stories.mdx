@@ -1,0 +1,51 @@
+import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
+import Dropdown from "@/src/DataEntry/Dropdown";
+import List from "@/src/Components/DataDisplay/List";
+import ListItem from "@/src/Components/DataDisplay/ListItem";
+import Divider from "@/src/Elements/Utility/Divider";
+import Input from "@/src/DataEntry/Input";
+
+<Meta
+    title="DESIGN SYSTEM/DataEntry/Dropdown"
+    component={ Dropdown }
+    argTypes={{
+        maxHeight: {
+            description: "Dropdown 최대 높이",
+            defaultValue: "130px",
+            control: { type: "text" },
+        },
+    }}
+/>
+
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Dropdown, Input, List, ListItem, Divider },
+    data: () => ({
+        listItems: ['List1', 'List2', 'List3', 'List4', 'List5'],
+    }),
+    template:
+        `<Dropdown :max-height="maxHeight" style="width: 197px">
+          <Input />
+          <template v-slot:content>
+            <List>
+              <template v-for="(item, index) in listItems">
+                <ListItem :key="'list-item-' + index">
+                  {{ item }}
+                </ListItem>
+                <Divider :key="'divider-' + index" width="100%" height="1px" />
+              </template>
+            </List>
+          </template>
+        </Dropdown>`,
+});
+
+# Dropdown
+
+**Dropdown** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="150px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />

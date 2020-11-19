@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Button from "@/src/Components/Button/Button";
+import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
   title="DESIGN SYSTEM/Button/Button"
@@ -192,6 +193,43 @@ export const Basic = (args, { argTypes }) => ({
                 </div>
         `,
             components: { Button },
+        }}
+    </Story>
+</Canvas>
+
+### With Icon
+<Canvas>
+    <Story name="WithIcon" height="100px">
+        {{
+            template: `
+                <div style="display: flex">
+                    <Button color="primary" type="fill" size="small">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusSmallLine" color="white" />
+                        </template>
+                        Small
+                    </Button>
+                    <Button color="primary" type="fill" size="medium">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="white" />
+                        </template>
+                        Medium
+                    </Button>
+                    <Button color="primary" type="fill" size="large">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusLargeLine" color="white" />
+                        </template>
+                        Large
+                    </Button>
+                    <Button color="primary" type="fill" size="xlarge">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusLargeLine" color="white" />
+                        </template>
+                        XLarge
+                    </Button>
+                </div>
+        `,
+            components: { Button, Icon },
         }}
     </Story>
 </Canvas>
