@@ -4,7 +4,7 @@
 		:show-close-button="showCloseButton"
 		:max-width="maxWidth"
 		:persistent="persistent"
-		:max-height="!isMobile ? '640px' : ''"
+		:max-height="isMobile ? '' : '640px'"
 		@close="close"
 	>
 		<div class="c-modal--wrapper">
