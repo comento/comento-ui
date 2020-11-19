@@ -1,6 +1,6 @@
 <template>
 	<button class="c-narrow-button" :style="[computedColor]" v-bind="$attrs" type="button" v-on="$listeners">
-		<slot></slot>
+		<slot />
 	</button>
 </template>
 
@@ -37,12 +37,11 @@ export default {
 	border-radius: 4px;
 	padding: 2px;
 	background: transparent;
+	height: 18px;
+	@include caption1();
+
 	&:hover {
 		background-color: $gray100;
 	}
-
-	height: 18px;
-	min-width: 36px;
-	@include caption1();
 }
 </style>
