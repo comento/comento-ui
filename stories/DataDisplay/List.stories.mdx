@@ -1,0 +1,74 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import ListItem from "@/src/Components/DataDisplay/ListItem";
+import List from "@/src/Components/DataDisplay/List";
+import Typography from "@/src/Elements/Core/Typography/Typography";
+import Divider from "@/src/Elements/Utility/Divider";
+
+<Meta
+    title="DESIGN SYSTEM/DataDisplay/List"
+    component={ List }
+    argTypes={{
+        listItems: {
+            description: "리스트 콘텐츠",
+            defaultValue: ["List1", "List2", "List3", "List4", "List5"],
+            control: {
+                type: "array",
+            },
+        },
+        spacing: {
+            description: "내부 콘텐츠 사이의 여백",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        divider: {
+            description: "구분선",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        size: {
+            description: "ListItem 크기",
+            defaultValue: "medium",
+            table: {
+                type: {
+                    summary: "목록",
+                    detail: '"small" "medium" "large"',
+                },
+            },
+            control: {
+                type: "select",
+                options: ["small", "medium", "large"],
+            },
+        }
+    }}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { List, ListItem, Typography, Divider },
+    template:
+        `<List :spacing="spacing">
+          <template v-for="(item, index) in listItems">
+            <ListItem :key="'item-' + index" :size="size">
+              <Typography type="body2" color="gray800">
+                {{ item }}
+              </Typography>
+            </ListItem>
+            <Divider v-if="divider" width="100%" height="1px" :key="'divider-' + index" />
+          </template>
+        </List>`,
+});
+
+# List
+
+**List** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+

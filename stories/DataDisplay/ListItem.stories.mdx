@@ -1,0 +1,66 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import ListItem from "@/src/Components/DataDisplay/ListItem";
+import Typography from "@/src/Elements/Core/Typography/Typography";
+
+<Meta
+    title="DESIGN SYSTEM/DataDisplay/ListItem"
+    component={ ListItem }
+    argTypes={{
+        label: {
+            description: "내부 텍스트",
+            defaultValue: "내부 텍스트",
+            control: { type: "text" },
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+        },
+        size: {
+            description: "ListItem 사이즈",
+            defaultValue: "medium",
+            control: {
+                type: "select",
+                options: ["small", "medium", "large"],
+            },
+        },
+    }}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { ListItem, Typography },
+    template:
+      `<ListItem :size="size">
+        <Typography type="body2" color="gray800">
+          {{ label }}
+        </Typography>
+      </ListItem>`,
+});
+
+# ListItem
+
+**ListItem** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+## Stories
+### Sizes
+<Canvas>
+    <Story name="Sizes" height="100px">
+        {{
+            template: `
+                <div>
+                  <ListItem size="small">Small</ListItem>
+                  <ListItem size="medium">Medium</ListItem>
+                  <ListItem size="large">Large</ListItem>
+                </div>
+        `,
+            components: { ListItem },
+        }}
+    </Story>
+</Canvas>
