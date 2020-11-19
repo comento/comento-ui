@@ -4,19 +4,22 @@
 		:show-close-button="showCloseButton"
 		:max-width="maxWidth"
 		:persistent="persistent"
+		:max-height="!isMobile ? '640px' : ''"
 		@close="close"
 	>
-		<!-- title 영역 -->
-		<Typography class="mb-16" type="headline5" :align="align">
-			<slot name="title" />
-		</Typography>
+		<div class="c-modal--wrapper">
+			<!-- title 영역 -->
+			<Typography class="mb-16" type="headline5" :align="align">
+				<slot name="title" />
+			</Typography>
 
-		<!-- contents 영역 -->
-		<Typography type="body2" :align="align" color="gray700">
-			<div class="c-modal_contents_wrapper">
-				<slot name="contents" />
-			</div>
-		</Typography>
+			<!-- contents 영역 -->
+			<Typography type="body2" :align="align" color="gray700">
+				<div class="c-modal--contents-wrapper">
+					<slot name="contents" />
+				</div>
+			</Typography>
+		</div>
 
 		<!-- button 영역 -->
 		<div v-if="showActionButton" class="mt-20">
@@ -90,7 +93,13 @@ export default {
 
 <style lang="scss" scoped>
 .c-modal {
-	&_contents_wrapper {
+	&--wrapper {
+		@include pc {
+			max-height: calc(640px - 148px);
+			overflow-y: auto;
+		}
+	}
+	&--contents-wrapper {
 		&::v-deep * + * {
 			margin-top: 8px;
 		}

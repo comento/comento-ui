@@ -4,19 +4,20 @@
 		:show-close-button="showCloseButton"
 		:max-width="maxWidth"
 		:persistent="persistent"
+		:max-height="!isMobile ? '640px' : ''"
 		@close="close"
 	>
-		<!-- title 영역 -->
-		<Typography class="mb-20" type="headline5" :align="align">
-			<slot name="title" />
-		</Typography>
+		<div class="c-modal--wrapper scroll" :class="{ 'scroll-with-button': showActionButton }">
+			<!-- title 영역 -->
+			<Typography class="mb-20" type="headline5" :align="align">
+				<slot name="title" />
+			</Typography>
 
-		<!-- contents 영역 -->
-		<Typography type="body2" :align="align" color="gray700">
-			<div class="c-modal_contents_wrapper">
+			<!-- contents 영역 -->
+			<div class="c-modal--contents-wrapper">
 				<slot name="contents" />
 			</div>
-		</Typography>
+		</div>
 
 		<!-- button 영역 -->
 		<div v-if="showActionButton" class="mt-20">
@@ -90,7 +91,36 @@ export default {
 
 <style lang="scss" scoped>
 .c-modal {
-	&_contents_wrapper {
+	&--wrapper {
+		@include pc {
+			max-height: calc(640px - 148px);
+			overflow-y: auto;
+
+			/*&.scroll {*/
+			/*	&:after {*/
+			/*		content: '';*/
+			/*		position: absolute;*/
+			/*		width: 100%;*/
+			/*		height: 30px;*/
+			/*		left: 0;*/
+			/*		bottom: 40px;*/
+			/*		background: linear-gradient(*/
+			/*			180deg,*/
+			/*			rgba(255, 255, 255, 0) 0%,*/
+			/*			rgba(255, 255, 255, 0.7) 58.33%,*/
+			/*			rgba(255, 255, 255, 0.958333) 100%*/
+			/*		);*/
+			/*	}*/
+			/*	&.scroll-with-button {*/
+			/*		&:after {*/
+			/*			bottom: 108px;*/
+			/*		}*/
+			/*	}*/
+			/*}*/
+		}
+	}
+
+	&--contents-wrapper {
 		&::v-deep .c-input--motion-box.outlined ~ button {
 			height: 40px;
 		}
