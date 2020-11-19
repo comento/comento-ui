@@ -62,7 +62,7 @@ export default {
 	computed: {
 		heightMax() {
 			const windowH = window.innerHeight;
-			return { maxHeight: windowH * 0.76 + 'px' };
+			return { maxHeight: windowH * 0.68 + 'px' };
 		},
 	},
 	components: {
