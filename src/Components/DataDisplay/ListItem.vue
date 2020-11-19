@@ -1,43 +1,42 @@
 <template>
-	<div class="c-application c-list_item_container" tabindex="0" v-on="$listeners">
-		<slot name="content">
-			<Typography type="body2" :color="color"> </Typography>
-		</slot>
+	<div class="c-application c-list-item--container" tabindex="0" :class="size" v-on="$listeners">
+		<slot />
 	</div>
 </template>
 
 <script>
-import Typography from '@/src/Elements/Core/Typography/Typography';
-
 export default {
 	name: 'ListItem',
 	props: {
-		value: {
-			type: [String, Number],
-			default: '',
-		},
-		color: {
+		size: {
 			type: String,
+			default: 'medium',
+			validator(value) {
+				return ['small', 'medium', 'large'].indexOf(value) !== -1;
+			},
 		},
 	},
-	components: { Typography },
 };
 </script>
 
 <style lang="scss" scoped>
-/*@import '@/assets/style/base/main';*/
+.c-list-item {
+	&--container {
+		padding: 8px 6px;
+		cursor: pointer;
 
-.c-list_item_container {
-	padding: 12px 4px;
-	cursor: pointer;
+		&:hover,
+		&:focus {
+			background: $gray100;
+		}
 
-	&:hover,
-	&:focus {
-		background: $gray100;
-	}
+		&.small {
+			padding: 6px 4px;
+		}
 
-	> div {
-		@include ellipsis();
+		&.large {
+			padding: 12px;
+		}
 	}
 }
 </style>
