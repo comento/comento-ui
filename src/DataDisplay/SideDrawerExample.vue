@@ -25,7 +25,7 @@
 		<button @click="toggle">Open/Close</button>
 		<SideDrawer
 			:mask-closable="true"
-			:zIndex="1002"
+			:z-index="1002"
 			:align="align"
 			:closeable="false"
 			:show-drawer="open"
@@ -35,7 +35,8 @@
 			<template v-slot:right-content>
 				<Button color="gray" type="outlined" size="small">모두 읽음 표시</Button>
 			</template>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
 				tortor id purus varius, sit amet sodales erat consequat. Integer ultrices mauris vehicula eros lacinia,
 				at vulputate nibh euismod. Fusce at convallis nisl. Curabitur dui quam, rutrum quis semper vitae,
 				dapibus nec lorem. Sed maximus imperdiet urna. Suspendisse porta commodo nisl, at viverra sapien.
@@ -62,7 +63,8 @@
 				metus. Ut rhoncus arcu est, nec elementum neque ultrices sit amet. Pellentesque dignissim ligula felis,
 				nec scelerisque elit condimentum vitae. In porta magna eget augue egestas pulvinar. Suspendisse
 				malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
-				lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.</p>
+				lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
+			</p>
 		</SideDrawer>
 	</div>
 </template>
