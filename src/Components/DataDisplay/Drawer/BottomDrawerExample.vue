@@ -1,12 +1,14 @@
 <template>
 	<div id="app">
-		<button @click="toggle">Open/Close</button>
+		<Button @click="toggle">Open</Button>
 		<BottomDrawer
 			:mask-closable="true"
-			:zIndex="1002"
+			:z-index="1002"
 			:closeable="false"
 			:show-drawer="open"
 			style="height: 30%"
+			scroll
+			show-action-button
 			@close="toggle"
 		>
 			<template v-slot:title>test</template>
@@ -46,6 +48,7 @@
 
 <script>
 import BottomDrawer from '@/src/Components/DataDisplay/Drawer/BottomDrawer';
+import Button from '@/src/Components/Button/Button';
 
 export default {
 	name: 'app',
@@ -64,6 +67,7 @@ export default {
 		},
 	},
 	components: {
+		Button,
 		BottomDrawer,
 	},
 };
