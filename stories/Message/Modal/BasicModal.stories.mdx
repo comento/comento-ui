@@ -78,7 +78,14 @@ import Button from "@/src/Components/Button/Button";
             description: "모달 내용",
             defaultValue: ['본문을 작성하세요.', '문단을 분리할 때에는 margin:8px로 구분합니다.'],
             control: { type: "array" },
-        }
+        },
+        scroll: {
+            description: "스크롤 여부",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
     }}
 />
 
@@ -97,6 +104,7 @@ export const Basic = (args, { argTypes }) => ({
                 :success-message="successMessage"
                 :show-action-button="showActionButton"
                 :max-width="maxWidth"
+                :scroll="scroll"
             >
                 <template v-slot:title>
                     {{ title }}
@@ -163,7 +171,7 @@ export const Basic = (args, { argTypes }) => ({
             template: `
                 <div>
                     <Button @click="show1 = true">Open</Button>
-                    <BasicModal :show.sync="show1" align="left">
+                    <BasicModal :show.sync="show1" align="left" scroll>
                         <template v-slot:title>
                             모달 제목
                         </template>
@@ -199,7 +207,7 @@ export const Basic = (args, { argTypes }) => ({
                         </template>
                     </BasicModal>
                     <Button @click="show2 = true">Open</Button>
-                    <BasicModal :show.sync="show2" align="left" :show-action-button="true">
+                    <BasicModal :show.sync="show2" align="left" :show-action-button="true" scroll>
                         <template v-slot:title>
                             모달 제목
                         </template>

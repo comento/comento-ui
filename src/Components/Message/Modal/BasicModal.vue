@@ -15,7 +15,7 @@
 		</div>
 
 		<!-- content 영역 -->
-		<div class="c-modal--content-wrapper" :class="{ 'with-button': showActionButton }">
+		<div class="c-modal--content-wrapper" :class="computedClass">
 			<Typography type="body2" :align="align" color="gray700">
 				<slot name="content" />
 			</Typography>
@@ -77,6 +77,15 @@ export default {
 		maxWidth: {
 			type: String,
 		},
+		scroll: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		computedClass() {
+			return [this.scroll && 'scroll', this.showActionButton && 'with-button'];
+		},
 	},
 	methods: {
 		close() {
@@ -130,7 +139,7 @@ export default {
 				}
 				&.with-button {
 					&:after {
-						bottom: 108px;
+						bottom: 107px;
 					}
 				}
 			}
