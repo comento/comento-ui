@@ -136,11 +136,11 @@ input {
 				margin: 0;
 			}
 		}
-	}
 
-	.center {
-		input {
-			text-align: center;
+		&.center {
+			input {
+				text-align: center;
+			}
 		}
 	}
 }

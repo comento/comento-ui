@@ -5,21 +5,21 @@
 			<slot name="title" />
 		</Typography>
 
-		<!-- contents 영역 -->
+		<!-- content 영역 -->
 		<Typography class="mb-8" type="body2" :align="align" color="gray700">
-			<div class="c-modal_contents_wrapper">
-				<slot name="contents" />
+			<div class="c-modal--content-wrapper">
+				<slot name="content" />
 			</div>
 		</Typography>
 
 		<!-- button 영역 -->
-		<div class="c-modal_button_group">
+		<div class="c-modal--button-group">
 			<!-- 취소 버튼 -->
-			<div class="c-modal_cancel_button c-pointer" @click="close">
+			<div class="c-modal--cancel-button c-pointer" @click="close">
 				<Typography type="body1" :color="leftButtonColor" align="center">취소</Typography>
 			</div>
 			<!-- 확인 버튼 -->
-			<div class="c-modal_confirm_button c-pointer" @click="successCallback">
+			<div class="c-modal--confirm-button c-pointer" @click="successCallback">
 				<Typography type="body1" :color="rightButtonColor" align="center">
 					{{ successMessage }}
 				</Typography>
@@ -81,30 +81,29 @@ export default {
 
 <style lang="scss" scoped>
 .c-modal {
-	// parent style
-	&_mask {
-		&::v-deep .c-modal_container {
+	&--mask::v-deep {
+		.c-modal--container {
 			padding: 32px 32px 0 32px;
 			width: 343px;
 		}
 	}
 
-	&_button_group {
+	&--button-group {
 		display: flex;
 		border-top: 1px solid $gray200;
 		margin: 32px -32px 0 -32px;
 		height: 46px;
 	}
 
-	&_cancel_button,
-	&_confirm_button {
+	&--cancel-button,
+	&--confirm-button {
 		width: 50%;
 		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	&_cancel_button {
+	&--cancel-button {
 		border-right: 1px solid $gray200;
 	}
 }

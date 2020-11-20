@@ -7,20 +7,20 @@
 		:max-height="isMobile ? '' : '640px'"
 		@close="close"
 	>
-		<div class="c-modal--wrapper scroll" :class="{ 'scroll-with-button': showActionButton }">
-			<!-- title 영역 -->
-			<Typography class="mb-20" type="headline5" :align="align">
+		<!-- title 영역 -->
+		<div class="c-modal--title-wrapper">
+			<Typography type="headline5" :align="align">
 				<slot name="title" />
 			</Typography>
+		</div>
 
-			<!-- contents 영역 -->
-			<div class="c-modal--contents-wrapper">
-				<slot name="contents" />
-			</div>
+		<!-- content 영역 -->
+		<div class="c-modal--content-wrapper" :class="computedClass">
+			<slot name="content" />
 		</div>
 
 		<!-- button 영역 -->
-		<div v-if="showActionButton" class="mt-20">
+		<div v-if="showActionButton" class="c-modal--action-button-wrapper">
 			<Button size="large" :disabled="disabled" :loading="loading" full @click="successCallback">
 				{{ successMessage }}
 			</Button>
@@ -75,6 +75,15 @@ export default {
 		maxWidth: {
 			type: String,
 		},
+		scroll: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		computedClass() {
+			return [this.scroll && 'scroll', this.showActionButton && 'with-button'];
+		},
 	},
 	methods: {
 		close() {
@@ -91,39 +100,52 @@ export default {
 
 <style lang="scss" scoped>
 .c-modal {
-	&--wrapper {
-		@include pc {
-			max-height: calc(640px - 148px);
-			overflow-y: auto;
-
-			/*&.scroll {*/
-			/*	&:after {*/
-			/*		content: '';*/
-			/*		position: absolute;*/
-			/*		width: 100%;*/
-			/*		height: 30px;*/
-			/*		left: 0;*/
-			/*		bottom: 40px;*/
-			/*		background: linear-gradient(*/
-			/*			180deg,*/
-			/*			rgba(255, 255, 255, 0) 0%,*/
-			/*			rgba(255, 255, 255, 0.7) 58.33%,*/
-			/*			rgba(255, 255, 255, 0.958333) 100%*/
-			/*		);*/
-			/*	}*/
-			/*	&.scroll-with-button {*/
-			/*		&:after {*/
-			/*			bottom: 108px;*/
-			/*		}*/
-			/*	}*/
-			/*}*/
-		}
+	&--title-wrapper {
+		padding: 40px 32px 20px 32px;
 	}
 
-	&--contents-wrapper {
+	&--content-wrapper {
+		padding: 0 32px 40px 32px;
+
+		&.with-button {
+			padding-bottom: 0;
+		}
+
 		&::v-deep .c-input--motion-box.outlined ~ button {
 			height: 40px;
 		}
+
+		@include pc {
+			max-height: calc(640px - 196px);
+			overflow-y: auto;
+
+			&.scroll {
+				&:after {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 30px;
+					left: 0;
+					bottom: 0;
+					/*bottom: 40px;*/
+					background: linear-gradient(
+						180deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(255, 255, 255, 0.7) 58.33%,
+						rgba(255, 255, 255, 0.958333) 100%
+					);
+				}
+				&.with-button {
+					&:after {
+						bottom: 107px;
+					}
+				}
+			}
+		}
+	}
+
+	&--action-button-wrapper {
+		padding: 20px 32px 40px 32px;
 	}
 }
 </style>
