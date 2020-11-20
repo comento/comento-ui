@@ -7,22 +7,22 @@
 		:max-height="isMobile ? '' : '640px'"
 		@close="close"
 	>
-		<div class="c-modal--wrapper">
-			<!-- title 영역 -->
-			<Typography class="mb-16" type="headline5" :align="align">
+		<!-- title 영역 -->
+		<div class="c-modal--title-wrapper">
+			<Typography type="headline5" :align="align">
 				<slot name="title" />
 			</Typography>
+		</div>
 
-			<!-- contents 영역 -->
+		<!-- content 영역 -->
+		<div class="c-modal--content-wrapper" :class="{ 'with-button': showActionButton }">
 			<Typography type="body2" :align="align" color="gray700">
-				<div class="c-modal--contents-wrapper">
-					<slot name="contents" />
-				</div>
+				<slot name="content" />
 			</Typography>
 		</div>
 
 		<!-- button 영역 -->
-		<div v-if="showActionButton" class="mt-20">
+		<div v-if="showActionButton" class="c-modal--action-button-wrapper">
 			<Button size="large" :loading="loading" full @click="successCallback">
 				{{ successMessage }}
 			</Button>
@@ -93,16 +93,51 @@ export default {
 
 <style lang="scss" scoped>
 .c-modal {
-	&--wrapper {
-		@include pc {
-			max-height: calc(640px - 148px);
-			overflow-y: auto;
-		}
+	&--title-wrapper {
+		padding: 40px 32px 16px 32px;
 	}
-	&--contents-wrapper {
+
+	&--content-wrapper {
+		padding: 0 32px 40px 32px;
+
+		&.with-button {
+			padding-bottom: 0;
+		}
+
 		&::v-deep * + * {
 			margin-top: 8px;
 		}
+
+		@include pc {
+			max-height: calc(640px - 196px);
+			overflow-y: auto;
+
+			&.scroll {
+				&:after {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 30px;
+					left: 0;
+					/*bottom: 40px;*/
+					bottom: 0;
+					background: linear-gradient(
+						180deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(255, 255, 255, 0.7) 58.33%,
+						rgba(255, 255, 255, 0.958333) 100%
+					);
+				}
+				&.with-button {
+					&:after {
+						bottom: 108px;
+					}
+				}
+			}
+		}
+	}
+	&--action-button-wrapper {
+		padding: 20px 32px 40px 32px;
 	}
 }
 </style>

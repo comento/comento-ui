@@ -30,14 +30,12 @@ export default {
 
 <style lang="scss" scoped>
 .c-modal {
-	// parent style
-	&_mask {
-		&::v-deep .c-modal_container {
+	&--mask::v-deep {
+		.c-modal--container {
 			max-width: 100%;
 			width: 100%;
 			height: 100%;
 			border-radius: 0;
-			padding: 0;
 		}
 	}
 }

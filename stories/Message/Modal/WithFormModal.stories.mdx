@@ -2,6 +2,7 @@ import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import WithFormModal from "@/src/Components/Message/Modal/WithFormModal";
 import Input from "@/src/DataEntry/Input";
 import Button from "@/src/Components/Button/Button";
+import Typography from "@/src/Elements/Core/Typography/Typography";
 
 <Meta
     title="DESIGN SYSTEM/Message/Modal/WithFormModal"
@@ -87,7 +88,7 @@ import Button from "@/src/Components/Button/Button";
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { WithFormModal, Input, Button },
+    components: { WithFormModal, Input, Button, Typography },
     template: `
         <div>
             <Button @click="show = true">Open</Button>
@@ -104,8 +105,8 @@ export const Basic = (args, { argTypes }) => ({
                 <template v-slot:title>
                     {{ title }}
                 </template>
-                <template v-slot:contents>
-                  <div class="mb-12">title 아래 여백이 20px로 증가한다.</div>
+                <template v-slot:content>
+                  <Typography type="body2" color="gray700" class="mb-12">title 아래 여백이 20px로 증가한다.</Typography>
                   <Input full />
                 </template>
             </WithFormModal>
@@ -148,13 +149,24 @@ export const Basic = (args, { argTypes }) => ({
                         <template v-slot:title>
                           InputGroup
                         </template>
-                        <template v-slot:contents>
+                        <template v-slot:content>
                             <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between" class="mb-12">
-                                <Input type="underlined" placeholder="underlined input: 버튼 height: 36px" full class="mr-4" />
+                                <Input
+                                    type="underlined"
+                                    placeholder="underlined input: 버튼 height: 36px"
+                                    full
+                                    class="mr-4"
+                                    style="width: calc(100% - 64px)"
+                                />
                                 <Button type="outlined" @click="handleSubmitModal">버튼1</Button>
                             </div>
                             <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-                                <Input full placeholder="outlined input: 버튼 height 40px" class="mr-4" />
+                                <Input
+                                    full
+                                    placeholder="outlined input: 버튼 height 40px"
+                                    class="mr-4"
+                                    style="width: calc(100% - 64px)"
+                                />
                                 <Button type="outlined" @click="handleSubmitModal">버튼2</Button>
                             </div>
                         </template>
@@ -201,9 +213,13 @@ export const Basic = (args, { argTypes }) => ({
                         <template v-slot:title>
                           과제 제출 확인
                         </template>
-                        <template v-slot:contents>
-                            <div>한 번 제출된 과제는 수정할 수 없으니 제출 전 다시 한번 확인해주세요 :)</div>
-                            <div>제출을 원한다면 아래 문구를 작성하세요.</div>
+                        <template v-slot:content>
+                            <Typography type="body2" color="gray700" align="center" class="mb-8">
+                                한 번 제출된 과제는 수정할 수 없으니 제출 전 다시 한번 확인해주세요 :)
+                            </Typography>
+                            <Typography type="body2" color="gray700" align="center" class="mb-8">
+                                제출을 원한다면 아래 문구를 작성하세요.
+                            </Typography>
                             <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
                                 <Input :value.sync="checkValue" full placeholder="제출합니다" align="center" class="mr-4" />
                             </div>
@@ -212,9 +228,97 @@ export const Basic = (args, { argTypes }) => ({
                 </div>
             `,
             components: {
-                WithFormModal, Input, Button
+                WithFormModal, Input, Button, Typography
             }
         }}
     </Story>
 </Canvas>
 
+### Scroll
+<Canvas>
+    <Story name="Scroll" height="100px">
+        {{
+            data: () => ({
+                show1: false,
+                show2: false,
+            }),
+            template: `
+                <div>
+                    <Button @click="show1 = true">Open</Button>
+                    <WithFormModal :show.sync="show1" align="left">
+                        <template v-slot:title>
+                            모달 제목
+                        </template>
+                        <template v-slot:content>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
+                            tortor id purus varius, sit amet sodales erat consequat. Integer ultrices mauris vehicula eros lacinia,
+                            at vulputate nibh euismod. Fusce at convallis nisl. Curabitur dui quam, rutrum quis semper vitae,
+                            dapibus nec lorem. Sed maximus imperdiet urna. Suspendisse porta commodo nisl, at viverra sapien.
+                            Praesent in felis enim. Sed mollis enim vel velit dapibus, eget consequat dolor convallis. Vivamus sit
+                            amet ornare ex. Morbi porttitor blandit eros sit amet tincidunt. Vivamus imperdiet molestie lectus ac
+                            tristique. Phasellus commodo commodo ligula, sollicitudin auctor erat rhoncus ac. Quisque lectus neque,
+                            iaculis nec mauris sed, congue rutrum sem. Fusce cursus, tortor ut placerat auctor, risus arcu porttitor
+                            tellus, ac pharetra lacus lectus eu dolor. Sed metus nibh, tincidunt pharetra pulvinar a, venenatis et
+                            eros. Cras et libero mauris. Quisque bibendum odio ut ornare interdum. Nunc eu nulla sollicitudin,
+                            facilisis dolor vel, placerat nibh. Donec eu ex iaculis, tincidunt turpis et, rhoncus neque. Mauris
+                            feugiat urna urna. Donec ac dapibus leo, sit amet porttitor nisi. Mauris felis leo, scelerisque
+                            scelerisque lobortis id, egestas tincidunt dui. Vivamus facilisis felis lectus, id tincidunt nisl
+                            interdum et. Praesent accumsan congue mauris, non pellentesque enim feugiat vel. Praesent in ullamcorper
+                            erat. Etiam mollis sed tellus a mattis. Ut placerat euismod egestas. Mauris blandit nunc eu justo
+                            semper, sit amet interdum eros mollis. Quisque vitae massa purus. Phasellus at orci arcu. Aliquam erat
+                            volutpat. Mauris bibendum orci nec ex semper, ac aliquam sapien placerat. Mauris cursus egestas justo id
+                            elementum. Suspendisse quis cursus massa. Cras fermentum, risus non efficitur condimentum, orci arcu
+                            sollicitudin diam, pharetra malesuada libero odio quis risus. Pellentesque in dui sodales, dapibus risus
+                            ullamcorper, bibendum diam. Praesent sagittis nibh velit, quis tincidunt lorem viverra nec. Phasellus
+                            eget placerat ante. Nulla ac nulla sed erat venenatis commodo. Aliquam id iaculis odio. Maecenas a
+                            maximus orci. In hac habitasse platea dictumst. Quisque quis diam tellus. In ac euismod libero. Aliquam
+                            semper, massa non dictum porttitor, nisi nulla aliquam risus, ornare iaculis tellus ligula sed nulla. Ut
+                            aliquet ligula ac finibus fringilla. Pellentesque pulvinar eros vulputate, bibendum tortor a, imperdiet
+                            metus. Ut rhoncus arcu est, nec elementum neque ultrices sit amet. Pellentesque dignissim ligula felis,
+                            nec scelerisque elit condimentum vitae. In porta magna eget augue egestas pulvinar. Suspendisse
+                            malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
+                            lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
+                        </template>
+                    </WithFormModal>
+                    <Button @click="show2 = true">Open</Button>
+                    <WithFormModal :show.sync="show2" align="left" :show-action-button="true">
+                        <template v-slot:title>
+                            모달 제목
+                        </template>
+                        <template v-slot:content>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
+                            tortor id purus varius, sit amet sodales erat consequat. Integer ultrices mauris vehicula eros lacinia,
+                            at vulputate nibh euismod. Fusce at convallis nisl. Curabitur dui quam, rutrum quis semper vitae,
+                            dapibus nec lorem. Sed maximus imperdiet urna. Suspendisse porta commodo nisl, at viverra sapien.
+                            Praesent in felis enim. Sed mollis enim vel velit dapibus, eget consequat dolor convallis. Vivamus sit
+                            amet ornare ex. Morbi porttitor blandit eros sit amet tincidunt. Vivamus imperdiet molestie lectus ac
+                            tristique. Phasellus commodo commodo ligula, sollicitudin auctor erat rhoncus ac. Quisque lectus neque,
+                            iaculis nec mauris sed, congue rutrum sem. Fusce cursus, tortor ut placerat auctor, risus arcu porttitor
+                            tellus, ac pharetra lacus lectus eu dolor. Sed metus nibh, tincidunt pharetra pulvinar a, venenatis et
+                            eros. Cras et libero mauris. Quisque bibendum odio ut ornare interdum. Nunc eu nulla sollicitudin,
+                            facilisis dolor vel, placerat nibh. Donec eu ex iaculis, tincidunt turpis et, rhoncus neque. Mauris
+                            feugiat urna urna. Donec ac dapibus leo, sit amet porttitor nisi. Mauris felis leo, scelerisque
+                            scelerisque lobortis id, egestas tincidunt dui. Vivamus facilisis felis lectus, id tincidunt nisl
+                            interdum et. Praesent accumsan congue mauris, non pellentesque enim feugiat vel. Praesent in ullamcorper
+                            erat. Etiam mollis sed tellus a mattis. Ut placerat euismod egestas. Mauris blandit nunc eu justo
+                            semper, sit amet interdum eros mollis. Quisque vitae massa purus. Phasellus at orci arcu. Aliquam erat
+                            volutpat. Mauris bibendum orci nec ex semper, ac aliquam sapien placerat. Mauris cursus egestas justo id
+                            elementum. Suspendisse quis cursus massa. Cras fermentum, risus non efficitur condimentum, orci arcu
+                            sollicitudin diam, pharetra malesuada libero odio quis risus. Pellentesque in dui sodales, dapibus risus
+                            ullamcorper, bibendum diam. Praesent sagittis nibh velit, quis tincidunt lorem viverra nec. Phasellus
+                            eget placerat ante. Nulla ac nulla sed erat venenatis commodo. Aliquam id iaculis odio. Maecenas a
+                            maximus orci. In hac habitasse platea dictumst. Quisque quis diam tellus. In ac euismod libero. Aliquam
+                            semper, massa non dictum porttitor, nisi nulla aliquam risus, ornare iaculis tellus ligula sed nulla. Ut
+                            aliquet ligula ac finibus fringilla. Pellentesque pulvinar eros vulputate, bibendum tortor a, imperdiet
+                            metus. Ut rhoncus arcu est, nec elementum neque ultrices sit amet. Pellentesque dignissim ligula felis,
+                            nec scelerisque elit condimentum vitae. In porta magna eget augue egestas pulvinar. Suspendisse
+                            malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
+                            lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
+                        </template>
+                    </WithFormModal>
+                </div>
+            `,
+            components: { Button, WithFormModal }
+        }}
+    </Story>
+</Canvas>
