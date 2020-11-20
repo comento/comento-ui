@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<transition name="fade" mode="out-in">
-			<div v-if="$slots.default" :style="indexCls()" :class="{ mask }" @click="onMask"></div>
+			<div v-if="$slots.default" :style="indexCls()" :class="{ mask }" @click="onMask" />
 		</transition>
 		<transition :enter-active-class="alignInCls" :leave-active-class="alignOutCls">
 			<div
@@ -13,7 +13,7 @@
 				<div v-if="closeable" class="c-drawer--close-button" @click.stop="close">
 					<Icon name="IconCloseLargeLine" color="gray800" />
 				</div>
-				<slot></slot>
+				<slot />
 			</div>
 		</transition>
 	</div>
@@ -155,8 +155,8 @@ $--c-drawer-close-width: 14px !default;
 
 	&--close-button {
 		position: absolute;
-		right: 25px;
-		top: 25px;
+		right: 20px;
+		top: 20px;
 		// z-index: 100;
 		color: currentColor;
 		font-size: 20px;
