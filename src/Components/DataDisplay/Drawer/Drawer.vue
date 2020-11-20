@@ -21,6 +21,7 @@
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import paddingMixin from '@/mixins/paddingMixin';
+
 export default {
 	name: 'Drawer',
 	mixins: [paddingMixin],
@@ -118,6 +119,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '@/assets/style/base/animation.scss';
+
 $--c-drawer-close-width: 14px !default;
 .c-drawer {
 	background: $white;

@@ -1,16 +1,41 @@
 <template>
 	<div id="app">
+		<div class="demo-container">
+			<div>
+				<input id="left" v-model="align" type="radio" value="left" />
+				<label for="left">left</label>
+			</div>
+
+			<div>
+				<input id="right" v-model="align" type="radio" value="right" />
+				<label for="right">right</label>
+			</div>
+
+			<div>
+				<input id="up" v-model="align" type="radio" value="up" />
+				<label for="up">up</label>
+			</div>
+
+			<div>
+				<input id="down" v-model="align" type="radio" value="down" />
+				<label for="down">down</label>
+			</div>
+		</div>
+
 		<button @click="toggle">Open/Close</button>
-		<BottomDrawer
+		<SideDrawer
 			:mask-closable="true"
-			:zIndex="1002"
+			:z-index="1002"
+			:align="align"
 			:closeable="false"
 			:show-drawer="open"
-			style="height: 30%"
 			@close="toggle"
 		>
 			<template v-slot:title>test</template>
-			<div>
+			<template v-slot:right-content>
+				<Button color="gray" type="outlined" size="small">모두 읽음 표시</Button>
+			</template>
+			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
 				tortor id purus varius, sit amet sodales erat consequat. Integer ultrices mauris vehicula eros lacinia,
 				at vulputate nibh euismod. Fusce at convallis nisl. Curabitur dui quam, rutrum quis semper vitae,
@@ -39,14 +64,14 @@
 				nec scelerisque elit condimentum vitae. In porta magna eget augue egestas pulvinar. Suspendisse
 				malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
 				lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
-			</div>
-		</BottomDrawer>
+			</p>
+		</SideDrawer>
 	</div>
 </template>
 
 <script>
-import BottomDrawer from './BottomDrawer';
-import Icon from '@/src/Elements/Core/Icon/Icon';
+import Button from '@/src/Components/Button/Button';
+import SideDrawer from './SideDrawer';
 
 export default {
 	name: 'app',
@@ -54,7 +79,13 @@ export default {
 		return {
 			open: false,
 			innerOpen: false,
+			align: 'left',
 		};
+	},
+	watch: {
+		align() {
+			this.open = false;
+		},
 	},
 	methods: {
 		toggle() {
@@ -65,8 +96,8 @@ export default {
 		},
 	},
 	components: {
-		BottomDrawer,
-		Icon,
+		Button,
+		SideDrawer,
 	},
 };
 </script>
