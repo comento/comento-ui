@@ -83,7 +83,6 @@ export default {
 		max-width: 90%;
 		width: 100%;
 		margin: 0 auto;
-		padding: 40px 32px;
 		background-color: $white;
 		border-radius: 4px;
 		position: absolute;

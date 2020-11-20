@@ -286,10 +286,8 @@ export default {
 		if (this.loading) {
 			const colorMapKey =
 				this.reversed && this.spinnerColor !== 'gray' ? `${this.spinnerColor}Reversed` : this.spinnerColor;
-			this.$refs['icon']
-				.getElementsByClassName('circle')[0]
-				.setAttribute('stroke', colorMap[colorMapKey]['stroke']);
-			this.$refs['icon'].getElementsByClassName('quarter')[0].setAttribute('fill', colorMap[colorMapKey]['fill']);
+			this.$refs['icon'].querySelectorAll('.circle')[0].setAttribute('stroke', colorMap[colorMapKey]['stroke']);
+			this.$refs['icon'].querySelectorAll('.quarter')[0].setAttribute('fill', colorMap[colorMapKey]['fill']);
 		}
 	},
 	components: {
