@@ -16,8 +16,9 @@
 
 <script>
 import Box from '@/src/Components/DataDisplay/Box';
-import Drawer from '@/src/DataDisplay/Drawer';
-import Typography from '../Elements/Core/Typography/Typography';
+import Drawer from '@/src/Components/DataDisplay/Drawer/Drawer';
+import Typography from '@/src/Elements/Core/Typography/Typography';
+
 export default {
 	name: 'SideDrawer',
 	props: {

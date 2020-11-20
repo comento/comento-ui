@@ -1,5 +1,4 @@
 import * as components from './Components';
-import * as dataEntry from './DataEntry';
 import * as elements from './Elements';
 import '@/plugins';
 import '@/mixins';
@@ -14,12 +13,7 @@ const ComponentLibrary = {
 			Vue.component(`C${component.name}`, component);
 		}
 
-		for (const componentName in dataEntry) {
-			const component = dataEntry[componentName];
-
-			Vue.component(`C${component.name}`, component);
-		}
-
+		// elements
 		for (const componentName in elements) {
 			const component = elements[componentName];
 

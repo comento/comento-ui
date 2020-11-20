@@ -22,8 +22,9 @@
 </template>
 
 <script>
-import Drawer from '@/src/DataDisplay/Drawer';
-import Typography from '../Elements/Core/Typography/Typography';
+import Drawer from '@/src/Components/DataDisplay/Drawer/Drawer';
+import Typography from '@/src/Elements/Core/Typography/Typography';
+
 export default {
 	name: 'BottomDrawer',
 	props: {
@@ -45,7 +46,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 ::v-deep .c-drawer {
 	@include border-radius(16px 16px 0 0);
 	@include shadow1();
