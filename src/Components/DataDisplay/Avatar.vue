@@ -118,7 +118,7 @@ export default {
 		background-image: url('../../../assets/images/avatar/my_anonymous_' + (random(29) + 1) + '.svg');
 	}
 	&.img {
-		background-size: contain;
+		background-size: 100% 100%;
 	}
 	&_icon {
 		display: inline-block;
