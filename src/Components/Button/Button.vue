@@ -102,10 +102,11 @@ export default {
 	@include align-items(center);
 	@include justify-content(center);
 	position: relative;
-	&:disabled,
-	.loading {
+	&:disabled {
 		cursor: not-allowed !important;
-		pointer-events: none;
+		&:active {
+			pointer-events: none;
+		}
 	}
 	&--loading {
 		position: absolute;
@@ -196,6 +197,10 @@ export default {
 		&:hover {
 			background-color: $green100;
 		}
+		&:disabled {
+			color: $green100;
+			background: none;
+		}
 	}
 	&.outlined {
 		background-color: $white;
@@ -232,6 +237,10 @@ export default {
 		color: $blue600;
 		&:hover {
 			background-color: $blue100;
+		}
+		&:disabled {
+			color: $blue100;
+			background: none;
 		}
 	}
 	&.outlined {
@@ -270,6 +279,10 @@ export default {
 		&:hover {
 			background-color: $gray100;
 		}
+		&:disabled {
+			color: $gray100;
+			background: none;
+		}
 	}
 	&.outlined {
 		background-color: $white;
@@ -279,6 +292,8 @@ export default {
 			background-color: $gray100;
 		}
 		&:disabled {
+			color: $gray100;
+			border: 1px solid $gray100;
 			background-color: $white;
 		}
 		.c-button--loading {
@@ -304,6 +319,10 @@ export default {
 		color: $red600;
 		&:hover {
 			background-color: $red000;
+		}
+		&:disabled {
+			color: $red100;
+			background: none;
 		}
 	}
 	&.outlined {
