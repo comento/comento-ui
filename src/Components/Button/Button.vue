@@ -102,10 +102,11 @@ export default {
 	@include align-items(center);
 	@include justify-content(center);
 	position: relative;
-	&:disabled,
-	.loading {
+	&:disabled {
 		cursor: not-allowed !important;
-		pointer-events: none;
+		&:active {
+			pointer-events: none;
+		}
 	}
 	&--loading {
 		position: absolute;
