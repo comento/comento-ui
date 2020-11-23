@@ -7,7 +7,7 @@
 			autocomplete="off"
 			type="text"
 			class="c-input--box full"
-			:class="[computedAlign]"
+			:class="[computedAlign, computedError]"
 			:placeholder="placeholder"
 			:style="computedStyle"
 			v-bind="$attrs"
@@ -34,6 +34,9 @@ export default {
 		align: {
 			type: String,
 			default: 'left',
+			validator(value) {
+				return ['left', 'center'].indexOf(value) !== -1;
+			},
 		},
 		id: {
 			type: String,
@@ -42,12 +45,22 @@ export default {
 		full: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		type: {
 			type: String,
 			default: 'outlined',
 			validator(value) {
 				return ['outlined', 'underlined'].indexOf(value) !== -1;
+			},
+		},
+		error: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
 			},
 		},
 	},
@@ -76,6 +89,9 @@ export default {
 		},
 		computedFull() {
 			return this.full && 'full';
+		},
+		computedError() {
+			return this.error && 'error';
 		},
 	},
 	methods: {
@@ -111,8 +127,13 @@ input {
 				border-top: 0;
 				border-left: 0;
 				border-right: 0;
+				border-radius: 0;
 				height: 36px;
 				padding: 0 4px;
+
+				&.error {
+					border-radius: 0;
+				}
 			}
 		}
 
@@ -130,6 +151,10 @@ input {
 			@include transition(all 0.2s ease);
 			&-lg {
 				height: 48px;
+			}
+
+			&.error {
+				border-color: $red600;
 			}
 
 			@include pc {
