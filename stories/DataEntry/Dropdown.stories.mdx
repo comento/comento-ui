@@ -8,13 +8,6 @@ import Input from "@/src/Components/DataEntry/Input";
 <Meta
     title="DESIGN SYSTEM/DataEntry/Dropdown"
     component={ Dropdown }
-    argTypes={{
-        maxHeight: {
-            description: "Dropdown 최대 높이",
-            defaultValue: "130px",
-            control: { type: "text" },
-        },
-    }}
 />
 
 
@@ -25,7 +18,7 @@ export const Basic = (args, { argTypes }) => ({
         listItems: ['List1', 'List2', 'List3', 'List4', 'List5'],
     }),
     template:
-        `<Dropdown :max-height="maxHeight" style="width: 197px">
+        `<Dropdown style="width: 197px">
           <Input />
           <template v-slot:content>
             <List>
