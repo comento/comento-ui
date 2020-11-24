@@ -35,7 +35,7 @@ export default {
 	&--wrapper {
 		position: absolute;
 		width: 100%;
-		padding: 8px 12px;
+		padding: 8px 16px;
 		background: $white;
 		@include shadow4();
 		overflow-y: auto;
