@@ -92,6 +92,8 @@ export default {
 	z-index: 9999;
 	@include border-radius(4px);
 	@include shadow4();
+	display: table; // width: fit-content 대체
+	max-width: 90%;
 
 	&--message {
 		margin: 0;
