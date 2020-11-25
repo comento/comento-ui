@@ -1,8 +1,8 @@
 <template>
 	<div class="c-application c-dropdown--container">
 		<slot />
-		<div v-if="$slots['contents']" class="c-dropdown--wrapper" :style="computedStyle">
-			<slot name="contents" />
+		<div v-if="$slots['content']" class="c-dropdown--wrapper">
+			<slot name="content" />
 		</div>
 	</div>
 </template>
@@ -10,19 +10,6 @@
 <script>
 export default {
 	name: 'Dropdown',
-	props: {
-		maxHeight: {
-			type: String,
-			default: 'auto',
-		},
-	},
-	computed: {
-		computedStyle() {
-			return {
-				maxHeight: this.maxHeight !== 'auto' && this.maxHeight,
-			};
-		},
-	},
 };
 </script>
 
@@ -30,12 +17,13 @@ export default {
 .c-dropdown {
 	&--container {
 		position: relative;
+		height: 40px;
 	}
 
 	&--wrapper {
 		position: absolute;
 		width: 100%;
-		padding: 8px 12px;
+		padding: 8px 16px;
 		background: $white;
 		@include shadow4();
 		overflow-y: auto;
