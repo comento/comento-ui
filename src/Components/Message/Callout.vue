@@ -120,7 +120,7 @@ export default {
 
 		// type
 		&.information {
-			background-color: $gray100;
+			background-color: $gray000;
 		}
 		&.alert {
 			background-color: $red000;

@@ -141,7 +141,7 @@ input {
 			box-sizing: border-box;
 			height: 40px;
 			line-height: 24px;
-			padding: 0 12px;
+			padding: 0 16px;
 			font-size: 16px;
 			border: 1px solid $gray200;
 			@include border-radius(3px);
