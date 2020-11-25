@@ -82,6 +82,7 @@ export default {
 <style lang="scss" scoped>
 .c-modal {
 	&--mask::v-deep {
+		z-index: 9999;
 		.c-modal--container {
 			padding: 32px 32px 0 32px;
 			width: 343px;
