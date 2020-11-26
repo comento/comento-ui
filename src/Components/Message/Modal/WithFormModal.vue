@@ -4,7 +4,7 @@
 		:show-close-button="showCloseButton"
 		:max-width="maxWidth"
 		:persistent="persistent"
-		:max-height="isMobile ? '' : '640px'"
+		:max-height="isMobile ? '86vh' : '640px'"
 		@close="close"
 	>
 		<div class="c-modal--wrapper" :class="computedClass">
@@ -106,9 +106,7 @@ export default {
 		padding: 40px 0;
 		&.scroll {
 			.c-modal--content-wrapper {
-				max-height: calc(640px - 129px);
 				padding-bottom: 4px;
-				overflow-y: auto;
 
 				&:after {
 					content: '';
@@ -128,7 +126,10 @@ export default {
 
 			&.with-button {
 				.c-modal--content-wrapper {
-					max-height: calc(640px - 207px);
+					max-height: calc(640px - 336px);
+					@include pc {
+						max-height: calc(640px - 207px);
+					}
 					&:after {
 						bottom: calc(40px + 48px + 24px - 16px);
 					}
@@ -147,6 +148,12 @@ export default {
 
 		&::v-deep .c-input--motion-box.outlined ~ button {
 			height: 40px;
+		}
+
+		max-height: calc(640px - 265px);
+		overflow-y: auto;
+		@include pc {
+			max-height: calc(640px - 129px);
 		}
 	}
 
