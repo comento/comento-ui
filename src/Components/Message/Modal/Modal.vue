@@ -101,7 +101,6 @@ export default {
 		right: 12px;
 
 		@include pc {
-			position: fixed;
 			top: 0;
 			right: -38px;
 		}
