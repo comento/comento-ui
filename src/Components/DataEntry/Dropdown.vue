@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-dropdown--container">
+	<div class="c-dropdown--container">
 		<!-- 드롭다운 아이템 영역 -->
 		<div class="c-dropdown--item-wrapper">
 			<slot />

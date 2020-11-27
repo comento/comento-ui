@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-list-item--container" tabindex="0" :class="size" v-on="$listeners">
+	<div class="c-list-item--container" tabindex="0" :class="size" v-on="$listeners">
 		<slot />
 	</div>
 </template>

@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="c-application c-button c-pointer"
+		class="c-button c-pointer"
 		:class="[computedSize, computedColor, computedFull, computedType, { loading: loading }]"
 		v-bind="$attrs"
 		:disabled="disabled"

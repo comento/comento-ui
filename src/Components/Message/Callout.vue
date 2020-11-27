@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-callout_container" :class="[computedSize, computedType, computedFull]">
+	<div class="c-callout_container" :class="[computedSize, computedType, computedFull]">
 		<div class="c-callout_wrapper">
 			<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
 			<Typography class="c-callout_message" color="gray700" :type="computedFontType">

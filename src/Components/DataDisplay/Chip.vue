@@ -1,5 +1,5 @@
 <template>
-	<span class="c-application c-chip" :class="[computedType, computedColor, computedSize]">
+	<span class="c-chip" :class="[computedType, computedColor, computedSize]">
 		<slot />
 	</span>
 </template>

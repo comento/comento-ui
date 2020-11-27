@@ -7,7 +7,7 @@
 			<div
 				v-if="$slots.default"
 				:class="{ closeable, [align.toLowerCase()]: true }"
-				class="c-application c-drawer"
+				class="c-drawer"
 				:style="styles"
 			>
 				<div v-if="closeable" class="c-drawer--close-button" @click.stop="close">

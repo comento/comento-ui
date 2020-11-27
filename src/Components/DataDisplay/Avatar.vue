@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-avatar_container">
+	<div class="c-avatar_container">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
 		<Typography class="flex mt-8" :class="[computedAlign]" type="caption1" :color="textColor">
 			{{ text }}

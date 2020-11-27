@@ -6,11 +6,7 @@ ex) <grid>
     </grid>
 -->
 <template>
-	<div
-		class="c-application"
-		:class="[computedSm, computedOffsetSm, computedLg, computedOffsetLg, computedGutters]"
-		:style="computedStyle"
-	>
+	<div :class="[computedSm, computedOffsetSm, computedLg, computedOffsetLg, computedGutters]" :style="computedStyle">
 		<slot />
 	</div>
 </template>

@@ -1,6 +1,5 @@
 <template>
 	<v-popover
-		class="c-application"
 		:placement="mapPlacement"
 		:handle-resize="true"
 		popover-base-class="c-popover"

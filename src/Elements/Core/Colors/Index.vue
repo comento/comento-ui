@@ -3,7 +3,7 @@
 		<div
 			v-for="color in Object.keys(colors)"
 			:key="color"
-			class="c-application c-color"
+			class="c-color"
 			:class="mapTextColor(color)"
 			:style="`background-color: ${colors[color]}`"
 		>

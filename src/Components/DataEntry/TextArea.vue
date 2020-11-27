@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-textarea" :class="[computedType]">
+	<div class="c-textarea" :class="[computedType]">
 		<textarea
 			ref="input"
 			v-model="sync_value"
