@@ -42,6 +42,11 @@ export default {
 			};
 		},
 	},
+	watch: {
+		show() {
+			this.show && this.addNotScroll();
+		},
+	},
 	mounted() {
 		document.addEventListener('keydown', e => this.handleCloseKeycode(e));
 	},
@@ -49,6 +54,12 @@ export default {
 		document.removeEventListener('keydown', e => this.handleCloseKeycode(e));
 	},
 	methods: {
+		addNotScroll() {
+			document.querySelector('body').classList.add('not-scroll');
+		},
+		removeNotScroll() {
+			document.querySelector('body').classList.remove('not-scroll');
+		},
 		handleCloseKeycode(e) {
 			if (this.show && e.keyCode === 27) {
 				this.close();
@@ -60,6 +71,7 @@ export default {
 			}
 		},
 		close() {
+			this.removeNotScroll();
 			this.$emit('close');
 		},
 	},

@@ -4,7 +4,7 @@
 		<component
 			:is="name"
 			ref="icon"
-			class="c-application c-icon"
+			class="c-icon"
 			:class="computedSpinnerColor"
 			:style="computedStyle"
 			v-bind="$attrs"

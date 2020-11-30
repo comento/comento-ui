@@ -28,7 +28,7 @@ export const Basic = (args, { argTypes }) => ({
         `<Dropdown :max-height="maxHeight" style="width: 197px">
           <Input />
           <template v-slot:content>
-            <List>
+            <List spacing>
               <template v-for="(item, index) in listItems">
                 <ListItem :key="'list-item-' + index">
                   {{ item }}

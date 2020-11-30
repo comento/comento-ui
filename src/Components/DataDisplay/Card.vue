@@ -1,5 +1,5 @@
 <template>
-	<article class="edu_card">
+	<article class="c-application edu_card">
 		<div class="camp_info_wrapper">
 			<div class="edu_card_subtitle mb-4">
 				<Typography type="caption1" color="gray900" font-weight="700">

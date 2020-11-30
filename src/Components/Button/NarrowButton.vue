@@ -1,5 +1,11 @@
 <template>
-	<button class="c-narrow-button" :style="[computedColor]" v-bind="$attrs" type="button" v-on="$listeners">
+	<button
+		class="c-application c-narrow-button"
+		:style="[computedColor]"
+		v-bind="$attrs"
+		type="button"
+		v-on="$listeners"
+	>
 		<slot />
 	</button>
 </template>

@@ -24,7 +24,6 @@ export default {
 	&--container {
 		padding: 8px 6px;
 		cursor: pointer;
-		outline: none;
 
 		&:hover,
 		&:focus {
