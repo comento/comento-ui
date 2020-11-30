@@ -1,5 +1,5 @@
 <template>
-	<div class="c-input--motion-box" :class="[computedAlign, computedFull, computedType]">
+	<div class="c-application c-input--motion-box" :class="[computedAlign, computedFull, computedType]">
 		<input
 			:id="computedId"
 			ref="question"

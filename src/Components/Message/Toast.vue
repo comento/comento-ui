@@ -1,6 +1,6 @@
 <template>
 	<transition name="slide-fade">
-		<aside v-if="sync_show" class="c-toast" :class="[computedType, computedPosition]">
+		<aside v-if="sync_show" class="c-application c-toast" :class="[computedType, computedPosition]">
 			<Typography class="c-toast--message" element="p" type="body2">
 				<div class="c-toast--icon" :style="$slots['left-icon'] && 'margin-right: 4px'">
 					<slot name="left-icon" />

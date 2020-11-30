@@ -1,5 +1,5 @@
 <template>
-	<div class="c-list--container" :class="computedSpacing">
+	<div class="c-application c-list--container" :class="computedSpacing">
 		<slot />
 	</div>
 </template>

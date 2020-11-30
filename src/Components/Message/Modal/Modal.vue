@@ -1,5 +1,5 @@
 <template>
-	<div v-if="show" class="c-modal--mask" @click="handleCloseModal">
+	<div v-if="show" class="c-application c-modal--mask" @click="handleCloseModal">
 		<div class="c-modal--container" :style="[computedStyle]" @click.stop>
 			<div v-if="showCloseButton" class="c-modal--close-button" @click="close">
 				<Icon name="IconCloseXLargeLine" color="gray400" />

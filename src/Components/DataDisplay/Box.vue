@@ -1,5 +1,5 @@
 <template>
-	<div class="c-box" :class="classes" :style="styles">
+	<div class="c-application c-box" :class="classes" :style="styles">
 		<slot />
 	</div>
 </template>

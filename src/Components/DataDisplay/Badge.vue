@@ -1,5 +1,5 @@
 <template>
-	<div class="c-badge_container">
+	<div class="c-application c-badge_container">
 		<slot></slot>
 		<div v-if="text" class="c-badge_wrapper">
 			<div class="c-badge" :class="[computedCircle]" :style="[computedStyle]">

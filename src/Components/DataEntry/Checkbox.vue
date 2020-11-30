@@ -1,5 +1,5 @@
 <template>
-	<div class="c-checkbox">
+	<div class="c-application c-checkbox">
 		<input
 			:id="computedId"
 			v-model="sync_value"

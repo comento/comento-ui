@@ -7,7 +7,7 @@ ex) <grid> <- 이부분
     </grid>
 -->
 <template>
-	<div class="c-grid" :class="[computedFluid]" :style="[computedBgColor]">
+	<div class="c-application c-grid" :class="[computedFluid]" :style="[computedBgColor]">
 		<slot />
 	</div>
 </template>

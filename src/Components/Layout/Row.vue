@@ -6,7 +6,7 @@ ex) <grid>
     </grid>
 -->
 <template>
-	<div class="c-row" :class="[computedGutters]">
+	<div class="c-application c-row" :class="[computedGutters]">
 		<slot />
 	</div>
 </template>
