@@ -2,25 +2,14 @@
 @import "variables";
 @import "fonts";
 
-* {
+*, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  outline: none;
 }
 
 html {
-  width: 100%;
-  min-height: 100%;
-  font-size: 10px;
-  position: relative;
-
   @include pc {
     overflow-y: $html-overflow-y;
     scrollbar-3dLight-Color: $gray100;
@@ -58,71 +47,9 @@ html {
 }
 
 body {
-  width: 100%;
-  color: $gray800;
-  font-family: $web-font-family;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 25px;
-  background-color: white;
-  @include selection($body-selection);
-  @include user-select($body-user-select);
+  @include selection($body-selection); // 드래그 색상
 }
 
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-// 공통
-a {
-  color: $gray800;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-ul {
-  padding-left: 0;
-  list-style: none;
-}
-
-em, address {
-  font-style: normal;
-}
-
-fieldset {
-  margin: 0;
-  padding: 0;
-  &, &:hover, &:focus {
-    border: 0;
-  }
-}
-
-input,
-input[type="search"],
-input[type="text"] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
-  &:before,
-  &:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-}
-
-input[disabled] {
-  background-color: #eee;
-}
-
-select {
-  -webkit-border-radius: 0; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
-  -moz-border-radius: 0; /* Firefox 1-3.6 */
-  border-radius: 0;
-}
-
-header, footer, section, article, aside, div {
+body, header, footer, section, article, aside, div {
   @include user-select($div-user-select);
 }
