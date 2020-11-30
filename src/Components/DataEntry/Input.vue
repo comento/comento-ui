@@ -128,7 +128,6 @@ input {
 				border-left: 0;
 				border-right: 0;
 				border-radius: 0;
-				height: 36px;
 				padding: 0 4px;
 
 				&.error {
