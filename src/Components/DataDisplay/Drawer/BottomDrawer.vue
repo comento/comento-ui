@@ -7,7 +7,7 @@
 		:show-close-button="true"
 		@close="$emit('close')"
 	>
-		<div v-if="showDrawer" class="c-application c-bottom-drawer">
+		<div v-if="showDrawer" class="c-bottom-drawer">
 			<div class="c-bottom-drawer--title-wrapper">
 				<Typography type="headline6" :font-weight="700">
 					<slot name="title" />

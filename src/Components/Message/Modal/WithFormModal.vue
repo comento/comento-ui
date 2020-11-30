@@ -146,10 +146,6 @@ export default {
 		padding-left: 32px;
 		padding-right: 32px;
 
-		&::v-deep .c-input--motion-box.outlined ~ button {
-			height: 40px;
-		}
-
 		max-height: calc(640px - 265px);
 		overflow-y: auto;
 		@include pc {

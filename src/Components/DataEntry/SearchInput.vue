@@ -1,5 +1,5 @@
 <template>
-	<div class="search_input_container" :class="[computedType, computedFull]">
+	<div class="c-application search_input_container" :class="[computedType, computedFull]">
 		<label for="search-input">
 			<!-- 자동완성 방지용 더미 input -->
 			<input style="display: none" aria-hidden="true" />

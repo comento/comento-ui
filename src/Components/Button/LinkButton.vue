@@ -1,5 +1,5 @@
 <template>
-	<a class="c-link-button" v-bind="$attrs" :href="to" v-on="$listeners">
+	<a class="c-application c-link-button" v-bind="$attrs" :href="to" v-on="$listeners">
 		<Typography :type="type" :color="color">
 			<slot />
 		</Typography>
