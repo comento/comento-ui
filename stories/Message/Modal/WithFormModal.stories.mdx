@@ -3,6 +3,7 @@ import WithFormModal from "@/src/Components/Message/Modal/WithFormModal";
 import Input from "@/src/Components/DataEntry/Input";
 import Button from "@/src/Components/Button/Button";
 import Typography from "@/src/Elements/Core/Typography/Typography";
+import InputGroup from "@/src/Components/DataEntry/InputGroup";
 
 <Meta
     title="DESIGN SYSTEM/Message/Modal/WithFormModal"
@@ -160,31 +161,31 @@ export const Basic = (args, { argTypes }) => ({
                           InputGroup
                         </template>
                         <template v-slot:content>
-                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between" class="mb-12">
-                                <Input
-                                    type="underlined"
-                                    placeholder="underlined input: 버튼 height: 36px"
-                                    full
-                                    class="mr-4"
-                                    style="width: calc(100% - 64px)"
-                                />
-                                <Button type="outlined" @click="handleSubmitModal">버튼1</Button>
-                            </div>
-                            <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-                                <Input
-                                    full
-                                    placeholder="outlined input: 버튼 height 40px"
-                                    class="mr-4"
-                                    style="width: calc(100% - 64px)"
-                                />
-                                <Button type="outlined" @click="handleSubmitModal">버튼2</Button>
-                            </div>
+                            <InputGroup class="mb-12">
+                                <span style="width: 100%" class="mr-4">
+                                    <Input
+                                        type="underlined"
+                                        placeholder="쿠폰코드를 입력하세요"
+                                        full
+                                    />
+                                </span>
+                                <Button type="outlined" @click="handleSubmitModal">등록하기</Button>
+                            </InputGroup>
+                            <InputGroup>
+                                <span class="mr-4">
+                                    <Input
+                                        full
+                                        placeholder="쿠폰코드를 입력하세요"
+                                    />
+                                </span>
+                                <Button type="outlined" color="gray" @click="handleSubmitModal">등록하기</Button>
+                            </InputGroup>
                         </template>
                     </WithFormModal>
                 </div>
             `,
             components: {
-                WithFormModal, Input, Button
+                WithFormModal, Input, Button, InputGroup
             }
         }}
     </Story>
