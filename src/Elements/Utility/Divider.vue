@@ -1,6 +1,6 @@
 <template>
 	<hr
-		class="c-application c-divider"
+		class="c-divider"
 		:style="computedStyle"
 		:class="[computedType, computedVertical, computedDirection, computedColor]"
 	/>

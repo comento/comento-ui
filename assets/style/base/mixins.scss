@@ -1,5 +1,6 @@
 @import "color";
 @import "flexbox";
+@import "functions";
 
 @mixin display1 {
   font-size: 48px;
@@ -175,4 +176,35 @@
 @mixin disabled {
   cursor: not-allowed !important;
   pointer-events: none;
+}
+
+@mixin selection($background) {
+  @if is-number($background) {
+    $color: inherit;
+    $cursor: text;
+    ::selection      {
+      color: $color;
+      background-color: darken(#FFF, $background);
+      background-color: fade(#000, $background);
+      cursor: $cursor;
+    }
+    ::-moz-selection {
+      color: $color;
+      background-color: darken(#FFF, $background);
+      background-color: fade(#000, $background);
+      cursor: $cursor;
+    }
+  } @else {
+    $color:white;
+    $color:text;
+    ::selection      { color: $color; background-color: $background; cursor: $cursor; }
+    ::-moz-selection { color: $color; background-color: $background; cursor: $cursor; }
+  }
+}
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select; // IE10+
+  user-select: $select;
 }

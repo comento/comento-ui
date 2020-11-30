@@ -1,5 +1,5 @@
 <template>
-	<h1 class="c-application c-logo_container">
+	<h1 class="c-logo_container">
 		<a :href="url">
 			<component :is="name" :width="width" :height="height" />
 		</a>

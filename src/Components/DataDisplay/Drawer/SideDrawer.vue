@@ -1,6 +1,6 @@
 <template>
 	<Drawer :mask-closable="true" :zIndex="1002" :align="align" :closeable="false" @close="$emit('close')">
-		<div v-if="showDrawer" class="c-application c-side-drawer">
+		<div v-if="showDrawer" class="c-side-drawer">
 			<Box class="c-side-drawer--title-wrapper">
 				<Typography type="headline6" :font-weight="700">
 					<slot name="title"> </slot>

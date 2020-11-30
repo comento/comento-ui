@@ -1,5 +1,5 @@
 <template>
-	<div class="c-tab_menu_wrapper">
+	<div class="c-application c-tab_menu_wrapper">
 		<div class="c-tab_menu_container">
 			<button
 				v-for="(item, index) in items"
