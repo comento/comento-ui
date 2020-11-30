@@ -179,7 +179,9 @@ export default {
 }
 .primary {
 	background-color: $primary;
-	&:hover {
+	&:hover,
+	&:focus,
+	&:active {
 		background-color: $green800;
 	}
 	&:disabled {
@@ -194,7 +196,9 @@ export default {
 
 	&.text {
 		color: $primary;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: $green100;
 		}
 		&:disabled {
@@ -206,7 +210,9 @@ export default {
 		background-color: $white;
 		border: 1px solid $primary;
 		color: $primary;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: $green100;
 		}
 		&:disabled {
@@ -221,7 +227,9 @@ export default {
 }
 .success {
 	background-color: $success;
-	&:hover {
+	&:hover,
+	&:focus,
+	&:active {
 		background-color: $blue800;
 	}
 	&:disabled {
@@ -235,7 +243,9 @@ export default {
 	}
 	&.text {
 		color: $blue600;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: $blue100;
 		}
 		&:disabled {
@@ -247,7 +257,9 @@ export default {
 		background-color: $white;
 		border: 1px solid $blue600;
 		color: $blue600;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: $blue100;
 		}
 		&:disabled {
@@ -262,7 +274,9 @@ export default {
 }
 .gray {
 	background-color: $gray600;
-	&:hover {
+	&:hover,
+	&:focus,
+	&:active {
 		background-color: $gray800;
 	}
 	&:disabled {
@@ -276,7 +290,9 @@ export default {
 	}
 	&.text {
 		color: $gray500;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: $gray100;
 		}
 		&:disabled {
@@ -288,7 +304,9 @@ export default {
 		background-color: $white;
 		border: 1px solid $gray400;
 		color: $gray500;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: $gray100;
 		}
 		&:disabled {
@@ -303,7 +321,9 @@ export default {
 }
 .error {
 	background-color: $red600;
-	&:hover {
+	&:hover,
+	&:focus,
+	&:active {
 		background-color: $red800;
 	}
 	&:disabled {
@@ -317,7 +337,9 @@ export default {
 	}
 	&.text {
 		color: $red600;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: $red000;
 		}
 		&:disabled {
@@ -329,7 +351,9 @@ export default {
 		background-color: $white;
 		border: 1px solid $red600;
 		color: $red600;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: $red100;
 		}
 		&:disabled {
