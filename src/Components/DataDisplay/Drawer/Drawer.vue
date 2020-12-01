@@ -150,6 +150,7 @@ $--c-drawer-close-width: 14px !default;
 	// common
 	position: fixed;
 	@include shadow1();
+	min-height: 266px;
 
 	&.closeable {
 		padding-top: 25px;
