@@ -1,5 +1,12 @@
 <template>
-	<Drawer :mask-closable="true" :zIndex="1002" :align="align" :closeable="false" @close="$emit('close')">
+	<Drawer
+		:mask-closable="true"
+		:z-index="1002"
+		max-height="100vh"
+		:align="align"
+		:closeable="false"
+		@close="$emit('close')"
+	>
 		<div v-if="showDrawer" class="c-side-drawer">
 			<Box class="c-side-drawer--title-wrapper">
 				<Typography type="headline6" :font-weight="700">

@@ -207,7 +207,7 @@ export const Basic = (args, { argTypes }) => ({
                         </template>
                     </BasicModal>
                     <Button @click="show2 = true">Open</Button>
-                    <BasicModal :show.sync="show2" align="left" :show-action-button="true" scroll>
+                    <BasicModal :show.sync="show2" align="left" show-action-button scroll>
                         <template v-slot:title>
                             모달 제목
                         </template>
