@@ -5,16 +5,17 @@
 		align="down"
 		:closeable="true"
 		:show-close-button="true"
+		:max-height="computedMaxHeight"
 		@close="$emit('close')"
 	>
-		<div v-if="showDrawer" class="c-bottom-drawer">
+		<div v-if="showDrawer" class="c-bottom-drawer" :class="computedClass">
 			<div class="c-bottom-drawer--title-wrapper">
 				<Typography type="headline6" :font-weight="700">
 					<slot name="title" />
 				</Typography>
 			</div>
 
-			<div class="c-bottom-drawer--content-wrapper" :style="heightMax" :class="computedClass">
+			<div class="c-bottom-drawer--content-wrapper">
 				<slot />
 			</div>
 
@@ -63,12 +64,11 @@ export default {
 		},
 	},
 	computed: {
-		heightMax() {
-			const windowH = window.innerHeight;
-			return { maxHeight: windowH * 0.68 + 'px' };
-		},
 		computedClass() {
 			return [this.scroll && 'scroll', this.showActionButton && 'with-button'];
+		},
+		computedMaxHeight() {
+			return '68vh';
 		},
 	},
 	components: {
@@ -86,6 +86,38 @@ export default {
 }
 .c-bottom-drawer {
 	padding-bottom: 20px;
+
+	&.scroll {
+		.c-bottom-drawer--content-wrapper {
+			padding-bottom: 6px;
+			max-height: calc(68vh - 68px - 20px);
+
+			&:after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 30px;
+				left: 0;
+				bottom: calc(20px - 16px);
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0.6) 40%,
+					rgba(255, 255, 255, 1) 90%
+				);
+			}
+		}
+
+		&.with-button {
+			.c-bottom-drawer--content-wrapper {
+				max-height: calc(68vh - 68px - 20px - 72px);
+				&:after {
+					bottom: calc(74px + 20px - 16px);
+				}
+			}
+		}
+	}
+
 	&--title-wrapper {
 		display: flex;
 		justify-content: space-between;
@@ -94,31 +126,9 @@ export default {
 
 	&--content-wrapper {
 		height: auto;
-		min-height: 266px;
 		overflow: auto;
 		padding: 0 20px;
-
-		&.scroll {
-			&:after {
-				content: '';
-				position: absolute;
-				width: 100%;
-				height: 30px;
-				left: 0;
-				bottom: 20px;
-				background: linear-gradient(
-					180deg,
-					rgba(255, 255, 255, 0) 0%,
-					rgba(255, 255, 255, 0.7) 58.33%,
-					rgba(255, 255, 255, 0.958333) 100%
-				);
-			}
-			&.with-button {
-				&:after {
-					bottom: 92px;
-				}
-			}
-		}
+		max-height: calc(68vh - 68px - 20px);
 	}
 
 	&--action-button-wrapper {

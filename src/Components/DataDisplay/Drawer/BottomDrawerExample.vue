@@ -6,7 +6,6 @@
 			:z-index="1002"
 			:closeable="false"
 			:show-drawer="open"
-			style="height: 30%"
 			scroll
 			show-action-button
 			@close="toggle"
@@ -76,7 +75,6 @@ export default {
 <style lang="scss" scoped>
 #app {
 	.demo-container {
-		margin-top: 60px;
 		text-align: center;
 		display: flex;
 		margin: 0 auto;

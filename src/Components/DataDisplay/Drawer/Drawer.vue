@@ -69,7 +69,13 @@ export default {
 				return typeof value === 'number';
 			},
 		},
+		maxHeight: {
+			type: String,
+		},
 	},
+	data: () => ({
+		notScrollClassName: 'not-scroll',
+	}),
 	computed: {
 		alignInCls() {
 			return `animated bounceIn${this.align.toLowerCase()}`;
@@ -90,15 +96,25 @@ export default {
 				return [0, 0, 0, 0];
 			}
 		},
+		computedMaxHeight() {
+			return { 'max-height': this.maxHeight };
+		},
 		styles() {
 			return {
 				...this.$_setPadding(this.computedPaddings),
 				...this.indexCls(),
+				...this.computedMaxHeight,
 			};
+		},
+	},
+	watch: {
+		show() {
+			this.show && this.addNotScroll();
 		},
 	},
 	methods: {
 		close() {
+			this.removeNotScroll();
 			this.$emit('close');
 		},
 		onMask() {
@@ -110,6 +126,14 @@ export default {
 			return {
 				zIndex: this.computedIndex + offset,
 			};
+		},
+		addNotScroll() {
+			document.querySelector('html').classList.add(this.notScrollClassName);
+			document.querySelector('body').classList.add(this.notScrollClassName);
+		},
+		removeNotScroll() {
+			document.querySelector('html').classList.remove(this.notScrollClassName);
+			document.querySelector('body').classList.remove(this.notScrollClassName);
 		},
 	},
 	components: {
@@ -126,6 +150,7 @@ $--c-drawer-close-width: 14px !default;
 	// common
 	position: fixed;
 	@include shadow1();
+	min-height: 266px;
 
 	&.closeable {
 		padding-top: 25px;
