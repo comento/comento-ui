@@ -5,6 +5,7 @@
 		align="down"
 		:closeable="true"
 		:show-close-button="true"
+		:max-height="computedMaxHeight"
 		@close="$emit('close')"
 	>
 		<div v-if="showDrawer" class="c-bottom-drawer">
@@ -69,6 +70,9 @@ export default {
 		},
 		computedClass() {
 			return [this.scroll && 'scroll', this.showActionButton && 'with-button'];
+		},
+		computedMaxHeight() {
+			return '68vh';
 		},
 	},
 	components: {

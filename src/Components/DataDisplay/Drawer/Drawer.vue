@@ -69,6 +69,9 @@ export default {
 				return typeof value === 'number';
 			},
 		},
+		maxHeight: {
+			type: String,
+		},
 	},
 	data: () => ({
 		notScrollClassName: 'not-scroll',
@@ -93,10 +96,14 @@ export default {
 				return [0, 0, 0, 0];
 			}
 		},
+		computedMaxHeight() {
+			return { 'max-height': this.maxHeight };
+		},
 		styles() {
 			return {
 				...this.$_setPadding(this.computedPaddings),
 				...this.indexCls(),
+				...this.computedMaxHeight,
 			};
 		},
 	},
