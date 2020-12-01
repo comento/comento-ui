@@ -34,6 +34,9 @@ export default {
 			type: String,
 		},
 	},
+	data: () => ({
+		notScrollClassName: 'not-scroll',
+	}),
 	computed: {
 		computedStyle() {
 			return {
@@ -55,10 +58,12 @@ export default {
 	},
 	methods: {
 		addNotScroll() {
-			document.querySelector('body').classList.add('not-scroll');
+			document.querySelector('html').classList.add(this.notScrollClassName);
+			document.querySelector('body').classList.add(this.notScrollClassName);
 		},
 		removeNotScroll() {
-			document.querySelector('body').classList.remove('not-scroll');
+			document.querySelector('html').classList.remove(this.notScrollClassName);
+			document.querySelector('body').classList.remove(this.notScrollClassName);
 		},
 		handleCloseKeycode(e) {
 			if (this.show && e.keyCode === 27) {
