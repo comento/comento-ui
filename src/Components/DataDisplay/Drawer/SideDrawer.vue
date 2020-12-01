@@ -22,12 +22,14 @@
 </template>
 
 <script>
+import scrollMixin from '@/mixins/scrollMixin';
 import Box from '@/src/Components/DataDisplay/Box';
 import Drawer from '@/src/Components/DataDisplay/Drawer/Drawer';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export default {
 	name: 'SideDrawer',
+	mixins: [scrollMixin],
 	props: {
 		align: {
 			type: String,
@@ -39,6 +41,11 @@ export default {
 		showDrawer: {
 			type: Boolean,
 			default: false,
+		},
+	},
+	watch: {
+		showDrawer() {
+			this.$_handleNotScroll(this.showDrawer);
 		},
 	},
 	methods: {

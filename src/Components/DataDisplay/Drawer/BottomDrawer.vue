@@ -30,12 +30,14 @@
 </template>
 
 <script>
+import scrollMixin from '@/mixins/scrollMixin';
 import Drawer from '@/src/Components/DataDisplay/Drawer/Drawer';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import Button from '@/src/Components/Button/Button';
 
 export default {
 	name: 'BottomDrawer',
+	mixins: [scrollMixin],
 	props: {
 		showDrawer: {
 			type: Boolean,
@@ -69,6 +71,11 @@ export default {
 		},
 		computedMaxHeight() {
 			return '68vh';
+		},
+	},
+	watch: {
+		showDrawer() {
+			this.$_handleNotScroll(this.showDrawer);
 		},
 	},
 	components: {

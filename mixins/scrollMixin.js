@@ -12,7 +12,6 @@ const scrollMixin = {
 			document.querySelector('body').classList.remove(this.notScrollClassName);
 		},
 		$_handleNotScroll(value) {
-			console.log(value);
 			value ? this.$_addNotScroll() : this.$_removeNotScroll();
 		},
 	},
