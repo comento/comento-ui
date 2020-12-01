@@ -10,10 +10,12 @@
 </template>
 
 <script>
+import scrollMixin from '@/mixins/scrollMixin';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 
 export default {
 	name: 'Modal',
+	mixins: [scrollMixin],
 	props: {
 		show: {
 			type: Boolean,
@@ -34,9 +36,6 @@ export default {
 			type: String,
 		},
 	},
-	data: () => ({
-		notScrollClassName: 'not-scroll',
-	}),
 	computed: {
 		computedStyle() {
 			return {
@@ -47,7 +46,7 @@ export default {
 	},
 	watch: {
 		show() {
-			this.show && this.addNotScroll();
+			this.$_handleNotScroll(this.show);
 		},
 	},
 	mounted() {
@@ -57,14 +56,6 @@ export default {
 		document.removeEventListener('keydown', e => this.handleCloseKeycode(e));
 	},
 	methods: {
-		addNotScroll() {
-			document.querySelector('html').classList.add(this.notScrollClassName);
-			document.querySelector('body').classList.add(this.notScrollClassName);
-		},
-		removeNotScroll() {
-			document.querySelector('html').classList.remove(this.notScrollClassName);
-			document.querySelector('body').classList.remove(this.notScrollClassName);
-		},
 		handleCloseKeycode(e) {
 			if (this.show && e.keyCode === 27) {
 				this.close();
@@ -76,7 +67,6 @@ export default {
 			}
 		},
 		close() {
-			this.removeNotScroll();
 			this.$emit('close');
 		},
 	},
