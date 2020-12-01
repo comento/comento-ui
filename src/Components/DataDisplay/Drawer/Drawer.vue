@@ -70,6 +70,9 @@ export default {
 			},
 		},
 	},
+	data: () => ({
+		notScrollClassName: 'not-scroll',
+	}),
 	computed: {
 		alignInCls() {
 			return `animated bounceIn${this.align.toLowerCase()}`;
@@ -97,8 +100,14 @@ export default {
 			};
 		},
 	},
+	watch: {
+		show() {
+			this.show && this.addNotScroll();
+		},
+	},
 	methods: {
 		close() {
+			this.removeNotScroll();
 			this.$emit('close');
 		},
 		onMask() {
@@ -110,6 +119,14 @@ export default {
 			return {
 				zIndex: this.computedIndex + offset,
 			};
+		},
+		addNotScroll() {
+			document.querySelector('html').classList.add(this.notScrollClassName);
+			document.querySelector('body').classList.add(this.notScrollClassName);
+		},
+		removeNotScroll() {
+			document.querySelector('html').classList.remove(this.notScrollClassName);
+			document.querySelector('body').classList.remove(this.notScrollClassName);
 		},
 	},
 	components: {
