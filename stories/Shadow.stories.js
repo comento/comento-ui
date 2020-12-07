@@ -27,7 +27,7 @@ storiesOf('Shadow', module).add('Index', () => ({
 		};
 	},
 	template: `<div>
-        <div v-for="(description, index) in descriptions" :key="shadow">
+        <div v-for="description in descriptions" :key="description.type">
             <BoxWithShadow :shadowType="description.type"  style="margin-right: 10px; margin-bottom: 10px;">{{description.type}}</BoxWithShadow>
             <div style="margin-bottom: 20px;">{{description.content}}</div>
         </div>
