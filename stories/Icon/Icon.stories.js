@@ -47,9 +47,15 @@ storiesOf('Icon', module).add('Icon', () => ({
 			<IconWrapper name=IconCloseMediumLine></IconWrapper>
 			<IconWrapper name=IconCheckCircleMediumFill></IconWrapper>
 			<IconWrapper name=IconFilterMediumLine></IconWrapper>
+			<IconWrapper name=IconMentoringMediumLine></IconWrapper>
 			<IconWrapper name=IconResumeMediumLine></IconWrapper>
 			<IconWrapper name=IconJobWikiMediumLine></IconWrapper>
 			<IconWrapper name=IconAnalyticsMediumLine></IconWrapper>
+			<IconWrapper name=IconInterviewMediumLine></IconWrapper>
+			<IconWrapper name=IconEssayMediumLine></IconWrapper>
+			<IconWrapper name=IconVodMediumLine></IconWrapper>
+			<IconWrapper name=IconEduMediumLine></IconWrapper>
+			<IconWrapper name=IconCouponMediumLine></IconWrapper>
 		</div>
 	</div>
 	<!--large-->

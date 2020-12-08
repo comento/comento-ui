@@ -46,9 +46,15 @@ import IconInfoMediumLine from '@/assets/images/icon/icon-info-medium-line.svg?i
 import IconCloseMediumLine from '@/assets/images/icon/icon-close-medium-line.svg?inline';
 import IconCheckCircleMediumFill from '@/assets/images/icon/icon-checkCircle-medium-fill.svg?inline';
 import IconFilterMediumLine from '@/assets/images/icon/icon-filter-medium-line.svg?inline';
+import IconEduMediumLine from '@/assets/images/icon/icon-edu-medium-line.svg?inline';
+import IconMentoringMediumLine from '@/assets/images/icon/icon-mentoring-medium-line.svg?inline';
 import IconResumeMediumLine from '@/assets/images/icon/icon-resume-medium-line.svg?inline';
 import IconJobWikiMediumLine from '@/assets/images/icon/icon-jobWiki-medium-line.svg?inline';
 import IconAnalyticsMediumLine from '@/assets/images/icon/icon-analytics-medium-line.svg?inline';
+import IconInterviewMediumLine from '@/assets/images/icon/icon-interview-medium-line.svg?inline';
+import IconEssayMediumLine from '@/assets/images/icon/icon-essay-medium-line.svg?inline';
+import IconVodMediumLine from '@/assets/images/icon/icon-vod-medium-line.svg?inline';
+import IconCouponMediumLine from '@/assets/images/icon/icon-coupon-medium-line.svg?inline';
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/icon-selected-large-line.svg?inline';
@@ -139,6 +145,14 @@ export default {
 						'IconResumeMediumLine',
 						'IconJobWikiMediumLine',
 						'IconAnalyticsMediumLine',
+						'IconEduMediumLine',
+						'IconMentoringMediumLine',
+						'IconResumeMediumLine',
+						'IconJobWikiMediumLine',
+						'IconInterviewMediumLine',
+						'IconEssayMediumLine',
+						'IconVodMediumLine',
+						'IconCouponMediumLine',
 						'IconProfileLargeFill',
 						'IconSelectedLargeLine',
 						'IconReplyLargeLine',
@@ -333,9 +347,15 @@ export default {
 		IconCloseMediumLine,
 		IconCheckCircleMediumFill,
 		IconFilterMediumLine,
+		IconMentoringMediumLine,
 		IconResumeMediumLine,
 		IconJobWikiMediumLine,
 		IconAnalyticsMediumLine,
+		IconInterviewMediumLine,
+		IconEssayMediumLine,
+		IconVodMediumLine,
+		IconEduMediumLine,
+		IconCouponMediumLine,
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,
