@@ -85,7 +85,6 @@ import IconInterviewLargeLine from '@/assets/images/icon/icon-interview-large-li
 import IconEssayLargeLine from '@/assets/images/icon/icon-essay-large-line.svg?inline';
 import IconDownloadLargeLine from '@/assets/images/icon/icon-download-large-line.svg?inline';
 import IconCheckLargeLine from '@/assets/images/icon/icon-check-large-line.svg?inline';
-
 import IconResumeLargeLine from '@/assets/images/icon/icon-resume-large-line.svg?inline';
 import IconQuestionLargeLine from '@/assets/images/icon/icon-question-large-line.svg?inline';
 // x-large
@@ -386,6 +385,10 @@ export default {
 		IconFilterLargeLine,
 		IconCheckLargeFill,
 		IconSecurityLargeFill,
+		IconMentoringLargeLine,
+		IconVodLargeLine,
+		IconAnswerLargeLine,
+		IconEduLargeLine,
 		IconAnalyticsLargeLine,
 		IconInterviewLargeLine,
 		IconEssayLargeLine,
@@ -408,11 +411,6 @@ export default {
 		IconSpinnerSmall,
 		IconSpinnerMedium,
 		IconSpinnerLarge,
-		// etc
-		IconMentoringLargeLine,
-		IconVodLargeLine,
-		IconAnswerLargeLine,
-		IconEduLargeLine,
 	},
 };
 </script>
