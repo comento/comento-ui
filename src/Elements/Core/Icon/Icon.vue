@@ -84,6 +84,7 @@ import IconQuestionXLargeLine from '@/assets/images/icon/icon-question-xlarge-li
 import IconAdoptXLargeLine from '@/assets/images/icon/icon-adopt-xlarge-line.svg?inline';
 import IconCreditPlusXLargeLine from '@/assets/images/icon/icon-creditPlus-xlarge-line.svg?inline';
 import IconCreditMinusXLargeLine from '@/assets/images/icon/icon-creditMinus-xlarge-line.svg?inline';
+import IconLikeXLargeLine from '@/assets/images/icon/icon-like-xlarge-line.svg?inline';
 import IconCelebrateXLargeLine from '@/assets/images/icon/icon-celebrate-xlarge-line.svg?inline';
 import IconAnswerXLargeLine from '@/assets/images/icon/icon-answer-xlarge-line.svg?inline';
 import IconMegaphoneXLargeLine from '@/assets/images/icon/icon-megaphone-xlarge-line.svg?inline';
@@ -161,6 +162,7 @@ export default {
 						'IconAdoptXLargeLine',
 						'IconCreditPlusXLargeLine',
 						'IconCreditMinusXLargeLine',
+						'IconLikeXLargeLine',
 						'IconCelebrateXLargeLine',
 						'IconAnswerXLargeLine',
 						'IconMegaphoneXLargeLine',
@@ -362,6 +364,7 @@ export default {
 		IconAdoptXLargeLine,
 		IconCreditPlusXLargeLine,
 		IconCreditMinusXLargeLine,
+		IconLikeXLargeLine,
 		IconCelebrateXLargeLine,
 		IconAnswerXLargeLine,
 		IconMegaphoneXLargeLine,

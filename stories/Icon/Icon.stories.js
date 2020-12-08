@@ -94,6 +94,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 			<IconWrapper name=IconAdoptXLargeLine></IconWrapper>
 			<IconWrapper name=IconCreditPlusXLargeLine color="black"></IconWrapper>
 			<IconWrapper name=IconCreditMinusXLargeLine></IconWrapper>
+			<IconWrapper name=IconLikeXLargeLine></IconWrapper>
 			<IconWrapper name=IconCelebrateXLargeLine></IconWrapper>
 			<IconWrapper name=IconAnswerXLargeLine></IconWrapper>
 			<IconWrapper name=IconMegaphoneXLargeLine></IconWrapper>
