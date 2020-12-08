@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Props } from "@storybook/addon-docs/blocks";
 import Icon, { IconNames } from "@/src/Elements/Core/Icon/Icon";
+import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
   title="Icon"
@@ -29,38 +30,7 @@ import Icon, { IconNames } from "@/src/Elements/Core/Icon/Icon";
       },
       control: {
         type: "select",
-        options: [
-          "black",
-          "gray900",
-          "gray800",
-          "gray700",
-          "gray600",
-          "gray500",
-          "gray400",
-          "gray300",
-          "gray200",
-          "gray100",
-          "gray000",
-          "white",
-          "green800",
-          "green600",
-          "green400",
-          "green100",
-          "green000",
-          "red800",
-          "red600",
-          "red400",
-          "red100",
-          "red000",
-          "blue800",
-          "blue600",
-          "blue400",
-          "blue100",
-          "blue000",
-          "yellow700",
-          "yellow400",
-          "yellow100",
-        ],
+        options: colorKeys,
       },
     },
     loading: {

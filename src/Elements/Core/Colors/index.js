@@ -82,3 +82,5 @@ export const colors = {
     error: error,
     gray: gray,
 };
+
+export const colorKeys = [...Object.keys(colors)];

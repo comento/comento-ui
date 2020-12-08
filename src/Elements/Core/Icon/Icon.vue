@@ -103,7 +103,7 @@ import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline
 import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
 import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
 
-import { colors } from '@/src/Elements/Core/Colors';
+import { colors, colorKeys } from '@/src/Elements/Core/Colors';
 
 export const IconNames = [
 	'IconCheckSmallLine',
@@ -210,42 +210,11 @@ export default {
 			type: String,
 			default: null,
 			validator(value) {
-				return (
-					[
-						'black',
-						'gray900',
-						'gray800',
-						'gray700',
-						'gray600',
-						'gray500',
-						'gray400',
-						'gray300',
-						'gray200',
-						'gray100',
-						'gray000',
-						'white',
-						'green800',
-						'green600',
-						'green400',
-						'green100',
-						'green000',
-						'red800',
-						'red600',
-						'red400',
-						'red100',
-						'red000',
-						'blue800',
-						'blue600',
-						'blue400',
-						'blue100',
-						'blue000',
-						'yellow700',
-						'yellow400',
-						'yellow100',
-						'primary',
-						'success',
-					].indexOf(value) !== -1
-				);
+				const isValid = colorKeys.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the icon color`);
+				}
+				return isValid;
 			},
 		},
 		loading: {
