@@ -113,7 +113,7 @@ export default {
 			type: String,
 			default: null,
 			validator(value) {
-				return (
+				const isValid =
 					[
 						'IconCheckSmallLine',
 						'IconPlusSmallLine',
@@ -197,8 +197,13 @@ export default {
 						'IconSecurityLargeFill',
 						'IconDownloadLargeLine',
 						'IconCheckLargeLine',
-					].indexOf(value) !== -1
-				);
+						'IconResumeLargeLine',
+						'IconQuestionLargeLine',
+					].indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the icon`);
+				}
+				return isValid;
 			},
 		},
 		color: {
