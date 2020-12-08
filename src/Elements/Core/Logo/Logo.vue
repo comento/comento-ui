@@ -1,5 +1,5 @@
 <template>
-	<h1 class="c-logo_container">
+	<h1 class="c-application c-logo">
 		<a :href="url">
 			<component :is="name" :width="width" :height="height" />
 		</a>
@@ -36,9 +36,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/*@import '@/assets/style/base/main';*/
-.c-logo_container > a {
-	@include inline-block();
-	vertical-align: middle;
+.c-logo {
+	> a {
+		display: flex;
+	}
 }
 </style>
