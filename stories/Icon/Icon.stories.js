@@ -82,6 +82,8 @@ storiesOf('Icon', module).add('Icon', () => ({
 			<IconWrapper name=IconAnalyticsLargeLine></IconWrapper>
 			<IconWrapper name=IconInterviewLargeLine></IconWrapper>
 			<IconWrapper name=IconEssayLargeLine></IconWrapper>
+			<IconWrapper name=IconResumeLargeLine></IconWrapper>
+			<IconWrapper name=IconQuestionLargeLine></IconWrapper>
 		</div>
 	</div>
 	<!--x-large-->

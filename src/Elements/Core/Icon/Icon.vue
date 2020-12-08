@@ -77,6 +77,8 @@ import IconEssayLargeLine from '@/assets/images/icon/icon-essay-large-line.svg?i
 import IconDownloadLargeLine from '@/assets/images/icon/icon-download-large-line.svg?inline';
 import IconCheckLargeLine from '@/assets/images/icon/icon-check-large-line.svg?inline';
 
+import IconResumeLargeLine from '@/assets/images/icon/icon-resume-large-line.svg?inline';
+import IconQuestionLargeLine from '@/assets/images/icon/icon-question-large-line.svg?inline';
 // x-large
 import IconArrowXLargeLine from '@/assets/images/icon/icon-arrow-xlarge-line.svg?inline';
 import IconCloseXLargeLine from '@/assets/images/icon/icon-close-xlarge-line.svg?inline';
@@ -357,6 +359,8 @@ export default {
 		IconEssayLargeLine,
 		IconDownloadLargeLine,
 		IconCheckLargeLine,
+		IconResumeLargeLine,
+		IconQuestionLargeLine,
 		// x-large
 		IconArrowXLargeLine,
 		IconCloseXLargeLine,
