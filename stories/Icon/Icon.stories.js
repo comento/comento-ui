@@ -58,7 +58,8 @@ storiesOf('Icon', module).add('Icon', () => ({
 		<div style="display: flex; flex-wrap: wrap;">
 			<IconWrapper name=IconProfileLargeFill></IconWrapper>
 			<IconWrapper name=IconSelectedLargeLine></IconWrapper>
-			<IconWrapper name=IconReplyLargeLine></IconWrapper>
+			<IconWrapper name=IconReplyLargeLine color="black"></IconWrapper>
+			<IconWrapper name=IconSendLargeFill></IconWrapper>
 			<IconWrapper name=IconPlusLargeLine color="black"></IconWrapper>
 			<IconWrapper name=IconProfileLargeLine></IconWrapper>
 			<IconWrapper name=IconAlarmLargeLine></IconWrapper>
@@ -67,10 +68,13 @@ storiesOf('Icon', module).add('Icon', () => ({
 			<IconWrapper name=IconArrowLargeLine></IconWrapper>
 			<IconWrapper name=IconTextArrowLargeLine></IconWrapper>
 			<IconWrapper name=IconCloseLargeLine></IconWrapper>
-			<IconWrapper name=IconKeylineLargeLine></IconWrapper>
 			<IconWrapper name=IconExclamationLargeLine></IconWrapper>
 			<IconWrapper name=IconFilterLargeLine></IconWrapper>
 			<IconWrapper name=IconCheckLargeFill></IconWrapper>
+			<IconWrapper name=IconSecurityLargeFill></IconWrapper>
+			<IconWrapper name=IconDownloadLargeLine color="black"></IconWrapper>
+			<IconWrapper name=IconCheckLargeLine></IconWrapper>
+			<IconWrapper name=IconKeylineLargeLine></IconWrapper>
 			<IconWrapper name=IconMentoringLargeLine></IconWrapper>
 			<IconWrapper name=IconVodLargeLine></IconWrapper>
 			<IconWrapper name=IconAnswerLargeLine></IconWrapper>
@@ -78,8 +82,6 @@ storiesOf('Icon', module).add('Icon', () => ({
 			<IconWrapper name=IconAnalyticsLargeLine></IconWrapper>
 			<IconWrapper name=IconInterviewLargeLine></IconWrapper>
 			<IconWrapper name=IconEssayLargeLine></IconWrapper>
-			<IconWrapper name=IconDownloadLargeLine color="black"></IconWrapper>
-			<IconWrapper name=IconCheckLargeLine></IconWrapper>
 		</div>
 	</div>
 	<!--x-large-->

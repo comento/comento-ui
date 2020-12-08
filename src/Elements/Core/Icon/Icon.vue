@@ -49,11 +49,11 @@ import IconFilterMediumLine from '@/assets/images/icon/icon-filter-medium-line.s
 import IconResumeMediumLine from '@/assets/images/icon/icon-resume-medium-line.svg?inline';
 import IconJobWikiMediumLine from '@/assets/images/icon/icon-jobWiki-medium-line.svg?inline';
 import IconAnalyticsMediumLine from '@/assets/images/icon/icon-analytics-medium-line.svg?inline';
-import IconSecurityLargeFill from '@/assets/images/icon/icon-security-large-fill.svg?inline';
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/icon-selected-large-line.svg?inline';
 import IconReplyLargeLine from '@/assets/images/icon/icon-reply-large-line.svg?inline';
+import IconSendLargeFill from '@/assets/images/icon/icon-send-large-fill.svg?inline';
 import IconPlusLargeLine from '@/assets/images/icon/icon-plus-large-line.svg?inline';
 import IconProfileLargeLine from '@/assets/images/icon/icon-profile-large-line.svg?inline';
 import IconAlarmLargeLine from '@/assets/images/icon/icon-alarm-large-line.svg?inline';
@@ -66,6 +66,7 @@ import IconKeylineLargeLine from '@/assets/images/icon/icon-keyline-large-line.s
 import IconExclamationLargeLine from '@/assets/images/icon/icon-exclamation-large-line.svg?inline';
 import IconFilterLargeLine from '@/assets/images/icon/icon-filter-large-line.svg?inline';
 import IconCheckLargeFill from '@/assets/images/icon/icon-check-large-fill.svg?inline';
+import IconSecurityLargeFill from '@/assets/images/icon/icon-security-large-fill.svg?inline';
 import IconMentoringLargeLine from '@/assets/images/icon/icon-mentoring-large-line.svg?inline';
 import IconVodLargeLine from '@/assets/images/icon/icon-vod-large-line.svg?inline';
 import IconAnswerLargeLine from '@/assets/images/icon/icon-answer-large-line.svg?inline';
@@ -138,6 +139,7 @@ export default {
 						'IconProfileLargeFill',
 						'IconSelectedLargeLine',
 						'IconReplyLargeLine',
+						'IconSendLargeFill',
 						'IconPlusLargeLine',
 						'IconProfileLargeLine',
 						'IconAlarmLargeLine',
@@ -330,11 +332,11 @@ export default {
 		IconResumeMediumLine,
 		IconJobWikiMediumLine,
 		IconAnalyticsMediumLine,
-		IconSecurityLargeFill,
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,
 		IconReplyLargeLine,
+		IconSendLargeFill,
 		IconPlusLargeLine,
 		IconProfileLargeLine,
 		IconAlarmLargeLine,
@@ -347,6 +349,7 @@ export default {
 		IconExclamationLargeLine,
 		IconFilterLargeLine,
 		IconCheckLargeFill,
+		IconSecurityLargeFill,
 		IconAnalyticsLargeLine,
 		IconInterviewLargeLine,
 		IconEssayLargeLine,
