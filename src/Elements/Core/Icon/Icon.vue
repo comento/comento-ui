@@ -15,6 +15,7 @@
 
 <script>
 // small
+import IconCheckSmallLine from '@/assets/images/icon/icon-check-small-line.svg?inline';
 import IconPlusSmallLine from '@/assets/images/icon/icon-plus-small-line.svg?inline';
 import IconArrowSmallLine from '@/assets/images/icon/icon-arrow-small-line.svg?inline';
 import IconOverflowSmallFill from '@/assets/images/icon/icon-overflow-small-fill.svg?inline';
@@ -23,6 +24,7 @@ import IconOfficialSmallFill from '@/assets/images/icon/icon-official-small-fill
 import IconExclamationSmallFill from '@/assets/images/icon/icon-exclamation-small-fill.svg?inline';
 import IconProfileSmallFill from '@/assets/images/icon/icon-profile-small-fill.svg?inline';
 import IconCheckSmallFill from '@/assets/images/icon/icon-check-small-fill.svg?inline';
+import IconCloseSmallLine from '@/assets/images/icon/icon-close-small-line.svg?inline';
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
 import IconQuestionMediumLine from '@/assets/images/icon/icon-question-medium-line.svg?inline';
@@ -100,6 +102,7 @@ export default {
 			validator(value) {
 				return (
 					[
+						'IconCheckSmallLine',
 						'IconPlusSmallLine',
 						'IconArrowSmallLine',
 						'IconOverflowSmallFill',
@@ -108,6 +111,7 @@ export default {
 						'IconExclamationSmallFill',
 						'IconProfileSmallFill',
 						'IconCheckSmallFill',
+						'IconCloseSmallLine',
 						'IconCheckMediumFill',
 						'IconQuestionMediumLine',
 						'IconLikeMediumFill',
@@ -292,6 +296,7 @@ export default {
 	},
 	components: {
 		// small
+		IconCheckSmallLine,
 		IconPlusSmallLine,
 		IconArrowSmallLine,
 		IconOverflowSmallFill,
@@ -300,6 +305,7 @@ export default {
 		IconExclamationSmallFill,
 		IconProfileSmallFill,
 		IconCheckSmallFill,
+		IconCloseSmallLine,
 		// medium
 		IconCheckMediumFill,
 		IconQuestionMediumLine,

@@ -11,6 +11,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 	<div>
 		<Typography type="body1">Small</Typography>
 		<div style="display: flex; flex-wrap: wrap;">
+			<IconWrapper name="IconCheckSmallLine"></IconWrapper>
 			<IconWrapper name="IconPlusSmallLine" color="black"></IconWrapper>
 			<IconWrapper name="IconArrowSmallLine"></IconWrapper>
 			<IconWrapper name="IconOverflowSmallFill"></IconWrapper>
@@ -19,6 +20,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 			<IconWrapper name="IconExclamationSmallFill"></IconWrapper>
 			<IconWrapper name="IconProfileSmallFill"></IconWrapper>
 			<IconWrapper name="IconCheckSmallFill"></IconWrapper>
+			<IconWrapper name="IconCloseSmallLine"></IconWrapper>
 		</div>
 	</div>
 	<!--medium-->
