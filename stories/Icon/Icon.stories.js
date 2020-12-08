@@ -9,7 +9,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 		<Typography type="body1" color="gray500">아이콘을 클릭하면 클립보드에 아이콘 이름이 복사됩니다.</Typography>
 		<!--small-->
 	<div>
-		<Typography type="body1">Small</Typography>
+		<Typography type="body1" style="margin-bottom: 10px">Small</Typography>
 		<div style="display: flex; flex-wrap: wrap;">
 			<IconWrapper name="IconCheckSmallLine"></IconWrapper>
 			<IconWrapper name="IconPlusSmallLine" color="black"></IconWrapper>
@@ -25,7 +25,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 	</div>
 	<!--medium-->
 	<div>
-		<Typography type="body1">Medium</Typography>
+		<Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
 		<div style="display: flex; flex-wrap: wrap;">
 			<IconWrapper name=IconCheckMediumFill></IconWrapper>
 			<IconWrapper name=IconQuestionMediumLine></IconWrapper>
@@ -54,7 +54,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 	</div>
 	<!--large-->
 	<div>
-		<Typography type="body1">Large</Typography>
+		<Typography type="body1" style="margin-bottom: 10px">Large</Typography>
 		<div style="display: flex; flex-wrap: wrap;">
 			<IconWrapper name=IconProfileLargeFill></IconWrapper>
 			<IconWrapper name=IconSelectedLargeLine></IconWrapper>
@@ -84,7 +84,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 	</div>
 	<!--x-large-->
 	<div>
-		<Typography type="body1">XLarge</Typography>
+		<Typography type="body1" style="margin-bottom: 10px">XLarge</Typography>
 		<div style="display: flex; flex-wrap: wrap;">
 			<IconWrapper name=IconArrowXLargeLine></IconWrapper>
 			<IconWrapper name=IconCloseXLargeLine></IconWrapper>
@@ -99,7 +99,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 	</div>
 	<!--spinner-->
 	<div>
-		<Typography type="body1">Spinner</Typography>
+		<Typography type="body1" style="margin-bottom: 10px">Spinner</Typography>
 		<div style="display: flex; flex-wrap: wrap;">
 			<IconWrapper name="IconSpinnerSmall" loading spinner-color="success"></IconWrapper>
 			<IconWrapper name="IconSpinnerMedium" loading spinner-color="success"></IconWrapper>
