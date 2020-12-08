@@ -47,6 +47,8 @@ import IconInfoMediumLine from '@/assets/images/icon/icon-info-medium-line.svg?i
 import IconCloseMediumLine from '@/assets/images/icon/icon-close-medium-line.svg?inline';
 import IconCheckRoundMediumLine from '@/assets/images/icon/icon-checkRound-medium-line.svg?inline';
 import IconFilterMediumLine from '@/assets/images/icon/icon-filter-medium-line.svg?inline';
+import IconLocationMediumFill from '@/assets/images/icon/icon-location-medium-fill.svg?inline';
+
 import IconEduMediumLine from '@/assets/images/icon/icon-edu-medium-line.svg?inline';
 import IconMentoringMediumLine from '@/assets/images/icon/icon-mentoring-medium-line.svg?inline';
 import IconResumeMediumLine from '@/assets/images/icon/icon-resume-medium-line.svg?inline';
@@ -144,6 +146,7 @@ export default {
 						'IconCloseMediumLine',
 						'IconCheckRoundMediumLine',
 						'IconFilterMediumLine',
+						'IconLocationMediumFill',
 						'IconResumeMediumLine',
 						'IconJobWikiMediumLine',
 						'IconAnalyticsMediumLine',
@@ -350,6 +353,7 @@ export default {
 		IconCloseMediumLine,
 		IconCheckRoundMediumLine,
 		IconFilterMediumLine,
+		IconLocationMediumFill,
 		IconMentoringMediumLine,
 		IconResumeMediumLine,
 		IconJobWikiMediumLine,
