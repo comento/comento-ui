@@ -28,6 +28,7 @@ import IconCloseSmallLine from '@/assets/images/icon/icon-close-small-line.svg?i
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
 import IconQuestionMediumLine from '@/assets/images/icon/icon-question-medium-line.svg?inline';
+import IconLikeMediumLine from '@/assets/images/icon/icon-like-medium-line.svg?inline';
 import IconLikeMediumFill from '@/assets/images/icon/icon-like-medium-fill.svg?inline';
 import IconCommentMediumLine from '@/assets/images/icon/icon-comment-medium-line.svg?inline';
 import IconCheckMediumLine from '@/assets/images/icon/icon-check-medium-line.svg?inline';
@@ -124,6 +125,7 @@ export default {
 						'IconCloseSmallLine',
 						'IconCheckMediumFill',
 						'IconQuestionMediumLine',
+						'IconLikeMediumLine',
 						'IconLikeMediumFill',
 						'IconCommentMediumLine',
 						'IconCheckMediumLine',
@@ -329,6 +331,7 @@ export default {
 		// medium
 		IconCheckMediumFill,
 		IconQuestionMediumLine,
+		IconLikeMediumLine,
 		IconLikeMediumFill,
 		IconCommentMediumLine,
 		IconCheckMediumLine,

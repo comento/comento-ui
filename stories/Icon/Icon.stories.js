@@ -29,6 +29,7 @@ storiesOf('Icon', module).add('Icon', () => ({
 		<div style="display: flex; flex-wrap: wrap;">
 			<IconWrapper name=IconCheckMediumFill></IconWrapper>
 			<IconWrapper name=IconQuestionMediumLine></IconWrapper>
+			<IconWrapper name=IconLikeMediumLine></IconWrapper>
 			<IconWrapper name=IconLikeMediumFill></IconWrapper>
 			<IconWrapper name=IconCommentMediumLine></IconWrapper>
 			<IconWrapper name=IconCheckMediumLine></IconWrapper>
