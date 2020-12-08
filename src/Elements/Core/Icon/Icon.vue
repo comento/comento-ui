@@ -49,7 +49,6 @@ import IconCheckRoundMediumLine from '@/assets/images/icon/icon-checkRound-mediu
 import IconFilterMediumLine from '@/assets/images/icon/icon-filter-medium-line.svg?inline';
 import IconLocationMediumFill from '@/assets/images/icon/icon-location-medium-fill.svg?inline';
 
-import IconEduMediumLine from '@/assets/images/icon/icon-edu-medium-line.svg?inline';
 import IconMentoringMediumLine from '@/assets/images/icon/icon-mentoring-medium-line.svg?inline';
 import IconResumeMediumLine from '@/assets/images/icon/icon-resume-medium-line.svg?inline';
 import IconJobWikiMediumLine from '@/assets/images/icon/icon-jobWiki-medium-line.svg?inline';
@@ -57,6 +56,7 @@ import IconAnalyticsMediumLine from '@/assets/images/icon/icon-analytics-medium-
 import IconInterviewMediumLine from '@/assets/images/icon/icon-interview-medium-line.svg?inline';
 import IconEssayMediumLine from '@/assets/images/icon/icon-essay-medium-line.svg?inline';
 import IconVodMediumLine from '@/assets/images/icon/icon-vod-medium-line.svg?inline';
+import IconEduMediumLine from '@/assets/images/icon/icon-edu-medium-line.svg?inline';
 import IconCouponMediumLine from '@/assets/images/icon/icon-coupon-medium-line.svg?inline';
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -76,6 +76,7 @@ import IconExclamationLargeLine from '@/assets/images/icon/icon-exclamation-larg
 import IconFilterLargeLine from '@/assets/images/icon/icon-filter-large-line.svg?inline';
 import IconCheckLargeFill from '@/assets/images/icon/icon-check-large-fill.svg?inline';
 import IconSecurityLargeFill from '@/assets/images/icon/icon-security-large-fill.svg?inline';
+import IconDownloadLargeLine from '@/assets/images/icon/icon-download-large-line.svg?inline';
 import IconMentoringLargeLine from '@/assets/images/icon/icon-mentoring-large-line.svg?inline';
 import IconVodLargeLine from '@/assets/images/icon/icon-vod-large-line.svg?inline';
 import IconAnswerLargeLine from '@/assets/images/icon/icon-answer-large-line.svg?inline';
@@ -83,7 +84,6 @@ import IconEduLargeLine from '@/assets/images/icon/icon-edu-large-line.svg?inlin
 import IconAnalyticsLargeLine from '@/assets/images/icon/icon-analytics-large-line.svg?inline';
 import IconInterviewLargeLine from '@/assets/images/icon/icon-interview-large-line.svg?inline';
 import IconEssayLargeLine from '@/assets/images/icon/icon-essay-large-line.svg?inline';
-import IconDownloadLargeLine from '@/assets/images/icon/icon-download-large-line.svg?inline';
 import IconCheckLargeLine from '@/assets/images/icon/icon-check-large-line.svg?inline';
 import IconResumeLargeLine from '@/assets/images/icon/icon-resume-large-line.svg?inline';
 import IconQuestionLargeLine from '@/assets/images/icon/icon-question-large-line.svg?inline';
@@ -138,16 +138,14 @@ export const IconNames = [
 	'IconCheckRoundMediumLine',
 	'IconFilterMediumLine',
 	'IconLocationMediumFill',
-	'IconResumeMediumLine',
-	'IconJobWikiMediumLine',
-	'IconAnalyticsMediumLine',
-	'IconEduMediumLine',
 	'IconMentoringMediumLine',
 	'IconResumeMediumLine',
 	'IconJobWikiMediumLine',
+	'IconAnalyticsMediumLine',
 	'IconInterviewMediumLine',
 	'IconEssayMediumLine',
 	'IconVodMediumLine',
+	'IconEduMediumLine',
 	'IconCouponMediumLine',
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
@@ -165,9 +163,18 @@ export const IconNames = [
 	'IconExclamationLargeLine',
 	'IconFilterLargeLine',
 	'IconCheckLargeFill',
+	'IconSecurityLargeFill',
+	'IconDownloadLargeLine',
+	'IconMentoringLargeLine',
+	'IconVodLargeLine',
+	'IconAnswerLargeLine',
+	'IconEduLargeLine',
 	'IconAnalyticsLargeLine',
 	'IconInterviewLargeLine',
 	'IconEssayLargeLine',
+	'IconCheckLargeLine',
+	'IconResumeLargeLine',
+	'IconQuestionLargeLine',
 	'IconArrowXLargeLine',
 	'IconCloseXLargeLine',
 	'IconQuestionXLargeLine',
@@ -181,15 +188,6 @@ export const IconNames = [
 	'IconSpinnerSmall',
 	'IconSpinnerMedium',
 	'IconSpinnerLarge',
-	'IconMentoringLargeLine',
-	'IconVodLargeLine',
-	'IconAnswerLargeLine',
-	'IconEduLargeLine',
-	'IconSecurityLargeFill',
-	'IconDownloadLargeLine',
-	'IconCheckLargeLine',
-	'IconResumeLargeLine',
-	'IconQuestionLargeLine',
 ];
 
 export default {
