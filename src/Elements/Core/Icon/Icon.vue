@@ -36,9 +36,9 @@ import IconPlusMediumLine from '@/assets/images/icon/icon-plus-medium-line.svg?i
 import IconExclamationMediumLine from '@/assets/images/icon/icon-exclamation-medium-line.svg?inline';
 import IconArrowMediumLine from '@/assets/images/icon/icon-arrow-medium-line.svg?inline';
 import IconTextArrowMediumLine from '@/assets/images/icon/icon-textArrow-medium-line.svg?inline';
-import IconFileMediumLine from '@/assets/images/icon/icon-file-medium-line.svg?inline';
-import IconTrashMediumLine from '@/assets/images/icon/icon-trash-medium-line.svg?inline';
-import IconDownloadMediumLine from '@/assets/images/icon/icon-download-medium-line.svg?inline';
+import IconFileMediumLineLight from '@/assets/images/icon/icon-file-medium-line-light.svg?inline';
+import IconTrashMediumLineLight from '@/assets/images/icon/icon-trash-medium-line-light.svg?inline';
+import IconDownloadMediumLineLight from '@/assets/images/icon/icon-download-medium-line-light.svg?inline';
 import IconOverflowMediumFill from '@/assets/images/icon/icon-overflow-medium-fill.svg?inline';
 import IconHourglassMediumLine from '@/assets/images/icon/icon-hourglass-medium-line.svg?inline';
 import IconCloseMediumFill from '@/assets/images/icon/icon-close-medium-fill.svg?inline';
@@ -135,9 +135,9 @@ export default {
 						'IconExclamationMediumLine',
 						'IconArrowMediumLine',
 						'IconTextArrowMediumLine',
-						'IconFileMediumLine',
-						'IconTrashMediumLine',
-						'IconDownloadMediumLine',
+						'IconFileMediumLineLight',
+						'IconTrashMediumLineLight',
+						'IconDownloadMediumLineLight',
 						'IconOverflowMediumFill',
 						'IconHourglassMediumLine',
 						'IconCloseMediumFill',
@@ -342,9 +342,9 @@ export default {
 		IconExclamationMediumLine,
 		IconArrowMediumLine,
 		IconTextArrowMediumLine,
-		IconFileMediumLine,
-		IconTrashMediumLine,
-		IconDownloadMediumLine,
+		IconFileMediumLineLight,
+		IconTrashMediumLineLight,
+		IconDownloadMediumLineLight,
 		IconOverflowMediumFill,
 		IconHourglassMediumLine,
 		IconCloseMediumFill,
