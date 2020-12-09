@@ -48,7 +48,6 @@ import IconCloseMediumLine from '@/assets/images/icon/icon-close-medium-line.svg
 import IconCheckRoundMediumLine from '@/assets/images/icon/icon-checkRound-medium-line.svg?inline';
 import IconFilterMediumLine from '@/assets/images/icon/icon-filter-medium-line.svg?inline';
 import IconLocationMediumFill from '@/assets/images/icon/icon-location-medium-fill.svg?inline';
-
 import IconMentoringMediumLine from '@/assets/images/icon/icon-mentoring-medium-line.svg?inline';
 import IconResumeMediumLine from '@/assets/images/icon/icon-resume-medium-line.svg?inline';
 import IconJobWikiMediumLine from '@/assets/images/icon/icon-jobWiki-medium-line.svg?inline';
@@ -98,6 +97,10 @@ import IconLikeXLargeLine from '@/assets/images/icon/icon-like-xlarge-line.svg?i
 import IconCelebrateXLargeLine from '@/assets/images/icon/icon-celebrate-xlarge-line.svg?inline';
 import IconAnswerXLargeLine from '@/assets/images/icon/icon-answer-xlarge-line.svg?inline';
 import IconMegaphoneXLargeLine from '@/assets/images/icon/icon-megaphone-xlarge-line.svg?inline';
+import IconProfileXLargeFill from '@/assets/images/icon/icon-profile-xlarge-fill.svg?inline';
+// 2x-large
+import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
+
 // spinner
 import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline';
 import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
@@ -175,6 +178,7 @@ export const IconNames = [
 	'IconCheckLargeLine',
 	'IconResumeLargeLine',
 	'IconQuestionLargeLine',
+	'IconProfileXLargeFill',
 	'IconArrowXLargeLine',
 	'IconCloseXLargeLine',
 	'IconQuestionXLargeLine',
@@ -185,6 +189,7 @@ export const IconNames = [
 	'IconCelebrateXLargeLine',
 	'IconAnswerXLargeLine',
 	'IconMegaphoneXLargeLine',
+	'IconProfile2XLargeFill',
 	'IconSpinnerSmall',
 	'IconSpinnerMedium',
 	'IconSpinnerLarge',
@@ -375,6 +380,9 @@ export default {
 		IconCelebrateXLargeLine,
 		IconAnswerXLargeLine,
 		IconMegaphoneXLargeLine,
+		IconProfileXLargeFill,
+		// 2x-large
+		IconProfile2XLargeFill,
 		// spinner
 		IconSpinnerSmall,
 		IconSpinnerMedium,
