@@ -1,14 +1,14 @@
 <template>
 	<button
-		class="c-application c-button c-pointer"
-		:class="[computedSize, computedColor, computedFull, computedType, { loading: loading }]"
+		class="c-application c-button"
+		:class="[computedSize, computedColor, computedFull, computedType, computedLoading]"
 		v-bind="$attrs"
 		:disabled="disabled"
 		v-on="$listeners"
 	>
 		<template v-if="loading">
 			<div class="c-button--loading">
-				<Icon :name="computedIconName" :reversed="type === 'fill'" loading :spinner-color="color" />
+				<Icon :name="computedIconName" :reversed="isFillType" loading :spinner-color="color" />
 			</div>
 		</template>
 		<div class="c-button--icon" :class="setIconSpacing('left')">
@@ -23,6 +23,11 @@
 
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
+
+export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
+export const buttonColors = ['primary', 'success', 'gray', 'error'];
+export const buttonTypes = ['fill', 'outlined', 'text', 'icon'];
+
 export default {
 	name: 'Button',
 	inheritAttrs: false,
@@ -31,35 +36,43 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return ['small', 'medium', 'large', 'xlarge'].indexOf(value) !== -1;
+				return buttonSizes.indexOf(value) !== -1;
 			},
 		},
 		color: {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				return ['primary', 'success', 'gray', 'error'].indexOf(value) !== -1;
+				return buttonColors.indexOf(value) !== -1;
 			},
 		},
 		type: {
 			type: String,
 			default: 'fill',
 			validator(value) {
-				return ['fill', 'outlined', 'text'].indexOf(value) !== -1;
+				return buttonTypes.indexOf(value) !== -1;
 			},
 		},
 		full: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
-		// disabled
 		disabled: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	computed: {
@@ -73,7 +86,10 @@ export default {
 			return this.type;
 		},
 		computedFull() {
-			return this.full ? 'full' : '';
+			return { full: this.full };
+		},
+		computedLoading() {
+			return { loading: this.loading };
 		},
 		computedIconName() {
 			let size = this.size.charAt(0).toUpperCase() + this.size.slice(1);
@@ -84,6 +100,9 @@ export default {
 		computedIconMargin() {
 			const isXLarge = this.size.indexOf('xlarge') !== -1;
 			return isXLarge ? 4 : 2;
+		},
+		isFillType() {
+			return this.type === 'fill';
 		},
 	},
 	methods: {
@@ -96,9 +115,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
+<style lang="scss" scoped>
 .c-button {
 	color: $white;
 	background-color: $primary;
@@ -108,6 +125,8 @@ export default {
 	@include align-items(center);
 	@include justify-content(center);
 	position: relative;
+	cursor: pointer;
+
 	&:disabled {
 		cursor: not-allowed !important;
 		&:active {
