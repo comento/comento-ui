@@ -1,88 +1,50 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Button from "@/src/Components/Button/Button";
+import Button, { buttonSizes, buttonColors, buttonTypes } from "@/src/Components/Button/Button";
 import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
-  title="DESIGN SYSTEM/Button/Button"
+  title="General/Button/Button"
   component={ Button }
   argTypes={{
     label: {
       description: "버튼에 들어갈 텍스트",
       defaultValue: "버튼",
       control: { type: "text" },
-      table: {
-        type: {
-          summary: null,
-        },
-      },
     },
     size: {
-      description: "버튼의 크기<br/>`String`",
-      table: {
-        type: {
-          summary: "목록",
-          detail: '"small" "medium" "large" "xlarge"',
-        },
-      },
+      description: "버튼의 크기",
       control: {
         type: "select",
-        options: ["small", "medium", "large", "xlarge"],
+        options: buttonSizes,
       },
     },
     color: {
-      description: "버튼의 색상 타입<br/>`String`",
-      table: {
-        type: {
-          summary: "목록",
-          detail: '"primary" "success" "gray" "error"',
-        },
-      },
+      description: "버튼의 색상 타입",
       control: {
         type: "select",
-        options: ["primary", "success", "gray", "error"],
+        options: buttonColors,
       },
     },
     type: {
-      description: "버튼의 타입<br/>`String`",
-      table: {
-        type: {
-          summary: "목록",
-          detail: '"fill" "outlined" "text"',
-        },
-      },
+      description: "버튼의 타입",
       control: {
         type: "select",
-        options: ["fill", "outlined", "text"],
+        options: buttonTypes,
       },
     },
     full: {
-      description: "버튼의 너비가 부모컴포넌트의 100%를 차지할지<br/>`Boolean`",
-      table: {
-        type: {
-          summary: null,
-        },
-      },
+      description: "width: 100%",
     },
     disabled: {
-      description: "버튼의 disabled 상태<br/>`Boolean`",
-      table: {
-        type: {
-          summary: null,
-        },
-      },
+      description: "버튼의 disabled 상태",
     },
     loading: {
-      description: "버튼의 loading 상태<br/>`Boolean`",
-      table: {
-        type: {
-          summary: null,
-        },
-      },
+      description: "버튼의 loading 상태",
     },
   }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Button },
   template:
@@ -95,11 +57,11 @@ export const Basic = (args, { argTypes }) => ({
 
 **Button** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-  {Basic.bind({})}
+<Story name="Default" height="100px">
+  {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
 ## Stories
 ### All
