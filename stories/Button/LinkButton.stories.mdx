@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import LinkButton from "@/src/Components/Button/LinkButton";
+import LinkButton, { linkButtonColors, linkButtonTargets } from "@/src/Components/Button/LinkButton";
 
 <Meta
     title="General/Button/LinkButton"
@@ -12,7 +12,6 @@ import LinkButton from "@/src/Components/Button/LinkButton";
         },
         type: {
             description: "글자 크기",
-            defaultValue: "body1",
             control: {
                 type: "text",
             },
@@ -26,21 +25,24 @@ import LinkButton from "@/src/Components/Button/LinkButton";
         },
         color: {
             description: "버튼 색상",
-            defaultValue: "blue600",
             control: {
                 type: "select",
-                options: ["blue600", "blue400"],
+                options: linkButtonColors,
             },
         },
         external: {
             description: "외부 링크(a 태그 사용)",
-            defaultValue: true,
-            control: {
-                type: "boolean",
         },
         nuxt: {
-            description: "nuxt or vue",
+            description: "nuxt에서 사용",
         },
+        target: {
+            description: "문서가 열리는 위치",
+            control: {
+                type: "select",
+                options: linkButtonTargets,
+            },
+        }
     }}
 />
 
@@ -49,7 +51,16 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { LinkButton },
     template:
-        `<LinkButton :type="type" :to="to" :color="color" :external="external">{{label}}</LinkButton>`,
+        `<LinkButton
+            :type="type"
+            :to="to"
+            :color="color"
+            :external="external"
+            :nuxt="nuxt"
+            :target="target"
+        >
+            {{label}}
+        </LinkButton>`,
 });
 
 # LinkButton

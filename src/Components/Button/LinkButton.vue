@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-link-button" :class="color">
 		<!-- external link -->
-		<a v-if="external" v-bind="$attrs" :href="to" v-on="$listeners">
+		<a v-if="external" v-bind="$attrs" :href="to" :target="target" v-on="$listeners">
 			<Typography :type="type" :color="color">
 				<slot />
 			</Typography>
@@ -26,6 +26,7 @@
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export const linkButtonColors = ['blue600', 'blue400'];
+export const linkButtonTargets = ['_blank', '_self', '_parent', '_top'];
 
 export default {
 	name: 'LinkButton',
@@ -53,6 +54,14 @@ export default {
 		nuxt: {
 			type: Boolean,
 			default: false,
+		},
+		// external일 때만 적용됨
+		target: {
+			type: String,
+			default: '_self',
+			validator(value) {
+				return linkButtonTargets.indexOf(value) !== -1;
+			},
 		},
 	},
 	components: { Typography },
