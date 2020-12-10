@@ -31,7 +31,7 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
 />
 
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { NarrowButton },
     template:
@@ -42,11 +42,11 @@ export const Basic = (args, { argTypes }) => ({
 
 **NarrowButton** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-  {Basic.bind({})}
+<Story name="Default" height="100px">
+  {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
 ## Stories
 
@@ -149,11 +149,11 @@ export const Basic = (args, { argTypes }) => ({
                 <div style="display: flex">
                     <NarrowButton color="gray400">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="gray500" />
+                            <Icon name="IconPlusSmallLine" color="gray400" />
                         </template>
                         WithIcon
                         <template v-slot:right-icon>
-                            <Icon name="IconTextArrowSmallFill" color="gray500" />
+                            <Icon name="IconTextArrowSmallFill" color="gray400" />
                         </template>
                     </NarrowButton>
                     <NarrowButton color="gray600">
