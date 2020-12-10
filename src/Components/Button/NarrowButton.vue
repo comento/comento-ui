@@ -7,13 +7,20 @@
 		type="button"
 		v-on="$listeners"
 	>
+		<div class="c-narrow-button--icon" :style="$slots['left-icon'] && `margin-right: ${computedIconMargin}`">
+			<slot name="left-icon" />
+		</div>
 		<slot />
+		<div class="c-narrow-button--icon" :style="$slots['right-icon'] && `margin-left: ${computedIconMargin}`">
+			<slot name="right-icon" />
+		</div>
 	</button>
 </template>
 
 <script>
 import { colors } from '@/src/Elements/Core/Colors';
 
+export const narrowButtonColors = ['gray400', 'gray600'];
 export const narrowButtonSizes = ['small', 'medium', 'large'];
 
 export default {
@@ -41,6 +48,10 @@ export default {
 		},
 		computedColor() {
 			return { color: this.mappedColor };
+		},
+		computedIconMargin() {
+			const isMoreThanLarge = this.size.indexOf('large') !== -1;
+			return isMoreThanLarge ? '4px' : '2px';
 		},
 	},
 };
@@ -77,8 +88,8 @@ export default {
 		@include body1();
 	}
 
-	&:hover {
-		background-color: $gray100;
+	&--icon {
+		@include flexbox();
 	}
 }
 </style>
