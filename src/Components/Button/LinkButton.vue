@@ -7,11 +7,18 @@
 			</Typography>
 		</a>
 		<!-- internal link -->
-		<router-link v-else :to="to" tag="a" v-bind="$attrs" v-on="$listeners">
-			<Typography :type="type" :color="color">
-				<slot />
-			</Typography>
-		</router-link>
+		<template v-else>
+			<nuxt-link v-if="nuxt" :to="to" v-bind="$attrs" v-on="$listeners">
+				<Typography :type="type" :color="color">
+					<slot />
+				</Typography>
+			</nuxt-link>
+			<router-link v-else :to="to" tag="a" v-bind="$attrs" v-on="$listeners">
+				<Typography :type="type" :color="color">
+					<slot />
+				</Typography>
+			</router-link>
+		</template>
 	</div>
 </template>
 
@@ -42,6 +49,10 @@ export default {
 		external: {
 			type: Boolean,
 			default: true,
+		},
+		nuxt: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	components: { Typography },
