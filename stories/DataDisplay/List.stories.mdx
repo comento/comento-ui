@@ -5,7 +5,7 @@ import Typography from "@/src/Elements/Core/Typography/Typography";
 import Divider from "@/src/Elements/Utility/Divider";
 
 <Meta
-    title="DESIGN SYSTEM/DataDisplay/List"
+    title="Data Display/List"
     component={ List }
     argTypes={{
         listItems: {
@@ -46,7 +46,7 @@ import Divider from "@/src/Elements/Utility/Divider";
     }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { List, ListItem, Typography, Divider },
     template:
@@ -66,9 +66,9 @@ export const Basic = (args, { argTypes }) => ({
 
 **List** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-    {Basic.bind({})}
+<Story name="Default" height="100px">
+    {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
