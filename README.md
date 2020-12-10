@@ -30,16 +30,9 @@ import 'comento-ui/dist/comento-ui.css';
 Vue.use(ComentoUI);
 ```
 
-## Example
-```vue
-<template>
-    <c-button>버튼</c-button>
-</template>
-```
-
 ## Docs
 
-[comento-ui storybook](https://5f7bfe109cb1f900229bac7e-gtlrddgxbb.chromatic.com/?path=/story/button--button-fill)
+[comento-ui storybook](https://comento.github.io/comento-ui/)
 
 ## Docs provided
 
