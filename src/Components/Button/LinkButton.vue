@@ -35,10 +35,19 @@ export default {
 		type: {
 			type: String,
 			default: 'body1',
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		to: {
-			type: String,
+			type: [String, Object],
 			default: 'javascript:void();',
+			validator(value) {
+				const isString = typeof value === 'string';
+				const isObject = typeof value === 'object' && value.constructor === Object;
+
+				return isString || isObject;
+			},
 		},
 		color: {
 			type: String,
@@ -50,10 +59,16 @@ export default {
 		external: {
 			type: Boolean,
 			default: true,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		nuxt: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		// external일 때만 적용됨
 		target: {
