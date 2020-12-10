@@ -35,7 +35,7 @@ export default {
 			};
 		},
 		mappedColor() {
-			return this.bgColor ? colors[this.bgColor] : 'inherit';
+			return this.bgColor && colors[this.bgColor] ? colors[this.bgColor] : 'inherit';
 		},
 	},
 };
