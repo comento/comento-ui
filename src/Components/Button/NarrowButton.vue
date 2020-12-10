@@ -49,6 +49,10 @@ export default {
 		computedColor() {
 			return { color: this.mappedColor };
 		},
+		computedIconMargin() {
+			const isMoreThanLarge = this.size.indexOf('large') !== -1;
+			return isMoreThanLarge ? '4px' : '2px';
+		},
 	},
 	methods: {
 		setIconSpacing(position) {

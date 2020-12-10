@@ -6,7 +6,7 @@
 			ref="icon"
 			class="c-icon"
 			:class="computedSpinnerColor"
-			:style="computedStyle"
+			:style="styles"
 			v-bind="$attrs"
 			v-on="$listeners"
 		/>
@@ -241,9 +241,19 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		rotation: {
+			type: Number,
+			default: 0,
+			validator(value) {
+				return typeof value === 'number';
+			},
+		},
 	},
 	computed: {
-		computedStyle() {
+		computedRotate() {
+			return this.rotation !== 0 ? { transform: `rotate(${this.rotation}deg)` } : null;
+		},
+		computedFill() {
 			if (this.loading) {
 				return { fill: 'none' };
 			} else {
@@ -253,6 +263,12 @@ export default {
 					return null;
 				}
 			}
+		},
+		styles() {
+			return {
+				...this.computedFill,
+				...this.computedRotate,
+			};
 		},
 		computedSpinnerColor() {
 			return this.spinnerColor;
