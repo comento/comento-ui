@@ -1,5 +1,5 @@
 <template>
-	<section class="c-contents">
+	<section class="c-application c-contents">
 		<Typography type="body2" element="p" color="gray400" class="mb-8 c-contents--overline">
 			<slot name="overline" />
 		</Typography>
