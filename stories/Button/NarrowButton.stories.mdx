@@ -1,42 +1,41 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import NarrowButton from "@/src/Components/Button/NarrowButton";
+import NarrowButton, { narrowButtonColors, narrowButtonSizes } from "@/src/Components/Button/NarrowButton";
+import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
-  title="DESIGN SYSTEM/Button/NarrowButton"
-  component={NarrowButton}
-  argTypes={{
-    label: {
-      description: "버튼에 들어갈 텍스트",
-      defaultValue: "약관 확인 >",
-      control: { type: "text" },
-      table: {
-        type: {
-          summary: null,
+    title="General/Button/NarrowButton"
+    component={NarrowButton}
+    argTypes={{
+        label: {
+            description: "버튼에 들어갈 텍스트",
+            defaultValue: "NarrowButton",
+            control: { type: "text" },
         },
-      },
-    },
-    color: {
-      description: "버튼의 색상 타입<br/>`String`",
-      table: {
-        type: {
-          summary: "목록",
-          detail: '"gray400" "gray600"',
+        color: {
+            description: "버튼의 색상 타입",
+            defaultValue: "gray600",
+            control: {
+                type: "select",
+                options: narrowButtonColors,
+            },
         },
-      },
-      control: {
-        type: "select",
-        options: ["gray400", "gray600"],
-      },
-    },
-  }}
+        size: {
+            description: "버튼 크기",
+            defaultValue: "small",
+            control: {
+                type: "select",
+                options: narrowButtonSizes,
+            },
+        },
+    }}
 />
 
 
 export const Basic = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { NarrowButton },
-  template:
-    `<NarrowButton :color="color">{{label}}</NarrowButton>`,
+    props: Object.keys(argTypes),
+    components: { NarrowButton },
+    template:
+     `<NarrowButton :color="color" :size="size">{{label}}</NarrowButton>`,
 });
 
 # NarrowButton
@@ -50,19 +49,71 @@ export const Basic = (args, { argTypes }) => ({
 <ArgsTable story="Basic" />
 
 ## Stories
-### All
 
+### Sizes
 <Canvas>
-    <Story name="All" height="100px">
+    <Story name="Sizes" height="100px">
         {{
             template: `
             <div>
-                <NarrowButton color="gray400">약관 확인 ></NarrowButton>
-                <NarrowButton color="gray600">약관 확인 ></NarrowButton>
+                <div style="display: flex">
+                    <NarrowButton size="small">Small</NarrowButton>
+                    <NarrowButton size="medium">Medium</NarrowButton>
+                    <NarrowButton size="large">Large</NarrowButton>
+                </div>
             </div>
         `,
-            components: { NarrowButton },
+            components: { NarrowButton, Icon },
         }}
     </Story>
 </Canvas>
 
+### Colors
+<Canvas>
+    <Story name="Colors" height="100px">
+        {{
+            template: `
+            <div>
+                <div style="display: flex">
+                    <NarrowButton color="gray400">Gray400</NarrowButton>
+                    <NarrowButton color="gray600">Gray600</NarrowButton>
+                </div>
+            </div>
+        `,
+            components: { NarrowButton, Icon },
+        }}
+    </Story>
+</Canvas>
+
+### With Icon
+<Canvas>
+    <Story name="WithIcon" height="100px">
+        {{
+            template: `
+            <div>
+                <div style="display: flex">
+                    <NarrowButton color="gray400">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusSmallLine" color="gray500" />
+                        </template>
+                        WithIcon
+                        <template v-slot:right-icon>
+                            <Icon name="IconTextArrowSmallFill" color="gray500" />
+                        </template>
+                    </NarrowButton>
+                    <NarrowButton color="gray600">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusSmallLine" color="gray500" />
+                        </template>
+                        WithIcon
+                        <template v-slot:right-icon>
+                            <Icon name="IconTextArrowSmallFill" color="gray500" />
+                        </template>
+                    </NarrowButton>
+                </div>
+            </div>
+        `,
+            components: { NarrowButton, Icon },
+        }}
+    </Story>
+</Canvas>

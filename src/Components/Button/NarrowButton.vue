@@ -31,7 +31,7 @@ export default {
 			type: String,
 			default: 'gray600',
 			validator(value) {
-				return ['gray400', 'gray600'].indexOf(value) !== -1;
+				return narrowButtonColors.indexOf(value) !== -1;
 			},
 		},
 		size: {
