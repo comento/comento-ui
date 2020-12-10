@@ -83,9 +83,11 @@ export default {
 		}
 
 		&:disabled,
-		&:disabled + label:before {
+		&:disabled + label {
 			cursor: not-allowed !important;
-			pointer-events: none;
+			&:active {
+				pointer-events: none;
+			}
 		}
 		&:disabled {
 			& + label:before {
@@ -111,6 +113,7 @@ export default {
 			display: inline-flex;
 			flex-direction: row;
 			align-items: center;
+			cursor: pointer;
 			> div {
 				display: inline-block;
 			}
@@ -124,7 +127,6 @@ export default {
 				display: inline-block;
 				margin-right: 8px;
 				box-sizing: border-box;
-				cursor: pointer;
 			}
 		}
 	}
