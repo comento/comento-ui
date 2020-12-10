@@ -55,7 +55,7 @@ export default {
 		},
 		computedIconStyle(position) {
 			const oppositePosition = position === 'left' ? 'right' : 'left';
-			return this.$slots[`${position}-icon`] && `margin-${oppositePosition}: ${this.computedIconMargin}`
+			return this.$slots[`${position}-icon`] && `margin-${oppositePosition}: ${this.computedIconMargin}`;
 		},
 	},
 };
