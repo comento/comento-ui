@@ -19,8 +19,8 @@ export const white = '#FFFFFF';
 export const green800 = '#00992B';
 export const green600 = '#00C854';
 export const green400 = '#5CE596';
-export const green100 = '#E7FAEF';
-export const green000 = '#FBFFFD';
+export const green100 = '#DEFAEB';
+export const green000 = '#F7FCF9';
 
 //Red
 export const red800 = '#CC2727';
