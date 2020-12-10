@@ -3,7 +3,7 @@ import Typography, { TypographyTypes, ElementTypes } from "@/src/Elements/Core/T
 import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
-  title="DESIGN SYSTEM/Typography"
+  title="Core/Typography"
   component={ Typography }
   argTypes={{
     text: {
@@ -78,7 +78,7 @@ import { colorKeys } from "@/src/Elements/Core/Colors";
   }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Typography },
   template:
@@ -91,11 +91,11 @@ export const Basic = (args, { argTypes }) => ({
 
 **Typography** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-  {Basic.bind({})}
+<Story name="Default" height="100px">
+  {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
 ## Stories
 ### All
