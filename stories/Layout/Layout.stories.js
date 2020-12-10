@@ -144,44 +144,51 @@ storiesOf('Layout', module)
 	}))
 	.add('StyleColGroup', () => ({
 		components: { Grid, Row, StyleCol, Typography, StyleColGroup },
-		template: `<div>
-						<Typography type="display1" element="div" align="center" class="mb-64">style-col 간격 동일하게 보여주기,
-						 
-						</Typography>
-						
-							<Grid >
-								<Row>
-								<StyleCol  :colSm="8" :offsetSm="2">
-									<Row >
-										<StyleColGroup bgColor="blue400">
-											<StyleCol :colSm="3"   class="mb-40">
-												<Typography type="headline6" element="p" align="center" style="background: lightskyblue" > col-3</Typography>
-											</StyleCol>
-											<StyleCol :colSm="3"   class="mb-40">
-												<Typography type="headline6" element="p" align="center"  style="background: lightskyblue" > col-3</Typography>
-											</StyleCol>
-											<StyleCol :colSm="3"   class="mb-40">
-												<Typography type="headline6" element="p" align="center"  style="background: lightskyblue" > col-3</Typography>
-											</StyleCol>
-											<StyleCol :colSm="3"   class="mb-40">
-												<Typography type="headline6" element="p" align="center"  style="background: lightskyblue" > col-3</Typography>
-											</StyleCol>		
-											<StyleCol :colSm="6"  >
-												<Typography type="headline6" element="p" align="center"  style="background: lightskyblue" > col-6</Typography>
-											</StyleCol>
-											<StyleCol :colSm="6"  >
-												<Typography type="headline6" element="p" align="center"  style="background: lightskyblue" > col-6</Typography>
-											</StyleCol>
-										</StyleColGroup>
-									</Row>
+		template: `
+			<div>
+				<Typography type="display1" element="div" align="center" class="mb-64">style-col 간격 동일하게 보여주기,
+
+				</Typography>
+
+				<Grid>
+					<Row>
+						<StyleCol :colSm="8" :offsetSm="2">
+							<Row>
+								<StyleColGroup bgColor="blue400">
+									<StyleCol :colSm="3" class="mb-40">
+										<Typography type="headline6" element="p" align="center"
+													style="background: lightskyblue"> col-3
+										</Typography>
 									</StyleCol>
-								</Row>
-							</Grid>
-						</Grid>
-					</div><script>
-import StyleCol from "./StyleCol"; 
-export default { 
-components: { StyleCol }
- }
-</script>`,
+									<StyleCol :colSm="3" class="mb-40">
+										<Typography type="headline6" element="p" align="center"
+													style="background: lightskyblue"> col-3
+										</Typography>
+									</StyleCol>
+									<StyleCol :colSm="3" class="mb-40">
+										<Typography type="headline6" element="p" align="center"
+													style="background: lightskyblue"> col-3
+										</Typography>
+									</StyleCol>
+									<StyleCol :colSm="3" class="mb-40">
+										<Typography type="headline6" element="p" align="center"
+													style="background: lightskyblue"> col-3
+										</Typography>
+									</StyleCol>
+									<StyleCol :colSm="6">
+										<Typography type="headline6" element="p" align="center"
+													style="background: lightskyblue"> col-6
+										</Typography>
+									</StyleCol>
+									<StyleCol :colSm="6">
+										<Typography type="headline6" element="p" align="center"
+													style="background: lightskyblue"> col-6
+										</Typography>
+									</StyleCol>
+								</StyleColGroup>
+							</Row>
+						</StyleCol>
+					</Row>
+				</Grid>
+			</div>`,
 	}));
