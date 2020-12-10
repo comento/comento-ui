@@ -7,7 +7,7 @@ ex) <grid>
 -->
 <template>
 	<div
-		class="c-application"
+		class="c-application c-style-col"
 		:class="[computedSm, computedOffsetSm, computedLg, computedOffsetLg, computedGutters]"
 		:style="computedStyle"
 	>
