@@ -1,13 +1,24 @@
 <template>
-	<a class="c-application c-link-button" v-bind="$attrs" :href="to" v-on="$listeners">
-		<Typography :type="type" :color="color">
-			<slot />
-		</Typography>
-	</a>
+	<div class="c-application c-link-button" :class="color">
+		<!-- external link -->
+		<a v-if="external" v-bind="$attrs" :href="to" v-on="$listeners">
+			<Typography :type="type" :color="color">
+				<slot />
+			</Typography>
+		</a>
+		<!-- internal link -->
+		<router-link v-else :to="to" tag="a" v-bind="$attrs" v-on="$listeners">
+			<Typography :type="type" :color="color">
+				<slot />
+			</Typography>
+		</router-link>
+	</div>
 </template>
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+
+export const linkButtonColors = ['blue600', 'blue400'];
 
 export default {
 	name: 'LinkButton',
@@ -25,8 +36,12 @@ export default {
 			type: String,
 			default: 'blue600',
 			validator(value) {
-				return ['blue600', 'blue400'].indexOf(value) !== -1;
+				return linkButtonColors.indexOf(value) !== -1;
 			},
+		},
+		external: {
+			type: Boolean,
+			default: true,
 		},
 	},
 	components: { Typography },
@@ -34,13 +49,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-link-button {
+.c-link-button * {
 	text-decoration: none;
+	cursor: pointer;
 
 	&:hover,
 	&:focus {
 		text-decoration: underline;
 		text-decoration-color: $blue600;
+	}
+
+	&.blue400 {
+		text-decoration-color: $blue400;
 	}
 }
 </style>
