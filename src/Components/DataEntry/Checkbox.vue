@@ -9,7 +9,7 @@
 			v-on="$listeners"
 		/>
 		<label :class="{ disabled }" :for="computedId">
-			<Typography :color="disabled ? 'gray300' : 'gray500'">
+			<Typography :color="computedColor">
 				<slot />
 			</Typography>
 		</label>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { colorKeys } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export default {
@@ -35,6 +36,17 @@ export default {
 			type: String,
 			default: '',
 		},
+		color: {
+			type: String,
+			default: 'gray500',
+			validator(value) {
+				const isValid = colorKeys.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography color`);
+				}
+				return isValid;
+			},
+		},
 	},
 	computed: {
 		sync_value: {
@@ -47,6 +59,9 @@ export default {
 		},
 		computedId() {
 			return this.id || `input-${this._uid}`;
+		},
+		computedColor() {
+			return this.disabled ? 'gray300' : this.color;
 		},
 	},
 	components: { Typography },
