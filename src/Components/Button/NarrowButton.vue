@@ -7,11 +7,11 @@
 		type="button"
 		v-on="$listeners"
 	>
-		<div class="c-narrow-button--icon" :style="$slots['left-icon'] && `margin-right: ${computedIconMargin}`">
+		<div class="c-narrow-button--icon" :style="computedIconStyle('left')">
 			<slot name="left-icon" />
 		</div>
 		<slot />
-		<div class="c-narrow-button--icon" :style="$slots['right-icon'] && `margin-left: ${computedIconMargin}`">
+		<div class="c-narrow-button--icon" :style="computedIconStyle('right')">
 			<slot name="right-icon" />
 		</div>
 	</button>
@@ -52,6 +52,10 @@ export default {
 		computedIconMargin() {
 			const isMoreThanLarge = this.size.indexOf('large') !== -1;
 			return isMoreThanLarge ? '4px' : '2px';
+		},
+		computedIconStyle(position) {
+			const oppositePosition = position === 'left' ? 'right' : 'left';
+			return this.$slots[`${position}-icon`] && `margin-${oppositePosition}: ${this.computedIconMargin}`
 		},
 	},
 };
