@@ -49,18 +49,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-link-button * {
-	text-decoration: none;
-	cursor: pointer;
+.c-link-button {
+	* {
+		text-decoration: none;
+		cursor: pointer;
 
-	&:hover,
-	&:focus {
-		text-decoration: underline;
-		text-decoration-color: $blue600;
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+			text-decoration-color: $blue600;
+		}
 	}
 
-	&.blue400 {
-		text-decoration-color: $blue400;
+	&.blue400 * {
+		&:hover,
+		&:focus {
+			text-decoration-color: $blue400;
+		}
 	}
 }
 </style>
