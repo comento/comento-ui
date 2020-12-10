@@ -2,7 +2,8 @@
 
 //Gray
 export const black = '#000000';
-export const gray900 = '#21282F';
+export const gray900 = '#151617';
+export const gray850 = '#21282F';
 export const gray800 = '#495057';
 export const gray700 = '#6F767D';
 export const gray600 = '#838990';
@@ -49,6 +50,7 @@ export const gray = gray600;
 export const colors = {
     black: black,
     gray900: gray900,
+    gray850: gray850,
     gray800: gray800,
     gray700: gray700,
     gray600: gray600,
