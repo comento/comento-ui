@@ -11,11 +11,11 @@
 				<Icon :name="computedIconName" :reversed="type === 'fill'" loading :spinner-color="color" />
 			</div>
 		</template>
-		<div class="c-button--icon" :style="$slots['left-icon'] && `margin-right: ${computedIconMargin}`">
+		<div class="c-button--icon" :class="setIconSpacing('left')">
 			<slot name="left-icon" />
 		</div>
 		<slot />
-		<div class="c-button--icon" :style="$slots['right-icon'] && `margin-left: ${computedIconMargin}`">
+		<div class="c-button--icon" :class="setIconSpacing('right')">
 			<slot name="right-icon" />
 		</div>
 	</button>
@@ -82,8 +82,14 @@ export default {
 			return `IconSpinner${size}`;
 		},
 		computedIconMargin() {
-			const isMoreThanLarge = this.size.indexOf('large') !== -1;
-			return isMoreThanLarge ? '4px' : '2px';
+			const isXLarge = this.size.indexOf('xlarge') !== -1;
+			return isXLarge ? 4 : 2;
+		},
+	},
+	methods: {
+		setIconSpacing(position) {
+			const oppositePosition = position === 'left' ? 'r' : 'l';
+			return this.$slots[`${position}-icon`] && `m${oppositePosition}-${this.computedIconMargin}`;
 		},
 	},
 	components: { Icon },
