@@ -48,6 +48,9 @@ export default {
 		isLogoType() {
 			return this.type === 'logo';
 		},
+		isImageType() {
+			return this.type === 'image';
+		},
 		computedType() {
 			return `${this.type}`;
 		},
@@ -55,8 +58,7 @@ export default {
 			return `${this.size}`;
 		},
 		computedStyle() {
-			const isImageType = this.type === 'image';
-			if (isImageType) {
+			if (this.isImageType) {
 				return { 'background-image': `url(${this.src})` };
 			}
 			if (this.isTextType) {
