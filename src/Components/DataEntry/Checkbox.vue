@@ -27,14 +27,23 @@ export default {
 		value: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		id: {
 			type: String,
 			default: '',
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		color: {
 			type: String,
