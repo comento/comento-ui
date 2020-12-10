@@ -174,6 +174,7 @@ export default {
 		width: 100%;
 	}
 	&.text {
+		@include f-normal();
 		background: transparent;
 		border: none;
 		color: $gray500;
