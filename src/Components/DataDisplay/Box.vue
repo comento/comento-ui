@@ -18,11 +18,11 @@ export default {
 		},
 		backgroundColor: {
 			type: String,
-			default: 'white',
+			default: null,
 		},
 		borderColor: {
 			type: String,
-			default: 'black',
+			default: null,
 		},
 		paddings: {
 			type: Array,
