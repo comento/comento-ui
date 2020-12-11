@@ -28,6 +28,16 @@ export default {
 		placement: {
 			type: String,
 			default: 'bottom',
+			validator(value) {
+				return placements.indexOf(value) !== -1;
+			},
+		},
+		paddingX: {
+			type: Number,
+			default: 0,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 	},
 	computed: {
@@ -38,6 +48,12 @@ export default {
 				'bottom-left': 'bottom-start',
 			};
 			return placementMap[this.placement];
+		},
+		styles() {
+			return {
+				'padding-left': `${this.paddingX}px`,
+				'padding-right': `${this.paddingX}px`,
+			};
 		},
 	},
 	components: { Typography },
