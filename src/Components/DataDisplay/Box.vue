@@ -22,6 +22,7 @@ export default {
 		},
 		borderColor: {
 			type: String,
+			default: 'black',
 		},
 		paddings: {
 			type: Array,
