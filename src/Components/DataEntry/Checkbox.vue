@@ -90,7 +90,8 @@ export default {
 		width: 1px;
 		overflow: hidden;
 
-		&:hover:not(:disabled) {
+		&:hover:not(:disabled),
+		&:focus:not(:disabled) {
 			& + label:before {
 				background-color: $green000;
 				border-color: $green600;
@@ -116,8 +117,7 @@ export default {
 			}
 		}
 
-		&:checked:not(:disabled),
-		&:focus {
+		&:checked:not(:disabled) {
 			& + label:before {
 				background-color: #fff;
 				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' width='18' height='18' fill='%2300c854'%3E%3Cpath d='M3.75 9.15753L7.5 12.9075L14.25 6.15753L13.1925 5.09253L7.5 10.785L4.8075 8.10003L3.75 9.15753Z'/%3E%3C/svg%3E");

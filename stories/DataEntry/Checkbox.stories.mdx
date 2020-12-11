@@ -30,7 +30,7 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Checkbox },
     template:
-        `<Checkbox :value.sync="value" :disabled="disabled">{{label}}</Checkbox>`,
+        `<Checkbox :value.sync="value" :disabled="disabled" :id="id">{{label}}</Checkbox>`,
 });
 
 # Checkbox
