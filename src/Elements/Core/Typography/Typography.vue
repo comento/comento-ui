@@ -1,5 +1,5 @@
 <template>
-	<component :is="element" :class="computedClass" :style="computedStyle" v-on="$listeners">
+	<component :is="element" class="c-application" :class="computedClass" :style="computedStyle" v-on="$listeners">
 		<slot />
 	</component>
 </template>
