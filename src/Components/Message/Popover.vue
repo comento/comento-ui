@@ -21,6 +21,9 @@
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+
+export const placements = ['bottom', 'bottom-right', 'bottom-left'];
+
 export default {
 	name: 'Popover',
 	inheritAttrs: false,
