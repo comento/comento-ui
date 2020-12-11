@@ -8,6 +8,7 @@
 		popover-arrow-class="c-popover_arrow"
 		popover-inner-class="c-popover_inner"
 		v-on="$listeners"
+		@show="$emit('showPopover')"
 	>
 		<slot> </slot>
 		<template slot="popover">
