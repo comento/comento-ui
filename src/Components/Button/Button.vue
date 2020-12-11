@@ -1,30 +1,21 @@
 <template>
 	<button
-		class="c-application c-button"
-		:class="[
-			computedSize,
-			computedColor,
-			computedFull,
-			computedType,
-			computedLoading,
-			computedFixed,
-			computedAbsolute,
-			computedShadow,
-		]"
+		class="c-application c-button c-pointer"
+		:class="[computedSize, computedColor, computedFull, computedType, { loading: loading }]"
 		v-bind="$attrs"
 		:disabled="disabled"
 		v-on="$listeners"
 	>
 		<template v-if="loading">
 			<div class="c-button--loading">
-				<Icon :name="computedIconName" :reversed="isFillType" loading :spinner-color="color" />
+				<Icon :name="computedIconName" :reversed="type === 'fill'" loading :spinner-color="color" />
 			</div>
 		</template>
-		<div class="c-button--icon" :class="setIconSpacing('left')">
+		<div class="c-button--icon" :style="$slots['left-icon'] && `margin-right: ${computedIconMargin}`">
 			<slot name="left-icon" />
 		</div>
 		<slot />
-		<div class="c-button--icon" :class="setIconSpacing('right')">
+		<div class="c-button--icon" :style="$slots['right-icon'] && `margin-left: ${computedIconMargin}`">
 			<slot name="right-icon" />
 		</div>
 	</button>
@@ -32,11 +23,6 @@
 
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
-
-export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
-export const buttonColors = ['primary', 'success', 'gray', 'error'];
-export const buttonTypes = ['fill', 'outlined', 'text', 'icon'];
-
 export default {
 	name: 'Button',
 	inheritAttrs: false,
@@ -45,64 +31,35 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return buttonSizes.indexOf(value) !== -1;
+				return ['small', 'medium', 'large', 'xlarge'].indexOf(value) !== -1;
 			},
 		},
 		color: {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				return buttonColors.indexOf(value) !== -1;
+				return ['primary', 'success', 'gray', 'error'].indexOf(value) !== -1;
 			},
 		},
 		type: {
 			type: String,
 			default: 'fill',
 			validator(value) {
-				return buttonTypes.indexOf(value) !== -1;
+				return ['fill', 'outlined', 'text'].indexOf(value) !== -1;
 			},
 		},
 		full: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
+		// disabled
 		disabled: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
-		},
-		fixed: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
-		},
-		absolute: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
-		},
-		shadow: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	computed: {
@@ -116,19 +73,7 @@ export default {
 			return this.type;
 		},
 		computedFull() {
-			return { full: this.full };
-		},
-		computedLoading() {
-			return { loading: this.loading };
-		},
-		computedShadow() {
-			return { shadow: this.shadow };
-		},
-		computedFixed() {
-			return { 'p-fixed': this.fixed };
-		},
-		computedAbsolute() {
-			return { 'p-absolute': this.absolute };
+			return this.full ? 'full' : '';
 		},
 		computedIconName() {
 			let size = this.size.charAt(0).toUpperCase() + this.size.slice(1);
@@ -137,24 +82,17 @@ export default {
 			return `IconSpinner${size}`;
 		},
 		computedIconMargin() {
-			const isXLarge = this.size.indexOf('xlarge') !== -1;
-			return isXLarge ? 4 : 2;
-		},
-		isFillType() {
-			return this.type === 'fill';
-		},
-	},
-	methods: {
-		setIconSpacing(position) {
-			const oppositePosition = position === 'left' ? 'r' : 'l';
-			return this.$slots[`${position}-icon`] && `m${oppositePosition}-${this.computedIconMargin}`;
+			const isMoreThanLarge = this.size.indexOf('large') !== -1;
+			return isMoreThanLarge ? '4px' : '2px';
 		},
 	},
 	components: { Icon },
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
+/*@import '@/assets/style/base/main';*/
+
 .c-button {
 	color: $white;
 	background-color: $primary;
@@ -164,8 +102,6 @@ export default {
 	@include align-items(center);
 	@include justify-content(center);
 	position: relative;
-	cursor: pointer;
-
 	&:disabled {
 		cursor: not-allowed !important;
 		&:active {
@@ -232,7 +168,6 @@ export default {
 		width: 100%;
 	}
 	&.text {
-		@include f-normal();
 		background: transparent;
 		border: none;
 		color: $gray500;
@@ -431,12 +366,7 @@ export default {
 		}
 	}
 }
-
 .loading {
 	@include disabled();
-}
-
-.shadow {
-	@include shadow4();
 }
 </style>

@@ -1,7 +1,7 @@
-import BasicModal from './BasicModal';
-import FullscreenModal from './FullscreenModal';
 import Modal from './Modal';
+import BasicModal from './BasicModal';
 import PermissionModal from './PermissionModal';
 import WithFormModal from './WithFormModal';
+import FullscreenModal from './FullscreenModal';
 
-export { BasicModal, FullscreenModal, Modal, PermissionModal, WithFormModal };
+export { Modal, BasicModal, PermissionModal, WithFormModal, FullscreenModal };

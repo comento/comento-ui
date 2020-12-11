@@ -1,8 +1,8 @@
-import Checkbox from './Checkbox';
 import Dropdown from './Dropdown';
 import Input from './Input';
-import InputGroup from './InputGroup';
 import SearchInput from './SearchInput';
 import TextArea from './TextArea';
+import Checkbox from './Checkbox';
+import InputGroup from '@/src/Components/DataEntry/InputGroup';
 
-export { Checkbox, Dropdown, Input, InputGroup, SearchInput, TextArea };
+export { Dropdown, Input, SearchInput, TextArea, Checkbox, InputGroup };

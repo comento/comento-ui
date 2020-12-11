@@ -297,11 +297,11 @@ export default {
 				fill: 'white',
 			},
 			error: {
-				stroke: '#FFDFDF',
+				stroke: '#E8EAED',
 				fill: '#FA5252',
 			},
 			errorReversed: {
-				stroke: '#CC2727',
+				stroke: '#CC0000',
 				fill: 'white',
 			},
 		};

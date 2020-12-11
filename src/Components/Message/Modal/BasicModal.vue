@@ -10,14 +10,14 @@
 		<div class="c-modal--wrapper" :class="computedClass">
 			<!-- title 영역 -->
 			<div class="c-modal--title-wrapper">
-				<Typography type="headline5" :align="align">
+				<Typography type="headline5" :align="align" color="gray900">
 					<slot name="title" />
 				</Typography>
 			</div>
 
 			<!-- content 영역 -->
 			<div class="c-modal--content-wrapper">
-				<Typography type="body2" :align="align" color="gray700">
+				<Typography type="body2" :align="align" color="gray800">
 					<slot name="content" />
 				</Typography>
 			</div>
