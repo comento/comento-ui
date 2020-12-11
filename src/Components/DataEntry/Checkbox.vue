@@ -9,7 +9,7 @@
 			v-on="$listeners"
 		/>
 		<label :class="{ disabled }" :for="computedId">
-			<Typography :color="disabled ? 'gray300' : 'gray500'">
+			<Typography :color="computedColor">
 				<slot />
 			</Typography>
 		</label>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { colorKeys } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export default {
@@ -26,14 +27,34 @@ export default {
 		value: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		id: {
 			type: String,
 			default: '',
+			validator(value) {
+				return typeof value === 'string';
+			},
+		},
+		color: {
+			type: String,
+			default: 'gray500',
+			validator(value) {
+				const isValid = colorKeys.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography color`);
+				}
+				return isValid;
+			},
 		},
 	},
 	computed: {
@@ -48,6 +69,9 @@ export default {
 		computedId() {
 			return this.id || `input-${this._uid}`;
 		},
+		computedColor() {
+			return this.disabled ? 'gray300' : this.color;
+		},
 	},
 	components: { Typography },
 };
@@ -58,9 +82,16 @@ export default {
 	@include flexbox();
 
 	input[type='checkbox'] {
-		display: none;
+		position: absolute;
+		clip: rect(1px, 1px, 1px, 1px);
+		padding: 0;
+		border: 0;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
 
-		&:hover:not(:disabled) {
+		&:hover:not(:disabled),
+		&:focus:not(:disabled) {
 			& + label:before {
 				background-color: $green000;
 				border-color: $green600;
@@ -68,9 +99,11 @@ export default {
 		}
 
 		&:disabled,
-		&:disabled + label:before {
+		&:disabled + label {
 			cursor: not-allowed !important;
-			pointer-events: none;
+			&:active {
+				pointer-events: none;
+			}
 		}
 		&:disabled {
 			& + label:before {
@@ -96,6 +129,7 @@ export default {
 			display: inline-flex;
 			flex-direction: row;
 			align-items: center;
+			cursor: pointer;
 			> div {
 				display: inline-block;
 			}
@@ -109,7 +143,6 @@ export default {
 				display: inline-block;
 				margin-right: 8px;
 				box-sizing: border-box;
-				cursor: pointer;
 			}
 		}
 	}
