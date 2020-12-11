@@ -150,6 +150,7 @@ export default {
 		padding: 8px 48px 8px 12px;
 		@include body2();
 		width: 226px;
+		color: $gray800;
 
 		@include placeholder {
 			color: $gray400;
