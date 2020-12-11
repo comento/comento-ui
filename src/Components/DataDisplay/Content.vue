@@ -1,15 +1,15 @@
 <template>
-	<section class="c-application c-contents">
-		<Typography type="body2" element="p" color="gray400" class="mb-8 c-contents--overline">
+	<section class="c-application c-content">
+		<Typography type="body2" element="p" color="gray400" class="mb-8 c-content--overline">
 			<slot name="overline" />
 		</Typography>
-		<Typography type="headline6" element="h1" color="gray900" class="mb-8 c-contents--title">
+		<Typography type="headline6" element="h1" color="gray900" class="mb-8 c-content--title">
 			<slot name="title" />
 		</Typography>
-		<Typography type="body1" element="p" color="gray700" class="mb-16 c-contents--body">
+		<Typography type="body1" element="p" color="gray700" class="mb-16 c-content--body">
 			<slot name="body" />
 		</Typography>
-		<Typography type="body2" element="p" color="gray300" class="mb-8 c-contents--caption">
+		<Typography type="body2" element="p" color="gray300" class="mb-8 c-content--caption">
 			<slot name="caption" />
 		</Typography>
 		<slot name="action" />
@@ -20,7 +20,7 @@
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export default {
-	name: 'Contents',
+	name: 'Content',
 	components: { Typography },
 };
 </script>
@@ -28,7 +28,7 @@ export default {
 <style scoped lang="scss">
 /*@import '@/assets/style/base/main';*/
 
-.c-contents {
+.c-content {
 	position: relative;
 	&--body {
 		min-height: 78px;

@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Contents from '@/src/Components/DataDisplay/Contents';
+import Content from '@/src/Components/DataDisplay/Content';
 import Button from "@/src/Components/Button/Button";
 
 <Meta
-    title="DESIGN SYSTEM/DataDisplay/Contents"
-    component={ Contents }
+    title="DESIGN SYSTEM/DataDisplay/Content"
+    component={ Content }
     argTypes={{
          overline: {
               description: "overline에 들어갈 텍스트",
@@ -59,9 +59,9 @@ import Button from "@/src/Components/Button/Button";
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Contents,Button },
+    components: { Content,Button },
     template:
-        `<Contents >
+        `<Content >
               <template v-slot:overline>{{overline}}</template>
               <template v-slot:title>{{title}}</template>
               <template v-slot:body>{{body}}</template>
@@ -69,13 +69,13 @@ export const Basic = (args, { argTypes }) => ({
               <template v-slot:action>
                 <Button color="primary">Button</Button>
               </template>
-        </Contents>
+        </Content>
         `,
 });
 
-# Contents
+# Content
 
-**Contents** 컴포넌트의 문서입니다.
+**Content** 컴포넌트의 문서입니다.
 
 <Story name="Basic" height="100px">
     {Basic.bind({})}
@@ -91,7 +91,7 @@ export const Basic = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <Contents>
+                  <Content>
                       <template v-slot:overline>SK텔레콤 / 서비스 기획</template>
                       <template v-slot:title>데이터 드리븐 UX </template>
                       <template v-slot:body>당연히 데이터 기반으로 의사결정이 일어나긴 하지만, 사실 우리나라 대다수의 회사는 기존 전통적 방식으로 사용하는 걸 고집하는 보수적인 편이라 확 바꾸지는 않습니다. 즉, 데이터 드리븐이라기보다 기획한대로 데이터가 나오게 하는 느낌입니다. 실무적으로는 이렇고 자소서나 면접을 쓰실때는 데이터 드리븐으로 쓰시면 될 것 같아요~ </template>
@@ -99,10 +99,10 @@ export const Basic = (args, { argTypes }) => ({
                       <template v-slot:action>
                         <Button color="primary">Button</Button>
                       </template>
-                  </Contents>
+                  </Content>
                 </div>
         `,
-            components: { Contents ,Button},
+            components: { Content ,Button},
         }}
     </Story>
 </Canvas>
