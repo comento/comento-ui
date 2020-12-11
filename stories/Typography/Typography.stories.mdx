@@ -1,0 +1,125 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Typography, { TypographyTypes, ElementTypes } from "@/src/Elements/Core/Typography/Typography";
+import { colorKeys } from "@/src/Elements/Core/Colors";
+
+<Meta
+  title="Core/Typography"
+  component={ Typography }
+  argTypes={{
+    text: {
+      description: "텍스트",
+      defaultValue: "텍스트",
+      control: { type: "text" },
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+    },
+    align: {
+      description: "폰트 정렬<br/>`String`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: ["left", "center", "right"],
+      },
+    },
+    color: {
+      description: "폰트 색상<br/>`String`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: colorKeys,
+      },
+    },
+    fontWeight: {
+      description: "폰트 굵기<br/>`Number`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "text",
+      },
+    },
+    type: {
+      description: "폰트 종류<br/>`String`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: TypographyTypes,
+      },
+    },
+    element: {
+      description: "태그 종류<br/>`String`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: ElementTypes,
+      },
+    },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Typography },
+  template:
+    `<Typography :element="element" :align="align" :color="color" :fontWeight="Number(fontWeight)" :type="type">
+      {{ text }}
+    </Typography>`,
+});
+
+# Typography
+
+**Typography** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex; flex-direction: column">
+                    <Typography element="h1" type="display1">Display1</Typography>
+                    <Typography element="h1" type="headline1">Headline1</Typography>
+                    <Typography element="h2" type="headline2">Headline2</Typography>
+                    <Typography element="h3" type="headline3">Headline3</Typography>
+                    <Typography element="h4" type="headline4">Headline4</Typography>
+                    <Typography element="h5" type="headline5">Headline5</Typography>
+                    <Typography element="h6" type="headline6">Headline6</Typography>
+                    <Typography type="body1">Body1 - p : 본문에 사용합니다.</Typography>
+                    <Typography type="body2">Body2 - 본문과 함께 보이는 댓글에 사용합니다. 본문과 분리된 (직부캠 후기, 직부캠 커뮤니티)의 경우 본문 사이즈 중 자유롭게 사용합니다.</Typography>
+                    <Typography type="caption1">Caption1</Typography>
+                    <Typography type="caption2">Caption2</Typography>
+                  </div>
+                </div>
+        `,
+            components: { Typography },
+        }}
+    </Story>
+</Canvas>

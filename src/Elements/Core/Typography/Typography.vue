@@ -5,7 +5,23 @@
 </template>
 
 <script>
-import { colors } from '@/src/Elements/Core/Colors';
+import { colors, colorKeys } from '@/src/Elements/Core/Colors';
+
+export const TypographyTypes = [
+	'display1',
+	'headline1',
+	'headline2',
+	'headline3',
+	'headline4',
+	'headline5',
+	'headline6',
+	'body1',
+	'body2',
+	'caption1',
+	'caption2',
+];
+
+export const ElementTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
 
 export default {
 	name: 'Typography',
@@ -21,7 +37,14 @@ export default {
 		},
 		color: {
 			type: String,
-			default: '$gray900',
+			default: null,
+			validator(value) {
+				const isValid = colorKeys.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography color`);
+				}
+				return isValid;
+			},
 		},
 		fontWeight: {
 			type: Number,
@@ -29,34 +52,23 @@ export default {
 		},
 		type: {
 			type: String,
-			default: 'body1',
+			default: null,
 			validator(value) {
-				// 값이 항상 아래 세 개의 값중 하나여야 합니다.
-				return (
-					[
-						'display1',
-						'headline1',
-						'headline2',
-						'headline3',
-						'headline4',
-						'headline5',
-						'headline6',
-						'body1',
-						'body2',
-						'caption1',
-						'caption2',
-					].indexOf(value) !== -1
-				);
+				const isValid = [...TypographyTypes].indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid props`);
+				}
+				return isValid;
 			},
 		},
 	},
 	computed: {
-		mappedColor() {
-			return this.color ? colors[this.color] : 'inherit';
+		computedColor() {
+			return this.color && colors[this.color] ? colors[this.color] : 'inherit';
 		},
 		computedStyle() {
 			return {
-				color: this.mappedColor,
+				color: this.computedColor,
 				'text-align': this.align,
 				'font-weight': this.fontWeight,
 			};
@@ -68,9 +80,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
+<style lang="scss" scoped>
 h1,
 h2,
 h3,

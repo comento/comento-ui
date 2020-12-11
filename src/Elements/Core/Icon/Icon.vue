@@ -6,7 +6,7 @@
 			ref="icon"
 			class="c-icon"
 			:class="computedSpinnerColor"
-			:style="computedStyle"
+			:style="styles"
 			v-bind="$attrs"
 			v-on="$listeners"
 		/>
@@ -18,7 +18,7 @@
 import IconCheckSmallLine from '@/assets/images/icon/icon-check-small-line.svg?inline';
 import IconPlusSmallLine from '@/assets/images/icon/icon-plus-small-line.svg?inline';
 import IconArrowSmallLine from '@/assets/images/icon/icon-arrow-small-line.svg?inline';
-import IconOverflowSmallFill from '@/assets/images/icon/icon-overflow-small-fill.svg?inline';
+import IconThreeDotSmallFill from '@/assets/images/icon/icon-threeDot-small-fill.svg?inline';
 import IconTextArrowSmallFill from '@/assets/images/icon/icon-textArrow-small-fill.svg?inline';
 import IconOfficialSmallFill from '@/assets/images/icon/icon-official-small-fill.svg?inline';
 import IconExclamationSmallFill from '@/assets/images/icon/icon-exclamation-small-fill.svg?inline';
@@ -39,7 +39,7 @@ import IconTextArrowMediumLine from '@/assets/images/icon/icon-textArrow-medium-
 import IconFileMediumLineLight from '@/assets/images/icon/icon-file-medium-line-light.svg?inline';
 import IconTrashMediumLineLight from '@/assets/images/icon/icon-trash-medium-line-light.svg?inline';
 import IconDownloadMediumLineLight from '@/assets/images/icon/icon-download-medium-line-light.svg?inline';
-import IconOverflowMediumFill from '@/assets/images/icon/icon-overflow-medium-fill.svg?inline';
+import IconThreeDotMediumFill from '@/assets/images/icon/icon-threeDot-medium-fill.svg?inline';
 import IconHourglassMediumLine from '@/assets/images/icon/icon-hourglass-medium-line.svg?inline';
 import IconCloseMediumFill from '@/assets/images/icon/icon-close-medium-fill.svg?inline';
 import IconInfoMediumFill from '@/assets/images/icon/icon-info-medium-fill.svg?inline';
@@ -112,7 +112,7 @@ export const IconNames = [
 	'IconCheckSmallLine',
 	'IconPlusSmallLine',
 	'IconArrowSmallLine',
-	'IconOverflowSmallFill',
+	'IconThreeDotSmallFill',
 	'IconTextArrowSmallFill',
 	'IconOfficialSmallFill',
 	'IconExclamationSmallFill',
@@ -132,7 +132,7 @@ export const IconNames = [
 	'IconFileMediumLineLight',
 	'IconTrashMediumLineLight',
 	'IconDownloadMediumLineLight',
-	'IconOverflowMediumFill',
+	'IconThreeDotMediumFill',
 	'IconHourglassMediumLine',
 	'IconCloseMediumFill',
 	'IconInfoMediumFill',
@@ -241,9 +241,19 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		rotation: {
+			type: Number,
+			default: 0,
+			validator(value) {
+				return typeof value === 'number';
+			},
+		},
 	},
 	computed: {
-		computedStyle() {
+		computedRotate() {
+			return this.rotation !== 0 ? { transform: `rotate(${this.rotation}deg)` } : null;
+		},
+		computedFill() {
 			if (this.loading) {
 				return { fill: 'none' };
 			} else {
@@ -253,6 +263,12 @@ export default {
 					return null;
 				}
 			}
+		},
+		styles() {
+			return {
+				...this.computedFill,
+				...this.computedRotate,
+			};
 		},
 		computedSpinnerColor() {
 			return this.spinnerColor;
@@ -301,7 +317,7 @@ export default {
 		IconCheckSmallLine,
 		IconPlusSmallLine,
 		IconArrowSmallLine,
-		IconOverflowSmallFill,
+		IconThreeDotSmallFill,
 		IconTextArrowSmallFill,
 		IconOfficialSmallFill,
 		IconExclamationSmallFill,
@@ -322,7 +338,7 @@ export default {
 		IconFileMediumLineLight,
 		IconTrashMediumLineLight,
 		IconDownloadMediumLineLight,
-		IconOverflowMediumFill,
+		IconThreeDotMediumFill,
 		IconHourglassMediumLine,
 		IconCloseMediumFill,
 		IconInfoMediumFill,

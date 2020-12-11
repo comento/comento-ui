@@ -18,12 +18,22 @@
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+
+export const placements = ['bottom', 'bottom-right', 'bottom-left'];
+
 export default {
 	name: 'Tooltip',
 	props: {
 		placement: {
 			type: String,
 			default: 'bottom',
+			validator(val) {
+				const isValid = placements.indexOf(val) !== -1;
+				if (!isValid) {
+					console.error(`${val} is not a valid props`);
+				}
+				return isValid;
+			},
 		},
 	},
 	computed: {

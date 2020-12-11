@@ -57,6 +57,17 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
         options: ["gray", "primary", "success"],
       },
     },
+    rotation: {
+      description: "아이콘의 회전 각도<br/>`Number`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "text",
+      },
+    },
   }}
 />
 
@@ -64,7 +75,7 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Icon },
   template:
-    '<Icon :name="name" :color="color" :loading="loading" :spinner-color="spinnerColor" />',
+    '<Icon :name="name" :color="color" :loading="loading" :spinner-color="spinnerColor" :rotation="Number(rotation)" />',
 });
 
 # Icon
@@ -92,7 +103,7 @@ export const Default = (args, { argTypes }) => ({
                             <IconWrapper name="IconCheckSmallLine"></IconWrapper>
                             <IconWrapper name="IconPlusSmallLine" color="black"></IconWrapper>
                             <IconWrapper name="IconArrowSmallLine"></IconWrapper>
-                            <IconWrapper name="IconOverflowSmallFill"></IconWrapper>
+                            <IconWrapper name="IconThreeDotSmallFill"></IconWrapper>
                             <IconWrapper name="IconTextArrowSmallFill"></IconWrapper>
                             <IconWrapper name="IconOfficialSmallFill"></IconWrapper>
                             <IconWrapper name="IconExclamationSmallFill"></IconWrapper>
@@ -118,7 +129,7 @@ export const Default = (args, { argTypes }) => ({
                             <IconWrapper name=IconFileMediumLineLight></IconWrapper>
                             <IconWrapper name=IconTrashMediumLineLight></IconWrapper>
                             <IconWrapper name=IconDownloadMediumLineLight></IconWrapper>
-                            <IconWrapper name=IconOverflowMediumFill></IconWrapper>
+                            <IconWrapper name=IconThreeDotMediumFill></IconWrapper>
                             <IconWrapper name=IconHourglassMediumLine></IconWrapper>
                             <IconWrapper name=IconCloseMediumFill></IconWrapper>
                             <IconWrapper name=IconInfoMediumFill></IconWrapper>
