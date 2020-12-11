@@ -6,7 +6,7 @@
 		<Typography type="headline6" element="h1" color="gray900" class="mb-8 c-contents--title">
 			<slot name="title" />
 		</Typography>
-		<Typography type="body1" element="p" color="gray700" class="mb-16 c-contents--body">
+		<Typography type="body1" element="p" color="gray850" class="mb-16 c-contents--body">
 			<slot name="body" />
 		</Typography>
 		<Typography type="body2" element="p" color="gray300" class="mb-8 c-contents--caption">
