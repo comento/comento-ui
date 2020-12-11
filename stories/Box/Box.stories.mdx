@@ -100,10 +100,10 @@ export const Basic = (args, { argTypes }) => ({
     {{
       template: `
         <div style="display: flex; justify-content:center; align-items: center; backgroundColor: #F4F5F7; width: 100%; height: 200px; ">
-          <Box style="marginRight: 10px;">
+          <Box style="marginRight: 10px;" background-color="white">
             <div style="backgroundColor: #F4F5F7;">without Shadow</div>
           </Box>
-          <Box :has-shadow="true">
+          <Box :has-shadow="true" background-color="white">
             <div style="backgroundColor: #F4F5F7;">with Shadow</div>
           </Box>
         </div>
