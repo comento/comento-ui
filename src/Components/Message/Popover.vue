@@ -10,7 +10,7 @@
 	>
 		<slot> </slot>
 		<template slot="popover">
-			<Typography class="c-pointer popover_contents_wrapper" type="caption1" color="gray700" align="center">
+			<Typography class="c-pointer popover_contents_wrapper" type="caption1" color="gray800" align="center">
 				<slot name="popover"> </slot>
 			</Typography>
 		</template>

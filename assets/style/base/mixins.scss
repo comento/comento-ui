@@ -88,15 +88,19 @@
   }
 }
 
+// 툴팁 등에 사용
 @mixin shadow1 {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
+// 모바일 카드를 감싼 box 등에 사용
 @mixin shadow2 {
-  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.03);;
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.03);
 }
+// topbar, header 등에 사용
 @mixin shadow3 {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
+// xlarge 버튼 등에 사용
 @mixin shadow4 {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06);
 }

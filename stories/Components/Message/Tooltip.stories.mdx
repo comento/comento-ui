@@ -1,0 +1,78 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Tooltip, { placements } from "@/src/Components/Message/Tooltip";
+import Icon from "@/src/Elements/Core/Icon/Icon";
+
+<Meta
+  title="Message/Tooltip"
+  component={ Tooltip }
+  argTypes={{
+    placement: {
+      description: "기준점에서 Tooltip이 보이는 위치<br/>`String`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: placements
+      },
+    },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Tooltip, Icon },
+  template: `<div style="width: 100%; display: flex; justify-content: center;">
+                 <Tooltip :placement="placement">
+                     <Icon name="IconProfileLargeFill"></Icon>
+                     <template v-slot:popover>
+                           <div>hello</div>
+                     </template>
+                 </Tooltip>
+             </div>`
+});
+
+# Tooltip
+
+**Tooltip** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div style="width: 100%; height: 100px; display: flex; justify-content: space-around; align-items: center">
+                    <Tooltip placement="bottom-right">
+                        <Icon name="IconProfileLargeFill"></Icon>
+                            <template v-slot:popover>
+                                <div>bottom-right</div>
+                            </template>
+                    </Tooltip>
+                    <Tooltip placement="bottom">
+                        <Icon name="IconProfileLargeFill"></Icon>
+                            <template v-slot:popover>
+                                <div>bottom</div>
+                            </template>
+                    </Tooltip>
+                    <Tooltip placement="bottom-left">
+                        <Icon name="IconProfileLargeFill"></Icon>
+                            <template v-slot:popover>
+                                <div>bottom-left</div>
+                            </template>
+                    </Tooltip>
+                 </div>
+        `,
+          components: { Tooltip, Icon },
+        }}
+    </Story>
+</Canvas>

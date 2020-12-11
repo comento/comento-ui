@@ -1,16 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Avatar from '@/src/Components/DataDisplay/Avatar';
-import Icon from '@/src/Elements/Core/Icon/Icon';
 
 <Meta
-    title="DESIGN SYSTEM/DataDisplay/Avatar"
+    title="Data Display/Avatar"
     component={ Avatar }
     argTypes={{
-        text: {
-            description: "아바타에 들어갈 텍스트",
-            defaultValue: null,
-            control: { type: "text" },
-        },
         size: {
             description: "아바타 크기",
             defaultValue: "medium",
@@ -27,66 +21,44 @@ import Icon from '@/src/Elements/Core/Icon/Icon';
         },
         type: {
             description: "아바타 타입",
-            defaultValue: "user",
+            defaultValue: "text",
             table: {
                 type: {
                     summary: "목록",
-                    detail: '"user" "img"',
+                    detail: '"text" "profile" "logo" "image"',
                 },
             },
             control: {
                 type: "select",
-                options: ["user", "img"],
-            },
-        },
-        textColor: {
-            description: "텍스트 색상 타입",
-            defaultValue: "gray800",
-            control: {
-                type: "text",
+                options: ["text", "profile", "logo", "image"],
             },
         },
         src: {
-            description: "type이 img일 경우 이미지",
+            description: "type이 image일 경우 이미지",
             defaultValue: null,
             control: {
                 type: "text",
             },
         },
-        align: {
-            description: "정렬",
-            defaultValue: "center",
-            table: {
-                type: {
-                    summary: "목록",
-                    detail: '"center" "left" "right"',
-                },
-            },
-            control: {
-                type: "select",
-                options: ["center", "left", "right"],
-            },
-        },
     }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Avatar },
     template:
-        `<Avatar :type="type" :text="text" :text-color="textColor" :src="src" :align="align" :size="size">
-        </Avatar>`,
+        `<Avatar :type="type" :src="src" :size="size" />`,
 });
 
 # Avatar
 
 **Avatar** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-    {Basic.bind({})}
+<Story name="Default" height="100px">
+    {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
 
 ## Stories
@@ -96,36 +68,24 @@ export const Basic = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <Avatar type="user" size="small" text="small" class="mr-24"/>
-                  <Avatar type="user" size="medium" text="medium" class="mr-24"/>
-                  <Avatar type="user" size="large" text="large"/>
+                  <Avatar type="text" size="small" class="mr-24" />
+                  <Avatar type="text" size="medium" class="mr-24" />
+                  <Avatar type="text" size="large" />
                   <hr class="mt-8 mb-8">
-                  <Avatar type="img" size="small"  class="mr-24" src="data:image/jpeg;base64,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"/>
-                  <Avatar type="img" size="medium" class="mr-24 " src="data:image/jpeg;base64,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"/>
-                  <Avatar type="img" size="large" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBEPDxAPFRAQEBASDg4QEg8PDw0QFREXFhUVFhYYHiggGBolGxUTIT0hJSkrLi4vFx8zODMtNyktLisBCgoKDg0OGBAQGi0dHx8tLS0tKy0rLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tK//AABEIAJYAlgMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAQUEBgcCA//EAD8QAAIBAgEIBgcFBwUAAAAAAAABAgMRBAUGEiExQVFhEyJxgZHRFjJCUpKhsQcUI1NiM3KywdLw8SRDgpOi/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAEDAgUGBAf/xAAvEQEAAQMEAQMCBAYDAAAAAAAAAQIDEQQFEiExE0FRFTIiQmGhNFJicYGRFCMk/9oADAMBAAIRAxEAPwDJPM+cgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlPkBOC4iE00xK1wGb2KrWcaejF69Kp1V4bX4GUUPdp9uvXe8Yj5XNHMWo/XrxXKMHL5toy4NjTsP9T6SzEe7Ea+dPV/EODOdhj+ZXYzM7FQ1w6Oolui9GXg/Mx4PJd2W7bjNH4lDXoypy0ZxlGXuyTiyOLVXLc25xXDwY5VxVAAAAAAAAAAAABKc9MjAYKpXmqdON5PW3sjBcZPchELtLpar1ToORM2aOHSlJKdXb0klqT/St3btLopw6zSbbas9zGZXxk2XgCQADww8fk+lXjo1YKS3X2rmntQwou6e3d+6Muf5w5uzwz043lR3S9qnyl5lNdGHLbhts2ZzCkMIarOIAgAAAAAAAAAe6NKU5RhBXlJqMVxbMohnaiquqKIjuXTsgZHjhaSirObs6k98peSLqYw7bQ6OnT0Y91tYl7SwAHSGSjv2eiEgHyq01KLjJJppppq6ae4Ma6IqjEuZ5y5HeFq2j+ynd03t0eMH2fQprhx25aH0LuY8SqDBrAAAAAAAAABkYDGyoTVSGjpJNJyWko32tczKJeixfrszzx2tfTLF+/S+FeZlNyYbD6vqMeO0+mWL9+l8K8xzk+r6r4/Y9MsX71L4V5jnJ9X1Xx+zNwOfFRP8AGpxlHfKm9GS7m2n8hFb02N6qicXIbjk/H068FUpSvF+KfBrcy2O2+saii/GaZZgXgHkI8KzOLJyxGHnCy0l1qb4TWzx2d5Ew8mv08XrMx7uWL/K4HncPMYnAGIAAACSIyBM4fTD0J1JKFOMpSeyK1vt5LmIpWWbVdyeNMZbbkvMm6UsTN8ejpu1u2Xl4lkUN9ptljHK5/psWFyBhafq0KfbJaUvGVzPDb0aGxR4hmrCU/wAuHwryGF/pW/aE/dafuQ+FeRJ6NPwj7rT9yHwryB6NPwpstZs0a8W4RUKtrxnFWTfCSW1ETTmHi1O2WrlMzHlqGb+UJ4TEqMrqLl0daG5O9tLtT+VyqmcS5/Q37mlvxTPj3dPRc7GJykJAIYRLk+XsP0WJrQ2LTckuCl1l9Sivy4fXW/T1FTAInw8UdyEJAgAEpz0ycnYGeIqKlTWt62/ZjHfJ8iYh6NJpKr1TpeRckUsLDRgryfr1GuvN8+C5F0Q7LSaSjT04pj/KzJy9QEjGTsCEhLy2IRjMOXZ2pffK+j+l6uOgr/Mpqjtxu5T/AOirj8w6bhW9CF9ujG/bZFzr7X2w+oZykJAOZZ6L/W1P3ad/hKK/Ljd4/iZUhE+GrjoIAAA/vUTEMooy6XmrkhYaitJfi1LSqPeuEe763LqYw7LbtL6NqM+ZXpk2QB5JI7Af2RpLiQx5R7yaa4rxGUc6Y91PlzOCjh4PrKVVq0acXd34u2xEVV4eLV6+1aonvtouR8HPF4laWu8ukrS3KN7vx2IriOUuc0lqrVXs+3y6oi12URiEhKCUe6AY7y5ZnNX08XWktilo/ClH+RRW4ncrnPVTKsMIeCPEgAABb5qYLpsVBNdWF6kuD0dnzaM6IbHa9P616JnxHl1BFztMYSEgEMlEzjtpmcmdTjJ0cM1eN1Oq9ai96itl1xKq68NDr904zxteWuUsHjMV11GtUXvyk9F9jbt4GOJlqqbesv8AjL6ejWM/Il8UPMcZZTt+rjzH7s3A5m4mb/E0Kcd7upz7ktXizLjlfa2a9XV/2TiG7ZJyVSw0NCmtuuUnrlN8WzOmMOh02kosU4ojCwJeoAgIYWV8aqFGpVfsxdk98tkV3uwUaq96duZcmlJttvW222+LetnmcJVPOZqQGEAAABuH2dUutXnwVOK77t/RFtvw6PYaPulu5Y6NIACpzlxjoYapUi+tbRg+EpOyfde/cRM9PFr73pWZraNmpkpYit11enSSlNP2m31Yvltb7CuiMy5vbdN/yLs1z7Omxikkkkklu1JItdhEREPQSAAAEAQwjOHPM8ssqvU6Gm706b6zT1TqbPBfW5VVU5bd9bFc8KPDXCtowAAAAbp9nT1Yhfqg/ky234dLsU9VNzLHQpAAUGetJywdS3suEn2KSuY1R01m60ctNVCj+z3EJTrU3tlGEo81FtP+JGNprdjriiaqZb2WOlAAACAPFSoopuTSSV227JLtDGquKfLR85c6dNOjhm1F6p1lqclwhy5+BXVU5zcd1zHp22plXlz09gAAAABLY8xMVoYlwf8AuwaX70da+Vyy23OzXoov8J/M6IWusxiUgAPjiKSnGUJK8ZJqS4pqzQYXLcV0TTLmeUsBWwFdSi2kpXo1bXTXuvnbU1vK5jEuSv2Lmku8qWy4HPai4rpoyhJLXopyi+zeTzbSzvdqY/HGGX6ZYP3p/wDXMnmvneNN7SemWE96fwTHM+s6b5eZZ54Tc6j7IS/mOaPrGm+VfjM+Va1Gi290qjUV4K/1Imt5Lu+0R1bjLWsp5Xr4j9rNuO6nFaNNd2/vuYTLT39devd1T0wDB4wIAAAAAA+mGrypzhUj60JKS5tbjKlbauTRXFcOs5Oxka1OFWHqzV+ae9PmnqL4d3YuxdoiqPdlhcAQEPjiMPGpFxnGMovapK6fcMMblui5GKoUWIzMwsnePSQ5QlePg0zHg1le0aar7Yw+HoPh/wAyt4w/pHBX9Ete8noPh/zK3jD+kjgmNmsvlisz8LThKc6tVRim5NuOpL/iTwhXc2mzTEzMtIm1d6N7Xdk3dpbr8yjDmZiKZmKUBh0AAAAAAAACZRMzhe5rZd+7T0Kj/Bm9e/opcezj4mdFeG52zX+lOJdHp1FJJpppq6ad012lrrKKuUdPQwnw9BIBBKOwJQ3YhEzEdz4c+zuy/wBO+gov8KL68lsqyW5fpXzfYV1VOX3PcIuTwo8NaKmjAgAAAAAAAAEpyEYRMY8LjIWcNXC9XXOjvpvU484Pd2bDOK2z0W5XbHU9w3vJeXcPiF1JrS305dWa7t/dctiXT6fXWb0fhntaXJevKQl5BGfdgZRyxQw6/FqRT3RWuT7IrWHlv6y3a8y0bL2c1TEXpwvCjvXt1F+p7lyXzKqq3Na7dKr34KOoUJX5ame4/UCAAAAAAAAAAAAAH9p8AyiZjwzsNlrFU/Ur1LblJ6aXdK5lzl66NdqLf5mYs68b+avghf6DnK/6xqfli4jLuKqapV6nNRtBf+bEzWqu6/U1eZV7d9b2723dsweGquqr7gIAAAAAAAAAAAAAAAAAnMGJkGYMYCMGP1AkCAAAAAAAAAAAAAAAAACQIAAAAAAAAAAAAA//2Q=="/>
+                  <Avatar type="profile" size="small" class="mr-24" />
+                  <Avatar type="profile" size="medium" class="mr-24" />
+                  <Avatar type="profile" size="large" />
                   <hr class="mt-8 mb-8">
-                  <Avatar type="img" size="small" text="small" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg"/>
-                  <Avatar type="img" size="medium" text="medium" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg"/>
-                  <Avatar type="img" size="large" text="large" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg"/>
+                  <Avatar type="logo" size="small"  class="mr-24" />
+                  <Avatar type="logo" size="medium"  class="mr-24" />
+                  <Avatar type="logo" size="large"  class="mr-24" />
                   <hr class="mt-8 mb-8">
-                  <Avatar type="img" size="small" class="mr-24" text="리드멘토" text-color="gray500" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg">
-                    <template v-slot:text-right-icon>
-                      <Icon name="IconCheckSmallFill"/>
-                    </template>
-                  </Avatar>
-                  <Avatar type="img" size="medium" class="mr-24" text="리드멘토" text-color="gray500" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg">
-                    <template v-slot:text-right-icon>
-                      <Icon name="IconCheckSmallFill"/>
-                    </template>
-                  </Avatar>
-                  <Avatar type="img" size="large" text="리드멘토" text-color="gray500" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg">
-                    <template v-slot:text-right-icon>
-                      <Icon name="IconCheckSmallFill"/>
-                    </template>
-                  </Avatar>
+                  <Avatar type="image" size="small" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
+                  <Avatar type="image" size="medium" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
+                  <Avatar type="image" size="large" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
                 </div>
         `,
-            components: { Avatar, Icon },
+            components: { Avatar },
         }}
     </Story>
 </Canvas>

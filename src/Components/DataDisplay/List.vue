@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-list--container" :class="computedSpacing">
+	<div class="c-application c-list" :class="computedSpacing">
 		<slot />
 	</div>
 </template>
@@ -23,21 +23,20 @@ export default {
 
 <style lang="scss" scoped>
 .c-list {
-	&--container {
-		background: $white;
+	background: $white;
 
-		hr:last-child {
-			display: none;
-		}
+	// 마지막 divider 숨기기
+	hr:last-child {
+		display: none;
+	}
 
-		&.spacing {
-			> .c-list-item--container {
-				margin: 6px 0;
+	&.spacing {
+		> .c-list-item--container {
+			margin: 6px 0;
 
-				&:first-child,
-				&:last-child {
-					margin-top: 0;
-				}
+			&:first-child,
+			&:last-child {
+				margin-top: 0;
 			}
 		}
 	}

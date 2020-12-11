@@ -1,6 +1,7 @@
 //Gray
 $black: #000000;
-$gray900: #21282F;
+$gray900: #151617;
+$gray850: #21282F;
 $gray800: #495057;
 $gray700: #6F767D;
 $gray600: #838990;
@@ -24,7 +25,7 @@ $red800: #CC2727;
 $red600: #FA5252;
 $red400: #FF8888;
 $red100: #FFDFDF;
-$red000: #FCF8F8;
+$red000: #FFF7F7;
 
 
 //Blue
@@ -42,3 +43,5 @@ $yellow100: #FFFACC;
 // Primary
 $primary: $green600;
 $success: $blue600;
+$error: $red600;
+$gray: $gray600;
