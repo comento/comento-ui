@@ -9,6 +9,7 @@
 			computedLoading,
 			computedFixed,
 			computedAbsolute,
+			computedShadow,
 		]"
 		v-bind="$attrs"
 		:disabled="disabled"
@@ -96,6 +97,13 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		shadow: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
+		},
 	},
 	computed: {
 		computedSize() {
@@ -112,6 +120,9 @@ export default {
 		},
 		computedLoading() {
 			return { loading: this.loading };
+		},
+		computedShadow() {
+			return { shadow: this.shadow };
 		},
 		computedFixed() {
 			return { 'p-fixed': this.fixed };
@@ -420,7 +431,12 @@ export default {
 		}
 	}
 }
+
 .loading {
 	@include disabled();
+}
+
+.shadow {
+	@include shadow4();
 }
 </style>

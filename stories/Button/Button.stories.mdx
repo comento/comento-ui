@@ -47,6 +47,9 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
     absolute: {
         description: "position: absolute"
     },
+    shadow: {
+        description: "그림자"
+    },
   }}
 />
 
@@ -63,6 +66,7 @@ export const Default = (args, { argTypes }) => ({
         :loading="loading"
         :absolute="absolute"
         :fixed="fixed"
+        :shadow="shadow"
     >
       {{label}}
     </Button>`,
