@@ -1,0 +1,199 @@
+import { ArgsTable, Meta, Story, Props, Canvas } from "@storybook/addon-docs/blocks";
+import Loader, { LoaderColors, LoaderSizes } from "@/src/Components/Other/Loader";
+import Typography from '@/src/Elements/Core/Typography/Typography';
+
+<Meta
+  title="Other/Loader"
+  component={ Loader }
+  argTypes={{
+      size: {
+        description: "로더 크기<br/>`String`",
+        table: {
+          type: {
+            summary: null,
+          },
+        },
+        control: {
+          type: "select",
+          options: LoaderSizes,
+        },
+      },
+      color: {
+        description: "로더 색상<br/>`String`",
+        table: {
+          type: {
+            summary: null,
+          },
+        },
+        control: {
+          type: "select",
+          options: LoaderColors,
+        },
+      },
+      reversed: {
+        description: "반전된 모양인지<br/>`Boolean`",
+        defaultValue: false,
+        table: {
+          type: {
+            summary: null,
+          },
+        },
+      },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Loader },
+  template:
+    '<Loader :color="color" :size="size" :reversed="reversed"/>',
+});
+
+# Loader
+
+**Loader** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+            <div>
+                <div>
+                    <!--small-->
+                    <div>
+                        <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader size="small"></Loader>
+                            <Loader size="small" color="success"></Loader>
+                            <Loader size="small" color="primary"></Loader>
+                        </div>
+                    </div>
+                    <!--medium-->
+                    <div>
+                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader></Loader>
+                            <Loader color="success"></Loader>
+                            <Loader color="primary"></Loader>
+                        </div>
+                    </div>
+                    <!--large-->
+                    <div>
+                        <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader size="large"></Loader>
+                            <Loader size="large" color="success"></Loader>
+                            <Loader size="large" color="primary"></Loader>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!--small-->
+                    <div>
+                        <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader size="small" reversed></Loader>
+                            <Loader size="small" color="success" reversed></Loader>
+                            <Loader size="small" color="primary" reversed></Loader>
+                        </div>
+                    </div>
+                    <!--medium-->
+                    <div>
+                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader reversed></Loader>
+                            <Loader color="success" reversed></Loader>
+                            <Loader color="primary" reversed></Loader>
+                        </div>
+                    </div>
+                    <!--large-->
+                    <div>
+                        <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader size="large" reversed></Loader>
+                            <Loader size="large" color="success" reversed></Loader>
+                            <Loader size="large" color="primary" reversed></Loader>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `,
+             components: { Loader, Typography },
+        }}
+    </Story>
+</Canvas>
+
+### Sizes
+<Canvas>
+    <Story name="Sizes" height="100px">
+        {{
+            template: `
+            <div>
+                <div>
+                    <div>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader size="small"></Loader>
+                            <Loader></Loader>
+                            <Loader size="large"></Loader>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `,
+             components: { Loader },
+        }}
+    </Story>
+</Canvas>
+
+### Colors
+<Canvas>
+    <Story name="Colors" height="100px">
+        {{
+            template: `
+            <div>
+                <div>
+                    <div>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader></Loader>
+                            <Loader color="primary"></Loader>
+                            <Loader color="success"></Loader>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `,
+             components: { Loader },
+        }}
+    </Story>
+</Canvas>
+
+### Reversed
+<Canvas>
+    <Story name="Reversed" height="100px">
+        {{
+            template: `
+            <div>
+                <div>
+                    <div>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <Loader reversed></Loader>
+                            <Loader color="primary" reversed></Loader>
+                            <Loader color="success" reversed></Loader>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `,
+             components: { Loader },
+        }}
+    </Story>
+</Canvas>
