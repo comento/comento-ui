@@ -29,7 +29,7 @@ export default {
 				return null;
 			},
 		},
-		shadow: {
+		hasShadow: {
 			type: Boolean,
 			default: false,
 		},
@@ -38,7 +38,7 @@ export default {
 		classes() {
 			return {
 				'c-box--has-border': this.hasBorder,
-				'c-box--has-shadow': this.shadow,
+				'c-box--has-shadow': this.hasShadow,
 			};
 		},
 		styles() {
