@@ -18,10 +18,11 @@ export default {
 		},
 		backgroundColor: {
 			type: String,
-			default: 'white',
+			default: null,
 		},
 		borderColor: {
 			type: String,
+			default: null,
 		},
 		paddings: {
 			type: Array,
@@ -64,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-box {
-	display: inline-block;
+	display: block;
 	&--has-border {
 		border: 1px solid;
 		border-radius: 2px;
