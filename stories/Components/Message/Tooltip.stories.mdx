@@ -3,7 +3,7 @@ import Tooltip, { placements } from "@/src/Components/Message/Tooltip";
 import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
-  title="DESIGN SYSTEM/Tooltip"
+  title="Message/Tooltip"
   component={ Tooltip }
   argTypes={{
     placement: {
@@ -21,7 +21,7 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
   }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Tooltip, Icon },
   template: `<div style="width: 100%; display: flex; justify-content: center;">
@@ -38,11 +38,11 @@ export const Basic = (args, { argTypes }) => ({
 
 **Tooltip** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-  {Basic.bind({})}
+<Story name="Default" height="100px">
+  {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
 ## Stories
 ### All
