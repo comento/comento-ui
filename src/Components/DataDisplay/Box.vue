@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-box {
-	display: inline-block;
+	display: block;
 	&--has-border {
 		border: 1px solid;
 		border-radius: 2px;
