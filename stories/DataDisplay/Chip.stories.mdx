@@ -1,0 +1,106 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Chip from '@/src/Components/DataDisplay/Chip';
+
+<Meta
+    title="DESIGN SYSTEM/DataDisplay/Chip"
+    component={ Chip }
+    argTypes={{
+        text: {
+            description: "Chip 들어갈 텍스트",
+            defaultValue: 'Chip',
+            control: { type: "text" },
+        },
+        size: {
+            description: "Chip 크기",
+            defaultValue: "medium",
+            control: {
+                type: "select",
+                options: [ "small", "medium", "large"],
+            },
+        },
+        type: {
+            description: "Chip 타입",
+            defaultValue: "fill",
+            control: {
+                type: "select",
+                options: ["fill" ,"outlined" ,"filter"],
+            },
+        },
+        color: {
+                    description: "Chip 색상",
+                    defaultValue: "gray",
+                    control: {
+                        type: "select",
+                        options: ["gray" ,"primary" ,"success"],
+                    },
+                },
+    }}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Chip },
+    template:
+        `<Chip :type="type"  :size="size" :color="color"> {{text}}</Chip>`,
+});
+
+# Chip
+
+**Chip** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                 <Chip type="fill" color="gray" size="small">Chip</Chip>
+                 <Chip type="fill" color="gray" size="medium" class="ml-4">Chip</Chip>
+                 <Chip type="fill" color="gray" size="large" class="ml-4">Chip</Chip>
+                 <hr>
+                 <Chip type="outlined" color="gray" size="small">Chip</Chip>
+                  <Chip type="outlined" color="gray" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="outlined" color="gray" size="large" class="ml-4">Chip</Chip>
+                  <hr>
+                  <Chip type="filter" color="gray" size="small">Chip</Chip>
+                  <Chip type="filter" color="gray" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="filter" color="gray" size="large" class="ml-4">Chip</Chip>
+                  <hr>
+                  <Chip type="fill" color="primary" size="small">Chip</Chip>
+                  <Chip type="fill" color="primary" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="fill" color="primary" size="large" class="ml-4">Chip</Chip>
+                  <hr>
+                  <Chip type="outlined" color="primary" size="small">Chip</Chip>
+                  <Chip type="outlined" color="primary" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="outlined" color="primary" size="large" class="ml-4">Chip</Chip>
+                  <hr>
+                  <Chip type="filter" color="primary" size="small">Chip</Chip>
+                  <Chip type="filter" color="primary" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="filter" color="primary" size="large" class="ml-4">Chip</Chip>
+                  <hr>
+                  <Chip type="fill" color="success" size="small">Chip</Chip>
+                  <Chip type="fill" color="success" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="fill" color="success" size="large" class="ml-4">Chip</Chip>
+                  <hr>
+                  <Chip type="outlined" color="success" size="small">Chip</Chip>
+                  <Chip type="outlined" color="success" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="outlined" color="success" size="large" class="ml-4">Chip</Chip>
+                  <hr>
+                  <Chip type="filter" color="success" size="small">Chip</Chip>
+                  <Chip type="filter" color="success" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="filter" color="success" size="large" class="ml-4">Chip</Chip>
+                </div>
+        `,
+            components: { Chip },
+        }}
+    </Story>
+</Canvas>
+
