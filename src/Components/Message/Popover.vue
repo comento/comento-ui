@@ -1,12 +1,13 @@
 <template>
 	<v-popover
+		v-bind="$attrs"
 		class="c-application"
 		:placement="mapPlacement"
 		:handle-resize="true"
 		popover-base-class="c-popover"
 		popover-arrow-class="c-popover_arrow"
 		popover-inner-class="c-popover_inner"
-		@show="$emit('showPopOver')"
+		v-on="$listeners"
 	>
 		<slot> </slot>
 		<template slot="popover">
@@ -21,6 +22,7 @@
 import Typography from '@/src/Elements/Core/Typography/Typography';
 export default {
 	name: 'Popover',
+	inheritAttrs: false,
 	props: {
 		placement: {
 			type: String,
