@@ -106,7 +106,7 @@ export default {
 	}
 
 	&.basic {
-		background: $gray900;
+		background: $gray850;
 		color: $white;
 	}
 	&.error {
