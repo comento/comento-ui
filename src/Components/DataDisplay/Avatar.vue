@@ -1,30 +1,30 @@
 <template>
-	<div class="c-application c-avatar_container">
+	<div class="c-application c-avatar--container">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
-		<Typography class="flex mt-8" :class="[computedAlign]" type="caption1" :color="textColor">
-			{{ text }}
-			<div class="c-avatar_icon" :style="$slots['text-right-icon'] ? 'margin-left: 2px;' : ''">
-				<slot name="text-right-icon" />
-			</div>
-		</Typography>
+		<div class="c-avatar--item">
+			<Icon v-if="isProfileType" :name="computedIconName" />
+			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
+			<Typography v-if="isTextType" :type="computedTypography" :font-weight="700" color="white">
+				{{ computedRandomText }}
+			</Typography>
+		</div>
 	</div>
 </template>
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import Icon from '@/src/Elements/Core/Icon/Icon';
 
 export default {
 	name: 'Avatar',
 	props: {
-		// user, img
 		type: {
 			type: String,
-			default: 'user',
+			default: 'profile',
 			validator(value) {
-				return ['user', 'img'].indexOf(value) !== -1;
+				return ['text', 'profile', 'logo', 'image'].indexOf(value) !== -1;
 			},
 		},
-		// 사이즈
 		size: {
 			type: String,
 			default: 'medium',
@@ -32,72 +32,87 @@ export default {
 				return ['small', 'medium', 'large'].indexOf(value) !== -1;
 			},
 		},
-		textColor: {
-			type: String,
-			default: 'gray800',
-		},
-		// type : user일 경우 문구
-		text: {
-			type: String,
-			default: null,
-		},
 		// type : img 일 경우 이미지
 		src: {
 			type: String,
 			default: null,
 		},
-		align: {
-			type: String,
-			default: 'center',
-			validator(value) {
-				return ['center', 'left', 'right'].indexOf(value) !== -1;
-			},
-		},
 	},
 	computed: {
+		isTextType() {
+			return this.type === 'text';
+		},
+		isProfileType() {
+			return this.type === 'profile';
+		},
+		isLogoType() {
+			return this.type === 'logo';
+		},
+		isImageType() {
+			return this.type === 'image';
+		},
 		computedType() {
 			return `${this.type}`;
 		},
 		computedSize() {
 			return `${this.size}`;
 		},
-		computedAlign() {
-			const alignItem = {
-				center: 'justify-center',
-				left: 'justify-start',
-				right: 'justify-end',
-			};
-			return alignItem[this.align];
-		},
 		computedStyle() {
-			if (this.type === 'img') {
-				return {
-					'background-image': `url(${this.src})`,
-				};
+			if (this.isImageType) {
+				return { 'background-image': `url(${this.src})` };
+			}
+			if (this.isTextType) {
+				return { background: this.computedRandomBackground };
 			}
 			return {};
 		},
+		computedRandomBackground() {
+			const colors = ['#f5b3b6', '#f4c19f', '#efd76f', '#b0d0f5', '#b8bdea', '#b3e2de'];
+			const randomNo = this._uid % 5;
+			return colors[randomNo];
+		},
+		computedRandomText() {
+			const text = 'ABCDEGHIJKLMNOPQRSTUVWXYZ';
+			const textLength = text.length;
+			const randomNo = this._uid % textLength;
+			return text[randomNo];
+		},
+		computedTypography() {
+			const typographyBySize = {
+				small: 'body2',
+				medium: 'body1',
+				large: 'headline4',
+			};
+			return typographyBySize[this.size];
+		},
+		computedIconName() {
+			const iconBySize = {
+				small: 'Large',
+				medium: 'XLarge',
+				large: '2XLarge',
+			};
+			return `IconProfile${iconBySize[this.size]}Fill`;
+		},
 	},
-	components: { Typography },
+	components: {
+		Typography,
+		Icon,
+	},
 };
 </script>
 
-<style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
+<style lang="scss" scoped>
 .c-avatar {
-	&_container {
+	display: block;
+	border-radius: 100%;
+
+	&--container {
 		display: inline-block;
 		text-align: center;
+		position: relative;
 	}
-	display: inline-block;
-	text-align: center;
-	font-size: 15px;
-	color: $white;
-	font-weight: bold;
-	font-style: normal;
-	border-radius: 100%;
-	/*사이즈*/
+
+	// 사이즈
 	&.small {
 		width: 40px;
 		height: 40px;
@@ -113,16 +128,40 @@ export default {
 		height: 68px;
 		line-height: 68px;
 	}
-	&.user {
-		border: 1px solid $gray100;
-		background-image: url('../../../assets/images/avatar/my_anonymous_' + (random(29) + 1) + '.svg');
+
+	// 타입
+	&.profile {
+		background: $gray100;
 	}
-	&.img {
+	&.image {
 		background-size: 100% 100%;
 	}
-	&_icon {
-		display: inline-block;
-		vertical-align: middle;
+	&.logo {
+		background: $green600;
+	}
+	&--item {
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		left: 50%;
+	}
+	&--logo {
+		background-image: url('https://comento-asset.s3.ap-northeast-2.amazonaws.com/images/comento-ui/misc/symbol-comento-large-fill.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		&.small {
+			width: 24px;
+			height: 24px;
+		}
+		&.medium {
+			width: 28px;
+			height: 28px;
+		}
+		&.large {
+			width: 40px;
+			height: 40px;
+		}
 	}
 }
 </style>

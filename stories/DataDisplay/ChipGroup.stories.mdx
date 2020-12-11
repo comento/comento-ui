@@ -1,0 +1,77 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Chip from '@/src/Components/DataDisplay/Chip';
+import ChipGroup from '@/src/Components/DataDisplay/ChipGroup';
+
+<Meta
+    title="DESIGN SYSTEM/DataDisplay/ChipGroup"
+    component={ ChipGroup, Chip }
+    argTypes={{
+        size: {
+            description: "ChipGroup 크기",
+            defaultValue: "medium",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "select",
+                options: [ "small", "medium", "large"],
+            },
+        },
+    }}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { ChipGroup,Chip },
+    template:
+        `<ChipGroup :size="size">
+            <Chip type="fill" color="primary" :size="size">Chip</Chip>
+            <Chip type="outlined" color="primary" :size="size">Chip</Chip>
+            <Chip type="fill" color="primary" :size="size">Chip</Chip>
+        </ChipGroup>`,
+});
+
+# ChipGroup
+
+**ChipGroup** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                 <ChipGroup size="small">
+                    <Chip type="fill" color="gray" size="small">Chip</Chip>
+                    <Chip type="outlined" color="gray" size="small">Chip</Chip>
+                    <Chip type="fill" color="gray" size="small">Chip</Chip>
+                 </ChipGroup>
+                 <hr/>
+                 <ChipGroup size="medium">
+                    <Chip type="fill" color="primary" size="medium">Chip</Chip>
+                    <Chip type="outlined" color="primary" size="medium">Chip</Chip>
+                    <Chip type="fill" color="primary" size="medium">Chip</Chip>
+                 </ChipGroup>
+                 <hr/>
+                 <ChipGroup size="large">
+                    <Chip type="fill" color="success" size="large">Chip</Chip>
+                    <Chip type="outlined" color="success" size="large">Chip</Chip>
+                    <Chip type="fill" color="success" size="large">Chip</Chip>
+                 </ChipGroup>
+                </div>
+        `,
+            components: { ChipGroup, Chip },
+        }}
+    </Story>
+</Canvas>
+
