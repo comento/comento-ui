@@ -12,7 +12,7 @@
 	>
 		<slot> </slot>
 		<template slot="popover">
-			<Typography class="c-pointer popover_contents_wrapper" type="caption1" color="gray800" align="center">
+			<Typography class="c-pointer c-popover--contents-wrapper" :style="styles" type="body2" color="gray800">
 				<slot name="popover"> </slot>
 			</Typography>
 		</template>
