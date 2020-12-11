@@ -41,6 +41,12 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
     loading: {
       description: "버튼의 loading 상태",
     },
+    fixed: {
+        description: "position: fixed"
+    },
+    absolute: {
+        description: "position: absolute"
+    },
   }}
 />
 
@@ -48,7 +54,16 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Button },
   template:
-    `<Button :size="size" :color="color" :type="type" :full="full" :disabled="disabled" :loading="loading">
+    `<Button
+        :size="size"
+        :color="color"
+        :type="type"
+        :full="full"
+        :disabled="disabled"
+        :loading="loading"
+        :absolute="absolute"
+        :fixed="fixed"
+    >
       {{label}}
     </Button>`,
 });

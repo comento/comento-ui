@@ -1,7 +1,15 @@
 <template>
 	<button
 		class="c-application c-button"
-		:class="[computedSize, computedColor, computedFull, computedType, computedLoading]"
+		:class="[
+			computedSize,
+			computedColor,
+			computedFull,
+			computedType,
+			computedLoading,
+			computedFixed,
+			computedAbsolute,
+		]"
 		v-bind="$attrs"
 		:disabled="disabled"
 		v-on="$listeners"
@@ -74,6 +82,20 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		fixed: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
+		},
+		absolute: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
+		},
 	},
 	computed: {
 		computedSize() {
@@ -90,6 +112,12 @@ export default {
 		},
 		computedLoading() {
 			return { loading: this.loading };
+		},
+		computedFixed() {
+			return { 'p-fixed': this.fixed };
+		},
+		computedAbsolute() {
+			return { 'p-absolute': this.absolute };
 		},
 		computedIconName() {
 			let size = this.size.charAt(0).toUpperCase() + this.size.slice(1);

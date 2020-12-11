@@ -178,11 +178,13 @@
 
 // position
 .p-absolute {
-  position: absolute;
+  position: absolute !important;
 }
-
+.p-fixed {
+  position: fixed !important;
+}
 .p-relative {
-  position: relative;
+  position: relative !important;
 }
 
 .flex {
