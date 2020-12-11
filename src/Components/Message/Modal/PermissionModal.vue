@@ -1,12 +1,12 @@
 <template>
 	<Modal :show="show" :show-close-button="false" :max-width="maxWidth" :persistent="persistent" @close="close">
 		<!-- title 영역 -->
-		<Typography class="mb-8" type="body1" :align="align">
+		<Typography class="mb-8" type="body1" :align="align" color="gray900">
 			<slot name="title" />
 		</Typography>
 
 		<!-- content 영역 -->
-		<Typography class="mb-8" type="body2" :align="align" color="gray700">
+		<Typography class="mb-8" type="body2" :align="align" color="gray800">
 			<div class="c-modal--content-wrapper">
 				<slot name="content" />
 			</div>
@@ -45,11 +45,11 @@ export default {
 		},
 		leftButtonColor: {
 			type: String,
-			default: 'gray600',
+			default: 'gray500',
 		},
 		rightButtonColor: {
 			type: String,
-			default: 'gray600',
+			default: 'gray500',
 		},
 		successCallback: {
 			type: Function,

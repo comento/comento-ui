@@ -1,5 +1,5 @@
 <template>
-	<div class="c-input-group">
+	<div class="c-application c-input-group">
 		<slot />
 	</div>
 </template>
@@ -19,6 +19,7 @@ export default {
 	}
 
 	.c-button {
+		margin-left: 4px;
 		height: 40px;
 	}
 }

@@ -13,12 +13,12 @@ export default {
 			type: String,
 			default: 'fill',
 		},
-		/*gray , green*/
+		/*gray , primary ,success*/
 		color: {
 			type: String,
 			default: 'gray',
 		},
-		/*chip 사이즈 (medium, large)*/
+		/*chip 사이즈 (small, medium, large)*/
 		size: {
 			type: String,
 			default: 'medium',
@@ -49,7 +49,7 @@ export default {
 	border-radius: 4px;
 	&.gray {
 		color: $gray500;
-		border: 1px solid $gray500;
+		border: 1px solid $gray100;
 		background-color: $gray100;
 		&.outlined {
 			color: $gray500;
@@ -67,24 +67,43 @@ export default {
 			background-color: $white;
 		}
 	}
+	&.success {
+		color: $white;
+		border: 1px solid $success;
+		background-color: $success;
+		&.outlined {
+			color: $success;
+			border: 1px solid $success;
+			background-color: $white;
+		}
+	}
 	/*사이즈*/
 	&.small {
 		@include caption2();
 		height: 16px;
 		padding: 0 4px;
 		font-weight: normal;
+		&.filter {
+			border-radius: 10px;
+		}
 	}
 	&.medium {
 		@include caption1();
 		height: 24px;
 		padding: 5.5px 8px;
 		font-weight: normal;
+		&.filter {
+			border-radius: 12px;
+		}
 	}
 	&.large {
 		@include body2();
 		height: 30px;
 		padding: 4.5px 10px;
 		font-weight: normal;
+		&.filter {
+			border-radius: 15px;
+		}
 	}
 }
 </style>

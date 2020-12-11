@@ -2,7 +2,7 @@
 	<article class="c-application edu_card">
 		<div class="camp_info_wrapper">
 			<div class="edu_card_subtitle mb-4">
-				<Typography type="caption1" color="gray900" font-weight="700">
+				<Typography type="caption1" color="gray800" font-weight="700">
 					{{ category }}
 				</Typography>
 			</div>

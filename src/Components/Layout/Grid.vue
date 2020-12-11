@@ -18,7 +18,7 @@ export default {
 	name: 'Grid',
 	props: {
 		/* grid type
-		 * container : 1170px
+		 * container : 1140px
 		 * fluid: 100%
 		 * */
 		fluid: {
@@ -71,7 +71,7 @@ export default {
 		padding-right: 24px;
 		padding-left: 24px;
 		&.grid_type_container {
-			max-width: 1170px;
+			max-width: 1140px;
 			width: 100%;
 		}
 	}

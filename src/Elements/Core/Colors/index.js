@@ -2,7 +2,8 @@
 
 //Gray
 export const black = '#000000';
-export const gray900 = '#21282F';
+export const gray900 = '#151617';
+export const gray850 = '#21282F';
 export const gray800 = '#495057';
 export const gray700 = '#6F767D';
 export const gray600 = '#838990';
@@ -18,8 +19,8 @@ export const white = '#FFFFFF';
 export const green800 = '#00992B';
 export const green600 = '#00C854';
 export const green400 = '#5CE596';
-export const green100 = '#E7FAEF';
-export const green000 = '#FBFFFD';
+export const green100 = '#DEFAEB';
+export const green000 = '#F7FCF9';
 
 //Red
 export const red800 = '#CC2727';
@@ -49,6 +50,7 @@ export const gray = gray600;
 export const colors = {
     black: black,
     gray900: gray900,
+    gray850: gray850,
     gray800: gray800,
     gray700: gray700,
     gray600: gray600,
@@ -82,3 +84,5 @@ export const colors = {
     error: error,
     gray: gray,
 };
+
+export const colorKeys = [...Object.keys(colors)];

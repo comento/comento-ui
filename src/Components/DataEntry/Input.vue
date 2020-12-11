@@ -148,6 +148,7 @@ input {
 			@include inline-block();
 			vertical-align: top;
 			@include transition(all 0.2s ease);
+			color: $gray800;
 			&-lg {
 				height: 48px;
 			}
