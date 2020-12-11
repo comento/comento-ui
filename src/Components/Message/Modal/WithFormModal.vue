@@ -10,7 +10,7 @@
 		<div class="c-modal--wrapper" :class="computedClass">
 			<!-- title 영역 -->
 			<div class="c-modal--title-wrapper">
-				<Typography type="headline5" :align="align">
+				<Typography type="headline5" :align="align" color="gray900">
 					<slot name="title" />
 				</Typography>
 			</div>
