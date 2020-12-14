@@ -4,7 +4,7 @@ import Input from '@/src/Components/DataEntry/Input';
 import Button from '@/src/Components/Button/Button';
 import Box from '@/src/Components/DataDisplay/Box';
 
-storiesOf('DESIGN SYSTEM/DataEntry/InputGroup', module).add('InputGroup', () => ({
+storiesOf('Data Entry/InputGroup', module).add('InputGroup', () => ({
 	components: { InputGroup, Input, Button, Box },
 	template: `
 		<Box>

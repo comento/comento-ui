@@ -2,7 +2,7 @@
 .c-popover {
   .c-popover_inner {
     padding: 0 !important;
-    .popover_contents_wrapper {
+    .c-popover--content-wrapper {
       padding: 6px 0;
       a {
         display: inline-block;
@@ -10,9 +10,12 @@
       & > * {
         padding: 6px 12px;
         cursor: pointer;
-      }
-      & > *:hover {
-        background: $gray100;
+        &:hover {
+          background: $gray100;
+        }
+        &:not(:last-child) {
+          margin-bottom: 4px;
+        }
       }
     }
   }
