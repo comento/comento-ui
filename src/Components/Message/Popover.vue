@@ -1,16 +1,18 @@
 <template>
 	<v-popover
+		v-bind="$attrs"
 		class="c-application"
 		:placement="mapPlacement"
 		:handle-resize="true"
 		popover-base-class="c-popover"
 		popover-arrow-class="c-popover_arrow"
 		popover-inner-class="c-popover_inner"
-		@show="$emit('showPopOver')"
+		v-on="$listeners"
+		@show="$emit('showPopover')"
 	>
 		<slot> </slot>
 		<template slot="popover">
-			<Typography class="c-pointer popover_contents_wrapper" type="caption1" color="gray800" align="center">
+			<Typography class="c-pointer c-popover--content-wrapper" :style="styles" type="body2" color="gray800">
 				<slot name="popover"> </slot>
 			</Typography>
 		</template>
@@ -19,12 +21,26 @@
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+
+export const placements = ['bottom', 'bottom-right', 'bottom-left'];
+
 export default {
 	name: 'Popover',
+	inheritAttrs: false,
 	props: {
 		placement: {
 			type: String,
 			default: 'bottom',
+			validator(value) {
+				return placements.indexOf(value) !== -1;
+			},
+		},
+		paddingX: {
+			type: Number,
+			default: 0,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 	},
 	computed: {
@@ -35,6 +51,12 @@ export default {
 				'bottom-left': 'bottom-start',
 			};
 			return placementMap[this.placement];
+		},
+		styles() {
+			return {
+				'padding-left': `${this.paddingX}px`,
+				'padding-right': `${this.paddingX}px`,
+			};
 		},
 	},
 	components: { Typography },
