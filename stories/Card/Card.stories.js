@@ -5,7 +5,7 @@ import StyleCol from '@/src/Components/Layout/StyleCol';
 import Card from '@/src/Components/DataDisplay/Card';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
-storiesOf('Card', module).add('Card', () => ({
+storiesOf('Data Display/Card', module).add('Card', () => ({
 	components: { Card, Typography, Grid, Row, StyleCol },
 	template: `<Grid><Row><StyleCol col-lg="4"><Card/></StyleCol></Row></Grid>`,
 }));
