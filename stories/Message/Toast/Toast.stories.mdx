@@ -57,7 +57,7 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
     }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Button, Toast },
     template: `
@@ -78,11 +78,11 @@ export const Basic = (args, { argTypes }) => ({
 
 **Toast** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-    {Basic.bind({})}
+<Story name="Default" height="100px">
+    {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
 ## Stories
 ### With Icon
