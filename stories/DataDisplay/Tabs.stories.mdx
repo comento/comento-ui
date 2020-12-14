@@ -1,0 +1,53 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Tabs, { TabsTypes } from "@/src/Components/DataDisplay/Tabs";
+import Typography from "@/src/Elements/Core/Typography/Typography";
+
+<Meta
+    title="Data Display/Tabs"
+    component={ Tabs }
+    argTypes={{
+        items: {
+            description: "탭 아이템<br/>Array",
+            control: { type: "array" },
+        },
+        type: {
+            description: "Swiper 사용 여부<br/>String",
+            control: {
+                type: "array",
+                options: TabsTypes
+            },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Tabs, Typography },
+    template:
+      `<Tabs :items="items" :type="type"/>`,
+});
+
+# Tabs
+
+**Tabs** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### Sizes
+<Canvas>
+    <Story name="Sizes" height="100px">
+        {{
+            template: `
+                <div>
+                    <Tabs/>,
+                </div>
+        `,
+            components: { Tabs },
+        }}
+    </Story>
+</Canvas>
