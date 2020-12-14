@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 import Callout from '@/src/Components/Message/Callout';
 
-storiesOf('Callout', module).add('Callout', () => ({
+storiesOf('Message/Callout', module).add('Callout', () => ({
 	components: { Callout },
 	template: `<div>
     <Callout class="mb-12" size="x-small">
