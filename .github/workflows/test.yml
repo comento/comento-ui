@@ -21,6 +21,6 @@ jobs:
           else
             npm install
           fi
-      - run: npm run deploy-storybook --dry-run -- --ci --host-token-env-variable=GITHUB_TOKEN
+      - run: npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
