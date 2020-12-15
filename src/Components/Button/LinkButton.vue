@@ -85,7 +85,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-link-button {
-	* {
+	a {
 		text-decoration: none;
 		cursor: pointer;
 
@@ -96,7 +96,7 @@ export default {
 		}
 	}
 
-	&.blue400 * {
+	&.blue400 a {
 		&:hover,
 		&:focus {
 			text-decoration-color: $blue400;
