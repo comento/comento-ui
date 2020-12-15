@@ -34,7 +34,7 @@
 import Icon from '@/src/Elements/Core/Icon/Icon';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
-export const buttonColors = ['primary', 'success', 'gray', 'error'];
+export const buttonColors = ['primary', 'success', 'secondary', 'error'];
 export const buttonTypes = ['fill', 'outlined', 'text', 'icon'];
 
 export default {
