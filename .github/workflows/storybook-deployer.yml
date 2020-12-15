@@ -1,12 +1,12 @@
-name: Storybook Deployer test
+name: Storybook Deployer
 on:
   pull_request:
     types:
-      - open
+      - closed
 jobs:
-  build:
-    name: Test
+  deploy_storybook:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'releases/v')
     steps:
       - uses: actions/checkout@v2
         with:
@@ -21,6 +21,6 @@ jobs:
           else
             npm install
           fi
-      - run: npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
+      - run: npm run deploy-storybook -- --ci --host-token-env-variable=STORYBOOK_DEPLOYER_TOKEN
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STORYBOOK_DEPLOYER_TOKEN: ${{ secrets.STORYBOOK_DEPLOYER_TOKEN }}
