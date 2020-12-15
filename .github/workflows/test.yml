@@ -1,11 +1,9 @@
-name: Storybook Deployer test
+name: 'Storybook Deployer test'
 on:
   pull_request:
-    types:
-      - opened
+
 jobs:
-  build:
-    name: Test
+  deploy_storybook:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
