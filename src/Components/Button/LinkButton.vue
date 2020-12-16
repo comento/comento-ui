@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Typography from '@/src/Elements/Core/Typography/Typography';
+import Typography, { TypographyTypes } from '@/src/Elements/Core/Typography/Typography';
 
 export const linkButtonColors = ['blue600', 'blue400'];
 export const linkButtonTargets = ['_blank', '_self', '_parent', '_top'];
@@ -36,7 +36,7 @@ export default {
 			type: String,
 			default: 'body1',
 			validator(value) {
-				return typeof value === 'string';
+				return TypographyTypes.indexOf(value) !== -1;
 			},
 		},
 		to: {
@@ -85,7 +85,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-link-button {
-	* {
+	a {
 		text-decoration: none;
 		cursor: pointer;
 
@@ -96,7 +96,7 @@ export default {
 		}
 	}
 
-	&.blue400 * {
+	&.blue400 a {
 		&:hover,
 		&:focus {
 			text-decoration-color: $blue400;

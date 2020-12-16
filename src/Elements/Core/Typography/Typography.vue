@@ -1,5 +1,11 @@
 <template>
-	<component :is="element" class="c-application" :class="computedClass" :style="computedStyle" v-on="$listeners">
+	<component
+		:is="element"
+		class="c-application c-typography"
+		:class="computedClass"
+		:style="computedStyle"
+		v-on="$listeners"
+	>
 		<slot />
 	</component>
 </template>
@@ -21,7 +27,11 @@ export const TypographyTypes = [
 	'caption2',
 ];
 
-export const ElementTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
+export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
+
+export const Aligns = ['left', 'center', 'right'];
+
+export const FontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal', 'bold', 'lighter', 'bolder'];
 
 export default {
 	name: 'Typography',
@@ -29,11 +39,24 @@ export default {
 		element: {
 			type: String,
 			default: 'div',
-		}, // 적용 tag h1,h2,h3,p ...
-		// left, center, right
+			validator(value) {
+				const isValid = Elements.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography element type`);
+				}
+				return isValid;
+			},
+		},
 		align: {
 			type: String,
-			default: 'left',
+			default: null,
+			validator(value) {
+				const isValid = Aligns.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography align type`);
+				}
+				return isValid;
+			},
 		},
 		color: {
 			type: String,
@@ -47,8 +70,15 @@ export default {
 			},
 		},
 		fontWeight: {
-			type: Number,
-			default: undefined,
+			type: [Number, String],
+			default: null,
+			validator(value) {
+				const isValid = FontWeights.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography font weight`);
+				}
+				return isValid;
+			},
 		},
 		type: {
 			type: String,
@@ -74,7 +104,7 @@ export default {
 			};
 		},
 		computedClass() {
-			return `c_${this.type}`;
+			return this.type ? `c_${this.type}` : null;
 		},
 	},
 };
