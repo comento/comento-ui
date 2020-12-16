@@ -1,4 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import { TypographyTypes } from "@/src/Elements/Core/Typography/Typography";
 import LinkButton, { linkButtonColors, linkButtonTargets } from "@/src/Components/Button/LinkButton";
 
 <Meta
@@ -13,7 +14,8 @@ import LinkButton, { linkButtonColors, linkButtonTargets } from "@/src/Component
         type: {
             description: "글자 크기",
             control: {
-                type: "text",
+                type: "select",
+                options: TypographyTypes,
             },
         },
         to: {

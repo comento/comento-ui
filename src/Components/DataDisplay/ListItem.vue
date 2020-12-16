@@ -37,7 +37,8 @@ export default {
 <style lang="scss" scoped>
 .c-list-item {
 	padding: 8px 6px;
-
+	@include flexbox();
+	@include align-items(center);
 	&:hover,
 	&:focus {
 		background: $gray100;

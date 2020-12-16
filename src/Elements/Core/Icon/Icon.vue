@@ -241,7 +241,7 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
-		rotation: {
+		rotate: {
 			type: Number,
 			default: 0,
 			validator(value) {
@@ -251,7 +251,7 @@ export default {
 	},
 	computed: {
 		computedRotate() {
-			return this.rotation !== 0 ? { transform: `rotate(${this.rotation}deg)` } : null;
+			return this.rotate !== 0 ? { transform: `rotate(${this.rotate}deg)` } : null;
 		},
 		computedFill() {
 			if (this.loading) {
@@ -297,11 +297,11 @@ export default {
 				fill: 'white',
 			},
 			error: {
-				stroke: '#E8EAED',
+				stroke: '#FFDFDF',
 				fill: '#FA5252',
 			},
 			errorReversed: {
-				stroke: '#CC0000',
+				stroke: '#CC2727',
 				fill: 'white',
 			},
 		};

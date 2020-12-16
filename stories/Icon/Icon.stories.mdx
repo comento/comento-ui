@@ -57,7 +57,7 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
         options: ["gray", "primary", "success"],
       },
     },
-    rotation: {
+    rotate: {
       description: "아이콘의 회전 각도<br/>`Number`",
       table: {
         type: {
@@ -75,7 +75,7 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Icon },
   template:
-    '<Icon :name="name" :color="color" :loading="loading" :spinner-color="spinnerColor" :rotation="Number(rotation)" />',
+    '<Icon :name="name" :color="color" :loading="loading" :spinner-color="spinnerColor" :rotate="Number(rotate)" />',
 });
 
 # Icon

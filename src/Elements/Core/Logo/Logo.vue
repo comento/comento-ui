@@ -1,9 +1,11 @@
 <template>
-	<h1 class="c-application c-logo">
-		<a :href="url">
-			<component :is="name" :width="width" :height="height" />
-		</a>
-	</h1>
+	<keep-alive>
+		<h1 class="c-application c-logo">
+			<a :href="url">
+				<component :is="name" :width="width" :height="height" />
+			</a>
+		</h1>
+	</keep-alive>
 </template>
 
 <script>
