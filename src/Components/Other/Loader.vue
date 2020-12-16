@@ -28,14 +28,14 @@ const {
 } = colors;
 
 export const LoaderSizes = ['small', 'medium', 'large'];
-export const LoaderColors = ['gray', 'primary', 'success', 'error'];
+export const LoaderColors = ['secondary', 'primary', 'success', 'error'];
 
 const colorMap = {
-	gray: {
+	secondary: {
 		stroke: gray200,
 		fill: gray500,
 	},
-	grayReversed: {
+	secondaryReversed: {
 		stroke: gray800,
 		fill: white,
 	},
@@ -77,7 +77,7 @@ export default {
 		},
 		color: {
 			type: String,
-			default: 'gray',
+			default: 'secondary',
 			validator(value) {
 				return LoaderColors.indexOf(value) !== -1;
 			},
