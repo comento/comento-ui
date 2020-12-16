@@ -42,14 +42,19 @@ import Callout, { CalloutTypes, CalloutSizes } from "@/src/Components/Message/Ca
 />
 
 export const Default = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Callout },
-  template: `<Callout :type="type" :size="size" :full="full" :closable="closable">{{text}}</Callout>`,
+    props: Object.keys(argTypes),
+    components: { Callout },
+    data() {
+        return {
+            showCallout: true,
+        }
+    },
+    template: `<Callout v-if="showCallout":type="type" :size="size" :full="full" :closable="closable" @closeCallout="showCallout = false">{{text}}</Callout></div>`,
 });
 
-# Checkbox
+# Callout
 
-**Checkbox** 컴포넌트의 문서입니다.
+**Callout** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -78,15 +83,15 @@ export const Default = (args, { argTypes }) => ({
                 </div>
             </div>
             <div style="margin-bottom: 10px">
-                    <div>
-                        <Callout size="x-small">문구가 들어가는 자리입니다.</Callout>
-                    </div>
-                    <div>
-                        <Callout size="small">문구가 들어가는 자리입니다.</Callout>
-                    </div>
-                    <div>
-                        <Callout size="medium">문구가 들어가는 자리입니다.</Callout>
-                    </div>
+                <div>
+                    <Callout size="x-small">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="small">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="medium">문구가 들어가는 자리입니다.</Callout>
+                </div>
             </div>
             <div style="margin-bottom: 10px">
                 <div>
@@ -191,16 +196,23 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
     <Story name="Closable" height="100px">
     {{
+        data() {
+            return {
+                showXSmallCallout: true,
+                showSmallCallout: true,
+                showMediumCallout: true,
+            }
+        },
         template: `
             <div>
                 <div>
-                    <Callout size="x-small" closable>문구가 들어가는 자리입니다.</Callout>
+                    <Callout v-if="showXSmallCallout" size="x-small" closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout size="small" closable>문구가 들어가는 자리입니다.</Callout>
+                    <Callout v-if="showSmallCallout" size="small" closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout size="medium" closable>문구가 들어가는 자리입니다.</Callout>
+                    <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
             `,
