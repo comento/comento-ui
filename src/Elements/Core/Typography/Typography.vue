@@ -27,7 +27,7 @@ export const TypographyTypes = [
 	'caption2',
 ];
 
-export const ElementTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
+export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
 
 export default {
 	name: 'Typography',
@@ -36,7 +36,7 @@ export default {
 			type: String,
 			default: 'div',
 			validator(value) {
-				const isValid = ElementTypes.indexOf(value) !== -1;
+				const isValid = Elements.indexOf(value) !== -1;
 				if (!isValid) {
 					console.error(`${value} is not a valid name of the typography element type`);
 				}
