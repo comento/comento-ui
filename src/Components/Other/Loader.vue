@@ -111,7 +111,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-icon {
-	cursor: pointer;
+	cursor: wait;
 	background: transparent !important;
 }
 </style>
