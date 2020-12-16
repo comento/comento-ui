@@ -80,7 +80,7 @@ export default {
 			};
 		},
 		computedClass() {
-			return `c_${this.type}`;
+			return this.type ? `c_${this.type}` : null;
 		},
 	},
 };
