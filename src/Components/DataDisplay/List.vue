@@ -31,7 +31,7 @@ export default {
 	}
 
 	&.spacing {
-		> .c-list-item--container {
+		> .c-list-item {
 			margin: 6px 0;
 
 			&:first-child,
