@@ -8,7 +8,10 @@ import Typography from "@/src/Elements/Core/Typography/Typography";
     argTypes={{
         items: {
             description: "탭 아이템<br/>Array",
-            control: { type: "array" },
+            defaultValue: ['Tab1', 'Tab2', 'Tab3', 'Tab4'],
+            control: {
+                type: "array",
+            },
         },
         type: {
             description: "Swiper 사용 여부<br/>String",
@@ -42,9 +45,14 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
     <Story name="Sizes" height="100px">
         {{
+            data() {
+                return {
+                    items: ['Tab1','Tab2','Tab3','Tab4','Tab5','Tab6','Tab7','Tab8','Tab9','Tab10']
+                }
+            },
             template: `
                 <div>
-                    <Tabs/>,
+                    <Tabs type="swiper" :items="items"/>
                 </div>
         `,
             components: { Tabs },

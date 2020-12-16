@@ -33,7 +33,10 @@ export default {
 		items: {
 			type: Array,
 			default() {
-				return ['item1', 'item2', 'item3', 'item4', 'item5'];
+				return [];
+			},
+			validator(value) {
+				return Array.isArray(value);
 			},
 		},
 		type: {
