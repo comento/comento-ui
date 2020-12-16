@@ -115,10 +115,13 @@ export default {
 }
 ::v-deep .swiper {
 	&-slide {
-		width: auto !important;
-		border-bottom: 1px solid $gray200;
+		width: auto;
 	}
-	&-wrapper {
+}
+.swiper {
+	&-container {
+		display: inline-block;
+		border-bottom: 1px solid $gray200;
 	}
 }
 </style>
