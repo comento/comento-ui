@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Typography, { TypographyTypes, Elements } from "@/src/Elements/Core/Typography/Typography";
+import Typography, { TypographyTypes, Elements, Aligns } from "@/src/Elements/Core/Typography/Typography";
 import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
@@ -25,7 +25,7 @@ import { colorKeys } from "@/src/Elements/Core/Colors";
       },
       control: {
         type: "select",
-        options: ["left", "center", "right"],
+        options: Aligns,
       },
     },
     color: {

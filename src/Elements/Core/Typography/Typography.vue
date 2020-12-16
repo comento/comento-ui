@@ -29,6 +29,7 @@ export const TypographyTypes = [
 
 export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
 
+export const Aligns = ['left', 'center', 'right'];
 export default {
 	name: 'Typography',
 	props: {
@@ -45,7 +46,14 @@ export default {
 		},
 		align: {
 			type: String,
-			default: 'left',
+			default: null,
+			validator(value) {
+				const isValid = Aligns.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography align type`);
+				}
+				return isValid;
+			},
 		},
 		color: {
 			type: String,
