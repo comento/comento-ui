@@ -140,6 +140,7 @@ export default {
 		background: $green600;
 	}
 	&--item {
+		display: flex;
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
