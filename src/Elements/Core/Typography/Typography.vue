@@ -35,8 +35,14 @@ export default {
 		element: {
 			type: String,
 			default: 'div',
-		}, // 적용 tag h1,h2,h3,p ...
-		// left, center, right
+			validator(value) {
+				const isValid = ElementTypes.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography element type`);
+				}
+				return isValid;
+			},
+		},
 		align: {
 			type: String,
 			default: 'left',
