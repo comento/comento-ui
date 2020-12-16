@@ -25,7 +25,7 @@
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 
-export const TabsTypes = [null, 'swiper'];
+export const TabsTypes = ['basic', 'swiper'];
 
 export default {
 	name: 'Tabs',
@@ -38,7 +38,7 @@ export default {
 		},
 		type: {
 			type: String,
-			default: null,
+			default: 'basic',
 			validator(value) {
 				return TabsTypes.indexOf(value) !== -1;
 			},
