@@ -1,12 +1,27 @@
 <template>
-	<aside class="c-application c-overlay" :class="[computedType]"></aside>
+	<aside
+		v-if="show"
+		class="c-application c-overlay"
+		:class="[computedType]"
+		:style="[computedZindex]"
+		@click="handleCloseModal"
+	>
+		<slot />
+	</aside>
 </template>
 
 <script>
+import scrollMixin from '@/mixins/scrollMixin';
+import Icon from '@/src/Elements/Core/Icon/Icon';
 export const OverlayTypes = ['dimmer', 'content', 'bluring'];
 export default {
 	name: 'Overlay',
+	mixins: [scrollMixin],
 	props: {
+		show: {
+			type: Boolean,
+			default: false,
+		},
 		type: {
 			type: String,
 			default: 'dimmer',
@@ -14,11 +29,52 @@ export default {
 				return OverlayTypes.indexOf(value) !== -1;
 			},
 		},
+		zIndex: {
+			type: Number,
+			default() {
+				return 9999;
+			},
+			validator(value) {
+				return typeof value === 'number';
+			},
+		},
+		persistent: {
+			type: Boolean,
+			default: false,
+		},
 	},
-	data: () => ({}),
 	computed: {
 		computedType() {
 			return `c-overlay--type--${this.type}`;
+		},
+		computedZindex() {
+			return { zIndex: this.zIndex };
+		},
+	},
+	watch: {
+		show() {
+			this.$_handleNotScroll(this.show);
+		},
+	},
+	mounted() {
+		document.addEventListener('keydown', e => this.handleCloseKeycode(e));
+	},
+	beforeDestroy() {
+		document.removeEventListener('keydown', e => this.handleCloseKeycode(e));
+	},
+	methods: {
+		handleCloseKeycode(e) {
+			if (this.show && e.keyCode === 27) {
+				this.close();
+			}
+		},
+		handleCloseModal() {
+			if (!this.persistent) {
+				this.close();
+			}
+		},
+		close() {
+			this.$emit('update:show', false);
 		},
 	},
 };
@@ -31,7 +87,6 @@ export default {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 9999;
 	&--type--dimmer {
 		background: rgba(0, 0, 0, 0.6);
 	}
