@@ -5,7 +5,12 @@
 			<Typography class="c-callout_message" color="gray700" :type="computedFontType">
 				<slot />
 			</Typography>
-			<Icon v-if="closable" name="IconCloseSmallLine" />
+			<Icon
+				v-if="closable"
+				class="c-callout--close-button"
+				:name="computedCloseIconName"
+				style="margin-left: 4px"
+			/>
 		</div>
 	</div>
 </template>
@@ -83,6 +88,9 @@ export default {
 			};
 			return mapSizeToFontType[this.size];
 		},
+		computedCloseIconName() {
+			return this.size === 'x-small' ? 'IconCloseSmallLine' : 'IconCloseMediumLine';
+		},
 	},
 	methods: {
 		mapIconNameFromSize(size) {
@@ -148,6 +156,8 @@ export default {
 	}
 	&_wrapper {
 		display: inline-flex;
+		width: 100%;
+		position: relative;
 		align-items: center;
 	}
 	&_message {
@@ -160,6 +170,10 @@ export default {
 		@include pc {
 			width: 100%;
 		}
+	}
+	&-close--button {
+		position: absolute;
+		right: 4px;
 	}
 }
 </style>
