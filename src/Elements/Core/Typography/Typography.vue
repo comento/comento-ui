@@ -30,6 +30,9 @@ export const TypographyTypes = [
 export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
 
 export const Aligns = ['left', 'center', 'right'];
+
+export const FontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal', 'bold', 'lighter', 'bolder'];
+
 export default {
 	name: 'Typography',
 	props: {
@@ -67,8 +70,15 @@ export default {
 			},
 		},
 		fontWeight: {
-			type: Number,
-			default: undefined,
+			type: [Number, String],
+			default: null,
+			validator(value) {
+				const isValid = FontWeights.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid name of the typography font weight`);
+				}
+				return isValid;
+			},
 		},
 		type: {
 			type: String,

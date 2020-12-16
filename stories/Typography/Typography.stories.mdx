@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Typography, { TypographyTypes, Elements, Aligns } from "@/src/Elements/Core/Typography/Typography";
+import Typography, { TypographyTypes, Elements, Aligns, FontWeights } from "@/src/Elements/Core/Typography/Typography";
 import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
@@ -48,7 +48,8 @@ import { colorKeys } from "@/src/Elements/Core/Colors";
         },
       },
       control: {
-        type: "text",
+        type: "select",
+        options: FontWeights,
       },
     },
     type: {
@@ -82,7 +83,7 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Typography },
   template:
-    `<Typography :element="element" :align="align" :color="color" :fontWeight="Number(fontWeight)" :type="type">
+    `<Typography :element="element" :align="align" :color="color" :fontWeight="fontWeight" :type="type">
       {{ text }}
     </Typography>`,
 });
