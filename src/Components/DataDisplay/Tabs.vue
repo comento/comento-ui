@@ -54,41 +54,10 @@ export default {
 		};
 	},
 	computed: {
-		// groupInfoSwiperOption() {
-		// 	return {
-		// 		slidesPerView: 3,
-		// 		initialSlide: 0,
-		// 		slidesPerColumn: 1,
-		// 		spaceBetween: 0,
-		// 		direction: 'vertical',
-		// 		allowTouchMove: false, // 드래그로 이동 못하게 막기
-		// 		slideToClickedSlide: false,
-		// 		navigation: {
-		// 			nextEl: '.swiper-button-next',
-		// 			prevEl: '.swiper-button-prev',
-		// 		},
-		// 	};
-		// },
 		swiperOptions() {
 			return {
-				slidesPerView: 5,
+				slidesPerView: 'auto',
 				spaceBetween: 12,
-				breakpoints: {
-					0: {
-						slidesPerView: 5,
-						spaceBetween: 12,
-					},
-					481: {
-						slidesPerView: this.items.length,
-						spaceBetween: 12,
-					},
-				},
-				on: {
-					// 무조건 화살표 함수 써야됨. 일반함수 쓰면 바인딩이 잘못됨
-					slideChange: swiper => {
-						this.setActiveIndex(swiper.activeIndex);
-					},
-				},
 			};
 		},
 		swiper() {
@@ -99,9 +68,6 @@ export default {
 		setSelectedNo(index) {
 			this.selectedNo = index;
 			this.$emit('changeSelectedNo', index);
-		},
-		setActiveIndex(index) {
-			this.activeIndex = index;
 		},
 	},
 	components: {
@@ -115,26 +81,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
-button {
-	background: none;
-	border: 0;
-	outline: 0;
-	cursor: pointer;
-	color: $gray800;
-}
 .c-tabs--menu {
 	&-wrapper {
 		background-color: $white;
 	}
 	&-container {
-		display: flex;
-		/*justify-content: space-evenly;*/
+		// content만큼만 width를 차지하기 위함
+		display: inline-block;
 		border-bottom: 1px solid $gray200;
 	}
 	&-button {
-		width: 100%;
-		height: 36px;
 		transition: 0.3s all;
+		background: none;
+		border: 0;
+		outline: 0;
+		padding: 4px;
+		cursor: pointer;
+		color: $gray800;
+		width: fit-content;
+		@include body2();
+		&:not(:last-child) {
+			margin-right: 12px;
+		}
 		&.active {
 			border-bottom: 2px solid $gray600;
 			font-weight: 700;
@@ -143,6 +111,14 @@ button {
 		&:hover {
 			background-color: $gray100;
 		}
+	}
+}
+::v-deep .swiper {
+	&-slide {
+		width: auto !important;
+		border-bottom: 1px solid $gray200;
+	}
+	&-wrapper {
 	}
 }
 </style>
