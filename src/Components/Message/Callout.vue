@@ -13,6 +13,9 @@
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
+export const CalloutTypes = ['information', 'alert', 'success'];
+export const CalloutSizes = ['x-small', 'small', 'medium'];
+
 export default {
 	name: 'Callout',
 	props: {
@@ -20,14 +23,22 @@ export default {
 			type: String,
 			default: 'information',
 			validator(value) {
-				return ['information', 'alert', 'success'].indexOf(value) !== -1;
+				const isValid = CalloutTypes.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid value of Callout type`);
+				}
+				return isValid;
 			},
 		},
 		size: {
 			type: String,
 			default: 'small',
 			validator(value) {
-				return ['x-small', 'small', 'medium'].indexOf(value) !== -1;
+				const isValid = CalloutSizes.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid value of Callout size`);
+				}
+				return isValid;
 			},
 		},
 		full: {
