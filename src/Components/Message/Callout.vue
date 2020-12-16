@@ -102,8 +102,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
 .c-callout {
 	&_container {
 		display: inline-flex;
