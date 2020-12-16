@@ -45,7 +45,7 @@ export const yellow100 = '#FFFACC';
 export const primary = green600;
 export const success = blue600;
 export const error = red600;
-export const gray = gray600;
+export const secondary = gray600;
 
 export const colors = {
     black: black,
@@ -82,7 +82,7 @@ export const colors = {
     primary: primary,
     success: success,
     error: error,
-    gray: gray,
+    secondary: secondary,
 };
 
 export const colorKeys = [...Object.keys(colors)];
