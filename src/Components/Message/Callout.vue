@@ -1,18 +1,26 @@
 <template>
-	<div class="c-application c-callout_container" :class="[computedSize, computedType, computedFull]">
-		<div class="c-callout_wrapper">
-			<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
-			<Typography class="c-callout_message" color="gray700" :type="computedFontType">
-				<slot />
-			</Typography>
-			<Icon
-				v-if="closable"
-				class="c-callout--close-button"
-				:name="computedCloseIconName"
-				style="margin-left: 4px"
-			/>
+	<transition :name="computedTransition">
+		<div
+			class="c-application c-callout_container"
+			:class="[computedSize, computedType, computedFull]"
+			v-bind="$attrs"
+			v-on="$listeners"
+		>
+			<div class="c-callout_wrapper">
+				<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+				<Typography class="c-callout_message" color="gray700" :type="computedFontType">
+					<slot />
+				</Typography>
+				<Icon
+					v-if="closable"
+					class="c-callout--close-button"
+					:name="computedCloseIconName"
+					style="margin-left: 4px"
+					@click="handleClose"
+				/>
+			</div>
 		</div>
-	</div>
+	</transition>
 </template>
 
 <script>
@@ -91,6 +99,9 @@ export default {
 		computedCloseIconName() {
 			return this.size === 'x-small' ? 'IconCloseSmallLine' : 'IconCloseMediumLine';
 		},
+		computedTransition() {
+			return this.closable ? 'callout-fade' : null;
+		},
 	},
 	methods: {
 		mapIconNameFromSize(size) {
@@ -100,6 +111,9 @@ export default {
 				medium: 'IconExclamationLargeLine',
 			};
 			return iconSet[size];
+		},
+		handleClose() {
+			this.$emit('closeCallout');
 		},
 	},
 	components: {
@@ -175,5 +189,14 @@ export default {
 		position: absolute;
 		right: 4px;
 	}
+}
+
+.callout-fade-leave-active {
+	transition: all 0.2s;
+}
+.callout-fade-enter, .callout-fade-leave-to
+	/* .slide-fade-leave-active below version 2.1.8 */ {
+	transform: translateX(-100%);
+	opacity: 0;
 }
 </style>
