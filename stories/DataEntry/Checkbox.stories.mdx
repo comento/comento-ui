@@ -12,39 +12,36 @@ import Checkbox from "@/src/Components/DataEntry/Checkbox";
         },
         value: {
             description: "체크박스의 값",
-            defaultValue: false,
             control: { type: "boolean" },
         },
         disabled: {
             description: "체크박스 비활성화",
-            defaultValue: false,
             control: { type: "boolean" },
         },
         id: {
             description: "체크박스 ID (값이 없으면 input-uid로 생성됨)",
-            defaultValue: "",
             control: { type: "text" },
         }
     }}
 />
 
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Checkbox },
     template:
-        `<Checkbox :value.sync="value" :disabled="disabled">{{label}}</Checkbox>`,
+        `<Checkbox :value.sync="value" :disabled="disabled" :id="id">{{label}}</Checkbox>`,
 });
 
 # Checkbox
 
 **Checkbox** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-    {Basic.bind({})}
+<Story name="Default" height="100px">
+    {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
 ## Stories
 ### All
@@ -59,7 +56,7 @@ export const Basic = (args, { argTypes }) => ({
                     <Checkbox disabled>Unchecked Disabled</Checkbox>
                     <Checkbox :value="true" disabled>Checked Disabled</Checkbox>
                 </div>
-        `,
+            `,
             components: { Checkbox },
         }}
     </Story>
