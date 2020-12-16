@@ -11,7 +11,21 @@ import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline
 import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
 import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
 import { colors } from '@/src/Elements/Core/Colors';
-const { gray200, gray500, gray800, green100, green600, green800, blue100, blue600, blue800, white } = colors;
+const {
+	gray200,
+	gray500,
+	gray800,
+	green100,
+	green600,
+	green800,
+	blue100,
+	blue600,
+	blue800,
+	red100,
+	red600,
+	red800,
+	white,
+} = colors;
 
 export const LoaderSizes = ['small', 'medium', 'large'];
 export const LoaderColors = ['gray', 'primary', 'success', 'error'];
@@ -39,6 +53,14 @@ const colorMap = {
 	},
 	successReversed: {
 		stroke: blue800,
+		fill: white,
+	},
+	error: {
+		stroke: red100,
+		fill: red600,
+	},
+	errorReversed: {
+		stroke: red800,
 		fill: white,
 	},
 };
