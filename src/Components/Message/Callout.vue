@@ -5,6 +5,7 @@
 			<Typography class="c-callout_message" color="gray700" :type="computedFontType">
 				<slot />
 			</Typography>
+			<Icon v-if="closable" name="IconCloseSmallLine" />
 		</div>
 	</div>
 </template>
@@ -42,6 +43,13 @@ export default {
 			},
 		},
 		full: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
+		},
+		closable: {
 			type: Boolean,
 			default: false,
 			validator(value) {
