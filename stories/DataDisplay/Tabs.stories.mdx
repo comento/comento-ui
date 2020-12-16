@@ -41,21 +41,85 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
+
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            data() {
+                return {
+                    items: ['Tab1','Tab2','Tab3','Tab4','Tab5'],
+                    moreItems: ['Tab1','Tab2','Tab3','Tab4','Tab5','Tab6','Tab7','Tab8','Tab9','Tab10','Tab11','Tab12','Tab13','Tab14','Tab15','Tab16','Tab17','Tab18','Tab19','Tab20']
+                }
+            },
+            template: `
+            <div>
+                <Typography type="caption1">basic type</Typography>
+                <div>
+                    <Tabs :items="items"/>
+                </div>
+                <br/>
+                <Typography type="caption1">swiper type</Typography>
+                <div>
+                    <Tabs type="swiper" :items="items"/>
+                </div>
+                <br/>
+                <Typography type="caption1">탭 개수가 많은 경우</Typography>
+                <div>
+                    <Tabs type="swiper" :items="moreItems"/>
+                </div>
+            </div>
+            `,
+            components: { Tabs, Typography },
+        }}
+    </Story>
+</Canvas>
+
+### Types
+<Canvas>
+    <Story name="Types" height="100px">
+        {{
+            data() {
+                return {
+                    items: ['Tab1','Tab2','Tab3','Tab4','Tab5']
+                }
+            },
+            template: `
+            <div>
+                <Typography type="caption1">basic type</Typography>
+                <div>
+                    <Tabs :items="items"/>
+                </div>
+                <br/>
+                <Typography type="caption1">swiper type</Typography>
+                <div>
+                    <Tabs type="swiper" :items="items"/>
+                </div>
+            </div>
+            `,
+            components: { Tabs, Typography },
+        }}
+    </Story>
+</Canvas>
+
 ### Sizes
 <Canvas>
     <Story name="Sizes" height="100px">
         {{
             data() {
                 return {
-                    items: ['Tab1','Tab2','Tab3','Tab4','Tab5','Tab6','Tab7','Tab8','Tab9','Tab10']
+                    items: ['Tab1','Tab2','Tab3','Tab4','Tab5','Tab6','Tab7','Tab8','Tab9','Tab10','Tab11','Tab12','Tab13','Tab14','Tab15','Tab16','Tab17','Tab18','Tab19','Tab20']
                 }
             },
             template: `
+            <div>
+                <Typography type="caption1">탭 개수가 많은 경우</Typography>
                 <div>
                     <Tabs type="swiper" :items="items"/>
                 </div>
-        `,
-            components: { Tabs },
+            </div>
+            `,
+            components: { Tabs, Typography },
         }}
     </Story>
 </Canvas>
