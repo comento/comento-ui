@@ -1,0 +1,70 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Overlay from "@/src/Elements/Utility/Overlay";
+
+<Meta
+  title="Utility/Overlay"
+  component={Overlay}
+    argTypes={{
+        type: {
+          description: "Overlay 타입 ",
+          table: {
+            type: {
+              summary: "목록",
+              detail: '"dimmer" "content" "bluring"',
+            },
+          },
+          control: {
+            type: "select",
+            options: ["dimmer", "content", "bluring"],
+          },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Overlay },
+  template:
+    `<Overlay :type="type"/>`,
+});
+
+# Overlay
+
+**Overlay** 컴포넌트의 문서입니다.
+<br/>
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+           	data() {
+           		return {
+           			descriptions: [
+           				{
+           					type: 'shadow1',
+           					content: '툴팁 등에 사용',
+           				},
+           				{
+           					type: 'shadow2',
+           					content: '모바일 카드를 감싼 box 등에 사용',
+           				},
+           				{
+           					type: 'shadow3',
+           					content: 'topbar, header 등에 사용',
+           				},
+           				{
+           					type: 'shadow4',
+           					content: 'xlarge 버튼 등에 사용',
+           				},
+           			],
+           		};
+           	},
+           	template: `<div style="position:relative; height:300px">
+                           <Overlay style="position:absolute"/>
+                       </div>`,
+          components: { Overlay },
+        }}
+    </Story>
+</Canvas>
