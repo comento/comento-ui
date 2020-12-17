@@ -2,7 +2,7 @@
 	<article class="c-application edu_card">
 		<div class="camp_info_wrapper">
 			<div class="edu_card_subtitle mb-4">
-				<Typography type="caption1" color="gray800" font-weight="700">
+				<Typography type="caption1" color="gray800" :font-weight="700">
 					{{ category }}
 				</Typography>
 			</div>
@@ -25,6 +25,10 @@
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import customValidator from '@/utils/custom-validator.js';
+
+export const CardBackgroundDirections = ['horizontal', 'vertical'];
+
 export default {
 	name: 'EduCard',
 	props: {
@@ -34,11 +38,12 @@ export default {
 		},
 		backgroundDirection: {
 			type: String,
-			// horizontal, vertical
 			default: 'vertical',
 			validator(value) {
-				// 값이 항상 아래 중 하나여야 합니다.
-				return ['horizontal', 'vertical'].indexOf(value) !== -1;
+				const assert = value => {
+					return CardBackgroundDirections.indexOf(value) !== -1;
+				};
+				return customValidator(value, assert, 'Card BackgroundDirection');
 			},
 		},
 		category: {
@@ -66,9 +71,9 @@ export default {
 
 <style lang="scss" scoped>
 .edu_card {
-	padding: 102px 0 12px 0;
+	padding: 90px 0 12px 0;
 	@include pc {
-		padding: 140px 0 12px 0;
+		padding: 128px 0 12px 0;
 	}
 	border-radius: 4px;
 	width: 100%;
@@ -85,6 +90,7 @@ export default {
 }
 
 .camp_info_wrapper {
+	margin-top: 12px;
 	width: 100%;
 }
 
