@@ -35,28 +35,6 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
         options: colorKeys,
       },
     },
-    loading: {
-      description: "로딩 스피너<br/>`Boolean`",
-      defaultValue: false,
-      table: {
-        type: {
-          summary: null,
-        },
-      },
-    },
-    spinnerColor: {
-      description: "스피너의 색상<br/>`String`",
-      table: {
-        type: {
-          summary: "목록",
-          detail: '"gray" "primary" "success"',
-        },
-      },
-      control: {
-        type: "select",
-        options: ["gray", "primary", "success"],
-      },
-    },
     rotate: {
       description: "아이콘의 회전 각도<br/>`Number`",
       table: {
@@ -75,7 +53,7 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Icon },
   template:
-    '<Icon :name="name" :color="color" :loading="loading" :spinner-color="spinnerColor" :rotate="Number(rotate)" />',
+    '<Icon :name="name" :color="color" :rotate="Number(rotate)" />',
 });
 
 # Icon
@@ -205,24 +183,6 @@ export const Default = (args, { argTypes }) => ({
                         <Typography type="body1" style="margin-bottom: 10px">2XLarge</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper name=IconProfile2XLargeFill></IconWrapper>
-                        </div>
-                    </div>
-                    <!--spinner-->
-                    <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Spinner</Typography>
-                        <div style="display: flex; flex-wrap: wrap;">
-                            <IconWrapper name="IconSpinnerSmall" loading spinner-color="success"></IconWrapper>
-                            <IconWrapper name="IconSpinnerMedium" loading spinner-color="success"></IconWrapper>
-                            <IconWrapper name="IconSpinnerLarge" loading spinner-color="success"></IconWrapper>
-                            <IconWrapper name="IconSpinnerSmall" loading spinner-color="gray"></IconWrapper>
-                            <IconWrapper name="IconSpinnerMedium" loading spinner-color="gray"></IconWrapper>
-                            <IconWrapper name="IconSpinnerLarge" loading spinner-color="gray"></IconWrapper>
-                            <IconWrapper name="IconSpinnerLarge" loading spinner-color="gray"></IconWrapper>
-                            <IconWrapper name="IconSpinnerSmall" loading spinner-color="primary"></IconWrapper>
-                            <IconWrapper name="IconSpinnerMedium" loading spinner-color="primary"></IconWrapper>
-                            <IconWrapper name="IconSpinnerLarge" loading spinner-color="primary"></IconWrapper>
-                            <IconWrapper name="IconSpinnerLarge" loading spinner-color="primary"></IconWrapper>
-                            </div>
                         </div>
                     </div>
                 </div>

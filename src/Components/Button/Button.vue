@@ -17,7 +17,7 @@
 	>
 		<template v-if="loading">
 			<div class="c-button--loading">
-				<Icon :name="computedIconName" :reversed="isFillType" loading :spinner-color="color" />
+				<Loader :size="computedLoaderSize" :reversed="isFillType" :color="color" />
 			</div>
 		</template>
 		<div class="c-button--icon" :class="setIconSpacing('left')">
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import Icon from '@/src/Elements/Core/Icon/Icon';
+import Loader from '@/src/Components/Other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'success', 'secondary', 'error'];
@@ -134,11 +134,8 @@ export default {
 		computedAbsolute() {
 			return { 'p-absolute': this.absolute };
 		},
-		computedIconName() {
-			let size = this.size.charAt(0).toUpperCase() + this.size.slice(1);
-			if (size === 'Xlarge') size = 'Large';
-
-			return `IconSpinner${size}`;
+		computedLoaderSize() {
+			return this.size === 'xlarge' ? 'large' : this.size;
 		},
 		computedIconMargin() {
 			const isXLarge = this.size.indexOf('xlarge') !== -1;
@@ -154,7 +151,7 @@ export default {
 			return this.$slots[`${position}-icon`] && `m${oppositePosition}-${this.computedIconMargin}`;
 		},
 	},
-	components: { Icon },
+	components: { Loader },
 };
 </script>
 
