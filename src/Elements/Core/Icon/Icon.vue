@@ -5,7 +5,6 @@
 			:is="name"
 			ref="icon"
 			class="c-application c-icon"
-			:class="computedSpinnerColor"
 			:style="styles"
 			v-bind="$attrs"
 			v-on="$listeners"
@@ -101,11 +100,6 @@ import IconProfileXLargeFill from '@/assets/images/icon/icon-profile-xlarge-fill
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
 
-// spinner
-import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline';
-import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
-import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
-
 import { colors, colorKeys } from '@/src/Elements/Core/Colors';
 
 export const IconNames = [
@@ -190,9 +184,6 @@ export const IconNames = [
 	'IconAnswerXLargeLine',
 	'IconMegaphoneXLargeLine',
 	'IconProfile2XLargeFill',
-	'IconSpinnerSmall',
-	'IconSpinnerMedium',
-	'IconSpinnerLarge',
 ];
 
 export default {
@@ -225,13 +216,6 @@ export default {
 			default: false,
 			validator(value) {
 				return typeof value === 'boolean';
-			},
-		},
-		spinnerColor: {
-			type: String,
-			default: 'gray',
-			validator(value) {
-				return ['gray', 'primary', 'success', 'error'].indexOf(value) !== -1;
 			},
 		},
 		reversed: {
@@ -270,47 +254,6 @@ export default {
 				...this.computedRotate,
 			};
 		},
-		computedSpinnerColor() {
-			return this.spinnerColor;
-		},
-	},
-	mounted() {
-		const colorMap = {
-			gray: {
-				stroke: '#E8EAED',
-				fill: '#979CA2',
-			},
-			primary: {
-				stroke: '#DEFAEB',
-				fill: '#00C854',
-			},
-			primaryReversed: {
-				stroke: '#00B334',
-				fill: 'white',
-			},
-			success: {
-				stroke: '#D6EBFF',
-				fill: '#1E90FF',
-			},
-			successReversed: {
-				stroke: '#0074CC',
-				fill: 'white',
-			},
-			error: {
-				stroke: '#FFDFDF',
-				fill: '#FA5252',
-			},
-			errorReversed: {
-				stroke: '#CC2727',
-				fill: 'white',
-			},
-		};
-		if (this.loading) {
-			const colorMapKey =
-				this.reversed && this.spinnerColor !== 'gray' ? `${this.spinnerColor}Reversed` : this.spinnerColor;
-			this.$refs['icon'].querySelectorAll('.circle')[0].setAttribute('stroke', colorMap[colorMapKey]['stroke']);
-			this.$refs['icon'].querySelectorAll('.quarter')[0].setAttribute('fill', colorMap[colorMapKey]['fill']);
-		}
 	},
 	components: {
 		// small
@@ -399,10 +342,6 @@ export default {
 		IconProfileXLargeFill,
 		// 2x-large
 		IconProfile2XLargeFill,
-		// spinner
-		IconSpinnerSmall,
-		IconSpinnerMedium,
-		IconSpinnerLarge,
 	},
 };
 </script>
