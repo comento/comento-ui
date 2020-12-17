@@ -24,8 +24,10 @@
   "dependencies": {
     "@storybook/storybook-deployer": "^2.8.7",
     "core-js": "^3.6.5",
+    "swiper": "^6.4.1",
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-svg-loader": "^0.16.0"
   },
   "devDependencies": {
