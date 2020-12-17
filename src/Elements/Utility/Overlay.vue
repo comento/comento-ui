@@ -12,7 +12,6 @@
 
 <script>
 import scrollMixin from '@/mixins/scrollMixin';
-import Icon from '@/src/Elements/Core/Icon/Icon';
 export const OverlayTypes = ['dimmer', 'content', 'bluring'];
 export default {
 	name: 'Overlay',
