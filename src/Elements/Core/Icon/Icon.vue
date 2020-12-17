@@ -211,13 +211,6 @@ export default {
 				return isValid;
 			},
 		},
-		loading: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
-		},
 		reversed: {
 			type: Boolean,
 			default: false,
@@ -238,14 +231,10 @@ export default {
 			return this.rotate !== 0 ? { transform: `rotate(${this.rotate}deg)` } : null;
 		},
 		computedFill() {
-			if (this.loading) {
-				return { fill: 'none' };
+			if (this.color) {
+				return { fill: colors[this.color] };
 			} else {
-				if (this.color) {
-					return { fill: colors[this.color] };
-				} else {
-					return null;
-				}
+				return null;
 			}
 		},
 		styles() {

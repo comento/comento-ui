@@ -35,15 +35,6 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
         options: colorKeys,
       },
     },
-    loading: {
-      description: "로딩 스피너<br/>`Boolean`",
-      defaultValue: false,
-      table: {
-        type: {
-          summary: null,
-        },
-      },
-    },
     rotate: {
       description: "아이콘의 회전 각도<br/>`Number`",
       table: {
@@ -62,7 +53,7 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Icon },
   template:
-    '<Icon :name="name" :color="color" :loading="loading" :rotate="Number(rotate)" />',
+    '<Icon :name="name" :color="color" :rotate="Number(rotate)" />',
 });
 
 # Icon
