@@ -4,10 +4,10 @@
 		:show-close-button="showCloseButton"
 		:max-width="maxWidth"
 		:persistent="persistent"
-		:max-height="isMobile ? '86vh' : '640px'"
+		:max-height="computedMaxHeight"
 		@close="close"
 	>
-		<div class="c-modal--wrapper" :class="computedClass">
+		<div class="c-modal--wrapper" :class="computedClasses">
 			<!-- title 영역 -->
 			<div class="c-modal--title-wrapper">
 				<Typography type="headline5" :align="align" color="gray900">
@@ -114,8 +114,17 @@ export default {
 		},
 	},
 	computed: {
-		computedClass() {
-			return [this.scroll && 'scroll', this.showActionButton && 'with-button'];
+		computedClasses() {
+			return [this.computedScroll, this.computedWithButton];
+		},
+		computedScroll() {
+			return { scroll: this.scroll };
+		},
+		computedWithButton() {
+			return { 'with-button': this.showActionButton };
+		},
+		computedMaxHeight() {
+			return this.isMobile ? '86vh' : '640px';
 		},
 	},
 	methods: {
