@@ -52,7 +52,11 @@ export default {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				return buttonColors.indexOf(value) !== -1;
+				const isValid = buttonColors.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid value of Button color`);
+				}
+				return isValid;
 			},
 		},
 		type: {
