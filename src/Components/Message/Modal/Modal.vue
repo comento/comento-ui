@@ -23,20 +23,35 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		maxWidth: {
 			type: String,
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		persistent: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		maxHeight: {
 			type: String,
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 	},
 	computed: {
