@@ -337,7 +337,7 @@ export default {
 		}
 	}
 }
-.gray {
+.secondary {
 	background-color: $gray600;
 	&:hover,
 	&:focus,
