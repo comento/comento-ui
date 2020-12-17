@@ -1,0 +1,61 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Overlay from "@/src/Elements/Utility/Overlay";
+import Button from "@/src/Components/Button/Button";
+
+<Meta
+  title="Utility/Overlay"
+  component={Overlay}
+    argTypes={{
+        show: {
+            description: "Overlay 활성화",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        type: {
+          description: "Overlay 타입 ",
+          control: {
+            type: "select",
+            options: ["dimmer"],
+          },
+        },
+        persistent: {
+            description: "overlay 클릭해도 모달 닫지 않기",
+            defaultValue: false,
+            control: {
+                type: "boolean",
+            },
+        },
+        zIndex: {
+          description: "zIndex",
+          defaultValue: 9999,
+          control: {
+           type: "text"
+            },
+        },
+    }}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Overlay, Button },
+  template: `
+  <div>
+        <Button @click="show = true">Open</Button>
+        <Overlay :show.sync="show"
+                 :type="type"
+                 :persistent="persistent"/>
+    </div>`,
+});
+
+# Overlay
+
+**Overlay** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+    {Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
