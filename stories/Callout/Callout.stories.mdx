@@ -69,7 +69,14 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
   <Story name="All">
     {{
-      template: `
+        data() {
+            return {
+                showXSmallCallout: true,
+                showSmallCallout: true,
+                showMediumCallout: true,
+            }
+        },
+        template: `
         <div>
             <div style="margin-bottom: 10px">
                 <div>
@@ -106,13 +113,13 @@ export const Default = (args, { argTypes }) => ({
             </div>
             <div style="margin-bottom: 10px">
                 <div>
-                    <Callout size="x-small" closable>문구가 들어가는 자리입니다.</Callout>
+                    <Callout v-if="showXSmallCallout" size="x-small" closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout size="small" closable>문구가 들어가는 자리입니다.</Callout>
+                    <Callout v-if="showSmallCallout" size="small" closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout size="medium" closable>문구가 들어가는 자리입니다.</Callout>
+                    <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
         </div>
