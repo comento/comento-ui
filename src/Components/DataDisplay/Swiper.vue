@@ -1,5 +1,5 @@
 <template>
-	<base-swiper ref="mySwiper" class="swiper" :options="swiperOptions">
+	<base-swiper ref="mySwiper" class="swiper" :options="swiperOptions" v-bind="$attrs">
 		<base-swiper-slide v-for="(node, index) in Object.keys(this.$slots).length" :key="`tabs-item-${index}-${key}`">
 			<slot :name="'item' + index"></slot>
 		</base-swiper-slide>
@@ -34,6 +34,7 @@ export const SwiperPaginationBulletColors = ['white', 'black'];
 
 export default {
 	name: 'Swiper',
+	inheritAttrs: false,
 	props: {
 		type: {
 			type: String,
