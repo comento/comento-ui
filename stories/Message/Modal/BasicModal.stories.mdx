@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import BasicModal from "@/src/Components/Message/Modal/BasicModal";
+import BasicModal, { aligns } from "@/src/Components/Message/Modal/BasicModal";
 import Button from "@/src/Components/Button/Button";
 
 <Meta
@@ -18,7 +18,7 @@ import Button from "@/src/Components/Button/Button";
             defaultValue: "center",
             control: {
                 type: "select",
-                options: ["center", "left", "right"]
+                options: aligns,
             },
             table: {
                 type: {
