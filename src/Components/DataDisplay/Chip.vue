@@ -5,6 +5,7 @@
 </template>
 
 <script>
+export const ChipColors = ['secondary', 'primary', 'success'];
 export default {
 	name: 'Chip',
 	props: {
@@ -13,7 +14,6 @@ export default {
 			type: String,
 			default: 'fill',
 		},
-		/*secondary , primary ,success*/
 		color: {
 			type: String,
 			default: 'secondary',
