@@ -3,11 +3,28 @@
 		<base-swiper-slide v-for="(node, index) in Object.keys(this.$slots).length" :key="`tabs-item-${index}-${key}`">
 			<slot :name="'item' + index"></slot>
 		</base-swiper-slide>
+		<Icon
+			v-show="withControls"
+			slot="button-prev"
+			name="IconArrowXLargeLine"
+			:rotate="-90"
+			class="swiper-button-prev"
+			color="white"
+		></Icon>
+		<Icon
+			v-show="withControls"
+			slot="button-next"
+			name="IconArrowXLargeLine"
+			:rotate="90"
+			class="swiper-button-next"
+			color="white"
+		></Icon>
 	</base-swiper>
 </template>
 
 <script>
 import customValidator from '@/utils/custom-validator.js';
+import Icon from '@/src/Elements/Core/Icon/Icon';
 import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide, directive } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 
@@ -26,6 +43,16 @@ export default {
 				return customValidator(value, assert, 'Swiper type');
 			},
 		},
+		withControls: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				const assert = value => {
+					return typeof value === 'boolean';
+				};
+				return customValidator(value, assert, 'Swiper withControls');
+			},
+		},
 	},
 	data() {
 		return {
@@ -37,6 +64,10 @@ export default {
 			return {
 				slidesPerView: 'auto',
 				spaceBetween: 12,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
 			};
 		},
 		swiper() {
@@ -46,6 +77,7 @@ export default {
 	components: {
 		BaseSwiper,
 		BaseSwiperSlide,
+		Icon,
 	},
 	directives: {
 		swiper: directive,
