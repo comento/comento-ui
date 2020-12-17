@@ -68,7 +68,7 @@ export default {
 .edu_card {
 	padding: 102px 0 12px 0;
 	@include pc {
-		padding: 140px 0 12px 0;
+		padding: 128px 0 12px 0;
 	}
 	border-radius: 4px;
 	width: 100%;
@@ -85,6 +85,7 @@ export default {
 }
 
 .camp_info_wrapper {
+	margin-top: 12px;
 	width: 100%;
 }
 
