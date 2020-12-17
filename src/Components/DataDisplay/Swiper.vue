@@ -19,7 +19,12 @@
 			class="swiper-button-next"
 			color="white"
 		></Icon>
-		<div slot="pagination" class="swiper-pagination" :class="computedPaginationBulletColorClass"></div>
+		<div
+			v-show="withIndicators"
+			slot="pagination"
+			class="swiper-pagination"
+			:class="computedIndicatorColorClass"
+		></div>
 	</base-swiper>
 </template>
 
@@ -30,7 +35,7 @@ import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesom
 import 'swiper/css/swiper.css';
 
 export const SwiperTypes = ['swiper', 'slider'];
-export const SwiperPaginationBulletColors = ['white', 'black'];
+export const SwiperIndicatorColors = ['white', 'black'];
 
 export default {
 	name: 'Swiper',
@@ -56,14 +61,24 @@ export default {
 				return customValidator(value, assert, 'Swiper withControls');
 			},
 		},
-		paginationBulletColor: {
+		withIndicators: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				const assert = value => {
+					return typeof value === 'boolean';
+				};
+				return customValidator(value, assert, 'Swiper withIndicators');
+			},
+		},
+		indicatorColor: {
 			type: String,
 			default: 'white',
 			validator(value) {
 				const assert = value => {
-					return SwiperPaginationBulletColors.indexOf(value) !== -1;
+					return SwiperIndicatorColors.indexOf(value) !== -1;
 				};
-				return customValidator(value, assert, 'Swiper paginationBulletColor');
+				return customValidator(value, assert, 'Swiper indicatorColor');
 			},
 		},
 	},
@@ -89,8 +104,8 @@ export default {
 		swiper() {
 			return this.$refs.mySwiper.$swiper;
 		},
-		computedPaginationBulletColorClass() {
-			return `swiper-pagination-bullet-${this.paginationBulletColor}`;
+		computedIndicatorColorClass() {
+			return `swiper-indicator-${this.indicatorColor}`;
 		},
 	},
 	components: {
@@ -122,12 +137,12 @@ $swiper-background-color: #c4c4c4;
 	border-radius: 0;
 }
 /* 클래스를 직접 주입할 수 없으므로, 그 상위에 주입 */
-::v-deep .swiper-pagination-bullet-black {
+::v-deep .swiper-indicator-black {
 	.swiper-pagination-bullet {
 		background-color: $gray800;
 	}
 }
-::v-deep .swiper-pagination-bullet-white {
+::v-deep .swiper-indicator-white {
 	.swiper-pagination-bullet {
 		background-color: $white;
 	}

@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Swiper, { SwiperTypes, SwiperPaginationBulletColors } from '@/src/Components/DataDisplay/Swiper';
+import Swiper, { SwiperTypes, SwiperIndicatorColors } from '@/src/Components/DataDisplay/Swiper';
 import Button from '@/src/Components/Button/Button';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
@@ -15,16 +15,22 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
             },
         },
         withControls: {
-            description: "With Control",
+            description: "With Controls",
             control: {
                 type: "boolean",
             },
         },
-        paginationBulletColor: {
-            description: "swiper bullet color",
+        withIndicators: {
+            description: "With Indicators",
+            control: {
+                type: "boolean",
+            },
+        },
+        indicatorColor: {
+            description: "swiper indicator color",
             control: {
                 type: "select",
-                options: SwiperPaginationBulletColors,
+                options: SwiperIndicatorColors,
             },
         },
     }}
@@ -34,7 +40,7 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Swiper, Typography },
     template: `
-        <Swiper :withControls="withControls" :paginationBulletColor="paginationBulletColor">
+        <Swiper :withControls="withControls" :withIndicators="withIndicators" :indicatorColor="indicatorColor">
             <template v-for="(item, index) in 5" :slot="'item' + index">
                 <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
             </template>
@@ -63,7 +69,7 @@ export const Default = (args, { argTypes }) => ({
                 }
             },
             template: `
-                    <Swiper :withControls="true" paginationBulletColor="white">
+                    <Swiper :withControls="true" indicatorColor="white">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                         </template>
@@ -74,9 +80,9 @@ export const Default = (args, { argTypes }) => ({
 </Canvas>
 
 ## Stories
-### PaginationBulletColors
+### IndicatorColors
 <Canvas>
-    <Story name="PaginationBulletColors" height="100px">
+    <Story name="IndicatorColors" height="100px">
         {{
             data() {
                 return {
@@ -85,12 +91,12 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
                 <div>
-                    <Swiper paginationBulletColor="white" style="margin-bottom: 10px;">
+                    <Swiper indicatorColor="white" style="margin-bottom: 10px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                         </template>
                     </Swiper>
-                   <Swiper paginationBulletColor="black">
+                   <Swiper indicatorColor="black">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                         </template>
