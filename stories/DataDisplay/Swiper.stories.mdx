@@ -1,0 +1,103 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Swiper, { SwiperTypes, SwiperPaginationBulletColors } from '@/src/Components/DataDisplay/Swiper';
+import Button from '@/src/Components/Button/Button';
+import Typography from '@/src/Elements/Core/Typography/Typography';
+
+<Meta
+    title="Data Display/Swiper"
+    component={ Swiper }
+    argTypes={{
+        type: {
+            description: "swiper type",
+            control: {
+                type: "select",
+                options: SwiperTypes,
+            },
+        },
+        withControls: {
+            description: "With Control",
+            control: {
+                type: "boolean",
+            },
+        },
+        paginationBulletColor: {
+            description: "swiper bullet color",
+            control: {
+                type: "select",
+                options: SwiperPaginationBulletColors,
+            },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Swiper, Typography },
+    template: `
+        <Swiper :withControls="withControls" :paginationBulletColor="paginationBulletColor">
+            <template v-for="(item, index) in 5" :slot="'item' + index">
+                <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+            </template>
+        </Swiper>`,
+});
+
+# Swiper
+
+**Swiper** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                }
+            },
+            template: `
+                    <Swiper :withControls="true" paginationBulletColor="white">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+
+## Stories
+### PaginationBulletColors
+<Canvas>
+    <Story name="PaginationBulletColors" height="100px">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                }
+            },
+            template: `
+                <div>
+                    <Swiper paginationBulletColor="white" style="margin-bottom: 10px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                   <Swiper paginationBulletColor="black">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                </div>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+
