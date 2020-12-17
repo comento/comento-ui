@@ -6,6 +6,9 @@
 		popover-base-class="c-tooltip"
 		popover-arrow-class="c-tooltip_arrow"
 		popover-inner-class="c-tooltip_inner"
+		v-bind="$attrs"
+		v-on="$listeners"
+		@show="$emit('showTooltip')"
 	>
 		<slot> </slot>
 		<template slot="popover">
@@ -23,6 +26,7 @@ export const placements = ['bottom', 'bottom-right', 'bottom-left'];
 
 export default {
 	name: 'Tooltip',
+	inheritAttrs: false,
 	props: {
 		placement: {
 			type: String,
