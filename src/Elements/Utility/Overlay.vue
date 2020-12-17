@@ -20,6 +20,9 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		type: {
 			type: String,
@@ -30,9 +33,7 @@ export default {
 		},
 		zIndex: {
 			type: Number,
-			default() {
-				return 9999;
-			},
+			default: 9999,
 			validator(value) {
 				return typeof value === 'number';
 			},
@@ -40,6 +41,9 @@ export default {
 		persistent: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	computed: {
