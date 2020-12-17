@@ -19,16 +19,18 @@
 			class="swiper-button-next"
 			color="white"
 		></Icon>
+		<div slot="pagination" class="swiper-pagination" :class="computedPaginationBulletColorClass"></div>
 	</base-swiper>
 </template>
 
 <script>
 import customValidator from '@/utils/custom-validator.js';
 import Icon from '@/src/Elements/Core/Icon/Icon';
-import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide, directive } from 'vue-awesome-swiper';
+import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 
 export const SwiperTypes = ['swiper', 'slider'];
+export const SwiperPaginationBulletColors = ['white', 'black'];
 
 export default {
 	name: 'Swiper',
@@ -53,6 +55,16 @@ export default {
 				return customValidator(value, assert, 'Swiper withControls');
 			},
 		},
+		paginationBulletColor: {
+			type: String,
+			default: 'white',
+			validator(value) {
+				const assert = value => {
+					return SwiperPaginationBulletColors.indexOf(value) !== -1;
+				};
+				return customValidator(value, assert, 'Swiper paginationBulletColor');
+			},
+		},
 	},
 	data() {
 		return {
@@ -68,19 +80,22 @@ export default {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',
 				},
+				pagination: {
+					el: '.swiper-pagination',
+				},
 			};
 		},
 		swiper() {
 			return this.$refs.mySwiper.$swiper;
+		},
+		computedPaginationBulletColorClass() {
+			return `swiper-pagination-bullet-${this.paginationBulletColor}`;
 		},
 	},
 	components: {
 		BaseSwiper,
 		BaseSwiperSlide,
 		Icon,
-	},
-	directives: {
-		swiper: directive,
 	},
 };
 </script>
@@ -98,6 +113,22 @@ $swiper-background-color: #c4c4c4;
 		text-align: center;
 		font-weight: bold;
 		background-color: $swiper-background-color;
+	}
+}
+::v-deep .swiper-pagination-bullet {
+	width: 20px;
+	height: 3px;
+	border-radius: 0;
+}
+/* 클래스를 직접 주입할 수 없으므로, 그 상위에 주입 */
+::v-deep .swiper-pagination-bullet-black {
+	.swiper-pagination-bullet {
+		background-color: $gray800;
+	}
+}
+::v-deep .swiper-pagination-bullet-white {
+	.swiper-pagination-bullet {
+		background-color: $white;
 	}
 }
 </style>
