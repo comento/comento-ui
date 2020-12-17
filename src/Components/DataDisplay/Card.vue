@@ -25,6 +25,10 @@
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import customValidator from '@/utils/custom-validator.js';
+
+export const CardBackgroundDirections = ['horizontal', 'vertical'];
+
 export default {
 	name: 'EduCard',
 	props: {
@@ -34,11 +38,12 @@ export default {
 		},
 		backgroundDirection: {
 			type: String,
-			// horizontal, vertical
 			default: 'vertical',
 			validator(value) {
-				// 값이 항상 아래 중 하나여야 합니다.
-				return ['horizontal', 'vertical'].indexOf(value) !== -1;
+				const assert = value => {
+					return CardBackgroundDirections.indexOf(value) !== -1;
+				};
+				return customValidator(value, assert, 'Card BackgroundDirection');
 			},
 		},
 		category: {
@@ -66,7 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .edu_card {
-	padding: 102px 0 12px 0;
+	padding: 90px 0 12px 0;
 	@include pc {
 		padding: 128px 0 12px 0;
 	}
