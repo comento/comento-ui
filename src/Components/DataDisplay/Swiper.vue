@@ -92,10 +92,16 @@ export default {
 		};
 	},
 	computed: {
-		swiperOptions() {
+		isSwiperGroupType() {
+			return this.type === 'swiperGroup';
+		},
+		isSwiperType() {
+			return this.type === 'swiper';
+		},
+		swiperTypeOptions() {
 			return {
 				slidesPerView: 'auto',
-				spaceBetween: 12,
+				allowTouchMove: false,
 				navigation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',
@@ -103,6 +109,26 @@ export default {
 				pagination: {
 					el: '.swiper-pagination',
 				},
+			};
+		},
+		swiperGroupTypeOptions() {
+			return {
+				slidesPerView: 3,
+				spaceBetween: this.spacing,
+				allowTouchMove: false,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+				},
+			};
+		},
+		swiperOptions() {
+			return {
+				...(this.isSwiperType && this.swiperTypeOptions),
+				...(this.isSwiperGroupType && this.swiperGroupTypeOptions),
 			};
 		},
 		swiper() {
