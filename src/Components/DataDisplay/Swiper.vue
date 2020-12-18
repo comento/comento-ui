@@ -9,7 +9,7 @@
 			name="IconArrowXLargeLine"
 			:rotate="-90"
 			class="swiper-button-prev"
-			color="white"
+			:color="controlColor"
 		></Icon>
 		<Icon
 			v-show="withControls"
@@ -17,7 +17,7 @@
 			name="IconArrowXLargeLine"
 			:rotate="90"
 			class="swiper-button-next"
-			color="white"
+			:color="controlColor"
 		></Icon>
 		<div
 			v-show="withIndicators"
@@ -36,6 +36,7 @@ import 'swiper/css/swiper.css';
 
 export const SwiperTypes = ['swiper', 'slider'];
 export const SwiperIndicatorColors = ['white', 'black'];
+export const SwiperControlColors = ['white', 'black'];
 
 export default {
 	name: 'Swiper',
@@ -59,6 +60,16 @@ export default {
 					return typeof value === 'boolean';
 				};
 				return customValidator(value, assert, 'Swiper withControls');
+			},
+		},
+		controlColor: {
+			type: String,
+			default: 'white',
+			validator(value) {
+				const assert = value => {
+					return SwiperControlColors.indexOf(value) !== -1;
+				};
+				return customValidator(value, assert, 'Swiper controlColor');
 			},
 		},
 		withIndicators: {
