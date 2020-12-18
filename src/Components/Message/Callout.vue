@@ -96,7 +96,8 @@ export default {
 			return mapSizeToFontType[this.size];
 		},
 		computedCloseIconName() {
-			return this.size === 'x-small' ? 'IconCloseSmallLine' : 'IconCloseMediumLine';
+			const iconSize = this.size === 'x-small' ? 'Small' : 'Medium';
+			return `IconClose${iconSize}Line`;
 		},
 		computedTransition() {
 			return this.closable ? 'callout-fade' : null;

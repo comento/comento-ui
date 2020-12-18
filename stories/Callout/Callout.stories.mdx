@@ -49,7 +49,16 @@ export const Default = (args, { argTypes }) => ({
             showCallout: true,
         }
     },
-    template: `<Callout v-if="showCallout":type="type" :size="size" :full="full" :closable="closable" @closeCallout="showCallout = false">{{text}}</Callout></div>`,
+    template: `
+        <Callout
+            v-if="showCallout"
+            :type="type" :size="size"
+            :full="full"
+            :closable="closable"
+            @closeCallout="showCallout = false"
+        >
+            {{ text }}
+        </Callout>`,
 });
 
 # Callout
