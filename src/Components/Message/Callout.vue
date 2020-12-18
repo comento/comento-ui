@@ -1,21 +1,20 @@
 <template>
 	<transition :name="computedTransition">
 		<div
-			class="c-application c-callout_container"
+			class="c-application c-callout--container"
 			:class="[computedSize, computedType, computedFull]"
 			v-bind="$attrs"
 			v-on="$listeners"
 		>
-			<div class="c-callout_wrapper">
+			<div class="c-callout--wrapper">
 				<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
-				<Typography class="c-callout_message" color="gray700" :type="computedFontType">
+				<Typography class="c-callout--message" color="gray700" :type="computedFontType">
 					<slot />
 				</Typography>
 				<Icon
 					v-if="closable"
 					class="c-callout--close-button"
 					:name="computedCloseIconName"
-					style="margin-left: 4px"
 					@click="handleClose"
 				/>
 			</div>
@@ -125,7 +124,7 @@ export default {
 
 <style scoped lang="scss">
 .c-callout {
-	&_container {
+	&--container {
 		display: inline-flex;
 		align-items: center;
 		&.full {
@@ -134,7 +133,7 @@ export default {
 		svg {
 			flex-shrink: 0;
 		}
-		// color
+
 		&.x-small {
 			padding: 4px 8px;
 			border-radius: 4px;
@@ -168,13 +167,13 @@ export default {
 			background-color: $blue000;
 		}
 	}
-	&_wrapper {
+	&--wrapper {
 		display: inline-flex;
 		width: 100%;
 		position: relative;
 		align-items: center;
 	}
-	&_message {
+	&--message {
 		width: 100%;
 		word-break: keep-all;
 		&::v-deep strong {
@@ -185,9 +184,10 @@ export default {
 			width: 100%;
 		}
 	}
-	&-close--button {
+	&--close-button {
 		position: absolute;
 		right: 4px;
+		margin-left: 4px;
 	}
 }
 
