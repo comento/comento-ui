@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Swiper, { SwiperTypes, SwiperIndicatorColors, SwiperControlColors } from '@/src/Components/DataDisplay/Swiper';
+import Swiper, { SwiperTypes, SwiperIndicatorColors, SwiperControlColors, SwiperSpacings } from '@/src/Components/DataDisplay/Swiper';
 import Button from '@/src/Components/Button/Button';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
@@ -40,6 +40,13 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
                 options: SwiperIndicatorColors,
             },
         },
+        spacing: {
+            description: "swiper indicator color",
+            control: {
+                type: "select",
+                options: SwiperSpacings,
+            },
+        },
     }}
 />
 
@@ -47,7 +54,7 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Swiper, Typography },
     template: `
-        <Swiper :withControls="withControls" :controlColor="controlColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor">
+        <Swiper :withControls="withControls" :controlColor="controlColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor" :spacing="spacing">
             <template v-for="(item, index) in 5" :slot="'item' + index">
                 <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
             </template>

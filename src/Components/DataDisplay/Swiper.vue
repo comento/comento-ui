@@ -34,9 +34,10 @@ import Icon from '@/src/Elements/Core/Icon/Icon';
 import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 
-export const SwiperTypes = ['swiper', 'slider'];
+export const SwiperTypes = ['swiper', 'swiperGroup', 'slider'];
 export const SwiperIndicatorColors = ['light', 'dark'];
 export const SwiperControlColors = ['light', 'dark'];
+export const SwiperSpacings = [8, 12, 24];
 
 export default {
 	name: 'Swiper',
@@ -75,6 +76,13 @@ export default {
 			default: 'light',
 			validator(value) {
 				return customValidator(value, SwiperIndicatorColors.indexOf(value) !== -1, 'Swiper', 'indicatorColor');
+			},
+		},
+		spacing: {
+			type: [Number],
+			default: 12,
+			validator(value) {
+				return customValidator(value, SwiperSpacings.indexOf(value) !== -1, 'Swiper', 'spacing');
 			},
 		},
 	},
