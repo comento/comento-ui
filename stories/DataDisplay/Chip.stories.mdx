@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Chip from '@/src/Components/DataDisplay/Chip';
+import Chip, { ChipColors } from '@/src/Components/DataDisplay/Chip';
 
 <Meta
     title="Data Display/Chip/Chip"
@@ -27,13 +27,13 @@ import Chip from '@/src/Components/DataDisplay/Chip';
             },
         },
         color: {
-                    description: "Chip 색상",
-                    defaultValue: "gray",
-                    control: {
-                        type: "select",
-                        options: ["gray" ,"primary" ,"success"],
-                    },
-                },
+            description: "Chip 색상",
+            defaultValue: "secondary",
+            control: {
+                type: "select",
+                options: ChipColors,
+            },
+        },
     }}
 />
 
@@ -62,17 +62,17 @@ export const Basic = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                 <Chip type="fill" color="gray" size="small">Chip</Chip>
-                 <Chip type="fill" color="gray" size="medium" class="ml-4">Chip</Chip>
-                 <Chip type="fill" color="gray" size="large" class="ml-4">Chip</Chip>
+                 <Chip type="fill" color="secondary" size="small">Chip</Chip>
+                 <Chip type="fill" color="secondary" size="medium" class="ml-4">Chip</Chip>
+                 <Chip type="fill" color="secondary" size="large" class="ml-4">Chip</Chip>
                  <hr>
-                 <Chip type="outlined" color="gray" size="small">Chip</Chip>
-                  <Chip type="outlined" color="gray" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="outlined" color="gray" size="large" class="ml-4">Chip</Chip>
+                 <Chip type="outlined" color="secondary" size="small">Chip</Chip>
+                  <Chip type="outlined" color="secondary" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="outlined" color="secondary" size="large" class="ml-4">Chip</Chip>
                   <hr>
-                  <Chip type="filter" color="gray" size="small">Chip</Chip>
-                  <Chip type="filter" color="gray" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="filter" color="gray" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="filter" color="secondary" size="small">Chip</Chip>
+                  <Chip type="filter" color="secondary" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="filter" color="secondary" size="large" class="ml-4">Chip</Chip>
                   <hr>
                   <Chip type="fill" color="primary" size="small">Chip</Chip>
                   <Chip type="fill" color="primary" size="medium" class="ml-4">Chip</Chip>

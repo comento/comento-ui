@@ -1,17 +1,33 @@
 <template>
-	<div class="c-application c-callout_container" :class="[computedSize, computedType, computedFull]">
-		<div class="c-callout_wrapper">
-			<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
-			<Typography class="c-callout_message" color="gray700" :type="computedFontType">
-				<slot />
-			</Typography>
+	<transition :name="computedTransition">
+		<div
+			class="c-application c-callout--container"
+			:class="[computedSize, computedType, computedFull]"
+			v-bind="$attrs"
+			v-on="$listeners"
+		>
+			<div class="c-callout--wrapper">
+				<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+				<Typography class="c-callout--message" color="gray700" :type="computedFontType">
+					<slot />
+				</Typography>
+				<Icon
+					v-if="closable"
+					class="c-callout--close-button"
+					:name="computedCloseIconName"
+					@click="handleClose"
+				/>
+			</div>
 		</div>
-	</div>
+	</transition>
 </template>
 
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Typography from '@/src/Elements/Core/Typography/Typography';
+
+export const CalloutTypes = ['information', 'alert', 'success'];
+export const CalloutSizes = ['x-small', 'small', 'medium'];
 
 export default {
 	name: 'Callout',
@@ -20,17 +36,32 @@ export default {
 			type: String,
 			default: 'information',
 			validator(value) {
-				return ['information', 'alert', 'success'].indexOf(value) !== -1;
+				const isValid = CalloutTypes.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid value of Callout type`);
+				}
+				return isValid;
 			},
 		},
 		size: {
 			type: String,
 			default: 'small',
 			validator(value) {
-				return ['x-small', 'small', 'medium'].indexOf(value) !== -1;
+				const isValid = CalloutSizes.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid value of Callout size`);
+				}
+				return isValid;
 			},
 		},
 		full: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
+		},
+		closable: {
 			type: Boolean,
 			default: false,
 			validator(value) {
@@ -64,6 +95,13 @@ export default {
 			};
 			return mapSizeToFontType[this.size];
 		},
+		computedCloseIconName() {
+			const iconSize = this.size === 'x-small' ? 'Small' : 'Medium';
+			return `IconClose${iconSize}Line`;
+		},
+		computedTransition() {
+			return this.closable ? 'callout-fade' : null;
+		},
 	},
 	methods: {
 		mapIconNameFromSize(size) {
@@ -74,6 +112,9 @@ export default {
 			};
 			return iconSet[size];
 		},
+		handleClose() {
+			this.$emit('closeCallout');
+		},
 	},
 	components: {
 		Typography,
@@ -83,10 +124,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
 .c-callout {
-	&_container {
+	&--container {
 		display: inline-flex;
 		align-items: center;
 		&.full {
@@ -95,7 +134,7 @@ export default {
 		svg {
 			flex-shrink: 0;
 		}
-		// color
+
 		&.x-small {
 			padding: 4px 8px;
 			border-radius: 4px;
@@ -129,11 +168,13 @@ export default {
 			background-color: $blue000;
 		}
 	}
-	&_wrapper {
+	&--wrapper {
 		display: inline-flex;
+		width: 100%;
+		position: relative;
 		align-items: center;
 	}
-	&_message {
+	&--message {
 		width: 100%;
 		word-break: keep-all;
 		&::v-deep strong {
@@ -144,5 +185,19 @@ export default {
 			width: 100%;
 		}
 	}
+	&--close-button {
+		position: absolute;
+		right: 4px;
+		margin-left: 4px;
+	}
+}
+
+.callout-fade-leave-active {
+	transition: all 0.2s;
+}
+.callout-fade-enter, .callout-fade-leave-to
+	/* .slide-fade-leave-active below version 2.1.8 */ {
+	transform: translateX(-100%);
+	opacity: 0;
 }
 </style>
