@@ -40,10 +40,8 @@ export default {
 			type: String,
 			default: 'vertical',
 			validator(value) {
-				const assert = value => {
-					return CardBackgroundDirections.indexOf(value) !== -1;
-				};
-				return customValidator(value, assert, 'Card BackgroundDirection');
+				const isValid = CardBackgroundDirections.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Card', 'BackgroundDirection');
 			},
 		},
 		category: {

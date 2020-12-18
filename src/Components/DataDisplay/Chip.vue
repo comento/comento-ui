@@ -5,6 +5,7 @@
 </template>
 
 <script>
+export const ChipColors = ['secondary', 'primary', 'success'];
 export default {
 	name: 'Chip',
 	props: {
@@ -13,10 +14,9 @@ export default {
 			type: String,
 			default: 'fill',
 		},
-		/*gray , primary ,success*/
 		color: {
 			type: String,
-			default: 'gray',
+			default: 'secondary',
 		},
 		/*chip 사이즈 (small, medium, large)*/
 		size: {
@@ -47,7 +47,7 @@ export default {
 	align-items: center;
 	justify-content: center;
 	border-radius: 4px;
-	&.gray {
+	&.secondary {
 		color: $gray500;
 		border: 1px solid $gray100;
 		background-color: $gray100;

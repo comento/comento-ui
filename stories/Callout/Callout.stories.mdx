@@ -1,81 +1,238 @@
-import {
-  ArgsTable,
-  Preview,
-  Meta,
-  Story,
-  Props,
-} from "@storybook/addon-docs/blocks";
-import Callout from "@/src/Components/Message/Callout";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Callout, { CalloutTypes, CalloutSizes } from "@/src/Components/Message/Callout";
 
 <Meta
   title="Message/Callout"
   component={Callout}
   argTypes={{
-    label: {
-      description: "Callout에 들어갈 텍스트",
-      defaultValue:
-        "과제 내용과 멘토님의 피드백은 PEER 학습 효과를 위해 모든 참여자에게 공개됩니다.",
-      control: { type: "text" },
-      table: {
-        type: {
-          summary: null,
-        },
+    text: {
+      description: "메시지",
+      defaultValue: "설명문구가 들어가는 자리입니다.",
+      control: {
+        type: "text"
       },
     },
     type: {
-      description: "정보 타입",
-      defaultValue: "information",
-      control: { type: "text" },
-      table: {
-        type: {
-          summary: "목록",
-          detail: '"information" "alert" "success"',
-        },
-      },
+      description: "보여주려는 정보의 종류",
       control: {
         type: "select",
-        options: ["information", "alert", "success"],
+        options: CalloutTypes,
       },
     },
     size: {
       description: "크기",
-      table: {
-        type: {
-          summary: "목록",
-          detail: '"x-small", "small" "medium"',
-        },
-      },
       control: {
         type: "select",
-        options: ["x-small", "small", "medium"],
+        options: CalloutSizes
       },
     },
     full: {
-      description: "버튼의 너비가 부모컴포넌트의 100%를 차지할지<br/>`Boolean`",
-      table: {
-        type: {
-          summary: null,
-        },
+      description: "width를 100%로 할건지",
+      control: {
+        type: "boolean"
+      },
+    },
+    closable: {
+      description: "closeButton과 같이 쓸건지",
+      control: {
+        type: "boolean"
       },
     },
   }}
 />
 
-export const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Callout },
-  template:
-    '<Callout :type="type" :size="size" :full="full">{{label}}</Callout>',
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Callout },
+    data() {
+        return {
+            showCallout: true,
+        }
+    },
+    template: `
+        <Callout
+            v-if="showCallout"
+            :type="type" :size="size"
+            :full="full"
+            :closable="closable"
+            @closeCallout="showCallout = false"
+        >
+            {{ text }}
+        </Callout>`,
 });
 
 # Callout
 
 **Callout** 컴포넌트의 문서입니다.
 
-<Story name="docs">{Template.bind({})}</Story>
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
 
-<ArgsTable story="docs" />
+<ArgsTable story="Default" />
 
-<Preview height="100%">
-  <Story id="callout--callout"></Story>
-</Preview>
+## Stories
+
+### All
+
+<Canvas>
+  <Story name="All">
+    {{
+        data() {
+            return {
+                showXSmallCallout: true,
+                showSmallCallout: true,
+                showMediumCallout: true,
+            }
+        },
+        template: `
+        <div>
+            <div style="margin-bottom: 10px">
+                <div>
+                    <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout type='alert'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px">
+                <div>
+                    <Callout size="x-small">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="small">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="medium">문구가 들어가는 자리입니다.</Callout>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px">
+                <div>
+                    <Callout size="x-small" full>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="small" full>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="medium" full>문구가 들어가는 자리입니다.</Callout>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px">
+                <div>
+                    <Callout v-if="showXSmallCallout" size="x-small" closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout v-if="showSmallCallout" size="small" closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+            </div>
+        </div>
+            `,
+      components: { Callout },
+    }}
+  </Story>
+</Canvas>
+
+### Types
+
+<Canvas>
+    <Story name="Types" height="100px">
+    {{
+        template: `
+            <div>
+                <div>
+                    <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout type='alert'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+            </div>
+            `,
+        components: { Callout },
+    }}
+    </Story>
+</Canvas>
+
+### Sizes
+
+<Canvas>
+    <Story name="Sizes" height="100px">
+    {{
+        template: `
+            <div>
+                <div>
+                    <Callout size="x-small">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="small">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="medium">문구가 들어가는 자리입니다.</Callout>
+                </div>
+            </div>
+            `,
+        components: { Callout },
+    }}
+    </Story>
+</Canvas>
+
+### Full
+
+<Canvas>
+    <Story name="Full" height="100px">
+    {{
+        template: `
+            <div>
+                <div>
+                    <Callout size="x-small" full>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="small" full>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout size="medium" full>문구가 들어가는 자리입니다.</Callout>
+                </div>
+            </div>
+            `,
+        components: { Callout },
+    }}
+    </Story>
+</Canvas>
+
+### Closable
+
+<Canvas>
+    <Story name="Closable" height="100px">
+    {{
+        data() {
+            return {
+                showXSmallCallout: true,
+                showSmallCallout: true,
+                showMediumCallout: true,
+            }
+        },
+        template: `
+            <div>
+                <div>
+                    <Callout v-if="showXSmallCallout" size="x-small" closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout v-if="showSmallCallout" size="small" closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+            </div>
+            `,
+        components: { Callout },
+    }}
+    </Story>
+</Canvas>

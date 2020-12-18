@@ -1,7 +1,6 @@
-export default function (value, assert, description) {
-	const isValid = assert(value);
+export default function (value, isValid, componentName, propsName) {
 	if (!isValid) {
-		console.error(`${value} is not a valid value of the ${description}`);
+		console.error(`${value} is not a valid value of the ${componentName} ${propsName}`);
 	}
 	return isValid;
 }

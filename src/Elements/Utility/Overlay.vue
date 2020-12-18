@@ -12,7 +12,8 @@
 
 <script>
 import scrollMixin from '@/mixins/scrollMixin';
-export const OverlayTypes = ['dimmer', 'content', 'bluring'];
+export const OverlayTypes = ['dimmer'];
+
 export default {
 	name: 'Overlay',
 	mixins: [scrollMixin],
@@ -20,6 +21,9 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		type: {
 			type: String,
@@ -30,9 +34,7 @@ export default {
 		},
 		zIndex: {
 			type: Number,
-			default() {
-				return 9999;
-			},
+			default: 9999,
 			validator(value) {
 				return typeof value === 'number';
 			},
@@ -40,11 +42,14 @@ export default {
 		persistent: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	computed: {
 		computedType() {
-			return `c-overlay--type--${this.type}`;
+			return `c-overlay--type-${this.type}`;
 		},
 		computedZindex() {
 			return { zIndex: this.zIndex };
@@ -79,14 +84,15 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .c-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	&--type--dimmer {
+
+	&--type-dimmer {
 		background: rgba(0, 0, 0, 0.6);
 	}
 }
