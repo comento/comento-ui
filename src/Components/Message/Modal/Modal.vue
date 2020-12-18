@@ -1,17 +1,20 @@
 <template>
-	<div v-if="show" class="c-application c-modal--mask" @click="handleCloseModal">
-		<div class="c-modal--container" :style="[computedStyle]" @click.stop>
-			<div v-if="showCloseButton" class="c-modal--close-button" @click="close">
-				<Icon name="IconCloseXLargeLine" color="gray400" />
+	<div v-if="show" class="c-application" @click="handleCloseModal">
+		<Overlay :show.sync="show" :z-index="9998" :persistent="persistent">
+			<div class="c-modal" :style="[computedStyle]" @click.stop>
+				<div v-if="showCloseButton" class="c-modal--close-button" @click="close">
+					<Icon name="IconCloseXLargeLine" color="gray400" />
+				</div>
+				<slot />
 			</div>
-			<slot />
-		</div>
+		</Overlay>
 	</div>
 </template>
 
 <script>
 import scrollMixin from '@/mixins/scrollMixin';
 import Icon from '@/src/Elements/Core/Icon/Icon';
+import Overlay from '@/src/Elements/Utility/Overlay';
 
 export default {
 	name: 'Modal',
@@ -20,20 +23,35 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		maxWidth: {
 			type: String,
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		persistent: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		maxHeight: {
 			type: String,
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 	},
 	computed: {
@@ -44,23 +62,7 @@ export default {
 			};
 		},
 	},
-	watch: {
-		show() {
-			this.$_handleNotScroll(this.show);
-		},
-	},
-	mounted() {
-		document.addEventListener('keydown', e => this.handleCloseKeycode(e));
-	},
-	beforeDestroy() {
-		document.removeEventListener('keydown', e => this.handleCloseKeycode(e));
-	},
 	methods: {
-		handleCloseKeycode(e) {
-			if (this.show && e.keyCode === 27) {
-				this.close();
-			}
-		},
 		handleCloseModal() {
 			if (!this.persistent) {
 				this.close();
@@ -70,38 +72,27 @@ export default {
 			this.$emit('close');
 		},
 	},
-	components: { Icon },
+	components: { Overlay, Icon },
 };
 </script>
 
 <style lang="scss" scoped>
 .c-modal {
-	&--mask {
-		position: fixed;
-		z-index: 9998;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.7);
-		transition: opacity 0.3s ease;
-	}
-	&--container {
-		max-width: 90%;
-		width: 100%;
-		margin: 0 auto;
-		background-color: $white;
-		border-radius: 4px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		box-sizing: border-box;
+	max-width: 90%;
+	width: 100%;
+	margin: 0 auto;
+	background-color: $white;
+	border-radius: 4px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
 
-		@include pc {
-			max-width: 420px;
-		}
+	@include pc {
+		max-width: 420px;
 	}
+
 	&--close-button {
 		position: absolute;
 		top: 12px;
