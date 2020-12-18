@@ -9,7 +9,7 @@
 			name="IconArrowXLargeLine"
 			:rotate="-90"
 			class="swiper-button-prev"
-			:color="controlColor"
+			:color="computedControlColor"
 		></Icon>
 		<Icon
 			v-show="withControls"
@@ -17,7 +17,7 @@
 			name="IconArrowXLargeLine"
 			:rotate="90"
 			class="swiper-button-next"
-			:color="controlColor"
+			:color="computedControlColor"
 		></Icon>
 		<div
 			v-show="withIndicators"
@@ -35,8 +35,8 @@ import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesom
 import 'swiper/css/swiper.css';
 
 export const SwiperTypes = ['swiper', 'slider'];
-export const SwiperIndicatorColors = ['white', 'black'];
-export const SwiperControlColors = ['white', 'black'];
+export const SwiperIndicatorColors = ['light', 'dark'];
+export const SwiperControlColors = ['light', 'dark'];
 
 export default {
 	name: 'Swiper',
@@ -64,7 +64,7 @@ export default {
 		},
 		controlColor: {
 			type: String,
-			default: 'white',
+			default: 'light',
 			validator(value) {
 				const assert = value => {
 					return SwiperControlColors.indexOf(value) !== -1;
@@ -84,7 +84,7 @@ export default {
 		},
 		indicatorColor: {
 			type: String,
-			default: 'white',
+			default: 'light',
 			validator(value) {
 				const assert = value => {
 					return SwiperIndicatorColors.indexOf(value) !== -1;
@@ -118,6 +118,13 @@ export default {
 		computedIndicatorColorClass() {
 			return `swiper-indicator-${this.indicatorColor}`;
 		},
+		computedControlColor() {
+			const colorMap = {
+				light: 'white',
+				dark: 'gray800',
+			};
+			return colorMap[this.controlColor];
+		},
 	},
 	components: {
 		BaseSwiper,
@@ -148,12 +155,12 @@ $swiper-background-color: #c4c4c4;
 	border-radius: 0;
 }
 /* 클래스를 직접 주입할 수 없으므로, 그 상위에 주입 */
-::v-deep .swiper-indicator-black {
+::v-deep .swiper-indicator-dark {
 	.swiper-pagination-bullet {
 		background-color: $gray800;
 	}
 }
-::v-deep .swiper-indicator-white {
+::v-deep .swiper-indicator-light {
 	.swiper-pagination-bullet {
 		background-color: $white;
 	}
