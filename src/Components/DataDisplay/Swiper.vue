@@ -46,50 +46,35 @@ export default {
 			type: String,
 			default: 'swiper',
 			validator(value) {
-				const assert = value => {
-					return SwiperTypes.indexOf(value) !== -1;
-				};
-				return customValidator(value, assert, 'Swiper type');
+				return customValidator(value, SwiperTypes.indexOf(value) !== -1, 'Swiper', 'type');
 			},
 		},
 		withControls: {
 			type: Boolean,
 			default: false,
 			validator(value) {
-				const assert = value => {
-					return typeof value === 'boolean';
-				};
-				return customValidator(value, assert, 'Swiper withControls');
+				return customValidator(value, typeof value === 'boolean', 'Swiper', 'withControls');
 			},
 		},
 		controlColor: {
 			type: String,
 			default: 'light',
 			validator(value) {
-				const assert = value => {
-					return SwiperControlColors.indexOf(value) !== -1;
-				};
-				return customValidator(value, assert, 'Swiper controlColor');
+				return customValidator(value, SwiperControlColors.indexOf(value) !== -1, 'Swiper', 'controlColor');
 			},
 		},
 		withIndicators: {
 			type: Boolean,
 			default: false,
 			validator(value) {
-				const assert = value => {
-					return typeof value === 'boolean';
-				};
-				return customValidator(value, assert, 'Swiper withIndicators');
+				return customValidator(value, typeof value === 'boolean', 'Swiper', 'withIndicators');
 			},
 		},
 		indicatorColor: {
 			type: String,
 			default: 'light',
 			validator(value) {
-				const assert = value => {
-					return SwiperIndicatorColors.indexOf(value) !== -1;
-				};
-				return customValidator(value, assert, 'Swiper indicatorColor');
+				return customValidator(value, SwiperIndicatorColors.indexOf(value) !== -1, 'Swiper', 'indicatorColor');
 			},
 		},
 	},
