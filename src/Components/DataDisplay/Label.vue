@@ -10,7 +10,7 @@ export default {
 	name: 'Label',
 	props: {
 		type: String,
-		default: dataEntry,
+		default: 'dataEntry',
 		validator(value) {
 			return labelTypes.indexOf(value) !== -1;
 		},
