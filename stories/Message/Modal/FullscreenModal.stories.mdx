@@ -8,14 +8,12 @@ import Button from "@/src/Components/Button/Button";
     argTypes={{
         show: {
             description: "모달 활성화",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
         },
         showCloseButton: {
             description: "닫기 버튼 보이기",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
@@ -28,7 +26,7 @@ import Button from "@/src/Components/Button/Button";
     }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { FullscreenModal, Button },
     template: `
@@ -39,7 +37,9 @@ export const Basic = (args, { argTypes }) => ({
                 :show-close-button="showCloseButton"
             >
                 <template>
-                    {{ contents }}
+                    <div style="padding: 18px 42px 18px 18px">
+                        {{ contents }}
+                    </div>
                 </template>
             </FullscreenModal>
         </div>`
@@ -49,8 +49,8 @@ export const Basic = (args, { argTypes }) => ({
 
 **FullscreenModal** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-    {Basic.bind({})}
+<Story name="Default" height="100px">
+    {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
