@@ -1,16 +1,16 @@
 <template>
 	<div class="c-application c-banner" :class="[computedType]">
-		<div class="c-banner--img">
-			<slot name="img" />
+		<div class="c-banner--image">
+			<slot name="image" />
 		</div>
 		<div class="c-banner--container">
-			<div class="c-banner--container--title">
+			<div class="c-banner--container-title">
 				<slot name="title" />
 			</div>
-			<div class="c-banner--container--discription mt-8">
+			<div class="c-banner--container-discription">
 				<slot name="discription" />
 			</div>
-			<div class="c-banner--container--action">
+			<div class="c-banner--container-action">
 				<slot name="action" />
 			</div>
 		</div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+export const buttonSizes = ['full', 'standard'];
 export default {
 	name: 'Banner',
 	props: {
@@ -25,7 +26,11 @@ export default {
 			type: String,
 			default: 'standard',
 			validator(value) {
-				return ['full', 'standard'].indexOf(value) !== -1;
+				const isValid = buttonSizes.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid value of Banner type`);
+				}
+				return isValid;
 			},
 		},
 	},
@@ -55,8 +60,11 @@ export default {
 		top: 50%;
 		left: 50%;
 		@include transform(translate(-50%, -50%));
+		&-discription {
+			margin-top: 8px;
+		}
 	}
-	&--img {
+	&--image {
 		display: block;
 		vertical-align: top;
 		width: 100%;

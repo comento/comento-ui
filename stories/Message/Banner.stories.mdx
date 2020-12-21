@@ -34,17 +34,17 @@ export const Default = (args, { argTypes }) => ({
     template: `
         <div>
             <Banner :type="type">
-                <template v-slot:img>
+                <template v-slot:image>
                     <div style="background: lightgray; height: 250px;"></div>
                 </template>
                 <template v-slot:title>
                     <Typography type="headline1" color="gray900" align="center">
-                                    {{title}}
+                        {{title}}
                     </Typography>
                 </template>
                 <template v-slot:discription>
                     <Typography type="headline6" color="gray800" align="center">
-                                    {{discription}}
+                        {{discription}}
                     </Typography>
                 </template>
                 <template v-slot:action>
