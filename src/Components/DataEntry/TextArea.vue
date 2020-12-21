@@ -1,70 +1,61 @@
 <template>
-	<div class="c-application c-textarea" :class="[computedType]">
-		<textarea
-			ref="input"
-			v-model="sync_value"
-			:placeholder="placeholder"
-			:style="inputStyle"
-			@input="$emit('input', $event.target.value)"
-		/>
+	<div class="c-application c-textarea" :class="[computedType]" :style="[computedHeight]">
+		<textarea ref="textarea" :value="value" :placeholder="placeholder" :readonly="readOnly" @input="resize" />
 	</div>
 </template>
 
 <script>
+export const textAreaTypes = ['basic', 'outline', 'reply'];
 export default {
 	name: 'TextArea',
 	props: {
-		// textarea placeholder 문구
 		placeholder: {
 			type: String,
-			default: null,
+			default: 'placeholder',
 		},
-		/* textarea type
-		 * default : 흰화면
-		 * reply : 회색 + border */
 		type: {
 			type: String,
-			default: 'default',
+			default: 'basic',
+			validator(value) {
+				const isValid = textAreaTypes.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid value of textArea type`);
+				}
+				return isValid;
+			},
 		},
 		value: {
 			type: String,
 			default: null,
 		},
-	},
-	data() {
-		return {
-			inputHeight: '176',
-		};
-	},
-	computed: {
-		sync_value: {
-			get() {
-				return this.value;
-			},
-			set(val) {
-				this.$emit('update:value', val);
+		maxHeight: {
+			type: String,
+			default: 'auto',
+		},
+		readOnly: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
 			},
 		},
+	},
+	computed: {
 		computedType() {
 			return `${this.type}`;
 		},
-		inputStyle() {
+		computedHeight() {
 			return {
-				'min-height': this.inputHeight,
+				maxHeight: this.maxHeight + 'px',
+				overflowY: this.maxHeight === 'auto' ? 'hidden' : 'auto',
 			};
 		},
 	},
-	watch: {
-		sync_value() {
-			this.resize();
-		},
-	},
-	mounted() {
-		this.resize();
-	},
 	methods: {
-		resize() {
-			this.inputHeight = `${this.$refs.input.scrollHeight}px`;
+		resize(event) {
+			event.target.style.height = '1px';
+			event.target.style.height = `${event.target.scrollHeight}px`;
+			this.$emit('input', event.target.value);
 		},
 	},
 };
@@ -77,26 +68,37 @@ export default {
 .c-textarea {
 	position: relative;
 	textarea {
-		width: 100%;
-		height: 176px;
 		padding: 16px;
-	}
-	/* 기본 - type_default */
-	&.default {
-		textarea {
-			border: 1px solid $gray200;
+		display: block;
+		width: 100%;
+		border: 0;
+		height: 100%;
+		box-sizing: border-box;
+		min-height: 110px;
+		background: transparent;
+		color: $gray800;
+		overflow: hidden;
+		@include body1;
+		&::placeholder {
+			color: $gray300;
 		}
 	}
-	/* 기본 - type_reply */
+	&.basic {
+		background: $white;
+	}
+	&.outline {
+		background: $white;
+		border: 1px solid $gray200;
+	}
 	&.reply {
+		width: calc(100% - 100px);
+		background: $gray100;
+		border: 1px solid $gray200;
+		@include border-radius(20px);
 		textarea {
-			border-radius: 20px;
-			border: 1px solid $gray200;
-			background: $gray100;
-			min-height: 40px;
-			height: 40px;
-			padding-top: 8px;
-			padding-bottom: 8px;
+			min-height: 38px;
+			height: 38px;
+			padding: 8px 16px;
 		}
 	}
 }

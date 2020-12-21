@@ -1,0 +1,61 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import TextArea, {textAreaTypes} from "@/src/Components/DataEntry/TextArea";
+
+<Meta
+    title="Data Entry/TextArea"
+    component={ TextArea }
+    argTypes={{
+        placeholder: {
+            description: "TextArea placeholder",
+            defaultValue: "추가 의견이 있으신가요?",
+            control: { type: "text" },
+        },
+        value: {
+            description: "TextArea 들어갈 텍스트",
+            defaultValue: null,
+            control: { type: "text" },
+        },
+        type: {
+              description: "TextArea의 타입",
+              control: {
+                type: "select",
+                options: textAreaTypes,
+              },
+        },
+        maxHeight: {
+            description: "TextArea의 최대 높이",
+            defaultValue: "auto",
+            control: { type: "text" },
+        },
+        readOnly: {
+            description: "TextArea readOnly 활성화",
+            control: {
+                type: "boolean",
+            },
+        },
+    }}
+/>
+
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { TextArea },
+    template:
+        `<div style="background:aliceblue; padding:20px">
+            <TextArea :type="type"
+                      :placeholder="placeholder"
+                      :maxHeight="maxHeight"
+                      :read-only="readOnly"
+                      :value="value"/>
+        </div>`,
+});
+
+# TextArea
+
+**TextArea** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
