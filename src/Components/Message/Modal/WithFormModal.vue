@@ -35,51 +35,86 @@ import Modal from '@/src/Components/Message/Modal/Modal';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import Button from '@/src/Components/Button/Button';
 
+export const aligns = ['left', 'center', 'right'];
+
 export default {
 	name: 'WithFormModal',
 	props: {
 		show: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		align: {
 			type: String,
 			default: 'center',
+			validator(value) {
+				return aligns.indexOf(value) !== -1;
+			},
 		},
 		showActionButton: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		successCallback: {
 			type: Function,
 			default: () => {},
+			validator(value) {
+				return typeof value === 'function';
+			},
 		},
 		successMessage: {
 			type: String,
 			default: '확인',
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		persistent: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		maxWidth: {
 			type: String,
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		scroll: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	computed: {
