@@ -13,10 +13,16 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	methods: {
