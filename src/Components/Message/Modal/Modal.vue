@@ -1,6 +1,6 @@
 <template>
 	<div v-if="show" class="c-application" @click="handleCloseModal">
-		<Overlay :show.sync="show" :z-index="9998" :persistent="persistent">
+		<Overlay :show="show" :z-index="9998" :persistent="persistent" @close="close">
 			<div class="c-modal" :style="[computedStyle]" @click.stop>
 				<div v-if="showCloseButton" class="c-modal--close-button" @click="close">
 					<Icon name="IconCloseXLargeLine" color="gray400" />
