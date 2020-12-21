@@ -78,7 +78,7 @@ export default {
 			}
 		},
 		close() {
-			this.$emit('update:show', false);
+			this.$emit('close');
 		},
 	},
 };
