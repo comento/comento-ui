@@ -7,8 +7,8 @@
 			<div class="c-banner--container-title">
 				<slot name="title" />
 			</div>
-			<div class="c-banner--container-discription">
-				<slot name="discription" />
+			<div class="c-banner--container-description">
+				<slot name="description" />
 			</div>
 			<div class="c-banner--container-action">
 				<slot name="action" />
@@ -60,7 +60,7 @@ export default {
 		top: 50%;
 		left: 50%;
 		@include transform(translate(-50%, -50%));
-		&-discription {
+		&-description {
 			margin-top: 8px;
 		}
 	}

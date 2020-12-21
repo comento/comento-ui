@@ -12,9 +12,9 @@ import Typography from "@/src/Elements/Core/Typography/Typography";
             defaultValue: "Banner Title",
             control: { type: "text" },
         },
-        discription: {
+        description: {
             description: "Banner에 sub 텍스트",
-            defaultValue: "Banner discription",
+            defaultValue: "Banner description",
             control: { type: "text" },
         },
         type: {
@@ -42,9 +42,9 @@ export const Default = (args, { argTypes }) => ({
                         {{title}}
                     </Typography>
                 </template>
-                <template v-slot:discription>
+                <template v-slot:description>
                     <Typography type="headline6" color="gray800" align="center">
-                        {{discription}}
+                        {{description}}
                     </Typography>
                 </template>
                 <template v-slot:action>
