@@ -35,14 +35,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-modal {
-	&--mask::v-deep {
-		.c-modal--container {
-			max-width: 100%;
-			width: 100%;
-			height: 100%;
-			border-radius: 0;
-		}
+::v-deep .c-overlay {
+	.c-modal {
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
 	}
 }
 </style>
