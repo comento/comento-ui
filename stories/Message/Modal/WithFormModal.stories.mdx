@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import WithFormModal from "@/src/Components/Message/Modal/WithFormModal";
+import WithFormModal, { aligns } from "@/src/Components/Message/Modal/WithFormModal";
 import Input from "@/src/Components/DataEntry/Input";
 import Button from "@/src/Components/Button/Button";
 import Typography from "@/src/Elements/Core/Typography/Typography";
@@ -11,28 +11,19 @@ import InputGroup from "@/src/Components/DataEntry/InputGroup";
     argTypes={{
         show: {
             description: "모달 활성화",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
         },
         align: {
             description: "정렬",
-            defaultValue: "center",
             control: {
                 type: "select",
-                options: ["center", "left", "right"]
-            },
-            table: {
-                type: {
-                    summary: "string",
-                    detail: '"center" "left" "right"',
-                },
+                options: aligns,
             },
         },
         loading: {
             description: "버튼 로딩",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
@@ -46,42 +37,37 @@ import InputGroup from "@/src/Components/DataEntry/InputGroup";
         },
         showActionButton: {
             description: "버튼 보이기",
-            defaultValue: true,
             control: {
                 type: "boolean",
             },
         },
         showCloseButton: {
             description: "닫기 버튼 보이기",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
         },
         persistent: {
             description: "overlay 클릭해도 모달 닫지 않기",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
         },
         maxWidth: {
             description: "모달 최대 width",
-            defaultValue: "420px",
             control: {
                 type: "text",
             },
         },
         disabled: {
             description: "버튼 비활성화",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
         },
         title: {
             description: "모달 제목",
-            defaultValue: "Basic Modal",
+            defaultValue: "With Form Modal",
             control: {
                 type: "text"
             },
@@ -96,7 +82,7 @@ import InputGroup from "@/src/Components/DataEntry/InputGroup";
     }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { WithFormModal, Input, Button, Typography },
     template: `
@@ -128,11 +114,11 @@ export const Basic = (args, { argTypes }) => ({
 
 **WithFormModal** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-    {Basic.bind({})}
+<Story name="Default" height="100px">
+    {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
 
 ## Stories
 ### InputGroup
