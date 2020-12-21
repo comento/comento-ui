@@ -1,12 +1,12 @@
 <template>
-	<div class="c-chip-group" :class="[computedSize]">
+	<div class="c-application c-chip-group" :class="[computedSize]">
 		<slot />
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'Chip',
+	name: 'ChipGroup',
 	props: {
 		size: {
 			type: String,
