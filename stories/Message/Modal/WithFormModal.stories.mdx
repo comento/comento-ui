@@ -4,6 +4,7 @@ import Input from "@/src/Components/DataEntry/Input";
 import Button from "@/src/Components/Button/Button";
 import Typography from "@/src/Elements/Core/Typography/Typography";
 import InputGroup from "@/src/Components/DataEntry/InputGroup";
+import Select from "@/src/Components/DataEntry/Select";
 
 <Meta
     title="Message/Modal/WithFormModal"
@@ -172,6 +173,48 @@ export const Default = (args, { argTypes }) => ({
             `,
             components: {
                 WithFormModal, Input, Button, InputGroup
+            }
+        }}
+    </Story>
+</Canvas>
+
+### With Select
+<Canvas>
+    <Story name="WithSelect" height="100px">
+        {{
+            data: () => ({
+                show: false,
+                value: '',
+            }),
+            methods: {
+                handleSubmitModal() {
+                    this.show = false;
+                },
+            },
+            template: `
+                <div>
+                    <Button @click="show = true">Open</Button>
+                    <WithFormModal
+                        :show.sync="show"
+                        :show-close-button="true"
+                        :persistent="false"
+                        align="center"
+                        :success-callback="handleSubmitModal"
+                    >
+                        <template v-slot:title>
+                          With Select
+                        </template>
+                        <template v-slot:content>
+                            <Typography type="body2" color="gray700" align="center" class="mb-8">
+                                아래 항목 중 선택하세요.
+                            </Typography>
+                            <Select v-model="value" :options="['Option1', 'Option2', 'Option3', 'Option4', 'Option5']"></Select>
+                        </template>
+                    </WithFormModal>
+                </div>
+            `,
+            components: {
+                WithFormModal, Select, Button, Typography,
             }
         }}
     </Story>
