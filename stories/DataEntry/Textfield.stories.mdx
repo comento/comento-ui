@@ -1,0 +1,119 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import TextField, { textfieldTypes, textfieldAligns } from "@/src/Components/DataEntry/TextField";
+
+<Meta
+    title="Data Entry/TextField"
+    component={ TextField }
+    argTypes={{
+        id: {
+            description: "텍스트필드ID (값이 없으면 textField-uid로 생성됨)",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        type: {
+            description: "텍스트필드 type",
+            control: {
+            type: "select",
+            options: textfieldTypes,
+           },
+        },
+        placeholder: {
+            description: "체크박스 placeholder 문구",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        label: {
+            description: "텍스트필드 label에 들어갈 텍스트",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        align: {
+            description: "텍스트필드 text 정렬",
+            control: {
+            type: "select",
+            options: textfieldAligns,
+           },
+        },
+        focus: {
+            description: "텍스트필드 focus 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        readOnly: {
+            description: "텍스트필드 readOnly 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        disabled: {
+            description: "텍스트필드 disabled 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        error: {
+            description: "텍스트필드 error 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+    }}
+/>
+
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { TextField },
+    template:
+        `<TextField :id="id"
+                    :type="type"
+                    outlined
+                    :placeholder="placeholder"
+                    :label="label"
+                    :align="align"
+                    :focus="focus"
+                    :read-only="readOnly"
+                    :disabled="disabled"
+                    :error="error"/>`,
+});
+
+# TextField
+
+**TextField** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="300px">
+        {{
+            template: `
+                <div style="width:250px">
+                    <TextField class="mb-20" type="text" outlined placeholder="outlined"/>
+                    <TextField class="mb-20"
+                               type="text"
+                               outlined
+                               label="label이 있어요"
+                               placeholder="outlined + label"/>
+                    <TextField class="mb-20"
+                               type="text"
+                               outlined
+                               :read-only="true"
+                               placeholder="outlined + readonly"/>
+                    <TextField class="mb-20"
+                               type="text"
+                               outlined
+                               :disabled="true"
+                               placeholder="outlined + disabled"/>
+                    <TextField type="text" underlined placeholder="underlined"/>
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+
