@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
-import PermissionModal from "@/src/Components/Message/Modal/PermissionModal";
+import AlertModal from "@/src/Components/Message/Modal/AlertModal";
 import Button from "@/src/Components/Button/Button";
 
 <Meta
-    title="Message/Modal/PermissionModal"
-    component={ PermissionModal }
+    title="Message/Modal/AlertModal"
+    component={ AlertModal }
     argTypes={{
         show: {
             description: "모달 활성화",
@@ -34,14 +34,7 @@ import Button from "@/src/Components/Button/Button";
                 type: "text",
             },
         },
-        leftButtonColor: {
-            description: "취소버튼 색상",
-            defaultValue: "gray600",
-            control: {
-                type: "text"
-            }
-        },
-        rightButtonColor: {
+        buttonColor: {
             description: "확인버튼 색상",
             defaultValue: "gray600",
             control: {
@@ -62,14 +55,9 @@ import Button from "@/src/Components/Button/Button";
                 type: "boolean",
             },
         },
-        title: {
-            description: "모달 제목",
-            defaultValue: "Permission Modal",
-            control: { type: "text" },
-        },
         content: {
             description: "모달 내용",
-            defaultValue: '본문은 없거나 두 줄을 초과할 수 없습니다.',
+            defaultValue: 'Alert modal<br/> 타이틀이 없고, 본문은 두 줄을 초과할 수 없다.',
             control: { type: "text" },
         },
     }}
@@ -77,11 +65,11 @@ import Button from "@/src/Components/Button/Button";
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { PermissionModal, Button },
+    components: { AlertModal, Button },
     template: `
         <div>
             <Button @click="show = true">Open</Button>
-            <PermissionModal
+            <AlertModal
                 :show.sync="show"
                 :align="align"
                 :left-button-color="leftButtonColor"
@@ -90,19 +78,16 @@ export const Basic = (args, { argTypes }) => ({
                 :success-message="successMessage"
                 :max-width="maxWidth"
             >
-                <template v-slot:title>
-                    {{ title }}
-                </template>
                 <template v-slot:content>
                     <div v-html="content" />
                 </template>
-            </PermissionModal>
+            </AlertModal>
         </div>`
 });
 
-# PermissionModal
+# AlertModal
 
-**PermissionModal** 컴포넌트의 문서입니다.
+**AlertModal** 컴포넌트의 문서입니다.
 
 <Story name="Basic" height="100px">
     {Basic.bind({})}

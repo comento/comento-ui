@@ -6,32 +6,17 @@
 		:persistent="persistent"
 		@close="close"
 	>
-		<div class="c-modal--content-container">
-			<!-- title 영역 -->
-			<Typography class="mb-8" type="body1" :align="align" color="gray900" fontWeight="bold">
-				<slot name="title" />
-			</Typography>
-
-			<!-- content 영역 -->
-			<Typography type="body2" :align="align" color="gray800">
-				<div class="c-modal--content-wrapper">
-					<slot name="content" />
-				</div>
-			</Typography>
-		</div>
-
-		<!-- button 영역 -->
-		<div class="c-modal--button-group">
-			<!-- 취소 버튼 -->
-			<div class="c-modal--cancel-button c-pointer" @click="close">
-				<Typography type="body1" :color="leftButtonColor" align="center">취소</Typography>
+		<!-- content 영역 -->
+		<Typography type="body2" :align="align" color="gray800">
+			<div class="c-modal--content-wrapper">
+				<slot name="content" />
 			</div>
-			<!-- 확인 버튼 -->
-			<div class="c-modal--confirm-button c-pointer" @click="successCallback">
-				<Typography type="body1" :color="rightButtonColor" align="center">
-					{{ successMessage }}
-				</Typography>
-			</div>
+		</Typography>
+		<!-- 확인 버튼 -->
+		<div class="c-modal--confirm-button c-pointer" @click="close">
+			<Typography type="body1" :color="buttonColor" align="center">
+				{{ successMessage }}
+			</Typography>
 		</div>
 	</Modal>
 </template>
@@ -41,7 +26,7 @@ import Modal from '@/src/Components/Message/Modal/Modal';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export default {
-	name: 'PermissionModal',
+	name: 'AlertModal',
 	props: {
 		show: {
 			type: Boolean,
@@ -54,17 +39,9 @@ export default {
 			type: String,
 			default: 'center',
 		},
-		leftButtonColor: {
+		buttonColor: {
 			type: String,
 			default: 'gray500',
-		},
-		rightButtonColor: {
-			type: String,
-			default: 'gray500',
-		},
-		successCallback: {
-			type: Function,
-			default: () => {},
 		},
 		successMessage: {
 			type: String,
@@ -111,24 +88,17 @@ export default {
 	&--mask::v-deep {
 		z-index: 9999;
 	}
-
-	&--content-container {
+	&--content-wrapper {
 		padding: 24px 32px;
 	}
 
-	&--button-group {
-		display: flex;
-		border-top: 1px solid $gray200;
-		height: 46px;
-	}
-
-	&--cancel-button,
 	&--confirm-button {
-		width: 50%;
-		height: 100%;
+		width: 100%;
+		height: 46px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		border-top: 1px solid $gray200;
 	}
 	&--cancel-button {
 		border-right: 1px solid $gray200;
