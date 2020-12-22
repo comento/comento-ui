@@ -9,10 +9,12 @@ export const labelTypes = ['dataEntry', 'dataDisplay'];
 export default {
 	name: 'Label',
 	props: {
-		type: String,
-		default: 'dataEntry',
-		validator(value) {
-			return labelTypes.indexOf(value) !== -1;
+		type: {
+			type: String,
+			default: 'dataEntry',
+			validator(value) {
+				return labelTypes.indexOf(value) !== -1;
+			},
 		},
 	},
 	computed: {
