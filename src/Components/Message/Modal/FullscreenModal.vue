@@ -13,10 +13,16 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	methods: {
@@ -29,13 +35,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-modal {
-	&--mask::v-deep {
-		.c-modal--container {
-			max-width: 100%;
-			width: 100%;
-			height: 100%;
-			border-radius: 0;
+::v-deep .c-overlay {
+	.c-modal {
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+
+		@include pc {
+			&--close-button {
+				top: 12px;
+				right: 12px;
+			}
 		}
 	}
 }
