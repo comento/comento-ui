@@ -1,10 +1,10 @@
 <template>
 	<div class="c-application search_input_container" :class="[computedType, computedFull]">
-		<label for="search-input">
+		<label :for="`c-search-input-${uid}`">
 			<!-- 자동완성 방지용 더미 input -->
 			<input style="display: none" aria-hidden="true" />
 			<input
-				id="search-input"
+				:id="`c-search-input-${uid}`"
 				ref="searchInput"
 				v-model="sync_value"
 				v-click-outside="hideSearchDropdown"
@@ -48,6 +48,7 @@
 
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
+import uniqueId from '@/utils/unique-id';
 
 export default {
 	name: 'SearchInput',
@@ -74,6 +75,7 @@ export default {
 	},
 	data: () => ({
 		isTyping: false,
+		uid: uniqueId(),
 	}),
 	computed: {
 		sync_value: {
