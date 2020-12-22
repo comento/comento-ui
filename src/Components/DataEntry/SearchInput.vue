@@ -48,6 +48,7 @@
 
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
+import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
 
 export default {
@@ -119,6 +120,9 @@ export default {
 	},
 	components: {
 		Icon,
+	},
+	directives: {
+		clickOutside,
 	},
 };
 </script>
