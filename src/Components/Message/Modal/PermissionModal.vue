@@ -1,19 +1,13 @@
 <template>
-	<Modal
-		:show="show"
-		:show-close-button="false"
-		:max-width="computedMaxWidth"
-		:persistent="persistent"
-		@close="close"
-	>
+	<Modal :show="show" :show-close-button="false" max-width="343px" :persistent="persistent" @close="close">
 		<div class="c-modal--content-container">
 			<!-- title 영역 -->
-			<Typography class="mb-8" type="body1" :align="align" color="gray900" fontWeight="bold">
+			<Typography class="mb-8" type="body1" align="center" color="gray900" fontWeight="bold">
 				<slot name="title" />
 			</Typography>
 
 			<!-- content 영역 -->
-			<Typography type="body2" :align="align" color="gray800">
+			<Typography type="body2" align="center" color="gray800">
 				<div class="c-modal--content-wrapper">
 					<slot name="content" />
 				</div>
@@ -50,10 +44,6 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
-		align: {
-			type: String,
-			default: 'center',
-		},
 		leftButtonColor: {
 			type: String,
 			default: 'gray500',
@@ -76,22 +66,6 @@ export default {
 			validator(value) {
 				return typeof value === 'boolean';
 			},
-		},
-		maxWidth: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
-		},
-	},
-	computed: {
-		computedMaxWidth() {
-			if (this.maxWidth) {
-				return '420px';
-			} else {
-				return '343px';
-			}
 		},
 	},
 	methods: {

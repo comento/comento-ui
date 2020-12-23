@@ -55,13 +55,6 @@ import Button from "@/src/Components/Button/Button";
                 type: "boolean",
             },
         },
-        maxWidth: {
-            description: "모달 최대 width:420px 적용하기",
-            defaultValue: false,
-            control: {
-                type: "boolean",
-            },
-        },
         title: {
             description: "모달 제목",
             defaultValue: "Permission Modal",
@@ -75,7 +68,7 @@ import Button from "@/src/Components/Button/Button";
     }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { PermissionModal, Button },
     template: `
@@ -88,7 +81,6 @@ export const Basic = (args, { argTypes }) => ({
                 :right-button-color="rightButtonColor"
                 :persistent="persistent"
                 :success-message="successMessage"
-                :max-width="maxWidth"
             >
                 <template v-slot:title>
                     {{ title }}
@@ -104,8 +96,8 @@ export const Basic = (args, { argTypes }) => ({
 
 **PermissionModal** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-    {Basic.bind({})}
+<Story name="Default" height="100px">
+    {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />

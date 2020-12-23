@@ -48,13 +48,6 @@ import Button from "@/src/Components/Button/Button";
                 type: "boolean",
             },
         },
-        maxWidth: {
-            description: "모달 최대 width:420px 적용하기",
-            defaultValue: false,
-            control: {
-                type: "boolean",
-            },
-        },
         content: {
             description: "모달 내용",
             defaultValue: 'Alert modal<br/> 타이틀이 없고, 본문은 두 줄을 초과할 수 없다.',
@@ -63,7 +56,7 @@ import Button from "@/src/Components/Button/Button";
     }}
 />
 
-export const Basic = (args, { argTypes }) => ({
+export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { AlertModal, Button },
     template: `
@@ -75,7 +68,6 @@ export const Basic = (args, { argTypes }) => ({
                 :button-color="buttonColor"
                 :persistent="persistent"
                 :success-message="successMessage"
-                :max-width="maxWidth"
             >
                 <template v-slot:content>
                     <div v-html="content" />
@@ -88,8 +80,8 @@ export const Basic = (args, { argTypes }) => ({
 
 **AlertModal** 컴포넌트의 문서입니다.
 
-<Story name="Basic" height="100px">
-    {Basic.bind({})}
+<Story name="Default" height="100px">
+    {Default.bind({})}
 </Story>
 
-<ArgsTable story="Basic" />
+<ArgsTable story="Default" />
