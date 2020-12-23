@@ -11,10 +11,7 @@
 		<!-- select 영역 -->
 		<template v-slot:item>
 			<div class="c-select--box" @click="handleOpen">
-				<Typography v-if="selectOption" type="body1" color="gray850">
-					{{ handleOptions(selectOption, 'label') }}
-				</Typography>
-				<Typography v-else type="body1" color="gray300">{{ placeholder }}</Typography>
+				<input type="text" :value="value" :placeholder="placeholder" readonly class="c-select--input" />
 				<div class="c-select--icon">
 					<Icon name="IconArrowLargeLine" :color="color" :rotate="computedIconRotate" />
 				</div>
@@ -164,8 +161,21 @@ export default {
 		padding: 8px 16px;
 		cursor: pointer;
 		@include flexbox();
+		@include flex-direction(row);
 		@include justify-content(space-between);
 		width: 100%;
+	}
+
+	&--input {
+		@include body1();
+		color: $gray850;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		width: calc(100% - 24px);
+		&::placeholder {
+			color: $gray300;
+		}
 	}
 
 	&--icon {
