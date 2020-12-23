@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Divider,  { dividerTypes } from "@/src/Elements/Utility/Divider";
+import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
   title="Utility/Divider"
@@ -23,8 +24,9 @@ import Divider,  { dividerTypes } from "@/src/Elements/Utility/Divider";
             description: "Divider 색상",
             defaultValue: "gray300",
             control: {
-                type: "text",
-            },
+            type: "select",
+            options: colorKeys,
+          },
         },
     }}
 />
@@ -33,7 +35,13 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Divider },
   template: `
-  <div class="mt-20" style="position:relative; height:300px">
+  <div class="mt-20" style="position:relative; height:300px; width:300px; background:lightcyan">
+        <p style="position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      width: 100%;
+                      text-align: center;"
+                      >300 x 300 사이즈 기준</p>
         <Divider :type="type"
                  :vertical="vertical"
                  :color="color"/>

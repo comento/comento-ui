@@ -32,7 +32,7 @@ export default {
 		},
 		color: {
 			type: String,
-			default: 'gray300',
+			default: 'gray200',
 			validator(value) {
 				const isValid = colorKeys.indexOf(value) !== -1;
 				if (!isValid) {
