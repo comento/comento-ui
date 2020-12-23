@@ -1,0 +1,68 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Divider,  { dividerTypes } from "@/src/Elements/Utility/Divider";
+
+<Meta
+  title="Utility/Divider"
+  component={Divider}
+    argTypes={{
+        type: {
+          description: "Divider의 타입",
+          control: {
+            type: "select",
+            options: dividerTypes,
+          },
+        },
+        vertical: {
+          description: "Divider 수직, 수평 ",
+          defaultValue: false,
+          control: {
+              type: "boolean",
+          },
+        },
+        width: {
+            description: "Divider 너비",
+            defaultValue: "1px",
+            control: {
+                type: "text",
+            },
+        },
+        height: {
+            description: "Divider 높이",
+            defaultValue: "50%",
+            control: {
+                type: "text",
+            },
+        },
+        color: {
+            description: "Divider 색상",
+            defaultValue: "gray300",
+            control: {
+                type: "text",
+            },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Divider },
+  template: `
+  <div class="mt-20" style="position:relative; height:300px">
+        <Divider :type="type"
+                 :vertical="vertical"
+                 :width="width"
+                 :height="height"
+                 :color="color"/>
+    </div>`,
+});
+
+# Divider
+
+**Divider** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
