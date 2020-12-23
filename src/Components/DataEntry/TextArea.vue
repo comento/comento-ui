@@ -1,6 +1,13 @@
 <template>
-	<div class="c-application c-textarea" :class="[computedType]" :style="[computedHeight]">
-		<textarea ref="textarea" :value="value" :placeholder="placeholder" :readonly="readOnly" @input="resize" />
+	<div class="c-application c-textarea" :class="[computedType]">
+		<textarea
+			ref="textarea"
+			:value="value"
+			:style="[computedHeight]"
+			:placeholder="placeholder"
+			:readonly="readOnly"
+			@input="resize"
+		/>
 	</div>
 </template>
 
@@ -52,7 +59,7 @@ export default {
 		},
 		computedHeight() {
 			return {
-				maxHeight: this.maxHeight + 'px',
+				maxHeight: this.maxHeight,
 				overflowY: this.maxHeight === 'auto' ? 'hidden' : 'auto',
 			};
 		},
