@@ -11,7 +11,7 @@ export default {
 	props: {
 		placeholder: {
 			type: String,
-			default: 'placeholder',
+			default: '내용을 입력해주세요.',
 		},
 		type: {
 			type: String,
@@ -26,11 +26,17 @@ export default {
 		},
 		value: {
 			type: String,
-			default: null,
+			default: '',
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		maxHeight: {
 			type: String,
 			default: 'auto',
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		readOnly: {
 			type: Boolean,
@@ -79,6 +85,7 @@ export default {
 		color: $gray800;
 		overflow: hidden;
 		@include body1;
+		resize: none;
 		&::placeholder {
 			color: $gray300;
 		}
