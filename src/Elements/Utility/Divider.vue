@@ -30,14 +30,6 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
-		width: {
-			type: String,
-			default: '0',
-		},
-		height: {
-			type: String,
-			default: '0',
-		},
 		color: {
 			type: String,
 			default: 'gray300',
@@ -66,11 +58,8 @@ export default {
 			return this.color && colors[this.color] ? colors[this.color] : 'inherit';
 		},
 		computedStyle() {
-			const { width, height } = this;
 			return {
 				borderColor: this.computedColor,
-				width: `${width}px`,
-				height: `${height}px`,
 			};
 		},
 	},

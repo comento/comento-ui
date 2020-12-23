@@ -19,20 +19,6 @@ import Divider,  { dividerTypes } from "@/src/Elements/Utility/Divider";
               type: "boolean",
           },
         },
-        width: {
-            description: "Divider 너비",
-            defaultValue: "1px",
-            control: {
-                type: "text",
-            },
-        },
-        height: {
-            description: "Divider 높이",
-            defaultValue: "50%",
-            control: {
-                type: "text",
-            },
-        },
         color: {
             description: "Divider 색상",
             defaultValue: "gray300",
@@ -50,8 +36,6 @@ export const Default = (args, { argTypes }) => ({
   <div class="mt-20" style="position:relative; height:300px">
         <Divider :type="type"
                  :vertical="vertical"
-                 :width="width"
-                 :height="height"
                  :color="color"/>
     </div>`,
 });
