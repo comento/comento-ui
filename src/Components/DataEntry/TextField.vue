@@ -2,24 +2,32 @@
 	<div class="c-application c-textfield" :class="[computedLabelStyle]">
 		<input
 			:id="computedId"
+			class="c-textfield--input"
+			:value="value"
 			:type="type"
 			:placeholder="placeholder"
 			:name="computedId"
 			:label="label"
 			:align="align"
 			:focus="focus"
-			:read-only="readOnly"
+			:readonly="readOnly"
 			:disabled="disabled"
 			:error="error"
-			class="c-textfield--input"
-			:class="[computedOutline, computedUnderline]"
+			:style="[computedAlign]"
+			:class="[computedLined, computedError]"
+			v-bind="$attrs"
+			@input="$emit('input', $event.target.value)"
+			v-on="$listeners"
 		/>
 		<label v-if="label !== ''" :for="computedId" class="c-textfield--label">{{ label }}</label>
-		<p class="c-textfield--error"></p>
+		<Typography v-if="error" type="caption2" color="red400" element="p" class="c-textfield--message">
+			<slot name="errorMessage" />
+		</Typography>
 	</div>
 </template>
 
 <script>
+import Typography from '@/src/Elements/Core/Typography/Typography';
 export const textfieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const textfieldAligns = ['left', 'center', 'right'];
 
@@ -38,16 +46,16 @@ export default {
 				return isValid;
 			},
 		},
-		placeholder: {
+		value: {
 			type: String,
 			default: '',
 			validator(value) {
 				return typeof value === 'string';
 			},
 		},
-		name: {
+		placeholder: {
 			type: String,
-			default: '',
+			default: '내용을 입력하세요.',
 			validator(value) {
 				return typeof value === 'string';
 			},
@@ -59,14 +67,7 @@ export default {
 				return typeof value === 'string';
 			},
 		},
-		outlined: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
-		},
-		underlined: {
+		filled: {
 			type: Boolean,
 			default: false,
 			validator(value) {
@@ -114,11 +115,20 @@ export default {
 		},
 	},
 	computed: {
-		computedOutline() {
-			return this.outlined && 'outlined';
+		sync_value: {
+			get() {
+				return this.value;
+			},
+			set(val) {
+				this.$emit('update:value', val);
+			},
 		},
-		computedUnderline() {
-			return this.underlined && 'underlined';
+		computedLined() {
+			if (this.filled) {
+				return 'outlined';
+			} else {
+				return 'underlined';
+			}
 		},
 		computedId() {
 			return this.id || `textField-${this._uid}`;
@@ -133,25 +143,30 @@ export default {
 				textAlign: this.align,
 			};
 		},
-	},
-	methods: {
-		typing(e) {
-			this.sync_value = e.target.value;
+		computedError() {
+			if (this.error) {
+				return 'error';
+			}
 		},
 	},
+
+	mounted() {
+		if (this.focus) {
+			document.getElementById(this.computedId).focus();
+		}
+	},
+	components: { Typography },
 };
 </script>
 
 <style lang="scss" scoped>
 .c-textfield {
-	height: 40px;
 	position: relative;
 	&--input {
 		display: block;
 		width: 100%;
-		height: 100%;
+		height: 40px;
 		border: 0;
-		padding: 0 16px;
 		color: $gray800;
 		@include body1;
 		@include transition(all 0.2s ease);
@@ -159,14 +174,28 @@ export default {
 			color: $gray300;
 		}
 		&.outlined {
+			padding: 0 16px;
 			border: 1px solid $gray200;
 			@include border-radius(2px);
+			&.error {
+				border-color: $red400;
+				&:focus {
+					border-color: $red400;
+				}
+			}
 			&:focus {
 				border-color: $gray400;
 			}
 		}
 		&.underlined {
+			padding: 0 4px;
 			border-bottom: 1px solid $gray200;
+			&.error {
+				border-color: $red400;
+				&:focus {
+					border-color: $red400;
+				}
+			}
 			&:focus {
 				border-color: $gray400;
 			}
@@ -180,6 +209,16 @@ export default {
 	}
 	&.label {
 		.c-textfield--input {
+			&.error {
+				border-color: $red400;
+				&:focus {
+					border-color: $red400;
+					+ .c-textfield--label {
+						opacity: 1;
+						color: $red400;
+					}
+				}
+			}
 			&:focus {
 				border-color: $green600;
 				+ .c-textfield--label {
@@ -189,6 +228,7 @@ export default {
 			}
 		}
 		.c-textfield--label {
+			@include transition(all 0.2s ease);
 			position: absolute;
 			top: -6px;
 			left: 12px;
@@ -197,6 +237,10 @@ export default {
 			@include caption2;
 			opacity: 0;
 		}
+	}
+	&--message {
+		margin-top: 5px;
+		@include clearfix;
 	}
 }
 </style>

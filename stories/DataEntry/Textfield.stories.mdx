@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import TextField, { textfieldTypes, textfieldAligns } from "@/src/Components/DataEntry/TextField";
+import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
     title="Data Entry/TextField"
@@ -54,6 +55,11 @@ import TextField, { textfieldTypes, textfieldAligns } from "@/src/Components/Dat
             defaultValue: false,
             control: { type: "boolean" },
         },
+        filled: {
+            description: "텍스트필드 outlined (true) / underline(false)",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
     }}
 />
 
@@ -71,6 +77,7 @@ export const Default = (args, { argTypes }) => ({
                     :focus="focus"
                     :read-only="readOnly"
                     :disabled="disabled"
+                    :filled="filled"
                     :error="error"/>`,
 });
 
@@ -85,33 +92,44 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
-### All
+### Error
 
 <Canvas>
-    <Story name="All" height="300px">
+    <Story name="Error" height="200px">
         {{
             template: `
-                <div style="width:250px">
-                    <TextField class="mb-20" type="text" outlined placeholder="outlined"/>
+                <div style="width:300px">
                     <TextField class="mb-20"
                                type="text"
-                               outlined
-                               label="label이 있어요"
-                               placeholder="outlined + label"/>
+                               :error="true"
+                               :filled="false"
+                               placeholder="underlined + error + error msg">
+                        <template v-slot:errorMessage>
+                        <Icon name="IconExclamationSmallFill"
+                              color="red600"
+                               style="float:left; margin:-1px 3px 0"/> 메시지는 선택사항입니다
+                        </template>
+                   </TextField>
                     <TextField class="mb-20"
                                type="text"
-                               outlined
-                               :read-only="true"
-                               placeholder="outlined + readonly"/>
+                               :error="true"
+                               :filled="true"
+                               placeholder="outlined + error + error msg">
+                        <template v-slot:errorMessage>
+                        <Icon name="IconExclamationSmallFill"
+                              color="red600"
+                               style="float:left; margin:-1px 3px 0"/> 메시지는 선택사항입니다
+                        </template>
+                   </TextField>
                     <TextField class="mb-20"
                                type="text"
-                               outlined
-                               :disabled="true"
-                               placeholder="outlined + disabled"/>
-                    <TextField type="text" underlined placeholder="underlined"/>
+                               :error="true"
+                               :filled="true"
+                               label="label"
+                               placeholder="outlined + error + label"/>
                 </div>
             `,
-            components: { TextField },
+            components: { TextField, Icon },
         }}
     </Story>
 </Canvas>
