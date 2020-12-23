@@ -136,6 +136,8 @@ export default {
 		computedLabelStyle() {
 			if (this.label !== '') {
 				return 'label';
+			} else {
+				return false;
 			}
 		},
 		computedAlign() {
@@ -146,6 +148,8 @@ export default {
 		computedError() {
 			if (this.error) {
 				return 'error';
+			} else {
+				return false;
 			}
 		},
 	},
