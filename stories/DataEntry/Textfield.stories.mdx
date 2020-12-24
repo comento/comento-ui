@@ -109,26 +109,31 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <TextField class="mb-20"
-                               type="text"
-                               :error="true"
-                               errorMessage="입력 오류입니다."
-                               :outlined="false"
-                               placeholder="underlined + error + error msg">
-                   </TextField>
-                    <TextField class="mb-20"
-                               type="text"
-                               :error="true"
-                               errorMessage="입력 오류입니다."
-                               :outlined="true"
-                               placeholder="outlined + error + error msg">
-                   </TextField>
-                    <TextField class="mb-20"
-                               type="text"
-                               :error="true"
-                               :outlined="true"
-                               label="label"
-                               placeholder="outlined + error + label"/>
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        outlined
+                        placeholder="outlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        outlined
+                        label="label"
+                        placeholder="outlined + error + label"
+                        class="mb-20"
+                    />
                 </div>
             `,
             components: { TextField },
