@@ -210,6 +210,12 @@ export default {
 				pointer-events: none;
 			}
 		}
+		&[readonly],
+		&[readonly='readonly'] {
+			&:focus {
+				border-color: $gray200;
+			}
+		}
 	}
 	&.label {
 		.c-textfield--input {
@@ -228,6 +234,15 @@ export default {
 				+ .c-textfield--label {
 					opacity: 1;
 					color: $green600;
+				}
+			}
+			&[readonly],
+			&[readonly='readonly'] {
+				&:focus {
+					border-color: $gray200;
+				}
+				+ .c-textfield--label {
+					opacity: 0;
 				}
 			}
 		}
