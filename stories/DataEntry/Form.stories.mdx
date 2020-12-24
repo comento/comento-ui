@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Form from "@/src/Components/DataEntry/Form";
+
+<Meta
+    title="Data Entry/Form"
+    component={ Form }
+/>
+
+## Stories
+### example
+<Canvas>
+    <Story name="example" height="100px">
+        {{
+            template: `
+                <div>
+                    <Form>
+                        <div>jadfhlkasdhfjks</div>
+                    </Form>
+                </div>
+        `,
+            components: { Form },
+        }}
+    </Story>
+</Canvas>
+
