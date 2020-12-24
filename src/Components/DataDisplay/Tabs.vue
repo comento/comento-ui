@@ -85,11 +85,6 @@ export default {
 	&-wrapper {
 		background-color: $white;
 	}
-	&-container {
-		// content만큼만 width를 차지하기 위함
-		display: inline-block;
-		border-bottom: 1px solid $gray200;
-	}
 	&-button {
 		background: none;
 		border: 0;
@@ -127,12 +122,11 @@ export default {
 		width: auto;
 	}
 }
-.swiper {
-	&-container {
-		display: inline-block;
-	}
-	::v-deep &-wrapper {
-		border-bottom: 1px solid $gray200;
-	}
+
+.c-tabs--menu-container,
+.swiper-container {
+	display: inline-block;
+	background: linear-gradient(180deg, transparent 97%, $gray200 0);
+	padding-bottom: 1px;
 }
 </style>
