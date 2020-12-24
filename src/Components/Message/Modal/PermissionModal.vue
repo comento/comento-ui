@@ -2,7 +2,7 @@
 	<Modal :show="show" :show-close-button="false" max-width="343px" :persistent="persistent" @close="close">
 		<div class="c-modal--content-container">
 			<!-- title 영역 -->
-			<Typography class="mb-8" type="body1" align="center" color="gray900" fontWeight="bold">
+			<Typography class="mb-8" type="body1" align="center" color="gray900" font-weight="bold">
 				<slot name="title" />
 			</Typography>
 

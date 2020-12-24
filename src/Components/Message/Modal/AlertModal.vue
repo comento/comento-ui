@@ -7,7 +7,7 @@
 			</div>
 		</Typography>
 		<!-- 확인 버튼 -->
-		<div class="c-modal--confirm-button c-pointer" @click="close">
+		<div class="c-modal--confirm-button" @click="close">
 			<Typography type="body1" :color="buttonColor" align="center">
 				{{ successMessage }}
 			</Typography>
@@ -68,9 +68,7 @@ export default {
 		justify-content: center;
 		align-items: center;
 		border-top: 1px solid $gray200;
-	}
-	&--cancel-button {
-		border-right: 1px solid $gray200;
+		cursor: pointer;
 	}
 }
 </style>
