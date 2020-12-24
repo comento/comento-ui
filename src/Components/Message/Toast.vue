@@ -31,7 +31,7 @@ export default {
 				return ['basic', 'error', 'success'].indexOf(value) !== -1;
 			},
 		},
-		time: {
+		timeout: {
 			type: Number,
 			default: 3000,
 		},
@@ -71,7 +71,7 @@ export default {
 			this.$nextTick(() => {
 				setTimeout(() => {
 					this.$emit('update:show', false);
-				}, this.time);
+				}, this.timeout);
 			});
 		},
 	},
