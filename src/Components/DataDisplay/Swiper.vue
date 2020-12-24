@@ -36,7 +36,7 @@
 			v-show="showOutsideControl"
 			name="IconArrowXLargeLine"
 			:rotate="-90"
-			class="swiper-button-prev-outside"
+			class="swiper-button-outside swiper-button-prev-outside"
 			:class="computedControlsPosition"
 			:color="computedControlColor"
 		></Icon>
@@ -44,7 +44,23 @@
 			v-show="showOutsideControl"
 			name="IconArrowXLargeLine"
 			:rotate="90"
-			class="swiper-button-next-outside"
+			class="swiper-button-outside swiper-button-next-outside"
+			:class="computedControlsPosition"
+			:color="computedControlColor"
+		></Icon>
+		<Icon
+			v-show="showTopControl"
+			name="IconArrowXLargeLine"
+			:rotate="-90"
+			class="swiper-button-top swiper-button-prev-top"
+			:class="computedControlsPosition"
+			:color="computedControlColor"
+		></Icon>
+		<Icon
+			v-show="showTopControl"
+			name="IconArrowXLargeLine"
+			:rotate="90"
+			class="swiper-button-top swiper-button-next-top"
 			:class="computedControlsPosition"
 			:color="computedControlColor"
 		></Icon>
@@ -134,9 +150,9 @@ export default {
 		showOutsideControl() {
 			return this.withControls && this.controlsPosition === 'outside';
 		},
-		// showTopControl() {
-		// 	return this.withControls && this.controlsPosition === 'outside';
-		// },
+		showTopControl() {
+			return this.withControls && this.controlsPosition === 'top';
+		},
 		isSwiperGroupType() {
 			return this.type === 'swiperGroup';
 		},
@@ -145,11 +161,11 @@ export default {
 		},
 		swiperTypeOptions() {
 			// ex. swiper-button-next, swiper-button-next-outside
-			const swiperButtonNextClass =
+			const swiperButtonNextSelector =
 				this.controlsPosition === 'inside'
 					? '.swiper-button-next'
 					: `.swiper-button-next-${this.controlsPosition}`;
-			const swiperButtonPrevClass =
+			const swiperButtonPrevSelector =
 				this.controlsPosition === 'inside'
 					? '.swiper-button-prev'
 					: `.swiper-button-prev-${this.controlsPosition}`;
@@ -157,8 +173,8 @@ export default {
 				slidesPerView: 'auto',
 				allowTouchMove: false,
 				navigation: {
-					nextEl: swiperButtonNextClass,
-					prevEl: swiperButtonPrevClass,
+					nextEl: swiperButtonNextSelector,
+					prevEl: swiperButtonPrevSelector,
 				},
 				pagination: {
 					el: '.swiper-pagination',
@@ -241,25 +257,31 @@ $swiper-background-color: #c4c4c4;
 		background-color: $white;
 	}
 }
-.swiper-button-prev-outside,
-.swiper-button-next-outside {
+.swiper-button-outside {
 	position: absolute;
-	top: 50%;
 	z-index: 10;
 	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	top: 50%;
+	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+	height: var(--swiper-navigation-size);
 }
 .swiper-button-prev-outside {
 	left: -46px;
-	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
-	height: var(--swiper-navigation-size);
 }
 .swiper-button-next-outside {
 	right: -46px;
-	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
-	height: var(--swiper-navigation-size);
+}
+.swiper-button-top {
+	position: absolute;
+	z-index: 10;
+	cursor: pointer;
+	top: -38px;
+}
+.swiper-button-prev-top {
+	right: 38px;
+}
+.swiper-button-next-top {
+	right: 0;
 }
 .swiper-button-disabled {
 	opacity: 0.35;
