@@ -1,6 +1,7 @@
 import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
 import AlertModal from "@/src/Components/Message/Modal/AlertModal";
 import Button from "@/src/Components/Button/Button";
+import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
     title="Message/Modal/AlertModal"
@@ -8,42 +9,25 @@ import Button from "@/src/Components/Button/Button";
     argTypes={{
         show: {
             description: "모달 활성화",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
         },
-        align: {
-            description: "정렬",
-            defaultValue: "center",
-            control: {
-                type: "select",
-                options: ["center", "left", "right"]
-            },
-            table: {
-                type: {
-                    summary: "string",
-                    detail: '"center" "left" "right"',
-                },
-            },
-        },
         successMessage: {
             description: "버튼명",
-            defaultValue: "확인",
             control: {
                 type: "text",
             },
         },
         buttonColor: {
             description: "확인버튼 색상",
-            defaultValue: "gray600",
             control: {
-                type: "text"
+                type: "select",
+                options: colorKeys,
             }
         },
         persistent: {
             description: "overlay 클릭해도 모달 닫지 않기",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
@@ -64,7 +48,6 @@ export const Default = (args, { argTypes }) => ({
             <Button @click="show = true">Open</Button>
             <AlertModal
                 :show.sync="show"
-                :align="align"
                 :button-color="buttonColor"
                 :persistent="persistent"
                 :success-message="successMessage"
