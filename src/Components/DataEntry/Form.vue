@@ -7,9 +7,6 @@
 <script>
 export default {
 	name: 'Form',
-	props: {},
-	data() {},
-	computed: {},
 };
 </script>
 
