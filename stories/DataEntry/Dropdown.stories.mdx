@@ -5,6 +5,7 @@ import ListItem from "@/src/Components/DataDisplay/ListItem";
 import Divider from "@/src/Elements/Utility/Divider";
 import SearchInput from "@/src/Components/DataEntry/SearchInput";
 import Input from "@/src/Components/DataEntry/Input";
+import clickOutside from "@/directives/click-outside";
 
 <Meta
     title="Data Entry/Dropdown/Dropdown"
@@ -25,21 +26,32 @@ export const Default = (args, { argTypes }) => ({
     data: () => ({
         listItems: ['List1', 'List2', 'List3', 'List4', 'List5'],
         showSearchDropdown: false,
+        value: '',
     }),
     computed: {
         computedSearchInputMaxWidth() {
             return { 'max-width': this. full ? '100%' : this.maxWidth };
         }
     },
+    methods: {
+        clickDropdownItem(item) {
+            this.value = item;
+        },
+    },
     template:
         `<Dropdown :max-width="maxWidth" :max-height="maxHeight" :label="label" :full="full" :vertical="vertical">
             <template v-slot:item>
-                <SearchInput full :showSearchDropdown.sync="showSearchDropdown" :style="computedSearchInputMaxWidth" />
+                <SearchInput
+                    full
+                    :showSearchDropdown.sync="showSearchDropdown"
+                    :value.sync="value"
+                    :style="computedSearchInputMaxWidth"
+                />
             </template>
             <template v-slot:list>
                 <List v-if="showSearchDropdown" spacing>
                     <template v-for="(item, index) in listItems">
-                        <ListItem :key="'list-item-' + index">
+                        <ListItem :key="'list-item-' + index" @click="clickDropdownItem(item)">
                             {{ item }}
                         </ListItem>
                         <Divider :key="'divider-' + index" width="100%" height="1px" />
@@ -68,18 +80,39 @@ export const Default = (args, { argTypes }) => ({
                 showSearchDropdown: false,
                 showInputDropdown: false,
                 listItems: ['List1', 'List2'],
+                searchInputValue: '',
+                inputValue: '',
             }),
+            methods: {
+                clickSearchInputDropdownItem(item) {
+                    this.searchInputValue = item;
+                },
+                clickInputDropdownItem(item) {
+                    this.inputValue = item;
+                },
+                closeList() {
+                    this.showInputDropdown = false;
+                },
+            },
             template: `
                 <div>
                     <div style="margin-bottom: 20px">
                         <Dropdown max-width="230px" label="searchInput Dropdown">
                             <template v-slot:item>
-                                <SearchInput full :showSearchDropdown.sync="showSearchDropdown" style="width: 230px" />
+                                <SearchInput
+                                    full
+                                    :showSearchDropdown.sync="showSearchDropdown"
+                                    :value.sync="searchInputValue"
+                                    style="width: 230px"
+                                />
                             </template>
                             <template v-slot:list>
                                 <List v-if="showSearchDropdown" spacing>
                                     <template v-for="(item, index) in listItems">
-                                        <ListItem :key="'list-item-' + index">
+                                        <ListItem
+                                            :key="'list-item-' + index"
+                                            @click="clickSearchInputDropdownItem(item)"
+                                        >
                                             {{ item }}
                                         </ListItem>
                                         <Divider :key="'divider-' + index" width="100%" height="1px" />
@@ -91,6 +124,8 @@ export const Default = (args, { argTypes }) => ({
                     <Dropdown max-width="230px" label="Input Dropdown">
                         <template v-slot:item>
                             <Input
+                                v-click-outside="closeList"
+                                :value.sync="inputValue"
                                 full
                                 @click="showInputDropdown = !showInputDropdown"
                                 style="width: 230px"
@@ -99,7 +134,7 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:list>
                             <List v-if="showInputDropdown" spacing>
                                 <template v-for="(item, index) in listItems">
-                                    <ListItem :key="'list-item-' + index">
+                                    <ListItem :key="'list-item-' + index" @click="clickInputDropdownItem(item)">
                                         {{ item }}
                                     </ListItem>
                                     <Divider :key="'divider-' + index" width="100%" height="1px" />
@@ -110,6 +145,9 @@ export const Default = (args, { argTypes }) => ({
                 </div>
             `,
             components: { Dropdown, SearchInput, List, ListItem, Divider, Input },
+            directives: {
+                clickOutside,
+            },
         }}
     </Story>
 </Canvas>
