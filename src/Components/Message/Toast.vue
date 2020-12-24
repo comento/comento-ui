@@ -6,10 +6,10 @@
 					<slot name="left-icon" />
 				</div>
 				<slot />
-				<div class="c-toast--icon" :style="$slots['right-icon'] && 'margin-left: 4px'">
-					<slot name="right-icon" />
-				</div>
 			</Typography>
+			<div v-if="$slots['button']" class="c-toast--button">
+				<slot name="button" />
+			</div>
 		</aside>
 	</transition>
 </template>
