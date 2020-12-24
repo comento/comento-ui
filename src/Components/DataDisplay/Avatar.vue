@@ -14,6 +14,7 @@
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import Icon from '@/src/Elements/Core/Icon/Icon';
+import uniqueId from '@/utils/unique-id';
 
 export default {
 	name: 'Avatar',
@@ -37,6 +38,11 @@ export default {
 			type: String,
 			default: null,
 		},
+	},
+	data() {
+		return {
+			uid: uniqueId(),
+		};
 	},
 	computed: {
 		isTextType() {
@@ -68,13 +74,13 @@ export default {
 		},
 		computedRandomBackground() {
 			const colors = ['#f5b3b6', '#f4c19f', '#efd76f', '#b0d0f5', '#b8bdea', '#b3e2de'];
-			const randomNo = this._uid % 5;
+			const randomNo = this.uid % 5;
 			return colors[randomNo];
 		},
 		computedRandomText() {
 			const text = 'ABCDEGHIJKLMNOPQRSTUVWXYZ';
 			const textLength = text.length;
-			const randomNo = this._uid % textLength;
+			const randomNo = this.uid % textLength;
 			return text[randomNo];
 		},
 		computedTypography() {

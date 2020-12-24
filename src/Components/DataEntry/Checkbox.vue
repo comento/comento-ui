@@ -19,6 +19,7 @@
 <script>
 import { colorKeys } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import uniqueId from '@/utils/unique-id';
 
 export default {
 	name: 'Checkbox',
@@ -57,6 +58,11 @@ export default {
 			},
 		},
 	},
+	data() {
+		return {
+			uid: uniqueId(),
+		};
+	},
 	computed: {
 		sync_value: {
 			get() {
@@ -67,7 +73,7 @@ export default {
 			},
 		},
 		computedId() {
-			return this.id || `input-${this._uid}`;
+			return this.id || `c-checkbox-${this.uid}`;
 		},
 		computedColor() {
 			return this.disabled ? 'gray300' : this.color;
