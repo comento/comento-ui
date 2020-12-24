@@ -12,11 +12,10 @@ export default {
 
 <style scoped lang="scss">
 .c-form {
-	&::v-deep .c-application {
-		&:first-child {
-			margin-top: 0;
+	&::v-deep > * {
+		&:not(:last-child) {
+			margin-bottom: 12px;
 		}
-		margin-top: 12px;
 	}
 }
 </style>
