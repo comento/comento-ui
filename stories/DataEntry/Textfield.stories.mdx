@@ -1,6 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import TextField, { textfieldTypes, textfieldAligns } from "@/src/Components/DataEntry/TextField";
-import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
     title="Data Entry/TextField"
@@ -55,10 +54,20 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
             defaultValue: false,
             control: { type: "boolean" },
         },
-        filled: {
+        errorMessage:{
+            description: "텍스트필드 에러메시지",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        outlined: {
             description: "텍스트필드 outlined (true) / underline(false)",
             defaultValue: false,
             control: { type: "boolean" },
+        },
+        value: {
+            description: "TextArea 들어갈 텍스트",
+            defaultValue: null,
+            control: { type: "text" },
         },
     }}
 />
@@ -77,7 +86,8 @@ export const Default = (args, { argTypes }) => ({
                     :focus="focus"
                     :read-only="readOnly"
                     :disabled="disabled"
-                    :filled="filled"
+                    :outlined="outlined"
+                    :value="value"
                     :error="error"/>`,
 });
 
@@ -102,34 +112,26 @@ export const Default = (args, { argTypes }) => ({
                     <TextField class="mb-20"
                                type="text"
                                :error="true"
-                               :filled="false"
+                               errorMessage="입력 오류입니다."
+                               :outlined="false"
                                placeholder="underlined + error + error msg">
-                        <template v-slot:errorMessage>
-                        <Icon name="IconExclamationSmallFill"
-                              color="red600"
-                               style="float:left; margin:-1px 3px 0"/> 메시지는 선택사항입니다
-                        </template>
                    </TextField>
                     <TextField class="mb-20"
                                type="text"
                                :error="true"
-                               :filled="true"
+                               errorMessage="입력 오류입니다."
+                               :outlined="true"
                                placeholder="outlined + error + error msg">
-                        <template v-slot:errorMessage>
-                        <Icon name="IconExclamationSmallFill"
-                              color="red600"
-                               style="float:left; margin:-1px 3px 0"/> 메시지는 선택사항입니다
-                        </template>
                    </TextField>
                     <TextField class="mb-20"
                                type="text"
                                :error="true"
-                               :filled="true"
+                               :outlined="true"
                                label="label"
                                placeholder="outlined + error + label"/>
                 </div>
             `,
-            components: { TextField, Icon },
+            components: { TextField },
         }}
     </Story>
 </Canvas>

@@ -1,8 +1,10 @@
 <template>
-	<div class="c-application c-textfield" :class="[computedLabelStyle]">
+	<div class="c-application c-text-field" :class="[computedLabel]">
 		<input
 			:id="computedId"
-			class="c-textfield--input"
+			:ref="computedId"
+			v-model="sync_value"
+			class="c-text-field--input"
 			:value="value"
 			:type="type"
 			:placeholder="placeholder"
@@ -19,14 +21,15 @@
 			@input="$emit('input', $event.target.value)"
 			v-on="$listeners"
 		/>
-		<label v-if="label !== ''" :for="computedId" class="c-textfield--label">{{ label }}</label>
-		<Typography v-if="error" type="caption2" color="red400" element="p" class="c-textfield--message">
-			<slot name="errorMessage" />
+		<label v-if="label !== ''" :for="computedId" class="c-text-field--label">{{ label }}</label>
+		<Typography v-if="errorMessage !== ''" type="caption2" color="red400" element="p" class="c-text-field--message">
+			<Icon name="IconExclamationSmallFill" color="red600" class="mr-2" />{{ errorMessage }} 에러입니다.
 		</Typography>
 	</div>
 </template>
 
 <script>
+import Icon from '@/src/Elements/Core/Icon/Icon';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 export const textfieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const textfieldAligns = ['left', 'center', 'right'];
@@ -49,30 +52,18 @@ export default {
 		value: {
 			type: String,
 			default: '',
-			validator(value) {
-				return typeof value === 'string';
-			},
 		},
 		placeholder: {
 			type: String,
 			default: '내용을 입력하세요.',
-			validator(value) {
-				return typeof value === 'string';
-			},
 		},
 		label: {
 			type: String,
 			default: '',
-			validator(value) {
-				return typeof value === 'string';
-			},
 		},
-		filled: {
+		outlined: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		align: {
 			type: String,
@@ -88,30 +79,22 @@ export default {
 		focus: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		readOnly: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		error: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
+		},
+		errorMessage: {
+			type: String,
+			default: '',
 		},
 	},
 	computed: {
@@ -124,7 +107,7 @@ export default {
 			},
 		},
 		computedLined() {
-			if (this.filled) {
+			if (this.outlined) {
 				return 'outlined';
 			} else {
 				return 'underlined';
@@ -133,7 +116,7 @@ export default {
 		computedId() {
 			return this.id || `textField-${this._uid}`;
 		},
-		computedLabelStyle() {
+		computedLabel() {
 			if (this.label !== '') {
 				return 'label';
 			} else {
@@ -147,7 +130,7 @@ export default {
 		},
 		computedError() {
 			if (this.error) {
-				return 'error';
+				return { error: this.error };
 			} else {
 				return false;
 			}
@@ -156,15 +139,15 @@ export default {
 
 	mounted() {
 		if (this.focus) {
-			document.getElementById(this.computedId).focus();
+			this.$refs[this.computedId].focus();
 		}
 	},
-	components: { Typography },
+	components: { Typography, Icon },
 };
 </script>
 
 <style lang="scss" scoped>
-.c-textfield {
+.c-text-field {
 	position: relative;
 	&--input {
 		display: block;
@@ -218,12 +201,12 @@ export default {
 		}
 	}
 	&.label {
-		.c-textfield--input {
+		.c-text-field--input {
 			&.error {
 				border-color: $red400;
 				&:focus {
 					border-color: $red400;
-					+ .c-textfield--label {
+					+ .c-text-field--label {
 						opacity: 1;
 						color: $red400;
 					}
@@ -231,7 +214,7 @@ export default {
 			}
 			&:focus {
 				border-color: $green600;
-				+ .c-textfield--label {
+				+ .c-text-field--label {
 					opacity: 1;
 					color: $green600;
 				}
@@ -241,12 +224,12 @@ export default {
 				&:focus {
 					border-color: $gray200;
 				}
-				+ .c-textfield--label {
+				+ .c-text-field--label {
 					opacity: 0;
 				}
 			}
 		}
-		.c-textfield--label {
+		.c-text-field--label {
 			@include transition(all 0.2s ease);
 			position: absolute;
 			top: -6px;
@@ -260,6 +243,10 @@ export default {
 	&--message {
 		margin-top: 5px;
 		@include clearfix;
+		&::v-deep .c-icon {
+			float: left;
+			margin-top: -1px;
+		}
 	}
 }
 </style>
