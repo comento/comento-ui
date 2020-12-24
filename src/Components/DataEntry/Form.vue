@@ -13,6 +13,9 @@ export default {
 <style scoped lang="scss">
 .c-form {
 	&::v-deep .c-application {
+		&:first-child {
+			margin-top: 0;
+		}
 		margin-top: 12px;
 	}
 }
