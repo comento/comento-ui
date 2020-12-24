@@ -91,7 +91,6 @@ export default {
 		border-bottom: 1px solid $gray200;
 	}
 	&-button {
-		transition: 0.3s all;
 		background: none;
 		border: 0;
 		outline: 0;
