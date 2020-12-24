@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
-import PermissionModal from "@/src/Components/Message/Modal/PermissionModal";
+import AlertModal from "@/src/Components/Message/Modal/AlertModal";
 import Button from "@/src/Components/Button/Button";
 import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
-    title="Message/Modal/PermissionModal"
-    component={ PermissionModal }
+    title="Message/Modal/AlertModal"
+    component={ AlertModal }
     argTypes={{
         show: {
             description: "모달 활성화",
@@ -19,14 +19,7 @@ import { colorKeys } from "@/src/Elements/Core/Colors";
                 type: "text",
             },
         },
-        cancelButtonColor: {
-            description: "취소버튼 색상",
-            control: {
-                type: "select",
-                options: colorKeys,
-            }
-        },
-        confirmButtonColor: {
+        buttonColor: {
             description: "확인버튼 색상",
             control: {
                 type: "select",
@@ -39,14 +32,9 @@ import { colorKeys } from "@/src/Elements/Core/Colors";
                 type: "boolean",
             },
         },
-        title: {
-            description: "모달 제목",
-            defaultValue: "Permission Modal",
-            control: { type: "text" },
-        },
         content: {
             description: "모달 내용",
-            defaultValue: '본문은 없거나 두 줄을 초과할 수 없습니다.',
+            defaultValue: 'Alert modal<br/> 타이틀이 없고, 본문은 두 줄을 초과할 수 없다.',
             control: { type: "text" },
         },
     }}
@@ -54,37 +42,26 @@ import { colorKeys } from "@/src/Elements/Core/Colors";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    methods: {
-        closePermissionModal() {
-            this.show = false;
-        },
-    },
+    components: { AlertModal, Button },
     template: `
         <div>
             <Button @click="show = true">Open</Button>
-            <PermissionModal
+            <AlertModal
                 :show.sync="show"
-                :cancel-button-color="cancelButtonColor"
-                :confirm-button-color="confirmButtonColor"
+                :button-color="buttonColor"
                 :persistent="persistent"
                 :success-message="successMessage"
-                :success-callback="closePermissionModal"
             >
-                <template v-slot:title>
-                    {{ title }}
-                </template>
                 <template v-slot:content>
                     <div v-html="content" />
                 </template>
-            </PermissionModal>
-        </div>
-    `,
-    components: { PermissionModal, Button },
+            </AlertModal>
+        </div>`
 });
 
-# PermissionModal
+# AlertModal
 
-**PermissionModal** 컴포넌트의 문서입니다.
+**AlertModal** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
