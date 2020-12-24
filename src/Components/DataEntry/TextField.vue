@@ -21,7 +21,7 @@
 			@input="$emit('input', $event.target.value)"
 			v-on="$listeners"
 		/>
-		<label v-if="label !== ''" :for="computedId" class="c-text-field--label">{{ label }}</label>
+		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
 		<Typography v-if="errorMessage !== ''" type="caption2" color="red400" element="p" class="c-text-field--message">
 			<Icon name="IconExclamationSmallFill" color="red600" class="mr-2" />{{ errorMessage }} 에러입니다.
 		</Typography>
@@ -59,7 +59,7 @@ export default {
 		},
 		label: {
 			type: String,
-			default: '',
+			default: null,
 		},
 		outlined: {
 			type: Boolean,
@@ -116,12 +116,11 @@ export default {
 		computedId() {
 			return this.id || `textField-${this._uid}`;
 		},
+		computedShowLabel() {
+			return this.outlined && this.label;
+		},
 		computedLabel() {
-			if (this.label !== '') {
-				return 'label';
-			} else {
-				return false;
-			}
+			return { label: this.computedShowLabel };
 		},
 		computedAlign() {
 			return {
