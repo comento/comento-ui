@@ -58,10 +58,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+::v-deep .c-overlay {
+	z-index: 9999 !important;
+}
+
 .c-modal {
-	&--mask::v-deep {
-		z-index: 9999;
-	}
 	&--content-wrapper {
 		padding: 24px 32px;
 	}
