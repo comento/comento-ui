@@ -120,6 +120,9 @@ export default {
 ::v-deep .swiper {
 	&-slide {
 		width: auto;
+		&:last-child {
+			margin-right: 0 !important;
+		}
 	}
 }
 
