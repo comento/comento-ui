@@ -25,9 +25,6 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		buttonColor: {
 			type: String,
@@ -40,9 +37,6 @@ export default {
 		persistent: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	methods: {
