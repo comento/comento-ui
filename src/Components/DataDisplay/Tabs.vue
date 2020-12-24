@@ -106,6 +106,7 @@ export default {
 			border-bottom: 2px solid $gray600;
 			font-weight: 700;
 			color: $gray800;
+			margin-bottom: -1px;
 		}
 		&:hover {
 			background-color: $gray100;
@@ -120,6 +121,8 @@ export default {
 .swiper {
 	&-container {
 		display: inline-block;
+	}
+	::v-deep &-wrapper {
 		border-bottom: 1px solid $gray200;
 	}
 }
