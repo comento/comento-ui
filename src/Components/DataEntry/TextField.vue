@@ -12,7 +12,7 @@
 			:label="label"
 			:align="align"
 			:focus="focus"
-			:readonly="readOnly"
+			:readonly="readonly"
 			:disabled="disabled"
 			:error="error"
 			:style="[computedAlign]"
@@ -80,7 +80,7 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		readOnly: {
+		readonly: {
 			type: Boolean,
 			default: false,
 		},

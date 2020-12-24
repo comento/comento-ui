@@ -39,8 +39,8 @@ import TextField, { textfieldTypes, textfieldAligns } from "@/src/Components/Dat
             defaultValue: false,
             control: { type: "boolean" },
         },
-        readOnly: {
-            description: "텍스트필드 readOnly 활성화",
+        readonly: {
+            description: "텍스트필드 readonly 활성화",
             defaultValue: false,
             control: { type: "boolean" },
         },
@@ -84,7 +84,7 @@ export const Default = (args, { argTypes }) => ({
                     :label="label"
                     :align="align"
                     :focus="focus"
-                    :read-only="readOnly"
+                    :readonly="readonly"
                     :disabled="disabled"
                     :outlined="outlined"
                     :value="value"
