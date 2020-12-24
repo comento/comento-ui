@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Swiper, { SwiperTypes, SwiperIndicatorColors, SwiperControlColors, SwiperSpacings } from '@/src/Components/DataDisplay/Swiper';
+import Swiper, { SwiperTypes, SwiperIndicatorColors, SwiperControlColors, SwiperSpacings, SwiperControlPositions } from '@/src/Components/DataDisplay/Swiper';
 import Button from '@/src/Components/Button/Button';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
@@ -18,6 +18,13 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
             description: "With Controls",
             control: {
                 type: "boolean",
+            },
+        },
+        controlsPosition: {
+            description: "Controls 위치",
+            control: {
+                type: "select",
+                options: SwiperControlPositions,
             },
         },
         controlColor: {
@@ -54,11 +61,14 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Swiper, Typography },
     template: `
-        <Swiper :withControls="withControls" :controlColor="controlColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor" :spacing="spacing">
-            <template v-for="(item, index) in 5" :slot="'item' + index">
-                <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
-            </template>
-        </Swiper>`,
+        <div style="padding: 12px 32px;">
+            <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlColor="controlColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor" :spacing="spacing">
+                <template v-for="(item, index) in 5" :slot="'item' + index">
+                    <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                </template>
+            </Swiper>
+        </div>
+        `,
 });
 
 # Swiper
@@ -83,11 +93,13 @@ export const Default = (args, { argTypes }) => ({
                 }
             },
             template: `
-                    <Swiper :withControls="true" indicatorColor="light">
+                    <div style="padding: 12px 24px;">
+                    <Swiper :withControls="true" controlColor="dark" indicatorColor="light">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                         </template>
-                    </Swiper>`,
+                    </Swiper>
+                    </div>`,
             components: { Swiper, Typography },
         }}
     </Story>

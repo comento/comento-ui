@@ -1,31 +1,54 @@
 <template>
-	<base-swiper ref="mySwiper" class="swiper" :options="swiperOptions" v-bind="$attrs">
-		<base-swiper-slide v-for="(node, index) in Object.keys(this.$slots).length" :key="`tabs-item-${index}-${key}`">
-			<slot :name="'item' + index"></slot>
-		</base-swiper-slide>
+	<div style="position: relative">
+		<base-swiper ref="mySwiper" class="swiper" :options="swiperOptions" v-bind="$attrs">
+			<base-swiper-slide
+				v-for="(node, index) in Object.keys(this.$slots).length"
+				:key="`tabs-item-${index}-${key}`"
+			>
+				<slot :name="'item' + index"></slot>
+			</base-swiper-slide>
+			<Icon
+				v-show="showInsideControl"
+				slot="button-prev"
+				name="IconArrowXLargeLine"
+				:rotate="-90"
+				class="swiper-button-prev"
+				:class="computedControlsPosition"
+				:color="computedControlColor"
+			></Icon>
+			<Icon
+				v-show="showInsideControl"
+				slot="button-next"
+				name="IconArrowXLargeLine"
+				:rotate="90"
+				class="swiper-button-next"
+				:class="computedControlsPosition"
+				:color="computedControlColor"
+			></Icon>
+			<div
+				v-show="withIndicators"
+				slot="pagination"
+				class="swiper-pagination"
+				:class="computedIndicatorColorClass"
+			></div>
+		</base-swiper>
 		<Icon
-			v-show="withControls"
-			slot="button-prev"
+			v-show="showOutsideControl"
 			name="IconArrowXLargeLine"
 			:rotate="-90"
-			class="swiper-button-prev"
+			class="swiper-button-prev-outside"
+			:class="computedControlsPosition"
 			:color="computedControlColor"
 		></Icon>
 		<Icon
-			v-show="withControls"
-			slot="button-next"
+			v-show="showOutsideControl"
 			name="IconArrowXLargeLine"
 			:rotate="90"
-			class="swiper-button-next"
+			class="swiper-button-next-outside"
+			:class="computedControlsPosition"
 			:color="computedControlColor"
 		></Icon>
-		<div
-			v-show="withIndicators"
-			slot="pagination"
-			class="swiper-pagination"
-			:class="computedIndicatorColorClass"
-		></div>
-	</base-swiper>
+	</div>
 </template>
 
 <script>
@@ -37,6 +60,7 @@ import 'swiper/css/swiper.css';
 export const SwiperTypes = ['swiper', 'swiperGroup', 'slider'];
 export const SwiperIndicatorColors = ['light', 'dark'];
 export const SwiperControlColors = ['light', 'dark'];
+export const SwiperControlPositions = ['inside', 'outside', 'top'];
 export const SwiperSpacings = [8, 12, 24];
 
 export default {
@@ -55,6 +79,18 @@ export default {
 			default: false,
 			validator(value) {
 				return customValidator(value, typeof value === 'boolean', 'Swiper', 'withControls');
+			},
+		},
+		controlsPosition: {
+			type: String,
+			default: 'inside',
+			validator(value) {
+				return customValidator(
+					value,
+					SwiperControlPositions.indexOf(value) !== -1,
+					'Swiper',
+					'controlsPosition',
+				);
 			},
 		},
 		controlColor: {
@@ -92,6 +128,15 @@ export default {
 		};
 	},
 	computed: {
+		showInsideControl() {
+			return this.withControls && this.controlsPosition === 'inside';
+		},
+		showOutsideControl() {
+			return this.withControls && this.controlsPosition === 'outside';
+		},
+		// showTopControl() {
+		// 	return this.withControls && this.controlsPosition === 'outside';
+		// },
 		isSwiperGroupType() {
 			return this.type === 'swiperGroup';
 		},
@@ -99,12 +144,21 @@ export default {
 			return this.type === 'swiper';
 		},
 		swiperTypeOptions() {
+			// ex. swiper-button-next, swiper-button-next-outside
+			const swiperButtonNextClass =
+				this.controlsPosition === 'inside'
+					? '.swiper-button-next'
+					: `.swiper-button-next-${this.controlsPosition}`;
+			const swiperButtonPrevClass =
+				this.controlsPosition === 'inside'
+					? '.swiper-button-prev'
+					: `.swiper-button-prev-${this.controlsPosition}`;
 			return {
 				slidesPerView: 'auto',
 				allowTouchMove: false,
 				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
+					nextEl: swiperButtonNextClass,
+					prevEl: swiperButtonPrevClass,
 				},
 				pagination: {
 					el: '.swiper-pagination',
@@ -143,6 +197,9 @@ export default {
 				dark: 'gray800',
 			};
 			return colorMap[this.controlColor];
+		},
+		computedControlsPosition() {
+			return this.controlsPosition;
 		},
 	},
 	components: {
@@ -183,5 +240,30 @@ $swiper-background-color: #c4c4c4;
 	.swiper-pagination-bullet {
 		background-color: $white;
 	}
+}
+.swiper-button-prev-outside,
+.swiper-button-next-outside {
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.swiper-button-prev-outside {
+	left: -46px;
+	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+	height: var(--swiper-navigation-size);
+}
+.swiper-button-next-outside {
+	right: -46px;
+	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+	height: var(--swiper-navigation-size);
+}
+.swiper-button-disabled {
+	opacity: 0.35;
+	cursor: auto;
+	pointer-events: none;
 }
 </style>
