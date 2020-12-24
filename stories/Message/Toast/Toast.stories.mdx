@@ -1,58 +1,51 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Toast from "@/src/Components/Message/Toast";
+import Toast, { toastTypes, toastPositions } from "@/src/Components/Message/Toast";
 import Button from "@/src/Components/Button/Button";
-import Icon from "@/src/Elements/Core/Icon/Icon";
+import Icon, { IconNames } from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
     title="Message/Toast"
     component={ Toast }
     argTypes={{
-        label: {
-            description: "Toast에 들어갈 텍스트",
+        message: {
+            description: "Toast 메시지",
             defaultValue: "메시지가 들어가는 자리입니다.",
-            control: { type: "text" },
+            control: {
+                type: "text"
+            },
         },
         show: {
             description: "활성화",
-            defaultValue: false,
             control: {
                 type: "boolean",
             },
         },
         type: {
             description: "종류",
-            defaultValue: 'basic',
             control: {
                 type: "select",
-                options: ["basic", "error", "success"],
-            },
-            table: {
-                type: {
-                    summary: "string",
-                    detail: '"basic" "error" "success"',
-                },
+                options: toastTypes,
             },
         },
-        time: {
+        timeout: {
             description: "시간",
-            defaultValue: 3000,
             control: {
-                type: "text",
+                type: "number",
             },
         },
         position: {
             description: "방향",
-            defaultValue: "bottom",
             control: {
                 type: "select",
-                options: ["top", "bottom"],
+                options: toastPositions,
             },
-            table: {
-                type: {
-                    summary: "string",
-                    detail: '"top" "bottom"',
-                }
-            }
+        },
+        icon: {
+            description: "Toast 아이콘",
+            control: {
+                type: "select",
+                options: IconNames,
+            },
         },
     }}
 />
@@ -66,11 +59,11 @@ export const Default = (args, { argTypes }) => ({
             <Toast
                 :show.sync="show"
                 :type="type"
-                :time="time"
+                :icon="icon"
+                :message="message"
+                :timeout="timeout"
                 :position="position"
-            >
-                {{ label }}
-            </Toast>
+            />
         </div>`
 });
 
@@ -99,12 +92,9 @@ export const Default = (args, { argTypes }) => ({
                       :show.sync="show"
                       position="top"
                       type="success"
-                    >
-                        <template v-slot:left-icon>
-                            <Icon name="IconSecurityLargeFill" color="white" size="large" />
-                        </template>
-                      결제 정보 암호화 중
-                    </Toast>
+                      icon="IconSecurityLargeFill"
+                      message="결제 정보 암호화 중"
+                    />
                 </div>
             `,
             components: {
