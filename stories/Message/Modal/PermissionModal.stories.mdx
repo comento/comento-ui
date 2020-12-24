@@ -34,14 +34,14 @@ import Button from "@/src/Components/Button/Button";
                 type: "text",
             },
         },
-        leftButtonColor: {
+        cancelButtonColor: {
             description: "취소버튼 색상",
             defaultValue: "gray600",
             control: {
                 type: "text"
             }
         },
-        rightButtonColor: {
+        confirmButtonColor: {
             description: "확인버튼 색상",
             defaultValue: "gray600",
             control: {
@@ -77,8 +77,8 @@ export const Default = (args, { argTypes }) => ({
             <PermissionModal
                 :show.sync="show"
                 :align="align"
-                :left-button-color="leftButtonColor"
-                :right-button-color="rightButtonColor"
+                :cancel-button-color="leftButtonColor"
+                :confirm-button-color="rightButtonColor"
                 :persistent="persistent"
                 :success-message="successMessage"
             >

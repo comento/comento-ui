@@ -18,11 +18,11 @@
 		<div class="c-modal--button-group">
 			<!-- 취소 버튼 -->
 			<div class="c-modal--cancel-button c-pointer" @click="close">
-				<Typography type="body1" :color="leftButtonColor" align="center">취소</Typography>
+				<Typography type="body1" :color="cancelButtonColor" align="center">취소</Typography>
 			</div>
 			<!-- 확인 버튼 -->
 			<div class="c-modal--confirm-button c-pointer" @click="successCallback">
-				<Typography type="body1" :color="rightButtonColor" align="center">
+				<Typography type="body1" :color="confirmButtonColor" align="center">
 					{{ successMessage }}
 				</Typography>
 			</div>
@@ -40,15 +40,12 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
-		leftButtonColor: {
+		cancelButtonColor: {
 			type: String,
 			default: 'gray500',
 		},
-		rightButtonColor: {
+		confirmButtonColor: {
 			type: String,
 			default: 'gray500',
 		},
@@ -63,9 +60,6 @@ export default {
 		persistent: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	methods: {
