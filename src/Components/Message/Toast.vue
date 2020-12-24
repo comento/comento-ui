@@ -15,6 +15,10 @@
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import Icon, { IconNames } from '../../Elements/Core/Icon/Icon';
+import customValidator from '@/utils/custom-validator.js';
+
+export const toastTypes = ['basic', 'error', 'success'];
+export const toastPositions = ['top', 'bottom'];
 
 export default {
 	name: 'Toast',
@@ -32,7 +36,8 @@ export default {
 			type: String,
 			default: 'basic',
 			validator(value) {
-				return ['basic', 'error', 'success'].indexOf(value) !== -1;
+				const isValid = toastTypes.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Toast', 'type');
 			},
 		},
 		timeout: {
@@ -43,7 +48,8 @@ export default {
 			type: String,
 			default: 'bottom',
 			validator(value) {
-				return ['top', 'bottom'].indexOf(value) !== -1;
+				const isValid = toastPositions.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Toast', 'position');
 			},
 		},
 		icon: {
