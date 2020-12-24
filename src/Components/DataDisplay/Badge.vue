@@ -1,9 +1,12 @@
 <template>
-	<div class="c-application c-badge_container">
-		<slot></slot>
-		<div v-if="text" class="c-badge_wrapper">
-			<div class="c-badge" :class="[computedCircle]" :style="[computedStyle]">
-				<Typography type="caption2" :color="color" :font-weight="700">{{ text }}</Typography>
+	<div class="c-application c-badge--container">
+		<!-- badge 대상 컴포넌트 -->
+		<slot />
+
+		<!-- badge -->
+		<div v-if="text" class="c-badge--wrapper">
+			<div class="c-badge" :style="[computedStyle]">
+				<Typography type="caption2" color="white" :font-weight="700">{{ text }}</Typography>
 			</div>
 		</div>
 	</div>
@@ -13,49 +16,47 @@
 import { colors } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
+export const badgeColors = ['primary'];
+
 export default {
 	name: 'Badge',
 	props: {
-		bgColor: {
-			type: String,
-			default: 'primary',
-		},
 		color: {
 			type: String,
-			default: 'white',
+			default: 'primary',
+			validator(value) {
+				return badgeColors.indexOf(value) !== -1;
+			},
 		},
 		text: {
 			type: [String, Number],
 			default: '',
-		},
-		circle: {
-			type: Boolean,
-			default: true,
+			validator(value) {
+				return typeof value === 'string' || typeof value === 'number';
+			},
 		},
 		offsetX: {
 			type: Number,
 			default: 0,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 		offsetY: {
 			type: Number,
 			default: 0,
-		},
-		height: {
-			type: Number,
-			default: 16,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 	},
 	computed: {
 		computedStyle() {
 			return {
-				height: `${this.height}px`,
-				background: colors[this.bgColor],
+				background: colors[this.color],
 				top: `calc(100% - ${this.offsetY}px)`,
 				left: `calc(100% - ${this.offsetX}px)`,
 			};
-		},
-		computedCircle() {
-			return this.circle ? 'circle' : '';
 		},
 	},
 	components: { Typography },
@@ -63,14 +64,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/*@import '@/assets/style/base/main';*/
+.c-badge {
+	@include caption2();
+	position: absolute;
+	min-width: 0;
+	padding: 3px 5px;
+	@include inline-block();
+	@include border-radius(28px);
 
-.c-badge_container {
-	display: inline-block;
-	line-height: 1;
-	position: relative;
+	&--container {
+		display: inline-block;
+		position: relative;
+	}
 
-	.c-badge_wrapper {
+	&--wrapper {
 		flex: 0 1;
 		height: 100%;
 		left: 0;
@@ -78,18 +85,6 @@ export default {
 		position: absolute;
 		top: 0;
 		width: 100%;
-
-		.c-badge {
-			@include caption2();
-			position: absolute;
-			min-width: 0;
-			padding: 3px 5px;
-			@include inline-block();
-
-			&.circle {
-				@include border-radius(28px);
-			}
-		}
 	}
 }
 </style>
