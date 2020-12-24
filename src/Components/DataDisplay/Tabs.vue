@@ -99,14 +99,23 @@ export default {
 		color: $gray800;
 		width: fit-content;
 		@include body2();
+		position: relative;
 		&:not(:last-child) {
 			margin-right: 12px;
 		}
 		&.active {
-			border-bottom: 2px solid $gray600;
 			font-weight: 700;
 			color: $gray800;
-			margin-bottom: -1px;
+			&:after {
+				content: '';
+				display: flex;
+				position: absolute;
+				width: 100%;
+				height: 2px;
+				background: $gray600;
+				left: 0;
+				bottom: -1px;
+			}
 		}
 		&:hover {
 			background-color: $gray100;
