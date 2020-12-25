@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Swiper, { SwiperTypes, SwiperIndicatorColors, SwiperControlColors, SwiperSpacings, SwiperControlPositions } from '@/src/Components/DataDisplay/Swiper';
+import Swiper, { SwiperTypes, SwiperIndicatorColors, SwiperControlsColors, SwiperSpacings, SwiperControlPositions } from '@/src/Components/DataDisplay/Swiper';
 import Button from '@/src/Components/Button/Button';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
@@ -27,11 +27,11 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
                 options: SwiperControlPositions,
             },
         },
-        controlColor: {
+        controlsColor: {
             description: "swiper control color",
             control: {
                 type: "select",
-                options: SwiperControlColors,
+                options: SwiperControlsColors,
             },
         },
         withIndicators: {
@@ -62,7 +62,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, Typography },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlColor="controlColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor" :spacing="spacing">
+            <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor" :spacing="spacing">
                 <template v-for="(item, index) in 5" :slot="'item' + index">
                     <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                 </template>
@@ -94,7 +94,7 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
                     <div style="padding: 12px 24px;">
-                    <Swiper :withControls="true" controlColor="dark" indicatorColor="light">
+                    <Swiper :withControls="true" controlsColor="dark" indicatorColor="light">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                         </template>

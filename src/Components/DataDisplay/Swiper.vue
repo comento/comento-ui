@@ -14,7 +14,7 @@
 				:rotate="-90"
 				class="swiper-button-prev"
 				:class="computedControlsPosition"
-				:color="computedControlColor"
+				:color="computedControlsColor"
 			></Icon>
 			<Icon
 				v-show="showInsideControl"
@@ -23,7 +23,7 @@
 				:rotate="90"
 				class="swiper-button-next"
 				:class="computedControlsPosition"
-				:color="computedControlColor"
+				:color="computedControlsColor"
 			></Icon>
 			<div
 				v-show="withIndicators"
@@ -38,7 +38,7 @@
 			:rotate="-90"
 			class="swiper-button-outside swiper-button-prev-outside"
 			:class="computedControlsPosition"
-			:color="computedControlColor"
+			:color="computedControlsColor"
 		></Icon>
 		<Icon
 			v-show="showOutsideControl"
@@ -46,7 +46,7 @@
 			:rotate="90"
 			class="swiper-button-outside swiper-button-next-outside"
 			:class="computedControlsPosition"
-			:color="computedControlColor"
+			:color="computedControlsColor"
 		></Icon>
 		<Icon
 			v-show="showTopControl"
@@ -54,7 +54,7 @@
 			:rotate="-90"
 			class="swiper-button-top swiper-button-prev-top"
 			:class="computedControlsPosition"
-			:color="computedControlColor"
+			:color="computedControlsColor"
 		></Icon>
 		<Icon
 			v-show="showTopControl"
@@ -62,7 +62,7 @@
 			:rotate="90"
 			class="swiper-button-top swiper-button-next-top"
 			:class="computedControlsPosition"
-			:color="computedControlColor"
+			:color="computedControlsColor"
 		></Icon>
 	</div>
 </template>
@@ -75,7 +75,7 @@ import 'swiper/css/swiper.css';
 
 export const SwiperTypes = ['swiper', 'swiperGroup', 'slider'];
 export const SwiperIndicatorColors = ['light', 'dark'];
-export const SwiperControlColors = ['light', 'dark'];
+export const SwiperControlsColors = ['light', 'dark'];
 export const SwiperControlPositions = ['inside', 'outside', 'top'];
 export const SwiperSpacings = [8, 12, 24];
 
@@ -109,11 +109,11 @@ export default {
 				);
 			},
 		},
-		controlColor: {
+		controlsColor: {
 			type: String,
 			default: 'light',
 			validator(value) {
-				return customValidator(value, SwiperControlColors.indexOf(value) !== -1, 'Swiper', 'controlColor');
+				return customValidator(value, SwiperControlsColors.indexOf(value) !== -1, 'Swiper', 'controlsColor');
 			},
 		},
 		withIndicators: {
@@ -207,12 +207,12 @@ export default {
 		computedIndicatorColorClass() {
 			return `swiper-indicator-${this.indicatorColor}`;
 		},
-		computedControlColor() {
+		computedControlsColor() {
 			const colorMap = {
 				light: 'white',
 				dark: 'gray800',
 			};
-			return colorMap[this.controlColor];
+			return colorMap[this.controlsColor];
 		},
 		computedControlsPosition() {
 			return this.controlsPosition;
