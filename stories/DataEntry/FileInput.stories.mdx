@@ -1,0 +1,145 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import FileInput from "@/src/Components/DataEntry/FileInput/FileInput";
+import FileList from "@/src/Components/DataEntry/FileInput/FileList";
+
+<Meta
+  title="Data Entry/FileInput"
+  component={ FileInput }
+  argTypes={{
+    accept: {
+      description: "입력가능한 파일의 확장자목록",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "text",
+      },
+    },
+    multiple: {
+      description: "여러 파일을 한번에 올릴 수 있는지",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "boolean",
+      },
+    },
+    full: {
+      description: "파일 첨부 버튼 width가 100%인지",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "boolean",
+      },
+    },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  data() {
+      return {
+          files: [],
+      };
+  },
+  methods: {
+    handleUploadFiles(files) {
+        const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
+        this.files = [...this.files, ...filesWithLoading];
+    },
+    handleClickFileDownloadIcon(payload) {
+        this.files[payload.index].isLoading = true;
+        setInterval(() => {
+            this.files[payload.index].isLoading = false;
+        }, 3000);
+    },
+    handleClickItemContent(payload) {
+        alert('clickItemContent')
+    }
+  },
+  template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                <div style="width: 50%">
+              <div>files : </div>
+              <div v-for="file in files">
+                {{ file }}
+              </div>
+                 <FileInput :accept="accept" :multiple="multiple" :full="full"
+                 @uploadFiles="handleUploadFiles"
+                 />
+                 <FileList :files="files" @clickFileDownloadIcon="handleClickFileDownloadIcon" @clickItemContent="handleClickItemContent"/>
+                 </div>
+              </div>`,
+   components: { FileInput, FileList },
+});
+
+# FileInput
+
+**FileInput** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+          data() {
+              return {
+                  files: [],
+                  editFiles: [],
+              };
+          },
+          methods: {
+            handleUploadFiles(files) {
+                const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
+                this.files = [...this.files, ...filesWithLoading];
+            },
+            handleClickFileDownloadIcon(payload) {
+                this.files[payload.index].isLoading = true;
+                setInterval(() => {
+                    this.files[payload.index].isLoading = false;
+                }, 3000);
+            },
+            handleClickItemContent(payload) {
+                alert('clickItemContent')
+            },
+            handleEditUploadFiles(files) {
+                const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
+                this.editFiles = [...this.editFiles, ...filesWithLoading];
+            },
+            handleClickTrashIcon(payload) {
+                this.editFiles = this.editFiles.filter((item, index) => index !== payload.index);
+            },
+          },
+            template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <div style="width: 50%; margin-bottom: 30px;">
+                            생성 시
+                            <FileInput full
+                              @uploadFiles="handleUploadFiles"
+                            />
+                            <FileList :files="files" @clickFileDownloadIcon="handleClickFileDownloadIcon" @clickItemContent="handleClickItemContent"/>
+                        </div>
+                        <div style="width: 50%">
+                            수정 시
+                            <FileInput full
+                              @uploadFiles="handleEditUploadFiles"
+                            />
+                            <FileList :files="editFiles" isEdit @clickTrashIcon="handleClickTrashIcon" @clickItemContent="handleClickItemContent"/>
+                        </div>
+                      </div>`,
+             components: { FileInput, FileList },
+        }}
+    </Story>
+</Canvas>
