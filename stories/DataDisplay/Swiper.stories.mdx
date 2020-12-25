@@ -34,8 +34,8 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
                 options: SwiperControlsColors,
             },
         },
-        withIndicators: {
-            description: "With Indicators",
+        withIndicator: {
+            description: "With Indicator",
             control: {
                 type: "boolean",
             },
@@ -68,7 +68,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, Typography },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :type="type" :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
+            <Swiper :type="type" :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :withIndicator="withIndicator" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
                 <template v-for="(item, index) in 5" :slot="'item' + index">
                     <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                 </template>
@@ -145,9 +145,9 @@ export const Default = (args, { argTypes }) => ({
 </Canvas>
 
 ## Stories
-### ControlsColors
+### ControlsColor
 <Canvas>
-    <Story name="ControlsColors" height="100px">
+    <Story name="ControlsColor" height="100px">
         {{
             data() {
                 return {

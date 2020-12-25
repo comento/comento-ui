@@ -26,7 +26,7 @@
 				:color="computedControlsColor"
 			></Icon>
 			<div
-				v-show="withIndicators"
+				v-show="withIndicator"
 				slot="pagination"
 				class="swiper-pagination"
 				:class="computedIndicatorColorClass"
@@ -116,11 +116,11 @@ export default {
 				return customValidator(value, SwiperControlsColors.indexOf(value) !== -1, 'Swiper', 'controlsColor');
 			},
 		},
-		withIndicators: {
+		withIndicator: {
 			type: Boolean,
 			default: false,
 			validator(value) {
-				return customValidator(value, typeof value === 'boolean', 'Swiper', 'withIndicators');
+				return customValidator(value, typeof value === 'boolean', 'Swiper', 'withIndicator');
 			},
 		},
 		indicatorColor: {
