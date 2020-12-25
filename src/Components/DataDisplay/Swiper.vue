@@ -137,6 +137,10 @@ export default {
 				return customValidator(value, SwiperSpacings.indexOf(value) !== -1, 'Swiper', 'spacing');
 			},
 		},
+		slidesPerView: {
+			type: Number,
+			default: 3,
+		},
 	},
 	data() {
 		return {
@@ -160,6 +164,18 @@ export default {
 			return this.type === 'swiper';
 		},
 		swiperTypeOptions() {
+			return {
+				slidesPerView: 'auto',
+			};
+		},
+		swiperGroupTypeOptions() {
+			return {
+				slidesPerView: this.slidesPerView,
+				spaceBetween: this.spacing,
+			};
+		},
+		// commont options
+		swiperOptions() {
 			// ex. swiper-button-next, swiper-button-next-outside
 			const swiperButtonNextSelector =
 				this.controlsPosition === 'inside'
@@ -170,8 +186,6 @@ export default {
 					? '.swiper-button-prev'
 					: `.swiper-button-prev-${this.controlsPosition}`;
 			return {
-				slidesPerView: 'auto',
-				allowTouchMove: false,
 				navigation: {
 					nextEl: swiperButtonNextSelector,
 					prevEl: swiperButtonPrevSelector,
@@ -179,24 +193,7 @@ export default {
 				pagination: {
 					el: '.swiper-pagination',
 				},
-			};
-		},
-		swiperGroupTypeOptions() {
-			return {
-				slidesPerView: 3,
-				spaceBetween: this.spacing,
-				allowTouchMove: false,
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-				pagination: {
-					el: '.swiper-pagination',
-				},
-			};
-		},
-		swiperOptions() {
-			return {
+				allowTouchMove: true,
 				...(this.isSwiperType && this.swiperTypeOptions),
 				...(this.isSwiperGroupType && this.swiperGroupTypeOptions),
 			};

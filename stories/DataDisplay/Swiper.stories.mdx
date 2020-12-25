@@ -54,6 +54,12 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
                 options: SwiperSpacings,
             },
         },
+        slidesPerView: {
+            description: "한번에 보여줄 슬라이드 개수",
+            control: {
+                type: "number",
+            },
+        },
     }}
 />
 
@@ -62,7 +68,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, Typography },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor" :spacing="spacing">
+            <Swiper :type="type" :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :withIndicators="withIndicators" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
                 <template v-for="(item, index) in 5" :slot="'item' + index">
                     <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                 </template>
