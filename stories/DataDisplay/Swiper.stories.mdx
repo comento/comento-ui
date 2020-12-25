@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Swiper, { SwiperTypes, SwiperIndicatorColors, SwiperControlsColors, SwiperSpacings, SwiperControlPositions } from '@/src/Components/DataDisplay/Swiper';
+import Swiper, { SwiperTypes, SwiperControlsColors, SwiperControlPositions, SwiperIndicatorColors, SwiperIndicatorPositions, SwiperSpacings } from '@/src/Components/DataDisplay/Swiper';
 import Button from '@/src/Components/Button/Button';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
@@ -40,6 +40,13 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
                 type: "boolean",
             },
         },
+        indicatorPosition: {
+            description: "Indicator 위치",
+            control: {
+                type: "select",
+                options: SwiperIndicatorPositions,
+            },
+        },
         indicatorColor: {
             description: "swiper indicator color",
             control: {
@@ -68,7 +75,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, Typography },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :type="type" :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :withIndicator="withIndicator" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
+            <Swiper :type="type" :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :withIndicator="withIndicator" :indicatorPosition="indicatorPosition" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
                 <template v-for="(item, index) in 5" :slot="'item' + index">
                     <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                 </template>
@@ -194,6 +201,34 @@ export const Default = (args, { argTypes }) => ({
                             <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                         </template>
                     </Swiper>
+                </div>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+
+## Stories
+### IndicatorPosition
+<Canvas>
+    <Story name="IndicatorPosition">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                }
+            },
+            template: `
+                <div style="padding: 24px 32px;">
+                    <Swiper indicatorColor="dark" indicatorPosition="inside" withIndicator style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                   <Swiper indicatorColor="dark" indicatorPosition="outside" withIndicator>
+                       <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                           <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                       </template>
+                   </Swiper>
                 </div>`,
             components: { Swiper, Typography },
         }}

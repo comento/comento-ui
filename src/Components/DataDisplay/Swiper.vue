@@ -26,7 +26,7 @@
 				:color="computedControlsColor"
 			></Icon>
 			<div
-				v-show="withIndicator"
+				v-show="showInsideIndicator"
 				slot="pagination"
 				class="swiper-pagination"
 				:class="computedIndicatorColorClass"
@@ -64,6 +64,12 @@
 			:class="computedControlsPosition"
 			:color="computedControlsColor"
 		></Icon>
+		<div
+			v-show="showOutsideIndicator"
+			slot="pagination"
+			class="swiper-pagination-outside"
+			:class="computedIndicatorColorClass"
+		></div>
 	</div>
 </template>
 
@@ -74,9 +80,11 @@ import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesom
 import 'swiper/css/swiper.css';
 
 export const SwiperTypes = ['swiper', 'swiperGroup', 'slider'];
-export const SwiperIndicatorColors = ['light', 'dark'];
 export const SwiperControlsColors = ['light', 'dark'];
 export const SwiperControlPositions = ['inside', 'outside', 'top'];
+export const SwiperIndicatorColors = ['light', 'dark'];
+export const SwiperIndicatorPositions = ['inside', 'outside'];
+
 export const SwiperSpacings = [8, 12, 24];
 
 export default {
@@ -123,6 +131,18 @@ export default {
 				return customValidator(value, typeof value === 'boolean', 'Swiper', 'withIndicator');
 			},
 		},
+		indicatorPosition: {
+			type: String,
+			default: 'inside',
+			validator(value) {
+				return customValidator(
+					value,
+					SwiperIndicatorPositions.indexOf(value) !== -1,
+					'Swiper',
+					'indicatorPosition',
+				);
+			},
+		},
 		indicatorColor: {
 			type: String,
 			default: 'light',
@@ -157,6 +177,12 @@ export default {
 		showTopControl() {
 			return this.withControls && this.controlsPosition === 'top';
 		},
+		showInsideIndicator() {
+			return this.withIndicator && this.indicatorPosition === 'inside';
+		},
+		showOutsideIndicator() {
+			return this.withIndicator && this.indicatorPosition === 'outside';
+		},
 		isSwiperGroupType() {
 			return this.type === 'swiperGroup';
 		},
@@ -185,13 +211,17 @@ export default {
 				this.controlsPosition === 'inside'
 					? '.swiper-button-prev'
 					: `.swiper-button-prev-${this.controlsPosition}`;
+			const swiperPaginationSelector =
+				this.indicatorPosition === 'inside'
+					? '.swiper-pagination'
+					: `.swiper-pagination-${this.indicatorPosition}`;
 			return {
 				navigation: {
 					nextEl: swiperButtonNextSelector,
 					prevEl: swiperButtonPrevSelector,
 				},
 				pagination: {
-					el: '.swiper-pagination',
+					el: swiperPaginationSelector,
 				},
 				allowTouchMove: true,
 				...(this.isSwiperType && this.swiperTypeOptions),
@@ -284,5 +314,13 @@ $swiper-background-color: #c4c4c4;
 	opacity: 0.35;
 	cursor: auto;
 	pointer-events: none;
+}
+::v-deep .swiper-pagination-outside {
+	text-align: center;
+	.swiper-pagination-bullet {
+		&:not(:last-child) {
+			margin-right: 8px;
+		}
+	}
 }
 </style>
