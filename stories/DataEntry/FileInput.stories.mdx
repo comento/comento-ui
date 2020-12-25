@@ -65,11 +65,7 @@ export const Default = (args, { argTypes }) => ({
     }
   },
   template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <div style="width: 50%">
-              <div>files : </div>
-              <div v-for="file in files">
-                {{ file }}
-              </div>
+                <div style="width: 100%">
                  <FileInput :accept="accept" :multiple="multiple" :full="full"
                  @uploadFiles="handleUploadFiles"
                  />
@@ -124,14 +120,14 @@ export const Default = (args, { argTypes }) => ({
             },
           },
             template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                        <div style="width: 50%; margin-bottom: 30px;">
+                        <div style="width: 100%; margin-bottom: 30px;">
                             생성 시
                             <FileInput full
                               @uploadFiles="handleUploadFiles"
                             />
                             <FileList :files="files" @clickFileDownloadIcon="handleClickFileDownloadIcon" @clickItemContent="handleClickItemContent"/>
                         </div>
-                        <div style="width: 50%">
+                        <div style="width: 100%">
                             수정 시
                             <FileInput full
                               @uploadFiles="handleEditUploadFiles"
