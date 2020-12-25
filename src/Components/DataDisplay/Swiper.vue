@@ -319,7 +319,7 @@ $swiper-background-color: #c4c4c4;
 	text-align: center;
 	.swiper-pagination-bullet {
 		&:not(:last-child) {
-			margin-right: 8px;
+			margin-right: 6px;
 		}
 	}
 }
