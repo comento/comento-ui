@@ -68,8 +68,11 @@ export default {
 		};
 	},
 	computed: {
+		isFull() {
+			return this.full;
+		},
 		computedMaxWidth() {
-			return { 'max-width': this.maxWidth };
+			return { 'max-width': !this.isFull && this.maxWidth };
 		},
 		computedMaxHeight() {
 			return { maxHeight: this.maxHeight !== 'auto' && this.maxHeight };
@@ -78,7 +81,7 @@ export default {
 			return !this.vertical && 'horizontal';
 		},
 		computedFull() {
-			return { full: this.full };
+			return { full: this.isFull };
 		},
 	},
 	components: {
