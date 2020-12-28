@@ -56,7 +56,25 @@ export default {
 				background: colors[this.color],
 				top: `calc(100% - ${this.offsetY}px)`,
 				left: `calc(100% - ${this.offsetX}px)`,
+				...this.computedPadding,
 			};
+		},
+		computedPadding() {
+			const is2Byte = this.getByte(this.text) === 2;
+			const isN = this.text === 'N';
+			if (is2Byte || isN) {
+				// 2byte거나 'N'일 때는 동그란 모양을 위해 padding이 3px 4px로 된다.
+				return { padding: '3px 4px' };
+			}
+			return false;
+		},
+	},
+	methods: {
+		getByte(string) {
+			return string
+				.split('')
+				.map(s => s.charCodeAt(0))
+				.reduce((prev, c) => prev + (c === 10 ? 2 : c >> 7 ? 2 : 1), 0);
 		},
 	},
 	components: { Typography },
