@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import TextField, { textfieldTypes, textfieldAligns } from "@/src/Components/DataEntry/TextField";
+import TextField, { textFieldTypes, textFieldAligns } from "@/src/Components/DataEntry/TextField";
 
 <Meta
     title="Data Entry/TextField"
@@ -14,7 +14,7 @@ import TextField, { textfieldTypes, textfieldAligns } from "@/src/Components/Dat
             description: "텍스트필드 type",
             control: {
             type: "select",
-            options: textfieldTypes,
+            options: textFieldTypes,
            },
         },
         placeholder: {
@@ -30,9 +30,9 @@ import TextField, { textfieldTypes, textfieldAligns } from "@/src/Components/Dat
         align: {
             description: "텍스트필드 text 정렬",
             control: {
-            type: "select",
-            options: textfieldAligns,
-           },
+                type: "select",
+                options: textFieldAligns,
+            },
         },
         focus: {
             description: "텍스트필드 focus 활성화",

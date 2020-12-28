@@ -31,8 +31,9 @@
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Typography from '@/src/Elements/Core/Typography/Typography';
-export const textfieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
-export const textfieldAligns = ['left', 'center', 'right'];
+
+export const textFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
+export const textFieldAligns = ['left', 'center', 'right'];
 
 export default {
 	name: 'TextField',
@@ -42,9 +43,9 @@ export default {
 			type: String,
 			default: 'text',
 			validator(value) {
-				const isValid = textfieldTypes.indexOf(value) !== -1;
+				const isValid = textFieldTypes.indexOf(value) !== -1;
 				if (!isValid) {
-					console.error(`${value} is not a valid name of the textfield type`);
+					console.error(`${value} is not a valid name of the TextField type`);
 				}
 				return isValid;
 			},
@@ -69,9 +70,9 @@ export default {
 			type: String,
 			default: 'left',
 			validator(value) {
-				const isValid = textfieldAligns.indexOf(value) !== -1;
+				const isValid = textFieldAligns.indexOf(value) !== -1;
 				if (!isValid) {
-					console.error(`${value} is not a valid name of the textfield align`);
+					console.error(`${value} is not a valid name of the TextField align`);
 				}
 				return isValid;
 			},
