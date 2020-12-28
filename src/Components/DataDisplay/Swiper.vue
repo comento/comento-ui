@@ -270,10 +270,11 @@ export default {
 
 <style scoped lang="scss">
 $swiper-background-color: #c4c4c4;
+$swiper-control-size: 24px;
+$swiper-control-circle-radius: 16px;
 .swiper {
 	height: 300px;
 	width: 100%;
-
 	.swiper-slide {
 		display: flex;
 		justify-content: center;
@@ -304,9 +305,8 @@ $swiper-background-color: #c4c4c4;
 	z-index: 10;
 	cursor: pointer;
 	top: 50%;
-	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
-	height: var(--swiper-navigation-size);
 }
+/* 원형 컨트롤의 disabled 기존 스타일을 초기화 */
 :not(.swiper-button-background-circle) {
 	&.swiper-button-disabled {
 		opacity: 1;
@@ -315,7 +315,8 @@ $swiper-background-color: #c4c4c4;
 }
 .swiper-button-background-circle {
 	border-radius: 50%;
-	padding: 8px;
+	padding: calc((#{$swiper-control-circle-radius} * 2 - #{$swiper-control-size}) / 2);
+	margin-top: calc(-1 * var(#{$swiper-control-circle-radius}) / 2);
 	&-light {
 		background-color: rgba(0, 0, 0, 0.3) !important;
 		&.swiper-button-disabled {
@@ -334,6 +335,10 @@ $swiper-background-color: #c4c4c4;
 .swiper-button {
 	width: auto;
 	height: auto;
+	margin-top: calc(-1 * #{$swiper-control-size} / 2) !important;
+	&.swiper-button-background-circle {
+		margin-top: calc(-1 * #{$swiper-control-circle-radius}) !important;
+	}
 }
 .swiper-button-prev {
 	left: 8px;
