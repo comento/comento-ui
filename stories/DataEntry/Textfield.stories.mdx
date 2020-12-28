@@ -5,17 +5,17 @@ import TextField, { textFieldTypes, textFieldAligns } from "@/src/Components/Dat
     title="Data Entry/TextField"
     component={ TextField }
     argTypes={{
-        id: {
-            description: "텍스트필드ID (값이 없으면 textField-uid로 생성됨)",
-            defaultValue: '',
-            control: { type: "text" },
-        },
         type: {
             description: "텍스트필드 type",
             control: {
             type: "select",
             options: textFieldTypes,
            },
+        },
+        outlined: {
+            description: "텍스트필드 outlined (true) / underline(false)",
+            defaultValue: false,
+            control: { type: "boolean" },
         },
         placeholder: {
             description: "체크박스 placeholder 문구",
@@ -59,14 +59,14 @@ import TextField, { textFieldTypes, textFieldAligns } from "@/src/Components/Dat
             defaultValue: '',
             control: { type: "text" },
         },
-        outlined: {
-            description: "텍스트필드 outlined (true) / underline(false)",
-            defaultValue: false,
-            control: { type: "boolean" },
-        },
         value: {
             description: "TextArea 들어갈 텍스트",
             defaultValue: null,
+            control: { type: "text" },
+        },
+        id: {
+            description: "텍스트필드ID (값이 없으면 textField-uid로 생성됨)",
+            defaultValue: '',
             control: { type: "text" },
         },
     }}
