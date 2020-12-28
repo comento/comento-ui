@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-file-input" :class="classes">
 		<label for="files">
-			<FileButton @clickFileButton="clickFileButton"></FileButton>
+			<FileButton @clickFileButton="handleClickFileButton"></FileButton>
 			<input
 				id="files"
 				ref="files"
@@ -56,7 +56,7 @@ export default {
 			const uploadedFiles = this.$refs.files.files;
 			this.$emit('uploadFiles', uploadedFiles);
 		},
-		clickFileButton() {
+		handleClickFileButton() {
 			this.$refs.files.click();
 		},
 	},
@@ -69,12 +69,13 @@ export default {
 <style lang="scss" scoped>
 .c-file {
 	&-input {
-		&.full {
-			width: 100%;
+		width: 100%;
+		&:hover {
+			background-color: $gray100;
 		}
 	}
 }
 label {
-	width: 100%;
+	cursor: pointer;
 }
 </style>
