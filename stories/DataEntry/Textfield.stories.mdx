@@ -77,18 +77,20 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { TextField },
     template:
-        `<TextField :id="id"
-                    :type="type"
-                    outlined
-                    :placeholder="placeholder"
-                    :label="label"
-                    :align="align"
-                    :focus="focus"
-                    :readonly="readonly"
-                    :disabled="disabled"
-                    :outlined="outlined"
-                    :value="value"
-                    :error="error"/>`,
+        `<TextField
+            :id="id"
+            :type="type"
+            outlined
+            :placeholder="placeholder"
+            :label="label"
+            :align="align"
+            :focus="focus"
+            :readonly="readonly"
+            :disabled="disabled"
+            :outlined="outlined"
+            :value="value"
+            :error="error"
+        />`,
 });
 
 # TextField
