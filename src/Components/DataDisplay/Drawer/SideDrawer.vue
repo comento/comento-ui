@@ -8,7 +8,7 @@
 		@close="$emit('close')"
 	>
 		<div v-if="showDrawer" class="c-side-drawer">
-			<Box class="c-side-drawer--title-wrapper">
+			<Box class="c-side-drawer--title-wrapper" :paddings="[16, 16, 16, 16]">
 				<Typography type="headline6" :font-weight="700">
 					<slot name="title"> </slot>
 				</Typography>

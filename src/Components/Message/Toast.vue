@@ -1,21 +1,24 @@
 <template>
 	<transition name="slide-fade">
 		<aside v-if="sync_show" class="c-application c-toast" :class="[computedType, computedPosition]">
-			<Typography class="c-toast--message" element="p" type="body2">
-				<div class="c-toast--icon" :style="$slots['left-icon'] && 'margin-right: 4px'">
-					<slot name="left-icon" />
-				</div>
-				<slot />
-				<div class="c-toast--icon" :style="$slots['right-icon'] && 'margin-left: 4px'">
-					<slot name="right-icon" />
-				</div>
+			<Icon v-if="icon" class="c-toast--icon" :name="icon" :color="toastItemColor" />
+			<Typography class="c-toast--message" element="p" type="body2" :color="toastItemColor">
+				{{ message }}
 			</Typography>
+			<div v-if="$slots['button']" class="c-toast--button">
+				<slot name="button" />
+			</div>
 		</aside>
 	</transition>
 </template>
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import Icon, { IconNames } from '../../Elements/Core/Icon/Icon';
+import customValidator from '@/utils/custom-validator.js';
+
+export const toastTypes = ['basic', 'error', 'success'];
+export const toastPositions = ['top', 'bottom'];
 
 export default {
 	name: 'Toast',
@@ -24,14 +27,20 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		message: {
+			type: String,
+			default: '',
+			required: true,
+		},
 		type: {
 			type: String,
 			default: 'basic',
 			validator(value) {
-				return ['basic', 'error', 'success'].indexOf(value) !== -1;
+				const isValid = toastTypes.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Toast', 'type');
 			},
 		},
-		time: {
+		timeout: {
 			type: Number,
 			default: 3000,
 		},
@@ -39,13 +48,22 @@ export default {
 			type: String,
 			default: 'bottom',
 			validator(value) {
-				return ['top', 'bottom'].indexOf(value) !== -1;
+				const isValid = toastPositions.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Toast', 'position');
+			},
+		},
+		icon: {
+			type: String,
+			default: null,
+			validator(value) {
+				const isValid = IconNames.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Toast', 'icon');
 			},
 		},
 	},
 	data() {
 		return {
-			motionStyle: null,
+			toastItemColor: 'white',
 		};
 	},
 	computed: {
@@ -71,11 +89,12 @@ export default {
 			this.$nextTick(() => {
 				setTimeout(() => {
 					this.$emit('update:show', false);
-				}, this.time);
+				}, this.timeout);
 			});
 		},
 	},
 	components: {
+		Icon,
 		Typography,
 	},
 };
@@ -94,6 +113,9 @@ export default {
 	@include shadow4();
 	display: table; // width: fit-content 대체
 	max-width: 90%;
+	@include flexbox();
+	@include flex-direction(row);
+	@include align-items(center);
 
 	&--message {
 		margin: 0;
@@ -102,6 +124,11 @@ export default {
 	}
 
 	&--icon {
+		@include flexbox();
+		margin-right: 4px;
+	}
+
+	&--button {
 		@include flexbox();
 	}
 

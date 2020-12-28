@@ -1,17 +1,17 @@
 <template>
 	<div id="app">
 		<div class="demo-container">
-			<div>
+			<div class="mr-12">
 				<input id="left" v-model="align" type="radio" value="left" />
 				<label for="left">left</label>
 			</div>
 
-			<div>
+			<div class="mr-12">
 				<input id="right" v-model="align" type="radio" value="right" />
 				<label for="right">right</label>
 			</div>
 
-			<div>
+			<div class="mr-12">
 				<input id="up" v-model="align" type="radio" value="up" />
 				<label for="up">up</label>
 			</div>
@@ -21,8 +21,8 @@
 				<label for="down">down</label>
 			</div>
 		</div>
+		<Button color="primary" @click="toggle">Open</Button>
 
-		<button @click="toggle">Open/Close</button>
 		<SideDrawer
 			:mask-closable="true"
 			:z-index="1002"
@@ -33,7 +33,7 @@
 		>
 			<template v-slot:title>test</template>
 			<template v-slot:right-content>
-				<Button color="gray" type="outlined" size="small">모두 읽음 표시</Button>
+				<Button color="secondary" type="outlined" size="small">모두 읽음 표시</Button>
 			</template>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
@@ -105,12 +105,10 @@ export default {
 <style lang="scss" scoped>
 #app {
 	.demo-container {
-		margin-top: 60px;
 		text-align: center;
 		display: flex;
-		margin: 0 auto;
+		margin-bottom: 20px;
 		justify-content: space-around;
-		width: 60%;
 		align-content: center;
 		align-items: center;
 	}

@@ -1,1 +1,2 @@
+import './globalMixin';
 import './windowMixin';
