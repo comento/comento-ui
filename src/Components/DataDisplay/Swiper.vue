@@ -226,6 +226,7 @@ export default {
 				},
 				pagination: {
 					el: swiperPaginationSelector,
+					clickable: true,
 				},
 				allowTouchMove: true,
 				...(this.isSwiperType && this.swiperTypeOptions),
