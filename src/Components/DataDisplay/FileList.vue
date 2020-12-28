@@ -29,10 +29,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		type: {
-			type: String,
-			default: 'assignment',
-		},
 	},
 	methods: {
 		handleClickFileDownloadIcon(payload) {
