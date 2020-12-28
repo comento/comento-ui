@@ -10,7 +10,8 @@ import Divider from "@/src/Elements/Utility/Divider";
   component={ FileInput }
   argTypes={{
     accept: {
-      description: "입력가능한 파일의 확장자목록",
+      description: "입력가능한 파일의 확장자목록<br/>형식은 오른쪽 defaultValue 참고",
+      defaultValue: ".jpg,.jpeg,.bmp,.png,.doc",
       table: {
         type: {
           summary: null,
