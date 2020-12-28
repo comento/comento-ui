@@ -129,14 +129,9 @@ export default {
 			};
 		},
 		computedError() {
-			if (this.error) {
-				return { error: this.error };
-			} else {
-				return false;
-			}
+			return { error: this.error };
 		},
 	},
-
 	mounted() {
 		if (this.focus) {
 			this.$refs[this.computedId].focus();
