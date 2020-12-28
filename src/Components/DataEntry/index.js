@@ -9,5 +9,4 @@ import Select from './Select';
 import TextArea from './TextArea';
 import TextField from './TextField';
 
-
 export { Checkbox, Dropdown, Form, FileInput, Input, InputGroup, SearchInput, Select, TextArea, TextField };
