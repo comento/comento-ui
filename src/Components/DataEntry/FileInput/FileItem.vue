@@ -69,6 +69,7 @@ export default {
 			display: flex;
 			height: 26px;
 			align-items: center;
+			padding: 8px 12px 8px 6px;
 			&:hover {
 				background-color: $gray100;
 			}
