@@ -54,6 +54,10 @@ export default {
 			type: String,
 			default: '',
 		},
+		id: {
+			type: String,
+			default: '',
+		},
 		placeholder: {
 			type: String,
 			default: '내용을 입력하세요.',
