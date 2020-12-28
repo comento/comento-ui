@@ -12,8 +12,8 @@
 				slot="button-prev"
 				name="IconArrowLargeLine"
 				:rotate="-90"
-				class="swiper-button-prev"
-				:class="computedControlsPosition"
+				class="swiper-button swiper-button-prev"
+				:class="[computedControlsPosition, computedControlsCircle]"
 				:color="computedControlsColor"
 			></Icon>
 			<Icon
@@ -21,8 +21,8 @@
 				slot="button-next"
 				name="IconArrowLargeLine"
 				:rotate="90"
-				class="swiper-button-next"
-				:class="computedControlsPosition"
+				class="swiper-button swiper-button-next"
+				:class="[computedControlsPosition, computedControlsCircle]"
 				:color="computedControlsColor"
 			></Icon>
 			<div
@@ -36,16 +36,16 @@
 			v-show="showOutsideControl"
 			name="IconArrowLargeLine"
 			:rotate="-90"
-			class="swiper-button-outside swiper-button-prev-outside"
-			:class="computedControlsPosition"
+			class="swiper-button swiper-button-outside swiper-button-prev-outside"
+			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
 		></Icon>
 		<Icon
 			v-show="showOutsideControl"
 			name="IconArrowLargeLine"
 			:rotate="90"
-			class="swiper-button-outside swiper-button-next-outside"
-			:class="computedControlsPosition"
+			class="swiper-button swiper-button-outside swiper-button-next-outside"
+			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
 		></Icon>
 		<Icon
@@ -53,7 +53,7 @@
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button-top swiper-button-prev-top"
-			:class="computedControlsPosition"
+			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
 		></Icon>
 		<Icon
@@ -61,7 +61,7 @@
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button-top swiper-button-next-top"
-			:class="computedControlsPosition"
+			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
 		></Icon>
 		<div
@@ -123,6 +123,10 @@ export default {
 			validator(value) {
 				return customValidator(value, SwiperControlsColors.indexOf(value) !== -1, 'Swiper', 'controlsColor');
 			},
+		},
+		controlsCircle: {
+			type: Boolean,
+			default: false,
 		},
 		withIndicator: {
 			type: Boolean,
@@ -239,10 +243,21 @@ export default {
 				light: 'white',
 				dark: 'gray800',
 			};
-			return colorMap[this.controlsColor];
+			if (this.controlsCircle && this.controlsColor === 'dark') {
+				return 'gray500';
+			} else {
+				return colorMap[this.controlsColor];
+			}
 		},
 		computedControlsPosition() {
 			return this.controlsPosition;
+		},
+		computedControlsCircle() {
+			return (
+				this.withControls &&
+				this.controlsCircle &&
+				`swiper-button-background-circle swiper-button-background-circle-${this.controlsColor}`
+			);
 		},
 	},
 	components: {
@@ -292,11 +307,39 @@ $swiper-background-color: #c4c4c4;
 	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
 	height: var(--swiper-navigation-size);
 }
+:not(.swiper-button-background-circle) {
+	&.swiper-button-disabled {
+		opacity: 1;
+		fill: $gray300 !important;
+	}
+}
+.swiper-button-background-circle {
+	border-radius: 50%;
+	padding: 8px;
+	&-light {
+		background-color: rgba(0, 0, 0, 0.3) !important;
+		&.swiper-button-disabled {
+			background-color: rgba(0, 0, 0, 0.3) !important;
+			opacity: 0.1;
+		}
+	}
+	&-dark {
+		background-color: rgba(255, 255, 255, 0.9) !important;
+		&.swiper-button-disabled {
+			background-color: rgba(255, 255, 255, 0.9) !important;
+			opacity: 0.3;
+		}
+	}
+}
+.swiper-button {
+	width: auto;
+	height: auto;
+}
 .swiper-button-prev {
-	left: 15px;
+	left: 8px;
 }
 .swiper-button-next {
-	right: 15px;
+	right: 8px;
 }
 .swiper-button-prev-outside {
 	left: -31px;
@@ -315,11 +358,6 @@ $swiper-background-color: #c4c4c4;
 }
 .swiper-button-next-top {
 	right: 0;
-}
-.swiper-button-disabled {
-	opacity: 0.35;
-	cursor: auto;
-	pointer-events: none;
 }
 ::v-deep .swiper-pagination-outside {
 	text-align: center;
