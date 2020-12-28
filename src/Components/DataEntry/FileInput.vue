@@ -18,7 +18,7 @@
 
 <script>
 import customValidator from '@/utils/custom-validator.js';
-import FileButton from '@/src/Components/DataEntry/FileInput/FileButton';
+import FileButton from '@/src/Components/Button/FileButton';
 export default {
 	name: 'FileInput',
 	props: {
