@@ -75,7 +75,7 @@ export const Default = (args, { argTypes }) => ({
     template: `
         <div style="padding: 12px 32px;">
             <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :controlsCircle="controlsCircle" :withIndicator="withIndicator" :indicatorPosition="indicatorPosition" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
-                <template v-for="(item, index) in 5" :slot="'item' + index">
+                <template v-for="(item, index) in 10" :slot="'item' + index">
                     <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                 </template>
             </Swiper>
@@ -101,7 +101,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             data() {
                 return {
-                    itemLength: 5,
+                    itemLength: 10,
                 }
             },
             template: `
