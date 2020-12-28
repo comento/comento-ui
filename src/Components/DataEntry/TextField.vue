@@ -163,6 +163,9 @@ export default {
 		&::placeholder {
 			color: $gray300;
 		}
+		&:disabled {
+			background: $gray000;
+		}
 		&.outlined {
 			padding: 0 16px;
 			border: 1px solid $gray200;
