@@ -268,7 +268,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 $swiper-background-color: #c4c4c4;
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;
@@ -347,16 +347,27 @@ $swiper-control-circle-radius: 16px;
 	right: 8px;
 }
 .swiper-button-prev-outside {
-	left: -31px;
+	left: calc(-1 * (#{$swiper-control-size} + 8px));
+	&.swiper-button-background-circle {
+		left: calc(-1 * (#{$swiper-control-circle-radius} * 2 + 8px));
+	}
 }
 .swiper-button-next-outside {
-	right: -31px;
+	right: calc(-1 * (#{$swiper-control-size} + 8px));
+	&.swiper-button-background-circle {
+		right: calc(-1 * (#{$swiper-control-circle-radius} * 2 + 8px));
+	}
 }
 .swiper-button-top {
 	position: absolute;
 	z-index: 10;
 	cursor: pointer;
-	top: -38px;
+	width: auto;
+	height: auto;
+	top: calc(-1 * (#{$swiper-control-size} + 8px));
+	&.swiper-button-background-circle {
+		top: calc(-1 * (#{$swiper-control-circle-radius} * 2 + 8px));
+	}
 }
 .swiper-button-prev-top {
 	right: 38px;
