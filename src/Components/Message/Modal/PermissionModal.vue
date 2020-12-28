@@ -1,26 +1,28 @@
 <template>
-	<Modal :show="show" :show-close-button="false" :max-width="maxWidth" :persistent="persistent" @close="close">
-		<!-- title 영역 -->
-		<Typography class="mb-8" type="body1" :align="align" color="gray900">
-			<slot name="title" />
-		</Typography>
+	<Modal :show="show" :show-close-button="false" max-width="343px" :persistent="persistent" @close="close">
+		<div class="c-modal--content-container">
+			<!-- title 영역 -->
+			<Typography class="mb-8" type="body1" align="center" color="gray900" font-weight="bold">
+				<slot name="title" />
+			</Typography>
 
-		<!-- content 영역 -->
-		<Typography class="mb-8" type="body2" :align="align" color="gray800">
-			<div class="c-modal--content-wrapper">
-				<slot name="content" />
-			</div>
-		</Typography>
+			<!-- content 영역 -->
+			<Typography type="body2" align="center" color="gray800">
+				<div class="c-modal--content-wrapper">
+					<slot name="content" />
+				</div>
+			</Typography>
+		</div>
 
 		<!-- button 영역 -->
 		<div class="c-modal--button-group">
 			<!-- 취소 버튼 -->
 			<div class="c-modal--cancel-button c-pointer" @click="close">
-				<Typography type="body1" :color="leftButtonColor" align="center">취소</Typography>
+				<Typography type="body1" :color="cancelButtonColor" align="center">취소</Typography>
 			</div>
 			<!-- 확인 버튼 -->
 			<div class="c-modal--confirm-button c-pointer" @click="successCallback">
-				<Typography type="body1" :color="rightButtonColor" align="center">
+				<Typography type="body1" :color="confirmButtonColor" align="center">
 					{{ successMessage }}
 				</Typography>
 			</div>
@@ -39,15 +41,11 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		align: {
-			type: String,
-			default: 'center',
-		},
-		leftButtonColor: {
+		cancelButtonColor: {
 			type: String,
 			default: 'gray500',
 		},
-		rightButtonColor: {
+		confirmButtonColor: {
 			type: String,
 			default: 'gray500',
 		},
@@ -63,9 +61,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		maxWidth: {
-			type: String,
-		},
 	},
 	methods: {
 		close() {
@@ -80,19 +75,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+::v-deep .c-overlay {
+	z-index: 9999 !important;
+}
+
 .c-modal {
-	&--mask::v-deep {
-		z-index: 9999;
-		.c-modal--container {
-			padding: 24px 32px 0 32px;
-			width: 343px;
-		}
+	&--content-container {
+		padding: 24px 32px;
 	}
 
 	&--button-group {
 		display: flex;
 		border-top: 1px solid $gray200;
-		margin: 32px -32px 0 -32px;
 		height: 46px;
 	}
 

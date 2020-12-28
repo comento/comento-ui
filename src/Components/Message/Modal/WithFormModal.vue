@@ -150,6 +150,7 @@ export default {
 		padding: 40px 0;
 		&.scroll {
 			.c-modal--content-wrapper {
+				overflow-y: scroll;
 				padding-bottom: 4px;
 
 				&:after {
@@ -191,7 +192,6 @@ export default {
 		padding-right: 32px;
 
 		max-height: calc(640px - 265px);
-		overflow-y: auto;
 		@include pc {
 			max-height: calc(640px - 129px);
 		}

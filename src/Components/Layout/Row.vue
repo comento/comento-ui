@@ -1,10 +1,3 @@
-<!--
-ex) <grid>
-        <row> <- 이부분
-            <style-col>
-        </row>
-    </grid>
--->
 <template>
 	<div class="c-application c-row" :class="[computedGutters]">
 		<slot />
@@ -22,7 +15,7 @@ export default {
 	},
 	computed: {
 		computedGutters() {
-			return this.rowGutters ? 'no_gutters' : '';
+			return this.rowGutters ? 'no-gutters' : '';
 		},
 	},
 };
@@ -37,7 +30,7 @@ export default {
 	flex-wrap: wrap;
 	margin-right: -16px;
 	margin-left: -16px;
-	&.no_gutters {
+	&.no-gutters {
 		margin-right: 0;
 		margin-left: 0;
 	}
@@ -46,7 +39,7 @@ export default {
 	.c-row {
 		margin-right: -24px;
 		margin-left: -24px;
-		&.no_gutters {
+		&.no-gutters {
 			margin-right: 0;
 			margin-left: 0;
 		}
