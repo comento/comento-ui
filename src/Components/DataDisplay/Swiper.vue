@@ -10,7 +10,7 @@
 			<Icon
 				v-show="showInsideControl"
 				slot="button-prev"
-				name="IconArrowXLargeLine"
+				name="IconArrowLargeLine"
 				:rotate="-90"
 				class="swiper-button-prev"
 				:class="computedControlsPosition"
@@ -19,7 +19,7 @@
 			<Icon
 				v-show="showInsideControl"
 				slot="button-next"
-				name="IconArrowXLargeLine"
+				name="IconArrowLargeLine"
 				:rotate="90"
 				class="swiper-button-next"
 				:class="computedControlsPosition"
@@ -34,7 +34,7 @@
 		</base-swiper>
 		<Icon
 			v-show="showOutsideControl"
-			name="IconArrowXLargeLine"
+			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button-outside swiper-button-prev-outside"
 			:class="computedControlsPosition"
@@ -42,7 +42,7 @@
 		></Icon>
 		<Icon
 			v-show="showOutsideControl"
-			name="IconArrowXLargeLine"
+			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button-outside swiper-button-next-outside"
 			:class="computedControlsPosition"
@@ -50,7 +50,7 @@
 		></Icon>
 		<Icon
 			v-show="showTopControl"
-			name="IconArrowXLargeLine"
+			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button-top swiper-button-prev-top"
 			:class="computedControlsPosition"
@@ -58,7 +58,7 @@
 		></Icon>
 		<Icon
 			v-show="showTopControl"
-			name="IconArrowXLargeLine"
+			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button-top swiper-button-next-top"
 			:class="computedControlsPosition"
