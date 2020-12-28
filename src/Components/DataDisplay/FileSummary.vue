@@ -1,6 +1,6 @@
 <template>
 	<div class="c-application c-file--summary">
-		<div class="c-file--summary-left-content-wrapper">
+		<div class="c-file--summary-info-wrapper">
 			<Icon name="IconFileMediumLineLight"></Icon>
 			<Typography type="body2" color="gray500"> 첨부파일 ({{ length }}개) </Typography>
 		</div>
@@ -36,14 +36,12 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		&-left {
-			&-content {
-				&-wrapper {
-					display: flex;
-					align-items: center;
-					svg {
-						margin-right: 2px;
-					}
+		&-info {
+			&-wrapper {
+				display: flex;
+				align-items: center;
+				svg {
+					margin-right: 2px;
 				}
 			}
 		}
