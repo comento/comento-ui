@@ -206,6 +206,7 @@ export default {
 				allowTouchMove: true,
 				slidesPerView: this.slidesPerView,
 				spaceBetween: this.spacing,
+				slidesPerGroup: this.slidesPerView,
 			};
 		},
 		swiper() {
