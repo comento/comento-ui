@@ -4,7 +4,7 @@ import Row from '@/src/Components/Layout/Row';
 import StyleCol from '@/src/Components/Layout/StyleCol';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
-storiesOf('Layout', module)
+storiesOf('Layout/Grid', module)
 	.add('Basic', () => ({
 		components: { Grid, Row, StyleCol, Typography },
 		template: `<div>
