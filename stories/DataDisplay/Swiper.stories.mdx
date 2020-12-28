@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Swiper, { SwiperTypes, SwiperControlsColors, SwiperControlPositions, SwiperIndicatorColors, SwiperIndicatorPositions, SwiperSpacings } from '@/src/Components/DataDisplay/Swiper';
+import Swiper, { SwiperControlsColors, SwiperControlPositions, SwiperIndicatorColors, SwiperIndicatorPositions, SwiperSpacings } from '@/src/Components/DataDisplay/Swiper';
 import Button from '@/src/Components/Button/Button';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
@@ -7,13 +7,6 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
     title="Data Display/Swiper"
     component={ Swiper }
     argTypes={{
-        type: {
-            description: "swiper type",
-            control: {
-                type: "select",
-                options: SwiperTypes,
-            },
-        },
         withControls: {
             description: "With Controls",
             control: {
@@ -81,7 +74,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, Typography },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :type="type" :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :controlsCircle="controlsCircle" :withIndicator="withIndicator" :indicatorPosition="indicatorPosition" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
+            <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :controlsCircle="controlsCircle" :withIndicator="withIndicator" :indicatorPosition="indicatorPosition" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
                 <template v-for="(item, index) in 5" :slot="'item' + index">
                     <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
                 </template>

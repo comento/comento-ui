@@ -79,7 +79,6 @@ import Icon from '@/src/Elements/Core/Icon/Icon';
 import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 
-export const SwiperTypes = ['swiper', 'swiperGroup', 'slider'];
 export const SwiperControlsColors = ['light', 'dark'];
 export const SwiperControlPositions = ['inside', 'outside', 'top'];
 export const SwiperIndicatorColors = ['light', 'dark'];
@@ -91,13 +90,6 @@ export default {
 	name: 'Swiper',
 	inheritAttrs: false,
 	props: {
-		type: {
-			type: String,
-			default: 'swiper',
-			validator(value) {
-				return customValidator(value, SwiperTypes.indexOf(value) !== -1, 'Swiper', 'type');
-			},
-		},
 		withControls: {
 			type: Boolean,
 			default: false,
@@ -163,7 +155,7 @@ export default {
 		},
 		slidesPerView: {
 			type: Number,
-			default: 3,
+			default: 1,
 		},
 	},
 	data() {
@@ -186,23 +178,6 @@ export default {
 		},
 		showOutsideIndicator() {
 			return this.withIndicator && this.indicatorPosition === 'outside';
-		},
-		isSwiperGroupType() {
-			return this.type === 'swiperGroup';
-		},
-		isSwiperType() {
-			return this.type === 'swiper';
-		},
-		swiperTypeOptions() {
-			return {
-				slidesPerView: 'auto',
-			};
-		},
-		swiperGroupTypeOptions() {
-			return {
-				slidesPerView: this.slidesPerView,
-				spaceBetween: this.spacing,
-			};
 		},
 		// commont options
 		swiperOptions() {
@@ -229,8 +204,8 @@ export default {
 					clickable: true,
 				},
 				allowTouchMove: true,
-				...(this.isSwiperType && this.swiperTypeOptions),
-				...(this.isSwiperGroupType && this.swiperGroupTypeOptions),
+				slidesPerView: this.slidesPerView,
+				spaceBetween: this.spacing,
 			};
 		},
 		swiper() {
