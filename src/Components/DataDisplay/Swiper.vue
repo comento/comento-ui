@@ -292,6 +292,12 @@ $swiper-background-color: #c4c4c4;
 	margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
 	height: var(--swiper-navigation-size);
 }
+.swiper-button-prev {
+	left: 15px;
+}
+.swiper-button-next {
+	right: 15px;
+}
 .swiper-button-prev-outside {
 	left: -46px;
 }
