@@ -5,7 +5,6 @@
 			:ref="computedId"
 			v-model="sync_value"
 			class="c-text-field--input"
-			:value="value"
 			:type="type"
 			:placeholder="placeholder"
 			:name="computedId"
