@@ -299,10 +299,10 @@ $swiper-background-color: #c4c4c4;
 	right: 15px;
 }
 .swiper-button-prev-outside {
-	left: -46px;
+	left: -31px;
 }
 .swiper-button-next-outside {
-	right: -46px;
+	right: -31px;
 }
 .swiper-button-top {
 	position: absolute;
