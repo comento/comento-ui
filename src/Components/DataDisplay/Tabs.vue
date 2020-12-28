@@ -51,6 +51,7 @@ export default {
 		return {
 			selectedNo: 0,
 			slidesPerView: 10,
+			setWrapperSize: true,
 		};
 	},
 	computed: {
