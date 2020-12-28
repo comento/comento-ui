@@ -1,0 +1,146 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import TextField, { textFieldTypes, textFieldAligns } from "@/src/Components/DataEntry/TextField";
+
+<Meta
+    title="Data Entry/TextField"
+    component={ TextField }
+    argTypes={{
+        id: {
+            description: "텍스트필드ID (값이 없으면 textField-uid로 생성됨)",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        type: {
+            description: "텍스트필드 type",
+            control: {
+            type: "select",
+            options: textFieldTypes,
+           },
+        },
+        placeholder: {
+            description: "체크박스 placeholder 문구",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        label: {
+            description: "텍스트필드 label에 들어갈 텍스트",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        align: {
+            description: "텍스트필드 text 정렬",
+            control: {
+                type: "select",
+                options: textFieldAligns,
+            },
+        },
+        focus: {
+            description: "텍스트필드 focus 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        readonly: {
+            description: "텍스트필드 readonly 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        disabled: {
+            description: "텍스트필드 disabled 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        error: {
+            description: "텍스트필드 error 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        errorMessage:{
+            description: "텍스트필드 에러메시지",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        outlined: {
+            description: "텍스트필드 outlined (true) / underline(false)",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        value: {
+            description: "TextArea 들어갈 텍스트",
+            defaultValue: null,
+            control: { type: "text" },
+        },
+    }}
+/>
+
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { TextField },
+    template:
+        `<TextField
+            :id="id"
+            :type="type"
+            outlined
+            :placeholder="placeholder"
+            :label="label"
+            :align="align"
+            :focus="focus"
+            :readonly="readonly"
+            :disabled="disabled"
+            :outlined="outlined"
+            :value.sync="value"
+            :error="error"
+        />`,
+});
+
+# TextField
+
+**TextField** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### Error
+
+<Canvas>
+    <Story name="Error" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        outlined
+                        placeholder="outlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        outlined
+                        label="label"
+                        placeholder="outlined + error + label"
+                        class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+

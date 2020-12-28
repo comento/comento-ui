@@ -1,10 +1,3 @@
-<!--
-ex) <grid>
-        <row>
-            <style_col> <- 이부분
-        </row>
-    </grid>
--->
 <template>
 	<div
 		class="c-application c-style-col"
@@ -22,18 +15,30 @@ export default {
 		colSm: {
 			type: Number,
 			default: -1,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 		offsetSm: {
 			type: Number,
 			default: -1,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 		colLg: {
 			type: Number,
 			default: -1,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 		offsetLg: {
 			type: Number,
 			default: -1,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 		colGutters: {
 			type: Boolean,
@@ -42,40 +47,43 @@ export default {
 		offsetBetweenItems: {
 			type: Number,
 			default: null,
+			validator(value) {
+				return typeof value === 'number';
+			},
 		},
 	},
 	computed: {
 		computedSm() {
 			if (this.colSm !== -1) {
-				return `col_${this.colSm}`;
+				return `col-${this.colSm}`;
 			} else {
 				return null;
 			}
 		},
 		computedOffsetSm() {
 			if (this.offsetSm !== -1) {
-				return `offset_${this.offsetSm}`;
+				return `offset-${this.offsetSm}`;
 			} else {
 				return null;
 			}
 		},
 		computedLg() {
 			if (this.colLg !== -1) {
-				return `col_lg_${this.colLg}`;
+				return `col-lg-${this.colLg}`;
 			} else {
 				return null;
 			}
 		},
 		computedOffsetLg() {
 			if (this.offsetLg !== -1) {
-				return `offset_lg_${this.offsetLg}`;
+				return `offset-lg-${this.offsetLg}`;
 			} else {
 				return null;
 			}
 		},
 		computedGutters() {
 			if (this.colGutters) {
-				return 'no_gutters';
+				return 'no-gutters';
 			} else {
 				return null;
 			}
@@ -92,38 +100,38 @@ export default {
 /*@import '@/assets/style/base/main';*/
 
 /* Mobile first */
-.col_1,
-.col_2,
-.col_3,
-.col_4,
-.col_5,
-.col_6,
-.col_7,
-.col_8,
-.col_9,
-.col_10,
-.col_11,
-.col_12,
-.col_lg_1,
-.col_lg_2,
-.col_lg_3,
-.col_lg_4,
-.col_lg_5,
-.col_lg_6,
-.col_lg_7,
-.col_lg_8,
-.col_lg_9,
-.col_lg_10,
-.col_lg_11,
-.col_lg_12,
-.col_lg,
-.col_lg_auto {
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg,
+.col-lg-auto {
 	position: relative;
 	width: 100%;
 	padding-right: 16px;
 	padding-left: 16px;
 	box-sizing: border-box;
-	&.no_gutters {
+	&.no-gutters {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -132,222 +140,218 @@ export default {
 		padding-left: 24px;
 	}
 }
-.col_1 {
+.col-1 {
 	-ms-flex: 0 0 8.333333%;
 	flex: 0 0 8.333333%;
 	max-width: 8.333333%;
 }
 
-.col_2 {
+.col-2 {
 	-ms-flex: 0 0 16.666667%;
 	flex: 0 0 16.666667%;
 	max-width: 16.666667%;
 }
 
-.col_3 {
+.col-3 {
 	-ms-flex: 0 0 25%;
 	flex: 0 0 25%;
 	max-width: 25%;
 }
 
-.col_4 {
+.col-4 {
 	-ms-flex: 0 0 33.333333%;
 	flex: 0 0 33.333333%;
 	max-width: 33.333333%;
 }
 
-.col_5 {
+.col-5 {
 	-ms-flex: 0 0 41.666667%;
 	flex: 0 0 41.666667%;
 	max-width: 41.666667%;
 }
 
-.col_6 {
+.col-6 {
 	-ms-flex: 0 0 50%;
 	flex: 0 0 50%;
 	max-width: 50%;
 }
 
-.col_7 {
+.col-7 {
 	-ms-flex: 0 0 58.333333%;
 	flex: 0 0 58.333333%;
 	max-width: 58.333333%;
 }
 
-.col_8 {
+.col-8 {
 	-ms-flex: 0 0 66.666667%;
 	flex: 0 0 66.666667%;
 	max-width: 66.666667%;
 }
 
-.col_9 {
+.col-9 {
 	-ms-flex: 0 0 75%;
 	flex: 0 0 75%;
 	max-width: 75%;
 }
 
-.col_10 {
+.col-10 {
 	-ms-flex: 0 0 83.333333%;
 	flex: 0 0 83.333333%;
 	max-width: 83.333333%;
 }
 
-.col_11 {
+.col-11 {
 	-ms-flex: 0 0 91.666667%;
 	flex: 0 0 91.666667%;
 	max-width: 91.666667%;
 }
 
-.col_12 {
+.col-12 {
 	-ms-flex: 0 0 100%;
 	flex: 0 0 100%;
 	max-width: 100%;
 }
-.offset_0 {
+.offset-0 {
 	margin-left: 0;
 }
-.offset_1 {
+.offset-1 {
 	margin-left: 8.333333%;
 }
 
-.offset_2 {
+.offset-2 {
 	margin-left: 16.666667%;
 }
 
-.offset_3 {
+.offset-3 {
 	margin-left: 25%;
 }
 
-.offset_4 {
+.offset-4 {
 	margin-left: 33.333333%;
 }
 
-.offset_5 {
+.offset-5 {
 	margin-left: 41.666667%;
 }
 
-.offset_6 {
+.offset-6 {
 	margin-left: 50%;
 }
 
-.offset_7 {
+.offset-7 {
 	margin-left: 58.333333%;
 }
 
-.offset_8 {
+.offset-8 {
 	margin-left: 66.666667%;
 }
 
-.offset_9 {
+.offset-9 {
 	margin-left: 75%;
 }
 
-.offset_10 {
+.offset-10 {
 	margin-left: 83.333333%;
 }
 
-.offset_11 {
+.offset-11 {
 	margin-left: 91.666667%;
 }
 @include pc {
-	.styleCol_component {
-		padding-right: 24px;
-		padding-left: 24px;
-	}
-	.col_lg_1 {
+	.col-lg-1 {
 		-ms-flex: 0 0 8.333333%;
 		flex: 0 0 8.333333%;
 		max-width: 8.333333%;
 	}
-	.col_lg_2 {
+	.col-lg-2 {
 		-ms-flex: 0 0 16.666667%;
 		flex: 0 0 16.666667%;
 		max-width: 16.666667%;
 	}
-	.col_lg_3 {
+	.col-lg-3 {
 		-ms-flex: 0 0 25%;
 		flex: 0 0 25%;
 		max-width: 25%;
 	}
-	.col_lg_4 {
+	.col-lg-4 {
 		-ms-flex: 0 0 33.333333%;
 		flex: 0 0 33.333333%;
 		max-width: 33.333333%;
 	}
-	.col_lg_5 {
+	.col-lg-5 {
 		-ms-flex: 0 0 41.666667%;
 		flex: 0 0 41.666667%;
 		max-width: 41.666667%;
 	}
-	.col_lg_6 {
+	.col-lg-6 {
 		-ms-flex: 0 0 50%;
 		flex: 0 0 50%;
 		max-width: 50%;
 	}
-	.col_lg_7 {
+	.col-lg-7 {
 		-ms-flex: 0 0 58.333333%;
 		flex: 0 0 58.333333%;
 		max-width: 58.333333%;
 	}
-	.col_lg_8 {
+	.col-lg-8 {
 		-ms-flex: 0 0 66.666667%;
 		flex: 0 0 66.666667%;
 		max-width: 66.666667%;
 	}
-	.col_lg_9 {
+	.col-lg-9 {
 		-ms-flex: 0 0 75%;
 		flex: 0 0 75%;
 		max-width: 75%;
 	}
-	.col_lg_10 {
+	.col-lg-10 {
 		-ms-flex: 0 0 83.333333%;
 		flex: 0 0 83.333333%;
 		max-width: 83.333333%;
 	}
-	.col_lg_11 {
+	.col-lg-11 {
 		-ms-flex: 0 0 91.666667%;
 		flex: 0 0 91.666667%;
 		max-width: 91.666667%;
 	}
-	.col_lg_12 {
+	.col-lg-12 {
 		-ms-flex: 0 0 100%;
 		flex: 0 0 100%;
 		max-width: 100%;
 	}
-	.offset_lg_0 {
+	.offset-lg-0 {
 		margin-left: 0;
 	}
-	.offset_lg_1 {
+	.offset-lg-1 {
 		margin-left: 8.333333%;
 	}
-	.offset_lg_2 {
+	.offset-lg-2 {
 		margin-left: 16.666667%;
 	}
-	.offset_lg_3 {
+	.offset-lg-3 {
 		margin-left: 25%;
 	}
-	.offset_lg_4 {
+	.offset-lg-4 {
 		margin-left: 33.333333%;
 	}
-	.offset_lg_5 {
+	.offset-lg-5 {
 		margin-left: 41.666667%;
 	}
-	.offset_lg_6 {
+	.offset-lg-6 {
 		margin-left: 50%;
 	}
-	.offset_lg_7 {
+	.offset-lg-7 {
 		margin-left: 58.333333%;
 	}
-	.offset_lg_8 {
+	.offset-lg-8 {
 		margin-left: 66.666667%;
 	}
-	.offset_lg_9 {
+	.offset-lg-9 {
 		margin-left: 75%;
 	}
-	.offset_lg_10 {
+	.offset-lg-10 {
 		margin-left: 83.333333%;
 	}
-	.offset_lg_11 {
+	.offset-lg-11 {
 		margin-left: 91.666667%;
 	}
 }
