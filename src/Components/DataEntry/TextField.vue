@@ -17,7 +17,7 @@
 			:style="[computedAlign]"
 			:class="[computedLined, computedError]"
 			v-bind="$attrs"
-			@input="$emit('input', $event.target.value)"
+			@input="handleTyping"
 			v-on="$listeners"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
@@ -139,6 +139,11 @@ export default {
 		if (this.focus) {
 			this.$refs[this.computedId].focus();
 		}
+	},
+	methods: {
+		handleTyping(e) {
+			this.sync_value = e.target.value;
+		},
 	},
 	components: { Typography, Icon },
 };
