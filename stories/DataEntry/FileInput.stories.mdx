@@ -2,6 +2,7 @@ import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import FileInput from "@/src/Components/DataEntry/FileInput/FileInput";
 import FileList from "@/src/Components/DataEntry/FileInput/FileList";
 import FileSummary from "@/src/Components/DataEntry/FileInput/FileSummary";
+import Typography from "@/src/Elements/Core/Typography/Typography";
 import Divider from "@/src/Elements/Utility/Divider";
 
 <Meta
@@ -135,7 +136,7 @@ export const Default = (args, { argTypes }) => ({
           },
             template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                         <div style="width: 100%; margin-bottom: 30px;">
-                            생성 시
+                            <Typography type="body2">생성 시</Typography>
                             <FileInput full
                               @uploadFiles="handleUploadFiles"
                             />
@@ -143,7 +144,7 @@ export const Default = (args, { argTypes }) => ({
                             <FileList :files="files" @clickFileDownloadIcon="handleClickFileDownloadIcon" @clickItemContent="handleClickItemContent"/>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
-                            수정 시
+                            <Typography type="body2">수정 시</Typography>
                             <FileInput full
                               @uploadFiles="handleEditUploadFiles"
                             />
@@ -151,13 +152,13 @@ export const Default = (args, { argTypes }) => ({
                             <FileList :files="editFiles" isEdit @clickTrashIcon="handleClickTrashIcon" @clickItemContent="handleClickItemContent"/>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
-                            완료 시
+                            <Typography type="body2">완료 시</Typography>
                             <FileSummary :length="mockFiles.length" @clickAllFileDownloadButton="handleClickAllFileDownloadButton"/>
                             <Divider type="dash" vertical style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
                             <FileList :files="mockFiles" @clickFileDownloadIcon="handleClickMockFileDownloadIcon" @clickItemContent="handleClickItemContent"/>
                         </div>
                       </div>`,
-             components: { FileInput, FileList, FileSummary, Divider },
+             components: { FileInput, FileList, FileSummary, Divider, Typography },
         }}
     </Story>
 </Canvas>
