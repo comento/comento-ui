@@ -9,6 +9,7 @@
 			</base-swiper-slide>
 			<Icon
 				v-if="showInsideControl"
+				:id="`swiper-button-prev-${_uid}`"
 				slot="button-prev"
 				name="IconArrowLargeLine"
 				:rotate="-90"
@@ -18,6 +19,7 @@
 			></Icon>
 			<Icon
 				v-if="showInsideControl"
+				:id="`swiper-button-next-${_uid}`"
 				slot="button-next"
 				name="IconArrowLargeLine"
 				:rotate="90"
@@ -34,6 +36,7 @@
 		</base-swiper>
 		<Icon
 			v-if="showOutsideControl"
+			:id="`swiper-button-prev-outside-${_uid}`"
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button swiper-button-outside swiper-button-prev-outside"
@@ -42,6 +45,7 @@
 		></Icon>
 		<Icon
 			v-if="showOutsideControl"
+			:id="`swiper-button-next-outside-${_uid}`"
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button swiper-button-outside swiper-button-next-outside"
@@ -50,6 +54,7 @@
 		></Icon>
 		<Icon
 			v-if="showTopControl"
+			:id="`swiper-button-prev-top-${_uid}`"
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button-top swiper-button-prev-top"
@@ -58,6 +63,7 @@
 		></Icon>
 		<Icon
 			v-if="showTopControl"
+			:id="`swiper-button-next-top-${_uid}`"
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button-top swiper-button-next-top"
@@ -184,12 +190,12 @@ export default {
 			// ex. swiper-button-next, swiper-button-next-outside
 			const swiperButtonNextSelector =
 				this.controlsPosition === 'inside'
-					? '.swiper-button-next'
-					: `.swiper-button-next-${this.controlsPosition}`;
+					? `#swiper-button-next-${this._uid}`
+					: `#swiper-button-next-${this.controlsPosition}-${this._uid}`;
 			const swiperButtonPrevSelector =
 				this.controlsPosition === 'inside'
-					? '.swiper-button-prev'
-					: `.swiper-button-prev-${this.controlsPosition}`;
+					? `#swiper-button-prev-${this._uid}`
+					: `#swiper-button-prev-${this.controlsPosition}-${this._uid}`;
 			const swiperPaginationSelector =
 				this.indicatorPosition === 'inside'
 					? '.swiper-pagination'
