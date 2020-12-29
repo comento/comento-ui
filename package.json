@@ -76,11 +76,6 @@
     "IE >= 11",
     "iOS >= 11"
   ],
-  "storybook-deployer": {
-    "gitUsername": "donghoon-song",
-    "gitEmail": "thdehdgns@gmail.com",
-    "commitMessage": "Deploy Storybook to GitHub Pages"
-  },
   "lint-staged": {
     "*.{js,vue}": "vue-cli-service lint"
   },

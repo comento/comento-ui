@@ -4,10 +4,10 @@
 		:show-close-button="showCloseButton"
 		:max-width="maxWidth"
 		:persistent="persistent"
-		:max-height="isMobile ? '86vh' : '640px'"
+		:max-height="computedMaxHeight"
 		@close="close"
 	>
-		<div class="c-modal--wrapper" :class="computedClass">
+		<div class="c-modal--wrapper" :class="computedClasses">
 			<!-- title 영역 -->
 			<div class="c-modal--title-wrapper">
 				<Typography type="headline5" :align="align" color="gray900">
@@ -35,56 +35,100 @@ import Modal from '@/src/Components/Message/Modal/Modal';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import Button from '@/src/Components/Button/Button';
 
+export const aligns = ['left', 'center', 'right'];
+
 export default {
 	name: 'WithFormModal',
 	props: {
 		show: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		align: {
 			type: String,
 			default: 'center',
+			validator(value) {
+				return aligns.indexOf(value) !== -1;
+			},
 		},
 		showActionButton: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		successCallback: {
 			type: Function,
 			default: () => {},
+			validator(value) {
+				return typeof value === 'function';
+			},
 		},
 		successMessage: {
 			type: String,
 			default: '확인',
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		persistent: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 		maxWidth: {
 			type: String,
+			validator(value) {
+				return typeof value === 'string';
+			},
 		},
 		scroll: {
 			type: Boolean,
 			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	computed: {
-		computedClass() {
-			return [this.scroll && 'scroll', this.showActionButton && 'with-button'];
+		computedClasses() {
+			return [this.computedScroll, this.computedWithButton];
+		},
+		computedScroll() {
+			return { scroll: this.scroll };
+		},
+		computedWithButton() {
+			return { 'with-button': this.showActionButton };
+		},
+		computedMaxHeight() {
+			return this.isMobile ? '86vh' : '640px';
 		},
 	},
 	methods: {
@@ -106,6 +150,7 @@ export default {
 		padding: 40px 0;
 		&.scroll {
 			.c-modal--content-wrapper {
+				overflow-y: scroll;
 				padding-bottom: 4px;
 
 				&:after {
@@ -147,7 +192,6 @@ export default {
 		padding-right: 32px;
 
 		max-height: calc(640px - 265px);
-		overflow-y: auto;
 		@include pc {
 			max-height: calc(640px - 129px);
 		}
