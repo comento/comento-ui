@@ -58,9 +58,8 @@ export default {
 			width: 100%;
 		}
 		&::v-deep > .c-row {
-			--bs-gutter-x: 48px;
-			margin-right: calc(var(--bs-gutter-x) / -2);
-			margin-left: calc(var(--bs-gutter-x) / -2);
+			margin-right: -24px;
+			margin-left: -24px;
 		}
 	}
 }
