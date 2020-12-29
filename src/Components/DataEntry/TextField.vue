@@ -121,7 +121,7 @@ export default {
 			return this.id || `textField-${this._uid}`;
 		},
 		computedShowLabel() {
-			return this.outlined && this.label;
+			return this.label;
 		},
 		computedLabel() {
 			return { label: this.computedShowLabel };
@@ -162,6 +162,9 @@ export default {
 		@include transition(all 0.2s ease);
 		&::placeholder {
 			color: $gray300;
+		}
+		&:disabled {
+			background: $gray000;
 		}
 		&.outlined {
 			padding: 0 16px;

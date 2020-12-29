@@ -146,7 +146,7 @@ export default {
 	}
 
 	@include pc {
-		bottom: 32px;
+		bottom: 50px;
 	}
 
 	&.position-top {

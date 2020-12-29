@@ -1,6 +1,7 @@
 import Button from './Button';
+import ButtonGroup from './ButtonGroup';
+import FileButton from './FileButton';
 import NarrowButton from './NarrowButton';
 import LinkButton from './LinkButton';
-import ButtonGroup from './ButtonGroup';
 
-export { Button, NarrowButton, LinkButton, ButtonGroup };
+export { Button, ButtonGroup, FileButton, NarrowButton, LinkButton };
