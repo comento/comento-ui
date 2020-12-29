@@ -8,7 +8,7 @@
 				<slot :name="'item' + index"></slot>
 			</base-swiper-slide>
 			<Icon
-				v-show="showInsideControl"
+				v-if="showInsideControl"
 				slot="button-prev"
 				name="IconArrowLargeLine"
 				:rotate="-90"
@@ -17,7 +17,7 @@
 				:color="computedControlsColor"
 			></Icon>
 			<Icon
-				v-show="showInsideControl"
+				v-if="showInsideControl"
 				slot="button-next"
 				name="IconArrowLargeLine"
 				:rotate="90"
@@ -26,14 +26,14 @@
 				:color="computedControlsColor"
 			></Icon>
 			<div
-				v-show="showInsideIndicator"
+				v-if="showInsideIndicator"
 				slot="pagination"
 				class="swiper-pagination"
 				:class="computedIndicatorColorClass"
 			></div>
 		</base-swiper>
 		<Icon
-			v-show="showOutsideControl"
+			v-if="showOutsideControl"
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button swiper-button-outside swiper-button-prev-outside"
@@ -41,7 +41,7 @@
 			:color="computedControlsColor"
 		></Icon>
 		<Icon
-			v-show="showOutsideControl"
+			v-if="showOutsideControl"
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button swiper-button-outside swiper-button-next-outside"
@@ -49,7 +49,7 @@
 			:color="computedControlsColor"
 		></Icon>
 		<Icon
-			v-show="showTopControl"
+			v-if="showTopControl"
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button-top swiper-button-prev-top"
@@ -57,7 +57,7 @@
 			:color="computedControlsColor"
 		></Icon>
 		<Icon
-			v-show="showTopControl"
+			v-if="showTopControl"
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button-top swiper-button-next-top"
@@ -65,7 +65,7 @@
 			:color="computedControlsColor"
 		></Icon>
 		<div
-			v-show="showOutsideIndicator"
+			v-if="showOutsideIndicator"
 			slot="pagination"
 			class="swiper-pagination-outside"
 			:class="computedIndicatorColorClass"
