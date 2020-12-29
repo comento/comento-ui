@@ -1,0 +1,27 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Form from "@/src/Components/DataEntry/Form";
+import Input from "@/src/Components/DataEntry/Input";
+import TextArea from "@/src/Components/DataEntry/TextArea";
+
+<Meta
+    title="Data Entry/Form"
+    component={ Form }
+/>
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+     {{
+        template: `
+            <div style="width:300px">
+                <Form>
+                    <Input placeholder="사이 사이 간격 12px"/>
+                    <TextArea/>
+                </Form>
+            </div>
+    `,
+        components: { Form, Input, TextArea },
+    }}
+    </Story>
+</Canvas>
