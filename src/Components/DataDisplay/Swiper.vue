@@ -29,6 +29,7 @@
 			></Icon>
 			<div
 				v-if="showInsideIndicator"
+				:id="`swiper-pagination-${_uid}`"
 				slot="pagination"
 				class="swiper-pagination"
 				:class="computedIndicatorColorClass"
@@ -72,6 +73,7 @@
 		></Icon>
 		<div
 			v-if="showOutsideIndicator"
+			:id="`swiper-pagination-outside-${_uid}`"
 			slot="pagination"
 			class="swiper-pagination-outside"
 			:class="computedIndicatorColorClass"
@@ -198,8 +200,8 @@ export default {
 					: `#swiper-button-prev-${this.controlsPosition}-${this._uid}`;
 			const swiperPaginationSelector =
 				this.indicatorPosition === 'inside'
-					? '.swiper-pagination'
-					: `.swiper-pagination-${this.indicatorPosition}`;
+					? `#swiper-pagination-${this._uid}`
+					: `#swiper-pagination-${this.indicatorPosition}-${this._uid}`;
 			return {
 				navigation: {
 					nextEl: swiperButtonNextSelector,
