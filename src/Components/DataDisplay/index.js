@@ -10,7 +10,23 @@ import FileList from './FileList';
 import FileSummary from './FileSummary';
 import List from './List';
 import ListItem from './ListItem';
+import Swiper from './Swiper';
 import Tabs from './Tabs';
 
-export { Avatar, Badge, Box, Card, Chip, ChipGroup, Content, FileItem, FileList, FileSummary, List, ListItem, Tabs };
+export {
+	Avatar,
+	Badge,
+	Box,
+	Card,
+	Chip,
+	ChipGroup,
+	Content,
+	FileItem,
+	FileList,
+	FileSummary,
+	List,
+	ListItem,
+	Swiper,
+	Tabs,
+};
 export * from './Drawer';
