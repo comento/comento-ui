@@ -69,7 +69,7 @@ export default {
 	},
 	computed: {
 		computedMaxWidth() {
-			return { 'max-width': this.maxWidth };
+			return { maxWidth: !this.full && this.maxWidth };
 		},
 		computedMaxHeight() {
 			return { maxHeight: this.maxHeight !== 'auto' && this.maxHeight };

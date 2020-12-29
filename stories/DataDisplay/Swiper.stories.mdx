@@ -1,0 +1,294 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Swiper, { SwiperControlsColors, SwiperControlPositions, SwiperIndicatorColors, SwiperIndicatorPositions, SwiperSpacings } from '@/src/Components/DataDisplay/Swiper';
+import Button from '@/src/Components/Button/Button';
+import Typography from '@/src/Elements/Core/Typography/Typography';
+
+<Meta
+    title="Data Display/Swiper"
+    component={ Swiper }
+    argTypes={{
+        withControls: {
+            description: "With Controls",
+            control: {
+                type: "boolean",
+            },
+        },
+        controlsPosition: {
+            description: "Controls 위치",
+            control: {
+                type: "select",
+                options: SwiperControlPositions,
+            },
+        },
+        controlsColor: {
+            description: "swiper control color",
+            control: {
+                type: "select",
+                options: SwiperControlsColors,
+            },
+        },
+        controlsCircle: {
+            description: "동그라미모양 컨트롤",
+            control: {
+                type: "boolean",
+            },
+        },
+        withIndicator: {
+            description: "With Indicator",
+            control: {
+                type: "boolean",
+            },
+        },
+        indicatorPosition: {
+            description: "Indicator 위치",
+            control: {
+                type: "select",
+                options: SwiperIndicatorPositions,
+            },
+        },
+        indicatorColor: {
+            description: "swiper indicator color",
+            control: {
+                type: "select",
+                options: SwiperIndicatorColors,
+            },
+        },
+        spacing: {
+            description: "swiper indicator color",
+            control: {
+                type: "select",
+                options: SwiperSpacings,
+            },
+        },
+        slidesPerView: {
+            description: "한번에 보여줄 슬라이드 개수",
+            control: {
+                type: "number",
+            },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Swiper, Typography },
+    template: `
+        <div style="padding: 12px 32px;">
+            <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :controlsCircle="controlsCircle" :withIndicator="withIndicator" :indicatorPosition="indicatorPosition" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
+                <template v-for="(item, index) in 10" :slot="'item' + index">
+                    <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                </template>
+            </Swiper>
+        </div>
+        `,
+});
+
+# Swiper
+
+**Swiper** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            data() {
+                return {
+                    itemLength: 10,
+                }
+            },
+            template: `
+                    <div style="padding: 12px 24px;">
+                    <Swiper controlsColor="light" controlsPosition="inside" withControls style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                    <Swiper controlsColor="dark" controlsPosition="inside" withControls style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                    <Swiper controlsColor="light" controlsPosition="inside" withControls controlsCircle style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                    <Swiper controlsColor="dark" controlsPosition="inside" withControls controlsCircle style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                     <Swiper controlsColor="light" controlsPosition="outside" withControls controlsCircle style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                    <Swiper controlsColor="dark" controlsPosition="top" withControls style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                   <Swiper controlsColor="light" controlsPosition="top" controlsCircle withControls style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                    </div>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+
+## Stories
+### ControlsPosition
+<Canvas>
+    <Story name="ControlsPosition" height="100px">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                }
+            },
+            template: `
+                <div style="padding: 12px 32px">
+                    <Swiper controlsColor="dark" controlsPosition="inside" withControls style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                   <Swiper controlsColor="dark" controlsPosition="outside" withControls style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                    <Swiper controlsColor="dark" controlsPosition="top" withControls>
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                </div>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+
+## Stories
+### ControlsColor
+<Canvas>
+    <Story name="ControlsColor" height="100px">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                }
+            },
+            template: `
+                <div>
+                    <Swiper controlsColor="light" withControls style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                   <Swiper controlsColor="dark" withControls>
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                </div>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+
+## Stories
+### IndicatorColors
+<Canvas>
+    <Story name="IndicatorColors" height="100px">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                }
+            },
+            template: `
+                <div>
+                    <Swiper indicatorColor="light" withIndicator style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                   <Swiper indicatorColor="dark" withIndicator>
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                </div>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+
+## Stories
+### IndicatorPosition
+<Canvas>
+    <Story name="IndicatorPosition">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                }
+            },
+            template: `
+                <div style="padding: 24px 32px;">
+                    <Swiper indicatorColor="dark" indicatorPosition="inside" withIndicator style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                   <Swiper indicatorColor="dark" indicatorPosition="outside" withIndicator>
+                       <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                           <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                       </template>
+                   </Swiper>
+                </div>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+
+## Stories
+### WithControls & WithIndicator
+<Canvas>
+    <Story name="WithControls & WithIndicator">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                }
+            },
+            template: `
+                <div style="padding: 24px 32px;">
+                    <Swiper controlsColor="light" controlsPosition="inside" withControls indicatorColor="light" indicatorPosition="inside" withIndicator style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                        </template>
+                    </Swiper>
+                   <Swiper controlsColor="dark" controlsPosition="outside" withControls indicatorColor="dark" indicatorPosition="outside" withIndicator>
+                       <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                           <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                       </template>
+                   </Swiper>
+                </div>`,
+            components: { Swiper, Typography },
+        }}
+    </Story>
+</Canvas>
+

@@ -27,7 +27,7 @@ export const TypographyTypes = [
 	'caption2',
 ];
 
-export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p'];
+export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p', 'u'];
 
 export const Aligns = ['left', 'center', 'right'];
 
