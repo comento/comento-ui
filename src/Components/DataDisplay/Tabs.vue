@@ -1,5 +1,5 @@
 <template>
-	<swiper v-if="type === 'swiper'" ref="mySwiper" :options="swiperOptions">
+	<swiper v-if="type === 'swiper'" ref="mySwiper" class="swiper" :options="swiperOptions">
 		<swiper-slide v-for="(item, index) in items" :key="`tabs-item-${item}-${index}`">
 			<button class="c-tabs--menu-button" :class="{ active: index === selectedNo }" @click="setSelectedNo(index)">
 				{{ item }}
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 
 export const TabsTypes = ['basic', 'swiper'];
@@ -74,9 +74,6 @@ export default {
 	components: {
 		Swiper,
 		SwiperSlide,
-	},
-	directives: {
-		swiper: directive,
 	},
 };
 </script>
