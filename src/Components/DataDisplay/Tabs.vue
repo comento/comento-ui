@@ -50,15 +50,14 @@ export default {
 	data() {
 		return {
 			selectedNo: 0,
-			slidesPerView: 10,
-			setWrapperSize: true,
 		};
 	},
 	computed: {
 		swiperOptions() {
 			return {
-				slidesPerView: 'auto',
 				spaceBetween: 12,
+				setWrapperSize: true,
+				slidesPerView: 'auto',
 			};
 		},
 		swiper() {
