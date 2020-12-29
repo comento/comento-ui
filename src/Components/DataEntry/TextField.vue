@@ -121,7 +121,7 @@ export default {
 			return this.id || `textField-${this._uid}`;
 		},
 		computedShowLabel() {
-			return this.outlined && this.label;
+			return this.label;
 		},
 		computedLabel() {
 			return { label: this.computedShowLabel };
