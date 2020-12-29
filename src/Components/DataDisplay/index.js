@@ -13,5 +13,20 @@ import ListItem from './ListItem';
 import Swiper from './Swiper';
 import Tab from './Tab';
 
-export { Avatar, Badge, Box, Card, Chip, ChipGroup, Content, FileItem, FileList, FileSummary, List, ListItem, Swiper, Tab };
+export {
+	Avatar,
+	Badge,
+	Box,
+	Card,
+	Chip,
+	ChipGroup,
+	Content,
+	FileItem,
+	FileList,
+	FileSummary,
+	List,
+	ListItem,
+	Swiper,
+	Tab,
+};
 export * from './Drawer';
