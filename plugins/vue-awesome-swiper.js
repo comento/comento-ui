@@ -1,2 +1,1 @@
-// require styles
-import 'swiper/css/swiper.css';
+import '@/assets/style/swiper/swiper.css';
