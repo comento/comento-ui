@@ -257,7 +257,7 @@ $swiper-background-color: #c4c4c4;
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;
 .swiper {
-	height: 300px;
+	min-height: 300px;
 	width: 100%;
 	.swiper-slide {
 		display: flex;
