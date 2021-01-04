@@ -6,7 +6,8 @@
 			</button>
 		</swiper-slide>
 	</swiper>
-	<div v-else class="c-application c-tabs--menu-wrapper">
+	<div v-else class="c-application c-tabs--menu-container">
+	    <div class="c-tabs--menu-wrapper">
 		<div class="c-tabs--menu-container">
 			<button
 				v-for="(item, index) in items"
