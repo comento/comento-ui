@@ -300,7 +300,7 @@ $swiper-control-circle-radius: 16px;
 .swiper-button-background-circle {
 	border-radius: 50%;
 	padding: calc((#{$swiper-control-circle-radius} * 2 - #{$swiper-control-size}) / 2);
-	margin-top: calc(-1 * var(#{$swiper-control-circle-radius}) / 2);
+	margin-top: calc(-1 * #{$swiper-control-circle-radius} / 2);
 	&-light {
 		background-color: rgba(0, 0, 0, 0.3) !important;
 		&.swiper-button-disabled {
