@@ -23,7 +23,6 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
-import 'swiper/css/swiper.css';
 
 export const TabsTypes = ['basic', 'swiper'];
 

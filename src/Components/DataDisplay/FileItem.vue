@@ -28,10 +28,8 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 export default {
 	name: 'FileItem',
 	props: {
-		file: {
-			type: File,
-			default: null,
-		},
+		// 파일은 내장 타입이 없음.
+		file: {},
 		// 파일 리스트 내부 인덱스
 		index: {
 			type: Number,
