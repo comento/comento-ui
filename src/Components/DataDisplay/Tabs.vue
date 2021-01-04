@@ -7,8 +7,7 @@
 		</swiper-slide>
 	</swiper>
 	<div v-else class="c-application c-tabs--menu-container">
-	    <div class="c-tabs--menu-wrapper">
-		<div class="c-tabs--menu-container">
+		<div class="c-tabs--menu-wrapper">
 			<button
 				v-for="(item, index) in items"
 				:key="`tabs-item-${item}-${index}`"
@@ -77,7 +76,7 @@ export default {
 
 <style scoped lang="scss">
 .c-tabs--menu {
-	&-wrapper {
+	&-container {
 		background-color: $white;
 	}
 	&-button {
@@ -121,7 +120,7 @@ export default {
 	}
 }
 
-.c-tabs--menu-container,
+.c-tabs--menu-wrapper,
 .swiper-container {
 	display: inline-block;
 	background: linear-gradient(180deg, transparent 97%, $gray200 0);
