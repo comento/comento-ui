@@ -70,9 +70,10 @@ export default {
 		},
 	},
 	methods: {
-		getByte(string) {
-			if (!this.$_isEmpty(string)) {
-				return string
+		getByte(value) {
+			if (!this.$_isEmpty(value)) {
+				return value
+					.toString()
 					.split('')
 					.map(s => s.charCodeAt(0))
 					.reduce((prev, c) => prev + (c === 10 ? 2 : c >> 7 ? 2 : 1), 0);
