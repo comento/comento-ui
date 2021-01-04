@@ -85,7 +85,6 @@
 import customValidator from '@/utils/custom-validator.js';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesome-swiper';
-import 'swiper/css/swiper.css';
 
 export const SwiperControlsColors = ['light', 'dark'];
 export const SwiperControlPositions = ['inside', 'outside', 'top'];
@@ -258,7 +257,7 @@ $swiper-background-color: #c4c4c4;
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;
 .swiper {
-	height: 300px;
+	min-height: 300px;
 	width: 100%;
 	.swiper-slide {
 		display: flex;
