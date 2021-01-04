@@ -71,10 +71,12 @@ export default {
 	},
 	methods: {
 		getByte(string) {
-			return string
-				.split('')
-				.map(s => s.charCodeAt(0))
-				.reduce((prev, c) => prev + (c === 10 ? 2 : c >> 7 ? 2 : 1), 0);
+			if (!this.$_isEmpty(string)) {
+				return string
+					.split('')
+					.map(s => s.charCodeAt(0))
+					.reduce((prev, c) => prev + (c === 10 ? 2 : c >> 7 ? 2 : 1), 0);
+			}
 		},
 	},
 	components: { Typography },
