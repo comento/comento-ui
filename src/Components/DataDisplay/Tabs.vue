@@ -35,9 +35,6 @@ export default {
 			default() {
 				return [];
 			},
-			validator(value) {
-				return Array.isArray(value);
-			},
 		},
 		type: {
 			type: String,
