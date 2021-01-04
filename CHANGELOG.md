@@ -1,3 +1,7 @@
+## [0.1.24](https://github.com/comento/comento-ui/compare/v0.1.23...v0.1.24) (2021-01-04)
+
+
+
 ## [0.1.23](https://github.com/comento/comento-ui/compare/v0.1.22...v0.1.23) (2020-12-29)
 
 
