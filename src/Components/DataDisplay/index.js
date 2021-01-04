@@ -11,7 +11,7 @@ import FileSummary from './FileSummary';
 import List from './List';
 import ListItem from './ListItem';
 import Swiper from './Swiper';
-import Tab from './Tab';
+import Tabs from './Tabs';
 
 export {
 	Avatar,
@@ -27,6 +27,6 @@ export {
 	List,
 	ListItem,
 	Swiper,
-	Tab,
+	Tabs,
 };
 export * from './Drawer';
