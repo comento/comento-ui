@@ -252,6 +252,9 @@ export default {
 	}
 	&:disabled {
 		background-color: $green100;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
 		.c-button--loading {
 			background-color: $green100;
 		}
@@ -268,6 +271,9 @@ export default {
 			background-color: $green100;
 		}
 		&:disabled {
+			.c-button--icon::v-deep .c-icon {
+				fill: $green100 !important;
+			}
 			color: $green100;
 			background: none;
 		}
@@ -285,6 +291,9 @@ export default {
 			color: $green100;
 			border: 1px solid $green100;
 			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $green100 !important;
+			}
 		}
 		.c-button--loading {
 			background-color: $white;
@@ -300,6 +309,9 @@ export default {
 	}
 	&:disabled {
 		background-color: $blue100;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
 		.c-button--loading {
 			background-color: $blue100;
 		}
@@ -317,6 +329,9 @@ export default {
 		&:disabled {
 			color: $blue100;
 			background: none;
+			.c-button--icon::v-deep .c-icon {
+				fill: $blue100 !important;
+			}
 		}
 	}
 	&.outlined {
@@ -332,6 +347,9 @@ export default {
 			color: $blue100;
 			border: 1px solid $blue100;
 			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $blue100 !important;
+			}
 		}
 		.c-button--loading {
 			background-color: $white;
@@ -347,6 +365,9 @@ export default {
 	}
 	&:disabled {
 		background-color: $gray100;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
 		.c-button--loading {
 			background-color: $gray100;
 		}
@@ -364,6 +385,9 @@ export default {
 		&:disabled {
 			color: $gray100;
 			background: none;
+			.c-button--icon::v-deep .c-icon {
+				fill: $gray100 !important;
+			}
 		}
 	}
 	&.outlined {
@@ -379,6 +403,9 @@ export default {
 			color: $gray100;
 			border: 1px solid $gray100;
 			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $gray100 !important;
+			}
 		}
 		.c-button--loading {
 			background-color: $white;
@@ -394,6 +421,9 @@ export default {
 	}
 	&:disabled {
 		background-color: $red100;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
 		.c-button--loading {
 			background-color: $red100;
 		}
@@ -411,6 +441,9 @@ export default {
 		&:disabled {
 			color: $red100;
 			background: none;
+			.c-button--icon::v-deep .c-icon {
+				fill: $red100 !important;
+			}
 		}
 	}
 	&.outlined {
@@ -426,6 +459,9 @@ export default {
 			color: $red100;
 			border: 1px solid $red100;
 			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $red100 !important;
+			}
 		}
 		.c-button--loading {
 			background-color: $white;
