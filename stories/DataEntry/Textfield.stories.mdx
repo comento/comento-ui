@@ -87,16 +87,16 @@ export const Default = (args, { argTypes }) => ({
         `<TextField
             :id="id"
             :type="type"
-            outlined
+            :outlined="outlined"
             :placeholder="placeholder"
             :label="label"
             :align="align"
             :focus="focus"
             :readonly="readonly"
             :disabled="disabled"
-            :outlined="outlined"
             :value.sync="value"
             :error="error"
+            :error-message="errorMessage"
             :error-color="errorColor"
         />`,
 });
