@@ -1,7 +1,6 @@
 <template>
 	<div class="c-application c-text-field" :class="[computedLabel]">
 		<input
-			:id="computedId"
 			:ref="computedId"
 			v-model="sync_value"
 			class="c-text-field--input"
@@ -13,8 +12,8 @@
 			:focus="focus"
 			:readonly="readonly"
 			:disabled="disabled"
-			:error="error"
-			:error-color="errorColor"
+			:hint="hint"
+			:hint-color="hintColor"
 			:style="[computedAlign]"
 			:class="[computedLined, computedErrorColor]"
 			v-bind="$attrs"
@@ -23,13 +22,13 @@
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
 		<Typography
-			v-if="errorMessage !== ''"
+			v-if="hintMessage !== ''"
 			type="caption2"
-			:color="errorColor"
+			:color="hintColor"
 			element="p"
 			class="c-text-field--message"
 		>
-			<Icon name="IconExclamationSmallFill" :color="errorColor" class="mr-2" />{{ errorMessage }}
+			<Icon name="IconExclamationSmallFill" :color="hintColor" class="mr-2" />{{ hintMessage }}
 		</Typography>
 	</div>
 </template>
@@ -58,10 +57,6 @@ export default {
 			},
 		},
 		value: {
-			type: String,
-			default: '',
-		},
-		id: {
 			type: String,
 			default: '',
 		},
@@ -100,11 +95,11 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		error: {
+		hint: {
 			type: Boolean,
 			default: false,
 		},
-		errorColor: {
+		hintColor: {
 			type: String,
 			default: 'error',
 			validator(value) {
@@ -114,7 +109,7 @@ export default {
 				}
 			},
 		},
-		errorMessage: {
+		hintMessage: {
 			type: String,
 			default: '',
 		},
@@ -136,7 +131,7 @@ export default {
 			}
 		},
 		computedId() {
-			return this.id || `textField-${this._uid}`;
+			return `textField-${this._uid}`;
 		},
 		computedShowLabel() {
 			return this.label;
@@ -150,8 +145,8 @@ export default {
 			};
 		},
 		computedErrorColor() {
-			if (this.error) {
-				return this.errorColor;
+			if (this.hint) {
+				return this.hintColor;
 			} else {
 				return '';
 			}

@@ -49,19 +49,19 @@ import TextField, { textFieldTypes, textFieldAligns, textFieldErrorColor } from 
             defaultValue: false,
             control: { type: "boolean" },
         },
-        error: {
-            description: "텍스트필드 error 활성화",
+        hint: {
+            description: "텍스트필드 hint 활성화",
             defaultValue: false,
             control: { type: "boolean" },
         },
-        errorColor: {
-            description: "error color",
+        hintColor: {
+            description: "hint color",
             control: {
             type: "select",
             options: textFieldErrorColor,
            },
         },
-        errorMessage:{
+        hintMessage:{
             description: "텍스트필드 에러메시지",
             defaultValue: '',
             control: { type: "text" },
@@ -69,11 +69,6 @@ import TextField, { textFieldTypes, textFieldAligns, textFieldErrorColor } from 
         value: {
             description: "TextArea 들어갈 텍스트",
             defaultValue: null,
-            control: { type: "text" },
-        },
-        id: {
-            description: "텍스트필드ID (값이 없으면 textField-uid로 생성됨)",
-            defaultValue: '',
             control: { type: "text" },
         },
     }}
@@ -85,7 +80,6 @@ export const Default = (args, { argTypes }) => ({
     components: { TextField },
     template:
         `<TextField
-            :id="id"
             :type="type"
             :outlined="outlined"
             :placeholder="placeholder"
@@ -95,9 +89,9 @@ export const Default = (args, { argTypes }) => ({
             :readonly="readonly"
             :disabled="disabled"
             :value.sync="value"
-            :error="error"
-            :error-message="errorMessage"
-            :error-color="errorColor"
+            :hint="hint"
+            :hint-message="hintMessage"
+            :hint-color="hintColor"
         />`,
 });
 
@@ -121,36 +115,36 @@ export const Default = (args, { argTypes }) => ({
                 <div style="width:300px">
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-message="내용을 입력해주세요."
                         :outlined="false"
-                        placeholder="underlined + error + error msg"
+                        placeholder="underlined + hint + hint msg"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-message="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
-                        placeholder="underlined + error + label"
+                        placeholder="underlined + hint + label"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-message="내용을 입력해주세요."
                         outlined
-                        placeholder="outlined + error + error msg"
+                        placeholder="outlined + hint + hint msg"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-message="내용을 입력해주세요."
                         outlined
                         label="label"
-                        placeholder="outlined + error + label"
+                        placeholder="outlined + hint + label"
                         class="mb-20"
                     />
                 </div>
@@ -169,40 +163,40 @@ export const Default = (args, { argTypes }) => ({
                 <div style="width:300px">
                     <TextField
                         type="text"
-                        error
-                        error-color="secondary"
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-color="secondary"
+                        hint-message="내용을 입력해주세요."
                         :outlined="false"
-                        placeholder="underlined + error + error msg"
+                        placeholder="underlined + hint + hint msg"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-color="secondary"
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-color="secondary"
+                        hint-message="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
-                        placeholder="underlined + error + label"
+                        placeholder="underlined + hint + label"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
-                        error-color="secondary"
+                        hint
+                        hint-message="내용을 입력해주세요."
+                        hint-color="secondary"
                         outlined
-                        placeholder="outlined + error + error msg"
+                        placeholder="outlined + hint + hint msg"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
-                        error-color="secondary"
+                        hint
+                        hint-message="내용을 입력해주세요."
+                        hint-color="secondary"
                         outlined
                         label="label"
-                        placeholder="outlined + error + label"
+                        placeholder="outlined + hint + label"
                         class="mb-20"
                     />
                 </div>
@@ -221,40 +215,40 @@ export const Default = (args, { argTypes }) => ({
                 <div style="width:300px">
                     <TextField
                         type="text"
-                        error
-                        error-color="success"
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-color="success"
+                        hint-message="내용을 입력해주세요."
                         :outlined="false"
-                        placeholder="underlined + error + error msg"
+                        placeholder="underlined + hint + hint msg"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-color="success"
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-color="success"
+                        hint-message="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
-                        placeholder="underlined + error + label"
+                        placeholder="underlined + hint + label"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
-                        error-color="success"
+                        hint
+                        hint-message="내용을 입력해주세요."
+                        hint-color="success"
                         outlined
-                        placeholder="outlined + error + error msg"
+                        placeholder="outlined + hint + hint msg"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
-                        error-color="success"
+                        hint
+                        hint-message="내용을 입력해주세요."
+                        hint-color="success"
                         outlined
                         label="label"
-                        placeholder="outlined + error + label"
+                        placeholder="outlined + hint + label"
                         class="mb-20"
                     />
                 </div>
@@ -273,40 +267,40 @@ export const Default = (args, { argTypes }) => ({
                 <div style="width:300px">
                     <TextField
                         type="text"
-                        error
-                        error-color="primary"
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-color="primary"
+                        hint-message="내용을 입력해주세요."
                         :outlined="false"
-                        placeholder="underlined + error + error msg"
+                        placeholder="underlined + hint + hint msg"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-color="primary"
-                        error-message="내용을 입력해주세요."
+                        hint
+                        hint-color="primary"
+                        hint-message="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
-                        placeholder="underlined + error + label"
+                        placeholder="underlined + hint + label"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
-                        error-color="primary"
+                        hint
+                        hint-message="내용을 입력해주세요."
+                        hint-color="primary"
                         outlined
-                        placeholder="outlined + error + error msg"
+                        placeholder="outlined + hint + hint msg"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        error
-                        error-message="내용을 입력해주세요."
-                        error-color="primary"
+                        hint
+                        hint-message="내용을 입력해주세요."
+                        hint-color="primary"
                         outlined
                         label="label"
-                        placeholder="outlined + error + label"
+                        placeholder="outlined + hint + label"
                         class="mb-20"
                     />
                 </div>
