@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import TextField, { textFieldTypes, textFieldAligns } from "@/src/Components/DataEntry/TextField";
+import TextField, { textFieldTypes, textFieldAligns, textFieldErrorColor } from "@/src/Components/DataEntry/TextField";
 
 <Meta
     title="Data Entry/TextField"
@@ -54,6 +54,13 @@ import TextField, { textFieldTypes, textFieldAligns } from "@/src/Components/Dat
             defaultValue: false,
             control: { type: "boolean" },
         },
+        errorColor: {
+            description: "error color",
+            control: {
+            type: "select",
+            options: textFieldErrorColor,
+           },
+        },
         errorMessage:{
             description: "텍스트필드 에러메시지",
             defaultValue: '',
@@ -90,6 +97,7 @@ export const Default = (args, { argTypes }) => ({
             :outlined="outlined"
             :value.sync="value"
             :error="error"
+            :error-color="errorColor"
         />`,
 });
 
@@ -104,10 +112,10 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
-### Error
+### Error default
 
 <Canvas>
-    <Story name="Error" height="200px">
+    <Story name="Error Default" height="200px">
         {{
             template: `
                 <div style="width:300px">
@@ -117,6 +125,15 @@ export const Default = (args, { argTypes }) => ({
                         error-message="내용을 입력해주세요."
                         :outlined="false"
                         placeholder="underlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        label="label"
+                        placeholder="underlined + error + label"
                         class="mb-20"
                     />
                     <TextField
@@ -143,4 +160,158 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
+### Error Secondary
 
+<Canvas>
+    <Story name="Error Secondary" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <TextField
+                        type="text"
+                        error
+                        error-color="secondary"
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-color="secondary"
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        label="label"
+                        placeholder="underlined + error + label"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        error-color="secondary"
+                        outlined
+                        placeholder="outlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        error-color="secondary"
+                        outlined
+                        label="label"
+                        placeholder="outlined + error + label"
+                        class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Error Success
+
+<Canvas>
+    <Story name="Error Success" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <TextField
+                        type="text"
+                        error
+                        error-color="success"
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-color="success"
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        label="label"
+                        placeholder="underlined + error + label"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        error-color="success"
+                        outlined
+                        placeholder="outlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        error-color="success"
+                        outlined
+                        label="label"
+                        placeholder="outlined + error + label"
+                        class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Error Primary
+
+<Canvas>
+    <Story name="Error Primary" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <TextField
+                        type="text"
+                        error
+                        error-color="primary"
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-color="primary"
+                        error-message="내용을 입력해주세요."
+                        :outlined="false"
+                        label="label"
+                        placeholder="underlined + error + label"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        error-color="primary"
+                        outlined
+                        placeholder="outlined + error + error msg"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        error
+                        error-message="내용을 입력해주세요."
+                        error-color="primary"
+                        outlined
+                        label="label"
+                        placeholder="outlined + error + label"
+                        class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
