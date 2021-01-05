@@ -1,5 +1,5 @@
 <template>
-	<div style="position: relative">
+	<div class="c-application c-swiper" style="position: relative">
 		<base-swiper ref="mySwiper" class="swiper" :options="swiperOptions" v-bind="$attrs">
 			<base-swiper-slide
 				v-for="(node, index) in Object.keys(this.$slots).length"
