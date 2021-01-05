@@ -13,6 +13,7 @@
 			:focus="focus"
 			:readonly="readonly"
 			:disabled="disabled"
+			:error="error"
 			:error-color="errorColor"
 			:style="[computedAlign]"
 			:class="[computedLined, computedErrorColor]"
@@ -99,6 +100,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		error: {
+			type: Boolean,
+			default: false,
+		},
 		errorColor: {
 			type: String,
 			default: 'error',
@@ -145,7 +150,11 @@ export default {
 			};
 		},
 		computedErrorColor() {
-			return this.errorColor;
+			if (this.error) {
+				return this.errorColor;
+			} else {
+				return '';
+			}
 		},
 	},
 	mounted() {
@@ -183,37 +192,40 @@ export default {
 			padding: 0 16px;
 			border: 1px solid $gray200;
 			@include border-radius(2px);
+			&:focus {
+				border-color: $gray400;
+			}
 			&.error {
 				border-color: $red400;
 				&:focus {
 					border-color: $red400;
 				}
-				&.primary {
+			}
+			&.primary {
+				border-color: $primary;
+				&:focus {
 					border-color: $primary;
-					&:focus {
-						border-color: $primary;
-					}
-				}
-				&.success {
-					border-color: $success;
-					&:focus {
-						border-color: $success;
-					}
-				}
-				&.secondary {
-					border-color: $secondary;
-					&:focus {
-						border-color: $secondary;
-					}
 				}
 			}
-			&:focus {
-				border-color: $gray400;
+			&.success {
+				border-color: $success;
+				&:focus {
+					border-color: $success;
+				}
+			}
+			&.secondary {
+				border-color: $secondary;
+				&:focus {
+					border-color: $secondary;
+				}
 			}
 		}
 		&.underlined {
 			padding: 0 4px;
 			border-bottom: 1px solid $gray200;
+			&:focus {
+				border-color: $gray400;
+			}
 			&.error {
 				border-color: $error;
 				&:focus {
@@ -237,9 +249,6 @@ export default {
 				&:focus {
 					border-color: $secondary;
 				}
-			}
-			&:focus {
-				border-color: $gray400;
 			}
 		}
 		&:disabled {
