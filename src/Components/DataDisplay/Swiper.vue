@@ -253,11 +253,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../assets/style/swiper/swiper.css';
 $swiper-background-color: #c4c4c4;
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;
 .swiper {
-	min-height: 300px;
 	width: 100%;
 	.swiper-slide {
 		display: flex;

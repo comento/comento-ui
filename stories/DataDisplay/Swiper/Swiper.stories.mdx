@@ -2,6 +2,8 @@ import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Swiper, { SwiperControlsColors, SwiperControlPositions, SwiperIndicatorColors, SwiperIndicatorPositions, SwiperSpacings } from '@/src/Components/DataDisplay/Swiper';
 import Button from '@/src/Components/Button/Button';
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import Box from '@/src/Components/DataDisplay/Box';
+import SwiperItemExample from './SwiperItemExample';
 
 <Meta
     title="Data Display/Swiper"
@@ -71,12 +73,12 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Swiper, Typography },
+    components: { Swiper, SwiperItemExample },
     template: `
         <div style="padding: 12px 32px;">
             <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :controlsCircle="controlsCircle" :withIndicator="withIndicator" :indicatorPosition="indicatorPosition" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
                 <template v-for="(item, index) in 10" :slot="'item' + index">
-                    <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                 </template>
             </Swiper>
         </div>
@@ -108,41 +110,41 @@ export const Default = (args, { argTypes }) => ({
                     <div style="padding: 12px 24px;">
                     <Swiper controlsColor="light" controlsPosition="inside" withControls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                     <Swiper controlsColor="dark" controlsPosition="inside" withControls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                     <Swiper controlsColor="light" controlsPosition="inside" withControls controlsCircle style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                     <Swiper controlsColor="dark" controlsPosition="inside" withControls controlsCircle style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                      <Swiper controlsColor="light" controlsPosition="outside" withControls controlsCircle style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                     <Swiper controlsColor="dark" controlsPosition="top" withControls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                    <Swiper controlsColor="light" controlsPosition="top" controlsCircle withControls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                     </div>`,
-            components: { Swiper, Typography },
+            components: { Swiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -161,21 +163,21 @@ export const Default = (args, { argTypes }) => ({
                 <div style="padding: 12px 32px">
                     <Swiper controlsColor="dark" controlsPosition="inside" withControls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                    <Swiper controlsColor="dark" controlsPosition="outside" withControls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                     <Swiper controlsColor="dark" controlsPosition="top" withControls>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                 </div>`,
-            components: { Swiper, Typography },
+            components: { Swiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -194,16 +196,16 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <Swiper controlsColor="light" withControls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                    <Swiper controlsColor="dark" withControls>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                 </div>`,
-            components: { Swiper, Typography },
+            components: { Swiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -222,16 +224,16 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <Swiper indicatorColor="light" withIndicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                    <Swiper indicatorColor="dark" withIndicator>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                 </div>`,
-            components: { Swiper, Typography },
+            components: { Swiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -250,16 +252,16 @@ export const Default = (args, { argTypes }) => ({
                 <div style="padding: 24px 32px;">
                     <Swiper indicatorColor="dark" indicatorPosition="inside" withIndicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                    <Swiper indicatorColor="dark" indicatorPosition="outside" withIndicator>
                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                           <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                        </template>
                    </Swiper>
                 </div>`,
-            components: { Swiper, Typography },
+            components: { Swiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -278,16 +280,16 @@ export const Default = (args, { argTypes }) => ({
                 <div style="padding: 24px 32px;">
                     <Swiper controlsColor="light" controlsPosition="inside" withControls indicatorColor="light" indicatorPosition="inside" withIndicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
                    <Swiper controlsColor="dark" controlsPosition="outside" withControls indicatorColor="dark" indicatorPosition="outside" withIndicator>
                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                           <Typography type="display1" color="white">ITEM{{index+1}}</Typography>
+                          <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                        </template>
                    </Swiper>
                 </div>`,
-            components: { Swiper, Typography },
+            components: { Swiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
