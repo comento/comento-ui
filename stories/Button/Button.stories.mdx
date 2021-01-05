@@ -166,26 +166,86 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <div style="display: flex">
-                    <Button color="primary" type="fill" size="medium" disabled>Fill Primary</Button>
-                    <Button color="success" type="fill" size="medium" disabled>Fill Success</Button>
-                    <Button color="error" type="fill" size="medium" disabled>Fill Gray</Button>
-                    <Button color="secondary" type="fill" size="medium" disabled>Fill Gray</Button>
+                    <Button color="primary" type="fill" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="primary" />
+                        </template>
+                        Fill Primary
+                    </Button>
+                    <Button color="success" type="fill" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="success" />
+                        </template>
+                        Fill Success
+                    </Button>
+                    <Button color="error" type="fill" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="error" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                    <Button color="secondary" type="fill" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="secondary" />
+                        </template>
+                        Fill Gray
+                    </Button>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="outlined" size="medium" disabled>Fill Primary</Button>
-                    <Button color="success" type="outlined" size="medium" disabled>Fill Success</Button>
-                    <Button color="error" type="outlined" size="medium" disabled>Fill Gray</Button>
-                    <Button color="secondary" type="outlined" size="medium" disabled>Fill Gray</Button>
+                    <Button color="primary" type="outlined" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="primary" />
+                        </template>
+                        Fill Primary
+                    </Button>
+                    <Button color="success" type="outlined" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="success" />
+                        </template>
+                        Fill Success
+                    </Button>
+                    <Button color="error" type="outlined" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="error" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                    <Button color="secondary" type="outlined" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="secondary" />
+                        </template>
+                        Fill Gray
+                    </Button>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="text" size="medium" disabled>Fill Primary</Button>
-                    <Button color="success" type="text" size="medium" disabled>Fill Success</Button>
-                    <Button color="error" type="text" size="medium" disabled>Fill Gray</Button>
-                    <Button color="secondary" type="text" size="medium" disabled>Fill Gray</Button>
+                    <Button color="primary" type="text" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="primary" />
+                        </template>
+                        Fill Primary
+                    </Button>
+                    <Button color="success" type="text" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="success" />
+                        </template>
+                        Fill Success
+                    </Button>
+                    <Button color="error" type="text" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="error" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                    <Button color="secondary" type="text" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="secondary" />
+                        </template>
+                        Fill Gray
+                    </Button>
                   </div>
                 </div>
         `,
-            components: { Button },
+            components: { Button, Icon },
         }}
     </Story>
 </Canvas>
