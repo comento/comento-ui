@@ -73,8 +73,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import '../../../assets/style/swiper/swiper.css';
+<style lang="scss" scoped>
+::v-deep {
+	@import '@/assets/style/swiper/swiper';
+}
 .c-tabs--menu {
 	&-container {
 		background-color: $white;

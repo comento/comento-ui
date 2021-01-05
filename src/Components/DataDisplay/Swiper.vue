@@ -253,7 +253,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../assets/style/swiper/swiper.css';
+::v-deep {
+	@import '@/assets/style/swiper/swiper';
+}
 $swiper-background-color: #c4c4c4;
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;
