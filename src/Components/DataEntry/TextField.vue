@@ -13,10 +13,9 @@
 			:focus="focus"
 			:readonly="readonly"
 			:disabled="disabled"
-			:error="error"
 			:error-color="errorColor"
 			:style="[computedAlign]"
-			:class="[computedLined, computedError, computedErrorColor]"
+			:class="[computedLined, computedErrorColor]"
 			v-bind="$attrs"
 			@input="handleTyping"
 			v-on="$listeners"
@@ -100,16 +99,12 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		error: {
-			type: Boolean,
-			default: false,
-		},
 		errorColor: {
 			type: String,
 			default: 'error',
 			validator(value) {
 				const isValid = textFieldErrorColor.indexOf(value) !== -1;
-				if (!isValid) {
+				if (isValid) {
 					return isValid;
 				}
 			},
@@ -148,9 +143,6 @@ export default {
 			return {
 				textAlign: this.align,
 			};
-		},
-		computedError() {
-			return { error: this.error };
 		},
 		computedErrorColor() {
 			return this.errorColor;
@@ -227,23 +219,23 @@ export default {
 				&:focus {
 					border-color: $error;
 				}
-				&.primary {
+			}
+			&.primary {
+				border-color: $primary;
+				&:focus {
 					border-color: $primary;
-					&:focus {
-						border-color: $primary;
-					}
 				}
-				&.success {
+			}
+			&.success {
+				border-color: $success;
+				&:focus {
 					border-color: $success;
-					&:focus {
-						border-color: $success;
-					}
 				}
-				&.secondary {
+			}
+			&.secondary {
+				border-color: $secondary;
+				&:focus {
 					border-color: $secondary;
-					&:focus {
-						border-color: $secondary;
-					}
 				}
 			}
 			&:focus {
@@ -265,40 +257,44 @@ export default {
 	}
 	&.label {
 		.c-text-field--input {
+			&:focus {
+				+ .c-text-field--label {
+					opacity: 1;
+				}
+			}
 			&.error {
 				border-color: $error;
 				&:focus {
 					border-color: $red400;
 					+ .c-text-field--label {
-						opacity: 1;
 						color: $error;
 					}
 				}
-				&.primary {
+			}
+			&.primary {
+				border-color: $primary;
+				&:focus {
 					border-color: $primary;
-					&:focus {
-						border-color: $primary;
-						+ .c-text-field--label {
-							color: $primary;
-						}
+					+ .c-text-field--label {
+						color: $primary;
 					}
 				}
-				&.success {
+			}
+			&.success {
+				border-color: $success;
+				&:focus {
 					border-color: $success;
-					&:focus {
-						border-color: $success;
-						+ .c-text-field--label {
-							color: $success;
-						}
+					+ .c-text-field--label {
+						color: $success;
 					}
 				}
-				&.secondary {
+			}
+			&.secondary {
+				border-color: $secondary;
+				&:focus {
 					border-color: $secondary;
-					&:focus {
-						border-color: $secondary;
-						+ .c-text-field--label {
-							color: $secondary;
-						}
+					+ .c-text-field--label {
+						color: $secondary;
 					}
 				}
 			}
