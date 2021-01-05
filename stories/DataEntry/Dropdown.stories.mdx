@@ -56,7 +56,7 @@ export const Default = (args, { argTypes }) => ({
                         <ListItem :key="'list-item-' + index" @click="clickDropdownItem(item)">
                             {{ item }}
                         </ListItem>
-                        <Divider :key="'divider-' + index" width="100%" height="1px" />
+                        <Divider :key="'divider-' + index" vertical />
                     </template>
                 </List>
             </template>
@@ -121,7 +121,7 @@ export const Default = (args, { argTypes }) => ({
                                         >
                                             {{ item }}
                                         </ListItem>
-                                        <Divider :key="'divider-' + index" width="100%" height="1px" />
+                                        <Divider :key="'divider-' + index" vertical />
                                     </template>
                                 </List>
                             </template>
@@ -143,7 +143,7 @@ export const Default = (args, { argTypes }) => ({
                                     <ListItem :key="'list-item-' + index" @click="clickInputDropdownItem(item)">
                                         {{ item }}
                                     </ListItem>
-                                    <Divider :key="'divider-' + index" width="100%" height="1px" />
+                                    <Divider :key="'divider-' + index" vertical />
                                 </template>
                             </List>
                         </template>
