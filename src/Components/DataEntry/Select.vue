@@ -25,7 +25,7 @@
 					<ListItem :key="`c-select--option-${index}`" size="small" @click="handleSelect(option)">
 						<Typography type="body2">{{ handleOptions(option, 'label') }}</Typography>
 					</ListItem>
-					<Divider :key="index" width="100%" height="1px" />
+					<Divider :key="index" vertical />
 				</template>
 			</List>
 		</template>
