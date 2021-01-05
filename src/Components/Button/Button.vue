@@ -172,6 +172,9 @@ export default {
 		&:active {
 			pointer-events: none;
 		}
+		.c-button--icon::v-deep .c-icon {
+			@include disabled();
+		}
 	}
 	&--loading {
 		position: absolute;
