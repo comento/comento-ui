@@ -74,6 +74,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../../assets/style/swiper/swiper.css';
 .c-tabs--menu {
 	&-container {
 		background-color: $white;
