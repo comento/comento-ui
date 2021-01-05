@@ -156,6 +156,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$primary-background-color: $primary;
+$primary-hover-background-color: $green800;
+$primary-disabled-background-color: $green100;
+$primary-text-color: $green800;
+
+$success-background-color: $success;
+$success-hover-background-color: $blue800;
+$success-disabled-background-color: $blue100;
+$success-text-color: $blue600;
+
+$secondary-background-color: $gray600;
+$secondary-hover-background-color: $gray800;
+$secondary-disabled-background-color: $gray100;
+$secondary-text-color: $gray500;
+
+$error-background-color: $red600;
+$error-hover-background-color: $red800;
+$error-disabled-background-color: $red100;
+$error-text-color: $red600;
 .c-button {
 	color: $white;
 	background-color: $primary;
@@ -171,6 +190,9 @@ export default {
 		cursor: not-allowed !important;
 		&:active {
 			pointer-events: none;
+		}
+		.c-button--icon::v-deep .c-icon {
+			@include disabled();
 		}
 	}
 	&--loading {
@@ -243,142 +265,172 @@ export default {
 		}
 	}
 }
+
 .primary {
-	background-color: $primary;
+	background-color: $primary-background-color;
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: $green800;
+		background-color: $primary-hover-background-color;
 	}
 	&:disabled {
-		background-color: $green100;
+		background-color: $primary-disabled-background-color;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
 		.c-button--loading {
-			background-color: $green100;
+			background-color: $primary-disabled-background-color;
 		}
 	}
 	.c-button--loading {
-		background-color: $primary;
+		background-color: $primary-background-color;
 	}
 
 	&.text {
-		color: $primary;
+		color: $primary-text-color;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $green100;
+			background-color: $primary-disabled-background-color;
 		}
 		&:disabled {
-			color: $green100;
+			.c-button--icon::v-deep .c-icon {
+				fill: $primary-disabled-background-color !important;
+			}
+			color: $primary-disabled-background-color;
 			background: none;
 		}
 	}
 	&.outlined {
 		background-color: $white;
-		border: 1px solid $primary;
-		color: $primary;
+		border: 1px solid $primary-text-color;
+		color: $primary-text-color;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $green100;
+			background-color: $primary-disabled-background-color;
 		}
 		&:disabled {
-			color: $green100;
-			border: 1px solid $green100;
+			color: $primary-disabled-background-color;
+			border: 1px solid $primary-disabled-background-color;
 			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $primary-disabled-background-color !important;
+			}
 		}
 		.c-button--loading {
 			background-color: $white;
 		}
 	}
 }
+
 .success {
-	background-color: $success;
+	background-color: $success-background-color;
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: $blue800;
+		background-color: $success-hover-background-color;
 	}
 	&:disabled {
-		background-color: $blue100;
+		background-color: $success-disabled-background-color;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
 		.c-button--loading {
-			background-color: $blue100;
+			background-color: $success-disabled-background-color;
 		}
 	}
 	.c-button--loading {
-		background-color: $success;
+		background-color: $success-background-color;
 	}
 	&.text {
-		color: $blue600;
+		color: $success-text-color;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $blue100;
+			background-color: $success-disabled-background-color;
 		}
 		&:disabled {
-			color: $blue100;
+			color: $success-disabled-background-color;
 			background: none;
+			.c-button--icon::v-deep .c-icon {
+				fill: $success-disabled-background-color !important;
+			}
 		}
 	}
 	&.outlined {
 		background-color: $white;
-		border: 1px solid $blue600;
-		color: $blue600;
+		border: 1px solid $success-text-color;
+		color: $success-text-color;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $blue100;
+			background-color: $success-disabled-background-color;
 		}
 		&:disabled {
-			color: $blue100;
-			border: 1px solid $blue100;
+			color: $success-disabled-background-color;
+			border: 1px solid $success-disabled-background-color;
 			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $success-disabled-background-color !important;
+			}
 		}
 		.c-button--loading {
 			background-color: $white;
 		}
 	}
 }
+
 .secondary {
-	background-color: $gray600;
+	background-color: $secondary-background-color;
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: $gray800;
+		background-color: $secondary-hover-background-color;
 	}
 	&:disabled {
-		background-color: $gray100;
+		background-color: $secondary-disabled-background-color;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
 		.c-button--loading {
-			background-color: $gray100;
+			background-color: $secondary-disabled-background-color;
 		}
 	}
 	.c-button--loading {
-		background-color: $gray600;
+		background-color: $secondary-background-color;
 	}
 	&.text {
-		color: $gray500;
+		color: $secondary-text-color;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $gray100;
+			background-color: $secondary-disabled-background-color;
 		}
 		&:disabled {
-			color: $gray100;
+			color: $secondary-disabled-background-color;
 			background: none;
+			.c-button--icon::v-deep .c-icon {
+				fill: $secondary-disabled-background-color !important;
+			}
 		}
 	}
 	&.outlined {
 		background-color: $white;
 		border: 1px solid $gray400;
-		color: $gray500;
+		color: $secondary-text-color;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $gray100;
+			background-color: $secondary-disabled-background-color;
 		}
 		&:disabled {
-			color: $gray100;
-			border: 1px solid $gray100;
+			color: $secondary-disabled-background-color;
+			border: 1px solid $secondary-disabled-background-color;
 			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $secondary-disabled-background-color !important;
+			}
 		}
 		.c-button--loading {
 			background-color: $white;
@@ -386,31 +438,37 @@ export default {
 	}
 }
 .error {
-	background-color: $red600;
+	background-color: $error-background-color;
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: $red800;
+		background-color: $error-hover-background-color;
 	}
 	&:disabled {
-		background-color: $red100;
+		background-color: $error-disabled-background-color;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
 		.c-button--loading {
-			background-color: $red100;
+			background-color: $error-disabled-background-color;
 		}
 	}
 	.c-button--loading {
-		background-color: $red600;
+		background-color: $error-background-color;
 	}
 	&.text {
-		color: $red600;
+		color: $error-text-color;
 		&:hover,
 		&:focus,
 		&:active {
 			background-color: $red000;
 		}
 		&:disabled {
-			color: $red100;
+			color: $error-disabled-background-color;
 			background: none;
+			.c-button--icon::v-deep .c-icon {
+				fill: $red100 !important;
+			}
 		}
 	}
 	&.outlined {
@@ -426,6 +484,9 @@ export default {
 			color: $red100;
 			border: 1px solid $red100;
 			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $error-disabled-background-color !important;
+			}
 		}
 		.c-button--loading {
 			background-color: $white;
