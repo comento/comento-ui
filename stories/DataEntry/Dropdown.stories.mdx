@@ -4,7 +4,7 @@ import List from "@/src/Components/DataDisplay/List";
 import ListItem from "@/src/Components/DataDisplay/ListItem";
 import Divider from "@/src/Elements/Utility/Divider";
 import SearchInput from "@/src/Components/DataEntry/SearchInput";
-import Input from "@/src/Components/DataEntry/Input";
+import TextField from "@/src/Components/DataEntry/TextField";
 import Typography from "@/src/Elements/Core/Typography/Typography";
 import Label from '@/src/Components/DataDisplay/Label';
 import clickOutside from "@/directives/click-outside";
@@ -56,7 +56,7 @@ export const Default = (args, { argTypes }) => ({
                         <ListItem :key="'list-item-' + index" @click="clickDropdownItem(item)">
                             {{ item }}
                         </ListItem>
-                        <Divider :key="'divider-' + index" width="100%" height="1px" />
+                        <Divider :key="'divider-' + index" vertical />
                     </template>
                 </List>
             </template>
@@ -121,7 +121,7 @@ export const Default = (args, { argTypes }) => ({
                                         >
                                             {{ item }}
                                         </ListItem>
-                                        <Divider :key="'divider-' + index" width="100%" height="1px" />
+                                        <Divider :key="'divider-' + index" vertical />
                                     </template>
                                 </List>
                             </template>
@@ -129,9 +129,10 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <Dropdown max-width="230px" label="Input Dropdown">
                         <template v-slot:item>
-                            <Input
+                            <TextField
                                 v-click-outside="closeList"
                                 :value.sync="inputValue"
+                                outlined
                                 full
                                 @click="showInputDropdown = !showInputDropdown"
                                 style="width: 230px"
@@ -143,14 +144,14 @@ export const Default = (args, { argTypes }) => ({
                                     <ListItem :key="'list-item-' + index" @click="clickInputDropdownItem(item)">
                                         {{ item }}
                                     </ListItem>
-                                    <Divider :key="'divider-' + index" width="100%" height="1px" />
+                                    <Divider :key="'divider-' + index" vertical />
                                 </template>
                             </List>
                         </template>
                     </Dropdown>
                 </div>
             `,
-            components: { Dropdown, SearchInput, List, ListItem, Divider, Input, Label },
+            components: { Dropdown, SearchInput, List, ListItem, Divider, TextField, Label },
             directives: {
                 clickOutside,
             },
