@@ -8,20 +8,24 @@ import TextArea from "@/src/Components/DataEntry/TextArea";
     component={ Form }
 />
 
-## Stories
-### All
-<Canvas>
-    <Story name="All" height="100px">
-     {{
-        template: `
-            <div style="width:300px">
-                <Form>
-                    <TextField outlined placeholder="사이 사이 간격 12px"/>
-                    <TextArea/>
-                </Form>
-            </div>
-    `,
-        components: { Form, TextField, TextArea },
-    }}
-    </Story>
-</Canvas>
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Form, TextField, TextArea },
+    template:
+        `<div style="width:300px">
+             <Form>
+                 <TextField outlined placeholder="사이 사이 간격 12px"/>
+                 <TextArea type="outlined" />
+             </Form>
+         </div>`,
+});
+
+# Form
+
+**Form** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="150px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
