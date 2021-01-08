@@ -12,8 +12,7 @@
 			:focus="focus"
 			:readonly="readonly"
 			:disabled="disabled"
-			:hint="hint"
-			:hint-color="hintColor"
+			:color="color"
 			:style="[computedAlign]"
 			:class="[computedLined, computedErrorColor]"
 			v-bind="$attrs"
@@ -21,14 +20,8 @@
 			v-on="$listeners"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Typography
-			v-if="hintMessage !== ''"
-			type="caption2"
-			:color="hintColor"
-			element="p"
-			class="c-text-field--message"
-		>
-			<Icon name="IconExclamationSmallFill" :color="hintColor" class="mr-2" />{{ hintMessage }}
+		<Typography v-if="hint !== ''" type="caption2" :color="color" element="p" class="c-text-field--message">
+			<Icon name="IconExclamationSmallFill" :color="color" class="mr-2" />{{ hint }}
 		</Typography>
 	</div>
 </template>
@@ -95,11 +88,7 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		hint: {
-			type: Boolean,
-			default: false,
-		},
-		hintColor: {
+		color: {
 			type: String,
 			default: 'error',
 			validator(value) {
@@ -109,7 +98,7 @@ export default {
 				}
 			},
 		},
-		hintMessage: {
+		hint: {
 			type: String,
 			default: '',
 		},
@@ -146,7 +135,7 @@ export default {
 		},
 		computedErrorColor() {
 			if (this.hint) {
-				return this.hintColor;
+				return this.color;
 			} else {
 				return '';
 			}

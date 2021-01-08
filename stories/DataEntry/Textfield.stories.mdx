@@ -49,19 +49,14 @@ import TextField, { textFieldTypes, textFieldAligns, textFieldErrorColor } from 
             defaultValue: false,
             control: { type: "boolean" },
         },
-        hint: {
-            description: "텍스트필드 hint 활성화",
-            defaultValue: false,
-            control: { type: "boolean" },
-        },
-        hintColor: {
+        color: {
             description: "hint color",
             control: {
             type: "select",
             options: textFieldErrorColor,
            },
         },
-        hintMessage:{
+        hint:{
             description: "텍스트필드 에러메시지",
             defaultValue: '',
             control: { type: "text" },
@@ -90,8 +85,7 @@ export const Default = (args, { argTypes }) => ({
             :disabled="disabled"
             :value.sync="value"
             :hint="hint"
-            :hint-message="hintMessage"
-            :hint-color="hintColor"
+            :color="color"
         />`,
 });
 
@@ -106,25 +100,23 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
-### Error default
+### Hint default
 
 <Canvas>
-    <Story name="Error Default" height="200px">
+    <Story name="Hint Default" height="200px">
         {{
             template: `
                 <div style="width:300px">
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
+                        hint="내용을 입력해주세요."
                         :outlined="false"
-                        placeholder="underlined + hint + hint msg"
+                        placeholder="underlined + hint "
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
+                        hint="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
                         placeholder="underlined + hint + label"
@@ -132,16 +124,14 @@ export const Default = (args, { argTypes }) => ({
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
+                        hint="내용을 입력해주세요."
                         outlined
-                        placeholder="outlined + hint + hint msg"
+                        placeholder="outlined + hint "
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
+                        hint="내용을 입력해주세요."
                         outlined
                         label="label"
                         placeholder="outlined + hint + label"
@@ -154,27 +144,25 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
-### Error Secondary
+### Hint Secondary
 
 <Canvas>
-    <Story name="Error Secondary" height="200px">
+    <Story name="Hint Secondary" height="200px">
         {{
             template: `
                 <div style="width:300px">
                     <TextField
                         type="text"
-                        hint
-                        hint-color="secondary"
-                        hint-message="내용을 입력해주세요."
+                        color="secondary"
+                        hint="내용을 입력해주세요."
                         :outlined="false"
-                        placeholder="underlined + hint + hint msg"
+                        placeholder="underlined + hint "
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-color="secondary"
-                        hint-message="내용을 입력해주세요."
+                        color="secondary"
+                        hint="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
                         placeholder="underlined + hint + label"
@@ -182,18 +170,16 @@ export const Default = (args, { argTypes }) => ({
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
-                        hint-color="secondary"
+                        hint="내용을 입력해주세요."
+                        color="secondary"
                         outlined
-                        placeholder="outlined + hint + hint msg"
+                        placeholder="outlined + hint"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
-                        hint-color="secondary"
+                        hint="내용을 입력해주세요."
+                        color="secondary"
                         outlined
                         label="label"
                         placeholder="outlined + hint + label"
@@ -206,27 +192,25 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
-### Error Success
+### Hint Success
 
 <Canvas>
-    <Story name="Error Success" height="200px">
+    <Story name="Hint Success" height="200px">
         {{
             template: `
                 <div style="width:300px">
                     <TextField
                         type="text"
-                        hint
-                        hint-color="success"
-                        hint-message="내용을 입력해주세요."
+                        color="success"
+                        hint="내용을 입력해주세요."
                         :outlined="false"
-                        placeholder="underlined + hint + hint msg"
+                        placeholder="underlined + hint"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-color="success"
-                        hint-message="내용을 입력해주세요."
+                        color="success"
+                        hint="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
                         placeholder="underlined + hint + label"
@@ -234,18 +218,16 @@ export const Default = (args, { argTypes }) => ({
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
-                        hint-color="success"
+                        hint="내용을 입력해주세요."
+                        color="success"
                         outlined
-                        placeholder="outlined + hint + hint msg"
+                        placeholder="outlined + hint"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
-                        hint-color="success"
+                        hint="내용을 입력해주세요."
+                        color="success"
                         outlined
                         label="label"
                         placeholder="outlined + hint + label"
@@ -258,27 +240,25 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
-### Error Primary
+### Hint Primary
 
 <Canvas>
-    <Story name="Error Primary" height="200px">
+    <Story name="Hint Primary" height="200px">
         {{
             template: `
                 <div style="width:300px">
                     <TextField
                         type="text"
-                        hint
-                        hint-color="primary"
-                        hint-message="내용을 입력해주세요."
+                        color="primary"
+                        hint="내용을 입력해주세요."
                         :outlined="false"
-                        placeholder="underlined + hint + hint msg"
+                        placeholder="underlined + hint "
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-color="primary"
-                        hint-message="내용을 입력해주세요."
+                        color="primary"
+                        hint="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
                         placeholder="underlined + hint + label"
@@ -286,18 +266,16 @@ export const Default = (args, { argTypes }) => ({
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
-                        hint-color="primary"
+                        hint="내용을 입력해주세요."
+                        color="primary"
                         outlined
-                        placeholder="outlined + hint + hint msg"
+                        placeholder="outlined + hint"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
-                        hint
-                        hint-message="내용을 입력해주세요."
-                        hint-color="primary"
+                        hint="내용을 입력해주세요."
+                        color="primary"
                         outlined
                         label="label"
                         placeholder="outlined + hint + label"
