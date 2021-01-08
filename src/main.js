@@ -4,6 +4,7 @@ import '@/plugins';
 import '@/mixins';
 import '@/directives';
 import '../assets/style/base/global.scss';
+import '../assets/style/quill/quill.scss';
 
 const ComponentLibrary = {
 	// eslint-disable-next-line no-unused-vars
