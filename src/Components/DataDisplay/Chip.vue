@@ -1,5 +1,5 @@
 <template>
-	<span class="c-application c-chip" :class="[computedType, computedColor, computedSize]">
+	<span class="c-application c-chip" :class="[computedType, computedColor, computedSize, computedFull]">
 		<slot />
 	</span>
 </template>
@@ -23,6 +23,10 @@ export default {
 			type: String,
 			default: 'medium',
 		},
+		full: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		computedType() {
@@ -33,6 +37,11 @@ export default {
 		},
 		computedSize() {
 			return `${this.size}`;
+		},
+		computedFull() {
+			return {
+				full: this.full,
+			};
 		},
 	},
 };
@@ -47,6 +56,7 @@ export default {
 	align-items: center;
 	justify-content: center;
 	border-radius: 4px;
+	text-align: center;
 	&.secondary {
 		color: $gray500;
 		border: 1px solid $gray100;
@@ -104,6 +114,9 @@ export default {
 		&.filter {
 			border-radius: 15px;
 		}
+	}
+	&.full {
+		display: block;
 	}
 }
 </style>
