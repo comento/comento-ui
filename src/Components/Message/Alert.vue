@@ -21,6 +21,7 @@ import Row from '@/src/Components/Layout/Row';
 import StyleCol from '@/src/Components/Layout/StyleCol';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Typography from '@/src/Elements/Core/Typography/Typography';
+
 export const AlertTypes = ['information', 'warning'];
 
 export default {
@@ -62,6 +63,7 @@ export default {
 		align-items: center;
 		width: 100%;
 		height: $alert-height;
+		white-space: nowrap;
 		svg {
 			flex-shrink: 0;
 			margin-right: 8px;
