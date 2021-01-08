@@ -84,6 +84,7 @@ export const Default = (args, { argTypes }) => ({
           data() {
               return {
                   files: [],
+                  createFiles: [],
                   editFiles: [],
                   mockFile: { file: new File(["foo"], "foo.txt", { type: "text/plain",}), isLoading: false},
                   mockFiles: [ { file: new File(["foo"], "foo.txt", { type: "text/plain",}), isLoading: false} ],
@@ -103,11 +104,18 @@ export const Default = (args, { argTypes }) => ({
             handleClickItemContent(payload) {
                 alert('clickItemContent')
             },
+            handleCreateUploadFiles(files) {
+               const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
+               this.createFiles = [...this.createFiles, ...filesWithLoading];
+            },
             handleEditUploadFiles(files) {
                 const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
                 this.editFiles = [...this.editFiles, ...filesWithLoading];
             },
-            handleClickTrashIcon(payload) {
+            handleCreateClickTrashIcon(payload) {
+                this.createFiles = this.createFiles.filter((item, index) => index !== payload.index);
+            },
+            handleEditClickTrashIcon(payload) {
                 this.editFiles = this.editFiles.filter((item, index) => index !== payload.index);
             },
             handleClickMockFileDownloadIcon(payload) {
@@ -124,10 +132,10 @@ export const Default = (args, { argTypes }) => ({
                         <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">생성 시</Typography>
                             <FileInput full
-                              @uploadFiles="handleUploadFiles"
+                              @uploadFiles="handleCreateUploadFiles"
                             />
                             <Divider type="dash" vertical style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
-                            <FileList :files="files" @clickFileDownloadIcon="handleClickFileDownloadIcon" @clickItemContent="handleClickItemContent"/>
+                            <FileList :files="createFiles" isEdit @clickTrashIcon="handleCreateClickTrashIcon" @clickItemContent="handleClickItemContent"/>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">수정 시</Typography>
@@ -135,7 +143,7 @@ export const Default = (args, { argTypes }) => ({
                               @uploadFiles="handleEditUploadFiles"
                             />
                             <Divider type="dash" vertical style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
-                            <FileList :files="editFiles" isEdit @clickTrashIcon="handleClickTrashIcon" @clickItemContent="handleClickItemContent"/>
+                            <FileList :files="editFiles" isEdit @clickTrashIcon="handleEditClickTrashIcon" @clickItemContent="handleClickItemContent"/>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">완료 시</Typography>
