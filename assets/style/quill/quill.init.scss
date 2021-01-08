@@ -1,0 +1,143 @@
+.quill-editor {
+  border: 1px solid $secondary;
+  color: rgba(0, 0, 0, 1);
+}
+
+.ql-editor {
+  line-height: 150%;
+  min-height: 100px;
+  padding: 0;
+
+  .ql-blank::before {
+    color: $secondary;
+    font-style: normal;
+    left: 0;
+    padding: 0 5px;
+    right: auto;
+  }
+
+  ol, ul {
+    padding-left: 0;
+  }
+
+  li.ql-indent-1:not(.ql-direction-rtl) {
+    padding-left: 2.7em;
+  }
+  li.ql-indent-1.ql-direction-rtl.ql-align-right {
+    padding-right: 2.7em;
+  }
+
+  li.ql-indent-2:not(.ql-direction-rtl) {
+    padding-left: 3.9em;
+  }
+  li.ql-indent-2.ql-direction-rtl.ql-align-right {
+    padding-right: 3.9em;
+  }
+
+  li.ql-indent-3:not(.ql-direction-rtl) {
+    padding-left: 5.1em;
+  }
+  li.ql-indent-3.ql-direction-rtl.ql-align-right {
+    padding-left: 5.1em;
+  }
+
+  li.ql-indent-4:not(.ql-direction-rtl) {
+    padding-left: 6.3em;
+  }
+  li.ql-indent-4.ql-direction-rtl.ql-align-right {
+    padding-left: 6.3em;
+  }
+
+  li.ql-indent-5:not(.ql-direction-rtl) {
+    padding-left: 7.5em;
+  }
+  li.ql-indent-5.ql-direction-rtl.ql-align-right {
+    padding-left: 7.5em;
+  }
+
+  li.ql-indent-6:not(.ql-direction-rtl) {
+    padding-left: 8.7em;
+  }
+  li.ql-indent-6.ql-direction-rtl.ql-align-right {
+    padding-left: 8.7em;
+  }
+
+  li.ql-indent-7:not(.ql-direction-rtl) {
+    padding-left: 9.9em;
+  }
+  li.ql-indent-7.ql-direction-rtl.ql-align-right {
+    padding-left: 9.9em;
+  }
+
+  li.ql-indent-8:not(.ql-direction-rtl) {
+    padding-left: 11.1em;
+  }
+  li.ql-indent-8.ql-direction-rtl.ql-align-right {
+    padding-left: 11.1em;
+  }
+
+  li.ql-indent-9:not(.ql-direction-rtl) {
+    padding-left: 11.1em;
+  }
+  li.ql-indent-9.ql-direction-rtl.ql-align-right {
+    padding-right: 11.1em;
+  }
+}
+
+.ql-container {
+  font-size: 16px;
+}
+
+
+/*
+  quill.snow.css - custom style
+ */
+.ql-snow {
+  a {
+    color: $success;
+    text-decoration: underline;
+  }
+
+  .ql-picker.ql-header {
+    width: 65px;
+  }
+
+  .ql-tooltip {
+    border: 1px solid $secondary;
+    box-shadow: 0 0 5px #ddd;
+
+    input[type=text] {
+      border-color: $secondary;
+    }
+
+    a.ql-action::after {
+      border-color: $secondary;
+    }
+  }
+}
+
+.ql-toolbar.ql-snow {
+  border: none;
+  border-bottom: 1px solid $secondary;
+  box-sizing: border-box;
+  padding: 8px 0;
+
+  .ql-picker.ql-expanded {
+    .ql-picker-label {
+      border-color: $secondary;
+    }
+
+    .ql-picker-options {
+      border-color: $secondary;
+    }
+  }
+
+  .ql-formats {
+    margin-right: 5px;
+  }
+}
+
+.ql-container.ql-snow {
+  border: none;
+  padding: 10px;
+}
