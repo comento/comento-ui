@@ -67,6 +67,7 @@ export default {
 		svg {
 			flex-shrink: 0;
 			margin-right: 8px;
+			cursor: default;
 		}
 		&::v-deep a {
 			text-decoration: underline !important;
