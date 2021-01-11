@@ -33,16 +33,58 @@ export default {
 	&.small {
 		&::v-deep .c-chip {
 			margin-right: 4px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&::v-deep .c-row {
+			.c-style-col {
+				padding-right: 4px;
+				&:last-child {
+					padding-right: 0;
+				}
+			}
 		}
 	}
 	&.medium {
 		&::v-deep .c-chip {
 			margin-right: 6px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&::v-deep .c-row {
+			.c-style-col {
+				padding-right: 6px;
+				&:last-child {
+					padding-right: 0;
+				}
+			}
 		}
 	}
 	&.large {
 		&::v-deep .c-chip {
 			margin-right: 8px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&::v-deep .c-row {
+			.c-style-col {
+				padding-right: 8px;
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	&::v-deep .c-row {
+		margin: 0;
+		.c-style-col {
+			padding: 0;
+			.c-chip {
+				margin-right: 0;
+			}
 		}
 	}
 }

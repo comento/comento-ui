@@ -116,7 +116,7 @@ export default {
 		}
 	}
 	&.full {
-		display: block;
+		width: 100%;
 	}
 }
 </style>
