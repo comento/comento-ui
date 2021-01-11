@@ -40,9 +40,6 @@ export default {
 		&::v-deep .c-row {
 			.c-style-col {
 				padding-right: 4px;
-				&:last-child {
-					padding-right: 0;
-				}
 			}
 		}
 	}
@@ -56,9 +53,6 @@ export default {
 		&::v-deep .c-row {
 			.c-style-col {
 				padding-right: 6px;
-				&:last-child {
-					padding-right: 0;
-				}
 			}
 		}
 	}
@@ -72,9 +66,6 @@ export default {
 		&::v-deep .c-row {
 			.c-style-col {
 				padding-right: 8px;
-				&:last-child {
-					padding-right: 0;
-				}
 			}
 		}
 	}
@@ -82,6 +73,9 @@ export default {
 		margin: 0;
 		.c-style-col {
 			padding: 0;
+			&:last-child {
+				padding-right: 0;
+			}
 			.c-chip {
 				margin-right: 0;
 			}
