@@ -11,6 +11,7 @@
 				:accept="accept"
 				:multiple="multiple"
 				@change="handleFilesUpload"
+				@click="handleFileInputClick"
 			/>
 		</label>
 	</div>
@@ -58,6 +59,9 @@ export default {
 		},
 		handleClickFileButton() {
 			this.$refs.files.click();
+		},
+		handleFileInputClick(event) {
+			event.target.value = null;
 		},
 	},
 	components: {
