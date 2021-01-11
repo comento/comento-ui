@@ -34,6 +34,11 @@ import Chip, { ChipColors } from '@/src/Components/DataDisplay/Chip';
                 options: ChipColors,
             },
         },
+        full: {
+            description: "Chip 너비 full 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
     }}
 />
 
@@ -41,7 +46,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Chip },
     template:
-        `<Chip :type="type"  :size="size" :color="color"> {{text}}</Chip>`,
+        `<Chip :type="type"  :size="size" :color="color" :full="full"> {{text}}</Chip>`,
 });
 
 # Chip
