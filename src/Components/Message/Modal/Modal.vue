@@ -62,6 +62,11 @@ export default {
 			};
 		},
 	},
+	watch: {
+		show() {
+			this.$_handleNotScroll(this.show);
+		},
+	},
 	methods: {
 		handleCloseModal() {
 			if (!this.persistent) {
