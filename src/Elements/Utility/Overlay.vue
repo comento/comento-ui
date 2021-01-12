@@ -55,11 +55,6 @@ export default {
 			return { zIndex: this.zIndex };
 		},
 	},
-	watch: {
-		show() {
-			this.$_handleNotScroll(this.show);
-		},
-	},
 	mounted() {
 		document.addEventListener('keydown', e => this.handleCloseKeycode(e));
 	},

@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import InputGroup from '@/src/Components/DataEntry/InputGroup';
+import TextField from '@/src/Components/DataEntry/Input';
+import Button from '@/src/Components/Button/Button';
+import Box from '@/src/Components/DataDisplay/Box';
+
+<Meta
+    title="Data Entry/InputGroup"
+    component={ InputGroup }
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Box, InputGroup, TextField, Button },
+    template:
+        `<Box>
+             <InputGroup>
+                 <TextField placeholder="쿠폰 코드를 입력하세요" full />
+                 <Button type="outlined" color="secondary">등록하기</Button>
+             </InputGroup>
+         </Box>`,
+});
+
+# InputGroup
+
+**InputGroup** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="150px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />

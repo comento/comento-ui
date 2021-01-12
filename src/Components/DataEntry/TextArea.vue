@@ -12,7 +12,7 @@
 </template>
 
 <script>
-export const textAreaTypes = ['basic', 'outline', 'reply'];
+export const textAreaTypes = ['basic', 'outlined', 'reply'];
 export default {
 	name: 'TextArea',
 	props: {
@@ -100,7 +100,7 @@ export default {
 	&.basic {
 		background: $white;
 	}
-	&.outline {
+	&.outlined {
 		background: $white;
 		border: 1px solid $gray200;
 	}

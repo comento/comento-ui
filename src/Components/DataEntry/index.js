@@ -1,6 +1,6 @@
 import Checkbox from './Checkbox';
 import Dropdown from './Dropdown';
-import Form from './Form';
+import FormGroup from './FormGroup';
 import FileInput from './FileInput';
 import Input from './Input';
 import InputGroup from './InputGroup';
@@ -9,4 +9,4 @@ import Select from './Select';
 import TextArea from './TextArea';
 import TextField from './TextField';
 
-export { Checkbox, Dropdown, Form, FileInput, Input, InputGroup, SearchInput, Select, TextArea, TextField };
+export { Checkbox, Dropdown, FormGroup, FileInput, Input, InputGroup, SearchInput, Select, TextArea, TextField };
