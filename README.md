@@ -34,36 +34,6 @@ Vue.use(ComentoUI);
 
 [comento-ui storybook](https://comento.github.io/comento-ui/)
 
-## Docs provided
-
-- Colors
-
-- `<c-button>`
-- `<c-callout>`
-- `<c-icon>`
-
-## Docs in the works
-
-- `<c-avatar>`
-- `<c-badge>`
-- `<c-chip>`
-- `<c-list>`
-- `<c-list-item>`
-- `<c-tab>`
-- `<c-grid>`
-- `<c-row>`
-- `<c-style-col>`
-- `<c-callout>`
-- `<c-modal>`
-- `<c-popover>`
-- `<c-tooltip>`
-- `<c-dropdown>`
-- `<c-input>`
-- `<c-search-input>`
-- `<c-logo>`
-- `<c-typography>`
-- `<c-divider>`
-
 ## License
 
 MIT
