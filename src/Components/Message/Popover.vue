@@ -37,7 +37,7 @@ export default {
 		},
 		paddingX: {
 			type: Number,
-			default: 0,
+			default: 12,
 			validator(value) {
 				return typeof value === 'number';
 			},
