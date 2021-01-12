@@ -1,17 +1,17 @@
 <template>
-	<form class="c-application c-form" v-bind="$attrs" v-on="$listeners">
+	<div class="c-application c-form-group" v-bind="$attrs" v-on="$listeners">
 		<slot />
-	</form>
+	</div>
 </template>
 
 <script>
 export default {
-	name: 'Form',
+	name: 'FormGroup',
 };
 </script>
 
 <style scoped lang="scss">
-.c-form {
+.c-form-group {
 	&::v-deep > * {
 		&:not(:last-child) {
 			margin-bottom: 12px;

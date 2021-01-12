@@ -14,7 +14,7 @@
     outline: 0;
   }
 
-  .c-tooltip_arrow, .c-popover_arrow {
+  .c-tooltip--arrow, .c-popover--arrow {
     width: 0;
     height: 0;
     border-style: solid;
@@ -43,7 +43,7 @@
   &[x-placement^='bottom'] {
     padding-top: 10px;
 
-    .c-popover_arrow, .c-tooltip_arrow {
+    .c-popover--arrow, .c-tooltip--arrow {
       border-width: 0 5px 8px 5px;
       border-left-color: transparent !important;
       border-right-color: transparent !important;
@@ -97,7 +97,7 @@
     transition: opacity 0.15s;
   }
 
-  .c-popover_inner, .c-tooltip_inner {
+  .c-popover--inner, .c-tooltip--inner {
     background-color: $white;
     border-radius: 4px;
     position: absolute;

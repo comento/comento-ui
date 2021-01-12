@@ -1,12 +1,18 @@
 <template>
-	<swiper v-if="type === 'swiper'" ref="mySwiper" class="swiper" :options="swiperOptions">
-		<swiper-slide v-for="(item, index) in items" :key="`tabs-item-${item}-${index}`">
+	<swiper
+		v-if="type === 'swiper'"
+		ref="mySwiper"
+		class="c-application c-tabs--menu-container swiper"
+		:class="[blurLeft ? 'c-tabs--blur-left' : '', blurRight ? 'c-tabs--blur-right' : '']"
+		:options="swiperOptions"
+	>
+		<swiper-slide v-for="(item, index) in items" :key="`tabs-item-${item}-${index}`" class="c-tabs--menu-wrapper">
 			<button class="c-tabs--menu-button" :class="{ active: index === selectedNo }" @click="setSelectedNo(index)">
 				{{ item }}
 			</button>
 		</swiper-slide>
 	</swiper>
-	<div v-else class="c-application c-tabs--menu-container">
+	<div v-else class="c-application c-tabs c-tabs--menu-container">
 		<div class="c-tabs--menu-wrapper">
 			<button
 				v-for="(item, index) in items"
@@ -46,14 +52,31 @@ export default {
 	data() {
 		return {
 			selectedNo: 0,
+			blurLeft: false,
+			blurRight: false,
 		};
 	},
 	computed: {
 		swiperOptions() {
 			return {
 				spaceBetween: 12,
-				setWrapperSize: true,
 				slidesPerView: 'auto',
+				on: {
+					init: () => {
+						console.log('init');
+						this.blurRight = true;
+					},
+					reachBeginning: () => {
+						console.log('reachBeginning');
+						this.blurLeft = false;
+						this.blurRight = true;
+					},
+					reachEnd: () => {
+						console.log('reachEnd');
+						this.blurLeft = true;
+						this.blurRight = false;
+					},
+				},
 			};
 		},
 		swiper() {
@@ -77,42 +100,60 @@ export default {
 ::v-deep {
 	@import '@/assets/style/swiper/swiper';
 }
-.c-tabs--menu {
-	&-container {
-		background-color: $white;
-	}
-	&-button {
-		background: none;
-		border: 0;
-		outline: 0;
-		padding: 4px;
-		cursor: pointer;
-		color: $gray800;
-		width: fit-content;
-		@include body2();
-		position: relative;
-		&:not(:last-child) {
-			margin-right: 12px;
+.c-tabs {
+	&--menu {
+		&-container {
+			background-color: $white;
+			width: 100%;
 		}
-		&.active {
-			font-weight: 700;
+
+		&-button {
+			background: none;
+			border: 0;
+			outline: 0;
+			padding: 4px;
+			cursor: pointer;
 			color: $gray800;
-			&:after {
-				content: '';
-				display: flex;
-				position: absolute;
-				width: 100%;
-				height: 2px;
-				background: $gray600;
-				left: 0;
-				bottom: -1px;
+			width: fit-content;
+			@include body2();
+			position: relative;
+
+			&:not(:last-child) {
+				margin-right: 12px;
+			}
+
+			&.active {
+				font-weight: 700;
+				color: $gray800;
+
+				&:after {
+					content: '';
+					display: flex;
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					background: $gray600;
+					left: 0;
+					bottom: -1px;
+				}
+			}
+
+			&:hover {
+				background-color: $gray100;
 			}
 		}
-		&:hover {
-			background-color: $gray100;
+		&-wrapper {
+			width: 100%;
 		}
 	}
+	/*&--blur-left {*/
+	/*	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);*/
+	/*}*/
+	/*&--blur-right {*/
+	/*	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);*/
+	/*}*/
 }
+
 ::v-deep .swiper {
 	&-slide {
 		width: auto;

@@ -5,8 +5,8 @@
 		:placement="mapPlacement"
 		:handle-resize="true"
 		popover-base-class="c-popover"
-		popover-arrow-class="c-popover_arrow"
-		popover-inner-class="c-popover_inner"
+		popover-arrow-class="c-popover--arrow"
+		popover-inner-class="c-popover--inner"
 		v-on="$listeners"
 		@show="$emit('showPopover')"
 	>
@@ -37,7 +37,7 @@ export default {
 		},
 		paddingX: {
 			type: Number,
-			default: 0,
+			default: 12,
 			validator(value) {
 				return typeof value === 'number';
 			},

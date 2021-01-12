@@ -1,7 +1,6 @@
 <template>
 	<div class="c-application c-text-field" :class="[computedLabel]">
 		<input
-			:id="computedId"
 			:ref="computedId"
 			v-model="sync_value"
 			class="c-text-field--input"
@@ -13,16 +12,16 @@
 			:focus="focus"
 			:readonly="readonly"
 			:disabled="disabled"
-			:error="error"
+			:color="color"
 			:style="[computedAlign]"
-			:class="[computedLined, computedError]"
+			:class="[computedLined, computedErrorColor]"
 			v-bind="$attrs"
 			@input="handleTyping"
 			v-on="$listeners"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Typography v-if="errorMessage !== ''" type="caption2" color="red400" element="p" class="c-text-field--message">
-			<Icon name="IconExclamationSmallFill" color="red600" class="mr-2" />{{ errorMessage }}
+		<Typography v-if="hint !== ''" type="caption2" :color="color" element="p" class="c-text-field--message">
+			<Icon name="IconExclamationSmallFill" :color="color" class="mr-2" />{{ hint }}
 		</Typography>
 	</div>
 </template>
@@ -33,6 +32,7 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export const textFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const textFieldAligns = ['left', 'center', 'right'];
+export const textFieldErrorColor = ['primary', 'success', 'secondary', 'error'];
 
 export default {
 	name: 'TextField',
@@ -50,10 +50,6 @@ export default {
 			},
 		},
 		value: {
-			type: String,
-			default: '',
-		},
-		id: {
 			type: String,
 			default: '',
 		},
@@ -92,11 +88,17 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		error: {
-			type: Boolean,
-			default: false,
+		color: {
+			type: String,
+			default: 'error',
+			validator(value) {
+				const isValid = textFieldErrorColor.indexOf(value) !== -1;
+				if (isValid) {
+					return isValid;
+				}
+			},
 		},
-		errorMessage: {
+		hint: {
 			type: String,
 			default: '',
 		},
@@ -118,7 +120,7 @@ export default {
 			}
 		},
 		computedId() {
-			return this.id || `textField-${this._uid}`;
+			return `textField-${this._uid}`;
 		},
 		computedShowLabel() {
 			return this.label;
@@ -131,8 +133,12 @@ export default {
 				textAlign: this.align,
 			};
 		},
-		computedError() {
-			return { error: this.error };
+		computedErrorColor() {
+			if (this.hint) {
+				return this.color;
+			} else {
+				return '';
+			}
 		},
 	},
 	mounted() {
@@ -170,27 +176,63 @@ export default {
 			padding: 0 16px;
 			border: 1px solid $gray200;
 			@include border-radius(2px);
+			&:focus {
+				border-color: $gray400;
+			}
 			&.error {
 				border-color: $red400;
 				&:focus {
 					border-color: $red400;
 				}
 			}
-			&:focus {
-				border-color: $gray400;
+			&.primary {
+				border-color: $primary;
+				&:focus {
+					border-color: $primary;
+				}
+			}
+			&.success {
+				border-color: $success;
+				&:focus {
+					border-color: $success;
+				}
+			}
+			&.secondary {
+				border-color: $secondary;
+				&:focus {
+					border-color: $secondary;
+				}
 			}
 		}
 		&.underlined {
 			padding: 0 4px;
 			border-bottom: 1px solid $gray200;
-			&.error {
-				border-color: $red400;
-				&:focus {
-					border-color: $red400;
-				}
-			}
 			&:focus {
 				border-color: $gray400;
+			}
+			&.error {
+				border-color: $error;
+				&:focus {
+					border-color: $error;
+				}
+			}
+			&.primary {
+				border-color: $primary;
+				&:focus {
+					border-color: $primary;
+				}
+			}
+			&.success {
+				border-color: $success;
+				&:focus {
+					border-color: $success;
+				}
+			}
+			&.secondary {
+				border-color: $secondary;
+				&:focus {
+					border-color: $secondary;
+				}
 			}
 		}
 		&:disabled {
@@ -208,13 +250,44 @@ export default {
 	}
 	&.label {
 		.c-text-field--input {
+			&:focus {
+				+ .c-text-field--label {
+					opacity: 1;
+				}
+			}
 			&.error {
-				border-color: $red400;
+				border-color: $error;
 				&:focus {
 					border-color: $red400;
 					+ .c-text-field--label {
-						opacity: 1;
-						color: $red400;
+						color: $error;
+					}
+				}
+			}
+			&.primary {
+				border-color: $primary;
+				&:focus {
+					border-color: $primary;
+					+ .c-text-field--label {
+						color: $primary;
+					}
+				}
+			}
+			&.success {
+				border-color: $success;
+				&:focus {
+					border-color: $success;
+					+ .c-text-field--label {
+						color: $success;
+					}
+				}
+			}
+			&.secondary {
+				border-color: $secondary;
+				&:focus {
+					border-color: $secondary;
+					+ .c-text-field--label {
+						color: $secondary;
 					}
 				}
 			}

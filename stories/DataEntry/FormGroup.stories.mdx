@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import FormGroup from "@/src/Components/DataEntry/FormGroup";
+import TextField from "@/src/Components/DataEntry/TextField";
+import TextArea from "@/src/Components/DataEntry/TextArea";
+
+<Meta
+    title="Data Entry/FormGroup"
+    component={ FormGroup }
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { FormGroup, TextField, TextArea },
+    template:
+        `<div style="width:300px">
+             <FormGroup>
+                 <TextField outlined placeholder="사이 사이 간격 12px"/>
+                 <TextArea type="outlined" />
+             </FormGroup>
+         </div>`,
+});
+
+# FormGroup
+
+**FormGroup** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="150px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
