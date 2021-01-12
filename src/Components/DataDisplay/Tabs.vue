@@ -2,11 +2,11 @@
 	<swiper
 		v-if="type === 'swiper'"
 		ref="mySwiper"
-		class="c-application c-tabs swiper"
+		class="c-application c-tabs--menu-container swiper"
 		:class="[blurLeft ? 'c-tabs--blur-left' : '', blurRight ? 'c-tabs--blur-right' : '']"
 		:options="swiperOptions"
 	>
-		<swiper-slide v-for="(item, index) in items" :key="`tabs-item-${item}-${index}`">
+		<swiper-slide v-for="(item, index) in items" :key="`tabs-item-${item}-${index}`" class="c-tabs--menu-wrapper">
 			<button class="c-tabs--menu-button" :class="{ active: index === selectedNo }" @click="setSelectedNo(index)">
 				{{ item }}
 			</button>
@@ -104,6 +104,7 @@ export default {
 	&--menu {
 		&-container {
 			background-color: $white;
+			width: 100%;
 		}
 
 		&-button {
@@ -140,6 +141,9 @@ export default {
 			&:hover {
 				background-color: $gray100;
 			}
+		}
+		&-wrapper {
+			width: 100%;
 		}
 	}
 	/*&--blur-left {*/
