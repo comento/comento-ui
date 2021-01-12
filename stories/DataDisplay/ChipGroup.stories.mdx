@@ -1,6 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Chip from '@/src/Components/DataDisplay/Chip';
 import ChipGroup from '@/src/Components/DataDisplay/ChipGroup';
+import Grid from '@/src/Components/Layout/Grid';
+import Row from '@/src/Components/Layout/Row';
+import StyleCol from '@/src/Components/Layout/StyleCol';
 
 <Meta
     title="Data Display/Chip/ChipGroup"
@@ -50,27 +53,77 @@ export const Basic = (args, { argTypes }) => ({
     <Story name="All" height="100px">
         {{
             template: `
-                <div>
-                 <ChipGroup size="small">
-                    <Chip type="fill" color="gray" size="small">Chip</Chip>
-                    <Chip type="outlined" color="gray" size="small">Chip</Chip>
-                    <Chip type="fill" color="gray" size="small">Chip</Chip>
-                 </ChipGroup>
-                 <hr/>
-                 <ChipGroup size="medium">
-                    <Chip type="fill" color="primary" size="medium">Chip</Chip>
-                    <Chip type="outlined" color="primary" size="medium">Chip</Chip>
-                    <Chip type="fill" color="primary" size="medium">Chip</Chip>
-                 </ChipGroup>
-                 <hr/>
-                 <ChipGroup size="large">
-                    <Chip type="fill" color="success" size="large">Chip</Chip>
-                    <Chip type="outlined" color="success" size="large">Chip</Chip>
-                    <Chip type="fill" color="success" size="large">Chip</Chip>
-                 </ChipGroup>
-                </div>
+                <Grid>
+                    <Row>
+                        <StyleCol :col-sm="12">
+                            <ChipGroup size="small">
+                                <Chip type="fill" color="secondary" size="small">Chip</Chip>
+                                <Chip type="outlined" color="secondary" size="small">Chip</Chip>
+                                <Chip type="fill" color="secondary" size="small">Chip</Chip>
+                            </ChipGroup>
+                            <hr/>
+                        </StyleCol>
+                        <StyleCol :col-sm="12">
+                             <ChipGroup size="medium">
+                                <Chip type="fill" color="primary" size="medium">Chip</Chip>
+                                <Chip type="outlined" color="primary" size="medium">Chip</Chip>
+                                <Chip type="fill" color="primary" size="medium">Chip</Chip>
+                             </ChipGroup>
+                             <hr/>
+                         </StyleCol>
+                         <StyleCol :col-sm="12">
+                             <ChipGroup size="large">
+                                <Chip type="fill" color="success" size="large">Chip</Chip>
+                                <Chip type="outlined" color="success" size="large">Chip</Chip>
+                                <Chip type="fill" color="success" size="large">Chip</Chip>
+                             </ChipGroup>
+                             <hr/>
+                         </StyleCol>
+                        <StyleCol :col-sm="12">
+                            <ChipGroup size="large" style="background:antiquewhite; padding :10px 0">
+                                <Row>
+                                    <StyleCol :col-sm="6">
+                                        <Chip type="fill" color="secondary" size="large" full>Chip</Chip>
+                                    </StyleCol>
+                                    <StyleCol :col-sm="6">
+                                        <Chip type="outlined" color="secondary" size="large" full>Chip</Chip>
+                                    </StyleCol>
+                                </Row>
+                            </ChipGroup>
+                            <hr/>
+                        </StyleCol>
+                        <StyleCol :col-sm="12">
+                            <ChipGroup size="medium" style="background:antiquewhite; padding :10px 0">
+                                <Row>
+                                    <StyleCol :col-sm="2">
+                                        <Chip type="fill" color="primary" size="medium" full>Chip</Chip>
+                                    </StyleCol>
+                                    <StyleCol :col-sm="2">
+                                        <Chip type="outlined" color="primary" size="medium" full>Chip</Chip>
+                                    </StyleCol>
+                                    <StyleCol :col-sm="2">
+                                        <Chip type="fill" color="primary" size="medium" full>Chip</Chip>
+                                    </StyleCol>
+                                </Row>
+                            </ChipGroup>
+                            <hr/>
+                        </StyleCol>
+                        <StyleCol :col-sm="12">
+                            <ChipGroup size="small" style="background:antiquewhite; padding :10px 0">
+                                <Row>
+                                    <StyleCol :col-sm="1">
+                                        <Chip type="fill" color="success" size="small" full>Chip</Chip>
+                                    </StyleCol>
+                                    <StyleCol :col-sm="1">
+                                        <Chip type="outlined" color="success" size="small" full>Chip</Chip>
+                                    </StyleCol>
+                                </Row>
+                            </ChipGroup>
+                        </StyleCol>
+                    </Row>
+                </Grid>
         `,
-            components: { ChipGroup, Chip },
+            components: { ChipGroup, Chip, Grid, Row, StyleCol },
         }}
     </Story>
 </Canvas>
