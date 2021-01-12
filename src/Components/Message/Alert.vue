@@ -1,11 +1,11 @@
 <template>
-	<div class="c-application c-alert_container" :class="classes">
+	<div class="c-application c-alert--container" :class="classes">
 		<Grid>
 			<Row class="flex justify-content-between">
 				<StyleCol :col-lg="12" class="flex flex-row justify-content-between">
-					<div class="c-alert_wrapper">
+					<div class="c-alert--wrapper">
 						<Icon name="IconSecurityLargeFill" :color="computedIconColor" />
-						<Typography class="c-alert_message" color="gray800" type="body2">
+						<Typography class="c-alert--message" color="gray800" type="body2">
 							<slot />
 						</Typography>
 					</div>
@@ -54,7 +54,7 @@ export default {
 
 <style lang="scss" scoped>
 .c-alert {
-	&_container {
+	&--container {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -82,11 +82,11 @@ export default {
 			background-color: $red000;
 		}
 	}
-	&_wrapper {
+	&--wrapper {
 		display: inline-flex;
 		align-items: center;
 	}
-	&_message {
+	&--message {
 		width: 100%;
 		word-break: keep-all;
 		&::v-deep strong {
