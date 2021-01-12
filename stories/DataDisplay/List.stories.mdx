@@ -3,6 +3,7 @@ import ListItem from "@/src/Components/DataDisplay/ListItem";
 import List from "@/src/Components/DataDisplay/List";
 import Typography from "@/src/Elements/Core/Typography/Typography";
 import Divider from "@/src/Elements/Utility/Divider";
+import Icon from '@/src/Elements/Core/Icon/Icon';
 
 <Meta
     title="Data Display/List"
@@ -72,3 +73,51 @@ export const Default = (args, { argTypes }) => ({
 
 <ArgsTable story="Default" />
 
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            data() {
+                return {
+                    menus: [
+                        {
+                            name: '멘토링 사례',
+                            icon: 'IconMentoringMediumLine',
+                        },
+                        {
+                            name: '직무소개',
+                            icon: 'IconJobWikiMediumLine',
+                        },
+                        {
+                            name: 'AI 자기소개서 분석기',
+                            icon: 'IconAnalyticsMediumLine',
+                        },
+                    ],
+                    activeIndex: 0,
+                };
+            },
+            methods: {
+                handleActiveColor(index) {
+                    return this.activeIndex === index ? 'primary': 'gray600';
+                },
+            },
+            template: `
+                <div>
+                    <List>
+                        <template v-for="(item, index) in menus">
+                            <ListItem :key="'item-'+index" @click="activeIndex = index">
+                                <Icon :name="item.icon" :color="handleActiveColor(index)" style="margin-right: 4px" />
+                                <Typography type="body2" :color="handleActiveColor(index)">
+                                    {{ item.name }}
+                                </Typography>
+                            </ListItem>
+                            <Divider :key="'divider-' + index" vertical />
+                        </template>
+                    </List>
+                </div>
+        `,
+            components: { List, ListItem, Typography, Divider, Icon },
+        }}
+    </Story>
+</Canvas>
