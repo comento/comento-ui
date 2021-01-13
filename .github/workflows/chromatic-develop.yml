@@ -1,8 +1,9 @@
-name: 'Chromatic on develop branch'
+name: 'Chromatic on merge'
 on:
   push:
     branches:
       - develop
+      - master
 
 jobs:
   test:

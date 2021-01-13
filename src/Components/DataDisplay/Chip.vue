@@ -1,13 +1,20 @@
 <template>
-	<span class="c-application c-chip" :class="[computedType, computedColor, computedSize, computedFull]">
+	<span
+		class="c-application c-chip"
+		:class="[computedType, computedColor, computedSize, computedFull]"
+		:style="[computedPadding]"
+	>
 		<slot />
 	</span>
 </template>
 
 <script>
+import paddingMixin from '../../../mixins/paddingMixin';
 export const ChipColors = ['secondary', 'primary', 'success'];
+export const ChipSizes = ['small', 'medium', 'large'];
 export default {
 	name: 'Chip',
+	mixins: [paddingMixin],
 	props: {
 		/*fill, outlined, filter*/
 		type: {
@@ -17,15 +24,26 @@ export default {
 		color: {
 			type: String,
 			default: 'secondary',
+			validator(value) {
+				return ChipColors.indexOf(value) !== -1;
+			},
 		},
-		/*chip 사이즈 (small, medium, large)*/
 		size: {
 			type: String,
 			default: 'medium',
+			validator(value) {
+				return ChipSizes.indexOf(value) !== -1;
+			},
 		},
 		full: {
 			type: Boolean,
 			default: false,
+		},
+		paddings: {
+			type: Array,
+			default() {
+				return null;
+			},
 		},
 	},
 	computed: {
@@ -42,6 +60,15 @@ export default {
 			return {
 				full: this.full,
 			};
+		},
+		computedPadding() {
+			if (this.paddings) {
+				return {
+					...this.$_setPadding(this.paddings),
+				};
+			} else {
+				return null;
+			}
 		},
 	},
 };
@@ -95,6 +122,7 @@ export default {
 		font-weight: normal;
 		&.filter {
 			border-radius: 10px;
+			padding: 3px 4px;
 		}
 	}
 	&.medium {
@@ -104,6 +132,7 @@ export default {
 		font-weight: normal;
 		&.filter {
 			border-radius: 12px;
+			padding: 5.5px 10px;
 		}
 	}
 	&.large {
@@ -113,7 +142,11 @@ export default {
 		font-weight: normal;
 		&.filter {
 			border-radius: 15px;
+			padding: 5px 14px;
 		}
+	}
+	&.filter {
+		border: 0;
 	}
 	&.full {
 		width: 100%;
