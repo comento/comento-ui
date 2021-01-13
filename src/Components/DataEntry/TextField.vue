@@ -174,7 +174,7 @@ export default {
 		}
 		&.outlined {
 			padding: 0 16px;
-			border: 1px solid $gray200;
+			border: 1px solid $input-border-color;
 			@include border-radius(2px);
 			&:focus {
 				border-color: $gray400;
@@ -206,7 +206,7 @@ export default {
 		}
 		&.underlined {
 			padding: 0 4px;
-			border-bottom: 1px solid $gray200;
+			border-bottom: 1px solid $input-border-color;
 			&:focus {
 				border-color: $gray400;
 			}
@@ -244,7 +244,7 @@ export default {
 		&[readonly],
 		&[readonly='readonly'] {
 			&:focus {
-				border-color: $gray200;
+				border-color: $input-border-color;
 			}
 		}
 	}
@@ -301,7 +301,7 @@ export default {
 			&[readonly],
 			&[readonly='readonly'] {
 				&:focus {
-					border-color: $gray200;
+					border-color: $input-border-color;
 				}
 				+ .c-text-field--label {
 					opacity: 0;
