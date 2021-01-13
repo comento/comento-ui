@@ -20,15 +20,12 @@
 			v-on="$listeners"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Typography v-if="hint !== ''" type="caption2" :color="color" element="p" class="c-text-field--message">
-			<Icon name="IconExclamationSmallFill" :color="color" class="mr-2" />{{ hint }}
-		</Typography>
+		<Hint :color="color" :value="hint" />
 	</div>
 </template>
 
 <script>
-import Icon from '@/src/Elements/Core/Icon/Icon';
-import Typography from '@/src/Elements/Core/Typography/Typography';
+import Hint from '../DataDisplay/Hint';
 
 export const textFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const textFieldAligns = ['left', 'center', 'right'];
@@ -151,7 +148,7 @@ export default {
 			this.sync_value = e.target.value;
 		},
 	},
-	components: { Typography, Icon },
+	components: { Hint },
 };
 </script>
 
@@ -317,14 +314,6 @@ export default {
 			background: $white;
 			@include caption2;
 			opacity: 0;
-		}
-	}
-	&--message {
-		margin-top: 5px;
-		@include clearfix;
-		&::v-deep .c-icon {
-			float: left;
-			margin-top: -1px;
 		}
 	}
 }
