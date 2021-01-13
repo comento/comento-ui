@@ -39,6 +39,18 @@ import Chip, { ChipColors } from '@/src/Components/DataDisplay/Chip';
             defaultValue: false,
             control: { type: "boolean" },
         },
+        paddings: {
+              description: "패딩",
+              table: {
+                type: {
+                  summary: "Array",
+                },
+              },
+              control: {
+                type: "array",
+              },
+              defaultValue: null,
+        },
     }}
 />
 
@@ -46,7 +58,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Chip },
     template:
-        `<Chip :type="type"  :size="size" :color="color" :full="full"> {{text}}</Chip>`,
+        `<Chip :type="type"  :size="size" :color="color" :full="full" :paddings="paddings"> {{text}}</Chip>`,
 });
 
 # Chip
