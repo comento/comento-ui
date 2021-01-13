@@ -18,6 +18,9 @@
 // https://github.com/mengxiong10/vue2-datepicker#props
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ko';
+import customValidator from '@/utils/custom-validator.js';
+
+export const valueTypes = ['format', 'date', 'timestamp'];
 
 export default {
 	name: 'DatePicker',
@@ -36,6 +39,9 @@ export default {
 		valueType: {
 			type: String,
 			default: 'format',
+			validator(value) {
+				return customValidator(value, valueTypes.indexOf(value) !== -1, 'DatePicker', 'valueType');
+			},
 		},
 		disabledDate: {
 			type: Function,
