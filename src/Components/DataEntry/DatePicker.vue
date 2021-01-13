@@ -11,6 +11,7 @@
 			:disabled="disabled"
 			:class="computedClasses"
 		/>
+		<Hint :color="color" :value="hint" />
 	</div>
 </template>
 
@@ -19,8 +20,10 @@
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ko';
 import customValidator from '@/utils/custom-validator.js';
+import Hint from '../DataDisplay/Hint';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
+export const colors = ['primary', 'success', 'secondary', 'error'];
 
 export default {
 	name: 'DatePicker',
@@ -54,6 +57,17 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		color: {
+			type: String,
+			default: 'secondary',
+			validator(value) {
+				return customValidator(value, colors.indexOf(value) !== -1, 'DatePicker', 'color');
+			},
+		},
+		hint: {
+			type: String,
+			default: null,
+		},
 	},
 	computed: {
 		sync_value: {
@@ -69,6 +83,7 @@ export default {
 		},
 	},
 	components: {
+		Hint,
 		'date-picker': DatePicker,
 	},
 };

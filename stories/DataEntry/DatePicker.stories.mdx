@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import DatePicker, { valueTypes } from "@/src/Components/DataEntry/DatePicker";
+import DatePicker, { valueTypes, colors } from "@/src/Components/DataEntry/DatePicker";
 import Typography from "@/src/Elements/Core/Typography/Typography";
 
 <Meta
@@ -37,6 +37,19 @@ import Typography from "@/src/Elements/Core/Typography/Typography";
                 type: "boolean",
             },
         },
+        hint: {
+            description: "설명 문구",
+            control: {
+                type: "text",
+            },
+        },
+        color: {
+            description: "힌트 색상",
+            control: {
+                type: "select",
+                options: colors,
+            },
+        },
     }}
 />
 
@@ -51,6 +64,8 @@ export const Default = (args, { argTypes }) => ({
             :placeholder="placeholder"
             :full="full"
             :disabled="disabled"
+            :hint="hint"
+            :color="color"
         />`,
 });
 
