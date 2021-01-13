@@ -137,6 +137,9 @@ export default {
 					bottom: -1px;
 				}
 			}
+			&:not(.active) {
+				color: $gray400;
+			}
 
 			&:hover {
 				background-color: $gray100;
