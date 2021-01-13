@@ -1,4 +1,5 @@
 import Checkbox from './Checkbox';
+import DatePicker from './DatePicker';
 import Dropdown from './Dropdown';
 import FormGroup from './FormGroup';
 import FileInput from './FileInput';
@@ -9,4 +10,16 @@ import Select from './Select';
 import TextArea from './TextArea';
 import TextField from './TextField';
 
-export { Checkbox, Dropdown, FormGroup, FileInput, Input, InputGroup, SearchInput, Select, TextArea, TextField };
+export {
+	Checkbox,
+	DatePicker,
+	Dropdown,
+	FormGroup,
+	FileInput,
+	Input,
+	InputGroup,
+	SearchInput,
+	Select,
+	TextArea,
+	TextField,
+};
