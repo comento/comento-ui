@@ -4,7 +4,7 @@ import List from "@/src/Components/DataDisplay/List";
 import ListItem from "@/src/Components/DataDisplay/ListItem";
 import Divider from "@/src/Elements/Utility/Divider";
 import SearchInput from "@/src/Components/DataEntry/SearchInput";
-import TextField from "@/src/Components/DataEntry/TextField";
+import Textfield from "@/src/Components/DataEntry/Textfield";
 import Typography from "@/src/Elements/Core/Typography/Typography";
 import Label from '@/src/Components/DataDisplay/Label';
 import clickOutside from "@/directives/click-outside";
@@ -129,7 +129,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <Dropdown max-width="230px" label="Input Dropdown">
                         <template v-slot:item>
-                            <TextField
+                            <Textfield
                                 v-click-outside="closeList"
                                 :value.sync="inputValue"
                                 outlined
@@ -151,7 +151,7 @@ export const Default = (args, { argTypes }) => ({
                     </Dropdown>
                 </div>
             `,
-            components: { Dropdown, SearchInput, List, ListItem, Divider, TextField, Label },
+            components: { Dropdown, SearchInput, List, ListItem, Divider, Textfield, Label },
             directives: {
                 clickOutside,
             },

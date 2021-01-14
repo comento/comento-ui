@@ -7,6 +7,6 @@ import InputGroup from './InputGroup';
 import SearchInput from './SearchInput';
 import Select from './Select';
 import TextArea from './TextArea';
-import TextField from './TextField';
+import Textfield from './Textfield';
 
-export { Checkbox, Dropdown, FormGroup, FileInput, Input, InputGroup, SearchInput, Select, TextArea, TextField };
+export { Checkbox, Dropdown, FormGroup, FileInput, Input, InputGroup, SearchInput, Select, TextArea, Textfield };

@@ -1,6 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import WithFormModal, { aligns } from "@/src/Components/Message/Modal/WithFormModal";
-import TextField from "@/src/Components/DataEntry/TextField";
+import Textfield from "@/src/Components/DataEntry/Textfield";
 import Button from "@/src/Components/Button/Button";
 import Typography from "@/src/Elements/Core/Typography/Typography";
 import InputGroup from "@/src/Components/DataEntry/InputGroup";
@@ -85,7 +85,7 @@ import Select from "@/src/Components/DataEntry/Select";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { WithFormModal, TextField, Button, Typography },
+    components: { WithFormModal, Textfield, Button, Typography },
     template: `
         <div>
             <Button @click="show = true">Open</Button>
@@ -106,7 +106,7 @@ export const Default = (args, { argTypes }) => ({
                 </template>
                 <template v-slot:content>
                   <Typography type="body2" color="gray700" class="mb-12">title 아래 여백이 20px로 증가한다.</Typography>
-                  <TextField full />
+                  <Textfield full />
                 </template>
             </WithFormModal>
         </div>`
@@ -151,7 +151,7 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:content>
                             <InputGroup class="mb-12">
                                 <span style="width: 100%" class="mr-4">
-                                    <TextField
+                                    <Textfield
                                         placeholder="쿠폰코드를 입력하세요"
                                         full
                                     />
@@ -160,7 +160,7 @@ export const Default = (args, { argTypes }) => ({
                             </InputGroup>
                             <InputGroup>
                                 <span class="mr-4">
-                                    <TextField
+                                    <Textfield
                                         full
                                         placeholder="쿠폰코드를 입력하세요"
                                     />
@@ -172,7 +172,7 @@ export const Default = (args, { argTypes }) => ({
                 </div>
             `,
             components: {
-                WithFormModal, TextField, Button, InputGroup
+                WithFormModal, Textfield, Button, InputGroup
             }
         }}
     </Story>
@@ -261,14 +261,14 @@ export const Default = (args, { argTypes }) => ({
                                 제출을 원한다면 아래 문구를 작성하세요.
                             </Typography>
                             <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-                                <TextField :value.sync="checkValue" full outlined placeholder="제출합니다" align="center" class="mr-4" />
+                                <Textfield :value.sync="checkValue" full outlined placeholder="제출합니다" align="center" class="mr-4" />
                             </div>
                         </template>
                     </WithFormModal>
                 </div>
             `,
             components: {
-                WithFormModal, TextField, Button, Typography
+                WithFormModal, Textfield, Button, Typography
             }
         }}
     </Story>

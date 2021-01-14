@@ -1,9 +1,9 @@
 <template>
-	<div class="c-application c-text-field" :class="[computedLabel]">
+	<div class="c-application c-textfield" :class="[computedLabel]">
 		<input
 			:ref="computedId"
 			v-model="sync_value"
-			class="c-text-field--input"
+			class="c-textfield--input"
 			:type="type"
 			:placeholder="placeholder"
 			:name="computedId"
@@ -32,19 +32,19 @@
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
-export const textFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
-export const textFieldAligns = ['left', 'center', 'right'];
-export const textFieldErrorColor = ['primary', 'success', 'secondary', 'error'];
+export const TextfieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
+export const TextfieldAligns = ['left', 'center', 'right'];
+export const TextfieldColor = ['primary', 'success', 'secondary', 'error'];
 
 export default {
-	name: 'TextField',
+	name: 'Textfield',
 	inheritAttrs: false,
 	props: {
 		type: {
 			type: String,
 			default: 'text',
 			validator(value) {
-				const isValid = textFieldTypes.indexOf(value) !== -1;
+				const isValid = TextfieldTypes.indexOf(value) !== -1;
 				if (!isValid) {
 					console.error(`${value} is not a valid name of the TextField type`);
 				}
@@ -71,7 +71,7 @@ export default {
 			type: String,
 			default: 'left',
 			validator(value) {
-				const isValid = textFieldAligns.indexOf(value) !== -1;
+				const isValid = TextfieldAligns.indexOf(value) !== -1;
 				if (!isValid) {
 					console.error(`${value} is not a valid name of the TextField align`);
 				}
@@ -94,7 +94,7 @@ export default {
 			type: String,
 			default: 'error',
 			validator(value) {
-				const isValid = textFieldErrorColor.indexOf(value) !== -1;
+				const isValid = TextfieldColor.indexOf(value) !== -1;
 				if (isValid) {
 					return isValid;
 				}
@@ -159,7 +159,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-text-field {
+.c-textfield {
 	position: relative;
 	&--input {
 		display: block;
