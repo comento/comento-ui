@@ -102,7 +102,12 @@ export default {
 	}
 	&.outlined {
 		background: $white;
-		border: 1px solid $gray200;
+		textarea {
+			border: 1px solid $gray200;
+			&:focus {
+				border-color: $input-hover-border-color;
+			}
+		}
 	}
 	&.reply {
 		width: calc(100% - 100px);
