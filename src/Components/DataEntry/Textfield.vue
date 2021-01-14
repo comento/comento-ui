@@ -21,8 +21,8 @@
 			@focusin="hintColor = color"
 			@focusout="hintColor = 'gray400'"
 		/>
-		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Typography v-if="hint !== ''" type="caption2" :color="hintColor" element="p" class="c-text-field--message">
+		<label v-if="computedShowLabel" :for="computedId" class="c-textfield--label">{{ label }}</label>
+		<Typography v-if="hint !== ''" type="caption2" :color="hintColor" element="p" class="c-textfield--message">
 			<Icon name="IconExclamationSmallFill" :color="hintColor" class="mr-2" />{{ hint }}
 		</Typography>
 	</div>
@@ -244,16 +244,16 @@ export default {
 		}
 	}
 	&.label {
-		.c-text-field--input {
+		.c-textfield--input {
 			&:focus {
-				+ .c-text-field--label {
+				+ .c-textfield--label {
 					opacity: 1;
 				}
 			}
 			&.error {
 				&:focus {
 					border-color: $red400;
-					+ .c-text-field--label {
+					+ .c-textfield--label {
 						color: $error;
 					}
 				}
@@ -261,7 +261,7 @@ export default {
 			&.primary {
 				&:focus {
 					border-color: $primary;
-					+ .c-text-field--label {
+					+ .c-textfield--label {
 						color: $primary;
 					}
 				}
@@ -269,7 +269,7 @@ export default {
 			&.success {
 				&:focus {
 					border-color: $success;
-					+ .c-text-field--label {
+					+ .c-textfield--label {
 						color: $success;
 					}
 				}
@@ -277,7 +277,7 @@ export default {
 			&.secondary {
 				&:focus {
 					border-color: $secondary;
-					+ .c-text-field--label {
+					+ .c-textfield--label {
 						color: $secondary;
 					}
 				}
@@ -288,12 +288,12 @@ export default {
 				&:focus {
 					border-color: $gray200;
 				}
-				+ .c-text-field--label {
+				+ .c-textfield--label {
 					opacity: 0;
 				}
 			}
 		}
-		.c-text-field--label {
+		.c-textfield--label {
 			@include transition(all 0.2s ease);
 			position: absolute;
 			top: -6px;
