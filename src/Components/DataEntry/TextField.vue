@@ -14,14 +14,16 @@
 			:disabled="disabled"
 			:color="color"
 			:style="[computedAlign]"
-			:class="[computedLined, computedErrorColor]"
+			:class="[computedLined, computedColor]"
 			v-bind="$attrs"
 			@input="handleTyping"
 			v-on="$listeners"
+			@focusin="hintColor = color"
+			@focusout="hintColor = 'gray400'"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Typography v-if="hint !== ''" type="caption2" :color="color" element="p" class="c-text-field--message">
-			<Icon name="IconExclamationSmallFill" :color="color" class="mr-2" />{{ hint }}
+		<Typography v-if="hint !== ''" type="caption2" :color="hintColor" element="p" class="c-text-field--message">
+			<Icon name="IconExclamationSmallFill" :color="hintColor" class="mr-2" />{{ hint }}
 		</Typography>
 	</div>
 </template>
@@ -103,12 +105,16 @@ export default {
 			default: '',
 		},
 	},
+	data: () => ({
+		hintColor: 'gray400',
+	}),
 	computed: {
 		sync_value: {
 			get() {
 				return this.value;
 			},
 			set(val) {
+				this.hintColor = this.color;
 				this.$emit('update:value', val);
 			},
 		},
@@ -133,14 +139,11 @@ export default {
 				textAlign: this.align,
 			};
 		},
-		computedErrorColor() {
-			if (this.hint) {
-				return this.color;
-			} else {
-				return '';
-			}
+		computedColor() {
+			return this.color;
 		},
 	},
+
 	mounted() {
 		if (this.focus) {
 			this.$refs[this.computedId].focus();
@@ -180,25 +183,21 @@ export default {
 				border-color: $gray400;
 			}
 			&.error {
-				border-color: $red400;
 				&:focus {
 					border-color: $red400;
 				}
 			}
 			&.primary {
-				border-color: $primary;
 				&:focus {
 					border-color: $primary;
 				}
 			}
 			&.success {
-				border-color: $success;
 				&:focus {
 					border-color: $success;
 				}
 			}
 			&.secondary {
-				border-color: $secondary;
 				&:focus {
 					border-color: $secondary;
 				}
@@ -211,25 +210,21 @@ export default {
 				border-color: $gray400;
 			}
 			&.error {
-				border-color: $error;
 				&:focus {
 					border-color: $error;
 				}
 			}
 			&.primary {
-				border-color: $primary;
 				&:focus {
 					border-color: $primary;
 				}
 			}
 			&.success {
-				border-color: $success;
 				&:focus {
 					border-color: $success;
 				}
 			}
 			&.secondary {
-				border-color: $secondary;
 				&:focus {
 					border-color: $secondary;
 				}
@@ -256,7 +251,6 @@ export default {
 				}
 			}
 			&.error {
-				border-color: $error;
 				&:focus {
 					border-color: $red400;
 					+ .c-text-field--label {
@@ -265,7 +259,6 @@ export default {
 				}
 			}
 			&.primary {
-				border-color: $primary;
 				&:focus {
 					border-color: $primary;
 					+ .c-text-field--label {
@@ -274,7 +267,6 @@ export default {
 				}
 			}
 			&.success {
-				border-color: $success;
 				&:focus {
 					border-color: $success;
 					+ .c-text-field--label {
@@ -283,7 +275,6 @@ export default {
 				}
 			}
 			&.secondary {
-				border-color: $secondary;
 				&:focus {
 					border-color: $secondary;
 					+ .c-text-field--label {
@@ -291,13 +282,7 @@ export default {
 					}
 				}
 			}
-			&:focus {
-				border-color: $green600;
-				+ .c-text-field--label {
-					opacity: 1;
-					color: $green600;
-				}
-			}
+
 			&[readonly],
 			&[readonly='readonly'] {
 				&:focus {
