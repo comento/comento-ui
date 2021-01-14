@@ -6,7 +6,7 @@ import Input from './Input';
 import InputGroup from './InputGroup';
 import SearchInput from './SearchInput';
 import Select from './Select';
-import TextArea from './TextArea';
+import Textarea from './Textarea';
 import TextField from './TextField';
 
-export { Checkbox, Dropdown, FormGroup, FileInput, Input, InputGroup, SearchInput, Select, TextArea, TextField };
+export { Checkbox, Dropdown, FormGroup, FileInput, Input, InputGroup, SearchInput, Select, Textarea, TextField };

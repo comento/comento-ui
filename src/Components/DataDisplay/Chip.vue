@@ -3,6 +3,7 @@
 		class="c-application c-chip"
 		:class="[computedType, computedColor, computedSize, computedFull]"
 		:style="[computedPadding]"
+		v-on="$listeners"
 	>
 		<slot />
 	</span>
