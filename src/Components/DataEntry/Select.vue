@@ -45,7 +45,7 @@ import customValidator from '@/utils/custom-validator';
 export const selectColors = ['primary', 'secondary', 'success', 'error'];
 
 export default {
-	name: 'BasicDropdown',
+	name: 'Select',
 	inheritAttrs: false,
 	props: {
 		value: {
