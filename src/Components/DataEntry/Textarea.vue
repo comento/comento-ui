@@ -93,7 +93,12 @@ export default {
 	}
 	&.outlined {
 		background: $white;
-		border: 1px solid $input-border-color;
+		textarea {
+			border: 1px solid $input-border-color;
+			&:focus {
+				border-color: $input-hover-border-color;
+			}
+		}
 	}
 	&.reply {
 		width: calc(100% - 100px);
