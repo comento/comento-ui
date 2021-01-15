@@ -7,7 +7,7 @@ import Input from './Input';
 import InputGroup from './InputGroup';
 import SearchInput from './SearchInput';
 import Select from './Select';
-import TextArea from './TextArea';
+import Textarea from './Textarea';
 import TextField from './TextField';
 
 export {
@@ -20,6 +20,6 @@ export {
 	InputGroup,
 	SearchInput,
 	Select,
-	TextArea,
+	Textarea,
 	TextField,
 };
