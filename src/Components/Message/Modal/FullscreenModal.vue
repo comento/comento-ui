@@ -27,11 +27,11 @@ export default {
 	},
 	updated() {
 		if (this.show) {
-			setTimeout(() => {
-				this.$nextTick(() => {
+			this.$nextTick(() => {
+				setTimeout(() => {
 					this.$refs.fullscreen.$el.style.height = '100%';
-				});
-			}, 300);
+				}, 300);
+			});
 		}
 	},
 	methods: {
