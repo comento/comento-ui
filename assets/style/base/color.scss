@@ -8,6 +8,7 @@ $gray600: #838990;
 $gray500: #979CA2;
 $gray400: #BEC2C6;
 $gray300: #D2D5D8;
+$gray250: #DEE0E3;
 $gray200: #E8EAED;
 $gray100: #F4F5F7;
 $gray000: #FAFBFC;
@@ -40,8 +41,10 @@ $yellow700: #FFD500;
 $yellow400: #FFEE7A;
 $yellow100: #FFFACC;
 
-// Primary
 $primary: $green600;
 $success: $blue600;
 $error: $red600;
 $secondary: $gray600;
+
+$border-color: $gray200;
+$input-border-color: $gray250; // Input, Select, Textarea, TextField

@@ -12,9 +12,9 @@
 </template>
 
 <script>
-export const textAreaTypes = ['basic', 'outlined', 'reply'];
+export const textareaTypes = ['basic', 'outlined', 'reply'];
 export default {
-	name: 'TextArea',
+	name: 'Textarea',
 	props: {
 		placeholder: {
 			type: String,
@@ -24,18 +24,11 @@ export default {
 			type: String,
 			default: 'basic',
 			validator(value) {
-				const isValid = textAreaTypes.indexOf(value) !== -1;
+				const isValid = textareaTypes.indexOf(value) !== -1;
 				if (!isValid) {
-					console.error(`${value} is not a valid value of textArea type`);
+					console.error(`${value} is not a valid value of textarea type`);
 				}
 				return isValid;
-			},
-		},
-		value: {
-			type: String,
-			default: '',
-			validator(value) {
-				return typeof value === 'string';
 			},
 		},
 		maxHeight: {
@@ -75,8 +68,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
 /* 공통 */
 .c-textarea {
 	position: relative;
@@ -102,12 +93,12 @@ export default {
 	}
 	&.outlined {
 		background: $white;
-		border: 1px solid $gray200;
+		border: 1px solid $input-border-color;
 	}
 	&.reply {
 		width: calc(100% - 100px);
 		background: $gray100;
-		border: 1px solid $gray200;
+		border: 1px solid $input-border-color;
 		@include border-radius(20px);
 		textarea {
 			min-height: 38px;

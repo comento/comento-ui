@@ -21,16 +21,13 @@
 			@focusin="hintColor = color"
 			@focusout="hintColor = 'gray400'"
 		/>
-		<label v-if="computedShowLabel" :for="computedId" class="c-textfield--label">{{ label }}</label>
-		<Typography v-if="hint !== ''" type="caption2" :color="hintColor" element="p" class="c-textfield--message">
-			<Icon name="IconExclamationSmallFill" :color="hintColor" class="mr-2" />{{ hint }}
-		</Typography>
+		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
+		<Hint :color="color" :value="hint" />
 	</div>
 </template>
 
 <script>
-import Icon from '@/src/Elements/Core/Icon/Icon';
-import Typography from '@/src/Elements/Core/Typography/Typography';
+import Hint from '../DataDisplay/Hint';
 
 export const TextfieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const TextfieldAligns = ['left', 'center', 'right'];
@@ -154,7 +151,7 @@ export default {
 			this.sync_value = e.target.value;
 		},
 	},
-	components: { Typography, Icon },
+	components: { Hint },
 };
 </script>
 
@@ -177,7 +174,7 @@ export default {
 		}
 		&.outlined {
 			padding: 0 16px;
-			border: 1px solid $gray200;
+			border: 1px solid $input-border-color;
 			@include border-radius(2px);
 			&:focus {
 				border-color: $gray400;
@@ -205,7 +202,7 @@ export default {
 		}
 		&.underlined {
 			padding: 0 4px;
-			border-bottom: 1px solid $gray200;
+			border-bottom: 1px solid $input-border-color;
 			&:focus {
 				border-color: $gray400;
 			}
@@ -239,7 +236,7 @@ export default {
 		&[readonly],
 		&[readonly='readonly'] {
 			&:focus {
-				border-color: $gray200;
+				border-color: $input-border-color;
 			}
 		}
 	}
@@ -286,7 +283,7 @@ export default {
 			&[readonly],
 			&[readonly='readonly'] {
 				&:focus {
-					border-color: $gray200;
+					border-color: $input-border-color;
 				}
 				+ .c-textfield--label {
 					opacity: 0;
@@ -302,14 +299,6 @@ export default {
 			background: $white;
 			@include caption2;
 			opacity: 0;
-		}
-	}
-	&--message {
-		margin-top: 5px;
-		@include clearfix;
-		&::v-deep .c-icon {
-			float: left;
-			margin-top: -1px;
 		}
 	}
 }

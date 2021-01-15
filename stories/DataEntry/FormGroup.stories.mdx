@@ -1,7 +1,7 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import FormGroup from "@/src/Components/DataEntry/FormGroup";
+import Textarea from "@/src/Components/DataEntry/Textarea";
 import Textfield from "@/src/Components/DataEntry/Textfield";
-import TextArea from "@/src/Components/DataEntry/TextArea";
 
 <Meta
     title="Data Entry/FormGroup"
@@ -10,12 +10,12 @@ import TextArea from "@/src/Components/DataEntry/TextArea";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { FormGroup, Textfield, TextArea },
+    components: { FormGroup, Textfield, Textarea },
     template:
         `<div style="width:300px">
              <FormGroup>
                  <Textfield outlined placeholder="사이 사이 간격 12px"/>
-                 <TextArea type="outlined" />
+                 <Textarea type="outlined" />
              </FormGroup>
          </div>`,
 });
