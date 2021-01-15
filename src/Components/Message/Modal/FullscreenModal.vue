@@ -1,5 +1,5 @@
 <template>
-	<Modal class="c-modal-fullscreen" :show="show" :show-close-button="showCloseButton" @close="close">
+	<Modal ref="fullscreen" class="c-modal-fullscreen" :show="show" :show-close-button="showCloseButton" @close="close">
 		<slot />
 	</Modal>
 </template>
@@ -27,15 +27,22 @@ export default {
 	},
 	updated() {
 		if (this.show) {
-			document.querySelector('.c-modal-fullscreen').style.height = '100%';
+			setTimeout(() => {
+				this.$nextTick(() => {
+					console.log(this.$refs.fullscreen);
+					this.$refs.fullscreen.$el.style.height = '100%';
+				});
+			}, 300);
 		}
 	},
 	methods: {
 		close() {
-			document.querySelector('.c-modal-fullscreen').style.height = '0';
-			setTimeout(() => {
-				this.$emit('update:show', false);
-			}, 300);
+			this.$nextTick(() => {
+				this.$refs.fullscreen.$el.style.height = '0';
+				setTimeout(() => {
+					this.$emit('update:show', false);
+				}, 300);
+			});
 		},
 	},
 	components: { Modal },
