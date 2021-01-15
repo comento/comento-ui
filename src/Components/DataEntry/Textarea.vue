@@ -31,13 +31,6 @@ export default {
 				return isValid;
 			},
 		},
-		value: {
-			type: String,
-			default: '',
-			validator(value) {
-				return typeof value === 'string';
-			},
-		},
 		maxHeight: {
 			type: String,
 			default: 'auto',
