@@ -1,19 +1,18 @@
 <template>
 	<div class="c-application c-file-item--container">
 		<div class="c-file-item--content" @click="handleClickItemContent({ file, index })">
+			<Icon v-if="isEdit" name="IconFileMediumLineLight" class="mr-4" color="gray500" />
 			<Typography type="caption1" color="gray700">{{ file.title || file.name }}</Typography>
 		</div>
 		<Icon
 			v-if="isEdit"
 			name="IconTrashMediumLineLight"
-			size="medium"
 			color="gray500"
 			@click="handleClickTrashIcon({ file, index })"
 		/>
 		<Icon
 			v-else-if="!isLoading"
 			name="IconDownloadMediumLineLight"
-			size="medium"
 			color="gray500"
 			@click="handleClickFileDownloadIcon({ file, index })"
 		/>
@@ -75,6 +74,8 @@ export default {
 		&--content {
 			width: 100%;
 			cursor: pointer;
+			@include flexbox();
+			@include align-items(center);
 		}
 	}
 }
