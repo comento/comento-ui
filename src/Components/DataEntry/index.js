@@ -8,7 +8,7 @@ import InputGroup from './InputGroup';
 import SearchInput from './SearchInput';
 import Select from './Select';
 import Textarea from './Textarea';
-import Textfield from './Textfield';
+import TextField from './TextField';
 
 export {
 	Checkbox,
@@ -20,6 +20,6 @@ export {
 	InputGroup,
 	SearchInput,
 	Textarea,
-	Textfield,
+	TextField,
 	Select,
 };

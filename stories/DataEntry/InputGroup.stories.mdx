@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import InputGroup from '@/src/Components/DataEntry/InputGroup';
-import Textfield from '@/src/Components/DataEntry/Input';
+import TextField from '@/src/Components/DataEntry/Input';
 import Button from '@/src/Components/Button/Button';
 import Box from '@/src/Components/DataDisplay/Box';
 
@@ -11,11 +11,11 @@ import Box from '@/src/Components/DataDisplay/Box';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Box, InputGroup, Textfield, Button },
+    components: { Box, InputGroup, TextField, Button },
     template:
         `<Box>
              <InputGroup>
-                 <Textfield placeholder="쿠폰 코드를 입력하세요" full />
+                 <TextField placeholder="쿠폰 코드를 입력하세요" full />
                  <Button type="outlined" color="secondary">등록하기</Button>
              </InputGroup>
          </Box>`,

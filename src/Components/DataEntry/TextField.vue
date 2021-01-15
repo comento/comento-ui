@@ -1,9 +1,9 @@
 <template>
-	<div class="c-application c-textfield" :class="[computedLabel]">
+	<div class="c-application c-text-field" :class="[computedLabel]">
 		<input
 			:ref="computedId"
 			v-model="sync_value"
-			class="c-textfield--input"
+			class="c-text-field--input"
 			:type="type"
 			:placeholder="placeholder"
 			:name="computedId"
@@ -19,9 +19,9 @@
 			@input="handleTyping"
 			v-on="$listeners"
 			@focusin="hintColor = color"
-			@focusout="hintColor = 'gray400'"
+			@focusout="hintColor = 'secondary'"
 		/>
-		<label v-if="computedShowLabel" :for="computedId" class="c-textfield--label">{{ label }}</label>
+		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
 		<Hint :color="hintColor" :value="hint" />
 	</div>
 </template>
@@ -29,19 +29,19 @@
 <script>
 import Hint from '../DataDisplay/Hint';
 
-export const TextfieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
-export const TextfieldAligns = ['left', 'center', 'right'];
-export const TextfieldColor = ['primary', 'success', 'secondary', 'error'];
+export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
+export const TextFieldAligns = ['left', 'center', 'right'];
+export const TextFieldColor = ['primary', 'success', 'secondary', 'error'];
 
 export default {
-	name: 'Textfield',
+	name: 'TextField',
 	inheritAttrs: false,
 	props: {
 		type: {
 			type: String,
 			default: 'text',
 			validator(value) {
-				const isValid = TextfieldTypes.indexOf(value) !== -1;
+				const isValid = TextFieldTypes.indexOf(value) !== -1;
 				if (!isValid) {
 					console.error(`${value} is not a valid name of the TextField type`);
 				}
@@ -68,7 +68,7 @@ export default {
 			type: String,
 			default: 'left',
 			validator(value) {
-				const isValid = TextfieldAligns.indexOf(value) !== -1;
+				const isValid = TextFieldAligns.indexOf(value) !== -1;
 				if (!isValid) {
 					console.error(`${value} is not a valid name of the TextField align`);
 				}
@@ -91,7 +91,7 @@ export default {
 			type: String,
 			default: 'error',
 			validator(value) {
-				const isValid = TextfieldColor.indexOf(value) !== -1;
+				const isValid = TextFieldColor.indexOf(value) !== -1;
 				if (isValid) {
 					return isValid;
 				}
@@ -103,7 +103,7 @@ export default {
 		},
 	},
 	data: () => ({
-		hintColor: 'gray400',
+		hintColor: 'secondary',
 	}),
 	computed: {
 		sync_value: {
@@ -156,7 +156,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-textfield {
+.c-text-field {
 	position: relative;
 	&--input {
 		display: block;
@@ -177,11 +177,11 @@ export default {
 			border: 1px solid $input-border-color;
 			@include border-radius(2px);
 			&:focus {
-				border-color: $gray400;
+				border-color: $secondary;
 			}
 			&.error {
 				&:focus {
-					border-color: $red400;
+					border-color: $error;
 				}
 			}
 			&.primary {
@@ -204,7 +204,7 @@ export default {
 			padding: 0 4px;
 			border-bottom: 1px solid $input-border-color;
 			&:focus {
-				border-color: $gray400;
+				border-color: $secondary;
 			}
 			&.error {
 				&:focus {
@@ -241,16 +241,16 @@ export default {
 		}
 	}
 	&.label {
-		.c-textfield--input {
+		.c-text-field--input {
 			&:focus {
-				+ .c-textfield--label {
+				+ .c-text-field--label {
 					opacity: 1;
 				}
 			}
 			&.error {
 				&:focus {
-					border-color: $red400;
-					+ .c-textfield--label {
+					border-color: $error;
+					+ .c-text-field--label {
 						color: $error;
 					}
 				}
@@ -258,7 +258,7 @@ export default {
 			&.primary {
 				&:focus {
 					border-color: $primary;
-					+ .c-textfield--label {
+					+ .c-text-field--label {
 						color: $primary;
 					}
 				}
@@ -266,7 +266,7 @@ export default {
 			&.success {
 				&:focus {
 					border-color: $success;
-					+ .c-textfield--label {
+					+ .c-text-field--label {
 						color: $success;
 					}
 				}
@@ -274,7 +274,7 @@ export default {
 			&.secondary {
 				&:focus {
 					border-color: $secondary;
-					+ .c-textfield--label {
+					+ .c-text-field--label {
 						color: $secondary;
 					}
 				}
@@ -285,12 +285,12 @@ export default {
 				&:focus {
 					border-color: $input-border-color;
 				}
-				+ .c-textfield--label {
+				+ .c-text-field--label {
 					opacity: 0;
 				}
 			}
 		}
-		.c-textfield--label {
+		.c-text-field--label {
 			@include transition(all 0.2s ease);
 			position: absolute;
 			top: -6px;

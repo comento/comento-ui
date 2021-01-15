@@ -1,15 +1,15 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Textfield, { TextfieldTypes, TextfieldAligns, TextfieldColor } from "@/src/Components/DataEntry/Textfield";
+import TextField, { TextFieldTypes, TextFieldAligns, TextFieldColor } from "@/src/Components/DataEntry/TextField";
 
 <Meta
-    title="Data Entry/Textfield"
-    component={ Textfield }
+    title="Data Entry/TextField"
+    component={ TextField }
     argTypes={{
         type: {
             description: "텍스트필드 type",
             control: {
             type: "select",
-            options: TextfieldTypes,
+            options: TextFieldTypes,
            },
         },
         outlined: {
@@ -31,7 +31,7 @@ import Textfield, { TextfieldTypes, TextfieldAligns, TextfieldColor } from "@/sr
             description: "텍스트필드 text 정렬",
             control: {
                 type: "select",
-                options: TextfieldAligns,
+                options: TextFieldAligns,
             },
         },
         focus: {
@@ -53,7 +53,7 @@ import Textfield, { TextfieldTypes, TextfieldAligns, TextfieldColor } from "@/sr
             description: "hint color",
             control: {
             type: "select",
-            options: TextfieldColor,
+            options: TextFieldColor,
            },
         },
         hint:{
@@ -72,9 +72,9 @@ import Textfield, { TextfieldTypes, TextfieldAligns, TextfieldColor } from "@/sr
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Textfield },
+    components: { TextField },
     template:
-        `<Textfield
+        `<TextField
             :type="type"
             :outlined="outlined"
             :placeholder="placeholder"
@@ -89,9 +89,9 @@ export const Default = (args, { argTypes }) => ({
         />`,
 });
 
-# Textfield
+# TextField
 
-**Textfield** 컴포넌트의 문서입니다.
+**TextField** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -107,14 +107,14 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         :outlined="false"
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         :outlined="false"
@@ -122,14 +122,14 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint + label"
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         outlined
                         placeholder="outlined + hint "
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         outlined
@@ -139,7 +139,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { Textfield },
+            components: { TextField },
         }}
     </Story>
 </Canvas>
@@ -151,7 +151,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <Textfield
+                    <TextField
                         type="text"
                         color="secondary"
                         hint="내용을 입력해주세요."
@@ -159,7 +159,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         color="secondary"
                         hint="내용을 입력해주세요."
@@ -168,7 +168,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint + label"
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="secondary"
@@ -176,7 +176,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="outlined + hint"
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="secondary"
@@ -187,7 +187,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { Textfield },
+            components: { TextField },
         }}
     </Story>
 </Canvas>
@@ -199,7 +199,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <Textfield
+                    <TextField
                         type="text"
                         color="success"
                         hint="내용을 입력해주세요."
@@ -207,7 +207,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint"
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         color="success"
                         hint="내용을 입력해주세요."
@@ -216,7 +216,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint + label"
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="success"
@@ -224,7 +224,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="outlined + hint"
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="success"
@@ -235,7 +235,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { Textfield },
+            components: { TextField },
         }}
     </Story>
 </Canvas>
@@ -247,7 +247,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <Textfield
+                    <TextField
                         type="text"
                         color="primary"
                         hint="내용을 입력해주세요."
@@ -255,7 +255,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         color="primary"
                         hint="내용을 입력해주세요."
@@ -264,7 +264,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint + label"
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="primary"
@@ -272,7 +272,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="outlined + hint"
                         class="mb-20"
                     />
-                    <Textfield
+                    <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="primary"
@@ -283,7 +283,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { Textfield },
+            components: { TextField },
         }}
     </Story>
 </Canvas>
