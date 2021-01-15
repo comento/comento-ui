@@ -56,6 +56,7 @@ import IconEssayMediumLine from '@/assets/images/icon/icon-essay-medium-line.svg
 import IconVodMediumLine from '@/assets/images/icon/icon-vod-medium-line.svg?inline';
 import IconEduMediumLine from '@/assets/images/icon/icon-edu-medium-line.svg?inline';
 import IconCouponMediumLine from '@/assets/images/icon/icon-coupon-medium-line.svg?inline';
+import IconRevertMediumLine from '@/assets/images/icon/icon-revert-medium-line.svg?inline';
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/icon-selected-large-line.svg?inline';
@@ -144,6 +145,7 @@ export const IconNames = [
 	'IconVodMediumLine',
 	'IconEduMediumLine',
 	'IconCouponMediumLine',
+	'IconRevertMediumLine',
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
 	'IconReplyLargeLine',
@@ -288,6 +290,7 @@ export default {
 		IconVodMediumLine,
 		IconEduMediumLine,
 		IconCouponMediumLine,
+		IconRevertMediumLine,
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,

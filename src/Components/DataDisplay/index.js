@@ -8,6 +8,7 @@ import Content from './Content';
 import FileItem from './FileItem';
 import FileList from './FileList';
 import FileSummary from './FileSummary';
+import Hint from './Hint';
 import List from './List';
 import ListItem from './ListItem';
 import Swiper from './Swiper';
@@ -24,6 +25,7 @@ export {
 	FileItem,
 	FileList,
 	FileSummary,
+	Hint,
 	List,
 	ListItem,
 	Swiper,

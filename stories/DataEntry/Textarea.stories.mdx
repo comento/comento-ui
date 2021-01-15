@@ -1,34 +1,29 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import TextArea, {textAreaTypes} from "@/src/Components/DataEntry/TextArea";
+import Textarea, { textareaTypes } from "@/src/Components/DataEntry/Textarea";
 
 <Meta
-    title="Data Entry/TextArea"
-    component={ TextArea }
+    title="Data Entry/Textarea"
+    component={ Textarea }
     argTypes={{
         placeholder: {
-            description: "TextArea placeholder",
+            description: "Textarea placeholder",
             defaultValue: "추가 의견이 있으신가요?",
             control: { type: "text" },
         },
-        value: {
-            description: "TextArea 들어갈 텍스트",
-            defaultValue: null,
-            control: { type: "text" },
-        },
         type: {
-              description: "TextArea의 타입",
+              description: "Textarea의 타입",
               control: {
                 type: "select",
-                options: textAreaTypes,
+                options: textareaTypes,
               },
         },
         maxHeight: {
-            description: "TextArea의 최대 높이",
+            description: "Textarea의 최대 높이",
             defaultValue: "auto",
             control: { type: "text" },
         },
         readOnly: {
-            description: "TextArea readOnly 활성화",
+            description: "Textarea readOnly 활성화",
             control: {
                 type: "boolean",
             },
@@ -39,20 +34,25 @@ import TextArea, {textAreaTypes} from "@/src/Components/DataEntry/TextArea";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { TextArea },
+    components: { Textarea },
+    data() {
+        return {
+            value: '',
+        }
+    },
     template:
         `<div style="background:aliceblue; padding:20px">
-            <TextArea :type="type"
+            <Textarea :type="type"
                       :placeholder="placeholder"
                       :maxHeight="maxHeight"
                       :read-only="readOnly"
-                      :value="value"/>
+                      v-model="value"/>
         </div>`,
 });
 
-# TextArea
+# Textarea
 
-**TextArea** 컴포넌트의 문서입니다.
+**Textarea** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
