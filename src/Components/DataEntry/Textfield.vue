@@ -21,8 +21,8 @@
 			@focusin="hintColor = color"
 			@focusout="hintColor = 'gray400'"
 		/>
-		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Hint :color="color" :value="hint" />
+		<label v-if="computedShowLabel" :for="computedId" class="c-textfield--label">{{ label }}</label>
+		<Hint :color="hintColor" :value="hint" />
 	</div>
 </template>
 
