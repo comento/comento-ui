@@ -1,5 +1,5 @@
 <template>
-	<Modal class="c-modal-fullscreen" :show="true" :show-close-button="showCloseButton" @close="close">
+	<Modal class="c-modal-fullscreen" :show="show" :show-close-button="showCloseButton" @close="close">
 		<slot />
 	</Modal>
 </template>
