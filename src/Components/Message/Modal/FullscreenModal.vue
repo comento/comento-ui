@@ -1,5 +1,5 @@
 <template>
-	<Modal :show="show" :show-close-button="showCloseButton" @close="close">
+	<Modal class="c-modal-fullscreen" :show="true" :show-close-button="showCloseButton" @close="close">
 		<slot />
 	</Modal>
 </template>
@@ -25,9 +25,17 @@ export default {
 			},
 		},
 	},
+	updated() {
+		if (this.show) {
+			document.querySelector('.c-modal-fullscreen').style.height = '100%';
+		}
+	},
 	methods: {
 		close() {
-			this.$emit('update:show', false);
+			document.querySelector('.c-modal-fullscreen').style.height = '0';
+			setTimeout(() => {
+				this.$emit('update:show', false);
+			}, 300);
 		},
 	},
 	components: { Modal },
@@ -35,17 +43,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep .c-overlay {
-	.c-modal {
-		max-width: 100%;
-		width: 100%;
+.c-modal-fullscreen {
+	@include transition(0.3s ease-in);
+	top: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	z-index: 9998;
+	&.active {
 		height: 100%;
-		border-radius: 0;
-
-		@include pc {
-			&--close-button {
-				top: 12px;
-				right: 12px;
+		@include transition(0.3s ease-out);
+	}
+	::v-deep .c-overlay {
+		position: relative;
+		.c-modal {
+			max-width: 100%;
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+			@include pc {
+				&--close-button {
+					top: 12px;
+					right: 12px;
+				}
 			}
 		}
 	}
