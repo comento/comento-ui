@@ -1,5 +1,5 @@
 <template>
-	<Modal ref="fullscreen" class="c-modal-fullscreen" :show="show" :show-close-button="showCloseButton" @close="close">
+	<Modal ref="fullscreen" class="c-fullscreen-modal" :show="show" :show-close-button="showCloseButton" @close="close">
 		<slot />
 	</Modal>
 </template>
@@ -29,7 +29,6 @@ export default {
 		if (this.show) {
 			setTimeout(() => {
 				this.$nextTick(() => {
-					console.log(this.$refs.fullscreen);
 					this.$refs.fullscreen.$el.style.height = '100%';
 				});
 			}, 300);
@@ -50,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-modal-fullscreen {
+.c-fullscreen-modal {
 	@include transition(0.3s ease-in);
 	top: 0;
 	position: fixed;
