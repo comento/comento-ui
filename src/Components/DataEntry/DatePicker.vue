@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-date-picker">
+	<div class="c-application c-date-picker" :class="computedColor">
 		<date-picker
 			v-model="sync_value"
 			prefix-class="c"
@@ -81,6 +81,9 @@ export default {
 		computedClasses() {
 			return { full: this.full };
 		},
+		computedColor() {
+			return this.color;
+		},
 	},
 	components: {
 		Hint,
@@ -93,6 +96,34 @@ export default {
 .c-date-picker {
 	.full {
 		width: 100%;
+	}
+	&.primary {
+		&::v-deep .c-input {
+			&:focus {
+				border-color: $primary;
+			}
+		}
+	}
+	&.error {
+		&::v-deep .c-input {
+			&:focus {
+				border-color: $error;
+			}
+		}
+	}
+	&.success {
+		&::v-deep .c-input {
+			&:focus {
+				border-color: $success;
+			}
+		}
+	}
+	&.secondary {
+		&::v-deep .c-input {
+			&:focus {
+				border-color: $secondary;
+			}
+		}
 	}
 }
 </style>
