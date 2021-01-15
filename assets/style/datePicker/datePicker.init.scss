@@ -1,0 +1,26 @@
+.#{$namespace} {
+  &-input {
+    @include body1;
+    @include transition(all 0.2s ease);
+    height: 40px;
+    color: $gray800;
+    padding: 0 16px;
+    border: 1px solid $input-border-color;
+    box-shadow: none;
+    @include border-radius(2px);
+
+    &::placeholder {
+      color: $gray300;
+    }
+  }
+
+  &-icon {
+    &-clear, &-calendar {
+      right: 16px;
+    }
+  }
+
+  &-datepicker-main {
+    border-radius: 2px;
+  }
+}

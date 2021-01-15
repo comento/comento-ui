@@ -100,12 +100,12 @@ export default {
 	}
 	&.outlined {
 		background: $white;
-		border: 1px solid $gray200;
+		border: 1px solid $input-border-color;
 	}
 	&.reply {
 		width: calc(100% - 100px);
 		background: $gray100;
-		border: 1px solid $gray200;
+		border: 1px solid $input-border-color;
 		@include border-radius(20px);
 		textarea {
 			min-height: 38px;
