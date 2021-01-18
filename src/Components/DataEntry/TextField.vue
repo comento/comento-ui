@@ -14,22 +14,24 @@
 			:disabled="disabled"
 			:color="color"
 			:style="[computedAlign]"
-			:class="[computedLined, computedErrorColor]"
+			:class="[computedLined, computedColor, computedActive]"
 			v-bind="$attrs"
 			@input="handleTyping"
 			v-on="$listeners"
+			@focusin="hintColor = color"
+			@focusout="hintColor = 'secondary'"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Hint :color="color" :value="hint" />
+		<Hint :value="hint" :color="active ? color : hintColor" />
 	</div>
 </template>
 
 <script>
 import Hint from '../DataDisplay/Hint';
 
-export const textFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
-export const textFieldAligns = ['left', 'center', 'right'];
-export const textFieldErrorColor = ['primary', 'success', 'secondary', 'error'];
+export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
+export const TextFieldAligns = ['left', 'center', 'right'];
+export const TextFieldColor = ['primary', 'success', 'secondary', 'error'];
 
 export default {
 	name: 'TextField',
@@ -39,7 +41,7 @@ export default {
 			type: String,
 			default: 'text',
 			validator(value) {
-				const isValid = textFieldTypes.indexOf(value) !== -1;
+				const isValid = TextFieldTypes.indexOf(value) !== -1;
 				if (!isValid) {
 					console.error(`${value} is not a valid name of the TextField type`);
 				}
@@ -62,11 +64,15 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		active: {
+			type: Boolean,
+			default: false,
+		},
 		align: {
 			type: String,
 			default: 'left',
 			validator(value) {
-				const isValid = textFieldAligns.indexOf(value) !== -1;
+				const isValid = TextFieldAligns.indexOf(value) !== -1;
 				if (!isValid) {
 					console.error(`${value} is not a valid name of the TextField align`);
 				}
@@ -87,9 +93,9 @@ export default {
 		},
 		color: {
 			type: String,
-			default: 'error',
+			default: 'secondary',
 			validator(value) {
-				const isValid = textFieldErrorColor.indexOf(value) !== -1;
+				const isValid = TextFieldColor.indexOf(value) !== -1;
 				if (isValid) {
 					return isValid;
 				}
@@ -100,12 +106,16 @@ export default {
 			default: '',
 		},
 	},
+	data: () => ({
+		hintColor: 'secondary',
+	}),
 	computed: {
 		sync_value: {
 			get() {
 				return this.value;
 			},
 			set(val) {
+				this.hintColor = this.color;
 				this.$emit('update:value', val);
 			},
 		},
@@ -130,17 +140,18 @@ export default {
 				textAlign: this.align,
 			};
 		},
-		computedErrorColor() {
-			if (this.hint) {
-				return this.color;
-			} else {
-				return '';
-			}
+		computedColor() {
+			return this.color;
+		},
+		computedActive() {
+			return { active: this.active };
 		},
 	},
+
 	mounted() {
 		if (this.focus) {
 			this.$refs[this.computedId].focus();
+			this.$refs[this.computedId].parentElement.classList.add('active');
 		}
 	},
 	methods: {
@@ -173,29 +184,30 @@ export default {
 			padding: 0 16px;
 			border: 1px solid $input-border-color;
 			@include border-radius(2px);
-			&:focus {
-				border-color: $gray400;
+			&:focus,
+			&.active {
+				border-color: $secondary;
 			}
-			&.error {
-				border-color: $red400;
+			&.error,
+			&.active {
 				&:focus {
-					border-color: $red400;
+					border-color: $error;
 				}
 			}
-			&.primary {
-				border-color: $primary;
+			&.primary,
+			&.active {
 				&:focus {
 					border-color: $primary;
 				}
 			}
-			&.success {
-				border-color: $success;
+			&.success,
+			&.active {
 				&:focus {
 					border-color: $success;
 				}
 			}
-			&.secondary {
-				border-color: $secondary;
+			&.secondary,
+			&.active {
 				&:focus {
 					border-color: $secondary;
 				}
@@ -204,29 +216,29 @@ export default {
 		&.underlined {
 			padding: 0 4px;
 			border-bottom: 1px solid $input-border-color;
-			&:focus {
-				border-color: $gray400;
+			&:focus,
+			&.active {
+				border-color: $secondary;
 			}
 			&.error {
-				border-color: $error;
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $error;
 				}
 			}
 			&.primary {
-				border-color: $primary;
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $primary;
 				}
 			}
 			&.success {
-				border-color: $success;
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $success;
 				}
 			}
 			&.secondary {
-				border-color: $secondary;
 				&:focus {
 					border-color: $secondary;
 				}
@@ -247,23 +259,24 @@ export default {
 	}
 	&.label {
 		.c-text-field--input {
-			&:focus {
+			&:focus,
+			&.active {
 				+ .c-text-field--label {
 					opacity: 1;
 				}
 			}
 			&.error {
-				border-color: $error;
-				&:focus {
-					border-color: $red400;
+				&:focus,
+				&.active {
+					border-color: $error;
 					+ .c-text-field--label {
 						color: $error;
 					}
 				}
 			}
 			&.primary {
-				border-color: $primary;
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $primary;
 					+ .c-text-field--label {
 						color: $primary;
@@ -271,8 +284,8 @@ export default {
 				}
 			}
 			&.success {
-				border-color: $success;
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $success;
 					+ .c-text-field--label {
 						color: $success;
@@ -280,24 +293,19 @@ export default {
 				}
 			}
 			&.secondary {
-				border-color: $secondary;
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $secondary;
 					+ .c-text-field--label {
 						color: $secondary;
 					}
 				}
 			}
-			&:focus {
-				border-color: $green600;
-				+ .c-text-field--label {
-					opacity: 1;
-					color: $green600;
-				}
-			}
+
 			&[readonly],
 			&[readonly='readonly'] {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $input-border-color;
 				}
 				+ .c-text-field--label {
