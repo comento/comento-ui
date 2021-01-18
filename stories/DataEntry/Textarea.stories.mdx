@@ -10,11 +10,6 @@ import Textarea, { textareaTypes } from "@/src/Components/DataEntry/Textarea";
             defaultValue: "추가 의견이 있으신가요?",
             control: { type: "text" },
         },
-        value: {
-            description: "Textarea 들어갈 텍스트",
-            defaultValue: null,
-            control: { type: "text" },
-        },
         type: {
               description: "Textarea의 타입",
               control: {
@@ -40,13 +35,18 @@ import Textarea, { textareaTypes } from "@/src/Components/DataEntry/Textarea";
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Textarea },
+    data() {
+        return {
+            value: '',
+        }
+    },
     template:
         `<div style="background:aliceblue; padding:20px">
             <Textarea :type="type"
                       :placeholder="placeholder"
                       :maxHeight="maxHeight"
                       :read-only="readOnly"
-                      :value="value"/>
+                      v-model="value"/>
         </div>`,
 });
 

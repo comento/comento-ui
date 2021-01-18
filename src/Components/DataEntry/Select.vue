@@ -45,7 +45,7 @@ import customValidator from '@/utils/custom-validator';
 export const selectColors = ['primary', 'secondary', 'success', 'error'];
 
 export default {
-	name: 'BasicDropdown',
+	name: 'Select',
 	inheritAttrs: false,
 	props: {
 		value: {
@@ -157,7 +157,7 @@ export default {
 <style lang="scss" scoped>
 .c-select {
 	&--box {
-		border: 1px solid $gray200;
+		border: 1px solid $input-border-color;
 		padding: 8px 16px;
 		cursor: pointer;
 		@include flexbox();
