@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-file-list--container">
+	<List class="c-file-list--container" spacing>
 		<FileItem
 			v-for="(item, index) in files"
 			:key="`file-${index}`"
@@ -11,10 +11,11 @@
 			@clickItemContent="handleClickItemContent"
 			@clickTrashIcon="handleClickTrashIcon"
 		></FileItem>
-	</div>
+	</List>
 </template>
 
 <script>
+import List from '@/src/Components/DataDisplay/List';
 import FileItem from '@/src/Components/DataDisplay/FileItem';
 export default {
 	name: 'FileList',
@@ -41,17 +42,8 @@ export default {
 			this.$emit('clickTrashIcon', payload);
 		},
 	},
-	components: { FileItem },
+	components: { List, FileItem },
 };
 </script>
 
-<style lang="scss" scoped>
-.c-file {
-	&-list {
-		&--container {
-			width: 100%;
-			padding: 4px 0;
-		}
-	}
-}
-</style>
+<style lang="scss" scoped></style>
