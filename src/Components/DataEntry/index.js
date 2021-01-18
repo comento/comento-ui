@@ -19,7 +19,7 @@ export {
 	Input,
 	InputGroup,
 	SearchInput,
+	Select,
 	Textarea,
 	TextField,
-	Select,
 };
