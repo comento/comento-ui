@@ -10,6 +10,8 @@
 			:disabled-date="disabledDate"
 			:disabled="disabled"
 			:class="computedClasses"
+			:editable="editable"
+			:clearable="clearable"
 			v-on="$listeners"
 		/>
 		<Hint :color="color" :value="hint" />
@@ -68,6 +70,14 @@ export default {
 		hint: {
 			type: String,
 			default: null,
+		},
+		editable: {
+			type: Boolean,
+			default: true,
+		},
+		clearable: {
+			type: Boolean,
+			default: true,
 		},
 	},
 	computed: {

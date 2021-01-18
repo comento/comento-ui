@@ -66,6 +66,8 @@ export const Default = (args, { argTypes }) => ({
             :disabled="disabled"
             :hint="hint"
             :color="color"
+            :editable="editable"
+            :clearable="clearable"
         />`,
 });
 
@@ -105,6 +107,7 @@ export const Default = (args, { argTypes }) => ({
                             :value.sync="date1"
                             format="YYYY-MM-DD 부터"
                             :disabled-date="notBeforeToday"
+                            :editable="false"
                         />
                     </div>
                     <div>
