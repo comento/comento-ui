@@ -31,13 +31,6 @@ export default {
 				return isValid;
 			},
 		},
-		value: {
-			type: String,
-			default: '',
-			validator(value) {
-				return typeof value === 'string';
-			},
-		},
 		maxHeight: {
 			type: String,
 			default: 'auto',
@@ -100,12 +93,17 @@ export default {
 	}
 	&.outlined {
 		background: $white;
-		border: 1px solid $gray200;
+		textarea {
+			border: 1px solid $input-border-color;
+			&:focus {
+				border-color: $input-hover-border-color;
+			}
+		}
 	}
 	&.reply {
 		width: calc(100% - 100px);
 		background: $gray100;
-		border: 1px solid $gray200;
+		border: 1px solid $input-border-color;
 		@include border-radius(20px);
 		textarea {
 			min-height: 38px;
