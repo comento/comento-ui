@@ -16,7 +16,7 @@
 			color="gray500"
 			@click="handleClickFileDownloadIcon({ file, index })"
 		/>
-		<Loader v-else></Loader>
+		<Loader v-else size="small"></Loader>
 	</div>
 </template>
 
