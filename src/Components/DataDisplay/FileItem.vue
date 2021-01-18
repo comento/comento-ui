@@ -1,6 +1,6 @@
 <template>
-	<div class="c-application c-file-item--container">
-		<div class="c-file-item--content" @click="handleClickItemContent({ file, index })">
+	<ListItem class="c-application c-file-item--container" @click="handleClickFileItem({ file, index })">
+		<div class="c-file-item--content" @click="handleClickFileItemContent({ file, index })">
 			<Icon v-if="isEdit" name="IconFileMediumLineLight" class="mr-4" color="gray500" />
 			<Typography type="caption1" color="gray700">{{ file.title || file.name }}</Typography>
 		</div>
@@ -17,10 +17,11 @@
 			@click="handleClickFileDownloadIcon({ file, index })"
 		/>
 		<Loader v-else size="small"></Loader>
-	</div>
+	</ListItem>
 </template>
 
 <script>
+import ListItem from '@/src/Components/DataDisplay//ListItem';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Loader from '@/src/Components/Other/Loader';
 import Typography from '@/src/Elements/Core/Typography/Typography';
@@ -45,32 +46,26 @@ export default {
 		},
 	},
 	methods: {
+		handleClickFileItem({ file, index }) {
+			this.$emit('clickFileItem', { file, index });
+		},
 		handleClickFileDownloadIcon({ file, index }) {
 			this.$emit('clickFileDownloadIcon', { file, index });
 		},
-		handleClickItemContent({ file, index }) {
-			this.$emit('clickItemContent', { file, index });
+		handleClickFileItemContent({ file, index }) {
+			this.$emit('clickFileItemContent', { file, index });
 		},
 		handleClickTrashIcon({ file, index }) {
 			this.$emit('clickTrashIcon', { file, index });
 		},
 	},
-	components: { Icon, Loader, Typography },
+	components: { Icon, Loader, Typography, ListItem },
 };
 </script>
 
 <style lang="scss" scoped>
 .c-file {
 	&-item {
-		&--container {
-			display: flex;
-			height: 26px;
-			align-items: center;
-			padding: 8px 12px 8px 6px;
-			&:hover {
-				background-color: $gray100;
-			}
-		}
 		&--content {
 			width: 100%;
 			cursor: pointer;
