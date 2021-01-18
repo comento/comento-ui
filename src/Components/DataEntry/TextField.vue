@@ -14,13 +14,15 @@
 			:disabled="disabled"
 			:color="color"
 			:style="[computedAlign]"
-			:class="[computedLined, computedColor]"
+			:class="[computedLined, computedColor, computedActive]"
 			v-bind="$attrs"
 			@input="handleTyping"
 			v-on="$listeners"
+			@focusin="hintColor = color"
+			@focusout="hintColor = 'secondary'"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Hint :color="color" :value="hint" />
+		<Hint :value="hint" :color="active ? color : hintColor" />
 	</div>
 </template>
 
@@ -62,6 +64,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		active: {
+			type: Boolean,
+			default: false,
+		},
 		align: {
 			type: String,
 			default: 'left',
@@ -87,7 +93,7 @@ export default {
 		},
 		color: {
 			type: String,
-			default: 'error',
+			default: 'secondary',
 			validator(value) {
 				const isValid = TextFieldColor.indexOf(value) !== -1;
 				if (isValid) {
@@ -100,13 +106,16 @@ export default {
 			default: '',
 		},
 	},
-	data: () => ({}),
+	data: () => ({
+		hintColor: 'secondary',
+	}),
 	computed: {
 		sync_value: {
 			get() {
 				return this.value;
 			},
 			set(val) {
+				this.hintColor = this.color;
 				this.$emit('update:value', val);
 			},
 		},
@@ -134,11 +143,15 @@ export default {
 		computedColor() {
 			return this.color;
 		},
+		computedActive() {
+			return { active: this.active };
+		},
 	},
 
 	mounted() {
 		if (this.focus) {
 			this.$refs[this.computedId].focus();
+			this.$refs[this.computedId].parentElement.classList.add('active');
 		}
 	},
 	methods: {
@@ -171,25 +184,30 @@ export default {
 			padding: 0 16px;
 			border: 1px solid $input-border-color;
 			@include border-radius(2px);
-			&:focus {
+			&:focus,
+			&.active {
 				border-color: $secondary;
 			}
-			&.error {
+			&.error,
+			&.active {
 				&:focus {
 					border-color: $error;
 				}
 			}
-			&.primary {
+			&.primary,
+			&.active {
 				&:focus {
 					border-color: $primary;
 				}
 			}
-			&.success {
+			&.success,
+			&.active {
 				&:focus {
 					border-color: $success;
 				}
 			}
-			&.secondary {
+			&.secondary,
+			&.active {
 				&:focus {
 					border-color: $secondary;
 				}
@@ -198,21 +216,25 @@ export default {
 		&.underlined {
 			padding: 0 4px;
 			border-bottom: 1px solid $input-border-color;
-			&:focus {
+			&:focus,
+			&.active {
 				border-color: $secondary;
 			}
 			&.error {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $error;
 				}
 			}
 			&.primary {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $primary;
 				}
 			}
 			&.success {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $success;
 				}
 			}
@@ -237,13 +259,15 @@ export default {
 	}
 	&.label {
 		.c-text-field--input {
-			&:focus {
+			&:focus,
+			&.active {
 				+ .c-text-field--label {
 					opacity: 1;
 				}
 			}
 			&.error {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $error;
 					+ .c-text-field--label {
 						color: $error;
@@ -251,7 +275,8 @@ export default {
 				}
 			}
 			&.primary {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $primary;
 					+ .c-text-field--label {
 						color: $primary;
@@ -259,7 +284,8 @@ export default {
 				}
 			}
 			&.success {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $success;
 					+ .c-text-field--label {
 						color: $success;
@@ -267,7 +293,8 @@ export default {
 				}
 			}
 			&.secondary {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $secondary;
 					+ .c-text-field--label {
 						color: $secondary;
@@ -277,7 +304,8 @@ export default {
 
 			&[readonly],
 			&[readonly='readonly'] {
-				&:focus {
+				&:focus,
+				&.active {
 					border-color: $input-border-color;
 				}
 				+ .c-text-field--label {

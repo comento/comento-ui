@@ -27,17 +27,22 @@ import TextField, { TextFieldTypes, TextFieldAligns, TextFieldColor } from "@/sr
             defaultValue: '',
             control: { type: "text" },
         },
+        active: {
+            description: "텍스트필드 활성화 여부 ",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        focus: {
+            description: "텍스트필드 focus 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
         align: {
             description: "텍스트필드 text 정렬",
             control: {
                 type: "select",
                 options: TextFieldAligns,
             },
-        },
-        focus: {
-            description: "텍스트필드 focus 활성화",
-            defaultValue: false,
-            control: { type: "boolean" },
         },
         readonly: {
             description: "텍스트필드 readonly 활성화",
@@ -79,6 +84,7 @@ export const Default = (args, { argTypes }) => ({
             :outlined="outlined"
             :placeholder="placeholder"
             :label="label"
+            :active="active"
             :align="align"
             :focus="focus"
             :readonly="readonly"
@@ -109,6 +115,7 @@ export const Default = (args, { argTypes }) => ({
                 <div style="width:300px">
                     <TextField
                         type="text"
+                        color="error"
                         hint="내용을 입력해주세요."
                         :outlined="false"
                         placeholder="underlined + hint "
@@ -116,14 +123,17 @@ export const Default = (args, { argTypes }) => ({
                     />
                     <TextField
                         type="text"
+                        color="error"
                         hint="내용을 입력해주세요."
                         :outlined="false"
                         label="label"
                         placeholder="underlined + hint + label"
+                        active
                         class="mb-20"
                     />
                     <TextField
                         type="text"
+                        color="error"
                         hint="내용을 입력해주세요."
                         outlined
                         placeholder="outlined + hint "
@@ -131,10 +141,12 @@ export const Default = (args, { argTypes }) => ({
                     />
                     <TextField
                         type="text"
+                        color="error"
                         hint="내용을 입력해주세요."
                         outlined
                         label="label"
                         placeholder="outlined + hint + label"
+                        active
                         class="mb-20"
                     />
                 </div>
@@ -166,6 +178,7 @@ export const Default = (args, { argTypes }) => ({
                         :outlined="false"
                         label="label"
                         placeholder="underlined + hint + label"
+                        active
                         class="mb-20"
                     />
                     <TextField
@@ -183,6 +196,7 @@ export const Default = (args, { argTypes }) => ({
                         outlined
                         label="label"
                         placeholder="outlined + hint + label"
+                        active
                         class="mb-20"
                     />
                 </div>
@@ -214,6 +228,7 @@ export const Default = (args, { argTypes }) => ({
                         :outlined="false"
                         label="label"
                         placeholder="underlined + hint + label"
+                        active
                         class="mb-20"
                     />
                     <TextField
@@ -231,6 +246,7 @@ export const Default = (args, { argTypes }) => ({
                         outlined
                         label="label"
                         placeholder="outlined + hint + label"
+                        active
                         class="mb-20"
                     />
                 </div>
@@ -262,6 +278,7 @@ export const Default = (args, { argTypes }) => ({
                         :outlined="false"
                         label="label"
                         placeholder="underlined + hint + label"
+                        active
                         class="mb-20"
                     />
                     <TextField
@@ -279,6 +296,7 @@ export const Default = (args, { argTypes }) => ({
                         outlined
                         label="label"
                         placeholder="outlined + hint + label"
+                        active
                         class="mb-20"
                     />
                 </div>
