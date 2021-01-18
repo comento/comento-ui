@@ -1,7 +1,7 @@
 <template>
 	<div v-if="value" class="c-hint">
-		<Icon name="IconExclamationSmallFill" :color="color" />
-		<Typography type="caption2" :color="color" element="p">
+		<Icon name="IconExclamationSmallFill" :color="computedIconColor" />
+		<Typography type="caption2" :color="computedTextColor" element="p">
 			{{ value }}
 		</Typography>
 	</div>
@@ -27,6 +27,22 @@ export default {
 			validator(value) {
 				return customValidator(value, color.indexOf(value) !== -1, 'Hint', 'color');
 			},
+		},
+	},
+	computed: {
+		computedIconColor() {
+			if (this.color === 'secondary') {
+				return 'gray400';
+			} else {
+				return this.color;
+			}
+		},
+		computedTextColor() {
+			if (this.color === 'secondary') {
+				return 'gray700';
+			} else {
+				return this.color;
+			}
 		},
 	},
 	components: {

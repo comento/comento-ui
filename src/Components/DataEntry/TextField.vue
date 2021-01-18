@@ -18,11 +18,9 @@
 			v-bind="$attrs"
 			@input="handleTyping"
 			v-on="$listeners"
-			@focusin="hintColor = color"
-			@focusout="hintColor = 'secondary'"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Hint :color="hintColor" :value="hint" />
+		<Hint :color="color" :value="hint" />
 	</div>
 </template>
 
@@ -102,16 +100,13 @@ export default {
 			default: '',
 		},
 	},
-	data: () => ({
-		hintColor: 'secondary',
-	}),
+	data: () => ({}),
 	computed: {
 		sync_value: {
 			get() {
 				return this.value;
 			},
 			set(val) {
-				this.hintColor = this.color;
 				this.$emit('update:value', val);
 			},
 		},
