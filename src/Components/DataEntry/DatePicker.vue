@@ -10,6 +10,7 @@
 			:disabled-date="disabledDate"
 			:disabled="disabled"
 			:class="computedClasses"
+			v-on="$listeners"
 		/>
 		<Hint :color="color" :value="hint" />
 	</div>
