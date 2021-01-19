@@ -8,8 +8,8 @@
 			:index="index"
 			:is-edit="isEdit"
 			@clickFileDownloadIcon="handleClickFileDownloadIcon"
-			@clickItemContent="handleClickItemContent"
-			@clickTrashIcon="handleClickTrashIcon"
+			@clickFileItemContent="handleClickFileItemContent"
+			@clickFileTrashIcon="handleClickFileTrashIcon"
 		></FileItem>
 	</List>
 </template>
@@ -35,11 +35,11 @@ export default {
 		handleClickFileDownloadIcon(payload) {
 			this.$emit('clickFileDownloadIcon', payload);
 		},
-		handleClickItemContent(payload) {
-			this.$emit('clickItemContent', payload);
+		handleClickFileItemContent(payload) {
+			this.$emit('clickFileItemContent', payload);
 		},
-		handleClickTrashIcon(payload) {
-			this.$emit('clickTrashIcon', payload);
+		handleClickFileTrashIcon(payload) {
+			this.$emit('clickFileTrashIcon', payload);
 		},
 	},
 	components: { List, FileItem },
