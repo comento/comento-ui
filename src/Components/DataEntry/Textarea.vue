@@ -34,23 +34,14 @@ export default {
 		maxHeight: {
 			type: String,
 			default: 'auto',
-			validator(value) {
-				return typeof value === 'string';
-			},
 		},
 		minHeight: {
 			type: String,
 			default: '110px',
-			validator(value) {
-				return typeof value === 'string';
-			},
 		},
 		readOnly: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	computed: {
