@@ -219,13 +219,6 @@ export default {
 				return isValid;
 			},
 		},
-		reversed: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
-		},
 		rotate: {
 			type: Number,
 			default: 0,
