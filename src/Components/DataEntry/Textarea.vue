@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-textarea" :class="[computedType]">
+	<div class="c-application c-textarea" :class="[computedType]" :style="[computedStyles]">
 		<textarea
 			ref="textarea"
 			:value="value"
@@ -34,16 +34,14 @@ export default {
 		maxHeight: {
 			type: String,
 			default: 'auto',
-			validator(value) {
-				return typeof value === 'string';
-			},
+		},
+		minHeight: {
+			type: String,
+			default: '110px',
 		},
 		readOnly: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	computed: {
@@ -54,6 +52,11 @@ export default {
 			return {
 				maxHeight: this.maxHeight,
 				overflowY: this.maxHeight === 'auto' ? 'hidden' : 'auto',
+			};
+		},
+		computedStyles() {
+			return {
+				minHeight: this.minHeight,
 			};
 		},
 	},
@@ -78,7 +81,7 @@ export default {
 		border: 0;
 		height: 100%;
 		box-sizing: border-box;
-		min-height: 110px;
+		min-height: inherit;
 		background: transparent;
 		color: $gray800;
 		overflow: hidden;

@@ -72,14 +72,14 @@ export default {
 	margin: 0;
 	border: 0;
 	&.vertical {
-		border-top: 1px;
-		width: 100%;
-		height: 0;
-	}
-	&.horizontal {
 		border-left: 1px;
 		width: 0;
-		height: 100%;
+		height: inherit;
+	}
+	&.horizontal {
+		border-top: 1px;
+		width: inherit;
+		height: 0;
 	}
 	&.line {
 		border-style: solid;
