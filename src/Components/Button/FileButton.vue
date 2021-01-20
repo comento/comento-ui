@@ -1,7 +1,7 @@
 <template>
-	<NarrowButton size="large" @click="$emit('clickFileButton')">
+	<NarrowButton size="medium" @click="$emit('clickFileButton')">
 		<template v-slot:left-icon>
-			<Icon name="IconPlusLargeLine" size="large" color="gray500"></Icon>
+			<Icon name="IconPlusMediumLine" color="gray600"></Icon>
 		</template>
 		{{ text }}
 	</NarrowButton>
@@ -29,4 +29,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.c-narrow-button {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+</style>

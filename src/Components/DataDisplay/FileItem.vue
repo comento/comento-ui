@@ -8,7 +8,7 @@
 			v-if="isEdit"
 			name="IconTrashMediumLineLight"
 			color="gray500"
-			@click="handleClickTrashIcon({ file, index })"
+			@click="handleClickFileTrashIcon({ file, index })"
 		/>
 		<Icon
 			v-else-if="!isLoading"
@@ -55,8 +55,8 @@ export default {
 		handleClickFileItemContent({ file, index }) {
 			this.$emit('clickFileItemContent', { file, index });
 		},
-		handleClickTrashIcon({ file, index }) {
-			this.$emit('clickTrashIcon', { file, index });
+		handleClickFileTrashIcon({ file, index }) {
+			this.$emit('clickFileTrashIcon', { file, index });
 		},
 	},
 	components: { Icon, Loader, Typography, ListItem },

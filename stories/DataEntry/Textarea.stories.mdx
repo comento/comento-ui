@@ -19,7 +19,10 @@ import Textarea, { textareaTypes } from "@/src/Components/DataEntry/Textarea";
         },
         maxHeight: {
             description: "Textarea의 최대 높이",
-            defaultValue: "auto",
+            control: { type: "text" },
+        },
+        minHeight: {
+            description: "Textarea의 최소 높이",
             control: { type: "text" },
         },
         readOnly: {
@@ -44,7 +47,8 @@ export const Default = (args, { argTypes }) => ({
         `<div style="background:aliceblue; padding:20px">
             <Textarea :type="type"
                       :placeholder="placeholder"
-                      :maxHeight="maxHeight"
+                      :max-height="maxHeight"
+                      :min-height="minHeight"
                       :read-only="readOnly"
                       v-model="value"/>
         </div>`,

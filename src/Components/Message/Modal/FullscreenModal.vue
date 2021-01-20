@@ -27,21 +27,17 @@ export default {
 	},
 	updated() {
 		if (this.show) {
-			this.$nextTick(() => {
-				setTimeout(() => {
-					this.$refs.fullscreen.$el.style.height = '100%';
-				}, 300);
+			setTimeout(() => {
+				this.$refs.fullscreen.$el.style.height = '100%';
 			});
 		}
 	},
 	methods: {
 		close() {
-			this.$nextTick(() => {
-				this.$refs.fullscreen.$el.style.height = '0';
-				setTimeout(() => {
-					this.$emit('update:show', false);
-				}, 300);
-			});
+			this.$refs.fullscreen.$el.style.height = '0';
+			setTimeout(() => {
+				this.$emit('update:show', false);
+			}, 300);
 		},
 	},
 	components: { Modal },

@@ -86,6 +86,7 @@ import IconEssayLargeLine from '@/assets/images/icon/icon-essay-large-line.svg?i
 import IconCheckLargeLine from '@/assets/images/icon/icon-check-large-line.svg?inline';
 import IconResumeLargeLine from '@/assets/images/icon/icon-resume-large-line.svg?inline';
 import IconQuestionLargeLine from '@/assets/images/icon/icon-question-large-line.svg?inline';
+import IconVideoLargeFill from '@/assets/images/icon/icon-video-large-fill.svg?inline';
 // x-large
 import IconArrowXLargeLine from '@/assets/images/icon/icon-arrow-xlarge-line.svg?inline';
 import IconCloseXLargeLine from '@/assets/images/icon/icon-close-xlarge-line.svg?inline';
@@ -104,6 +105,7 @@ import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fi
 import { colors, colorKeys } from '@/src/Elements/Core/Colors';
 
 export const IconNames = [
+	// small
 	'IconCheckSmallLine',
 	'IconPlusSmallLine',
 	'IconArrowSmallLine',
@@ -114,6 +116,7 @@ export const IconNames = [
 	'IconProfileSmallFill',
 	'IconCheckSmallFill',
 	'IconCloseSmallLine',
+	// medium
 	'IconCheckMediumFill',
 	'IconQuestionMediumLine',
 	'IconLikeMediumLine',
@@ -146,6 +149,7 @@ export const IconNames = [
 	'IconEduMediumLine',
 	'IconCouponMediumLine',
 	'IconRevertMediumLine',
+	// large
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
 	'IconReplyLargeLine',
@@ -174,6 +178,8 @@ export const IconNames = [
 	'IconCheckLargeLine',
 	'IconResumeLargeLine',
 	'IconQuestionLargeLine',
+	'IconVideoLargeFill',
+	// XLarge
 	'IconProfileXLargeFill',
 	'IconArrowXLargeLine',
 	'IconCloseXLargeLine',
@@ -211,13 +217,6 @@ export default {
 					console.error(`${value} is not a valid name of the icon color`);
 				}
 				return isValid;
-			},
-		},
-		reversed: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
 			},
 		},
 		rotate: {
@@ -320,6 +319,7 @@ export default {
 		IconCheckLargeLine,
 		IconResumeLargeLine,
 		IconQuestionLargeLine,
+		IconVideoLargeFill,
 		// x-large
 		IconArrowXLargeLine,
 		IconCloseXLargeLine,
