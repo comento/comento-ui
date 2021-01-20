@@ -1,5 +1,5 @@
 .quill-editor {
-  border: 1px solid $secondary;
+  border: 1px solid $input-border-color;
   color: rgba(0, 0, 0, 1);
 }
 
@@ -9,7 +9,7 @@
   padding: 0;
 
   .ql-blank::before {
-    color: $secondary;
+    color: $input-border-color;
     font-style: normal;
     left: 0;
     padding: 0 5px;
@@ -103,32 +103,32 @@
   }
 
   .ql-tooltip {
-    border: 1px solid $secondary;
+    border: 1px solid $input-border-color;
     box-shadow: 0 0 5px #ddd;
 
     input[type=text] {
-      border-color: $secondary;
+      border-color: $input-border-color;
     }
 
     a.ql-action::after {
-      border-color: $secondary;
+      border-color: $input-border-color;
     }
   }
 }
 
 .ql-toolbar.ql-snow {
   border: none;
-  border-bottom: 1px solid $secondary;
+  border-bottom: 1px solid $input-border-color;
   box-sizing: border-box;
   padding: 8px 0;
 
   .ql-picker.ql-expanded {
     .ql-picker-label {
-      border-color: $secondary;
+      border-color: $input-border-color;
     }
 
     .ql-picker-options {
-      border-color: $secondary;
+      border-color: $input-border-color;
     }
   }
 
