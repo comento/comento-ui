@@ -1,18 +1,34 @@
 .quill-editor {
   border: 1px solid $input-border-color;
   color: rgba(0, 0, 0, 1);
+
+  &:hover {
+    border-color: $input-hover-border-color;
+
+    .ql-toolbar.ql-snow ,
+    .ql-snow .ql-tooltip,
+    .ql-snow .ql-tooltip input[type=text],
+    .ql-snow .ql-tooltip a.ql-action::after,
+    .ql-toolbar.ql-snow,
+    .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label,
+    .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+      border-color: $input-hover-border-color;
+    }
+  }
 }
 
 .ql-editor {
   line-height: 150%;
   min-height: 100px;
   padding: 0;
+  color: $gray800;
+  @include body1;
 
-  .ql-blank::before {
-    color: $input-border-color;
+  &.ql-blank::before {
+    color: $gray300;
     font-style: normal;
-    left: 0;
-    padding: 0 5px;
+    left: 16px;
+    padding: 0;
     right: auto;
   }
 
@@ -139,5 +155,5 @@
 
 .ql-container.ql-snow {
   border: none;
-  padding: 10px;
+  padding: 16px;
 }
