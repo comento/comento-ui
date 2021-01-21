@@ -86,11 +86,11 @@ export default {
 	border-radius: 4px;
 	text-align: center;
 	&.secondary {
-		color: $gray500;
+		color: $gray700;
 		border: 1px solid $gray100;
 		background-color: $gray100;
 		&.outlined {
-			color: $gray500;
+			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
 		}
