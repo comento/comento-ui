@@ -58,7 +58,7 @@ export const Default = (args, { argTypes }) => ({
                 {{ item }}
               </Typography>
             </ListItem>
-            <Divider v-if="divider" vertical :key="'divider-' + index" />
+            <Divider v-if="divider" :key="'divider-' + index" />
           </template>
         </List>`,
 });
@@ -112,7 +112,7 @@ export const Default = (args, { argTypes }) => ({
                                     {{ item.name }}
                                 </Typography>
                             </ListItem>
-                            <Divider :key="'divider-' + index" vertical />
+                            <Divider :key="'divider-' + index" />
                         </template>
                     </List>
                 </div>
