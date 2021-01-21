@@ -1,6 +1,7 @@
 <template>
 	<div class="c-application c-date-picker" :class="computedColor">
 		<date-picker
+			:ref="`datePicker${uid}`"
 			v-model="sync_value"
 			prefix-class="c"
 			type="date"
@@ -12,7 +13,10 @@
 			:class="computedClasses"
 			:editable="editable"
 			:clearable="clearable"
+			:popup-class="`c-calendar-${uid}`"
+			:open.sync="open"
 			v-on="$listeners"
+			@change="handleChange"
 		/>
 		<Hint :color="color" :value="hint" />
 	</div>
@@ -23,6 +27,7 @@
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ko';
 import customValidator from '@/utils/custom-validator.js';
+import uniqueId from '@/utils/unique-id';
 import Hint from '../DataDisplay/Hint';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
@@ -80,6 +85,12 @@ export default {
 			default: true,
 		},
 	},
+	data() {
+		return {
+			open: false,
+			uid: uniqueId(),
+		};
+	},
 	computed: {
 		sync_value: {
 			get() {
@@ -94,6 +105,32 @@ export default {
 		},
 		computedColor() {
 			return this.color;
+		},
+	},
+	watch: {
+		open() {
+			this.handleCalendarWidth();
+		},
+	},
+	methods: {
+		handleChange() {
+			this.open = false;
+		},
+		handleCalendarWidth() {
+			const $datePicker = this.$refs[`datePicker${this.uid}`];
+			const datePickerWidth = $datePicker.$el.clientWidth;
+
+			this.$nextTick(() => {
+				const calendarDefaultWidth = 248;
+				const calendarDefaultContentHeight = 224;
+				const $calendar = document.querySelector(`.c-calendar-${this.uid} > div > div > div`);
+				const $calendarContent = $calendar.lastChild;
+				$calendar.style.width = `${datePickerWidth}px`;
+
+				if (datePickerWidth > calendarDefaultWidth) {
+					$calendarContent.style.height = `${calendarDefaultContentHeight * 1.2}px`;
+				}
+			});
 		},
 	},
 	components: {
