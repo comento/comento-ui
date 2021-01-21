@@ -29,9 +29,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.c-narrow-button {
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-}
-</style>
+<style lang="scss" scoped></style>
