@@ -1,7 +1,7 @@
 <template>
 	<transition :name="computedTransition">
 		<div
-			class="c-application c-callout--container"
+			class="c-application c-callout"
 			:class="[computedSize, computedType, computedFull]"
 			v-bind="$attrs"
 			v-on="$listeners"
@@ -125,48 +125,46 @@ export default {
 
 <style scoped lang="scss">
 .c-callout {
-	&--container {
-		display: inline-flex;
-		align-items: center;
-		&.full {
-			width: 100%;
-		}
+	display: inline-flex;
+	align-items: center;
+	&.full {
+		width: 100%;
+	}
+	svg {
+		flex-shrink: 0;
+	}
+
+	&.x-small {
+		padding: 4px 8px;
+		border-radius: 4px;
 		svg {
-			flex-shrink: 0;
+			margin-right: 4px;
 		}
+	}
+	&.small {
+		padding: 8px;
+		border-radius: 4px;
+		svg {
+			margin-right: 6px;
+		}
+	}
+	&.medium {
+		padding: 16px 16px 16px 16px;
+		border-radius: 6px;
+		svg {
+			margin-right: 8px;
+		}
+	}
 
-		&.x-small {
-			padding: 4px 8px;
-			border-radius: 4px;
-			svg {
-				margin-right: 4px;
-			}
-		}
-		&.small {
-			padding: 8px;
-			border-radius: 4px;
-			svg {
-				margin-right: 6px;
-			}
-		}
-		&.medium {
-			padding: 16px 16px 16px 16px;
-			border-radius: 6px;
-			svg {
-				margin-right: 8px;
-			}
-		}
-
-		// type
-		&.information {
-			background-color: $gray000;
-		}
-		&.alert {
-			background-color: $red000;
-		}
-		&.success {
-			background-color: $blue000;
-		}
+	// type
+	&.information {
+		background-color: $gray000;
+	}
+	&.alert {
+		background-color: $red000;
+	}
+	&.success {
+		background-color: $blue000;
 	}
 	&--wrapper {
 		display: inline-flex;
