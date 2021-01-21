@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-text-field" :class="[computedLabel]">
+	<div class="c-application c-text-field" :class="[computedLabel, computedFull]">
 		<input
 			:ref="computedId"
 			v-model="sync_value"
@@ -105,6 +105,10 @@ export default {
 			type: String,
 			default: '',
 		},
+		full: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data: () => ({
 		hintColor: 'secondary',
@@ -134,6 +138,9 @@ export default {
 		},
 		computedLabel() {
 			return { label: this.computedShowLabel };
+		},
+		computedFull() {
+			return this.full && 'full';
 		},
 		computedAlign() {
 			return {
@@ -166,6 +173,9 @@ export default {
 <style lang="scss" scoped>
 .c-text-field {
 	position: relative;
+	&.full {
+		width: 100%;
+	}
 	&--input {
 		display: block;
 		width: 100%;
