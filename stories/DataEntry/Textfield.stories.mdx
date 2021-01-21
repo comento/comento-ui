@@ -71,6 +71,10 @@ import TextField, { TextFieldTypes, TextFieldAligns, TextFieldColor } from "@/sr
             defaultValue: null,
             control: { type: "text" },
         },
+        full: {
+            description: "width 100%를 차지할 것인지",
+            control: { type: "Boolean" },
+        },
     }}
 />
 
@@ -92,6 +96,7 @@ export const Default = (args, { argTypes }) => ({
             :value.sync="value"
             :hint="hint"
             :color="color"
+            :full="full"
         />`,
 });
 
@@ -298,6 +303,29 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="outlined + hint + label"
                         active
                         class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Full
+
+<Canvas>
+    <Story name="Full" height="200px">
+        {{
+            template: `
+                <div>
+                    <TextField
+                        type="text"
+                        color="primary"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + hint "
+                        class="mb-20"
+                        full
                     />
                 </div>
             `,

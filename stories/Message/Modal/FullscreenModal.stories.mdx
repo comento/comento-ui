@@ -1,6 +1,7 @@
 import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
-import FullscreenModal from "@/src/Components/Message/Modal/FullscreenModal";
+import FullscreenModal, {fullScreenAlign} from "@/src/Components/Message/Modal/FullscreenModal";
 import Button from "@/src/Components/Button/Button";
+import Icon from '@/src/Elements/Core/Icon/Icon';
 
 <Meta
     title="Message/Modal/FullscreenModal"
@@ -10,6 +11,13 @@ import Button from "@/src/Components/Button/Button";
             description: "모달 활성화",
             control: {
                 type: "boolean",
+            },
+        },
+        align: {
+            description: "모달 interaction 시작방향",
+            control: {
+                type: "select",
+                options: fullScreenAlign,
             },
         },
         showCloseButton: {
@@ -35,8 +43,13 @@ export const Default = (args, { argTypes }) => ({
             <FullscreenModal
                 :show.sync="show"
                 :show-close-button="showCloseButton"
+                :align="align"
             >
-                <template>
+                <template v-slot:header>
+                    <p>Title</p>
+                    <p>Sub</p>
+                </template>
+                <template v-slot:content>
                     <div style="padding: 18px 42px 18px 18px">
                         {{ contents }}
                     </div>
