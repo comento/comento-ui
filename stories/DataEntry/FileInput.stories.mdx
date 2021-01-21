@@ -58,7 +58,7 @@ export const Default = (args, { argTypes }) => ({
                  <FileInput :accept="accept" :multiple="multiple" :full="full"
                  @uploadFiles="handleUploadFiles"
                  />
-                 <Divider type="dash" vertical style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
+                 <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
                  <FileList :files="files" @clickFileDownloadIcon="handleClickFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
                  </div>
               </div>`,
@@ -134,7 +134,7 @@ export const Default = (args, { argTypes }) => ({
                             <FileInput full
                               @uploadFiles="handleCreateUploadFiles"
                             />
-                            <Divider type="dash" vertical style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
+                            <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
                             <FileList :files="createFiles" isEdit @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
@@ -142,13 +142,13 @@ export const Default = (args, { argTypes }) => ({
                             <FileInput full
                               @uploadFiles="handleEditUploadFiles"
                             />
-                            <Divider type="dash" vertical style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
+                            <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
                             <FileList :files="editFiles" isEdit @clickFileTrashIcon="handleEditClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">완료 시</Typography>
                             <FileSummary :length="mockFiles.length" @clickAllFileDownloadButton="handleClickAllFileDownloadButton"/>
-                            <Divider type="dash" vertical style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
+                            <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
                             <FileList :files="mockFiles" @clickFileDownloadIcon="handleClickMockFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                       </div>`,

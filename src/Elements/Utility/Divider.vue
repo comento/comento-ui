@@ -26,9 +26,6 @@ export default {
 		vertical: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		color: {
 			type: String,
