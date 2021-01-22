@@ -45,15 +45,9 @@ export const Default = (args, { argTypes }) => ({
                 :show-close-button="showCloseButton"
                 :align="align"
             >
-                <template v-slot:header>
-                    <p>Title</p>
-                    <p>Sub</p>
-                </template>
-                <template v-slot:content>
-                    <div style="padding: 18px 42px 18px 18px">
-                        {{ contents }}
-                    </div>
-                </template>
+                <div style="padding: 18px 42px 18px 18px">
+                    {{contents}}
+                </div>
             </FullscreenModal>
         </div>`
 });

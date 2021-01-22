@@ -7,23 +7,12 @@
 		:class="[computedAlign]"
 		@close="close"
 	>
-		<div v-if="!showCloseButton" class="c-fullscreen-modal--header">
-			<div class="c-fullscreen-modal--header-container">
-				<Icon name="IconCloseLargeLine" :rotate="-90" color="gray800" @click="close()" />
-				<slot name="header" />
-			</div>
-			<Divider vertical />
-		</div>
-		<div class="c-fullscreen-modal--content">
-			<slot name="content" />
-		</div>
+		<slot />
 	</Modal>
 </template>
 
 <script>
 import Modal from '@/src/Components/Message/Modal/Modal';
-import Icon from '@/src/Elements/Core/Icon/Icon';
-import Divider from '@/src/Elements/Utility/Divider';
 export const fullScreenAlign = ['left', 'right', 'top', 'bottom'];
 
 export default {
@@ -71,7 +60,7 @@ export default {
 			}, 300);
 		},
 	},
-	components: { Modal, Icon, Divider },
+	components: { Modal },
 };
 </script>
 
