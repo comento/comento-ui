@@ -1,4 +1,4 @@
-import { ArgsTable, Meta, Story } from "@storybook/addon-docs/blocks";
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import FullscreenModal, {fullScreenAlign} from "@/src/Components/Message/Modal/FullscreenModal";
 import Button from "@/src/Components/Button/Button";
 import Icon from '@/src/Elements/Core/Icon/Icon';
@@ -98,7 +98,7 @@ export const Default = (args, { argTypes }) => ({
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                             </div>
                         </template>
-                    </BasicModal>
+                    </FullscreenModal>
                 </div>
             `,
             components: {
@@ -138,7 +138,7 @@ export const Default = (args, { argTypes }) => ({
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                             </div>
                         </template>
-                    </BasicModal>
+                    </FullscreenModal>
                 </div>
             `,
             components: {
@@ -164,7 +164,7 @@ export const Default = (args, { argTypes }) => ({
                         align="top"
                     >
                         <template v-slot:content>
-                            <div class="pa-16">
+                            <div class="pa-16 flex">
                                 <div class="mr-8" @click="show = false" style="float:left; margin-top:4px">
                                     <Icon name="IconArrowLargeLine" :rotate="-90"></Icon>
                                 </div>
@@ -172,7 +172,6 @@ export const Default = (args, { argTypes }) => ({
                                     ref="searchModalInput"
                                     placeholder="예시로 들어 갈 수 있습니다."
                                     full
-                                    style="float:left; width:90%; display:block"
                                 ></SearchInput>
                             </div>
                         </template>
