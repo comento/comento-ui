@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-date-picker" :class="computedColor">
 		<date-picker
-			:ref="`datePicker${uid}`"
+			:ref="`c-date-picker-${uid}`"
 			v-model="sync_value"
 			prefix-class="c"
 			type="date"
@@ -105,15 +105,17 @@ export default {
 	},
 	watch: {
 		open() {
-			this.handleCalendarWidth();
+			if (this.open && !this.disabled) {
+				this.handleCalendarSize();
+			}
 		},
 	},
 	methods: {
 		handleChange() {
 			this.open = false;
 		},
-		handleCalendarWidth() {
-			const $datePicker = this.$refs[`datePicker${this.uid}`];
+		handleCalendarSize() {
+			const $datePicker = this.$refs[`c-date-picker-${this.uid}`];
 			const datePickerWidth = $datePicker.$el.clientWidth;
 
 			this.$nextTick(() => {
