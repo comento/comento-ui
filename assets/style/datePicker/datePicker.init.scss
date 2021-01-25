@@ -8,6 +8,7 @@
     border: 1px solid $input-border-color;
     box-shadow: none;
     @include border-radius(2px);
+    cursor: pointer;
 
     &::placeholder {
       color: $gray300;
