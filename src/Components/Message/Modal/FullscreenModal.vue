@@ -20,7 +20,7 @@
 					<slot name="title" />
 				</div>
 				<div class="c-fullscreen-modal--header-right">
-					<slot name="right" />
+					<slot name="action" />
 				</div>
 			</div>
 			<Divider />
