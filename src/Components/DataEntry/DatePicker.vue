@@ -11,7 +11,7 @@
 			:disabled-date="disabledDate"
 			:disabled="disabled"
 			:class="computedClasses"
-			:editable="editable"
+			:editable="false"
 			:clearable="clearable"
 			:popup-class="`c-calendar-${uid}`"
 			:open.sync="open"
@@ -75,10 +75,6 @@ export default {
 		hint: {
 			type: String,
 			default: null,
-		},
-		editable: {
-			type: Boolean,
-			default: true,
 		},
 		clearable: {
 			type: Boolean,
