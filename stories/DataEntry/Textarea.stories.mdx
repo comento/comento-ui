@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Textarea, { textareaTypes } from "@/src/Components/DataEntry/Textarea";
+import Button from "@/src/Components/Button/Button";
 
 <Meta
     title="Data Entry/Textarea"
@@ -37,20 +38,27 @@ import Textarea, { textareaTypes } from "@/src/Components/DataEntry/Textarea";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Textarea },
+    components: { Textarea, Button },
     data() {
         return {
             value: '',
         }
     },
+    methods: {
+        reset() {
+            this.value='';
+        },
+    },
     template:
         `<div style="background:aliceblue; padding:20px">
+            <Button @click="reset">reset</button>
+            value : {{ value }}
             <Textarea :type="type"
                       :placeholder="placeholder"
                       :max-height="maxHeight"
                       :min-height="minHeight"
                       :read-only="readOnly"
-                      v-model="value"/>
+                      :value.sync="value"/>
         </div>`,
 });
 
