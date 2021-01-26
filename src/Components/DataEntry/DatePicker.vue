@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-date-picker" :class="computedColor">
 		<date-picker
-			:ref="`datePicker${uid}`"
+			:ref="`c-date-picker-${uid}`"
 			v-model="sync_value"
 			prefix-class="c"
 			type="date"
@@ -11,7 +11,7 @@
 			:disabled-date="disabledDate"
 			:disabled="disabled"
 			:class="computedClasses"
-			:editable="editable"
+			:editable="false"
 			:clearable="clearable"
 			:popup-class="`c-calendar-${uid}`"
 			:open.sync="open"
@@ -76,10 +76,6 @@ export default {
 			type: String,
 			default: null,
 		},
-		editable: {
-			type: Boolean,
-			default: true,
-		},
 		clearable: {
 			type: Boolean,
 			default: true,
@@ -109,15 +105,17 @@ export default {
 	},
 	watch: {
 		open() {
-			this.handleCalendarWidth();
+			if (this.open && !this.disabled) {
+				this.handleCalendarSize();
+			}
 		},
 	},
 	methods: {
 		handleChange() {
 			this.open = false;
 		},
-		handleCalendarWidth() {
-			const $datePicker = this.$refs[`datePicker${this.uid}`];
+		handleCalendarSize() {
+			const $datePicker = this.$refs[`c-date-picker-${this.uid}`];
 			const datePickerWidth = $datePicker.$el.clientWidth;
 
 			this.$nextTick(() => {
