@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import FullscreenModal, {fullScreenAlign} from "@/src/Components/Message/Modal/FullscreenModal";
+import FullscreenModal, {fullScreenAlign, fullScreenCloseType} from "@/src/Components/Message/Modal/FullscreenModal";
 import Button from "@/src/Components/Button/Button";
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import SearchInput from "@/src/Components/DataEntry/SearchInput";
@@ -21,15 +21,21 @@ import SearchInput from "@/src/Components/DataEntry/SearchInput";
                 options: fullScreenAlign,
             },
         },
-        showCloseButton: {
-            description: "닫기 버튼 보이기",
+        closeType: {
+            description: "모달 interaction 시작방향",
             control: {
-                type: "boolean",
+                type: "select",
+                options: fullScreenCloseType,
             },
         },
-        contents: {
-            description: "모달 내용",
-            defaultValue: "FullscreenModal",
+        title: {
+            description: "모달 title",
+            defaultValue: "title",
+            control: { type: "text" },
+        },
+        closeText: {
+            description: "closeType button타입에 들어가는 문구",
+            defaultValue: "접기",
             control: { type: "text" },
         },
     }}
@@ -43,17 +49,21 @@ export const Default = (args, { argTypes }) => ({
             <Button @click="show = true">Open</Button>
             <FullscreenModal
                 :show.sync="show"
-                :show-close-button="showCloseButton"
                 :align="align"
+                :closeType="closeType"
             >
-                <template v-slot:header>
-                    <p>Title</p>
-                    <p>Sub</p>
+                <template v-slot:left>
+                    {{closeText}}
+                </template>
+                <template v-slot:title>
+                  {{title}}
                 </template>
                 <template v-slot:content>
-                    <div style="padding: 18px 42px 18px 18px;
-                    height: 800px;">
-                        {{ contents }}
+                    <div style="padding:16px">
+                        - 이용권 특성상 구매 후 중도 해지 및 이에 따른 환불이 불가능합니다.<br />
+                        - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
+                        - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
+                        - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                     </div>
                 </template>
             </FullscreenModal>
@@ -71,9 +81,9 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
-### Slot-Title
+### Slot-Left
 <Canvas>
-    <Story name="Slot-Title" height="100px">
+    <Story name="Slot-Left" height="100px">
         {{
             data: () => ({
                 show: false,
@@ -83,9 +93,12 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        :show-close-button="false"
                         align="left"
+                        closeType="button"
                     >
+                        <template v-slot:left>
+                            접기
+                        </template>
                         <template v-slot:title>
                           Title이 있는 경우
                         </template>
@@ -108,9 +121,9 @@ export const Default = (args, { argTypes }) => ({
 </Canvas>
 
 
-### Slot-Action
+### Slot-Right
 <Canvas>
-    <Story name="Slot-Action" height="100px">
+    <Story name="Slot-Right" height="100px">
         {{
             data: () => ({
                 show: false,
@@ -120,13 +133,13 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        :show-close-button="false"
                         align="right"
+                        closeType="icon"
                     >
                         <template v-slot:title>
-                          Title
+                            title
                         </template>
-                        <template v-slot:action>
+                        <template v-slot:right>
                             <Button size="small" type="outlined">초기화</Button>
                         </template>
                         <template v-slot:content>
@@ -159,8 +172,7 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        :show-close-button="false"
-                        align="top"
+                        align="none"
                     >
                         <template v-slot:content>
                             <div class="pa-16 flex">

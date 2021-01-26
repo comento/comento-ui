@@ -3,24 +3,23 @@
 		ref="fullscreen"
 		class="c-fullscreen-modal"
 		:show="show"
-		:show-close-button="showCloseButton"
+		:show-close-button="false"
 		:class="[computedAlign]"
 		@close="close"
 	>
 		<div v-if="$slots['title']" class="c-fullscreen-modal--header">
 			<div class="c-fullscreen-modal--header-container">
-				<Icon
-					name="IconCloseLargeLine"
-					:rotate="-90"
-					color="gray800"
-					class="c-fullscreen-modal--header-close"
-					@click="close()"
-				/>
+				<div class="c-fullscreen-modal--header-left" @click="close()">
+					<Icon v-if="closeType === 'icon'" name="IconCloseLargeLine" :rotate="-90" color="gray800" />
+					<NarrowButton v-else size="medium">
+						<slot name="left" />
+					</NarrowButton>
+				</div>
 				<div class="c-fullscreen-modal--header-title">
 					<slot name="title" />
 				</div>
 				<div class="c-fullscreen-modal--header-right">
-					<slot name="action" />
+					<slot name="right" />
 				</div>
 			</div>
 			<Divider />
@@ -33,10 +32,12 @@
 
 <script>
 import Modal from '@/src/Components/Message/Modal/Modal';
+import NarrowButton from '@/src/Components/Button/NarrowButton';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Divider from '@/src/Elements/Utility/Divider';
 
-export const fullScreenAlign = ['left', 'right', 'top', 'bottom'];
+export const fullScreenAlign = ['left', 'right', 'top', 'bottom', 'none'];
+export const fullScreenCloseType = ['icon', 'button'];
 
 export default {
 	name: 'FullscreenModal',
@@ -55,11 +56,11 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
-		showCloseButton: {
-			type: Boolean,
-			default: true,
+		closeType: {
+			type: String,
+			default: 'icon',
 			validator(value) {
-				return typeof value === 'boolean';
+				return fullScreenCloseType.indexOf(value) !== -1;
 			},
 		},
 	},
@@ -83,7 +84,7 @@ export default {
 			}, 300);
 		},
 	},
-	components: { Modal, Icon, Divider },
+	components: { Modal, Icon, Divider, NarrowButton },
 };
 </script>
 
@@ -97,6 +98,9 @@ export default {
 	height: 100%;
 	top: 0;
 	left: 0;
+	&.none {
+		@include transition(none);
+	}
 	&.top {
 		@include transform(translateY(-100%));
 		&.active {
@@ -133,13 +137,23 @@ export default {
 			line-height: 48px;
 			height: 48px;
 		}
-		&-close {
+		&-left {
 			position: absolute;
 			top: 0;
 			bottom: 0;
 			left: 16px;
 			margin: auto;
 			z-index: 1;
+			&::v-deep .c-icon {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			&::v-deep .c-narrow-button {
+				display: inline-block;
+				vertical-align: baseline;
+			}
 		}
 		&-title {
 			position: absolute;
