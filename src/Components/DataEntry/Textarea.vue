@@ -2,7 +2,7 @@
 	<div class="c-application c-textarea" :class="[computedType]" :style="[computedStyles]">
 		<textarea
 			ref="textarea"
-			:value="value"
+			v-model="sync_value"
 			:style="[computedHeight]"
 			:placeholder="placeholder"
 			:readonly="readOnly"
@@ -43,6 +43,9 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		value: {
+			type: String,
+		},
 	},
 	computed: {
 		computedType() {
@@ -58,6 +61,14 @@ export default {
 			return {
 				minHeight: this.minHeight,
 			};
+		},
+		sync_value: {
+			get() {
+				return this.value;
+			},
+			set(val) {
+				this.$emit('update:value', val);
+			},
 		},
 	},
 	methods: {
