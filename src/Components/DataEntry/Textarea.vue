@@ -6,6 +6,8 @@
 			:style="[computedHeight]"
 			:placeholder="placeholder"
 			:readonly="readOnly"
+			v-bind="$attrs"
+			v-on="$listeners"
 			@input="resize"
 		/>
 	</div>
@@ -15,6 +17,7 @@
 export const textareaTypes = ['basic', 'outlined', 'reply'];
 export default {
 	name: 'Textarea',
+	inheritAttrs: false,
 	props: {
 		placeholder: {
 			type: String,
