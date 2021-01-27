@@ -7,19 +7,19 @@
 		:class="[computedAlign]"
 		@close="close"
 	>
-		<div v-if="$slots['title']" class="c-fullscreen-modal--header">
+		<div v-if="$slots['title'] || $slots['close'] || $slots['action']" class="c-fullscreen-modal--header">
 			<div class="c-fullscreen-modal--header-container">
-				<div class="c-fullscreen-modal--header-left" @click="close()">
+				<div v-if="closeType !== 'none'" class="c-fullscreen-modal--header-close" @click="close()">
 					<Icon v-if="closeType === 'icon'" name="IconCloseLargeLine" :rotate="-90" color="gray800" />
 					<NarrowButton v-else size="medium">
-						<slot name="left" />
+						<slot name="close" />
 					</NarrowButton>
 				</div>
 				<div class="c-fullscreen-modal--header-title">
 					<slot name="title" />
 				</div>
-				<div class="c-fullscreen-modal--header-right">
-					<slot name="right" />
+				<div class="c-fullscreen-modal--header-action">
+					<slot name="action" />
 				</div>
 			</div>
 			<Divider />
@@ -37,7 +37,7 @@ import Icon from '@/src/Elements/Core/Icon/Icon';
 import Divider from '@/src/Elements/Utility/Divider';
 
 export const fullScreenAlign = ['left', 'right', 'top', 'bottom', 'none'];
-export const fullScreenCloseType = ['icon', 'button'];
+export const fullScreenCloseType = ['icon', 'button', 'none'];
 
 export default {
 	name: 'FullscreenModal',
@@ -137,7 +137,7 @@ export default {
 			line-height: 48px;
 			height: 48px;
 		}
-		&-left {
+		&-close {
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -163,7 +163,7 @@ export default {
 			text-align: center;
 			z-index: 0;
 		}
-		&-right {
+		&-action {
 			position: absolute;
 			top: 50%;
 			right: 16px;

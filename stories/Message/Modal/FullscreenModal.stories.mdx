@@ -52,7 +52,7 @@ export const Default = (args, { argTypes }) => ({
                 :align="align"
                 :closeType="closeType"
             >
-                <template v-slot:left>
+                <template v-slot:close>
                     {{closeText}}
                 </template>
                 <template v-slot:title>
@@ -81,9 +81,9 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
-### Slot-Left
+### Slot-Close
 <Canvas>
-    <Story name="Slot-Left" height="100px">
+    <Story name="Slot-Close" height="100px">
         {{
             data: () => ({
                 show: false,
@@ -96,7 +96,43 @@ export const Default = (args, { argTypes }) => ({
                         align="left"
                         closeType="button"
                     >
-                        <template v-slot:left>
+                        <template v-slot:close>
+                            접기
+                        </template>
+                        <template v-slot:content>
+                            <div style="padding:16px">
+                                - Title없이 Close이벤트만 할 수 있는 경우의 fullscreenModal입니다.<br />
+                                - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
+                                - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
+                                - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
+                            </div>
+                        </template>
+                    </FullscreenModal>
+                </div>
+            `,
+            components: {
+                FullscreenModal, Button
+            }
+        }}
+    </Story>
+</Canvas>
+
+### Slot-Title
+<Canvas>
+    <Story name="Slot-Title" height="100px">
+        {{
+            data: () => ({
+                show: false,
+            }),
+            template: `
+                <div>
+                    <Button @click="show = true">Open</Button>
+                    <FullscreenModal
+                        :show.sync="show"
+                        align="right"
+                        closeType="icon"
+                    >
+                        <template v-slot:close>
                             접기
                         </template>
                         <template v-slot:title>
@@ -104,7 +140,7 @@ export const Default = (args, { argTypes }) => ({
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
-                                - 이용권 특성상 구매 후 중도 해지 및 이에 따른 환불이 불가능합니다.<br />
+                                - Title과 Close이벤트를 추가한 fullscreenModal입니다.<br />
                                 - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
                                 - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
@@ -121,9 +157,9 @@ export const Default = (args, { argTypes }) => ({
 </Canvas>
 
 
-### Slot-Right
+### Slot-Action
 <Canvas>
-    <Story name="Slot-Right" height="100px">
+    <Story name="Slot-Action" height="100px">
         {{
             data: () => ({
                 show: false,
@@ -133,18 +169,18 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="right"
-                        closeType="icon"
+                        align="top"
+                        closeType="none"
                     >
                         <template v-slot:title>
                             title
                         </template>
-                        <template v-slot:right>
-                            <Button size="small" type="outlined">초기화</Button>
+                        <template v-slot:action>
+                            <Button size="small" type="outlined"  @click="show = false">초기화</Button>
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
-                                - 이용권 특성상 구매 후 중도 해지 및 이에 따른 환불이 불가능합니다.<br />
+                                - Close 부분을 감추고, Action 이벤트를 추가 할 수 있는 fullscreenModal 입니다.<br />
                                 - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
                                 - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
@@ -185,12 +221,56 @@ export const Default = (args, { argTypes }) => ({
                                     full
                                 ></SearchInput>
                             </div>
+                            <div style="padding:25px">
+                                content영역만 있을 경우 보여지는 fullcreenModal 입니다.<br>
+                                content영역만 있는 경우, 페이지처럼 보이도록 의도할 수 있으니, <br>
+                                align값을 none으로 설정하면 됩니다. <br>
+                            </div>
                         </template>
                     </FullscreenModal>
                 </div>
             `,
             components: {
                 FullscreenModal, Button, SearchInput, Icon
+            }
+        }}
+    </Story>
+</Canvas>
+
+### Slot-All
+<Canvas>
+    <Story name="Slot-All" height="100px">
+        {{
+            data: () => ({
+                show: false,
+            }),
+            template: `
+                <div>
+                    <Button @click="show = true">Open</Button>
+                    <FullscreenModal
+                        :show.sync="show"
+                        align="bottom"
+                        closeType="icon"
+                    >
+                        <template v-slot:title>
+                            title
+                        </template>
+                        <template v-slot:action>
+                            <Button size="small" type="outlined" >초기화</Button>
+                        </template>
+                        <template v-slot:content>
+                            <div style="padding:16px">
+                                - Close 부분을 감추고, Action 이벤트를 추가 할 수 있는 fullscreenModal 입니다.<br />
+                                - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
+                                - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
+                                - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
+                            </div>
+                        </template>
+                    </FullscreenModal>
+                </div>
+            `,
+            components: {
+                FullscreenModal, Button
             }
         }}
     </Story>
