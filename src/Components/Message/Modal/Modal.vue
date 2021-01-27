@@ -84,7 +84,6 @@ export default {
 <style lang="scss" scoped>
 .c-modal {
 	max-width: 90%;
-	width: 100%;
 	margin: 0 auto;
 	background-color: $white;
 	border-radius: 4px;
@@ -95,6 +94,7 @@ export default {
 	box-sizing: border-box;
 
 	@include pc {
+		min-width: 337px;
 		max-width: 420px;
 	}
 
