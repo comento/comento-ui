@@ -23,42 +23,33 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		maxWidth: {
 			type: String,
-			validator(value) {
-				return typeof value === 'string';
-			},
 		},
 		persistent: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		maxHeight: {
 			type: String,
-			validator(value) {
-				return typeof value === 'string';
-			},
+		},
+		width: {
+			type: String,
+			default: 'auto',
 		},
 	},
 	computed: {
 		computedStyle() {
 			return {
-				'max-width': !this.isMobile && this.maxWidth,
-				'max-height': this.maxHeight,
+				maxWidth: !this.isMobile && this.maxWidth,
+				maxHeight: this.maxHeight,
+				minHeight: this.minHeight,
+				width: this.width,
 			};
 		},
 	},
