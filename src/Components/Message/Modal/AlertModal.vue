@@ -1,5 +1,12 @@
 <template>
-	<Modal :show="show" :show-close-button="false" max-width="343px" :persistent="persistent" @close="close">
+	<Modal
+		:show="show"
+		:show-close-button="false"
+		max-width="343px"
+		width="100%"
+		:persistent="persistent"
+		@close="close"
+	>
 		<!-- content 영역 -->
 		<Typography type="body2" align="center" color="gray800">
 			<div class="c-modal--content-wrapper">
