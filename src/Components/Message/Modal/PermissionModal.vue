@@ -1,5 +1,12 @@
 <template>
-	<Modal :show="show" :show-close-button="false" max-width="343px" :persistent="persistent" @close="close">
+	<Modal
+		:show="show"
+		:show-close-button="false"
+		max-width="343px"
+		width="100%"
+		:persistent="persistent"
+		@close="close"
+	>
 		<div class="c-modal--content-container">
 			<!-- title 영역 -->
 			<Typography type="body1" align="center" color="gray900" font-weight="bold">
@@ -7,7 +14,7 @@
 			</Typography>
 
 			<!-- content 영역 -->
-			<Typography type="body2" align="center" color="gray800" class="mt-8">
+			<Typography v-if="$slots['content']" type="body2" align="center" color="gray800" class="mt-8">
 				<div class="c-modal--content-wrapper">
 					<slot name="content" />
 				</div>
@@ -81,7 +88,13 @@ export default {
 
 .c-modal {
 	&--content-container {
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include align-items(center);
 		padding: 24px 32px;
+		min-height: 101px;
+		max-height: 150px;
 	}
 
 	&--button-group {
