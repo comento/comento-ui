@@ -3,16 +3,26 @@
 		ref="fullscreen"
 		class="c-fullscreen-modal"
 		:show="show"
-		:show-close-button="showCloseButton"
+		:show-close-button="false"
 		:class="[computedAlign]"
 		@close="close"
 	>
-		<div v-if="!showCloseButton" class="c-fullscreen-modal--header">
+		<div v-if="$slots['title'] || $slots['close'] || $slots['action']" class="c-fullscreen-modal--header">
 			<div class="c-fullscreen-modal--header-container">
-				<Icon name="IconCloseLargeLine" :rotate="-90" color="gray800" @click="close()" />
-				<slot name="header" />
+				<div v-if="closeType !== 'none'" class="c-fullscreen-modal--header-close" @click="close()">
+					<Icon v-if="closeType === 'icon'" name="IconCloseLargeLine" :rotate="-90" color="gray800" />
+					<NarrowButton v-else size="medium">
+						<slot name="close" />
+					</NarrowButton>
+				</div>
+				<div class="c-fullscreen-modal--header-title">
+					<slot name="title" />
+				</div>
+				<div class="c-fullscreen-modal--header-action">
+					<slot name="action" />
+				</div>
 			</div>
-			<Divider vertical />
+			<Divider />
 		</div>
 		<div class="c-fullscreen-modal--content">
 			<slot name="content" />
@@ -22,9 +32,12 @@
 
 <script>
 import Modal from '@/src/Components/Message/Modal/Modal';
+import NarrowButton from '@/src/Components/Button/NarrowButton';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Divider from '@/src/Elements/Utility/Divider';
-export const fullScreenAlign = ['left', 'right', 'top', 'bottom'];
+
+export const fullScreenAlign = ['left', 'right', 'top', 'bottom', 'none'];
+export const fullScreenCloseType = ['icon', 'button', 'none'];
 
 export default {
 	name: 'FullscreenModal',
@@ -43,11 +56,11 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
-		showCloseButton: {
-			type: Boolean,
-			default: true,
+		closeType: {
+			type: String,
+			default: 'icon',
 			validator(value) {
-				return typeof value === 'boolean';
+				return fullScreenCloseType.indexOf(value) !== -1;
 			},
 		},
 	},
@@ -71,7 +84,7 @@ export default {
 			}, 300);
 		},
 	},
-	components: { Modal, Icon, Divider },
+	components: { Modal, Icon, Divider, NarrowButton },
 };
 </script>
 
@@ -81,44 +94,35 @@ export default {
 	position: fixed;
 	overflow: hidden;
 	z-index: 9998;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	&.none {
+		@include transition(none);
+	}
 	&.top {
-		top: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		height: 0;
+		@include transform(translateY(-100%));
 		&.active {
-			height: 100%;
+			@include transform(translateY(0));
 		}
 	}
 	&.bottom {
-		bottom: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		height: 0;
+		@include transform(translateY(100%));
 		&.active {
-			height: 100%;
+			@include transform(translateY(0));
 		}
 	}
 	&.left {
-		left: 0;
-		top: 0;
-		bottom: 0;
-		width: 0;
-		height: 100%;
+		@include transform(translateX(100%));
 		&.active {
-			width: 100%;
+			@include transform(translateX(0));
 		}
 	}
 	&.right {
-		right: 0;
-		top: 0;
-		bottom: 0;
-		width: 0;
-		height: 100%;
+		@include transform(translateX(-100%));
 		&.active {
-			width: 100%;
+			@include transform(translateX(0));
 		}
 	}
 	&--header {
@@ -126,12 +130,45 @@ export default {
 		top: 0;
 		z-index: 1;
 		width: 100%;
+
 		&-container {
-			@include flexbox();
-			@include flex-direction(row);
-			@include align-items(center);
-			@include justify-content(space-between);
-			padding: 10px 16px;
+			padding: 0 16px;
+			position: relative;
+			line-height: 48px;
+			height: 48px;
+		}
+		&-close {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 16px;
+			margin: auto;
+			z-index: 1;
+			&::v-deep .c-icon {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			&::v-deep .c-narrow-button {
+				display: inline-block;
+				vertical-align: baseline;
+			}
+		}
+		&-title {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			z-index: 0;
+		}
+		&-action {
+			position: absolute;
+			top: 50%;
+			right: 16px;
+			@include transform(translateY(-50%));
+			z-index: 1;
 		}
 		+ .c-fullscreen-modal--content {
 			margin-top: 49px;
