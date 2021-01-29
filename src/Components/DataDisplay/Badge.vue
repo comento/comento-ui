@@ -5,7 +5,7 @@
 
 		<!-- badge -->
 		<div v-if="text" class="c-badge--wrapper">
-			<div class="c-badge" :style="[computedStyle]">
+			<div class="c-badge" :style="[computedStyle]" :class="computedSize">
 				<Typography type="caption2" color="white" :font-weight="700">{{ text }}</Typography>
 			</div>
 		</div>
@@ -17,6 +17,7 @@ import { colors } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export const badgeColors = ['primary', 'error'];
+export const badgeSizes = ['medium', 'small'];
 
 export default {
 	name: 'Badge',
@@ -26,6 +27,13 @@ export default {
 			default: 'primary',
 			validator(value) {
 				return badgeColors.indexOf(value) !== -1;
+			},
+		},
+		size: {
+			type: String,
+			default: 'medium',
+			validator(value) {
+				return badgeSizes.indexOf(value) !== -1;
 			},
 		},
 		text: {
@@ -68,6 +76,9 @@ export default {
 			}
 			return false;
 		},
+		computedSize() {
+			return this.size;
+		},
 	},
 	methods: {
 		getByte(value) {
@@ -89,9 +100,15 @@ export default {
 	@include caption2();
 	position: absolute;
 	min-width: 0;
-	padding: 3px 5px;
 	@include inline-block();
 	@include border-radius(28px);
+	&.medium {
+		padding: 3px 5px;
+	}
+	&.small {
+		padding: 2px 4px;
+		font-size: 8px;
+	}
 
 	&--container {
 		display: inline-block;
