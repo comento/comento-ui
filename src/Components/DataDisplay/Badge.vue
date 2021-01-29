@@ -16,7 +16,7 @@
 import { colors } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
-export const badgeColors = ['primary'];
+export const badgeColors = ['primary', 'error'];
 
 export default {
 	name: 'Badge',
