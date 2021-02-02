@@ -24,6 +24,9 @@ import IconExclamationSmallFill from '@/assets/images/icon/icon-exclamation-smal
 import IconProfileSmallFill from '@/assets/images/icon/icon-profile-small-fill.svg?inline';
 import IconCheckSmallFill from '@/assets/images/icon/icon-check-small-fill.svg?inline';
 import IconCloseSmallLine from '@/assets/images/icon/icon-close-small-line.svg?inline';
+import IconSettingSmallFill from '@/assets/images/icon/icon-setting-small-fill.svg?inline';
+import IconQuestionMarkSmallFill from '@/assets/images/icon/icon-questionMark-small-fill.svg?inline';
+import IconFileSmallLine from '@/assets/images/icon/icon-file-small-line.svg?inline';
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
 import IconQuestionMediumLine from '@/assets/images/icon/icon-question-medium-line.svg?inline';
@@ -57,6 +60,7 @@ import IconVodMediumLine from '@/assets/images/icon/icon-vod-medium-line.svg?inl
 import IconEduMediumLine from '@/assets/images/icon/icon-edu-medium-line.svg?inline';
 import IconCouponMediumLine from '@/assets/images/icon/icon-coupon-medium-line.svg?inline';
 import IconRevertMediumLine from '@/assets/images/icon/icon-revert-medium-line.svg?inline';
+import IconDownloadMediumLine from '@/assets/images/icon/icon-download-medium-line.svg?inline';
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/icon-selected-large-line.svg?inline';
@@ -116,6 +120,9 @@ export const IconNames = [
 	'IconProfileSmallFill',
 	'IconCheckSmallFill',
 	'IconCloseSmallLine',
+	'IconSettingSmallFill',
+	'IconQuestionMarkSmallFill',
+	'IconFileSmallLine',
 	// medium
 	'IconCheckMediumFill',
 	'IconQuestionMediumLine',
@@ -149,6 +156,7 @@ export const IconNames = [
 	'IconEduMediumLine',
 	'IconCouponMediumLine',
 	'IconRevertMediumLine',
+	'IconDownloadMediumLine',
 	// large
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
@@ -257,6 +265,9 @@ export default {
 		IconProfileSmallFill,
 		IconCheckSmallFill,
 		IconCloseSmallLine,
+		IconSettingSmallFill,
+		IconQuestionMarkSmallFill,
+		IconFileSmallLine,
 		// medium
 		IconCheckMediumFill,
 		IconQuestionMediumLine,
@@ -290,6 +301,7 @@ export default {
 		IconEduMediumLine,
 		IconCouponMediumLine,
 		IconRevertMediumLine,
+		IconDownloadMediumLine,
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,
