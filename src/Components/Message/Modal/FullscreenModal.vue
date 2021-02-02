@@ -5,6 +5,7 @@
 		:show="show"
 		:show-close-button="false"
 		:class="[computedAlign]"
+		width="100%"
 		@close="close"
 	>
 		<div v-if="$slots['title'] || $slots['close'] || $slots['action']" class="c-fullscreen-modal--header">
