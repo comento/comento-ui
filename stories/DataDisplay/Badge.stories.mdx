@@ -1,47 +1,55 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Badge, { badgeColors } from '@/src/Components/DataDisplay/Badge';
-import Icon from '@/src/Elements/Core/Icon/Icon';
+import Badge, { badgeColors, badgeSizes } from "@/src/Components/DataDisplay/Badge";
+import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
-    title="Data Display/Badge"
-    component={ Badge }
-    argTypes={{
-        color: {
-            description: "뱃지 색상",
-            control: {
-                type: "select",
-                options: badgeColors,
-            },
-        },
-        text: {
-            description: "뱃지 내용",
-            defaultValue: "1",
-            control: {
-                type: "text",
-            },
-        },
-        offsetX: {
-            defaultValue: 12,
-            control: {
-                type: "number",
-            },
-        },
-        offsetY: {
-            defaultValue: 38,
-            control: {
-                type: "number",
-            },
-        },
-    }}
+  title="Data Display/Badge"
+  component={Badge}
+  argTypes={{
+    color: {
+      description: "뱃지 색상",
+      control: {
+        type: "select",
+        options: badgeColors,
+      },
+    },
+    size: {
+      description: "뱃지 사이즈",
+      control: {
+        type: "select",
+        options: badgeSizes,
+      },
+    },
+    text: {
+      description: "뱃지 내용",
+      defaultValue: "1",
+      control: {
+        type: "text",
+      },
+    },
+    offsetX: {
+      defaultValue: 12,
+      control: {
+        type: "number",
+      },
+    },
+    offsetY: {
+      defaultValue: 38,
+      control: {
+        type: "number",
+      },
+    },
+  }}
 />
 
 export const Default = (args, { argTypes }) => ({
-    props: Object.keys(argTypes),
-    components: { Badge, Icon },
-    template: `
+  props: Object.keys(argTypes),
+  components: { Badge, Icon },
+  template: `
         <Badge
             :color="color"
             :text="text"
+            :size="size"
             :offset-x="offsetX"
             :offset-y="offsetY"
         >
@@ -57,20 +65,23 @@ export const Default = (args, { argTypes }) => ({
 **Badge** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
-    {Default.bind({})}
+  {Default.bind({})}
 </Story>
 
 <ArgsTable story="Default" />
 
 ## Stories
-### All
+
+### Primary
+
 <Canvas>
-    <Story name="All" height="100px">
-        {{
-            template: `
+  <Story name="Primary" height="100px">
+    {{
+      template: `
                 <div>
                     <Badge
                         text="1"
+                        color="primary"
                         :offset-x="12"
                         :offset-y="38"
                     >
@@ -80,6 +91,7 @@ export const Default = (args, { argTypes }) => ({
                     </Badge>
                     <Badge
                         text="99+"
+                        color="primary"
                         :offset-x="12"
                         :offset-y="38"
                         style="margin: 0 24px"
@@ -90,6 +102,7 @@ export const Default = (args, { argTypes }) => ({
                     </Badge>
                     <Badge
                         text="N"
+                        color="primary"
                         :offset-x="12"
                         :offset-y="38"
                     >
@@ -97,9 +110,126 @@ export const Default = (args, { argTypes }) => ({
                             <Icon name="IconAlarmLargeLine" />
                         </div>
                     </Badge>
+                    <div class="mt-20">
+                        <Badge
+                            text="1"
+                            color="primary"
+                            size="small"
+                            :offset-x="12"
+                            :offset-y="38"
+                        >
+                            <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                                <Icon name="IconAlarmLargeLine" />
+                            </div>
+                        </Badge>
+                        <Badge
+                            text="99+"
+                            color="primary"
+                            size="small"
+                            :offset-x="12"
+                            :offset-y="38"
+                            style="margin: 0 24px"
+                        >
+                            <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                                <Icon name="IconAlarmLargeLine" />
+                            </div>
+                        </Badge>
+                        <Badge
+                            text="N"
+                            color="primary"
+                            size="small"
+                            :offset-x="12"
+                            :offset-y="38"
+                        >
+                            <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                                <Icon name="IconAlarmLargeLine" />
+                            </div>
+                        </Badge>
+                    </div>
                 </div>
             `,
-            components: { Badge, Icon },
-        }}
-    </Story>
+      components: { Badge, Icon },
+    }}
+  </Story>
+</Canvas>
+
+### Error
+
+<Canvas>
+  <Story name="Error" height="100px">
+    {{
+      template: `
+                <div>
+                    <Badge
+                        text="1"
+                        color="error"
+                        :offset-x="12"
+                        :offset-y="38"
+                    >
+                        <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                            <Icon name="IconAlarmLargeLine" />
+                        </div>
+                    </Badge>
+                    <Badge
+                        text="99+"
+                        color="error"
+                        :offset-x="12"
+                        :offset-y="38"
+                        style="margin: 0 24px"
+                    >
+                        <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                            <Icon name="IconAlarmLargeLine" />
+                        </div>
+                    </Badge>
+                    <Badge
+                        text="N"
+                        color="error"
+                        :offset-x="12"
+                        :offset-y="38"
+                    >
+                        <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                            <Icon name="IconAlarmLargeLine" />
+                        </div>
+                    </Badge>
+                    <div class="mt-20">
+                        <Badge
+                            text="1"
+                            color="error"
+                            size="small"
+                            :offset-x="12"
+                            :offset-y="38"
+                        >
+                            <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                                <Icon name="IconAlarmLargeLine" />
+                            </div>
+                        </Badge>
+                        <Badge
+                            text="99+"
+                            color="error"
+                            size="small"
+                            :offset-x="12"
+                            :offset-y="38"
+                            style="margin: 0 24px"
+                        >
+                            <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                                <Icon name="IconAlarmLargeLine" />
+                            </div>
+                        </Badge>
+                        <Badge
+                            text="N"
+                            color="error"
+                            size="small"
+                            :offset-x="12"
+                            :offset-y="38"
+                        >
+                            <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                                <Icon name="IconAlarmLargeLine" />
+                            </div>
+                        </Badge>
+                    </div>
+                </div>
+            `,
+      components: { Badge, Icon },
+    }}
+  </Story>
 </Canvas>
