@@ -11,9 +11,9 @@
 			<swiper-slide
 				v-for="(item, index) in Object.keys(this.$slots).length"
 				:key="`tabs-item-${index}`"
-				:class="{ active: index === selectedNo }"
+				:class="{ active: index === tabIndex }"
 			>
-				<div class="c-tabs--menu-button" @click="setSelectedNo(index)">
+				<div class="c-tabs--menu-button" @click="setTabIndex(index)">
 					<slot :name="'item' + index"></slot>
 				</div>
 			</swiper-slide>
@@ -25,8 +25,8 @@
 				v-for="(node, index) in Object.keys(this.$slots).length"
 				:key="`tabs-item-${index}`"
 				class="c-tabs--menu-button"
-				:class="{ active: index === selectedNo }"
-				@click="setSelectedNo(index)"
+				:class="{ active: index === tabIndex }"
+				@click="setTabIndex(index)"
 			>
 				<slot :name="'item' + index"></slot>
 			</div>
@@ -48,10 +48,14 @@ export default {
 				return TabsTypes.indexOf(value) !== -1;
 			},
 		},
+		tabIndex: {
+			type: Number,
+			required: true,
+			default: 0,
+		},
 	},
 	data() {
 		return {
-			selectedNo: 0,
 			blurLeft: false,
 			blurRight: false,
 		};
@@ -84,9 +88,8 @@ export default {
 		},
 	},
 	methods: {
-		setSelectedNo(index) {
-			this.selectedNo = index;
-			this.$emit('changeSelectedNo', index);
+		setTabIndex(index) {
+			this.$emit('changeTabIndex', index);
 		},
 	},
 	components: {
