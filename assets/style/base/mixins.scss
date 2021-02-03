@@ -212,3 +212,9 @@
   -ms-user-select: $select; // IE10+
   user-select: $select;
 }
+
+@mixin remove-active-and-focus() {
+  &:active, &:focus {
+    background: transparent;
+  }
+}

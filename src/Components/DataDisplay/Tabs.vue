@@ -1,28 +1,35 @@
 <template>
+	<!-- blur class 로직 -->
+	<!-- :class="[blurLeft ? 'c-tabs&#45;&#45;blur-left' : '', blurRight ? 'c-tabs&#45;&#45;blur-right' : '']"-->
 	<swiper
 		v-if="type === 'swiper'"
 		ref="mySwiper"
 		class="c-application c-tabs--menu-container swiper"
-		:class="[blurLeft ? 'c-tabs--blur-left' : '', blurRight ? 'c-tabs--blur-right' : '']"
 		:options="swiperOptions"
 	>
-		<swiper-slide v-for="(item, index) in items" :key="`tabs-item-${item}-${index}`" class="c-tabs--menu-wrapper">
-			<button class="c-tabs--menu-button" :class="{ active: index === selectedNo }" @click="setSelectedNo(index)">
-				{{ item }}
-			</button>
-		</swiper-slide>
+		<div class="c-tabs--menu-wrapper">
+			<swiper-slide
+				v-for="(item, index) in Object.keys(this.$slots).length"
+				:key="`tabs-item-${index}`"
+				:class="{ active: index === selectedNo }"
+			>
+				<div class="c-tabs--menu-button" @click="setSelectedNo(index)">
+					<slot :name="'item' + index"></slot>
+				</div>
+			</swiper-slide>
+		</div>
 	</swiper>
 	<div v-else class="c-application c-tabs c-tabs--menu-container">
 		<div class="c-tabs--menu-wrapper">
-			<button
-				v-for="(item, index) in items"
-				:key="`tabs-item-${item}-${index}`"
+			<div
+				v-for="(node, index) in Object.keys(this.$slots).length"
+				:key="`tabs-item-${index}`"
 				class="c-tabs--menu-button"
 				:class="{ active: index === selectedNo }"
 				@click="setSelectedNo(index)"
 			>
-				{{ item }}
-			</button>
+				<slot :name="'item' + index"></slot>
+			</div>
 		</div>
 	</div>
 </template>
@@ -31,16 +38,9 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 
 export const TabsTypes = ['basic', 'swiper'];
-
 export default {
 	name: 'Tabs',
 	props: {
-		items: {
-			type: Array,
-			default() {
-				return [];
-			},
-		},
 		type: {
 			type: String,
 			default: 'basic',
@@ -100,63 +100,6 @@ export default {
 ::v-deep {
 	@import '@/assets/style/swiper/swiper';
 }
-.c-tabs {
-	&--menu {
-		&-container {
-			background-color: $white;
-			width: 100%;
-		}
-
-		&-button {
-			background: none;
-			border: 0;
-			outline: 0;
-			padding: 4px;
-			cursor: pointer;
-			color: $gray800;
-			width: fit-content;
-			@include body2();
-			position: relative;
-
-			&:not(:last-child) {
-				margin-right: 12px;
-			}
-
-			&.active {
-				font-weight: 700;
-				color: $gray800;
-
-				&:after {
-					content: '';
-					display: flex;
-					position: absolute;
-					width: 100%;
-					height: 2px;
-					background: $gray600;
-					left: 0;
-					bottom: -1px;
-				}
-			}
-			&:not(.active) {
-				color: $gray400;
-			}
-
-			&:hover {
-				background-color: $gray100;
-			}
-		}
-		&-wrapper {
-			width: 100%;
-		}
-	}
-	/*&--blur-left {*/
-	/*	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);*/
-	/*}*/
-	/*&--blur-right {*/
-	/*	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);*/
-	/*}*/
-}
-
 ::v-deep .swiper {
 	&-slide {
 		width: auto;
@@ -165,11 +108,63 @@ export default {
 		}
 	}
 }
-
-.c-tabs--menu-wrapper,
-.swiper-container {
-	display: inline-block;
-	background: linear-gradient(180deg, transparent 97%, $gray200 0);
-	padding-bottom: 1px;
+.c-tabs {
+	&--menu {
+		&-wrapper {
+			@include flexbox();
+			border-bottom: 1px solid rgba($gray200, 0.97);
+		}
+		&-container {
+			background-color: $white;
+			width: 100%;
+		}
+		&-button {
+			@include flexbox();
+			position: relative;
+			@include align-items(center);
+			&:hover {
+				background-color: $gray100;
+			}
+			&::v-deep .c-button {
+				background: none !important;
+				border: 0;
+				outline: 0;
+				padding: 4px;
+				cursor: pointer;
+				color: $gray400;
+				width: fit-content;
+				@include body2();
+				&:focus {
+					background: transparent;
+				}
+				&:not(:last-child) {
+					margin-right: 12px;
+				}
+			}
+			@include remove-active-and-focus();
+		}
+	}
 }
+.active {
+	&::v-deep .c-button {
+		font-weight: 700;
+		color: $gray800;
+	}
+	&:after {
+		content: '';
+		display: flex;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background: $gray600;
+		left: 0;
+		bottom: -1px;
+	}
+}
+/*&--blur-left {*/
+/*	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);*/
+/*}*/
+/*&--blur-right {*/
+/*	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);*/
+/*}*/
 </style>
