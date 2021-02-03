@@ -1,6 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Tabs, { TabsTypes } from "@/src/Components/DataDisplay/Tabs";
+import Button from "@/src/Components/Button/Button";
 import Typography from "@/src/Elements/Core/Typography/Typography";
+import Badge from "@/src/Components/DataDisplay/Badge";
+import Chip from "@/src/Components/DataDisplay/Chip";
 
 <Meta
     title="Data Display/Tabs"
@@ -25,9 +28,15 @@ import Typography from "@/src/Elements/Core/Typography/Typography";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Tabs, Typography },
+    components: { Tabs, Button },
     template:
-      `<Tabs :items="items" :type="type"/>`,
+      `<Tabs :type="type">
+          <template v-for="(item, index) in 5" :slot="'item' + index">
+                <Button>
+                  Tab{{ item }}
+                </Button>
+          </template>
+      </Tabs>`,
 });
 
 # Tabs
@@ -46,80 +55,44 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
     <Story name="All" height="100px">
         {{
-            data() {
-                return {
-                    items: ['Tab1','Tab2','Tab3','Tab4','Tab5'],
-                    moreItems: ['Tab1','Tab2','Tab3','Tab4','Tab5','Tab6','Tab7','Tab8','Tab9','Tab10','Tab11','Tab12','Tab13','Tab14','Tab15','Tab16','Tab17','Tab18','Tab19','Tab20']
-                }
-            },
             template: `
             <div>
+                <Tabs>
+                    <template v-for="(item, index) in 5" :slot="'item' + index">
+                            <Button>
+                                Tab{{ item }}
+                            </Button>
+                    </template>
+                </Tabs>
                 <Typography type="caption1">basic type</Typography>
-                <div>
-                    <Tabs :items="items"/>
-                </div>
                 <br/>
+                <div>
+                    <Tabs type="swiper">
+                        <template v-for="(item, index) in 5" :slot="'item' + index">
+                                <Button>
+                                    Tab{{ item }}
+                                </Button>
+                        </template>
+                    </Tabs>
+                </div>
                 <Typography type="caption1">swiper type</Typography>
-                <div>
-                    <Tabs type="swiper" :items="items"/>
-                </div>
-                <br/>
-                <Typography type="caption1">탭 개수가 많은 경우</Typography>
-                <div>
-                    <Tabs type="swiper" :items="moreItems"/>
-                </div>
-            </div>
-            `,
-            components: { Tabs, Typography },
-        }}
-    </Story>
-</Canvas>
-
-### Types
-<Canvas>
-    <Story name="Types" height="100px">
-        {{
-            data() {
-                return {
-                    items: ['Tab1','Tab2','Tab3','Tab4','Tab5']
-                }
-            },
-            template: `
+                        <br/>
+               <Tabs>
+                   <template v-for="(item, index) in 5" :slot="'item' + index">
+                           <Button style="position: relative">
+                               Tab{{ item }}
+                           </Button>
+                          <Badge text="1" :offsetX="20" :offsetY="10"/>
+                   </template>
+               </Tabs>
+            <br/>
+            <Typography type="caption1">탭에 여러 컴포넌트가 들어가는 경우</Typography>
             <div>
-                <Typography type="caption1">basic type</Typography>
-                <div>
-                    <Tabs :items="items"/>
-                </div>
-                <br/>
-                <Typography type="caption1">swiper type</Typography>
-                <div>
-                    <Tabs type="swiper" :items="items"/>
-                </div>
+                <Tabs type="swiper" :items="moreItems"/>
+            </div>
             </div>
             `,
-            components: { Tabs, Typography },
-        }}
-    </Story>
-</Canvas>
-
-### Sizes
-<Canvas>
-    <Story name="Sizes" height="100px">
-        {{
-            data() {
-                return {
-                    items: ['Tab1','Tab2','Tab3','Tab4','Tab5','Tab6','Tab7','Tab8','Tab9','Tab10','Tab11','Tab12','Tab13','Tab14','Tab15','Tab16','Tab17','Tab18','Tab19','Tab20']
-                }
-            },
-            template: `
-            <div>
-                <Typography type="caption1">탭 개수가 많은 경우</Typography>
-                <div>
-                    <Tabs type="swiper" :items="items"/>
-                </div>
-            </div>
-            `,
-            components: { Tabs, Typography },
+            components: { Tabs, Button, Chip, Badge },
         }}
     </Story>
 </Canvas>
