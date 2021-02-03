@@ -128,6 +128,9 @@ export default {
 			&:hover {
 				background-color: $gray100;
 			}
+			&:not(:last-child) {
+				margin-right: 12px;
+			}
 			&::v-deep .c-button {
 				background: none !important;
 				border: 0;
@@ -139,9 +142,6 @@ export default {
 				@include body2();
 				&:focus {
 					background: transparent;
-				}
-				&:not(:last-child) {
-					margin-right: 12px;
 				}
 			}
 			@include remove-active-and-focus();
