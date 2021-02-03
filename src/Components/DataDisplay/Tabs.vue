@@ -1,9 +1,10 @@
 <template>
+	<!-- blur class 로직 -->
+	<!-- :class="[blurLeft ? 'c-tabs&#45;&#45;blur-left' : '', blurRight ? 'c-tabs&#45;&#45;blur-right' : '']"-->
 	<swiper
 		v-if="type === 'swiper'"
 		ref="mySwiper"
 		class="c-application c-tabs--menu-container swiper"
-		:class="[blurLeft ? 'c-tabs--blur-left' : '', blurRight ? 'c-tabs--blur-right' : '']"
 		:options="swiperOptions"
 	>
 		<div class="c-tabs--menu-wrapper">
