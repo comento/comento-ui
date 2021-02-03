@@ -112,8 +112,7 @@ export default {
 	&--menu {
 		&-wrapper {
 			@include flexbox();
-			background: linear-gradient(180deg, transparent 97%, $gray200 0);
-			padding-bottom: 1px;
+			border-bottom: 1px solid rgba($gray200, 0.97);
 		}
 		&-container {
 			background-color: $white;
