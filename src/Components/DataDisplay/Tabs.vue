@@ -20,7 +20,7 @@
 		</div>
 	</swiper>
 	<div v-else class="c-application c-tabs c-tabs--menu-container">
-		<div class="c-tabs--menu-wrapper">
+		<div class="c-tabs--menu-wrapper" :class="classes">
 			<div
 				v-for="(node, index) in Object.keys(this.$slots).length"
 				:key="`tabs-item-${index}`"
@@ -38,6 +38,7 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 
 export const TabsTypes = ['basic', 'swiper'];
+export const TabsDirections = ['horizontal', 'vertical'];
 export default {
 	name: 'Tabs',
 	props: {
@@ -46,6 +47,13 @@ export default {
 			default: 'basic',
 			validator(value) {
 				return TabsTypes.indexOf(value) !== -1;
+			},
+		},
+		direction: {
+			type: String,
+			default: 'horizontal',
+			validator(value) {
+				return TabsDirections.indexOf(value) !== -1;
 			},
 		},
 		tabIndex: {
@@ -82,6 +90,12 @@ export default {
 				},
 			};
 		},
+		computedDirection() {
+			return `c-tabs--${this.direction}`;
+		},
+		classes() {
+			return [this.computedDirection];
+		},
 		swiper() {
 			return this.$refs.mySwiper.$swiper;
 		},
@@ -111,10 +125,45 @@ export default {
 	}
 }
 .c-tabs {
+	&--vertical {
+		@include flex-direction(column);
+		.c-tabs {
+			&--menu {
+				&-button {
+					margin-right: 0;
+					width: fit-content;
+					&:not(:last-child) {
+						margin-bottom: 16px;
+					}
+					/* pc 탭은 왼쪽 정렬이므로 */
+					.c-button {
+						justify-content: flex-start;
+					}
+				}
+			}
+		}
+		&.c-tabs--menu-wrapper {
+			width: fit-content;
+			border-bottom: none;
+		}
+	}
+	&--horizontal {
+		.c-tabs {
+			&--menu {
+				&-button {
+					&:not(:last-child) {
+						margin-right: 12px;
+					}
+				}
+			}
+		}
+		&.c-tabs--menu-wrapper {
+			width: 100%;
+		}
+	}
 	&--menu {
 		&-wrapper {
 			@include flexbox();
-			width: 100%;
 			border-bottom: 1px solid rgba($gray200, 0.97);
 		}
 		&-container {
@@ -127,9 +176,6 @@ export default {
 			@include align-items(center);
 			&:hover {
 				background-color: $gray100;
-			}
-			&:not(:last-child) {
-				margin-right: 12px;
 			}
 			&::v-deep .c-button {
 				background: none !important;
