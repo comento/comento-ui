@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-badge--container">
+	<div v-if="type === 'absolute'" class="c-application c-badge--container">
 		<!-- badge 대상 컴포넌트 -->
 		<slot />
 
@@ -10,6 +10,9 @@
 			</div>
 		</div>
 	</div>
+	<div v-else class="c-badge" :style="[computedStyle]" :class="[computedSize, computedPosition]">
+		<Typography type="caption2" color="white" :font-weight="700">{{ text }}</Typography>
+	</div>
 </template>
 
 <script>
@@ -18,6 +21,7 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export const badgeColors = ['primary', 'error'];
 export const badgeSizes = ['medium', 'small'];
+export const badgeTypes = ['normal', 'absolute'];
 
 export default {
 	name: 'Badge',
@@ -57,14 +61,31 @@ export default {
 				return typeof value === 'number';
 			},
 		},
+		type: {
+			type: String,
+			default: 'absolute',
+			validator(value) {
+				return badgeTypes.indexOf(value) !== -1;
+			},
+		},
 	},
 	computed: {
 		computedStyle() {
 			return {
-				background: colors[this.color],
+				...this.computedPadding,
+				...this.computedBackground,
+				...(this.typeAbsolute && this.computedPosition),
+			};
+		},
+		computedPosition() {
+			return {
 				top: `calc(100% - ${this.offsetY}px)`,
 				left: `calc(100% - ${this.offsetX}px)`,
-				...this.computedPadding,
+			};
+		},
+		computedBackground() {
+			return {
+				background: colors[this.color],
 			};
 		},
 		computedPadding() {
@@ -78,6 +99,15 @@ export default {
 		},
 		computedSize() {
 			return this.size;
+		},
+		computedType() {
+			return this.type;
+		},
+		typeAbsolute() {
+			return this.type === 'absolute';
+		},
+		typeNormal() {
+			return this.type === 'normal';
 		},
 	},
 	methods: {
@@ -98,7 +128,12 @@ export default {
 <style lang="scss" scoped>
 .c-badge {
 	@include caption2();
-	position: absolute;
+	&.normal {
+		position: initial;
+	}
+	&.absolute {
+		position: absolute;
+	}
 	min-width: 0;
 	@include inline-block();
 	@include border-radius(28px);
