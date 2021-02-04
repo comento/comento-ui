@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Tabs, { TabsTypes } from "@/src/Components/DataDisplay/Tabs";
+import Tabs, { TabsTypes, TabsDirections } from "@/src/Components/DataDisplay/Tabs";
 import Button from "@/src/Components/Button/Button";
 import Typography from "@/src/Elements/Core/Typography/Typography";
 import Badge from "@/src/Components/DataDisplay/Badge";
@@ -16,6 +16,13 @@ import Chip from "@/src/Components/DataDisplay/Chip";
                 options: TabsTypes
             },
         },
+        direction: {
+            description: "Tabs 방향<br/>String",
+            control: {
+                type: "select",
+                options: TabsDirections
+            },
+        },
     }}
 />
 
@@ -25,6 +32,7 @@ export const Default = (args, { argTypes }) => ({
     data() {
         return {
             selectedNo: 2,
+            items: ['캠프 일정', '새 댓글', '수료증'],
         }
     },
     methods: {
@@ -33,10 +41,10 @@ export const Default = (args, { argTypes }) => ({
         }
     },
     template:
-      `<Tabs :type="type" :tabIndex="selectedNo" @changeTabIndex="handleChangeTabIndex">
-          <template v-for="(item, index) in 5" :slot="'item' + index">
+      `<Tabs :type="type" :direction="direction" :tabIndex="selectedNo" @changeTabIndex="handleChangeTabIndex">
+          <template v-for="(item, index) in items" :slot="'item' + index">
                 <Button>
-                  Tab{{ item }}
+                  {{ item }}
                 </Button>
           </template>
       </Tabs>`,
@@ -63,6 +71,8 @@ export const Default = (args, { argTypes }) => ({
                     selectedNo1: 0,
                     selectedNo2: 0,
                     selectedNo3: 0,
+                    selectedNo4: 0,
+                    items: ['캠프 일정', '새 댓글', '수료증'],
                 }
             },
             methods: {
@@ -74,6 +84,9 @@ export const Default = (args, { argTypes }) => ({
                 },
                 handleChangeTabIndex3(index) {
                     this.selectedNo3 = index;
+                },
+                handleChangeTabIndex4(index) {
+                    this.selectedNo4 = index;
                 },
             },
             template: `
@@ -101,11 +114,53 @@ export const Default = (args, { argTypes }) => ({
                            <Button style="position: relative">
                                Tab{{ item }}
                            </Button>
-                          <Badge text="1" :offsetX="20" :offsetY="10"/>
+                          <Badge type="normal" text="1" :offsetX="20" :offsetY="10"/>
                    </template>
                </Tabs>
+               <Tabs :tabIndex="selectedNo4" type="swiper" @changeTabIndex="handleChangeTabIndex4">
+                  <template v-for="(item, index) in 5" :slot="'item' + index">
+                          <Button style="position: relative">
+                              Tab{{ item }}
+                          </Button>
+                         <Badge type="normal" text="1" :offsetX="20" :offsetY="10"/>
+                  </template>
+              </Tabs>
             <br/>
             <Typography type="caption1">탭에 여러 컴포넌트가 들어가는 경우</Typography>
+            </div>
+            `,
+            components: { Tabs, Typography, Button, Chip, Badge },
+        }}
+    </Story>
+</Canvas>
+
+### Direction Vertical && Badge와 함께 사용
+<Canvas>
+    <Story name="Vertical" height="100px">
+        {{
+            data() {
+                return {
+                    selectedNo1: 0,
+                    items: ['캠프 일정', '새 댓글', '수료증'],
+                }
+            },
+            methods: {
+                handleChangeTabIndex1(index) {
+                    this.selectedNo1 = index;
+                },
+            },
+            template: `
+            <div>
+                <Tabs :tabIndex="selectedNo1" direction="vertical" @changeTabIndex="handleChangeTabIndex1">
+                    <template v-for="(item, index) in items" :slot="'item' + index">
+                            <Button>
+                                {{ item }}
+                            </Button>
+                            <template v-if="item === '새 댓글'">
+                                <Badge text="3" color="error" type="normal"/>
+                            </template>
+                    </template>
+                </Tabs>
             </div>
             `,
             components: { Tabs, Typography, Button, Chip, Badge },
