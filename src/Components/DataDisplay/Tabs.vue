@@ -63,7 +63,6 @@ export default {
 	computed: {
 		swiperOptions() {
 			return {
-				spaceBetween: 12,
 				slidesPerView: 'auto',
 				on: {
 					init: () => {
@@ -106,8 +105,8 @@ export default {
 ::v-deep .swiper {
 	&-slide {
 		width: auto;
-		&:last-child {
-			margin-right: 0 !important;
+		&:not(:last-child) {
+			margin-right: 12px;
 		}
 	}
 }
@@ -115,6 +114,7 @@ export default {
 	&--menu {
 		&-wrapper {
 			@include flexbox();
+			width: 100%;
 			border-bottom: 1px solid rgba($gray200, 0.97);
 		}
 		&-container {
@@ -128,6 +128,9 @@ export default {
 			&:hover {
 				background-color: $gray100;
 			}
+			&:not(:last-child) {
+				margin-right: 12px;
+			}
 			&::v-deep .c-button {
 				background: none !important;
 				border: 0;
@@ -137,14 +140,8 @@ export default {
 				color: $gray400;
 				width: fit-content;
 				@include body2();
-				&:focus {
-					background: transparent;
-				}
-				&:not(:last-child) {
-					margin-right: 12px;
-				}
+				@include remove-active-and-focus();
 			}
-			@include remove-active-and-focus();
 		}
 	}
 }
