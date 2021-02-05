@@ -128,12 +128,6 @@ export default {
 <style lang="scss" scoped>
 .c-badge {
 	@include caption2();
-	&.normal {
-		position: initial;
-	}
-	&.absolute {
-		position: absolute;
-	}
 	min-width: 0;
 	@include inline-block();
 	@include border-radius(28px);
