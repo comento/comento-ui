@@ -1,11 +1,11 @@
 <template>
-	<div class="c-application c-badge--container">
+	<div class="c-application c-badge--container" :class="[computedType]">
 		<!-- badge 대상 컴포넌트 -->
 		<slot />
 
 		<!-- badge -->
 		<div v-if="text" class="c-badge--wrapper">
-			<div class="c-badge" :style="[computedStyle]" :class="computedSize">
+			<div class="c-badge" :style="[computedStyle]" :class="[computedSize, computedPosition]">
 				<Typography type="caption2" color="white" :font-weight="700">{{ text }}</Typography>
 			</div>
 		</div>
@@ -18,6 +18,7 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export const badgeColors = ['primary', 'error'];
 export const badgeSizes = ['medium', 'small'];
+export const badgeTypes = ['inline', 'absolute'];
 
 export default {
 	name: 'Badge',
@@ -57,14 +58,31 @@ export default {
 				return typeof value === 'number';
 			},
 		},
+		type: {
+			type: String,
+			default: 'absolute',
+			validator(value) {
+				return badgeTypes.indexOf(value) !== -1;
+			},
+		},
 	},
 	computed: {
 		computedStyle() {
 			return {
-				background: colors[this.color],
+				...this.computedPadding,
+				...this.computedBackground,
+				...(this.typeAbsolute && this.computedPosition),
+			};
+		},
+		computedPosition() {
+			return {
 				top: `calc(100% - ${this.offsetY}px)`,
 				left: `calc(100% - ${this.offsetX}px)`,
-				...this.computedPadding,
+			};
+		},
+		computedBackground() {
+			return {
+				background: colors[this.color],
 			};
 		},
 		computedPadding() {
@@ -78,6 +96,15 @@ export default {
 		},
 		computedSize() {
 			return this.size;
+		},
+		computedType() {
+			return this.type;
+		},
+		typeAbsolute() {
+			return this.type === 'absolute';
+		},
+		typeInline() {
+			return this.type === 'inline';
 		},
 	},
 	methods: {
@@ -98,7 +125,6 @@ export default {
 <style lang="scss" scoped>
 .c-badge {
 	@include caption2();
-	position: absolute;
 	min-width: 0;
 	@include inline-block();
 	@include border-radius(28px);
@@ -111,10 +137,23 @@ export default {
 	}
 
 	&--container {
-		display: inline-block;
+		&.inline {
+			display: flex;
+			.c-badge {
+				display: block;
+				&--wrapper {
+					position: static;
+				}
+			}
+		}
+		&.absolute {
+			display: inline-block;
+			.c-badge {
+				position: absolute;
+			}
+		}
 		position: relative;
 	}
-
 	&--wrapper {
 		flex: 0 1;
 		height: 100%;
