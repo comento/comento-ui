@@ -185,6 +185,7 @@ export default {
 				cursor: pointer;
 				color: $gray400;
 				width: fit-content;
+				min-width: auto;
 				@include body2();
 				@include remove-active-and-focus();
 			}
