@@ -49,10 +49,10 @@ import Button from "@/src/Components/Button/Button";
                 type: "boolean",
             },
         },
-        maxWidth: {
-            description: "모달 최대 width",
+        full: {
+            description: "모달 width의 크기",
             control: {
-                type: "text",
+                type: "boolean",
             },
         },
         title: {
@@ -88,7 +88,7 @@ export const Default = (args, { argTypes }) => ({
                 :loading="loading"
                 :success-message="successMessage"
                 :show-action-button="showActionButton"
-                :max-width="maxWidth"
+                :full="full"
                 :scroll="scroll"
                 :success-callback="closeModal"
             >

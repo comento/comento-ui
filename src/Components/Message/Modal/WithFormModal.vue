@@ -2,9 +2,9 @@
 	<Modal
 		:show="show"
 		:show-close-button="showCloseButton"
-		:max-width="maxWidth"
 		:persistent="persistent"
 		:max-height="computedMaxHeight"
+		:width="computedWidth"
 		@close="close"
 	>
 		<div class="c-modal--wrapper" :class="computedClasses">
@@ -103,11 +103,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
-		maxWidth: {
-			type: String,
-			validator(value) {
-				return typeof value === 'string';
-			},
+		full: {
+			type: Boolean,
+			default: false,
 		},
 		scroll: {
 			type: Boolean,
@@ -129,6 +127,9 @@ export default {
 		},
 		computedMaxHeight() {
 			return this.isMobile ? '86vh' : '640px';
+		},
+		computedWidth() {
+			return this.full ? '100%' : 'auto';
 		},
 	},
 	methods: {
