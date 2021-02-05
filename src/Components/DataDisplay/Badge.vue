@@ -1,17 +1,14 @@
 <template>
-	<div v-if="type === 'absolute'" class="c-application c-badge--container">
+	<div class="c-application c-badge--container" :class="[computedType]">
 		<!-- badge 대상 컴포넌트 -->
 		<slot />
 
 		<!-- badge -->
 		<div v-if="text" class="c-badge--wrapper">
-			<div class="c-badge" :style="[computedStyle]" :class="computedSize">
+			<div class="c-badge" :style="[computedStyle]" :class="[computedSize, computedPosition]">
 				<Typography type="caption2" color="white" :font-weight="700">{{ text }}</Typography>
 			</div>
 		</div>
-	</div>
-	<div v-else class="c-badge" :style="[computedStyle]" :class="[computedSize, computedPosition]">
-		<Typography type="caption2" color="white" :font-weight="700">{{ text }}</Typography>
 	</div>
 </template>
 
@@ -21,7 +18,7 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export const badgeColors = ['primary', 'error'];
 export const badgeSizes = ['medium', 'small'];
-export const badgeTypes = ['normal', 'absolute'];
+export const badgeTypes = ['inline', 'absolute'];
 
 export default {
 	name: 'Badge',
@@ -106,8 +103,8 @@ export default {
 		typeAbsolute() {
 			return this.type === 'absolute';
 		},
-		typeNormal() {
-			return this.type === 'normal';
+		typeInline() {
+			return this.type === 'inline';
 		},
 	},
 	methods: {
@@ -146,10 +143,20 @@ export default {
 	}
 
 	&--container {
-		display: inline-block;
+		&.inline {
+			display: flex;
+			.c-badge {
+				display: block;
+				&--wrapper {
+					position: static;
+				}
+			}
+		}
+		&.absolute {
+			display: inline-block;
+		}
 		position: relative;
 	}
-
 	&--wrapper {
 		flex: 0 1;
 		height: 100%;
