@@ -148,6 +148,9 @@ export default {
 		}
 		&.absolute {
 			display: inline-block;
+			.c-badge {
+				position: absolute;
+			}
 		}
 		position: relative;
 	}
