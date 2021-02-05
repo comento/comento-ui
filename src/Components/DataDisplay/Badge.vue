@@ -147,7 +147,7 @@ export default {
 			}
 		}
 		&.absolute {
-			display: inline-block;
+			display: inline-flex;
 			.c-badge {
 				position: absolute;
 			}
