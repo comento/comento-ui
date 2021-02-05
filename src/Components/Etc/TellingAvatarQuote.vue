@@ -106,6 +106,7 @@ export default {
 				@include flexbox();
 				@include flex-direction(column);
 				@include align-items(center);
+				padding: 0 8px;
 			}
 
 			.c-avatar--container {
