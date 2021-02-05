@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Badge, { badgeColors, badgeSizes } from "@/src/Components/DataDisplay/Badge";
+import Badge, { badgeColors, badgeSizes, badgeTypes } from "@/src/Components/DataDisplay/Badge";
 import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
@@ -39,6 +39,13 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
         type: "number",
       },
     },
+    type: {
+      description: "뱃지 타입",
+      control: {
+        type: "select",
+        options: badgeTypes,
+      },
+    },
   }}
 />
 
@@ -52,6 +59,7 @@ export const Default = (args, { argTypes }) => ({
             :size="size"
             :offset-x="offsetX"
             :offset-y="offsetY"
+            :type="type"
         >
             <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
                 <Icon name="IconAlarmLargeLine" />
@@ -225,6 +233,30 @@ export const Default = (args, { argTypes }) => ({
                             <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
                                 <Icon name="IconAlarmLargeLine" />
                             </div>
+                        </Badge>
+                    </div>
+                </div>
+            `,
+      components: { Badge, Icon },
+    }}
+  </Story>
+</Canvas>
+
+### Type Inline
+대상에 붙어있지 않고 독립적인 컴포넌트로 쓰일 때 사용
+
+<Canvas>
+  <Story name="Type" height="100px">
+    {{
+      template: `
+                <div>
+                    <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                        <Icon name="IconAlarmLargeLine" />
+                          <Badge
+                            text="1"
+                            color="error"
+                          type="inline"
+                        >
                         </Badge>
                     </div>
                 </div>
