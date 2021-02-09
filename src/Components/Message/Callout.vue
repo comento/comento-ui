@@ -124,6 +124,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@mixin callout-icon-margin-right($margin-right) {
+	svg:first-child {
+		margin-right: $margin-right;
+	}
+}
+
 .c-callout {
 	&--container {
 		display: inline-flex;
@@ -131,30 +137,24 @@ export default {
 		&.full {
 			width: 100%;
 		}
-		svg {
+		svg:first-child {
 			flex-shrink: 0;
 		}
 
 		&.x-small {
 			padding: 4px 8px;
 			border-radius: 4px;
-			svg {
-				margin-right: 4px;
-			}
+			@include callout-icon-margin-right(4px);
 		}
 		&.small {
 			padding: 8px;
 			border-radius: 4px;
-			svg {
-				margin-right: 6px;
-			}
+			@include callout-icon-margin-right(6px);
 		}
 		&.medium {
 			padding: 16px 16px 16px 16px;
 			border-radius: 6px;
-			svg {
-				margin-right: 8px;
-			}
+			@include callout-icon-margin-right(8px);
 		}
 
 		// type
@@ -186,8 +186,6 @@ export default {
 		}
 	}
 	&--close-button {
-		position: absolute;
-		right: 4px;
 		margin-left: 4px;
 	}
 }
