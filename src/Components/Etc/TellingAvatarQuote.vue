@@ -70,8 +70,7 @@ export default {
 				border-radius: 20px;
 				@include shadow2();
 				padding: 20px 32px;
-				margin-left: 0;
-				margin-right: (16px + 14px);
+				margin: 60px (16px + 14px) 40px 0;
 				flex: 1;
 
 				&:after {
