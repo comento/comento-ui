@@ -186,8 +186,6 @@ export default {
 		}
 	}
 	&--close-button {
-		position: absolute;
-		right: 4px;
 		margin-left: 4px;
 	}
 }
