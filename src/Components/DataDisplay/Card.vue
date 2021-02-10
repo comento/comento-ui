@@ -17,17 +17,14 @@
 				<Typography type="caption1" element="span" color="gray500"> {{ captionRight }}</Typography>
 			</div>
 		</div>
-		<div class="edu_card_img_container" :class="backgroundDirection">
-			<img class="edu_card_img" :class="backgroundDirection" :src="backgroundImage" alt="" />
+		<div class="edu_card_img_container">
+			<img class="edu_card_img" :src="backgroundImage" alt="" />
 		</div>
 	</article>
 </template>
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
-import customValidator from '@/utils/custom-validator.js';
-
-export const CardBackgroundDirections = ['horizontal', 'vertical'];
 
 export default {
 	name: 'EduCard',
@@ -35,14 +32,6 @@ export default {
 		backgroundImage: {
 			type: String,
 			default: 'https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg',
-		},
-		backgroundDirection: {
-			type: String,
-			default: 'vertical',
-			validator(value) {
-				const isValid = CardBackgroundDirections.indexOf(value) !== -1;
-				return customValidator(value, isValid, 'Card', 'BackgroundDirection');
-			},
 		},
 		category: {
 			type: String,
@@ -101,29 +90,16 @@ export default {
 	right: 0;
 	z-index: -1;
 	overflow: hidden;
+	width: 100%;
+	height: 90px;
+	@include pc {
+		height: 128px;
+	}
 	.edu_card_img {
 		border: none;
-		&.horizontal {
-			height: 100%;
-			min-width: 100%;
-			border-left: 1px solid white;
-		}
-		&.vertical {
-			width: 100%;
-			opacity: 0.7;
-			height: 100%;
-		}
-	}
-	&.horizontal {
-		width: 198px;
-		height: 100%;
-	}
-	&.vertical {
 		width: 100%;
-		height: 90px;
-		@include pc {
-			height: 128px;
-		}
+		opacity: 0.7;
+		height: 100%;
 	}
 }
 </style>

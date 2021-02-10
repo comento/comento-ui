@@ -1,7 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Card, {
-  CardBackgroundDirections,
-} from "@/src/Components/DataDisplay/Card";
+import Card from "@/src/Components/DataDisplay/Card";
 import Grid from "@/src/Components/Layout/Grid";
 import Row from "@/src/Components/Layout/Row";
 import StyleCol from "@/src/Components/Layout/StyleCol";
@@ -19,18 +17,6 @@ import StyleCol from "@/src/Components/Layout/StyleCol";
       },
       control: {
         type: "text",
-      },
-    },
-    backgroundDirection: {
-      description: "카드 배경 방향<br/>`String`",
-      table: {
-        type: {
-          summary: null,
-        },
-      },
-      control: {
-        type: "select",
-        options: CardBackgroundDirections,
       },
     },
     category: {
@@ -87,13 +73,13 @@ export const Default = (args, { argTypes }) => ({
         <Grid>
             <Row>
                 <StyleCol :col-lg="4">
-                    <Card :backgroundImage="backgroundImage" :backgroundDirection="backgroundDirection" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
+                    <Card :backgroundImage="backgroundImage" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
                 </StyleCol>
                 <StyleCol :col-lg="4">
-                    <Card :backgroundImage="backgroundImage" :backgroundDirection="backgroundDirection" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
+                    <Card :backgroundImage="backgroundImage" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
                 </StyleCol>
                 <StyleCol :col-lg="4">
-                    <Card :backgroundImage="backgroundImage" :backgroundDirection="backgroundDirection" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
+                    <Card :backgroundImage="backgroundImage" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
                 </StyleCol>
             </Row>
         </Grid>
