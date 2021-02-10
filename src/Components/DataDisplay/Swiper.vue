@@ -265,8 +265,6 @@ $swiper-control-circle-radius: 16px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		text-align: center;
-		font-weight: bold;
 		background-color: $swiper-background-color;
 	}
 }
