@@ -212,7 +212,7 @@ export default {
 				},
 				allowTouchMove: true,
 				slidesPerView: this.slidesPerView,
-				spaceBetween: this.spacing,
+				...(this.slidesPerView > 1 && { spaceBetween: this.spacing }),
 				slidesPerGroup: this.slidesPerView,
 			};
 		},
