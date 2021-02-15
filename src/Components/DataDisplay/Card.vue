@@ -59,6 +59,7 @@ export default {
 <style lang="scss" scoped>
 .edu_card {
 	padding: 90px 0 12px 0;
+	background-color: $white;
 	@include pc {
 		padding: 128px 0 12px 0;
 	}
