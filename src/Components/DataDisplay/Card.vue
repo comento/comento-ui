@@ -13,7 +13,9 @@
 				<Typography type="caption1" element="span" color="gray500">
 					{{ captionLeft }}
 				</Typography>
-				<Typography type="caption1" class="edu_card_divider" element="span" color="gray500"> | </Typography>
+				<Typography v-if="captionRight" type="caption1" class="edu_card_divider" element="span" color="gray500">
+					|
+				</Typography>
 				<Typography type="caption1" element="span" color="gray500"> {{ captionRight }}</Typography>
 			</div>
 		</div>
@@ -31,23 +33,18 @@ export default {
 	props: {
 		backgroundImage: {
 			type: String,
-			default: 'https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg',
 		},
 		category: {
 			type: String,
-			default: 'category',
 		},
 		title: {
 			type: String,
-			default: 'title',
 		},
 		captionLeft: {
 			type: String,
-			default: 'caption1',
 		},
 		captionRight: {
 			type: String,
-			default: 'caption2',
 		},
 	},
 	components: {
