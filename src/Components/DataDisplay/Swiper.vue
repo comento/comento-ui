@@ -1,5 +1,10 @@
 <template>
-	<div class="c-application c-swiper" style="position: relative">
+	<div
+		class="c-application c-swiper"
+		style="position: relative"
+		@mouseenter="handleSwiperAutoplay('stop')"
+		@mouseleave="handleSwiperAutoplay('start')"
+	>
 		<base-swiper ref="mySwiper" class="swiper" :options="swiperOptions" v-bind="$attrs">
 			<base-swiper-slide
 				v-for="(node, index) in Object.keys(this.$slots).length"
@@ -164,6 +169,10 @@ export default {
 			type: Number,
 			default: 1,
 		},
+		autoplay: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -185,6 +194,9 @@ export default {
 		},
 		showOutsideIndicator() {
 			return this.withIndicator && this.indicatorPosition === 'outside';
+		},
+		swiper() {
+			return this.$refs.mySwiper.$swiper;
 		},
 		// commont options
 		swiperOptions() {
@@ -213,11 +225,16 @@ export default {
 				allowTouchMove: true,
 				slidesPerView: this.slidesPerView,
 				...(this.slidesPerView > 1 && { spaceBetween: this.spacing }),
+				...(this.autoplay && {
+					autoplay: {
+						delay: this.slidesPerView > 1 ? 3000 : 2000,
+						// swipe하면 autoplay가 멈추는 속성
+						disableOnInteraction: false,
+					},
+					loop: true,
+				}),
 				slidesPerGroup: this.slidesPerView,
 			};
-		},
-		swiper() {
-			return this.$refs.mySwiper.$swiper;
 		},
 		computedIndicatorColorClass() {
 			return `swiper-indicator-${this.indicatorColor}`;
@@ -242,6 +259,17 @@ export default {
 				this.controlsCircle &&
 				`swiper-button-background-circle swiper-button-background-circle-${this.controlsColor}`
 			);
+		},
+	},
+	methods: {
+		handleSwiperAutoplay(type) {
+			if (this.autoplay) {
+				if (type === 'start') {
+					this.swiper.autoplay.start();
+				} else {
+					this.swiper.autoplay.stop();
+				}
+			}
 		},
 	},
 	components: {
