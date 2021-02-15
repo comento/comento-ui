@@ -103,6 +103,8 @@ import IconCelebrateXLargeLine from '@/assets/images/icon/icon-celebrate-xlarge-
 import IconAnswerXLargeLine from '@/assets/images/icon/icon-answer-xlarge-line.svg?inline';
 import IconMegaphoneXLargeLine from '@/assets/images/icon/icon-megaphone-xlarge-line.svg?inline';
 import IconProfileXLargeFill from '@/assets/images/icon/icon-profile-xlarge-fill.svg?inline';
+import IconCheckXLargeFill from '@/assets/images/icon/icon-check-xlarge-fill.svg?inline';
+
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
 
@@ -200,6 +202,7 @@ export const IconNames = [
 	'IconAnswerXLargeLine',
 	'IconMegaphoneXLargeLine',
 	'IconProfile2XLargeFill',
+	'IconCheckXLargeFill',
 ];
 
 export default {
@@ -344,6 +347,7 @@ export default {
 		IconAnswerXLargeLine,
 		IconMegaphoneXLargeLine,
 		IconProfileXLargeFill,
+		IconCheckXLargeFill,
 		// 2x-large
 		IconProfile2XLargeFill,
 	},
