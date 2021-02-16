@@ -1,13 +1,19 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Swiper, { SwiperControlsColors, SwiperControlPositions, SwiperIndicatorColors, SwiperIndicatorPositions, SwiperSpacings } from '@/src/Components/DataDisplay/Swiper';
-import Button from '@/src/Components/Button/Button';
-import Typography from '@/src/Elements/Core/Typography/Typography';
-import Box from '@/src/Components/DataDisplay/Box';
-import SwiperItemExample from './SwiperItemExample';
+import Swiper, {
+    SwiperControlsColors,
+    SwiperControlPositions,
+    SwiperIndicatorColors,
+    SwiperIndicatorPositions,
+    SwiperSpacings,
+} from "@/src/Components/DataDisplay/Swiper";
+import Button from "@/src/Components/Button/Button";
+import Typography from "@/src/Elements/Core/Typography/Typography";
+import Box from "@/src/Components/DataDisplay/Box";
+import SwiperItemExample from "./SwiperItemExample";
 
 <Meta
     title="Data Display/Swiper"
-    component={ Swiper }
+    component={Swiper}
     argTypes={{
         withControls: {
             description: "With Controls",
@@ -76,7 +82,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, SwiperItemExample },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :withControls="withControls" :controlsPosition="controlsPosition" :controlsColor="controlsColor" :controlsCircle="controlsCircle" :withIndicator="withIndicator" :indicatorPosition="indicatorPosition" :indicatorColor="indicatorColor" :spacing="spacing" :slidesPerView="slidesPerView">
+            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :spacing="spacing" :slides-per-view="slidesPerView">
                 <template v-for="(item, index) in 10" :slot="'item' + index">
                 <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                 </template>
@@ -95,50 +101,51 @@ export const Default = (args, { argTypes }) => ({
 
 <ArgsTable story="Default" />
 
-
 ## Stories
+
 ### All
+
 <Canvas>
     <Story name="All" height="100px">
         {{
             data() {
                 return {
                     itemLength: 10,
-                }
+                };
             },
             template: `
                     <div style="padding: 12px 24px;">
-                    <Swiper controlsColor="light" controlsPosition="inside" withControls style="margin-bottom: 100px;">
+                    <Swiper controls-color="light" controls-position="inside" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                    <Swiper controlsColor="dark" controlsPosition="inside" withControls style="margin-bottom: 100px;">
+                    <Swiper controls-color="dark" controls-position="inside" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                    <Swiper controlsColor="light" controlsPosition="inside" withControls controlsCircle style="margin-bottom: 100px;">
+                    <Swiper controls-color="light" controls-position="inside" with-controls controls-circle style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                    <Swiper controlsColor="dark" controlsPosition="inside" withControls controlsCircle style="margin-bottom: 100px;">
+                    <Swiper controls-color="dark" controls-position="inside" with-controls controls-circle style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                     <Swiper controlsColor="light" controlsPosition="outside" withControls controlsCircle style="margin-bottom: 100px;">
+                     <Swiper controls-color="light" controls-position="outside" with-controls controls-circle style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                    <Swiper controlsColor="dark" controlsPosition="top" withControls style="margin-bottom: 100px;">
+                    <Swiper controls-color="dark" controls-position="top" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                   <Swiper controlsColor="light" controlsPosition="top" controlsCircle withControls style="margin-bottom: 100px;">
+                   <Swiper controls-color="light" controls-position="top" controls-circle with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
@@ -149,29 +156,29 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
-## Stories
 ### ControlsPosition
+
 <Canvas>
     <Story name="ControlsPosition" height="100px">
         {{
             data() {
                 return {
                     itemLength: 5,
-                }
+                };
             },
             template: `
                 <div style="padding: 12px 32px">
-                    <Swiper controlsColor="dark" controlsPosition="inside" withControls style="margin-bottom: 100px;">
+                    <Swiper controls-color="dark" controls-position="inside" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                   <Swiper controlsColor="dark" controlsPosition="outside" withControls style="margin-bottom: 100px;">
+                   <Swiper controls-color="dark" controls-position="outside" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                    <Swiper controlsColor="dark" controlsPosition="top" withControls>
+                    <Swiper controls-color="dark" controls-position="top" with-controls>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
@@ -182,24 +189,24 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
-## Stories
 ### ControlsColor
+
 <Canvas>
     <Story name="ControlsColor" height="100px">
         {{
             data() {
                 return {
                     itemLength: 5,
-                }
+                };
             },
             template: `
                 <div>
-                    <Swiper controlsColor="light" withControls style="margin-bottom: 100px;">
+                    <Swiper controls-color="light" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                   <Swiper controlsColor="dark" withControls>
+                   <Swiper controls-color="dark" with-controls>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
@@ -210,24 +217,24 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
-## Stories
 ### IndicatorColors
+
 <Canvas>
     <Story name="IndicatorColors" height="100px">
         {{
             data() {
                 return {
                     itemLength: 5,
-                }
+                };
             },
             template: `
                 <div>
-                    <Swiper indicatorColor="light" withIndicator style="margin-bottom: 100px;">
+                    <Swiper indicator-color="light" with-indicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                   <Swiper indicatorColor="dark" withIndicator>
+                   <Swiper indicator-color="dark" with-indicator>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
@@ -238,24 +245,24 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
-## Stories
 ### IndicatorPosition
+
 <Canvas>
     <Story name="IndicatorPosition">
         {{
             data() {
                 return {
                     itemLength: 5,
-                }
+                };
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper indicatorColor="dark" indicatorPosition="inside" withIndicator style="margin-bottom: 100px;">
+                    <Swiper indicator-color="dark" indicator-position="inside" with-indicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                   <Swiper indicatorColor="dark" indicatorPosition="outside" withIndicator>
+                   <Swiper indicator-color="dark" indicator-position="outside" with-indicator>
                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                        </template>
@@ -266,24 +273,24 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
-## Stories
-### WithControls & WithIndicator
+### Autoplay
+
 <Canvas>
-    <Story name="WithControls & WithIndicator">
+    <Story name="Autoplay">
         {{
             data() {
                 return {
                     itemLength: 5,
-                }
+                };
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper controlsColor="light" controlsPosition="inside" withControls indicatorColor="light" indicatorPosition="inside" withIndicator style="margin-bottom: 100px;">
+                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator autoplay style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                   <Swiper controlsColor="dark" controlsPosition="outside" withControls indicatorColor="dark" indicatorPosition="outside" withIndicator>
+                   <Swiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator autoplay>
                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                        </template>
@@ -294,3 +301,32 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
+## Stories
+
+### WithControls & WithIndicator
+
+<Canvas>
+    <Story name="WithControls & WithIndicator">
+        {{
+            data() {
+                return {
+                    itemLength: 5,
+                };
+            },
+            template: `
+                <div style="padding: 24px 32px;">
+                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
+                        </template>
+                    </Swiper>
+                   <Swiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator >
+                       <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                          <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
+                       </template>
+                   </Swiper>
+                </div>`,
+            components: { Swiper, SwiperItemExample },
+        }}
+    </Story>
+</Canvas>
