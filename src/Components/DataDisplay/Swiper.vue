@@ -1,7 +1,6 @@
 <template>
 	<div
 		class="c-application c-swiper"
-		style="position: relative"
 		@mouseenter="handleSwiperAutoplay('stop')"
 		@mouseleave="handleSwiperAutoplay('start')"
 	>
@@ -287,6 +286,10 @@ export default {
 $swiper-background-color: #c4c4c4;
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;
+
+.c-swiper {
+	position: relative;
+}
 .swiper {
 	width: 100%;
 	.swiper-slide {
