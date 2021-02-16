@@ -5,86 +5,86 @@ import Row from "@/src/Components/Layout/Row";
 import StyleCol from "@/src/Components/Layout/StyleCol";
 
 <Meta
-  title="Data Display/Card"
-  component={Card}
-  argTypes={{
-    backgroundImage: {
-      description: "카드 배경<br/>`String`",
-      defaultValue: "https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg",
-      table: {
-        type: {
-          summary: null,
+    title="Data Display/Card"
+    component={Card}
+    argTypes={{
+        backgroundImage: {
+            description: "카드 배경<br/>`String`",
+            defaultValue: "https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
         },
-      },
-      control: {
-        type: "text",
-      },
-    },
-    category: {
-      description: "캠프 카테고리<br/>`String`",
-      defaultValue: "category",
-      table: {
-        type: {
-          summary: null,
+        category: {
+            description: "캠프 카테고리<br/>`String`",
+            defaultValue: "category",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
         },
-      },
-      control: {
-        type: "text",
-      },
-    },
-    title: {
-      description: "캠프 제목<br/>`String`",
-      defaultValue: "title",
-      table: {
-        type: {
-          summary: null,
+        title: {
+            description: "캠프 제목<br/>`String`",
+            defaultValue: "title",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
         },
-      },
-      control: {
-        type: "text",
-      },
-    },
-    captionLeft: {
-      description: "좌측 캡션<br/>`String`",
-      defaultValue: "captionLeft",
-      table: {
-        type: {
-          summary: null,
+        captionLeft: {
+            description: "좌측 캡션<br/>`String`",
+            defaultValue: "captionLeft",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
         },
-      },
-      control: {
-        type: "text",
-      },
-    },
-    captionRight: {
-      description: "우측 캡션<br/>`String`",
-      defaultValue: "captionRight",
-      table: {
-        type: {
-          summary: null,
+        captionRight: {
+            description: "우측 캡션<br/>`String`",
+            defaultValue: "captionRight",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
         },
-      },
-      control: {
-        type: "text",
-      },
-    },
-  }}
+    }}
 />
 
 export const Default = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { Grid, Row, StyleCol, Card },
-  template: `
+    props: Object.keys(argTypes),
+    components: { Grid, Row, StyleCol, Card },
+    template: `
         <Grid>
             <Row>
                 <StyleCol :col-lg="4">
-                    <Card :backgroundImage="backgroundImage" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
+                    <Card :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
                 </StyleCol>
                 <StyleCol :col-lg="4">
-                    <Card :backgroundImage="backgroundImage" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
+                    <Card :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
                 </StyleCol>
                 <StyleCol :col-lg="4">
-                    <Card :backgroundImage="backgroundImage" :category="category" :title="title" :captionLeft="captionLeft" :captionRight="captionRight"/>
+                    <Card :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
                 </StyleCol>
             </Row>
         </Grid>
@@ -104,29 +104,30 @@ export const Default = (args, { argTypes }) => ({
 ### All
 
 <Canvas>
-  <Story name="All">
-    {{
-      data() {
-        return {
-            exampleBackgroundImage: "https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg",
-        }
-      },
-      template: `
+    <Story name="All">
+        {{
+            data() {
+                return {
+                    exampleBackgroundImage:
+                        "https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg",
+                };
+            },
+            template: `
                 <Grid>
                     <Row>
                         <StyleCol :col-lg="4">
-                            <Card :backgroundImage="exampleBackgroundImage" category="category" title="title" captionLeft="captionLeft" captionRight="captionRight"/>
+                            <Card :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
                         </StyleCol>
                         <StyleCol :col-lg="4">
-                            <Card :backgroundImage="exampleBackgroundImage" category="category" title="title" captionLeft="captionLeft" captionRight="captionRight"/>
+                            <Card :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
                         </StyleCol>
                         <StyleCol :col-lg="4">
-                            <Card :backgroundImage="exampleBackgroundImage" category="category" title="title" captionLeft="captionLeft" captionRight="captionRight"/>
+                            <Card :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
                         </StyleCol>
                     </Row>
                 </Grid>
             `,
-      components: { Grid, Row, StyleCol, Card },
-    }}
-  </Story>
+            components: { Grid, Row, StyleCol, Card },
+        }}
+    </Story>
 </Canvas>
