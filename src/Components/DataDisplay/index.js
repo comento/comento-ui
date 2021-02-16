@@ -1,10 +1,10 @@
 import Avatar from './Avatar';
 import Badge from './Badge';
 import Box from './Box';
-import Card from './Card';
 import Chip from './Chip';
 import ChipGroup from './ChipGroup';
 import Content from './Content';
+import EduCard from './EduCard';
 import FileItem from './FileItem';
 import FileList from './FileList';
 import FileSummary from './FileSummary';
@@ -18,10 +18,10 @@ export {
 	Avatar,
 	Badge,
 	Box,
-	Card,
 	Chip,
 	ChipGroup,
 	Content,
+	EduCard,
 	FileItem,
 	FileList,
 	FileSummary,

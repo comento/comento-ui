@@ -1,12 +1,12 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Card from "@/src/Components/DataDisplay/Card";
+import EduCard from "@/src/Components/DataDisplay/EduCard";
 import Grid from "@/src/Components/Layout/Grid";
 import Row from "@/src/Components/Layout/Row";
 import StyleCol from "@/src/Components/Layout/StyleCol";
 
 <Meta
-    title="Data Display/Card"
-    component={Card}
+    title="Data Display/EduCard"
+    component={EduCard}
     argTypes={{
         backgroundImage: {
             description: "카드 배경<br/>`String`",
@@ -73,27 +73,27 @@ import StyleCol from "@/src/Components/Layout/StyleCol";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Grid, Row, StyleCol, Card },
+    components: { Grid, Row, StyleCol, EduCard },
     template: `
         <Grid>
             <Row>
                 <StyleCol :col-lg="4">
-                    <Card :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
+                    <EduCard :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
                 </StyleCol>
                 <StyleCol :col-lg="4">
-                    <Card :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
+                    <EduCard :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
                 </StyleCol>
                 <StyleCol :col-lg="4">
-                    <Card :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
+                    <EduCard :background-image="backgroundImage" :category="category" :title="title" :caption-left="captionLeft" :caption-right="captionRight"/>
                 </StyleCol>
             </Row>
         </Grid>
         `,
 });
 
-# Card
+# EduCard
 
-**Card** 컴포넌트의 문서입니다.
+**EduCard** 컴포넌트의 문서입니다.
 
 <Story name="Default">{Default.bind({})}</Story>
 
@@ -116,18 +116,18 @@ export const Default = (args, { argTypes }) => ({
                 <Grid>
                     <Row>
                         <StyleCol :col-lg="4">
-                            <Card :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
+                            <EduCard :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
                         </StyleCol>
                         <StyleCol :col-lg="4">
-                            <Card :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
+                            <EduCard :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
                         </StyleCol>
                         <StyleCol :col-lg="4">
-                            <Card :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
+                            <EduCard :background-image="exampleBackgroundImage" category="category" title="title" caption-left="captionLeft" caption-right="captionRight"/>
                         </StyleCol>
                     </Row>
                 </Grid>
             `,
-            components: { Grid, Row, StyleCol, Card },
+            components: { Grid, Row, StyleCol, EduCard },
         }}
     </Story>
 </Canvas>
