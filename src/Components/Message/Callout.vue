@@ -185,6 +185,7 @@ export default {
 	&--message {
 		width: 100%;
 		word-break: keep-all;
+		white-space: normal;
 		&::v-deep strong {
 			@include f-normal();
 		}
