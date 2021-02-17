@@ -1,6 +1,6 @@
 <template>
 	<article class="c-application c-edu-card">
-		<div class="c-edu-card-info--container">
+		<div class="c-edu-card--info-container">
 			<div class="c-edu-card--subtitle mb-4">
 				<Typography type="caption1" color="gray800" :font-weight="700">
 					{{ category }}
@@ -25,8 +25,8 @@
 				<Typography type="caption1" element="span" color="gray500"> {{ captionRight }}</Typography>
 			</div>
 		</div>
-		<div class="c-edu-card-image--container">
-			<img class="c-edu-card-image" :src="backgroundImage" alt="" />
+		<div class="c-edu-card--image-container">
+			<img class="c-edu-card--image" :src="backgroundImage" alt="" />
 		</div>
 	</article>
 </template>
@@ -78,16 +78,16 @@ export default {
 	&--divider {
 		margin: 0 8px;
 	}
-	&-info--container {
+	&--info-container {
 		margin-top: 12px;
 		width: 100%;
 	}
-	&-image {
+	&--image {
 		border: none;
 		width: 100%;
 		opacity: 0.7;
 		height: 100%;
-		&--container {
+		&-container {
 			border: none;
 			border-top-right-radius: 4px;
 			border-bottom-right-radius: 4px;
