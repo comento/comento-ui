@@ -7,10 +7,16 @@
 			v-on="$listeners"
 		>
 			<div class="c-callout--wrapper">
-				<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+				<!-- 아이콘 -->
+				<slot v-if="$slots['icon']" name="icon" />
+				<Icon v-else :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+
+				<!-- 문구 -->
 				<Typography class="c-callout--message" color="gray700" :type="computedFontType">
 					<slot />
 				</Typography>
+
+				<!-- 닫기 -->
 				<Icon
 					v-if="closable"
 					class="c-callout--close-button"
@@ -125,7 +131,8 @@ export default {
 
 <style scoped lang="scss">
 @mixin callout-icon-margin-right($margin-right) {
-	svg:first-child {
+	::v-deep svg:first-child {
+		overflow: inherit; //overflow: hidden 때문에 margin을 주면 아이콘이 짤려서 추가함
 		margin-right: $margin-right;
 	}
 }
