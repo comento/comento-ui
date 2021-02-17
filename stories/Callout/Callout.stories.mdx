@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Callout, { CalloutTypes, CalloutSizes } from "@/src/Components/Message/Callout";
+import Icon from '@/src/Elements/Core/Icon/Icon';
 
 <Meta
   title="Message/Callout"
@@ -131,9 +132,20 @@ export const Default = (args, { argTypes }) => ({
                     <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
+            <div style="margin-bottom: 10px">
+                <div>
+                    <Callout size="medium">
+                        <template v-slot:icon>
+                            <Icon name="IconVideoLargeFill" color="gray850" />
+                        </template>
+                        1주차 세션 종료 후,<br />
+                        복습을 위한 VOD가 제공됩니다.
+                    </Callout>
+                </div>
+            </div>
         </div>
             `,
-      components: { Callout },
+      components: { Callout, Icon },
     }}
   </Story>
 </Canvas>
@@ -233,6 +245,43 @@ export const Default = (args, { argTypes }) => ({
             </div>
             `,
         components: { Callout },
+    }}
+    </Story>
+</Canvas>
+
+### Icon
+<Canvas>
+    <Story name="Icon" height="100px">
+    {{
+        data() {
+            return {
+                showXSmallCallout: true,
+                showSmallCallout: true,
+                showMediumCallout: true,
+            }
+        },
+        template: `
+            <div>
+                <div>
+                    <Callout size="small" type="success">
+                        <template v-slot:icon>
+                            <Icon name="IconCheckRoundMediumLine" />
+                        </template>
+                        문구가 들어가는 자리입니다.
+                    </Callout>
+                </div>
+                <div>
+                    <Callout size="medium">
+                        <template v-slot:icon>
+                            <Icon name="IconVideoLargeFill" color="gray850" />
+                        </template>
+                        1주차 세션 종료 후,<br />
+                        복습을 위한 VOD가 제공됩니다.
+                    </Callout>
+                </div>
+            </div>
+            `,
+        components: { Callout, Icon },
     }}
     </Story>
 </Canvas>
