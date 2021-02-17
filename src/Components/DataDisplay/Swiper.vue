@@ -1,5 +1,9 @@
 <template>
-	<div class="c-application c-swiper" style="position: relative">
+	<div
+		class="c-application c-swiper"
+		@mouseenter="handleSwiperAutoplay('stop')"
+		@mouseleave="handleSwiperAutoplay('start')"
+	>
 		<base-swiper ref="mySwiper" class="swiper" :options="swiperOptions" v-bind="$attrs">
 			<base-swiper-slide
 				v-for="(node, index) in Object.keys(this.$slots).length"
@@ -164,6 +168,10 @@ export default {
 			type: Number,
 			default: 1,
 		},
+		autoplay: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -185,6 +193,9 @@ export default {
 		},
 		showOutsideIndicator() {
 			return this.withIndicator && this.indicatorPosition === 'outside';
+		},
+		swiper() {
+			return this.$refs.mySwiper.$swiper;
 		},
 		// commont options
 		swiperOptions() {
@@ -212,12 +223,17 @@ export default {
 				},
 				allowTouchMove: true,
 				slidesPerView: this.slidesPerView,
-				spaceBetween: this.spacing,
+				...(this.slidesPerView > 1 && { spaceBetween: this.spacing }),
+				...(this.autoplay && {
+					autoplay: {
+						delay: this.slidesPerView > 1 ? 3000 : 2000,
+						// swipe하면 autoplay가 멈추는 속성
+						disableOnInteraction: false,
+					},
+					loop: true,
+				}),
 				slidesPerGroup: this.slidesPerView,
 			};
-		},
-		swiper() {
-			return this.$refs.mySwiper.$swiper;
 		},
 		computedIndicatorColorClass() {
 			return `swiper-indicator-${this.indicatorColor}`;
@@ -244,6 +260,17 @@ export default {
 			);
 		},
 	},
+	methods: {
+		handleSwiperAutoplay(type) {
+			if (this.autoplay) {
+				if (type === 'start') {
+					this.swiper.autoplay.start();
+				} else {
+					this.swiper.autoplay.stop();
+				}
+			}
+		},
+	},
 	components: {
 		BaseSwiper,
 		BaseSwiperSlide,
@@ -259,14 +286,16 @@ export default {
 $swiper-background-color: #c4c4c4;
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;
+
+.c-swiper {
+	position: relative;
+}
 .swiper {
 	width: 100%;
 	.swiper-slide {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		text-align: center;
-		font-weight: bold;
 		background-color: $swiper-background-color;
 	}
 }

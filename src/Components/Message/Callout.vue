@@ -7,10 +7,16 @@
 			v-on="$listeners"
 		>
 			<div class="c-callout--wrapper">
-				<Icon :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+				<!-- 아이콘 -->
+				<slot v-if="$slots['icon']" name="icon" />
+				<Icon v-else :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+
+				<!-- 문구 -->
 				<Typography class="c-callout--message" color="gray700" :type="computedFontType">
 					<slot />
 				</Typography>
+
+				<!-- 닫기 -->
 				<Icon
 					v-if="closable"
 					class="c-callout--close-button"
@@ -124,6 +130,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@mixin callout-icon-margin-right($margin-right) {
+	::v-deep svg:first-child {
+		overflow: inherit; //overflow: hidden 때문에 margin을 주면 아이콘이 짤려서 추가함
+		margin-right: $margin-right;
+	}
+}
+
 .c-callout {
 	&--container {
 		display: inline-flex;
@@ -131,30 +144,24 @@ export default {
 		&.full {
 			width: 100%;
 		}
-		svg {
+		svg:first-child {
 			flex-shrink: 0;
 		}
 
 		&.x-small {
 			padding: 4px 8px;
 			border-radius: 4px;
-			svg {
-				margin-right: 4px;
-			}
+			@include callout-icon-margin-right(4px);
 		}
 		&.small {
 			padding: 8px;
 			border-radius: 4px;
-			svg {
-				margin-right: 6px;
-			}
+			@include callout-icon-margin-right(6px);
 		}
 		&.medium {
 			padding: 16px 16px 16px 16px;
 			border-radius: 6px;
-			svg {
-				margin-right: 8px;
-			}
+			@include callout-icon-margin-right(8px);
 		}
 
 		// type
@@ -186,8 +193,6 @@ export default {
 		}
 	}
 	&--close-button {
-		position: absolute;
-		right: 4px;
 		margin-left: 4px;
 	}
 }
