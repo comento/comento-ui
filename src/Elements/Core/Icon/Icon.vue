@@ -5,6 +5,7 @@
 			:is="name"
 			ref="icon"
 			class="c-application c-icon"
+			:class="classes"
 			:style="styles"
 			v-bind="$attrs"
 			v-on="$listeners"
@@ -249,6 +250,12 @@ export default {
 				return null;
 			}
 		},
+		hasEventListener() {
+			return Boolean(this.$listeners.click || this.$listeners['!click']);
+		},
+		classes() {
+			return [this.hasEventListener && 'c-icon--link'];
+		},
 		styles() {
 			return {
 				...this.computedFill,
@@ -356,7 +363,10 @@ export default {
 
 <style lang="scss" scoped>
 .c-icon {
-	cursor: pointer;
+	cursor: auto;
 	background: transparent !important;
+	&--link {
+		cursor: pointer;
+	}
 }
 </style>
