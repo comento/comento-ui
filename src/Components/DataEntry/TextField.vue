@@ -198,27 +198,27 @@ export default {
 			&.active {
 				border-color: $secondary;
 			}
-			&.error,
-			&.active {
-				&:focus {
+			&.error {
+				&:focus,
+				&.active {
 					border-color: $error;
 				}
 			}
-			&.primary,
-			&.active {
-				&:focus {
+			&.primary {
+				&:focus,
+				&.active {
 					border-color: $primary;
 				}
 			}
-			&.success,
-			&.active {
-				&:focus {
+			&.success {
+				&:focus,
+				&.active {
 					border-color: $success;
 				}
 			}
-			&.secondary,
-			&.active {
-				&:focus {
+			&.secondary {
+				&:focus,
+				&.active {
 					border-color: $secondary;
 				}
 			}
