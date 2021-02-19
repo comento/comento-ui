@@ -17,11 +17,11 @@
 			v-bind="$attrs"
 			@input="handleTyping"
 			v-on="$listeners"
-			@focusin="hintColor = color"
-			@focusout="hintColor = 'secondary'"
+			@focus="onFocus"
+			@blur="blurFocus"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Hint :value="hint" :color="active ? color : hintColor" />
+		<Hint v-if="computedShowHint" :value="hint" :color="color" />
 	</div>
 </template>
 
@@ -100,13 +100,17 @@ export default {
 			type: String,
 			default: '',
 		},
+		persistentHint: {
+			type: Boolean,
+			default: false,
+		},
 		full: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	data: () => ({
-		hintColor: 'secondary',
+		isFocused: false,
 	}),
 	computed: {
 		sync_value: {
@@ -114,7 +118,6 @@ export default {
 				return this.value;
 			},
 			set(val) {
-				this.hintColor = this.color;
 				this.$emit('update:value', val);
 			},
 		},
@@ -130,6 +133,9 @@ export default {
 		},
 		computedShowLabel() {
 			return this.label;
+		},
+		computedShowHint() {
+			return !!this.hint && (this.persistentHint || this.isFocused || this.active);
 		},
 		computedLabel() {
 			return { label: this.computedShowLabel };
@@ -152,6 +158,12 @@ export default {
 	methods: {
 		handleTyping(e) {
 			this.sync_value = e.target.value;
+		},
+		onFocus() {
+			this.isFocused = true;
+		},
+		blurFocus() {
+			this.isFocused = false;
 		},
 	},
 	components: { Hint },
