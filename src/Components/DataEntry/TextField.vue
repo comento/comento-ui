@@ -9,7 +9,6 @@
 			:name="computedId"
 			:label="label"
 			:align="align"
-			:focus="focus"
 			:readonly="readonly"
 			:disabled="disabled"
 			:color="color"
@@ -18,11 +17,11 @@
 			v-bind="$attrs"
 			@input="handleTyping"
 			v-on="$listeners"
-			@focusin="hintColor = color"
-			@focusout="hintColor = 'secondary'"
+			@focus="onFocus"
+			@blur="blurFocus"
 		/>
 		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-		<Hint :value="hint" :color="active ? color : hintColor" />
+		<Hint v-if="computedShowHint" :value="hint" :color="color" />
 	</div>
 </template>
 
@@ -79,10 +78,6 @@ export default {
 				return isValid;
 			},
 		},
-		focus: {
-			type: Boolean,
-			default: false,
-		},
 		readonly: {
 			type: Boolean,
 			default: false,
@@ -105,13 +100,17 @@ export default {
 			type: String,
 			default: '',
 		},
+		persistentHint: {
+			type: Boolean,
+			default: false,
+		},
 		full: {
 			type: Boolean,
 			default: false,
 		},
 	},
 	data: () => ({
-		hintColor: 'secondary',
+		isFocused: false,
 	}),
 	computed: {
 		sync_value: {
@@ -119,7 +118,6 @@ export default {
 				return this.value;
 			},
 			set(val) {
-				this.hintColor = this.color;
 				this.$emit('update:value', val);
 			},
 		},
@@ -135,6 +133,9 @@ export default {
 		},
 		computedShowLabel() {
 			return this.label;
+		},
+		computedShowHint() {
+			return !!this.hint && (this.persistentHint || this.isFocused || this.active);
 		},
 		computedLabel() {
 			return { label: this.computedShowLabel };
@@ -154,16 +155,15 @@ export default {
 			return { active: this.active };
 		},
 	},
-
-	mounted() {
-		if (this.focus) {
-			this.$refs[this.computedId].focus();
-			this.$refs[this.computedId].parentElement.classList.add('active');
-		}
-	},
 	methods: {
 		handleTyping(e) {
 			this.sync_value = e.target.value;
+		},
+		onFocus() {
+			this.isFocused = true;
+		},
+		blurFocus() {
+			this.isFocused = false;
 		},
 	},
 	components: { Hint },
@@ -198,27 +198,27 @@ export default {
 			&.active {
 				border-color: $secondary;
 			}
-			&.error,
-			&.active {
-				&:focus {
+			&.error {
+				&:focus,
+				&.active {
 					border-color: $error;
 				}
 			}
-			&.primary,
-			&.active {
-				&:focus {
+			&.primary {
+				&:focus,
+				&.active {
 					border-color: $primary;
 				}
 			}
-			&.success,
-			&.active {
-				&:focus {
+			&.success {
+				&:focus,
+				&.active {
 					border-color: $success;
 				}
 			}
-			&.secondary,
-			&.active {
-				&:focus {
+			&.secondary {
+				&:focus,
+				&.active {
 					border-color: $secondary;
 				}
 			}

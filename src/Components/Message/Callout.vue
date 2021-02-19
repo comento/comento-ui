@@ -134,6 +134,7 @@ export default {
 	::v-deep svg:first-child {
 		overflow: inherit; //overflow: hidden 때문에 margin을 주면 아이콘이 짤려서 추가함
 		margin-right: $margin-right;
+		cursor: auto;
 	}
 }
 
@@ -184,6 +185,7 @@ export default {
 	&--message {
 		width: 100%;
 		word-break: keep-all;
+		white-space: normal;
 		&::v-deep strong {
 			@include f-normal();
 		}
