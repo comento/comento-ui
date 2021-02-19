@@ -9,7 +9,6 @@
 			:name="computedId"
 			:label="label"
 			:align="align"
-			:focus="focus"
 			:readonly="readonly"
 			:disabled="disabled"
 			:color="color"
@@ -78,10 +77,6 @@ export default {
 				}
 				return isValid;
 			},
-		},
-		focus: {
-			type: Boolean,
-			default: false,
 		},
 		readonly: {
 			type: Boolean,
@@ -153,13 +148,6 @@ export default {
 		computedActive() {
 			return { active: this.active };
 		},
-	},
-
-	mounted() {
-		if (this.focus) {
-			this.$refs[this.computedId].focus();
-			this.$refs[this.computedId].parentElement.classList.add('active');
-		}
 	},
 	methods: {
 		handleTyping(e) {
