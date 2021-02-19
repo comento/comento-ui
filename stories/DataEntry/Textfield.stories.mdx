@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import TextField, { TextFieldTypes, TextFieldAligns, TextFieldColor } from "@/src/Components/DataEntry/TextField";
+import Typography from '@/src/Elements/Core/Typography/Typography';
 
 <Meta
     title="Data Entry/TextField"
@@ -112,7 +113,6 @@ export const Default = (args, { argTypes }) => ({
 
 ## Stories
 ### Hint default
-
 <Canvas>
     <Story name="Hint Default" height="200px">
         {{
@@ -212,7 +212,6 @@ export const Default = (args, { argTypes }) => ({
 </Canvas>
 
 ### Hint Success
-
 <Canvas>
     <Story name="Hint Success" height="200px">
         {{
@@ -262,7 +261,6 @@ export const Default = (args, { argTypes }) => ({
 </Canvas>
 
 ### Hint Primary
-
 <Canvas>
     <Story name="Hint Primary" height="200px">
         {{
@@ -312,7 +310,6 @@ export const Default = (args, { argTypes }) => ({
 </Canvas>
 
 ### Full
-
 <Canvas>
     <Story name="Full" height="200px">
         {{
@@ -330,6 +327,40 @@ export const Default = (args, { argTypes }) => ({
                 </div>
             `,
             components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Validate
+<Canvas>
+    <Story name="Validate" height="200px">
+        {{
+            template: `
+                <div>
+                    <Typography type="body2" color="gray500" class="mb-4">이름</Typography>
+                    <TextField
+                        type="text"
+                        :color="isError ? 'error' : 'secondary'"
+                        :hint="isError ? '두 글자 이상 입력해 주세요.' : '실명을 입력하세요. 입력된 이름으로 수료증이 발급됩니다.'"
+                        outlined
+                        placeholder="코멘티"
+                        :active="isError"
+                        :value.sync="name"
+                    />
+                </div>
+            `,
+            data() {
+                return {
+                    name: null,
+                    isError: false,
+                };
+            },
+            watch: {
+                name() {
+                    this.isError = this.name.length < 2;
+                }
+            },
+            components: { TextField, Typography },
         }}
     </Story>
 </Canvas>
