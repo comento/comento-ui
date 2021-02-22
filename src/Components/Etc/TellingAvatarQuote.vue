@@ -43,6 +43,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$wrapper-margin-top: 60px;
+$wrapper-margin-bottom: 40px;
+
 .c-telling-avatar-quote {
 	@include flexbox();
 	@include justify-content(center);
@@ -52,7 +55,7 @@ export default {
 	@include pc() {
 		background: $gray000;
 		@include flex-direction(row);
-		@include align-items(center);
+		@include align-items(flex-start);
 		@include justify-content(space-between);
 	}
 
@@ -70,7 +73,7 @@ export default {
 				border-radius: 20px;
 				@include shadow2();
 				padding: 20px 32px;
-				margin: 60px (16px + 14px) 40px 0;
+				margin: $wrapper-margin-top (16px + 14px) $wrapper-margin-bottom 0;
 				flex: 1;
 
 				&:after {
@@ -100,8 +103,10 @@ export default {
 
 			@include pc {
 				position: relative;
-				top: 5px;
+				top: auto;
 				right: auto;
+				margin-top: $wrapper-margin-top + 5px;
+				margin-bottom: $wrapper-margin-bottom;
 				@include flexbox();
 				@include flex-direction(column);
 				@include align-items(center);
