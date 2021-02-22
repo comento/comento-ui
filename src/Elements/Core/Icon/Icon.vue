@@ -251,7 +251,7 @@ export default {
 			}
 		},
 		hasEventListener() {
-			return Boolean(this.$listeners.click || this.$listeners['!click']);
+			return Boolean(this.$listeners && this.$listeners.click);
 		},
 		classes() {
 			return [this.hasEventListener && 'c-icon--link'];
