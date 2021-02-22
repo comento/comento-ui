@@ -100,7 +100,7 @@ export default {
 
 			@include pc {
 				position: relative;
-				top: auto;
+				top: 5px;
 				right: auto;
 				@include flexbox();
 				@include flex-direction(column);
