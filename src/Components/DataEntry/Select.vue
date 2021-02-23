@@ -131,6 +131,16 @@ export default {
 		computedIconRotate() {
 			return !this.open ? 180 : 0;
 		},
+		hasObjectOptions() {
+			return this.options.every(option => typeof option === 'object');
+		},
+	},
+	created() {
+		// 초기 렌더링 시 object option을 가지고 있어도 select를 하기 전 value 그대로 노출되는 이슈 해결
+		if (this.hasObjectOptions) {
+			const option = this.options.find(option => option.value === this.value);
+			this.handleSelect(option);
+		}
 	},
 	methods: {
 		handleOptions(option, type) {
