@@ -11,7 +11,24 @@
 		<!-- select 영역 -->
 		<template v-slot:item>
 			<div class="c-select--box" @click="handleOpen">
-				<input type="text" :value="value" :placeholder="placeholder" readonly class="c-select--input" />
+				<div class="c-select--item">
+					<!-- 라벨 보여주기 -->
+					<input
+						v-if="selectOption"
+						type="text"
+						:value="handleOptions(selectOption, 'label')"
+						readonly
+						class="c-select--input"
+					/>
+					<input
+						v-else
+						type="text"
+						:value="value"
+						:placeholder="placeholder"
+						readonly
+						class="c-select--input"
+					/>
+				</div>
 				<div class="c-select--icon">
 					<Icon name="IconArrowLargeLine" :color="color" :rotate="computedIconRotate" />
 				</div>
@@ -57,7 +74,7 @@ export default {
 			type: Array,
 			required: true,
 			default: () => [],
-			validator: prop => prop.every(e => typeof e === 'string' || typeof e === 'number'),
+			validator: prop => prop.every(e => typeof e === 'string' || typeof e === 'number' || typeof e === 'object'),
 		},
 		placeholder: {
 			type: String,
@@ -107,7 +124,7 @@ export default {
 	data() {
 		return {
 			open: false,
-			selectOption: '',
+			selectOption: null,
 		};
 	},
 	computed: {
@@ -166,13 +183,25 @@ export default {
 		width: 100%;
 	}
 
+	&--item {
+		cursor: pointer;
+		width: 100%;
+		@include body1();
+		color: $gray850;
+
+		> div,
+		input {
+			width: 100%;
+			cursor: pointer;
+		}
+	}
+
 	&--input {
 		@include body1();
 		color: $gray850;
 		border: none;
 		padding: 0;
-		cursor: pointer;
-		width: calc(100% - 24px);
+		width: 100%;
 		&::placeholder {
 			color: $gray300;
 		}

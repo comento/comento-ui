@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Select, { selectColors } from "@/src/Components/DataEntry/Select";
+import Typography from "@/src/Elements/Core/Typography/Typography";
 
 <Meta
     title="Data Entry/Dropdown/Select"
@@ -97,24 +98,34 @@ export const Default = (args, { argTypes }) => ({
 
 ### With Label
 <Canvas>
-    <Story name="Direction" height="200px">
+    <Story name="Direction" height="300px">
         {{
             data: () => ({
                 select1: '',
                 select2: '',
-                options: [1, 2],
+                options1: [{label: '라벨1', value: 1}, {label: '라벨2', value: 2}],
+                options2: [1, 2],
             }),
             template: `
                 <div>
-                    <div style="margin-bottom: 10px">
-                        <Select v-model="select1" :options="options" label="Label" />
+                    <div style="margin-bottom: 30px">
+                        <Select v-model="select1" :options="options1" label="Label" />
+                        <Typography color="gray800" type="body2">
+                          options: {{ options1 }}<br />
+                          선택된 값: {{ select1 }}
+                        </Typography>
+                        <Typography></Typography>
                     </div>
                     <div>
-                        <Select v-model="select2" :options="options" label="Label" :vertical="false" />
+                        <Select v-model="select2" :options="options2" label="Label" :vertical="false" />
+                        <Typography color="gray800" type="body2">
+                          options: {{ options2 }}<br />
+                          선택된 값: {{ select2 }}
+                        </Typography>
                     </div>
                 </div>
         `,
-            components: { Select },
+            components: { Select, Typography },
         }}
     </Story>
 </Canvas>
