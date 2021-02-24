@@ -1,0 +1,210 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Table from "@/src/Components/DataDisplay/Table";
+import Typography from "@/src/Elements/Core/Typography/Typography";
+import Divider from "@/src/Elements/Utility/Divider";
+import ListItem from "@/src/Components/DataDisplay/ListItem";
+import List from "@/src/Components/DataDisplay/List";
+import Button from "@/src/Components/Button/Button";
+import LinkButton from "@/src/Components/Button/LinkButton";
+import Grid from "@/src/Components/Layout/Grid";
+import Row from "@/src/Components/Layout/Row";
+import StyleCol from "@/src/Components/Layout/StyleCol";
+
+<Meta
+    title="Data Display/Table"
+    component={ Table }
+    argTypes={{}}
+/>
+
+
+# Table
+**Table** 컴포넌트의 문서입니다.
+
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            components: { Table, Typography, Divider, List, ListItem, Button, Grid, Row, StyleCol },
+            data() {
+                return {
+                    tableHeadItems1: ["직무", "캠프명", "만족도", "시작일", "신청"],
+                    tableBodyItems1: [
+                        {
+                            job: '기획',
+                            title: '[5차 앵콜] 대형마트 신선식품 바이어(MD)의 매출분석, 행사기획, 상품개발 실무체험',
+                            score: '4.8',
+                            start_at: '2021. 02. 08'
+                        },
+                        {
+                            job: '영업/고객상담',
+                            title: '[11차 앵콜] 해외영업 현직자와 함께 시장분석부터 전략수립까지! 직무 역량 쌓기!',
+                            score: '4.5',
+                            start_at: '2021. 02. 08'
+                        },
+                    ],
+                    tableHeadItems2: ["구분", "작성자", "차수", "제출일시", "피드백"],
+                    tableBodyItems2: [
+                        {
+                            name: '유성실',
+                            week: '2',
+                            created_at: '2020. 08. 20<br />20시 32분',
+                            state: '대기',
+                        },
+                        {
+                            name: '송동훈',
+                            week: '1',
+                            created_at: '2020. 08. 11<br />22시 32분',
+                            state: '완료',
+                        },
+                        {
+                            name: '김하나',
+                            week: '1',
+                            created_at: '2020. 08. 11<br />20시 32분',
+                            state: '완료',
+                        },
+                        {
+                            name: '유성실',
+                            week: '1',
+                            created_at: '2020. 08. 10<br />20시 32분',
+                            state: '완료',
+                        },
+                    ],
+                };
+            },
+            template:
+                `<Grid>
+                    <Row class="mb-60">
+                        <StyleCol :col-lg="12" :col-sm="12" col-gutters>
+                            <Table>
+                                <template v-slot:head>
+                                    <Typography
+                                        type="body2"
+                                        color="gray800"
+                                        v-for="(head, index) in tableHeadItems1"
+                                        :key="'table-head-'+index"
+                                        :class="{'text-left': index === 1}"
+                                    >
+                                        {{ head }}
+                                    </Typography>
+                                </template>
+                                <template v-slot:body>
+                                    <template v-for="item in tableBodyItems1">
+                                        <ul>
+                                            <li>
+                                                <Typography type="body2">{{ item.job }}</Typography>
+                                            </li>
+                                            <li>
+                                                <Typography type="body2" align="left" color="gray800">{{ item.title }}</Typography>
+                                            </li>
+                                            <li>
+                                                <Typography type="body2" color="gray500" style="display: flex; justify-content: center">
+                                                    <Typography color="primary">{{ item.score }}</Typography>/5
+                                                </Typography>
+                                            </li>
+                                            <li>
+                                                <Typography type="body2" color="gray600">
+                                                    {{ item.start_at }}
+                                                </Typography>
+                                            </li>
+                                            <li>
+                                                <Button type="outlined" color="secondary" size="small" style="margin: 0 auto">신청하기</Button>
+                                            </li>
+                                        </ul>
+                                    </template>
+                                </template>
+                            </Table>
+                        </StyleCol>
+                    </Row>
+                    <Row>
+                        <StyleCol :col-lg="4" :col-sm="12" :offset-lg="isMobile ? 0 : 4" col-gutters>
+                            <Table>
+                                <template v-slot:head>
+                                    <Typography
+                                        type="body2"
+                                        color="gray800"
+                                        v-for="(head, index) in tableHeadItems2"
+                                        :key="'table-head-'+index"
+                                        :class="{'text-left': index === 1 || index === 3}"
+                                    >
+                                        {{ head }}
+                                    </Typography>
+                                </template>
+                                <template v-slot:body>
+                                    <template v-for="(item, index) in tableBodyItems2">
+                                        <ul>
+                                            <li>
+                                                <Typography type="body2">{{ index + 1 }}</Typography>
+                                            </li>
+                                            <li>
+                                                <Typography type="body2" align="left" color="gray800">{{ item.name }}</Typography>
+                                            </li>
+                                            <li>
+                                                <Typography type="body2" color="gray600">
+                                                    {{ item.week }}차
+                                                </Typography>
+                                            </li>
+                                            <li>
+                                                <Typography type="caption1" color="gray600" class="text-left" v-html="item.created_at" />
+                                            </li>
+                                            <li>
+                                                <Button
+                                                    type="outlined"
+                                                    color="secondary"
+                                                    size="small"
+                                                    style="margin: 0 auto"
+                                                >
+                                                    {{item.state}}
+                                                </Button>
+                                            </li>
+                                        </ul>
+                                    </template>
+                                </template>
+                            </Table>
+                        </StyleCol>
+                    </Row>
+                </Grid>`,
+        }}
+    </Story>
+</Canvas>
+
+### Empty
+<Canvas>
+    <Story name="Empty" height="100px">
+        {{
+            components: { Table, Typography, LinkButton, Grid, Row, StyleCol },
+            data() {
+                return {
+                    tableHeadItems: ["구분", "작성자", "차수", "제출일시", "피드백"],
+                };
+            },
+            template:
+                `<Grid>
+                    <Row>
+                        <StyleCol :col-lg="4" :col-sm="12" :offset-lg="isMobile ? 0 : 4" col-gutters>
+                            <Table>
+                                <template v-slot:head>
+                                    <Typography
+                                        type="body2"
+                                        color="gray800"
+                                        v-for="(head, index) in tableHeadItems"
+                                        :key="'table-head-'+index"
+                                        :class="{'text-left': index === 1 || index === 3}"
+                                    >
+                                        {{ head }}
+                                    </Typography>
+                                </template>
+                                <template v-slot:empty>
+                                    <Typography type="body2" color="gray700">
+                                        아직 과제가 제출되지 않았어요 :(<br />
+                                        <LinkButton type="body2" style="display: inline-flex">여기</LinkButton>를 눌러 과제를 제출하세요!
+                                    </Typography>
+                                </template>
+                            </Table>
+                        </StyleCol>
+                    </Row>
+                </Grid>`,
+        }}
+    </Story>
+</Canvas>

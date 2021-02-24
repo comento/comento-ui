@@ -12,6 +12,7 @@ import Hint from './Hint';
 import List from './List';
 import ListItem from './ListItem';
 import Swiper from './Swiper';
+import Table from './Table';
 import Tabs from './Tabs';
 
 export {
@@ -29,6 +30,7 @@ export {
 	List,
 	ListItem,
 	Swiper,
+	Table,
 	Tabs,
 };
 export * from './Drawer';
