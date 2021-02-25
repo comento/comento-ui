@@ -222,10 +222,10 @@
 
 // cursor
 .c-pointer {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .c-default {
-  cursor: default;
+  cursor: default !important;
 }
 
 .h-screen {
