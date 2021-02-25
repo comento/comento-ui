@@ -39,8 +39,14 @@
 		<template v-if="open" v-slot:list>
 			<List spacing>
 				<template v-for="(option, index) in options">
-					<ListItem :key="`c-select--option-${index}`" size="small" @click="handleSelect(option)">
+					<ListItem
+						:key="`c-select--option-${index}`"
+						size="small"
+						class="c-select--list-item"
+						@click="handleSelect(option)"
+					>
 						<Typography type="body2">{{ handleOptions(option, 'label') }}</Typography>
+						<Icon v-if="option.icon" :name="option.icon" class="c-pointer" />
 					</ListItem>
 					<Divider :key="index" />
 				</template>
@@ -227,6 +233,11 @@ export default {
 		svg {
 			transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), visibility 0s;
 		}
+	}
+
+	&--list-item {
+		@include flexbox();
+		@include justify-content(space-between);
 	}
 }
 </style>
