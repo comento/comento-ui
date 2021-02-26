@@ -143,14 +143,9 @@ export default {
 	},
 	watch: {
 		// 초기 렌더링 시 object option을 가지고 있어도 select를 하기 전 value 그대로 노출되는 이슈 해결
-		hasObjectOptions: {
-			immediate: true,
-			handler(newVal) {
-				if (newVal) {
-					const option = this.options.find(option => option.value === this.value);
-					this.handleSelect(option);
-				}
-			},
+		value(newVal) {
+			const option = this.options.find(option => option.value === newVal);
+			this.handleSelect(option);
 		},
 	},
 	methods: {
