@@ -45,7 +45,7 @@
 						class="c-select--list-item"
 						@click="handleSelect(option)"
 					>
-						<Typography type="body2">{{ handleOptions(option, 'label') }}</Typography>
+						<Typography type="body2" color="gray800">{{ handleOptions(option, 'label') }}</Typography>
 						<Icon v-if="option.icon" :name="option.icon" class="c-pointer" />
 					</ListItem>
 					<Divider :key="index" />
