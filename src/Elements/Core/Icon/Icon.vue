@@ -106,6 +106,7 @@ import IconAnswerXLargeLine from '@/assets/images/icon/icon-answer-xlarge-line.s
 import IconMegaphoneXLargeLine from '@/assets/images/icon/icon-megaphone-xlarge-line.svg?inline';
 import IconProfileXLargeFill from '@/assets/images/icon/icon-profile-xlarge-fill.svg?inline';
 import IconCheckXLargeFill from '@/assets/images/icon/icon-check-xlarge-fill.svg?inline';
+import IconUnCheckedXLargeFill from '@/assets/images/icon/icon-unchecked-xlarge-fill.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
@@ -206,6 +207,7 @@ export const IconNames = [
 	'IconMegaphoneXLargeLine',
 	'IconProfile2XLargeFill',
 	'IconCheckXLargeFill',
+	'IconUnCheckedXLargeFill',
 ];
 
 export default {
@@ -358,6 +360,7 @@ export default {
 		IconMegaphoneXLargeLine,
 		IconProfileXLargeFill,
 		IconCheckXLargeFill,
+		IconUnCheckedXLargeFill,
 		// 2x-large
 		IconProfile2XLargeFill,
 	},
