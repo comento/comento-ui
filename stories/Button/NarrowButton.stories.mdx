@@ -172,3 +172,19 @@ export const Default = (args, { argTypes }) => ({
         }}
     </Story>
 </Canvas>
+
+### Disabled
+<Canvas>
+    <Story name="Disabled" height="100px">
+        {{
+            template: `
+            <div>
+                <NarrowButton color="gray400" disabled>
+                    Disabled
+                </NarrowButton>
+            </div>
+        `,
+            components: { NarrowButton },
+        }}
+    </Story>
+</Canvas>

@@ -3,6 +3,7 @@
 		class="c-application c-narrow-button"
 		:class="size"
 		:style="[computedColor]"
+		:disabled="disabled"
 		v-bind="$attrs"
 		type="button"
 		v-on="$listeners"
@@ -41,6 +42,9 @@ export default {
 				return narrowButtonSizes.indexOf(value) !== -1;
 			},
 		},
+		disabled: {
+			type: Boolean,
+		},
 	},
 	computed: {
 		mappedColor() {
@@ -72,6 +76,13 @@ export default {
 	@include flexbox();
 	@include align-items(center);
 	@include justify-content(center);
+
+	&:disabled {
+		@include disabled();
+		.c-button--icon::v-deep .c-icon {
+			@include disabled();
+		}
+	}
 
 	&:hover {
 		background-color: $gray100;
