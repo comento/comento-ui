@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Chip from '@/src/Components/DataDisplay/Chip';
+import Chip, { ChipSizes, ChipTypes, ChipColors } from '@/src/Components/DataDisplay/Chip';
 import ChipGroup from '@/src/Components/DataDisplay/ChipGroup';
 import Grid from '@/src/Components/Layout/Grid';
 import Row from '@/src/Components/Layout/Row';
@@ -7,7 +7,7 @@ import StyleCol from '@/src/Components/Layout/StyleCol';
 
 <Meta
     title="Data Display/Chip/ChipGroup"
-    component={ ChipGroup, Chip }
+    component={ ChipGroup }
     argTypes={{
         size: {
             description: "ChipGroup 크기",
@@ -19,20 +19,34 @@ import StyleCol from '@/src/Components/Layout/StyleCol';
             },
             control: {
                 type: "select",
-                options: [ "small", "medium", "large"],
+                options: ChipSizes,
             },
         },
+        type: {
+            description: "Chip 타입",
+            defaultValue: "fill",
+            control: {
+                type: "select",
+                options: ChipTypes,
+            }
+        },
+        color: {
+            description: "Chip 색상",
+            defaultValue: "secondary",
+            control: {
+                type: "select",
+                options: ChipColors,
+            }
+        }
     }}
 />
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { ChipGroup,Chip },
+    components: { ChipGroup, Chip },
     template:
         `<ChipGroup :size="size">
-            <Chip type="fill" color="primary" :size="size">Chip</Chip>
-            <Chip type="outlined" color="primary" :size="size">Chip</Chip>
-            <Chip type="fill" color="primary" :size="size">Chip</Chip>
+            <Chip :type="type" :color="color" :size="size" v-for="item in 3" :key="'chip-' + item">Chip</Chip>
         </ChipGroup>`,
 });
 

@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Chip, { ChipColors } from '@/src/Components/DataDisplay/Chip';
+import Chip, { ChipColors, ChipSizes } from '@/src/Components/DataDisplay/Chip';
+
 
 <Meta
     title="Data Display/Chip/Chip"
@@ -15,7 +16,7 @@ import Chip, { ChipColors } from '@/src/Components/DataDisplay/Chip';
             defaultValue: "medium",
             control: {
                 type: "select",
-                options: [ "small", "medium", "large"],
+                options: ChipSizes,
             },
         },
         type: {
@@ -82,38 +83,47 @@ export const Basic = (args, { argTypes }) => ({
                  <Chip type="fill" color="secondary" size="small">Chip</Chip>
                  <Chip type="fill" color="secondary" size="medium" class="ml-4">Chip</Chip>
                  <Chip type="fill" color="secondary" size="large" class="ml-4">Chip</Chip>
+                 <Chip type="fill" color="secondary" size="xlarge" class="ml-4">Chip</Chip>
                  <hr>
                  <Chip type="outlined" color="secondary" size="small">Chip</Chip>
                   <Chip type="outlined" color="secondary" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="outlined" color="secondary" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="outlined" color="secondary" size="xlarge" class="ml-4">Chip</Chip>
                   <hr>
                   <Chip type="filter" color="secondary" size="small">Chip</Chip>
                   <Chip type="filter" color="secondary" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="filter" color="secondary" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="filter" color="secondary" size="xlarge" class="ml-4">Chip</Chip>
                   <hr>
                   <Chip type="fill" color="primary" size="small">Chip</Chip>
                   <Chip type="fill" color="primary" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="fill" color="primary" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="fill" color="primary" size="xlarge" class="ml-4">Chip</Chip>
                   <hr>
                   <Chip type="outlined" color="primary" size="small">Chip</Chip>
                   <Chip type="outlined" color="primary" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="outlined" color="primary" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="outlined" color="primary" size="xlarge" class="ml-4">Chip</Chip>
                   <hr>
                   <Chip type="filter" color="primary" size="small">Chip</Chip>
                   <Chip type="filter" color="primary" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="filter" color="primary" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="filter" color="primary" size="xlarge" class="ml-4">Chip</Chip>
                   <hr>
                   <Chip type="fill" color="success" size="small">Chip</Chip>
                   <Chip type="fill" color="success" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="fill" color="success" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="fill" color="success" size="xlarge" class="ml-4">Chip</Chip>
                   <hr>
                   <Chip type="outlined" color="success" size="small">Chip</Chip>
                   <Chip type="outlined" color="success" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="outlined" color="success" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="outlined" color="success" size="xlarge" class="ml-4">Chip</Chip>
                   <hr>
                   <Chip type="filter" color="success" size="small">Chip</Chip>
                   <Chip type="filter" color="success" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="filter" color="success" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="filter" color="success" size="xlarge" class="ml-4">Chip</Chip>
                 </div>
         `,
             components: { Chip },
