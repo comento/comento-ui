@@ -12,15 +12,19 @@
 <script>
 import paddingMixin from '../../../mixins/paddingMixin';
 export const ChipColors = ['secondary', 'primary', 'success'];
-export const ChipSizes = ['small', 'medium', 'large'];
+export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
+export const ChipTypes = ['fill', 'outlined', 'filter'];
+
 export default {
 	name: 'Chip',
 	mixins: [paddingMixin],
 	props: {
-		/*fill, outlined, filter*/
 		type: {
 			type: String,
 			default: 'fill',
+			validator(value) {
+				return ChipTypes.indexOf(value) !== -1;
+			},
 		},
 		color: {
 			type: String,
@@ -144,6 +148,15 @@ export default {
 		&.filter {
 			border-radius: 15px;
 			padding: 5px 14px;
+		}
+	}
+	&.xlarge {
+		@include body1();
+		padding: 4.5px 12px;
+		font-weight: normal;
+		&.filter {
+			border-radius: 19px;
+			padding: 5px 16px;
 		}
 	}
 	&.filter {

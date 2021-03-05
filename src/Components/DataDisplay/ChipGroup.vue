@@ -5,12 +5,17 @@
 </template>
 
 <script>
+import { ChipSizes } from './Chip';
+
 export default {
 	name: 'ChipGroup',
 	props: {
 		size: {
 			type: String,
 			default: 'medium',
+			validator(value) {
+				return ChipSizes.indexOf(value) !== -1;
+			},
 		},
 	},
 	computed: {
@@ -22,7 +27,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
+$margin-small: 4px;
+$margin-medium: 6px;
+$margin-large: 8px;
+$margin-xlarge: 10px;
 
 .c-chip-group {
 	@include clearfix();
@@ -32,43 +40,58 @@ export default {
 	/*사이즈*/
 	&.small {
 		&::v-deep .c-chip {
-			margin-right: 4px;
+			margin-right: $margin-small;
 			&:last-child {
 				margin-right: 0;
 			}
 		}
 		&::v-deep .c-row {
 			.c-style-col {
-				padding-right: 4px;
+				padding-right: $margin-small;
 			}
 		}
 	}
 	&.medium {
 		&::v-deep .c-chip {
-			margin-right: 6px;
+			margin-right: $margin-medium;
 			&:last-child {
 				margin-right: 0;
 			}
 		}
 		&::v-deep .c-row {
 			.c-style-col {
-				padding-right: 6px;
+				padding-right: $margin-medium;
 			}
 		}
 	}
 	&.large {
 		&::v-deep .c-chip {
-			margin-right: 8px;
+			margin-right: $margin-large;
 			&:last-child {
 				margin-right: 0;
 			}
 		}
 		&::v-deep .c-row {
 			.c-style-col {
-				padding-right: 8px;
+				padding-right: $margin-large;
 			}
 		}
 	}
+
+	&.xlarge {
+		&::v-deep .c-chip {
+			margin-right: $margin-xlarge;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&::v-deep .c-row {
+			.c-style-col {
+				padding-right: $margin-xlarge;
+			}
+		}
+	}
+
 	&::v-deep .c-row {
 		margin: 0;
 		.c-style-col {
