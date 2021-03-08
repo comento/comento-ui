@@ -218,3 +218,61 @@
     background: transparent;
   }
 }
+
+@mixin spacing {
+  // 간격 조절
+  $sides: ("b": "bottom", "t": "top", "l": "left", "r": "right", "": "all",  "x": "x", "y": "y");
+  $size: 2;
+  $units: 50;
+
+  @each $prefix, $value in $sides {
+    .m#{$prefix} {
+      &-auto {
+        @if $prefix == "" {
+          margin: auto !important;
+        } @else if $prefix == "x" {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        } @else if $prefix == "y" {
+          margin-top: auto !important;
+          margin-bottom: auto !important;
+        } @else {
+          margin-#{$value}: auto !important;
+        }
+      }
+    }
+
+    @for $i from 0 through $units {
+      .m#{$prefix} {
+        &-#{($i * $size)} {
+          @if $prefix == "" {
+            margin: #{($i * $size)}px !important;
+          } @else if $prefix == "x" {
+            margin-left: #{($i * $size)}px !important;
+            margin-right: #{($i * $size)}px !important;
+          } @else if $prefix == "y" {
+            margin-top: #{($i * $size)}px !important;
+            margin-bottom: #{($i * $size)}px !important;
+          } @else {
+            margin-#{$value}: #{($i * $size)}px !important;
+          }
+        }
+      }
+      .p#{$prefix} {
+        &-#{($i * $size)} {
+          @if $prefix == "" {
+            padding: #{($i * $size)}px !important;
+          } @else if $prefix == "x" {
+            padding-left: #{($i * $size)}px !important;
+            padding-right: #{($i * $size)}px !important;
+          } @else if $prefix == "y" {
+            padding-top: #{($i * $size)}px !important;
+            padding-bottom: #{($i * $size)}px !important;
+          } @else {
+            padding-#{$value}: #{($i * $size)}px !important;
+          }
+        }
+      }
+    }
+  }
+}
