@@ -95,7 +95,7 @@ export default {
 		},
 		computedTypographyType() {
 			const sizeForTypeList = {
-				small: 'caption1',
+				small: 'body2',
 				medium: 'body1',
 			};
 			return sizeForTypeList[this.size];
@@ -156,7 +156,7 @@ export default {
 		& + label {
 			display: inline-flex;
 			flex-direction: row;
-			align-items: center;
+			align-items: flex-start;
 			cursor: pointer;
 			> div {
 				display: inline-block;
@@ -169,6 +169,7 @@ export default {
 				border: 1px solid $input-border-color;
 				border-radius: 2px;
 				display: inline-block;
+				margin-top: 3px;
 				margin-right: 8px;
 				box-sizing: border-box;
 			}
@@ -177,25 +178,9 @@ export default {
 
 	&.small {
 		input[type='checkbox'] {
-			& + label {
-				display: inline-flex;
-				flex-direction: row;
-				align-items: center;
-				cursor: pointer;
-				> div {
-					display: inline-block;
-				}
-				&:before {
-					width: 16px;
-					height: 16px;
-					content: '';
-					background-color: $gray000;
-					border: 1px solid $input-border-color;
-					border-radius: 2px;
-					display: inline-block;
-					margin-right: 8px;
-					box-sizing: border-box;
-				}
+			& + label:before {
+				width: 16px;
+				height: 16px;
 			}
 		}
 	}
