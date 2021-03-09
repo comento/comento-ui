@@ -74,8 +74,12 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
         },
         full: {
             description: "width 100%를 차지할 것인지",
-            control: { type: "Boolean" },
+            control: { type: "boolean" },
         },
+        autocomplete: {
+            description: "자동완성",
+            control: { type: "boolean" },
+        }
     }}
 />
 
@@ -98,6 +102,7 @@ export const Default = (args, { argTypes }) => ({
             :hint="hint"
             :color="color"
             :full="full"
+            :autocomplete="autocomplete"
         />`,
 });
 
