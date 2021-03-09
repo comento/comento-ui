@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-checkbox">
+	<div class="c-application c-checkbox" :class="computedClasses">
 		<input
 			:id="computedId"
 			v-model="sync_value"
@@ -9,7 +9,7 @@
 			v-on="$listeners"
 		/>
 		<label :class="{ disabled }" :for="computedId">
-			<Typography :color="computedColor">
+			<Typography :color="computedColor" :type="computedTypographyType">
 				<slot />
 			</Typography>
 		</label>
@@ -20,6 +20,7 @@
 import { colorKeys } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import uniqueId from '@/utils/unique-id';
+export const checkboxSizes = ['small', 'medium'];
 
 export default {
 	name: 'Checkbox',
@@ -57,6 +58,17 @@ export default {
 				return isValid;
 			},
 		},
+		size: {
+			type: String,
+			default: 'medium',
+			validator(value) {
+				const isValid = checkboxSizes.indexOf(value) !== -1;
+				if (!isValid) {
+					console.error(`${value} is not a valid value of the Checkbox size`);
+				}
+				return isValid;
+			},
+		},
 	},
 	data() {
 		return {
@@ -77,6 +89,16 @@ export default {
 		},
 		computedColor() {
 			return this.disabled ? 'gray300' : this.color;
+		},
+		computedClasses() {
+			return [this.size];
+		},
+		computedTypographyType() {
+			const sizeForTypeList = {
+				small: 'caption1',
+				medium: 'body1',
+			};
+			return sizeForTypeList[this.size];
 		},
 	},
 	components: { Typography },
@@ -149,6 +171,31 @@ export default {
 				display: inline-block;
 				margin-right: 8px;
 				box-sizing: border-box;
+			}
+		}
+	}
+
+	&.small {
+		input[type='checkbox'] {
+			& + label {
+				display: inline-flex;
+				flex-direction: row;
+				align-items: center;
+				cursor: pointer;
+				> div {
+					display: inline-block;
+				}
+				&:before {
+					width: 16px;
+					height: 16px;
+					content: '';
+					background-color: $gray000;
+					border: 1px solid $input-border-color;
+					border-radius: 2px;
+					display: inline-block;
+					margin-right: 8px;
+					box-sizing: border-box;
+				}
 			}
 		}
 	}
