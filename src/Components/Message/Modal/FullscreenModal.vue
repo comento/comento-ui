@@ -82,6 +82,7 @@ export default {
 			this.$refs.fullscreen.$el.classList.remove('active');
 			setTimeout(() => {
 				this.$emit('update:show', false);
+				this.$emit('close');
 			}, 300);
 		},
 	},
