@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Checkbox from "@/src/Components/DataEntry/Checkbox";
+import Checkbox, { checkboxSizes } from "@/src/Components/DataEntry/Checkbox";
 
 <Meta
     title="Data Entry/Checkbox"
@@ -21,6 +21,13 @@ import Checkbox from "@/src/Components/DataEntry/Checkbox";
         id: {
             description: "체크박스 ID (값이 없으면 input-uid로 생성됨)",
             control: { type: "text" },
+        },
+        size: {
+            description: "체크박스 크기",
+            control: {
+                type: "select",
+                options: checkboxSizes,
+            },
         }
     }}
 />
@@ -30,7 +37,7 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Checkbox },
     template:
-        `<Checkbox :value.sync="value" :disabled="disabled" :id="id">{{label}}</Checkbox>`,
+        `<Checkbox :value.sync="value" :disabled="disabled" :id="id" :size="size">{{label}}</Checkbox>`,
 });
 
 # Checkbox
@@ -51,10 +58,18 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <Checkbox :value="false">Unchecked</Checkbox>
-                    <Checkbox :value="true">Checked</Checkbox>
-                    <Checkbox disabled>Unchecked Disabled</Checkbox>
-                    <Checkbox :value="true" disabled>Checked Disabled</Checkbox>
+                    <div>
+                        <h3>State</h3>
+                        <Checkbox :value="false">Unchecked</Checkbox>
+                        <Checkbox :value="true">Checked</Checkbox>
+                        <Checkbox disabled>Unchecked Disabled</Checkbox>
+                        <Checkbox :value="true" disabled>Checked Disabled</Checkbox>
+                    </div>
+                    <div class="mt-20">
+                        <h3>Size</h3>
+                        <Checkbox size="medium">Medium Size</Checkbox>
+                        <Checkbox size="small">Small Size</Checkbox>
+                    </div>
                 </div>
             `,
             components: { Checkbox },
