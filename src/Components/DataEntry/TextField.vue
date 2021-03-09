@@ -15,6 +15,7 @@
 			:style="[computedAlign]"
 			:class="[computedLined, computedColor, computedActive]"
 			v-bind="$attrs"
+			:autocomplete="computedAutocomplete"
 			@input="handleTyping"
 			v-on="$listeners"
 			@focus="onFocus"
@@ -108,6 +109,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		autocomplete: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data: () => ({
 		isFocused: false,
@@ -153,6 +158,9 @@ export default {
 		},
 		computedActive() {
 			return { active: this.active };
+		},
+		computedAutocomplete() {
+			return this.autocomplete ? 'on' : 'off';
 		},
 	},
 	methods: {
