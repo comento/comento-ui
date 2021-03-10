@@ -165,7 +165,7 @@ export default {
 			},
 		},
 		slidesPerView: {
-			type: Number,
+			type: [Number, String],
 			default: 1,
 		},
 		autoplay: {
@@ -223,7 +223,8 @@ export default {
 				},
 				allowTouchMove: true,
 				slidesPerView: this.slidesPerView,
-				...(this.slidesPerView > 1 && { spaceBetween: this.spacing }),
+				...(Number.isInteger(Number(this.slidesPerView)) &&
+					this.slidesPerView > 1 && { spaceBetween: this.spacing }),
 				...(this.autoplay && {
 					autoplay: {
 						delay: this.slidesPerView > 1 ? 3000 : 2000,
