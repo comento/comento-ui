@@ -212,6 +212,10 @@ export default {
 				this.indicatorPosition === 'inside'
 					? `#swiper-pagination-${this._uid}`
 					: `#swiper-pagination-${this.indicatorPosition}-${this._uid}`;
+			// spacing을 적용할 수 있는 조건 (sliderPerView가 1이상이거나, 'auto'일 때)
+			const canHaveSpacing =
+				(Number.isInteger(Number(this.slidesPerView)) && this.slidesPerView > 1) ||
+				this.slidesPerView === 'auto';
 			return {
 				navigation: {
 					nextEl: swiperButtonNextSelector,
@@ -223,8 +227,7 @@ export default {
 				},
 				allowTouchMove: true,
 				slidesPerView: this.slidesPerView,
-				...(Number.isInteger(Number(this.slidesPerView)) &&
-					this.slidesPerView > 1 && { spaceBetween: this.spacing }),
+				...(canHaveSpacing && { spaceBetween: this.spacing }),
 				...(this.autoplay && {
 					autoplay: {
 						delay: this.slidesPerView > 1 ? 3000 : 2000,
