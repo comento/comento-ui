@@ -20,7 +20,7 @@
 import { colorKeys } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import uniqueId from '@/utils/unique-id';
-export const checkboxSizes = ['small', 'medium'];
+export const checkboxSizes = ['xsmall', 'small', 'medium'];
 
 export default {
 	name: 'Checkbox',
@@ -95,6 +95,7 @@ export default {
 		},
 		computedTypographyType() {
 			const sizeForTypeList = {
+				xsmall: 'caption1',
 				small: 'body2',
 				medium: 'body1',
 			};
@@ -166,6 +167,7 @@ export default {
 				height: 20px;
 				content: '';
 				background-color: $gray000;
+				background-position: center center;
 				border: 1px solid $input-border-color;
 				border-radius: 2px;
 				display: inline-block;
@@ -179,8 +181,27 @@ export default {
 	&.small {
 		input[type='checkbox'] {
 			& + label:before {
-				width: 16px;
-				height: 16px;
+				width: 18px;
+				height: 18px;
+				margin-top: 2px;
+				background-size: 16px;
+			}
+		}
+	}
+
+	&.xsmall {
+		input[type='checkbox'] {
+			& + label {
+				> div {
+					margin-top: 2px;
+				}
+				&:before {
+					margin-top: 0;
+					margin-right: 6px;
+					width: 16px;
+					height: 16px;
+					background-size: 14px;
+				}
 			}
 		}
 	}
