@@ -8,6 +8,7 @@
 			<base-swiper-slide
 				v-for="(node, index) in Object.keys(this.$slots).length"
 				:key="`tabs-item-${index}-${key}`"
+				style="width: auto"
 			>
 				<slot :name="'item' + index"></slot>
 			</base-swiper-slide>
