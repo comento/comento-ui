@@ -74,6 +74,12 @@ import SwiperItemExample from "./SwiperItemExample";
                 type: "text",
             },
         },
+        slidesPerGroup: {
+            description: "그룹 안의 슬라이드 개수",
+            control: {
+                type: "number",
+            },
+        },
     }}
 />
 
@@ -82,9 +88,9 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, SwiperItemExample },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :spacing="spacing" :slides-per-view="slidesPerView">
+            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup">
                 <template v-for="(item, index) in 10" :slot="'item' + index">
-                <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
+                <SwiperItemExample :text="'ITEM' + (index+1)" ></SwiperItemExample>
                 </template>
             </Swiper>
         </div>
@@ -285,7 +291,7 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator autoplay style="margin-bottom: 100px;">
+                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator autoplay :slides-per-view="3" :slides-per-group="3" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
@@ -325,6 +331,52 @@ export const Default = (args, { argTypes }) => ({
                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                        </template>
                    </Swiper>
+                </div>`,
+            components: { Swiper, SwiperItemExample },
+        }}
+    </Story>
+</Canvas>
+
+### sliderPerGroup
+
+<Canvas>
+    <Story name="sliderPerGroup">
+        {{
+            data() {
+                return {
+                    itemLength: 10,
+                };
+            },
+            template: `
+                <div style="padding: 24px 32px;">
+                    <Swiper controls-color="dark" controls-position="inside" with-controls indicator-color="dark" indicator-position="inside" with-indicator :slides-per-view="3" :slides-per-group="3" autoplay style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
+                        </template>
+                    </Swiper>
+                </div>`,
+            components: { Swiper, SwiperItemExample },
+        }}
+    </Story>
+</Canvas>
+
+### slidesPerView auto
+
+<Canvas>
+    <Story name="slidesPerViewAuto">
+        {{
+            data() {
+                return {
+                    itemLength: 10,
+                };
+            },
+            template: `
+                <div style="padding: 24px 32px;">
+                    <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
+                        </template>
+                    </Swiper>
                 </div>`,
             components: { Swiper, SwiperItemExample },
         }}
