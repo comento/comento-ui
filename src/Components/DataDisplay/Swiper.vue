@@ -169,6 +169,10 @@ export default {
 			type: [Number, String],
 			default: 1,
 		},
+		slidesPerGroup: {
+			type: Number,
+			default: 1,
+		},
 		autoplay: {
 			type: Boolean,
 			default: false,
@@ -236,7 +240,7 @@ export default {
 						disableOnInteraction: false,
 					},
 				}),
-				slidesPerGroup: this.slidesPerView,
+				slidesPerGroup: this.slidesPerGroup,
 			};
 		},
 		computedIndicatorColorClass() {
