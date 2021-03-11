@@ -74,6 +74,7 @@ export default {
 
 	&--title {
 		height: 48px;
+		@include ellipsis(2);
 	}
 	&--divider {
 		margin: 0 8px;
