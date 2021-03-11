@@ -291,7 +291,6 @@ export default {
 ::v-deep {
 	@import '@/assets/style/swiper/swiper';
 }
-$swiper-background-color: #c4c4c4;
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;
 
@@ -304,7 +303,6 @@ $swiper-control-circle-radius: 16px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: $swiper-background-color;
 	}
 }
 ::v-deep .swiper-pagination-bullet {

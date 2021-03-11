@@ -21,4 +21,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+$swiper-background-color: #c4c4c4;
+.c-box {
+	width: 100%;
+	background-color: $swiper-background-color;
+}
+</style>
