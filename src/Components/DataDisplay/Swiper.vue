@@ -8,6 +8,7 @@
 			<base-swiper-slide
 				v-for="(node, index) in Object.keys(this.$slots).length"
 				:key="`tabs-item-${index}-${key}`"
+				style="width: auto"
 			>
 				<slot :name="'item' + index"></slot>
 			</base-swiper-slide>
@@ -168,6 +169,10 @@ export default {
 			type: [Number, String],
 			default: 1,
 		},
+		slidesPerGroup: {
+			type: Number,
+			default: 1,
+		},
 		autoplay: {
 			type: Boolean,
 			default: false,
@@ -234,9 +239,8 @@ export default {
 						// swipe하면 autoplay가 멈추는 속성
 						disableOnInteraction: false,
 					},
-					loop: true,
 				}),
-				slidesPerGroup: this.slidesPerView,
+				slidesPerGroup: this.slidesPerGroup,
 			};
 		},
 		computedIndicatorColorClass() {
