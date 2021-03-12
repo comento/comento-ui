@@ -97,6 +97,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$grid: 3px;
+$grid-column-width: 1108px-$grid-gutter-width * 11;
+@debug ($grid-column-width);
+$grid-column-9-width: #{$grid-column-width * 9px} + $grid-gutter-width * 8;
+$grid-column-3-width: calc(#{$grid-column-width}* 3) + calc(#{$grid-gutter-width}* 2);
+@debug ($grid-column-9-width);
+@debug ($grid-column-3-width);
+
 /*@import '@/assets/style/base/main';*/
 
 /* Mobile first */
@@ -153,9 +161,9 @@ export default {
 }
 
 .col-3 {
-	-ms-flex: 0 0 25%;
-	flex: 0 0 25%;
-	max-width: 25%;
+	-ms-flex: 0 0 $grid-column-3-width;
+	flex: 0 0 $grid-column-3-width;
+	max-width: $grid-column-3-width;
 }
 
 .col-4 {
@@ -189,9 +197,9 @@ export default {
 }
 
 .col-9 {
-	-ms-flex: 0 0 75%;
-	flex: 0 0 75%;
-	max-width: 75%;
+	-ms-flex: 0 0 $grid-column-9-width;
+	flex: 0 0 $grid-column-9-width;
+	max-width: $grid-column-9-width;
 }
 
 .col-10 {
