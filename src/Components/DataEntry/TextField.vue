@@ -1,27 +1,32 @@
 <template>
 	<div class="c-application c-text-field" :class="[computedLabel, computedFull]">
-		<input
-			:ref="computedId"
-			v-model="sync_value"
-			class="c-text-field--input"
-			:type="type"
-			:placeholder="placeholder"
-			:name="computedId"
-			:label="label"
-			:align="align"
-			:readonly="readonly"
-			:disabled="disabled"
-			:color="color"
-			:style="[computedAlign]"
-			:class="[computedLined, computedColor, computedActive]"
-			v-bind="$attrs"
-			:autocomplete="computedAutocomplete"
-			@input="handleTyping"
-			v-on="$listeners"
-			@focus="onFocus"
-			@blur="blurFocus"
-		/>
-		<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
+		<div class="c-text-field--input-wrapper">
+			<input
+				:ref="computedId"
+				v-model="sync_value"
+				class="c-text-field--input"
+				:type="type"
+				:placeholder="placeholder"
+				:name="computedId"
+				:label="label"
+				:align="align"
+				:readonly="readonly"
+				:disabled="disabled"
+				:color="color"
+				:style="[computedAlign]"
+				:class="[computedLined, computedColor, computedActive]"
+				v-bind="$attrs"
+				:autocomplete="computedAutocomplete"
+				@input="handleTyping"
+				v-on="$listeners"
+				@focus="onFocus"
+				@blur="blurFocus"
+			/>
+			<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
+			<div class="c-text-field--append">
+				<slot name="append" />
+			</div>
+		</div>
 		<Hint v-if="computedShowHint" :value="hint" :color="color" />
 	</div>
 </template>
@@ -179,6 +184,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$outlinedPadding: 16px;
+$underlinedPadding: 4px;
+
 .c-text-field {
 	position: relative;
 	&.full {
@@ -198,8 +206,13 @@ export default {
 		&:disabled {
 			background: $gray000;
 		}
+
+		&-wrapper {
+			position: relative;
+		}
+
 		&.outlined {
-			padding: 0 16px;
+			padding: 0 $outlinedPadding;
 			border: 1px solid $input-border-color;
 			@include border-radius(2px);
 			&:focus,
@@ -230,9 +243,13 @@ export default {
 					border-color: $secondary;
 				}
 			}
+
+			~ .c-text-field--append {
+				margin-right: $outlinedPadding - 4px;
+			}
 		}
 		&.underlined {
-			padding: 0 4px;
+			padding: 0 $underlinedPadding;
 			border-bottom: 1px solid $input-border-color;
 			&:focus,
 			&.active {
@@ -261,6 +278,10 @@ export default {
 					border-color: $secondary;
 				}
 			}
+
+			~ .c-text-field--append {
+				margin-right: $underlinedPadding;
+			}
 		}
 		&:disabled {
 			cursor: not-allowed !important;
@@ -276,71 +297,85 @@ export default {
 		}
 	}
 	&.label {
-		.c-text-field--input {
-			&:focus,
-			&.active {
-				+ .c-text-field--label {
-					opacity: 1;
-				}
-			}
-			&.error {
+		.c-text-field--input-wrapper {
+			.c-text-field--input {
 				&:focus,
 				&.active {
-					border-color: $error;
 					+ .c-text-field--label {
-						color: $error;
+						opacity: 1;
 					}
 				}
-			}
-			&.primary {
-				&:focus,
-				&.active {
-					border-color: $primary;
-					+ .c-text-field--label {
-						color: $primary;
+				&.error {
+					&:focus,
+					&.active {
+						border-color: $error;
+						+ .c-text-field--label {
+							color: $error;
+						}
 					}
 				}
-			}
-			&.success {
-				&:focus,
-				&.active {
-					border-color: $success;
-					+ .c-text-field--label {
-						color: $success;
+				&.primary {
+					&:focus,
+					&.active {
+						border-color: $primary;
+						+ .c-text-field--label {
+							color: $primary;
+						}
 					}
 				}
-			}
-			&.secondary {
-				&:focus,
-				&.active {
-					border-color: $secondary;
-					+ .c-text-field--label {
-						color: $secondary;
+				&.success {
+					&:focus,
+					&.active {
+						border-color: $success;
+						+ .c-text-field--label {
+							color: $success;
+						}
 					}
 				}
-			}
+				&.secondary {
+					&:focus,
+					&.active {
+						border-color: $secondary;
+						+ .c-text-field--label {
+							color: $secondary;
+						}
+					}
+				}
 
-			&[readonly],
-			&[readonly='readonly'] {
-				&:focus,
-				&.active {
-					border-color: $input-border-color;
-				}
-				+ .c-text-field--label {
-					opacity: 0;
+				&[readonly],
+				&[readonly='readonly'] {
+					&:focus,
+					&.active {
+						border-color: $input-border-color;
+					}
+					+ .c-text-field--label {
+						opacity: 0;
+					}
 				}
 			}
+			.c-text-field--label {
+				@include transition(all 0.2s ease);
+				position: absolute;
+				top: -6px;
+				left: 12px;
+				padding: 0 2px;
+				background: $white;
+				@include caption2;
+				opacity: 0;
+			}
 		}
-		.c-text-field--label {
-			@include transition(all 0.2s ease);
-			position: absolute;
-			top: -6px;
-			left: 12px;
-			padding: 0 2px;
-			background: $white;
-			@include caption2;
-			opacity: 0;
-		}
+	}
+
+	&--append {
+		@include flexbox();
+		@include align-items(center);
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		background: white;
+		height: calc(100% - 2px);
+		padding-left: 4px;
 	}
 }
 </style>
