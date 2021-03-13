@@ -54,13 +54,16 @@ export default {
 @include pc {
 	.c-grid {
 		&.container {
-			max-width: 1140px;
+			max-width: $container-max-width-mobile;
 			width: 100%;
+			@include pc {
+				max-width: $container-max-width-pc;
+			}
 		}
-		&::v-deep > .c-row {
-			margin-right: -24px;
-			margin-left: -24px;
-		}
+		//&::v-deep > .c-row {
+		//	margin-right: -24px;
+		//	margin-left: -24px;
+		//}
 	}
 }
 
