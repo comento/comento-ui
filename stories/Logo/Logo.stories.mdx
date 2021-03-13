@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import Logo from "@/src/Elements/Core/Logo/Logo";
+import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
   title="Core/Logo"
@@ -28,6 +29,18 @@ import Logo from "@/src/Elements/Core/Logo/Logo";
       defaultValue: "24",
       control: { type: "text" },
     },
+    color: {
+      description: "로고 색상",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: colorKeys,
+      },
+    },
   }}
 />
 
@@ -35,7 +48,7 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Logo },
   template:
-    `<Logo :name="name" :url="url" :width="width" :height="height" />`,
+    `<Logo :name="name" :url="url" :width="width" :height="height" :color="color"/>`,
 });
 
 # Logo
