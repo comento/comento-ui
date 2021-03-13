@@ -64,6 +64,8 @@ import IconRevertMediumLine from '@/assets/images/icon/icon-revert-medium-line.s
 import IconDownloadMediumLine from '@/assets/images/icon/icon-download-medium-line.svg?inline';
 import IconExportMediumLine from '@/assets/images/icon/icon-export-medium-line.svg?inline';
 import IconClockMediumFill from '@/assets/images/icon/icon-clock-medium-fill.svg?inline';
+import IconSupportMediumLine from '@/assets/images/icon/icon-support-medium-line.svg?inline';
+
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/icon-selected-large-line.svg?inline';
@@ -165,6 +167,7 @@ export const IconNames = [
 	'IconDownloadMediumLine',
 	'IconExportMediumLine',
 	'IconClockMediumFill',
+	'IconSupportMediumLine',
 	// large
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
@@ -320,6 +323,7 @@ export default {
 		IconDownloadMediumLine,
 		IconExportMediumLine,
 		IconClockMediumFill,
+		IconSupportMediumLine,
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,
