@@ -9,7 +9,7 @@ storiesOf('Layout/Grid', module)
 		components: { Grid, Row, StyleCol, Typography },
 		template: `<div>
 						<Typography type="display1" element="div" align="center" class="mb-64">Basic (1140)</Typography>
-						<Grid style="border: 1px solid">
+						<Grid>
 							<Row>
 								<StyleCol :colSm="12" class="mb-40" >
 									<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</Typography>
