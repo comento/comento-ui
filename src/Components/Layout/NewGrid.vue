@@ -7,7 +7,7 @@
 <script>
 import { colors } from '@/src/Elements/Core/Colors';
 export default {
-	name: 'Grid',
+	name: 'NewGrid',
 	props: {
 		fluid: {
 			type: Boolean,
@@ -59,10 +59,6 @@ export default {
 			@include pc {
 				max-width: $container-max-width-pc;
 			}
-		}
-		&::v-deep > .c-row {
-			margin-right: -24px;
-			margin-left: -24px;
 		}
 	}
 }
