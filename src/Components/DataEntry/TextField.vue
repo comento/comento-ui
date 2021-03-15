@@ -184,8 +184,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$outlinedPadding: 16px;
-$underlinedPadding: 4px;
+$outlined-padding: 16px;
+$underlined-padding: 4px;
 
 .c-text-field {
 	position: relative;
@@ -212,7 +212,7 @@ $underlinedPadding: 4px;
 		}
 
 		&.outlined {
-			padding: 0 $outlinedPadding;
+			padding: 0 $outlined-padding;
 			border: 1px solid $input-border-color;
 			@include border-radius(2px);
 			&:focus,
@@ -245,11 +245,11 @@ $underlinedPadding: 4px;
 			}
 
 			~ .c-text-field--append {
-				margin-right: $outlinedPadding - 4px;
+				padding-right: $outlined-padding - 4px;
 			}
 		}
 		&.underlined {
-			padding: 0 $underlinedPadding;
+			padding: 0 $underlined-padding;
 			border-bottom: 1px solid $input-border-color;
 			&:focus,
 			&.active {
@@ -280,7 +280,7 @@ $underlinedPadding: 4px;
 			}
 
 			~ .c-text-field--append {
-				margin-right: $underlinedPadding;
+				padding-right: $underlined-padding;
 			}
 		}
 		&:disabled {
