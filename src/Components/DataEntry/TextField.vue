@@ -23,7 +23,7 @@
 				@blur="blurFocus"
 			/>
 			<label v-if="computedShowLabel" :for="computedId" class="c-text-field--label">{{ label }}</label>
-			<div class="c-text-field--append">
+			<div v-if="$slots['append']" class="c-text-field--append">
 				<slot name="append" />
 			</div>
 		</div>
@@ -33,6 +33,7 @@
 
 <script>
 import Hint from '../DataDisplay/Hint';
+import uniqueId from '@/utils/unique-id';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const TextFieldAligns = ['left', 'center', 'right'];
@@ -119,9 +120,12 @@ export default {
 			default: false,
 		},
 	},
-	data: () => ({
-		isFocused: false,
-	}),
+	data() {
+		return {
+			isFocused: false,
+			uid: uniqueId(),
+		};
+	},
 	computed: {
 		sync_value: {
 			get() {
@@ -139,7 +143,7 @@ export default {
 			}
 		},
 		computedId() {
-			return `textField-${this._uid}`;
+			return `textField-${this.uid}`;
 		},
 		computedShowLabel() {
 			return this.label;
@@ -168,6 +172,11 @@ export default {
 			return this.autocomplete ? 'on' : 'off';
 		},
 	},
+	mounted() {
+		this.$nextTick(() => {
+			this.handleTextFieldPadding();
+		});
+	},
 	methods: {
 		handleTyping(e) {
 			this.sync_value = e.target.value;
@@ -177,6 +186,17 @@ export default {
 		},
 		blurFocus() {
 			this.isFocused = false;
+		},
+		handleTextFieldPadding() {
+			const textField = this.$refs[this.computedId];
+			const textFieldItems = textField.parentElement.childNodes;
+			textFieldItems.forEach(item => {
+				if (item && item.className === 'c-text-field--append') {
+					const appendWidth = item.offsetWidth;
+					const textField = this.$refs[this.computedId];
+					textField.style.paddingRight = `${appendWidth + 2}px`;
+				}
+			});
 		},
 	},
 	components: { Hint },
@@ -372,10 +392,10 @@ $underlined-padding: 4px;
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		right: 0;
+		right: 1px;
 		background: white;
 		height: calc(100% - 2px);
-		padding-left: 4px;
+		padding-left: 10px;
 	}
 }
 </style>
