@@ -84,6 +84,12 @@ import Loader from  '@/src/Components/Other/Loader';
         autocomplete: {
             description: "자동완성",
             control: { type: "boolean" },
+        },
+        id: {
+            description: "아이디 (없으면 textField-randomNumber)",
+            control: {
+                type: "text"
+            }
         }
     }}
 />
@@ -108,6 +114,7 @@ export const Default = (args, { argTypes }) => ({
             :color="color"
             :full="full"
             :autocomplete="autocomplete"
+            :id="id"
         />`,
 });
 

@@ -2,6 +2,7 @@
 	<div class="c-application c-text-field" :class="[computedLabel, computedFull]">
 		<div class="c-text-field--input-wrapper">
 			<input
+				:id="computedId"
 				:ref="computedId"
 				v-model="sync_value"
 				class="c-text-field--input"
@@ -119,6 +120,9 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		id: {
+			type: String,
+		},
 	},
 	data() {
 		return {
@@ -143,7 +147,7 @@ export default {
 			}
 		},
 		computedId() {
-			return `textField-${this.uid}`;
+			return this.id || `text-field-${this.uid}`;
 		},
 		computedShowLabel() {
 			return this.label;
