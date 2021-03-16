@@ -138,16 +138,16 @@
 }
 
 @mixin get-columns-width-pc($cols) {
-@include pc {
--ms-flex: 0 0 ($container-max-width-pc - $grid-gutter-width-pc * ($grid-columns-pc - 1) ) / $grid-columns-pc * $cols + $grid-gutter-width-pc * ($cols - 1);
-flex: 0 0 ($container-max-width-pc - $grid-gutter-width-pc * ($grid-columns-pc - 1) ) / $grid-columns-pc * $cols + $grid-gutter-width-pc * ($cols - 1);
+  @include pc {
+    -ms-flex: ($container-width-pc - $grid-gutter-width-pc * ($grid-columns-pc - 1) ) / $grid-columns-pc * $cols + $grid-gutter-width-pc * ($cols - 1);
+    flex: ($container-width-pc - $grid-gutter-width-pc * ($grid-columns-pc - 1) ) / $grid-columns-pc * $cols + $grid-gutter-width-pc * ($cols - 1);
   }
 }
 
 @mixin get-columns-width-mobile($cols) {
-@include mobile {
--ms-flex: 0 0 ($container-max-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) ) / 4 * $cols + $grid-gutter-width-mobile * ($cols - 1);
-flex: 0 0 ($container-max-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) ) / 4 * $cols + $grid-gutter-width-mobile * ($cols - 1);
+  @include mobile {
+    -ms-flex: ($container-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) ) / $grid-columns-mobile * $cols + $grid-gutter-width-mobile * ($cols - 1);
+    flex: ($container-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) ) / $grid-columns-mobile * $cols + $grid-gutter-width-mobile * ($cols - 1);
   }
 }
 
