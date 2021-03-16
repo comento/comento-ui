@@ -63,8 +63,8 @@ import Loader from  '@/src/Components/Other/Loader';
         color: {
             description: "hint color",
             control: {
-            type: "select",
-            options: TextFieldColor,
+                type: "select",
+                options: TextFieldColor,
            },
         },
         hint:{
@@ -384,18 +384,18 @@ export const Default = (args, { argTypes }) => ({
                     <Row class="mb-10">
                         <StyleCol :col-lg="4" col-gutters>
                             <TextField
-                            type="text"
-                            outlined
-                            label="대학"
-                            placeholder="학교명"
-                            hint="대학명을 입력해주세요."
-                            :value.sync="name"
-                        >
-                            <template v-slot:append>
-                                <Typography type="caption2" color="gray700" class="mr-2">제휴 확인 중</Typography>
-                                <Loader size="small" color="secondary" style="margin-right: -2px" />
-                            </template>
-                        </TextField>
+                                type="text"
+                                outlined
+                                label="대학"
+                                placeholder="학교명"
+                                hint="대학명을 입력해주세요."
+                                :value.sync="name"
+                            >
+                                <template v-slot:append>
+                                    <Typography type="caption2" color="gray700" class="mr-2">제휴 확인 중</Typography>
+                                    <Loader size="small" color="secondary" style="margin-right: -2px" />
+                                </template>
+                            </TextField>
                         </StyleCol>
                     </Row>
                     <Row class="mb-10">
