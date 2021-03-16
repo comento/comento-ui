@@ -1,3 +1,4 @@
+import AnimationIcon from './AnimationIcon';
 import Icon from './Icon';
 
-export { Icon };
+export { AnimationIcon, Icon };
