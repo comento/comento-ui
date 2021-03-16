@@ -1,6 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Grid from "@/src/Components/Layout/Grid";
+import Row from "@/src/Components/Layout/Row";
+import StyleCol from "@/src/Components/Layout/StyleCol";
 import TextField, { TextFieldTypes, TextFieldAligns, TextFieldColor } from "@/src/Components/DataEntry/TextField";
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import Icon from '@/src/Elements/Core/Icon/Icon';
+import Loader from  '@/src/Components/Other/Loader';
 
 <Meta
     title="Data Entry/TextField"
@@ -366,6 +371,93 @@ export const Default = (args, { argTypes }) => ({
                 }
             },
             components: { TextField, Typography },
+        }}
+    </Story>
+</Canvas>
+
+### Append Slot
+<Canvas>
+    <Story name="AppendSlot" height="200px">
+        {{
+            template: `
+                <Grid>
+                    <Row class="mb-10">
+                        <StyleCol :col-lg="4" col-gutters>
+                            <TextField
+                            type="text"
+                            outlined
+                            label="대학"
+                            placeholder="학교명"
+                            hint="대학명을 입력해주세요."
+                            :value.sync="name"
+                        >
+                            <template v-slot:append>
+                                <Typography type="caption2" color="gray700" class="mr-2">제휴 확인 중</Typography>
+                                <Loader size="small" color="secondary" style="margin-right: -2px" />
+                            </template>
+                        </TextField>
+                        </StyleCol>
+                    </Row>
+                    <Row class="mb-10">
+                        <StyleCol :col-lg="4" col-gutters>
+                            <TextField
+                                type="text"
+                                outlined
+                                label="대학"
+                                placeholder="학교명"
+                                :value.sync="name"
+                            >
+                                <template v-slot:append>
+                                    <Typography type="caption2" color="gray800" class="mr-2">미제휴기관</Typography>
+                                    <Icon name="IconExclamationSmallFill" color="gray500" />
+                                </template>
+                            </TextField>
+                        </StyleCol>
+                    </Row>
+                    <Row class="mb-10">
+                        <StyleCol :col-lg="4" col-gutters>
+                            <TextField
+                                type="text"
+                                outlined
+                                label="대학"
+                                placeholder="학교명"
+                                :value.sync="name"
+                            >
+                                <template v-slot:append>
+                                    <Typography type="caption2" color="primary" class="mr-2">제휴기관</Typography>
+                                    <Icon name="IconExclamationSmallFill" color="primary" />
+                                </template>
+                            </TextField>
+                        </StyleCol>
+                    </Row>
+                    <Row>
+                        <StyleCol :col-lg="4" col-gutters>
+                            <TextField
+                                type="text"
+                                placeholder="인증번호"
+                                :value.sync="name"
+                                full
+                            >
+                                <template v-slot:append>
+                                    <Typography type="caption1" color="error">30:00</Typography>
+                                </template>
+                            </TextField>
+                        </StyleCol>
+                    </Row>
+                </Grid>
+            `,
+            data() {
+                return {
+                    name: null,
+                    isError: false,
+                };
+            },
+            watch: {
+                name() {
+                    this.isError = this.name.length < 2;
+                }
+            },
+            components: { Grid, Row, StyleCol, TextField, Typography, Loader, Icon },
         }}
     </Story>
 </Canvas>
