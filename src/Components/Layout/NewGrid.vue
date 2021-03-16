@@ -54,8 +54,8 @@ export default {
 @include pc {
 	.c-grid {
 		&.container {
-			max-width: $container-max-width-mobile;
 			width: 100%;
+			max-width: $container-max-width-mobile;
 			@include pc {
 				max-width: $container-max-width-pc;
 			}
