@@ -8,7 +8,7 @@
 				class="c-text-field--input"
 				:type="type"
 				:placeholder="placeholder"
-				:name="computedId"
+				:name="name"
 				:label="label"
 				:align="align"
 				:readonly="readonly"
