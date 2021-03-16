@@ -7,17 +7,15 @@
 		class="c-application c-tabs--menu-container swiper"
 		:options="swiperOptions"
 	>
-		<div class="c-tabs--menu-wrapper">
-			<swiper-slide
-				v-for="(item, index) in Object.keys(this.$slots).length"
-				:key="`tabs-item-${index}`"
-				:class="{ active: index === tabIndex }"
-			>
-				<div class="c-tabs--menu-button" @click="setTabIndex(index)">
-					<slot :name="'item' + index"></slot>
-				</div>
-			</swiper-slide>
-		</div>
+		<swiper-slide
+			v-for="(item, index) in Object.keys(this.$slots).length"
+			:key="`tabs-item-${index}`"
+			:class="{ active: index === tabIndex }"
+		>
+			<div class="c-tabs--menu-button" @click="setTabIndex(index)">
+				<slot :name="'item' + index"></slot>
+			</div>
+		</swiper-slide>
 	</swiper>
 	<div v-else class="c-application c-tabs c-tabs--menu-container">
 		<div class="c-tabs--menu-wrapper" :class="classes">
@@ -74,18 +72,18 @@ export default {
 				slidesPerView: 'auto',
 				on: {
 					init: () => {
-						console.log('init');
 						this.blurRight = true;
+						this.$emit('swiperInit');
 					},
 					reachBeginning: () => {
-						console.log('reachBeginning');
 						this.blurLeft = false;
 						this.blurRight = true;
+						this.$emit('swiperReachBeginning');
 					},
 					reachEnd: () => {
-						console.log('reachEnd');
 						this.blurLeft = true;
 						this.blurRight = false;
+						this.$emit('swiperReachEnd');
 					},
 				},
 			};
