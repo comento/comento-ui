@@ -139,15 +139,27 @@
 
 @mixin get-columns-width-pc($cols) {
   @include pc {
-    -ms-flex: ($container-width-pc - $grid-gutter-width-pc * ($grid-columns-pc - 1) ) / $grid-columns-pc * $cols + $grid-gutter-width-pc * ($cols - 1);
-    flex: ($container-width-pc - $grid-gutter-width-pc * ($grid-columns-pc - 1) ) / $grid-columns-pc * $cols + $grid-gutter-width-pc * ($cols - 1);
+    -ms-flex: 0 0 $grid-column-width-pc * $cols + $grid-gutter-width-pc * ($cols);
+    flex: 0 0 $grid-column-width-pc * $cols + $grid-gutter-width-pc * ($cols);
   }
 }
 
 @mixin get-columns-width-mobile($cols) {
   @include mobile {
-    -ms-flex: ($container-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) ) / $grid-columns-mobile * $cols + $grid-gutter-width-mobile * ($cols - 1);
-    flex: ($container-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) ) / $grid-columns-mobile * $cols + $grid-gutter-width-mobile * ($cols - 1);
+    -ms-flex: 0 0 ($grid-column-width-mobile + $grid-gutter-width-mobile) * $cols;
+    flex: 0 0 ($grid-column-width-mobile + $grid-gutter-width-mobile) * $cols;
+  }
+}
+
+@mixin get-offset-pc($cols) {
+  @include pc {
+    margin-left: ($grid-gutter-width-pc + $grid-column-width-pc) * $cols;
+  }
+}
+
+@mixin get-offset-mobile($cols) {
+  @include mobile {
+    margin-left: ($grid-gutter-width-mobile + $grid-column-width-mobile) * $cols;
   }
 }
 
