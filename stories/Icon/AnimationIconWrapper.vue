@@ -1,7 +1,7 @@
 <template>
-	<div class="icon-wrapper">
+	<div class="animation-icon-wrapper">
 		<Tooltip placement="bottom">
-			<Icon :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)" />
+			<AnimationIcon :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)" />
 			<template v-slot:popover>
 				<div>{{ name }}</div>
 			</template>
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import Icon from '@/src/Elements/Core/Icon/Icon';
 import Tooltip from '@/src/Components/Message/Tooltip';
+import AnimationIcon from '@/src/Elements/Core/Icon/AnimationIcon';
 import copyToClipboard from '@/utils/copy-to-clipboard';
 
 export default {
-	name: 'IconWrapper',
+	name: 'AnimationIconWrapper',
 	props: {
 		name: {
 			type: String,
@@ -31,14 +31,14 @@ export default {
 		copyToClipboard,
 	},
 	components: {
-		Icon,
+		AnimationIcon,
 		Tooltip,
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-.icon-wrapper {
+.animation-icon-wrapper {
 	display: flex;
 	width: 24px;
 	height: 24px;
