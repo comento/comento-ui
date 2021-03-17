@@ -70,6 +70,8 @@ export default {
 		swiperOptions() {
 			return {
 				slidesPerView: 'auto',
+				slideToClickedSlide: true,
+				freeMode: true,
 				on: {
 					init: () => {
 						this.blurRight = true;

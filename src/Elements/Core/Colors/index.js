@@ -27,7 +27,7 @@ export const red800 = '#CC2727';
 export const red600 = '#FA5252';
 export const red400 = '#FF8888';
 export const red100 = '#FFDFDF';
-export const red000 = '#FCF8F8';
+export const red000 = '#FFF7F7';
 
 //Blue
 export const blue800 = '#0074CC';
@@ -37,7 +37,7 @@ export const blue100 = '#D6EBFF';
 export const blue000 = '#F2FAFF';
 
 //Yellow
-export const yellow700 = '#FFD500';
+export const yellow600 = '#FFDD33';
 export const yellow400 = '#FFEE7A';
 export const yellow100 = '#FFFACC';
 
@@ -76,7 +76,7 @@ export const colors = {
     blue400: blue400,
     blue100: blue100,
     blue000: blue000,
-    yellow700: yellow700,
+    yellow600: yellow600,
     yellow400: yellow400,
     yellow100: yellow100,
     primary: primary,
