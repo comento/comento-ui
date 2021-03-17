@@ -12,6 +12,7 @@
 <script>
 import Tooltip from '@/src/Components/Message/Tooltip';
 import AnimationIcon from '@/src/Elements/Core/Icon/AnimationIcon';
+import copyToClipboard from '@/utils/copy-to-clipboard';
 
 export default {
 	name: 'AnimationIconWrapper',
@@ -27,15 +28,7 @@ export default {
 		},
 	},
 	methods: {
-		copyToClipboard(text) {
-			let textarea = document.createElement('textarea');
-			textarea.value = text;
-			document.body.appendChild(textarea);
-			textarea.select();
-			textarea.setSelectionRange(0, 9999);
-			document.execCommand('copy');
-			document.body.removeChild(textarea);
-		},
+		copyToClipboard,
 	},
 	components: {
 		AnimationIcon,

@@ -12,6 +12,8 @@
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Tooltip from '@/src/Components/Message/Tooltip';
+import copyToClipboard from '@/utils/copy-to-clipboard';
+
 export default {
 	name: 'IconWrapper',
 	props: {
@@ -26,15 +28,7 @@ export default {
 		},
 	},
 	methods: {
-		copyToClipboard(text) {
-			let textarea = document.createElement('textarea');
-			textarea.value = text;
-			document.body.appendChild(textarea);
-			textarea.select();
-			textarea.setSelectionRange(0, 9999);
-			document.execCommand('copy');
-			document.body.removeChild(textarea);
-		},
+		copyToClipboard,
 	},
 	components: {
 		Icon,
