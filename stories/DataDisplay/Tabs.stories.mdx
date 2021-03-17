@@ -72,6 +72,7 @@ export const Default = (args, { argTypes }) => ({
                     selectedNo2: 0,
                     selectedNo3: 0,
                     selectedNo4: 0,
+                    length: 10,
                     items: ['캠프 일정', '새 댓글', '수료증'],
                 }
             },
@@ -92,7 +93,7 @@ export const Default = (args, { argTypes }) => ({
             template: `
             <div>
                 <Tabs :tabIndex="selectedNo1"  @changeTabIndex="handleChangeTabIndex1">
-                    <template v-for="(item, index) in 5" :slot="'item' + index">
+                    <template v-for="(item, index) in this.length" :slot="'item' + index">
                             <Button>
                                 Tab{{ item }}
                             </Button>
@@ -101,7 +102,7 @@ export const Default = (args, { argTypes }) => ({
                 <Typography type="caption1">basic type</Typography>
                 <br/>
                 <Tabs type="swiper" :tabIndex="selectedNo2" @changeTabIndex="handleChangeTabIndex2">
-                    <template v-for="(item, index) in 5" :slot="'item' + index">
+                    <template v-for="(item, index) in this.length" :slot="'item' + index">
                             <Button>
                                 Tab{{ item }}
                             </Button>
@@ -110,7 +111,7 @@ export const Default = (args, { argTypes }) => ({
                 <Typography type="caption1">swiper type</Typography>
                 <br/>
                 <Tabs :tabIndex="selectedNo3" @changeTabIndex="handleChangeTabIndex3">
-                   <template v-for="(item, index) in 5" :slot="'item' + index">
+                   <template v-for="(item, index) in this.length" :slot="'item' + index">
                            <Button style="position: relative">
                                Tab{{ item }}
                            </Button>
@@ -118,7 +119,7 @@ export const Default = (args, { argTypes }) => ({
                    </template>
                </Tabs>
                <Tabs :tabIndex="selectedNo4" type="swiper" @changeTabIndex="handleChangeTabIndex4">
-                  <template v-for="(item, index) in 5" :slot="'item' + index">
+                  <template v-for="(item, index) in this.length" :slot="'item' + index">
                           <Button style="position: relative">
                               Tab{{ item }}
                           </Button>

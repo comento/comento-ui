@@ -1,7 +1,7 @@
 <template>
 	<div class="icon-wrapper">
 		<Tooltip placement="bottom">
-			<Icon :name="name" :color="color" @click="copyToClipboard(name)"></Icon>
+			<Icon :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)" />
 			<template v-slot:popover>
 				<div>{{ name }}</div>
 			</template>
@@ -20,6 +20,9 @@ export default {
 		},
 		color: {
 			type: String,
+		},
+		rotate: {
+			type: Number,
 		},
 	},
 	methods: {

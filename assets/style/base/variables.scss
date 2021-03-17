@@ -6,12 +6,15 @@ $screen-lg:       1140px;
 $iphone:          320px;
 $phone:           $screen-xs; // 480px
 
+$grid-outer-padding: 16px;
 $grid-gutter-width-pc:       24px;
 $grid-gutter-width-mobile:       16px;
 $grid-columns-pc:            12;
 $grid-columns-mobile:            4;
 $container-max-width-pc: 1140px;
 $container-max-width-mobile: 375px;
+$container-width-pc: $container-max-width-pc - 2 * $grid-outer-padding;
+$container-width-mobile: $container-max-width-mobile - 2 * $grid-outer-padding;
 $container-sm:            (1140px + $grid-gutter-width-pc);
 
 //
