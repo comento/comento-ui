@@ -62,8 +62,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../../../assets/style/animation/icon-threeDot-fill-animation';
-@import '../../../../assets/style/animation/icon-checkRound-line-animation';
+@import '@/assets/style/animation/icon-threeDot-fill-animation';
+@import '@/assets/style/animation/icon-checkRound-line-animation';
 
 .c-animation-icon {
 	cursor: auto;
