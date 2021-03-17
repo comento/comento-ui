@@ -38,6 +38,17 @@ storiesOf('NewLayout/NewGrid', module).add('Basic', () => ({
 								</NewCol>
 							</NewRow>
 							<NewRow>
+								<NewCol :col-sm="1" :col-lg="3">
+									<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+								</NewCol>
+								<NewCol :col-sm="1" :col-lg="3" :offset-lg="3">
+									<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+								</NewCol>
+								<NewCol :col-sm="1" :col-lg="3" >
+									<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+								</NewCol>
+							</NewRow>
+							<NewRow>
 								<NewCol :col-sm="1" :col-lg="1" >
 									<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 								</NewCol>
