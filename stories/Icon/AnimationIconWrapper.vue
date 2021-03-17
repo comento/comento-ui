@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .animation-icon-wrapper {
 	display: flex;
 	width: 24px;
