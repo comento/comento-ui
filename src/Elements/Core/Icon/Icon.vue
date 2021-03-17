@@ -28,6 +28,7 @@ import IconCloseSmallLine from '@/assets/images/icon/icon-close-small-line.svg?i
 import IconSettingSmallFill from '@/assets/images/icon/icon-setting-small-fill.svg?inline';
 import IconQuestionMarkSmallFill from '@/assets/images/icon/icon-questionMark-small-fill.svg?inline';
 import IconFileSmallLine from '@/assets/images/icon/icon-file-small-line.svg?inline';
+import IconStarSmallFill from '@/assets/images/icon/icon-star-small-fill.svg?inline';
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
 import IconQuestionMediumLine from '@/assets/images/icon/icon-question-medium-line.svg?inline';
@@ -65,6 +66,7 @@ import IconDownloadMediumLine from '@/assets/images/icon/icon-download-medium-li
 import IconExportMediumLine from '@/assets/images/icon/icon-export-medium-line.svg?inline';
 import IconClockMediumFill from '@/assets/images/icon/icon-clock-medium-fill.svg?inline';
 import IconSupportMediumLine from '@/assets/images/icon/icon-support-medium-line.svg?inline';
+import IconStarMediumFill from '@/assets/images/icon/icon-star-medium-fill.svg?inline';
 
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -110,9 +112,13 @@ import IconMegaphoneXLargeLine from '@/assets/images/icon/icon-megaphone-xlarge-
 import IconProfileXLargeFill from '@/assets/images/icon/icon-profile-xlarge-fill.svg?inline';
 import IconCheckXLargeFill from '@/assets/images/icon/icon-check-xlarge-fill.svg?inline';
 import IconUnCheckedXLargeFill from '@/assets/images/icon/icon-unchecked-xlarge-fill.svg?inline';
+import IconStarXLargeFill from '@/assets/images/icon/icon-star-xlarge-fill.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
+
+// 4x-large
+import IconStar4XLargeFill from '@/assets/images/icon/icon-star-4xlarge-fill.svg?inline';
 
 import { colors, colorKeys } from '@/src/Elements/Core/Colors';
 
@@ -131,6 +137,7 @@ export const IconNames = [
 	'IconSettingSmallFill',
 	'IconQuestionMarkSmallFill',
 	'IconFileSmallLine',
+	'IconStarSmallFill',
 	// medium
 	'IconCheckMediumFill',
 	'IconQuestionMediumLine',
@@ -168,6 +175,7 @@ export const IconNames = [
 	'IconExportMediumLine',
 	'IconClockMediumFill',
 	'IconSupportMediumLine',
+	'IconStarMediumFill',
 	// large
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
@@ -210,9 +218,11 @@ export const IconNames = [
 	'IconCelebrateXLargeLine',
 	'IconAnswerXLargeLine',
 	'IconMegaphoneXLargeLine',
+	'IconStarXLargeFill',
 	'IconProfile2XLargeFill',
 	'IconCheckXLargeFill',
 	'IconUnCheckedXLargeFill',
+	'IconStar4XLargeFill',
 ];
 
 export default {
@@ -287,6 +297,7 @@ export default {
 		IconSettingSmallFill,
 		IconQuestionMarkSmallFill,
 		IconFileSmallLine,
+		IconStarSmallFill,
 		// medium
 		IconCheckMediumFill,
 		IconQuestionMediumLine,
@@ -324,6 +335,7 @@ export default {
 		IconExportMediumLine,
 		IconClockMediumFill,
 		IconSupportMediumLine,
+		IconStarMediumFill,
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,
@@ -368,8 +380,11 @@ export default {
 		IconProfileXLargeFill,
 		IconCheckXLargeFill,
 		IconUnCheckedXLargeFill,
+		IconStarXLargeFill,
 		// 2x-large
 		IconProfile2XLargeFill,
+		// 4x-large
+		IconStar4XLargeFill,
 	},
 };
 </script>
