@@ -159,7 +159,7 @@ export default {
 $primary-background-color: $primary;
 $primary-hover-background-color: $green800;
 $primary-disabled-background-color: $green100;
-$primary-text-color: $green800;
+$primary-text-color: $green600;
 
 $success-background-color: $success;
 $success-hover-background-color: $blue800;
