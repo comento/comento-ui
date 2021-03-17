@@ -1,0 +1,11 @@
+<?xml-stylesheet type="text/css" href=".css" ?>
+<svg class="success-svg" width="18px" height="18px" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+    <circle class="success-circle" cx="9" cy="9" r="6.7" stroke-width="1.5" fill="none"/>
+    <polyline
+            class="success-checkmark"
+            stroke-width="1.5"
+            stroke-linecap="square"
+            points="5.8 10, 8 12, 12.2 7"
+            fill="none"
+    />
+</svg>

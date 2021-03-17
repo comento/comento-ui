@@ -1,0 +1,46 @@
+$curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
+
+.success-svg {
+  display: block;
+  stroke-width: 1.5;
+  stroke: #fff;
+  box-shadow: inset 0 0 0 white;
+  animation: fill .3s ease-in-out .3s forwards, scale .3s ease-in-out .4s both;
+}
+
+.success-circle {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  stroke: #00c854;
+  fill: none;
+  animation: stroke .3s $curve forwards;
+}
+
+.success-checkmark {
+  stroke: #00C854;
+  transform-origin: 50% 50%;
+  stroke-dasharray: 146;
+  stroke-dashoffset: 146;
+  animation: stroke .3s $curve .3s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 292;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0 0 0 60px white;
+  }
+}
