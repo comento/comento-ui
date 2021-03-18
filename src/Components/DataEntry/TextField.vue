@@ -28,7 +28,9 @@
 				<slot name="append" />
 			</div>
 		</div>
-		<Hint v-if="computedShowHint" :value="hint" :color="color" />
+		<Hint v-if="computedShowHint" :color="color">
+			{{ hint }}
+		</Hint>
 	</div>
 </template>
 
