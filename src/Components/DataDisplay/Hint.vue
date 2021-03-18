@@ -56,7 +56,6 @@ export default {
 	margin-top: 4px;
 	@include flexbox();
 	@include flex-direction(row);
-	@include align-items(center);
 
 	.c-icon {
 		margin-right: 2px;
