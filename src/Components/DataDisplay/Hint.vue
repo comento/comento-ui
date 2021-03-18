@@ -1,7 +1,7 @@
 <template>
 	<div v-if="value" class="c-hint">
 		<Icon name="IconExclamationSmallFill" :color="computedIconColor" />
-		<Typography type="caption2" :color="computedTextColor" element="p">
+		<Typography type="caption2" :color="computedTextColor" element="p" align="left">
 			{{ value }}
 		</Typography>
 	</div>
