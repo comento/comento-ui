@@ -1,8 +1,12 @@
 import { Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import Grid from "@/src/Components/Layout/Grid";
+import Row from "@/src/Components/Layout/Row";
+import StyleCol from "@/src/Components/Layout/StyleCol";
 import InputGroup from '@/src/Components/DataEntry/InputGroup';
-import TextField from '@/src/Components/DataEntry/Input';
+import TextField from '@/src/Components/DataEntry/TextField';
 import Button from '@/src/Components/Button/Button';
 import Box from '@/src/Components/DataDisplay/Box';
+import Hint from '@/src/Components/DataDisplay/Hint';
 
 <Meta
     title="Data Entry/InputGroup"
@@ -30,3 +34,41 @@ export const Default = (args, { argTypes }) => ({
 </Story>
 
 <ArgsTable story="Default" />
+
+### Hint
+<Canvas>
+    <Story name="Hint" height="200px">
+        {{
+            template: `
+                <Grid>
+                    <Row class="mb-10">
+                        <StyleCol :col-lg="4" col-gutters>
+                            <InputGroup>
+                                <TextField
+                                    type="text"
+                                    outlined
+                                    placeholder="닉네임"
+                                    full
+                                    :value.sync="name"
+                                />
+                                <Button
+                                    color="primary"
+                                    type="outlined"
+                                >
+                                    중복검사
+                                </Button>
+                            </InputGroup>
+                            <Hint>한글 10자, 영문∙숫자∙특수문자 20자까지 입력 가능합니다.<br v-show="isMobile">(혼용 가능)</Hint>
+                        </StyleCol>
+                    </Row>
+                </Grid>
+            `,
+            data() {
+                return {
+                    name: null,
+                };
+            },
+            components: { Grid, Row, StyleCol, InputGroup, TextField, Button, Hint },
+        }}
+    </Story>
+</Canvas>
