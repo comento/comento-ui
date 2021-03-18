@@ -18,7 +18,7 @@
 			v-on="$listeners"
 			@change="handleChange"
 		/>
-		<Hint :color="color" :value="hint" />
+		<Hint :color="color">{{ hint }}</Hint>
 	</div>
 </template>
 

@@ -8,7 +8,7 @@
 				class="c-text-field--input"
 				:type="type"
 				:placeholder="placeholder"
-				:name="name"
+				:name="computedId"
 				:label="label"
 				:align="align"
 				:readonly="readonly"
@@ -28,7 +28,9 @@
 				<slot name="append" />
 			</div>
 		</div>
-		<Hint v-if="computedShowHint" :value="hint" :color="color" />
+		<Hint v-if="computedShowHint" :color="color">
+			{{ hint }}
+		</Hint>
 	</div>
 </template>
 

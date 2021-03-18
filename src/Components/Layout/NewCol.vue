@@ -126,4 +126,18 @@ export default {
 	}
 }
 @include create-columns-classes();
+
+@mixin create-columns-offset() {
+	@for $i from 1 through $grid-columns-pc {
+		.offset-lg-#{$i} {
+			@include get-offset-pc($i);
+		}
+	}
+	@for $j from 1 through $grid-columns-mobile {
+		.offset-sm-#{$j} {
+			@include get-offset-mobile($j);
+		}
+	}
+}
+@include create-columns-offset();
 </style>
