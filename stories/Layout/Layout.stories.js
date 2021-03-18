@@ -217,7 +217,7 @@ storiesOf('Layout/Grid', module)
 		</NewGrid>
 		</div>`,
 	}))
-	.add('Full', () => ({
+	.add('Full(Old)', () => ({
 		components: { Grid, Row, StyleCol, Typography },
 		template: `<div>
 						<Typography type="display1" element="div" align="center" class="mb-64">Full </Typography>
