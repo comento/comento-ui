@@ -141,6 +141,7 @@
   @include pc {
     -ms-flex: 0 0 calc((100% - #{$grid-gutter-width-pc} - (#{$grid-gutter-width-pc} * (#{$grid-columns-pc} - 1) )) / #{$grid-columns-pc} * #{$cols} + #{$grid-gutter-width-pc} * (#{$cols}));
     flex: 0 0 calc((100% - #{$grid-gutter-width-pc} - (#{$grid-gutter-width-pc} * (#{$grid-columns-pc} - 1) )) / #{$grid-columns-pc} * #{$cols} + #{$grid-gutter-width-pc} * (#{$cols}));
+    max-width: calc((100% - #{$grid-gutter-width-pc} - (#{$grid-gutter-width-pc} * (#{$grid-columns-pc} - 1) )) / #{$grid-columns-pc} * #{$cols} + #{$grid-gutter-width-pc} * (#{$cols}));
   }
 }
 
@@ -148,6 +149,7 @@
   @include mobile {
     -ms-flex: 0 0 calc((100% - #{$grid-gutter-width-mobile} - (#{$grid-gutter-width-mobile} * (#{$grid-columns-mobile} - 1) )) / #{$grid-columns-mobile} * #{$cols} + #{$grid-gutter-width-mobile} * (#{$cols}));
     flex: 0 0 calc((100% - #{$grid-gutter-width-mobile} - (#{$grid-gutter-width-mobile} * (#{$grid-columns-mobile} - 1) )) / #{$grid-columns-mobile} * #{$cols} + #{$grid-gutter-width-mobile} * (#{$cols}));
+    max-width: calc((100% - #{$grid-gutter-width-mobile} - (#{$grid-gutter-width-mobile} * (#{$grid-columns-mobile} - 1) )) / #{$grid-columns-mobile} * #{$cols} + #{$grid-gutter-width-mobile} * (#{$cols}));
   }
 }
 
