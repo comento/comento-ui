@@ -50,15 +50,11 @@ export default {
 		width: 100%;
 		padding: 0;
 	}
-}
-@include pc {
-	.c-grid {
-		&.container {
-			width: 100%;
-			max-width: $container-max-width-mobile;
-			@include pc {
-				max-width: $container-max-width-pc;
-			}
+	&.container {
+		width: 100%;
+		max-width: $container-max-width-mobile;
+		@include pc {
+			max-width: $container-max-width-pc;
 		}
 	}
 }
