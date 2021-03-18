@@ -1,8 +1,8 @@
 <template>
-	<div v-if="value" class="c-hint">
+	<div v-if="hasSlot" class="c-hint">
 		<Icon name="IconExclamationSmallFill" :color="computedIconColor" />
 		<Typography type="caption2" :color="computedTextColor" element="p" align="left">
-			{{ value }}
+			<slot />
 		</Typography>
 	</div>
 </template>
@@ -17,10 +17,6 @@ export const color = ['primary', 'success', 'secondary', 'error'];
 export default {
 	name: 'Hint',
 	props: {
-		value: {
-			type: String,
-			default: null,
-		},
 		color: {
 			type: String,
 			default: 'secondary',
@@ -44,6 +40,9 @@ export default {
 				return this.color;
 			}
 		},
+		hasSlot() {
+			return this.$slots.default && this.$slots.default[0].text !== '';
+		},
 	},
 	components: {
 		Typography,
@@ -57,7 +56,6 @@ export default {
 	margin-top: 4px;
 	@include flexbox();
 	@include flex-direction(row);
-	@include align-items(center);
 
 	.c-icon {
 		margin-right: 2px;
