@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-grid" :class="[computedFluid]" :style="[computedBgColor]">
+	<div class="c-application c-new-grid" :class="[computedFluid]" :style="[computedBgColor]">
 		<slot />
 	</div>
 </template>
@@ -38,7 +38,7 @@ export default {
 /*@import '@/assets/style/base/main';*/
 
 /* Mobile first */
-.c-grid {
+.c-new-grid {
 	position: relative;
 	width: 100%;
 	padding-right: 16px;
@@ -47,11 +47,9 @@ export default {
 	margin-left: auto;
 	box-sizing: border-box;
 	&.fluid {
-		width: 100%;
 		padding: 0;
 	}
 	&.container {
-		width: 100%;
 		max-width: $container-max-width-mobile;
 		@include pc {
 			max-width: $container-max-width-pc;
@@ -59,7 +57,7 @@ export default {
 	}
 }
 
-.main_grid_component {
+.main-grid-component {
 	padding-top: 48px !important;
 	overflow-x: hidden;
 	-ms-overflow-x: hidden;

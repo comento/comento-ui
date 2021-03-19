@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-row" :class="[computedGutters]">
+	<div class="c-application c-new-row" :class="[computedGutters]">
 		<slot />
 	</div>
 </template>
@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 /* Mobile first */
-.c-row {
+.c-new-row {
 	display: flex;
 	flex-wrap: wrap;
 	margin-right: $grid-gutter-width-mobile * (-1) / 2;
