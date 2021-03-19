@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="c-application c-col"
+		class="c-application c-new-col"
 		:class="[computedSm, computedOffsetSm, computedLg, computedOffsetLg, computedGutters]"
 		:style="computedStyle"
 	>
@@ -55,28 +55,28 @@ export default {
 	computed: {
 		computedSm() {
 			if (this.colSm !== -1) {
-				return `col-sm-${this.colSm}`;
+				return `new-col-sm-${this.colSm}`;
 			} else {
 				return null;
 			}
 		},
 		computedOffsetSm() {
 			if (this.offsetSm !== -1) {
-				return `offset-sm-${this.offsetSm}`;
+				return `new-offset-sm-${this.offsetSm}`;
 			} else {
 				return null;
 			}
 		},
 		computedLg() {
 			if (this.colLg !== -1) {
-				return `col-lg-${this.colLg}`;
+				return `new-col-lg-${this.colLg}`;
 			} else {
 				return null;
 			}
 		},
 		computedOffsetLg() {
 			if (this.offsetLg !== -1) {
-				return `offset-lg-${this.offsetLg}`;
+				return `new-offset-lg-${this.offsetLg}`;
 			} else {
 				return null;
 			}
@@ -98,7 +98,7 @@ export default {
 
 <style lang="scss" scoped>
 /* Mobile first */
-.c-col {
+.c-new-col {
 	position: relative;
 	width: 100%;
 	padding-right: $grid-gutter-width-mobile / 2;
@@ -115,12 +115,12 @@ export default {
 }
 @mixin create-columns-classes() {
 	@for $i from 1 through $grid-columns-pc {
-		.col-lg-#{$i} {
+		.new-col-lg-#{$i} {
 			@include get-columns-width-pc($i);
 		}
 	}
 	@for $j from 1 through $grid-columns-mobile {
-		.col-sm-#{$j} {
+		.new-col-sm-#{$j} {
 			@include get-columns-width-mobile($j);
 		}
 	}
@@ -129,12 +129,12 @@ export default {
 
 @mixin create-columns-offset() {
 	@for $i from 1 through $grid-columns-pc {
-		.offset-lg-#{$i} {
+		.new-offset-lg-#{$i} {
 			@include get-offset-pc($i);
 		}
 	}
 	@for $j from 1 through $grid-columns-mobile {
-		.offset-sm-#{$j} {
+		.new-offset-sm-#{$j} {
 			@include get-offset-mobile($j);
 		}
 	}
