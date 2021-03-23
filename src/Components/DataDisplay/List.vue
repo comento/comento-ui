@@ -32,7 +32,7 @@ export default {
 
 	&.spacing {
 		> .c-list-item:not(:last-child) {
-			margin-bottom: 6px;
+			margin: 6px 0;
 		}
 	}
 }
