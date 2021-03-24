@@ -80,6 +80,18 @@ import SwiperItemExample from "./SwiperItemExample";
                 type: "number",
             },
         },
+        autoplay: {
+            description: "자동재생 여부",
+            control: {
+                type: "boolean",
+            },
+        },
+        autoplayDelay: {
+            description: "자동재생 시 슬라이드 사이 시간 간격",
+            control: {
+                type: "number",
+            },
+        },
     }}
 />
 
@@ -88,7 +100,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, SwiperItemExample },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup">
+            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup" :autoplay="autoplay" :autoplay-delay="autoplayDelay">
                 <template v-for="(item, index) in 10" :slot="'item' + index">
                 <SwiperItemExample :text="'ITEM' + (index+1)" ></SwiperItemExample>
                 </template>
