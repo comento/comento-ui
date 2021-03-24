@@ -403,6 +403,7 @@ $swiper-control-circle-radius: 16px;
 }
 ::v-deep .swiper-pagination-outside {
 	text-align: center;
+	margin-top: 3px !important;
 	.swiper-pagination-bullet {
 		&:not(:last-child) {
 			margin-right: 6px;
