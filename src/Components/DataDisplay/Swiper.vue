@@ -239,6 +239,7 @@ export default {
 						// swipe하면 autoplay가 멈추는 속성
 						disableOnInteraction: false,
 					},
+					loop: true,
 				}),
 				slidesPerGroup: this.slidesPerGroup,
 			};
