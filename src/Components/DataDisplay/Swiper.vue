@@ -177,6 +177,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		autoplayDelay: {
+			type: Number,
+			default: 5000,
+		},
 	},
 	data() {
 		return {
@@ -235,7 +239,7 @@ export default {
 				...(canHaveSpacing && { spaceBetween: this.spacing }),
 				...(this.autoplay && {
 					autoplay: {
-						delay: this.slidesPerView > 1 ? 3000 : 2000,
+						delay: this.autoplayDelay,
 						// swipe하면 autoplay가 멈추는 속성
 						disableOnInteraction: false,
 					},
