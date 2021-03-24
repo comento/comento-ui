@@ -177,6 +177,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		autoplayDelay: {
+			type: Number,
+			default: 5000,
+		},
 	},
 	data() {
 		return {
@@ -222,6 +226,7 @@ export default {
 				(Number.isInteger(Number(this.slidesPerView)) && this.slidesPerView > 1) ||
 				this.slidesPerView === 'auto';
 			return {
+				loop: true,
 				navigation: {
 					nextEl: swiperButtonNextSelector,
 					prevEl: swiperButtonPrevSelector,
@@ -235,7 +240,7 @@ export default {
 				...(canHaveSpacing && { spaceBetween: this.spacing }),
 				...(this.autoplay && {
 					autoplay: {
-						delay: this.slidesPerView > 1 ? 3000 : 2000,
+						delay: this.autoplayDelay,
 						// swipe하면 autoplay가 멈추는 속성
 						disableOnInteraction: false,
 					},
@@ -398,6 +403,7 @@ $swiper-control-circle-radius: 16px;
 }
 ::v-deep .swiper-pagination-outside {
 	text-align: center;
+	margin-top: 3px !important;
 	.swiper-pagination-bullet {
 		&:not(:last-child) {
 			margin-right: 6px;
