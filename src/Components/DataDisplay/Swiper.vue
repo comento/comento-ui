@@ -226,6 +226,7 @@ export default {
 				(Number.isInteger(Number(this.slidesPerView)) && this.slidesPerView > 1) ||
 				this.slidesPerView === 'auto';
 			return {
+				loop: true,
 				navigation: {
 					nextEl: swiperButtonNextSelector,
 					prevEl: swiperButtonPrevSelector,
@@ -243,7 +244,6 @@ export default {
 						// swipe하면 autoplay가 멈추는 속성
 						disableOnInteraction: false,
 					},
-					loop: true,
 				}),
 				slidesPerGroup: this.slidesPerGroup,
 			};
