@@ -7,7 +7,7 @@
 				</Typography>
 			</div>
 			<div class="c-edu-card--title mb-8">
-				<Typography type="body1" color="gray900">{{ title }}</Typography>
+				<slot name="title" />
 			</div>
 			<div>
 				<Typography type="caption1" element="span" color="gray500">
@@ -41,9 +41,6 @@ export default {
 			type: String,
 		},
 		category: {
-			type: String,
-		},
-		title: {
 			type: String,
 		},
 		captionLeft: {
