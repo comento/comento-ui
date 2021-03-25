@@ -1,3 +1,12 @@
+## [0.1.68](https://github.com/comento/comento-ui/compare/v0.1.67...v0.1.68) (2021-03-25)
+
+
+### Reverts
+
+* Revert "[change] eduCard title props를 slot형태로 변경 (#424)" (#425) ([9fc16d2](https://github.com/comento/comento-ui/commit/9fc16d254eb7bcc57f6a92afe820db85b8d7b7b0)), closes [#424](https://github.com/comento/comento-ui/issues/424) [#425](https://github.com/comento/comento-ui/issues/425)
+
+
+
 ## [0.1.67](https://github.com/comento/comento-ui/compare/v0.1.66...v0.1.67) (2021-03-25)
 
 
