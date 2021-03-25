@@ -43,7 +43,7 @@
 						:key="`c-select--option-${index}`"
 						size="small"
 						class="c-select--list-item"
-						@click="handleSelect(option)"
+						@click="handleSelect(option, true)"
 					>
 						<Typography type="body2" color="gray800">{{ handleOptions(option, 'label') }}</Typography>
 						<Icon v-if="option.icon" :name="option.icon" class="c-pointer" />
@@ -143,9 +143,17 @@ export default {
 	},
 	watch: {
 		// 초기 렌더링 시 object option을 가지고 있어도 select를 하기 전 value 그대로 노출되는 이슈 해결
-		value(newVal) {
-			const option = this.options.find(option => option.value === newVal);
-			this.handleSelect(option);
+		value: {
+			immediate: true,
+			handler(newVal, oldVal) {
+				// 초기 렌더링시 oldVal = undefined
+				// 초기 렌더링 시에만 this.handleSelect를 실행시키면 된다. (value에 맞는 label을 표시하기 위해)
+				const emitEvent = oldVal !== undefined;
+				if (!emitEvent) {
+					const option = this.options.find(option => option.value === newVal);
+					this.handleSelect(option, emitEvent);
+				}
+			},
 		},
 	},
 	methods: {
@@ -161,9 +169,11 @@ export default {
 			}
 			return option;
 		},
-		handleSelect(option) {
+		handleSelect(option, emitEvent = false) {
 			this.selectOption = option;
-			this.$emit('input', this.handleOptions(option, 'value'));
+			if (emitEvent) {
+				this.$emit('input', this.handleOptions(option, 'value'));
+			}
 			this.close();
 		},
 		handleOpen() {
