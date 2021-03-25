@@ -32,6 +32,18 @@ import StyleCol from "@/src/Components/Layout/StyleCol";
                 type: "text",
             },
         },
+        title: {
+            description: "캠프 제목<br/>`String`",
+            defaultValue: "title",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
+        },
         captionLeft: {
             description: "좌측 캡션<br/>`String`",
             defaultValue: "captionLeft",
@@ -69,31 +81,28 @@ export const Default = (args, { argTypes }) => ({
                     <EduCard
                         :background-image="backgroundImage"
                         :category="category"
+                        :title="title"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
-                    >
-                       <template v-slot:title>Title</template>
-                    </EduCard>
+                    />
                 </StyleCol>
                 <StyleCol :col-lg="4">
                     <EduCard
                         :background-image="backgroundImage"
                         :category="category"
+                        :title="title"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
-                    >
-                       <template v-slot:title>Title</template>
-                    </EduCard>
+                    />
                 </StyleCol>
                 <StyleCol :col-lg="4">
                     <EduCard
                         :background-image="backgroundImage"
                         :category="category"
+                        :title="title"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
-                    >
-                       <template v-slot:title>Title</template>
-                    </EduCard>
+                    />
                 </StyleCol>
             </Row>
         </Grid>
@@ -128,11 +137,10 @@ export const Default = (args, { argTypes }) => ({
                             <EduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
+                                title="title"
                                 caption-left="captionLeft"
                                 caption-right="captionRight"
-                            >
-                               <template v-slot:title>Title</template>
-                            </EduCard>
+                            />
                         </StyleCol>
                         <StyleCol :col-lg="4">
                             <EduCard
@@ -141,9 +149,7 @@ export const Default = (args, { argTypes }) => ({
                                 title="대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심알아보고 보고서 작성과 직무 체험하기"
                                 caption-left="captionLeft"
                                 caption-right="captionRight"
-                            >
-                               <template v-slot:title>Title</template>
-                            </EduCard>
+                            />
                         </StyleCol>
                         <StyleCol :col-lg="4">
                             <EduCard
@@ -152,9 +158,7 @@ export const Default = (args, { argTypes }) => ({
                                 title="title"
                                 caption-left="captionLeft"
                                 caption-right="captionRight"
-                            >
-                               <template v-slot:title>Title</template>
-                            </EduCard>
+                            />
                         </StyleCol>
                     </Row>
                 </Grid>
