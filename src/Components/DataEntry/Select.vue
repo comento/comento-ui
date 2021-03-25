@@ -142,6 +142,11 @@ export default {
 		},
 	},
 	watch: {
+		// 이렇게 해야 options가 반응형일 때를 대응할 수 있다.
+		options() {
+			const option = this.options.find(option => option.value === this.value);
+			this.handleSelect(option, false);
+		},
 		// 초기 렌더링 시 object option을 가지고 있어도 select를 하기 전 value 그대로 노출되는 이슈 해결
 		value: {
 			immediate: true,
