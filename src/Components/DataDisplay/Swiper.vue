@@ -179,7 +179,7 @@ export default {
 		},
 		autoplayDelay: {
 			type: Number,
-			default: 5000,
+			default: 6000,
 		},
 	},
 	data() {
