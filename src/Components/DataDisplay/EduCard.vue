@@ -105,5 +105,22 @@ export default {
 			}
 		}
 	}
+
+	&:hover {
+		.c-edu-card--image {
+			animation: scale-up-center 0.2s ease-in both;
+		}
+	}
+
+	@keyframes scale-up-center {
+		0% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+		100% {
+			-webkit-transform: scale(1.07);
+			transform: scale(1.07);
+		}
+	}
 }
 </style>
