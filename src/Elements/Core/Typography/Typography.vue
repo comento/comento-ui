@@ -129,7 +129,7 @@ p {
 }
 .c_headline1 {
 	font-size: 32px;
-	line-height: 130%;
+	line-height: 125%;
 	font-weight: bold;
 }
 .c_headline2 {
