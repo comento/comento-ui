@@ -92,10 +92,10 @@ export default {
 		left: 50%;
 		@include transform(translate(-50%, -50%));
 		@include opacity(0.9);
+		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			border: none;
-			border-top-right-radius: 4px;
-			border-bottom-right-radius: 4px;
+			@include border-radius(4px);
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -117,12 +117,23 @@ export default {
 
 	@keyframes scale-up-center {
 		0% {
-			-webkit-transform: scale(1);
-			transform: scale(1);
+			-webkit-transform: translate(-50%, -50%) scale(1);
+			transform: translate(-50%, -50%) scale(1);
 		}
 		100% {
-			-webkit-transform: scale(1.07);
-			transform: scale(1.07);
+			-webkit-transform: translate(-50%, -50%) scale(1.07);
+			transform: translate(-50%, -50%) scale(1.07);
+		}
+	}
+
+	@keyframes scale-down-center {
+		0% {
+			-webkit-transform: translate(-50%, -50%) scale(1.07);
+			transform: translate(-50%, -50%) scale(1.07);
+		}
+		100% {
+			-webkit-transform: translate(-50%, -50%) scale(1);
+			transform: translate(-50%, -50%) scale(1);
 		}
 	}
 }
