@@ -117,12 +117,12 @@ export default {
 
 	@keyframes scale-up-center {
 		0% {
-			-webkit-transform: scale(1);
-			transform: scale(1);
+			-webkit-transform: translate(-50%, -50%) scale(1);
+			transform: translate(-50%, -50%) scale(1);
 		}
 		100% {
-			-webkit-transform: scale(1.07);
-			transform: scale(1.07);
+			-webkit-transform: translate(-50%, -50%) scale(1.07);
+			transform: translate(-50%, -50%) scale(1.07);
 		}
 	}
 }
