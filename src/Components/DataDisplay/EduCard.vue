@@ -87,8 +87,11 @@ export default {
 	&--image {
 		border: none;
 		width: 100%;
-		opacity: 0.7;
-		height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%, -50%));
+		@include opacity(0.9);
 		&-container {
 			border: none;
 			border-top-right-radius: 4px;
@@ -103,6 +106,23 @@ export default {
 			@include pc {
 				height: 128px;
 			}
+		}
+	}
+
+	&:hover {
+		.c-edu-card--image {
+			animation: scale-up-center 0.2s ease-in both;
+		}
+	}
+
+	@keyframes scale-up-center {
+		0% {
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+		100% {
+			-webkit-transform: scale(1.07);
+			transform: scale(1.07);
 		}
 	}
 }
