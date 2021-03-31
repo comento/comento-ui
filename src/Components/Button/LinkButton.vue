@@ -41,7 +41,7 @@ export default {
 		},
 		to: {
 			type: [String, Object],
-			default: 'javascript:void();',
+			default: 'javascript:void(0);',
 			validator(value) {
 				const isString = typeof value === 'string';
 				const isObject = typeof value === 'object' && value.constructor === Object;
