@@ -59,16 +59,10 @@ export default {
 		external: {
 			type: Boolean,
 			default: true,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		nuxt: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		// external일 때만 적용됨
 		target: {
