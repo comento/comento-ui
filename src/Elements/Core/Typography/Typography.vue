@@ -174,7 +174,7 @@ p {
 }
 .c_caption2 {
 	font-size: 10px;
-	line-height: 100%;
+	line-height: 115%;
 	font-weight: 300;
 }
 </style>
