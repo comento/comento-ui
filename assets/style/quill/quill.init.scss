@@ -24,6 +24,11 @@
   color: $gray800;
   @include body1;
 
+  &-content {
+    min-height: auto;
+    height: auto;
+  }
+
   &.ql-blank::before {
     color: $gray300;
     font-style: normal;
