@@ -11,7 +11,13 @@
 		<div v-if="$slots['title'] || $slots['close'] || $slots['action']" class="c-fullscreen-modal--header">
 			<div class="c-fullscreen-modal--header-container">
 				<div v-if="closeType !== 'none'" class="c-fullscreen-modal--header-close" @click="close()">
-					<Icon v-if="closeType === 'icon'" name="IconCloseLargeLine" :rotate="-90" color="gray800" />
+					<Icon
+						v-if="closeType === 'icon'"
+						name="IconCloseLargeLine"
+						:rotate="-90"
+						color="gray800"
+						class="c-pointer"
+					/>
 					<NarrowButton v-else size="medium">
 						<slot name="close" />
 					</NarrowButton>

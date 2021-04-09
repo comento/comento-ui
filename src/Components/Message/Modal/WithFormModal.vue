@@ -129,7 +129,7 @@ export default {
 			return this.isMobile ? '86vh' : '640px';
 		},
 		computedWidth() {
-			return this.full ? '100%' : 'auto';
+			return this.full || this.isMobile ? '100%' : 'auto';
 		},
 	},
 	methods: {
