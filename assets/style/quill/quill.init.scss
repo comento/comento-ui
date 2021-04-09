@@ -24,6 +24,11 @@
   color: $gray800;
   @include body1;
 
+  &-content {
+    min-height: auto;
+    height: auto;
+  }
+
   &.ql-blank::before {
     color: $gray300;
     font-style: normal;
@@ -116,6 +121,33 @@
 
   .ql-picker.ql-header {
     width: 65px;
+
+    .ql-picker-item:before,
+    .ql-picker-label:before {
+      content: '본문1';
+      position: relative;
+      top: -2px;
+    }
+    .ql-picker-item[data-value='1']:before,
+    .ql-picker-label[data-value='1']:before {
+      content: '제목1';
+    }
+    .ql-picker-item[data-value='2']:before,
+    .ql-picker-label[data-value='2']:before {
+      content: '제목2';
+    }
+    .ql-picker-item[data-value='3']:before,
+    .ql-picker-label[data-value='3']:before {
+      content: '제목3';
+    }
+    .ql-picker-item[data-value='5']:before,
+    .ql-picker-label[data-value='5']:before {
+      content: '본문2';
+    }
+    .ql-picker-item[data-value='6']:before,
+    .ql-picker-label[data-value='6']:before {
+      content: '캡션';
+    }
   }
 
   .ql-tooltip {
