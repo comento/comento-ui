@@ -1,0 +1,86 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import NewGrid from "@/src/Components/Layout/NewGrid";
+import NewRow from "@/src/Components/Layout/NewRow";
+import NewCol from "@/src/Components/Layout/NewCol";
+import EmptyBox, { Types } from "@/src/Components/DataDisplay/EmptyBox";
+import Typography from "@/src/Elements/Core/Typography/Typography";
+
+<Meta
+    title="Data Display/EmptyBox"
+    component={ EmptyBox }
+    argTypes={{
+        type: {
+            description: "빈화면 타입<br/>",
+            control: {
+                type: "select",
+                options: Types,
+            },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { EmptyBox, NewGrid, NewRow, NewCol, Typography },
+    template:
+        `<NewGrid>
+            <NewRow>
+                <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
+                    <EmptyBox :type="type" >
+                        <template v-slot:contents>
+                            제출된 과제가 없습니다.<br/>
+                            여기를 눌러 과제를 제출하세요.
+                        </template>
+                    </EmptyBox>
+                    <EmptyBox :type="type">
+                      <template v-slot:contents>
+                          <Typography color="gray700" type="body1" font-weight="bold" class="mb-2">제출된 과제가 없습니다.</Typography>
+                          <Typography type="caption1">
+                            <a style="color: #1e90ff;margin:0">여기</a>를 눌러 과제를 제출하세요.
+                          </Typography>
+                      </template>
+                    </EmptyBox>
+                </NewCol>
+            </NewRow>
+        </NewGrid>`,
+});
+
+**EmptyBox** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+<Canvas>
+    <Story name="Empty" height="100px">
+        {{
+            components: { EmptyBox, Typography, NewGrid, NewRow, NewCol },
+            template:
+                `<NewGrid>
+                    <NewRow>
+                        <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
+                            <EmptyBox type="simple" >
+                                <template v-slot:contents>
+                                    제출된 과제가 없습니다.<br/>
+                                    여기를 눌러 과제를 제출하세요.
+                                </template>
+                            </EmptyBox>
+                            <EmptyBox type="emphasized">
+                              <template v-slot:contents>
+                                  <Typography color="gray700" type="body1" font-weight="bold" class="mb-2">제출된 과제가 없습니다.</Typography>
+                                  <Typography type="caption1">
+                                    <a style="color: #1e90ff;margin:0">여기</a>를 눌러 과제를 제출하세요.
+                                  </Typography>
+                              </template>
+                            </EmptyBox>
+                        </NewCol>
+                    </NewRow>
+                </NewGrid>`,
+        }}
+    </Story>
+</Canvas>
+
+

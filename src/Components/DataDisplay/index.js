@@ -5,6 +5,7 @@ import Chip from './Chip';
 import ChipGroup from './ChipGroup';
 import Content from './Content';
 import EduCard from './EduCard';
+import EmptyBox from './EmptyBox';
 import FileItem from './FileItem';
 import FileList from './FileList';
 import FileSummary from './FileSummary';
@@ -32,5 +33,6 @@ export {
 	Swiper,
 	Table,
 	Tabs,
+	EmptyBox,
 };
 export * from './Drawer';
