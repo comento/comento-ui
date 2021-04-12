@@ -15,7 +15,7 @@
 
 <script>
 import Box from '@/src/Components/DataDisplay/Box';
-import Typography from '../../Elements/Core/Typography/Typography';
+import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export const Types = ['simple', 'emphasized'];
 
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-c-empty-box {
+.c-empty-box {
 	display: block;
 }
 </style>
