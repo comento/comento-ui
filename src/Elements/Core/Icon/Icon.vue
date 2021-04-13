@@ -68,6 +68,7 @@ import IconClockMediumFill from '@/assets/images/icon/icon-clock-medium-fill.svg
 import IconSupportMediumLine from '@/assets/images/icon/icon-support-medium-line.svg?inline';
 import IconStarMediumFill from '@/assets/images/icon/icon-star-medium-fill.svg?inline';
 import IconQuestionMarkMediumLine from '@/assets/images/icon/icon-questionMark-medium-line.svg?inline';
+import IconMegaphoneMediumLine from '@/assets/images/icon/icon-megaphone-medium-line.svg?inline';
 
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -178,6 +179,7 @@ export const IconNames = [
 	'IconSupportMediumLine',
 	'IconStarMediumFill',
 	'IconQuestionMarkMediumLine',
+	'IconMegaphoneMediumLine',
 	// large
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
@@ -339,6 +341,7 @@ export default {
 		IconSupportMediumLine,
 		IconStarMediumFill,
 		IconQuestionMarkMediumLine,
+		IconMegaphoneMediumLine,
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,
