@@ -21,7 +21,7 @@
 					v-if="closable"
 					class="c-callout--close-button"
 					:name="computedCloseIconName"
-					@click="handleClose"
+					@click.stop.capture="handleClose"
 				/>
 			</div>
 		</div>
