@@ -55,6 +55,9 @@
   &.justify-between {
     justify-content: space-between;
   }
+  &.justify-around {
+    justify-content: space-around;
+  }
   &.justify-start {
     justify-content: flex-start;
   }
