@@ -13,7 +13,7 @@
 import paddingMixin from '../../../mixins/paddingMixin';
 export const ChipColors = ['secondary', 'primary', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
-export const ChipTypes = ['fill', 'outlined', 'filter'];
+export const ChipTypes = ['fill', 'outlined', 'filter', 'oval-outline'];
 
 export default {
 	name: 'Chip',
@@ -98,6 +98,11 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 		}
+		&.oval-outline {
+			color: $gray700;
+			border: 1px solid $gray400;
+			background-color: $white;
+		}
 	}
 	&.primary {
 		color: $white;
@@ -108,12 +113,22 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 		}
+		&.oval-outline {
+			color: $primary;
+			border: 1px solid $primary;
+			background-color: $white;
+		}
 	}
 	&.success {
 		color: $white;
 		border: 1px solid $success;
 		background-color: $success;
 		&.outlined {
+			color: $success;
+			border: 1px solid $success;
+			background-color: $white;
+		}
+		&.oval-outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
@@ -129,6 +144,10 @@ export default {
 			border-radius: 10px;
 			padding: 3px 4px;
 		}
+		&.oval-outline {
+			border-radius: 10px;
+			padding: 2px 3px;
+		}
 	}
 	&.medium {
 		@include caption1();
@@ -138,6 +157,10 @@ export default {
 		&.filter {
 			border-radius: 12px;
 			padding: 5.5px 10px;
+		}
+		&.oval-outline {
+			border-radius: 12px;
+			padding: 4.5px 9px;
 		}
 	}
 	&.large {
@@ -149,6 +172,10 @@ export default {
 			border-radius: 15px;
 			padding: 5px 14px;
 		}
+		&.oval-outline {
+			border-radius: 15px;
+			padding: 4px 13px;
+		}
 	}
 	&.xlarge {
 		@include body1();
@@ -157,6 +184,10 @@ export default {
 		&.filter {
 			border-radius: 19px;
 			padding: 5px 16px;
+		}
+		&.oval-outline {
+			border-radius: 19px;
+			padding: 4px 15px;
 		}
 	}
 	&.filter {

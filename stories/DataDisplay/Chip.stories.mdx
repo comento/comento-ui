@@ -24,7 +24,7 @@ import Chip, { ChipColors, ChipSizes } from '@/src/Components/DataDisplay/Chip';
             defaultValue: "fill",
             control: {
                 type: "select",
-                options: ["fill" ,"outlined" ,"filter"],
+                options: ["fill" ,"outlined" ,"filter","oval-outline"],
             },
         },
         color: {
@@ -124,6 +124,11 @@ export const Basic = (args, { argTypes }) => ({
                   <Chip type="filter" color="success" size="medium" class="ml-4">Chip</Chip>
                   <Chip type="filter" color="success" size="large" class="ml-4">Chip</Chip>
                   <Chip type="filter" color="success" size="xlarge" class="ml-4">Chip</Chip>
+                  <hr>
+                  <Chip type="oval-outline" color="success" size="small">Chip</Chip>
+                  <Chip type="oval-outline" color="success" size="medium" class="ml-4">Chip</Chip>
+                  <Chip type="oval-outline" color="success" size="large" class="ml-4">Chip</Chip>
+                  <Chip type="oval-outline" color="success" size="xlarge" class="ml-4">Chip</Chip>
                 </div>
         `,
             components: { Chip },
