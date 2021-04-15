@@ -52,6 +52,11 @@ import Chip, { ChipColors, ChipSizes } from '@/src/Components/DataDisplay/Chip';
               },
               defaultValue: null,
         },
+        isHover: {
+            description: "Chip hover 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
     }}
 />
 
@@ -59,7 +64,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Chip },
     template:
-        `<Chip :type="type"  :size="size" :color="color" :full="full" :paddings="paddings"> {{text}}</Chip>`,
+        `<Chip :type="type"  :size="size" :color="color" :full="full" :paddings="paddings" :isHover="isHover"> {{text}}</Chip>`,
 });
 
 # Chip

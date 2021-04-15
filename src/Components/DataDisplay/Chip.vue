@@ -1,7 +1,7 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull]"
+		:class="[computedType, computedColor, computedSize, computedFull, computedIsHover]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
@@ -50,6 +50,10 @@ export default {
 				return null;
 			},
 		},
+		isHover: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		computedType() {
@@ -75,6 +79,11 @@ export default {
 				return null;
 			}
 		},
+		computedIsHover() {
+			return {
+				isHover: this.isHover,
+			};
+		},
 	},
 };
 </script>
@@ -93,45 +102,84 @@ export default {
 		color: $gray700;
 		border: 1px solid $gray100;
 		background-color: $gray100;
+
+		&.isHover:hover {
+			background-color: $gray200;
+		}
+
 		&.outlined {
 			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
+
+			&.isHover:hover {
+				background-color: $gray100;
+			}
 		}
 		&.oval-outline {
 			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
+
+			&.isHover:hover {
+				background-color: $gray100;
+			}
 		}
 	}
 	&.primary {
 		color: $white;
 		border: 1px solid $primary;
 		background-color: $primary;
+
+		&.isHover:hover {
+			background-color: $green800;
+		}
+
 		&.outlined {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
+
+			&.isHover:hover {
+				background-color: $green100;
+			}
 		}
 		&.oval-outline {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
+
+			&.isHover:hover {
+				background-color: $green100;
+			}
 		}
 	}
 	&.success {
 		color: $white;
 		border: 1px solid $success;
 		background-color: $success;
+
+		&.isHover:hover {
+			background-color: $blue800;
+		}
+
 		&.outlined {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
+
+			&.isHover:hover {
+				background-color: $blue100;
+			}
 		}
 		&.oval-outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
+
+			&.isHover:hover {
+				background-color: $blue100;
+			}
 		}
 	}
 	/*사이즈*/
