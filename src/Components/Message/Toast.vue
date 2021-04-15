@@ -1,7 +1,15 @@
 <template>
 	<transition name="slide-fade">
-		<aside v-if="sync_show" class="c-application c-toast" :class="[computedType, computedPosition]">
-			<Icon v-if="icon" class="c-toast--icon" :name="icon" :color="toastItemColor" />
+		<aside
+			v-if="sync_show"
+			class="c-application c-toast"
+			:class="[computedType, computedPosition]"
+			v-on="$listeners"
+		>
+			<div v-if="$slots['icon']" class="c-toast--icon">
+				<slot name="icon" />
+			</div>
+			<Icon v-else-if="icon" class="c-toast--icon" :name="icon" :color="toastItemColor" />
 			<Typography class="c-toast--message" element="p" type="body2" :color="toastItemColor">
 				{{ message }}
 			</Typography>
