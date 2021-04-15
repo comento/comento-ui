@@ -19,7 +19,7 @@
 				<!-- 닫기 -->
 				<Icon
 					v-if="closable"
-					class="c-callout--close-button"
+					class="c-callout--close-button c-pointer"
 					:name="computedCloseIconName"
 					@click.stop.capture="handleClose"
 				/>
