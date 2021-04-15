@@ -13,7 +13,7 @@
 import paddingMixin from '../../../mixins/paddingMixin';
 export const ChipColors = ['secondary', 'primary', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
-export const ChipTypes = ['fill', 'outlined', 'filter', 'oval-outline'];
+export const ChipTypes = ['fill', 'outlined', 'oval-fill', 'oval-outline'];
 
 export default {
 	name: 'Chip',
@@ -140,7 +140,7 @@ export default {
 		height: 16px;
 		padding: 0 4px;
 		font-weight: normal;
-		&.filter {
+		&.oval-fill {
 			border-radius: 10px;
 			padding: 3px 4px;
 		}
@@ -154,7 +154,7 @@ export default {
 		height: 24px;
 		padding: 5.5px 8px;
 		font-weight: normal;
-		&.filter {
+		&.oval-fill {
 			border-radius: 12px;
 			padding: 5.5px 10px;
 		}
@@ -168,7 +168,7 @@ export default {
 		height: 30px;
 		padding: 4.5px 10px;
 		font-weight: normal;
-		&.filter {
+		&.oval-fill {
 			border-radius: 15px;
 			padding: 5px 14px;
 		}
@@ -181,7 +181,7 @@ export default {
 		@include body1();
 		padding: 4.5px 12px;
 		font-weight: normal;
-		&.filter {
+		&.oval-fill {
 			border-radius: 19px;
 			padding: 5px 16px;
 		}
@@ -190,7 +190,7 @@ export default {
 			padding: 4px 15px;
 		}
 	}
-	&.filter {
+	&.oval-fill {
 		border: 0;
 	}
 	&.full {
