@@ -105,6 +105,7 @@ export default {
 
 		&.is-hover:hover {
 			background-color: $gray200;
+			cursor: pointer;
 		}
 
 		&.outlined {
@@ -114,6 +115,7 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $gray100;
+				cursor: pointer;
 			}
 		}
 		&.oval-outline {
@@ -123,6 +125,7 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $gray100;
+				cursor: pointer;
 			}
 		}
 	}
@@ -133,6 +136,7 @@ export default {
 
 		&.is-hover:hover {
 			background-color: $green800;
+			cursor: pointer;
 		}
 
 		&.outlined {
@@ -142,6 +146,7 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $green100;
+				cursor: pointer;
 			}
 		}
 		&.oval-outline {
@@ -151,6 +156,7 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $green100;
+				cursor: pointer;
 			}
 		}
 	}
@@ -161,6 +167,7 @@ export default {
 
 		&.is-hover:hover {
 			background-color: $blue800;
+			cursor: pointer;
 		}
 
 		&.outlined {
@@ -170,6 +177,7 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $blue100;
+				cursor: pointer;
 			}
 		}
 		&.oval-outline {
@@ -179,6 +187,7 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $blue100;
+				cursor: pointer;
 			}
 		}
 	}
