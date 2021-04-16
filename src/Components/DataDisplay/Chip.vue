@@ -1,7 +1,7 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull, computedIsHover]"
+		:class="[computedType, computedColor, computedSize, computedFull, computedIsHover, computedTransparent]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
@@ -54,6 +54,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		transparent: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		computedType() {
@@ -84,6 +88,11 @@ export default {
 				'is-hover': this.isHover,
 			};
 		},
+		computedTransparent() {
+			return {
+				transparent: this.transparent,
+			};
+		},
 	},
 };
 </script>
@@ -105,7 +114,6 @@ export default {
 
 		&.is-hover:hover {
 			background-color: $gray200;
-			cursor: pointer;
 		}
 
 		&.outlined {
@@ -115,7 +123,10 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $gray100;
-				cursor: pointer;
+			}
+
+			&.transparent {
+				background-color: transparent;
 			}
 		}
 		&.oval-outline {
@@ -125,7 +136,10 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $gray100;
-				cursor: pointer;
+			}
+
+			&.transparent {
+				background-color: transparent;
 			}
 		}
 	}
@@ -136,7 +150,6 @@ export default {
 
 		&.is-hover:hover {
 			background-color: $green800;
-			cursor: pointer;
 		}
 
 		&.outlined {
@@ -146,7 +159,10 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $green100;
-				cursor: pointer;
+			}
+
+			&.transparent {
+				background-color: transparent;
 			}
 		}
 		&.oval-outline {
@@ -156,7 +172,10 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $green100;
-				cursor: pointer;
+			}
+
+			&.transparent {
+				background-color: transparent;
 			}
 		}
 	}
@@ -167,7 +186,6 @@ export default {
 
 		&.is-hover:hover {
 			background-color: $blue800;
-			cursor: pointer;
 		}
 
 		&.outlined {
@@ -177,7 +195,10 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $blue100;
-				cursor: pointer;
+			}
+
+			&.transparent {
+				background-color: transparent;
 			}
 		}
 		&.oval-outline {
@@ -187,7 +208,10 @@ export default {
 
 			&.is-hover:hover {
 				background-color: $blue100;
-				cursor: pointer;
+			}
+
+			&.transparent {
+				background-color: transparent;
 			}
 		}
 	}
@@ -252,6 +276,9 @@ export default {
 	}
 	&.full {
 		width: 100%;
+	}
+	&.is-hover:hover {
+		cursor: pointer;
 	}
 }
 </style>
