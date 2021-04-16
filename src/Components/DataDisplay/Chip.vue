@@ -81,7 +81,7 @@ export default {
 		},
 		computedIsHover() {
 			return {
-				isHover: this.isHover,
+				'is-hover': this.isHover,
 			};
 		},
 	},
@@ -103,7 +103,7 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.isHover:hover {
+		&.is-hover:hover {
 			background-color: $gray200;
 		}
 
@@ -112,7 +112,7 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.isHover:hover {
+			&.is-hover:hover {
 				background-color: $gray100;
 			}
 		}
@@ -121,7 +121,7 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.isHover:hover {
+			&.is-hover:hover {
 				background-color: $gray100;
 			}
 		}
@@ -131,7 +131,7 @@ export default {
 		border: 1px solid $primary;
 		background-color: $primary;
 
-		&.isHover:hover {
+		&.is-hover:hover {
 			background-color: $green800;
 		}
 
@@ -140,7 +140,7 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.isHover:hover {
+			&.is-hover:hover {
 				background-color: $green100;
 			}
 		}
@@ -149,7 +149,7 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.isHover:hover {
+			&.is-hover:hover {
 				background-color: $green100;
 			}
 		}
@@ -159,7 +159,7 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.isHover:hover {
+		&.is-hover:hover {
 			background-color: $blue800;
 		}
 
@@ -168,7 +168,7 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.isHover:hover {
+			&.is-hover:hover {
 				background-color: $blue100;
 			}
 		}
@@ -177,7 +177,7 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.isHover:hover {
+			&.is-hover:hover {
 				background-color: $blue100;
 			}
 		}
