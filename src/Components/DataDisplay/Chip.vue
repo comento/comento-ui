@@ -1,7 +1,7 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull]"
+		:class="[computedType, computedColor, computedSize, computedFull, computedIsHover]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
@@ -13,7 +13,7 @@
 import paddingMixin from '../../../mixins/paddingMixin';
 export const ChipColors = ['secondary', 'primary', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
-export const ChipTypes = ['fill', 'outlined', 'filter'];
+export const ChipTypes = ['fill', 'outlined', 'oval-fill', 'oval-outline'];
 
 export default {
 	name: 'Chip',
@@ -50,6 +50,10 @@ export default {
 				return null;
 			},
 		},
+		isHover: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		computedType() {
@@ -75,6 +79,11 @@ export default {
 				return null;
 			}
 		},
+		computedIsHover() {
+			return {
+				'is-hover': this.isHover,
+			};
+		},
 	},
 };
 </script>
@@ -93,30 +102,93 @@ export default {
 		color: $gray700;
 		border: 1px solid $gray100;
 		background-color: $gray100;
+
+		&.is-hover:hover {
+			background-color: $gray200;
+			cursor: pointer;
+		}
+
 		&.outlined {
 			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
+
+			&.is-hover:hover {
+				background-color: $gray100;
+				cursor: pointer;
+			}
+		}
+		&.oval-outline {
+			color: $gray700;
+			border: 1px solid $gray400;
+			background-color: $white;
+
+			&.is-hover:hover {
+				background-color: $gray100;
+				cursor: pointer;
+			}
 		}
 	}
 	&.primary {
 		color: $white;
 		border: 1px solid $primary;
 		background-color: $primary;
+
+		&.is-hover:hover {
+			background-color: $green800;
+			cursor: pointer;
+		}
+
 		&.outlined {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
+
+			&.is-hover:hover {
+				background-color: $green100;
+				cursor: pointer;
+			}
+		}
+		&.oval-outline {
+			color: $primary;
+			border: 1px solid $primary;
+			background-color: $white;
+
+			&.is-hover:hover {
+				background-color: $green100;
+				cursor: pointer;
+			}
 		}
 	}
 	&.success {
 		color: $white;
 		border: 1px solid $success;
 		background-color: $success;
+
+		&.is-hover:hover {
+			background-color: $blue800;
+			cursor: pointer;
+		}
+
 		&.outlined {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
+
+			&.is-hover:hover {
+				background-color: $blue100;
+				cursor: pointer;
+			}
+		}
+		&.oval-outline {
+			color: $success;
+			border: 1px solid $success;
+			background-color: $white;
+
+			&.is-hover:hover {
+				background-color: $blue100;
+				cursor: pointer;
+			}
 		}
 	}
 	/*사이즈*/
@@ -125,9 +197,13 @@ export default {
 		height: 16px;
 		padding: 0 4px;
 		font-weight: normal;
-		&.filter {
+		&.oval-fill {
 			border-radius: 10px;
 			padding: 3px 4px;
+		}
+		&.oval-outline {
+			border-radius: 10px;
+			padding: 2px 3px;
 		}
 	}
 	&.medium {
@@ -135,9 +211,13 @@ export default {
 		height: 24px;
 		padding: 5.5px 8px;
 		font-weight: normal;
-		&.filter {
+		&.oval-fill {
 			border-radius: 12px;
 			padding: 5.5px 10px;
+		}
+		&.oval-outline {
+			border-radius: 12px;
+			padding: 4.5px 9px;
 		}
 	}
 	&.large {
@@ -145,21 +225,29 @@ export default {
 		height: 30px;
 		padding: 4.5px 10px;
 		font-weight: normal;
-		&.filter {
+		&.oval-fill {
 			border-radius: 15px;
 			padding: 5px 14px;
+		}
+		&.oval-outline {
+			border-radius: 15px;
+			padding: 4px 13px;
 		}
 	}
 	&.xlarge {
 		@include body1();
 		padding: 4.5px 12px;
 		font-weight: normal;
-		&.filter {
+		&.oval-fill {
 			border-radius: 19px;
 			padding: 5px 16px;
 		}
+		&.oval-outline {
+			border-radius: 19px;
+			padding: 4px 15px;
+		}
 	}
-	&.filter {
+	&.oval-fill {
 		border: 0;
 	}
 	&.full {
