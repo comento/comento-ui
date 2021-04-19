@@ -64,19 +64,19 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width: 100%; height: 100px; display: flex; justify-content: space-around; align-items: center">
-                    <Tooltip placement="bottom-right">
+                    <Tooltip placement="bottom-right" open>
                         <Icon name="IconProfileLargeFill"></Icon>
                             <template v-slot:popover>
                                 <div>bottom-right</div>
                             </template>
                     </Tooltip>
-                    <Tooltip placement="bottom">
+                    <Tooltip placement="bottom" open>
                         <Icon name="IconProfileLargeFill"></Icon>
                             <template v-slot:popover>
                                 <div>bottom</div>
                             </template>
                     </Tooltip>
-                    <Tooltip placement="bottom-left">
+                    <Tooltip placement="bottom-left" open>
                         <Icon name="IconProfileLargeFill"></Icon>
                             <template v-slot:popover>
                                 <div>bottom-left</div>
