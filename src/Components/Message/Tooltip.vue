@@ -6,6 +6,7 @@
 		popover-base-class="c-tooltip"
 		popover-arrow-class="c-tooltip--arrow"
 		popover-inner-class="c-tooltip--inner"
+		:container="false"
 		v-bind="$attrs"
 		v-on="$listeners"
 		@show="$emit('showTooltip')"
@@ -56,6 +57,8 @@ export default {
 
 <!--storybook 과의 동기화 때문에 전역으로 적용해야 함-->
 <!--main.scss에서 import하는 식으로 하려면 따로 설정해야 함-->
-<style lang="scss">
-@import '@/assets/style/tooltip/tooltip';
+<style lang="scss" scoped>
+::v-deep {
+	@import '@/assets/style/tooltip/tooltip';
+}
 </style>
