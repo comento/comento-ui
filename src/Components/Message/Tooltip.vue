@@ -4,15 +4,15 @@
 		:placement="mapPlacement"
 		:handle-resize="true"
 		popover-base-class="c-tooltip"
-		popover-arrow-class="c-tooltip_arrow"
-		popover-inner-class="c-tooltip_inner"
+		popover-arrow-class="c-tooltip--arrow"
+		popover-inner-class="c-tooltip--inner"
 		v-bind="$attrs"
 		v-on="$listeners"
 		@show="$emit('showTooltip')"
 	>
 		<slot> </slot>
 		<template slot="popover">
-			<Typography type="body2" color="gray700">
+			<Typography class="c-tooltip--content-wrapper" type="body2" color="gray700">
 				<slot name="popover"> </slot>
 			</Typography>
 		</template>

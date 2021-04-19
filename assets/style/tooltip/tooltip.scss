@@ -1,1 +1,12 @@
 @import "common";
+.c-tooltip {
+  .c-tooltip--inner {
+    padding: 0 !important;
+    .c-tooltip--content-wrapper {
+      padding: 8px 12px;
+      a {
+        display: inline-block;
+      }
+    }
+  }
+}
