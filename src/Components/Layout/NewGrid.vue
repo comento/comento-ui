@@ -50,7 +50,7 @@ export default {
 		padding: 0;
 	}
 	&.container {
-		max-width: $container-max-width-mobile;
+		max-width: 100vw;
 		@include pc {
 			max-width: $container-max-width-pc;
 		}
