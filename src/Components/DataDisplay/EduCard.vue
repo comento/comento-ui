@@ -11,29 +11,26 @@
 					<slot name="title" />
 				</Typography>
 			</div>
-			<div>
+			<div class="c-edu-card--caption">
 				<Typography type="caption1" element="span" color="gray500">
 					{{ captionLeft }}
 				</Typography>
-				<Typography
-					v-if="captionRight"
-					type="caption1"
-					class="c-edu-card--divider"
-					element="span"
-					color="gray500"
-				>
-				</Typography>
+				<Divider v-show="captionRight" vertical class="mx-8" />
 				<Typography type="caption1" element="span" color="gray500"> {{ captionRight }}</Typography>
 			</div>
 		</div>
 		<div class="c-edu-card--image-container">
 			<img class="c-edu-card--image" :src="backgroundImage" alt="" />
 		</div>
+		<div v-if="$slots['chip']" class="c-edu-card--chip-container">
+			<slot name="chip" />
+		</div>
 	</article>
 </template>
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import Divider from '@/src/Elements/Utility/Divider';
 
 export default {
 	name: 'EduCard',
@@ -55,6 +52,7 @@ export default {
 		},
 	},
 	components: {
+		Divider,
 		Typography,
 	},
 };
@@ -76,9 +74,6 @@ export default {
 	&--title {
 		height: 48px;
 		@include ellipsis(2);
-	}
-	&--divider {
-		margin: 0 8px;
 	}
 	&--info-container {
 		margin-top: 12px;
@@ -107,6 +102,16 @@ export default {
 				height: 128px;
 			}
 		}
+	}
+	&--chip-container {
+		position: absolute;
+		top: 8px;
+		left: 10px;
+	}
+
+	&--caption {
+		@include flexbox();
+		@include flex-direction(row);
 	}
 
 	&:hover {
