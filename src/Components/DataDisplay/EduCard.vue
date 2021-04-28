@@ -22,6 +22,9 @@
 		<div class="c-edu-card--image-container">
 			<img class="c-edu-card--image" :src="backgroundImage" alt="" />
 		</div>
+		<div v-if="$slots['chip']" class="c-edu-card--chip-container">
+			<slot name="chip" />
+		</div>
 	</article>
 </template>
 
@@ -99,6 +102,11 @@ export default {
 				height: 128px;
 			}
 		}
+	}
+	&--chip-container {
+		position: absolute;
+		top: 8px;
+		left: 10px;
 	}
 
 	&--caption {
