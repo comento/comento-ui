@@ -302,7 +302,7 @@ $error-text-color: $red600;
 		}
 	}
 	&.outlined {
-		background-color: $white;
+		background-color: transparent;
 		border: 1px solid $primary-text-color;
 		color: $primary-text-color;
 		&:hover,
@@ -359,7 +359,7 @@ $error-text-color: $red600;
 		}
 	}
 	&.outlined {
-		background-color: $white;
+		background-color: transparent;
 		border: 1px solid $success-text-color;
 		color: $success-text-color;
 		&:hover,
@@ -416,7 +416,7 @@ $error-text-color: $red600;
 		}
 	}
 	&.outlined {
-		background-color: $white;
+		background-color: transparent;
 		border: 1px solid $gray400;
 		color: $secondary-text-color;
 		&:hover,
@@ -472,7 +472,7 @@ $error-text-color: $red600;
 		}
 	}
 	&.outlined {
-		background-color: $white;
+		background-color: transparent;
 		border: 1px solid $red600;
 		color: $red600;
 		&:hover,
