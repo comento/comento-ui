@@ -3,9 +3,11 @@ import EduCard from "@/src/Components/DataDisplay/EduCard";
 import Grid from "@/src/Components/Layout/Grid";
 import Row from "@/src/Components/Layout/Row";
 import StyleCol from "@/src/Components/Layout/StyleCol";
+import ChipGroup from "@/src/Components/DataDisplay/ChipGroup";
+import Chip from "@/src/Components/DataDisplay/Chip";
 
 <Meta
-    title="Data Display/EduCard"
+    title="Data Display/Card/EduCard"
     component={EduCard}
     argTypes={{
         backgroundImage: {
@@ -131,6 +133,11 @@ export const Default = (args, { argTypes }) => ({
                                 caption-left="captionLeft"
                                 caption-right="captionRight"
                             >
+                               <template v-slot:chip>
+                                  <ChipGroup>
+                                    <Chip size="small">복습 VOD</Chip>
+                                  </ChipGroup>
+                               </template>
                                <template v-slot:title>Title</template>
                             </EduCard>
                         </StyleCol>
@@ -159,7 +166,7 @@ export const Default = (args, { argTypes }) => ({
                     </Row>
                 </Grid>
             `,
-            components: { Grid, Row, StyleCol, EduCard },
+            components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip },
         }}
     </Story>
 </Canvas>
