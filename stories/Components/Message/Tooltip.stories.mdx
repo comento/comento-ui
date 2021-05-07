@@ -21,6 +21,17 @@ import NewCol from "@/src/Components/Layout/NewCol";
         options: placements
       },
     },
+    paddingX: {
+      description: "X축 padding<br/>`Number`",
+      table: {
+          type: {
+              summary: null,
+          },
+      },
+      control: {
+          type: "text",
+      },
+    },
     text: {
       description: "내부 텍스트<br/>`String`",
       defaultValue: "tooltip text",
@@ -39,8 +50,8 @@ import NewCol from "@/src/Components/Layout/NewCol";
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Tooltip, Icon },
-  template: `<div style="width: 100%; display: flex; justify-content: center;">
-                 <Tooltip :placement="placement">
+  template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                 <Tooltip :placement="placement" :padding-x="paddingX">
                      <Icon name="IconProfileLargeFill"></Icon>
                      <template v-slot:popover>
                            <div>{{ text }}</div>

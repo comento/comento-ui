@@ -13,7 +13,7 @@
 	>
 		<slot> </slot>
 		<template slot="popover">
-			<Typography class="c-tooltip--content-wrapper" type="body2" color="gray700">
+			<Typography class="c-tooltip--content-wrapper" :style="styles" type="body2" color="gray700">
 				<slot name="popover"> </slot>
 			</Typography>
 		</template>
@@ -40,6 +40,13 @@ export default {
 				return isValid;
 			},
 		},
+		paddingX: {
+			type: Number,
+			default: 12,
+			validator(value) {
+				return typeof value === 'number';
+			},
+		},
 	},
 	computed: {
 		mapPlacement() {
@@ -52,6 +59,12 @@ export default {
 				'right-bottom': 'right-end',
 			};
 			return placementMap[this.placement];
+		},
+		styles() {
+			return {
+				'padding-left': `${this.paddingX}px`,
+				'padding-right': `${this.paddingX}px`,
+			};
 		},
 	},
 	components: { Typography },
