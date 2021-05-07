@@ -61,6 +61,12 @@ import SwiperItemExample from "./SwiperItemExample";
                 options: SwiperIndicatorColors,
             },
         },
+        centeredSlides: {
+            description: "swiper center align",
+            control: {
+                type: "boolean",
+            },
+        },
         spacing: {
             description: "swiper indicator color",
             control: {
@@ -100,7 +106,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Swiper, SwiperItemExample },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup" :autoplay="autoplay" :autoplay-delay="autoplayDelay">
+            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :centeredSlides="centeredSlides" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup" :autoplay="autoplay" :autoplay-delay="autoplayDelay">
                 <template v-for="(item, index) in 10" :slot="'item' + index">
                 <SwiperItemExample :text="'ITEM' + (index+1)" ></SwiperItemExample>
                 </template>
@@ -385,6 +391,29 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div style="padding: 24px 32px;">
                     <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;">
+                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
+                        </template>
+                    </Swiper>
+                </div>`,
+            components: { Swiper, SwiperItemExample },
+        }}
+    </Story>
+</Canvas>
+
+### centeredSlides
+
+<Canvas>
+    <Story name="centeredSlides">
+        {{
+            data() {
+                return {
+                    itemLength: 10,
+                };
+            },
+            template: `
+                <div style="padding: 24px 32px;">
+                    <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;" :centeredSlides=true>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>

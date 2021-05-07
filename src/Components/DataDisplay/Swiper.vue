@@ -165,6 +165,10 @@ export default {
 				return customValidator(value, SwiperSpacings.indexOf(value) !== -1, 'Swiper', 'spacing');
 			},
 		},
+		centeredSlides: {
+			type: Boolean,
+			default: false,
+		},
 		slidesPerView: {
 			type: [Number, String],
 			default: 1,
@@ -235,6 +239,7 @@ export default {
 					el: swiperPaginationSelector,
 					clickable: true,
 				},
+				centeredSlides: this.centeredSlides,
 				allowTouchMove: true,
 				slidesPerView: this.slidesPerView,
 				...(canHaveSpacing && { spaceBetween: this.spacing }),
