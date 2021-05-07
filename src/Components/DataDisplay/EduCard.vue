@@ -1,5 +1,5 @@
 <template>
-	<article class="c-application c-edu-card">
+	<article class="c-application c-edu-card" v-bind="$attrs" v-on="$listeners">
 		<div class="c-edu-card--info-container">
 			<div class="c-edu-card--subtitle mb-4">
 				<Typography type="caption1" color="gray800" :font-weight="700">
