@@ -19,13 +19,7 @@ const colorMixin = {
 			}
 		},
 		$_setBackgroundColor(color) {
-			if (this.$_checkIsValidColor(color)) {
-				return {
-					backgroundColor: colors[color],
-				};
-			} else {
-				console.error('Background Color is not valid');
-			}
+			return this.$_checkIsValidColor(color) ? { backgroundColor: colors[color] } : { backgroundColor: color };
 		},
 		$_setBorderColor(color) {
 			if (this.$_checkIsValidColor(color)) {
