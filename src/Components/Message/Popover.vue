@@ -23,7 +23,7 @@
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
-export const placements = ['bottom', 'bottom-right', 'bottom-left'];
+export const placements = ['bottom', 'bottom-right', 'bottom-left', 'right-top', 'right', 'right-bottom'];
 
 export default {
 	name: 'Popover',
@@ -50,6 +50,9 @@ export default {
 				'bottom-right': 'bottom-end',
 				bottom: 'bottom',
 				'bottom-left': 'bottom-start',
+				'right-top': 'right-start',
+				right: 'right',
+				'right-bottom': 'right-end',
 			};
 			return placementMap[this.placement];
 		},
