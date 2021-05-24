@@ -27,6 +27,7 @@ export default {
 		mapTextColor(color) {
 			const textBlack = [
 				'gray300',
+				'gray250',
 				'gray200',
 				'gray100',
 				'gray000',
