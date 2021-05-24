@@ -10,6 +10,7 @@ export const gray600 = '#838990';
 export const gray500 = '#979CA2';
 export const gray400 = '#BEC2C6';
 export const gray300 = '#D2D5D8';
+export const gray250 = '#DEE0E3';
 export const gray200 = '#E8EAED';
 export const gray100 = '#F4F5F7';
 export const gray000 = '#FAFBFC';
@@ -57,6 +58,7 @@ export const colors = {
     gray500: gray500,
     gray400: gray400,
     gray300: gray300,
+    gray250: gray250,
     gray200: gray200,
     gray100: gray100,
     gray000: gray000,
