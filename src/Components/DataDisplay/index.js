@@ -10,8 +10,6 @@ import FileItem from './FileItem';
 import FileList from './FileList';
 import FileSummary from './FileSummary';
 import Hint from './Hint';
-import List from './List';
-import ListItem from './ListItem';
 import Swiper from './Swiper';
 import Table from './Table';
 import Tabs from './Tabs';
@@ -28,11 +26,10 @@ export {
 	FileList,
 	FileSummary,
 	Hint,
-	List,
-	ListItem,
 	Swiper,
 	Table,
 	Tabs,
 	EmptyBox,
 };
 export * from './Drawer';
+export * from './List';
