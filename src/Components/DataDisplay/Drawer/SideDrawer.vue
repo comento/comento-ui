@@ -63,10 +63,10 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep .c-drawer {
-	width: 315px;
+	width: 308px;
 	height: 100%;
 	@include pc {
-		width: 374px;
+		width: 360px;
 	}
 }
 .c-side-drawer {
