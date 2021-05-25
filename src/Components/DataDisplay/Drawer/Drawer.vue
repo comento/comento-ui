@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application">
+	<div class="c-application c-drawer">
 		<transition name="fade" mode="out-in">
 			<div v-if="$slots.default" :style="indexCls()" :class="{ mask }" @click="onMask" />
 		</transition>
