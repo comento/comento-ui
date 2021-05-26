@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import ListItem from '@/src/Components/DataDisplay//ListItem';
+import ListItem from '@/src/Components/DataDisplay/List/List/ListItem';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Loader from '@/src/Components/Other/Loader';
 import Typography from '@/src/Elements/Core/Typography/Typography';
