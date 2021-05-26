@@ -56,8 +56,8 @@
 </template>
 
 <script>
-import List from '@/src/Components/DataDisplay/List';
-import ListItem from '@/src/Components/DataDisplay/ListItem';
+import List from '@/src/Components/DataDisplay/List/List/List';
+import ListItem from '@/src/Components/DataDisplay/List/List/ListItem';
 import Divider from '@/src/Elements/Utility/Divider';
 import Dropdown from '@/src/Components/DataEntry/Dropdown';
 import Typography from '@/src/Elements/Core/Typography/Typography';

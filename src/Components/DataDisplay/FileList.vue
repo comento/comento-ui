@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import List from '@/src/Components/DataDisplay/List';
+import List from '@/src/Components/DataDisplay/List/List/List';
 import FileItem from '@/src/Components/DataDisplay/FileItem';
 export default {
 	name: 'FileList',
