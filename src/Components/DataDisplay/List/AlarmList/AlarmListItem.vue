@@ -33,7 +33,7 @@ export default {
 		background-color: rgba(222, 250, 235, 0.4);
 	}
 	&.alarm-edu {
-		background-color: $red000;
+		background-color: $blue000;
 	}
 
 	&--icon {
