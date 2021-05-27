@@ -35,7 +35,7 @@ export default {
 			type: String,
 			default: 'right',
 			validator(value) {
-				return ['left', 'up', 'right', 'down'].indexOf(value) !== -1;
+				return ['left', 'right'].indexOf(value) !== -1;
 			},
 		},
 		showDrawer: {
