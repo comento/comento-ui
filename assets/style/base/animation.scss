@@ -1,3 +1,6 @@
+$side-drawer-pc-width: 360px;
+$side-drawer-mobile-width: 308px;
+
 .animated {
   -webkit-animation-duration: 0.4s;
   animation-duration: 0.4s;
@@ -13,9 +16,11 @@
   }
 
   from {
-    opacity: 0;
-    -webkit-transform: translate3d(3000px, 0, 0);
-    transform: translate3d(3000px, 0, 0);
+    //opacity: 0;
+    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
+    @include pc {
+      @include transform(translate3d($side-drawer-pc-width, 0, 0));
+    }
   }
 
   to {
@@ -32,9 +37,11 @@
   }
 
   from {
-    opacity: 0;
-    -webkit-transform: translate3d(3000px, 0, 0);
-    transform: translate3d(3000px, 0, 0);
+    //opacity: 0;
+    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
+    @include pc {
+      @include transform(translate3d($side-drawer-pc-width, 0, 0));
+    }
   }
 
   to {
@@ -44,35 +51,36 @@
 }
 
 .bounceInright {
-  -webkit-animation-name: bounceInRight;
-  animation-name: bounceInRight;
+  -webkit-animation: bounceInRight .2s ease-out;
+  animation: bounceInRight .2s ease-out;
 }
+
 // bounceOutLeft
 @-webkit-keyframes bounceOutLeft {
   20% {
-    opacity: 1;
     -webkit-transform: translate3d(0px, 0, 0);
     transform: translate3d(0px, 0, 0);
   }
 
   to {
-    opacity: 0;
-    -webkit-transform: translate3d(-2000px, 0, 0);
-    transform: translate3d(-2000px, 0, 0);
+    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+    @include pc {
+      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+    }
   }
 }
 
 @keyframes bounceOutLeft {
   20% {
-    opacity: 1;
     -webkit-transform: translate3d(0px, 0, 0);
     transform: translate3d(0px, 0, 0);
   }
 
   to {
-    opacity: 0;
-    -webkit-transform: translate3d(-2000px, 0, 0);
-    transform: translate3d(-2000px, 0, 0);
+    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+    @include pc {
+      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+    }
   }
 }
 
@@ -90,9 +98,10 @@
   }
 
   0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-3000px, 0, 0);
-    transform: translate3d(-3000px, 0, 0);
+    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+    @include pc {
+      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+    }
   }
 
   to {
@@ -110,9 +119,10 @@
   }
 
   0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-3000px, 0, 0);
-    transform: translate3d(-3000px, 0, 0);
+    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+    @include pc {
+      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+    }
   }
 
   to {
@@ -128,35 +138,35 @@
 // bounceOutRight
 @-webkit-keyframes bounceOutRight {
   20% {
-    opacity: 1;
-    -webkit-transform: translate3d(0px, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0px, 0, 0);
   }
 
   to {
-    opacity: 0;
-    -webkit-transform: translate3d(2000px, 0, 0);
-    transform: translate3d(2000px, 0, 0);
+    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
+    @include pc {
+      @include transform(translate3d($side-drawer-pc-width, 0, 0));
+    }
   }
 }
 
 @keyframes bounceOutRight {
   20% {
-    opacity: 1;
-    -webkit-transform: translate3d(0px, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0px, 0, 0);
   }
 
   to {
-    opacity: 0;
-    -webkit-transform: translate3d(2000px, 0, 0);
-    transform: translate3d(2000px, 0, 0);
+    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
+    @include pc {
+      @include transform(translate3d($side-drawer-pc-width, 0, 0));
+    }
   }
 }
 
 .bounceOutright {
-  -webkit-animation-name: bounceOutRight;
-  animation-name: bounceOutRight;
+  -webkit-animation: bounceOutRight .35s ease-out;
+  animation: bounceOutRight .35s ease-out;
 }
 
 @-webkit-keyframes bounceInDown {
@@ -169,8 +179,10 @@
 
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -3000px, 0);
-    transform: translate3d(0, -3000px, 0);
+    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+    @include pc {
+      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+    }
   }
 
   to {
@@ -190,8 +202,10 @@
 
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -3000px, 0);
-    transform: translate3d(0, -3000px, 0);
+    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+    @include pc {
+      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+    }
   }
 
   to {
@@ -214,8 +228,10 @@
 
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, 3000px, 0);
-    transform: translate3d(0, 3000px, 0);
+    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
+    @include pc {
+      @include transform(translate3d($side-drawer-pc-width, 0, 0));
+    }
   }
 
   to {
@@ -234,8 +250,10 @@
 
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, 3000px, 0);
-    transform: translate3d(0, 3000px, 0);
+    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
+    @include pc {
+      @include transform(translate3d($side-drawer-pc-width, 0, 0));
+    }
   }
 
   to {
@@ -258,8 +276,10 @@
 
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, 2000px, 0);
-    transform: translate3d(0, 2000px, 0);
+    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
+    @include pc {
+      @include transform(translate3d($side-drawer-pc-width, 0, 0));
+    }
   }
 }
 
@@ -271,8 +291,10 @@
   }
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, 2000px, 0);
-    transform: translate3d(0, 2000px, 0);
+    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
+    @include pc {
+      @include transform(translate3d($side-drawer-pc-width, 0, 0));
+    }
   }
 }
 
@@ -289,8 +311,10 @@
 
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0);
+    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+    @include pc {
+      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+    }
   }
 }
 
@@ -303,21 +327,14 @@
 
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0);
+    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+    @include pc {
+      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+    }
   }
 }
 
 .bounceOutup {
   -webkit-animation-name: bounceOutUp;
   animation-name: bounceOutUp;
-}
-
-// mask
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
 }
