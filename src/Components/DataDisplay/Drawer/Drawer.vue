@@ -21,10 +21,11 @@
 <script>
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import paddingMixin from '@/mixins/paddingMixin';
+import scrollMixin from '@/mixins/scrollMixin';
 
 export default {
 	name: 'Drawer',
-	mixins: [paddingMixin],
+	mixins: [paddingMixin, scrollMixin],
 	props: {
 		align: {
 			type: String,
