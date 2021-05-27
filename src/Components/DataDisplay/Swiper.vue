@@ -185,6 +185,10 @@ export default {
 			type: Number,
 			default: 6000,
 		},
+		loop: {
+			type: Boolean,
+			default: true,
+		},
 	},
 	data() {
 		return {
@@ -230,7 +234,7 @@ export default {
 				(Number.isInteger(Number(this.slidesPerView)) && this.slidesPerView > 1) ||
 				this.slidesPerView === 'auto';
 			return {
-				loop: true,
+				loop: this.loop,
 				navigation: {
 					nextEl: swiperButtonNextSelector,
 					prevEl: swiperButtonPrevSelector,
