@@ -1,28 +1,25 @@
 <template>
-	<div id="app">
-		<div class="demo-container">
-			<div class="mr-12">
-				<input id="left" v-model="align" type="radio" value="left" />
-				<label for="left">left</label>
-			</div>
+	<NewGrid>
+		<NewRow class="mb-20">
+			<NewCol>
+				<div class="flex flex-row">
+					<div class="mr-20">
+						<input id="left" v-model="align" type="radio" value="left" />
+						<label for="left">left</label>
+					</div>
 
-			<div class="mr-12">
-				<input id="right" v-model="align" type="radio" value="right" />
-				<label for="right">right</label>
-			</div>
-
-			<div class="mr-12">
-				<input id="up" v-model="align" type="radio" value="up" />
-				<label for="up">up</label>
-			</div>
-
-			<div>
-				<input id="down" v-model="align" type="radio" value="down" />
-				<label for="down">down</label>
-			</div>
-		</div>
-		<Button color="primary" @click="toggle">Open</Button>
-
+					<div>
+						<input id="right" v-model="align" type="radio" value="right" />
+						<label for="right">right</label>
+					</div>
+				</div>
+			</NewCol>
+		</NewRow>
+		<NewRow>
+			<NewCol>
+				<Button color="primary" @click="toggle">Open</Button>
+			</NewCol>
+		</NewRow>
 		<SideDrawer
 			:mask-closable="true"
 			:z-index="1002"
@@ -66,12 +63,15 @@
 				lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
 			</p>
 		</SideDrawer>
-	</div>
+	</NewGrid>
 </template>
 
 <script>
 import Button from '@/src/Components/Button/Button';
 import SideDrawer from './SideDrawer';
+import NewGrid from '@/src/Components/Layout/NewGrid';
+import NewRow from '@/src/Components/Layout/NewRow';
+import NewCol from '@/src/Components/Layout/NewCol';
 
 export default {
 	name: 'app',
@@ -96,21 +96,11 @@ export default {
 		},
 	},
 	components: {
+		NewCol,
+		NewRow,
+		NewGrid,
 		Button,
 		SideDrawer,
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-#app {
-	.demo-container {
-		text-align: center;
-		display: flex;
-		margin-bottom: 20px;
-		justify-content: space-around;
-		align-content: center;
-		align-items: center;
-	}
-}
-</style>
