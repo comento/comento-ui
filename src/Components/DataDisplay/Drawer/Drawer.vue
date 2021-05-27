@@ -186,4 +186,18 @@ $--c-drawer-close-width: 14px !default;
 	top: 0;
 	height: 100%;
 }
+
+// mask interaction
+.fade-enter-active {
+	transition: opacity 0.2s;
+}
+
+.fade-leave-active {
+	transition: opacity 0.35s;
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
+}
 </style>
