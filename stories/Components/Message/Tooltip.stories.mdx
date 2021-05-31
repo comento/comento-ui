@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Tooltip, { placements } from "@/src/Components/Message/Tooltip";
+import Tooltip, { placements, types } from "@/src/Components/Message/Tooltip";
 import Icon from "@/src/Elements/Core/Icon/Icon";
 import NewGrid from "@/src/Components/Layout/NewGrid";
 import NewRow from "@/src/Components/Layout/NewRow";
@@ -9,6 +9,18 @@ import NewCol from "@/src/Components/Layout/NewCol";
   title="Message/Tooltip"
   component={ Tooltip }
   argTypes={{
+    type: {
+      description: "Tooltip인지 Popover인지<br/>`String`",
+      table: {
+          type: {
+              summary: null,
+          },
+      },
+      control: {
+          type: "select",
+          options: types
+      },
+    },
     placement: {
       description: "기준점에서 Tooltip이 보이는 위치<br/>`String`",
       table: {
@@ -51,9 +63,9 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Tooltip, Icon },
   template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                 <Tooltip :placement="placement" :padding-x="paddingX">
+                 <Tooltip :placement="placement" :type="type" :padding-x="paddingX">
                      <Icon name="IconProfileLargeFill"></Icon>
-                     <template v-slot:popover>
+                     <template v-slot:tooltip>
                            <div>{{ text }}</div>
                      </template>
                  </Tooltip>
@@ -82,19 +94,19 @@ export const Default = (args, { argTypes }) => ({
                         <NewCol class="flex flex-row justify-around" style="height: 120px">
                             <Tooltip placement="bottom-right" open>
                                 <Icon name="IconProfileLargeFill"></Icon>
-                                    <template v-slot:popover>
+                                    <template v-slot:tooltip>
                                         <div>bottom-right</div>
                                     </template>
                             </Tooltip>
                             <Tooltip placement="bottom" open>
                                 <Icon name="IconProfileLargeFill"></Icon>
-                                    <template v-slot:popover>
+                                    <template v-slot:tooltip>
                                         <div>bottom</div>
                                     </template>
                             </Tooltip>
                             <Tooltip placement="bottom-left" open>
                                 <Icon name="IconProfileLargeFill"></Icon>
-                                    <template v-slot:popover>
+                                    <template v-slot:tooltip>
                                         <div>bottom-left</div>
                                     </template>
                             </Tooltip>
@@ -104,19 +116,19 @@ export const Default = (args, { argTypes }) => ({
                         <NewCol class="flex flex-row justify-around" style="height: 40px">
                             <Tooltip placement="right-top" open>
                                 <Icon name="IconProfileLargeFill"></Icon>
-                                    <template v-slot:popover>
+                                    <template v-slot:tooltip>
                                         <div>right-top</div>
                                     </template>
                             </Tooltip>
                             <Tooltip placement="right" open>
                                 <Icon name="IconProfileLargeFill"></Icon>
-                                    <template v-slot:popover>
+                                    <template v-slot:tooltip>
                                         <div>right</div>
                                     </template>
                             </Tooltip>
                             <Tooltip placement="right-bottom" open>
                                 <Icon name="IconProfileLargeFill"></Icon>
-                                    <template v-slot:popover>
+                                    <template v-slot:tooltip>
                                         <div>right-bottom</div>
                                     </template>
                             </Tooltip>

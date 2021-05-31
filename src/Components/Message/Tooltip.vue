@@ -13,8 +13,13 @@
 	>
 		<slot> </slot>
 		<template slot="popover">
-			<Typography class="c-tooltip--content-wrapper" :style="styles" type="body2" color="gray700">
-				<slot name="popover"> </slot>
+			<Typography
+				class="c-tooltip--content-wrapper"
+				:style="styles"
+				:type="type === 'tooltip' ? 'body2' : null"
+				:color="type === 'tooltip' ? 'gray700' : null"
+			>
+				<slot name="tooltip"> </slot>
 			</Typography>
 		</template>
 	</v-popover>
@@ -22,13 +27,22 @@
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import customValidator from '@/utils/custom-validator';
 
 export const placements = ['bottom', 'bottom-right', 'bottom-left', 'right-top', 'right', 'right-bottom'];
+export const types = ['tooltip', 'popover'];
 
 export default {
 	name: 'Tooltip',
 	inheritAttrs: false,
 	props: {
+		type: {
+			type: String,
+			default: 'tooltip',
+			validator(value) {
+				return customValidator(value, types.indexOf(value) !== -1, 'Tooltip', 'type');
+			},
+		},
 		placement: {
 			type: String,
 			default: 'bottom',
