@@ -149,7 +149,7 @@ p {
 }
 .c_headline5 {
 	font-size: 22px;
-	line-height: 135%;
+	line-height: 130%;
 	font-weight: normal;
 }
 .c_headline6 {
