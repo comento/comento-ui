@@ -4,7 +4,6 @@ import Swiper, {
     SwiperControlPositions,
     SwiperIndicatorColors,
     SwiperIndicatorPositions,
-    SwiperSpacings,
 } from "@/src/Components/DataDisplay/Swiper";
 import Button from "@/src/Components/Button/Button";
 import Typography from "@/src/Elements/Core/Typography/Typography";
@@ -68,10 +67,9 @@ import SwiperItemExample from "./SwiperItemExample";
             },
         },
         spacing: {
-            description: "swiper indicator color",
+            description: "swiper item spacing",
             control: {
-                type: "select",
-                options: SwiperSpacings,
+                type: "number",
             },
         },
         slidesPerView: {
