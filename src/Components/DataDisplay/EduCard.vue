@@ -59,14 +59,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$mobile-thumbnail-height: 120px;
-$pc-thumbnail-height: 128px;
+$thumbnail-height-mobile: 120px;
+$thumbnail-height-pc: 128px;
 
 .c-edu-card {
-	padding: $mobile-thumbnail-height 0 12px 0;
+	padding: $thumbnail-height-mobile 0 12px 0;
 	background-color: $white;
 	@include pc {
-		padding: $pc-thumbnail-height 0 12px 0;
+		padding: $thumbnail-height-pc 0 12px 0;
 	}
 	border-radius: 4px;
 	width: 100%;
@@ -100,9 +100,9 @@ $pc-thumbnail-height: 128px;
 			z-index: -1;
 			overflow: hidden;
 			width: 100%;
-			height: $mobile-thumbnail-height;
+			height: $thumbnail-height-mobile;
 			@include pc {
-				height: $pc-thumbnail-height;
+				height: $thumbnail-height-pc;
 			}
 		}
 	}
