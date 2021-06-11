@@ -29,6 +29,7 @@ import IconSettingSmallFill from '@/assets/images/icon/icon-setting-small-fill.s
 import IconQuestionMarkSmallFill from '@/assets/images/icon/icon-questionMark-small-fill.svg?inline';
 import IconFileSmallLine from '@/assets/images/icon/icon-file-small-line.svg?inline';
 import IconStarSmallFill from '@/assets/images/icon/icon-star-small-fill.svg?inline';
+import IconMegaphoneSmallLine from '@/assets/images/icon/icon-megaphone-small-line.svg?inline';
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
 import IconQuestionMediumLine from '@/assets/images/icon/icon-question-medium-line.svg?inline';
@@ -140,6 +141,7 @@ export const IconNames = [
 	'IconQuestionMarkSmallFill',
 	'IconFileSmallLine',
 	'IconStarSmallFill',
+	'IconMegaphoneSmallLine',
 	// medium
 	'IconCheckMediumFill',
 	'IconQuestionMediumLine',
@@ -303,6 +305,7 @@ export default {
 		IconQuestionMarkSmallFill,
 		IconFileSmallLine,
 		IconStarSmallFill,
+		IconMegaphoneSmallLine,
 		// medium
 		IconCheckMediumFill,
 		IconQuestionMediumLine,
