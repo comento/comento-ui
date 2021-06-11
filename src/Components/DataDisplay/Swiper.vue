@@ -96,8 +96,6 @@ export const SwiperControlPositions = ['inside', 'outside', 'top'];
 export const SwiperIndicatorColors = ['light', 'dark'];
 export const SwiperIndicatorPositions = ['inside', 'outside'];
 
-export const SwiperSpacings = [8, 12, 24];
-
 export default {
 	name: 'Swiper',
 	inheritAttrs: false,
@@ -161,9 +159,6 @@ export default {
 		spacing: {
 			type: [Number],
 			default: 12,
-			validator(value) {
-				return customValidator(value, SwiperSpacings.indexOf(value) !== -1, 'Swiper', 'spacing');
-			},
 		},
 		centeredSlides: {
 			type: Boolean,
