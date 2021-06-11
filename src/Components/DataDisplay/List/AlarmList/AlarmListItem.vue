@@ -28,6 +28,7 @@ export default {
 	cursor: pointer;
 	@include flexbox();
 	@include flex-direction(row);
+	background-color: white;
 
 	&.alarm-not-confirm {
 		background-color: rgba(222, 250, 235, 0.4);
