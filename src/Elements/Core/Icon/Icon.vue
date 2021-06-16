@@ -66,11 +66,14 @@ import IconRevertMediumLine from '@/assets/images/icon/icon-revert-medium-line.s
 import IconDownloadMediumLine from '@/assets/images/icon/icon-download-medium-line.svg?inline';
 import IconExportMediumLine from '@/assets/images/icon/icon-export-medium-line.svg?inline';
 import IconClockMediumFill from '@/assets/images/icon/icon-clock-medium-fill.svg?inline';
+import IconClockMediumLine from '@/assets/images/icon/icon-clock-medium-line.svg?inline';
 import IconSupportMediumLine from '@/assets/images/icon/icon-support-medium-line.svg?inline';
 import IconStarMediumFill from '@/assets/images/icon/icon-star-medium-fill.svg?inline';
 import IconQuestionMarkMediumLine from '@/assets/images/icon/icon-questionMark-medium-line.svg?inline';
 import IconMegaphoneMediumLine from '@/assets/images/icon/icon-megaphone-medium-line.svg?inline';
 import IconMinusMediumLine from '@/assets/images/icon/icon-minus-medium-line.svg?inline';
+import IconDiscountMediumLine from '@/assets/images/icon/icon-discount-medium-line.svg?inline';
+
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/icon-selected-large-line.svg?inline';
@@ -101,6 +104,7 @@ import IconCheckLargeLine from '@/assets/images/icon/icon-check-large-line.svg?i
 import IconResumeLargeLine from '@/assets/images/icon/icon-resume-large-line.svg?inline';
 import IconQuestionLargeLine from '@/assets/images/icon/icon-question-large-line.svg?inline';
 import IconVideoLargeFill from '@/assets/images/icon/icon-video-large-fill.svg?inline';
+import IconStarLargeFill from '@/assets/images/icon/icon-star-large-fill.svg?inline';
 // x-large
 import IconArrowXLargeLine from '@/assets/images/icon/icon-arrow-xlarge-line.svg?inline';
 import IconCloseXLargeLine from '@/assets/images/icon/icon-close-xlarge-line.svg?inline';
@@ -178,11 +182,14 @@ export const IconNames = [
 	'IconDownloadMediumLine',
 	'IconExportMediumLine',
 	'IconClockMediumFill',
+	'IconClockMediumLine',
 	'IconSupportMediumLine',
 	'IconStarMediumFill',
 	'IconQuestionMarkMediumLine',
 	'IconMegaphoneMediumLine',
 	'IconMinusMediumLine',
+	'IconDiscountMediumLine',
+
 	// large
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
@@ -213,6 +220,7 @@ export const IconNames = [
 	'IconResumeLargeLine',
 	'IconQuestionLargeLine',
 	'IconVideoLargeFill',
+	'IconStarLargeFill',
 	// XLarge
 	'IconProfileXLargeFill',
 	'IconArrowXLargeLine',
@@ -342,11 +350,14 @@ export default {
 		IconDownloadMediumLine,
 		IconExportMediumLine,
 		IconClockMediumFill,
+		IconClockMediumLine,
 		IconSupportMediumLine,
 		IconStarMediumFill,
 		IconQuestionMarkMediumLine,
 		IconMegaphoneMediumLine,
 		IconMinusMediumLine,
+		IconDiscountMediumLine,
+
 		// large
 		IconProfileLargeFill,
 		IconSelectedLargeLine,
@@ -377,6 +388,7 @@ export default {
 		IconResumeLargeLine,
 		IconQuestionLargeLine,
 		IconVideoLargeFill,
+		IconStarLargeFill,
 		// x-large
 		IconArrowXLargeLine,
 		IconCloseXLargeLine,
