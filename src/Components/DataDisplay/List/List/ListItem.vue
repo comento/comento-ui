@@ -35,8 +35,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$list-item-padding-x: 4px;
+
 .c-list-item {
-	padding: 8px 6px;
+	padding: 8px $list-item-padding-x;
 	@include flexbox();
 	@include align-items(center);
 	&:hover,
@@ -45,11 +47,11 @@ export default {
 	}
 
 	&.small {
-		padding: 6px 4px;
+		padding: 6px $list-item-padding-x;
 	}
 
 	&.large {
-		padding: 12px;
+		padding: 12px $list-item-padding-x;
 	}
 }
 </style>
