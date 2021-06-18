@@ -119,7 +119,9 @@ $thumbnail-height-pc: 128px;
 
 	&:hover {
 		.c-edu-card--image {
-			animation: scale-up-center 0.2s ease-in both;
+			@include pc {
+				animation: scale-up-center 0.2s ease-in both;
+			}
 		}
 	}
 
