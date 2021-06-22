@@ -221,6 +221,7 @@ export const IconNames = [
 	'IconQuestionLargeLine',
 	'IconVideoLargeFill',
 	'IconStarLargeFill',
+
 	// XLarge
 	'IconProfileXLargeFill',
 	'IconArrowXLargeLine',
@@ -234,9 +235,13 @@ export const IconNames = [
 	'IconAnswerXLargeLine',
 	'IconMegaphoneXLargeLine',
 	'IconStarXLargeFill',
-	'IconProfile2XLargeFill',
 	'IconCheckXLargeFill',
 	'IconUnCheckedXLargeFill',
+
+	//2x-large
+	'IconProfile2XLargeFill',
+
+	//4x-large
 	'IconStar4XLargeFill',
 ];
 
@@ -389,6 +394,7 @@ export default {
 		IconQuestionLargeLine,
 		IconVideoLargeFill,
 		IconStarLargeFill,
+
 		// x-large
 		IconArrowXLargeLine,
 		IconCloseXLargeLine,
@@ -404,8 +410,10 @@ export default {
 		IconCheckXLargeFill,
 		IconUnCheckedXLargeFill,
 		IconStarXLargeFill,
+
 		// 2x-large
 		IconProfile2XLargeFill,
+
 		// 4x-large
 		IconStar4XLargeFill,
 	},
