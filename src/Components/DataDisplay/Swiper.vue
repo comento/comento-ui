@@ -209,7 +209,7 @@ export default {
 		swiper() {
 			return this.$refs.mySwiper.$swiper;
 		},
-		// commont options
+		// common options
 		swiperOptions() {
 			// ex. swiper-button-next, swiper-button-next-outside
 			const swiperButtonNextSelector =
