@@ -30,6 +30,8 @@ import IconQuestionMarkSmallFill from '@/assets/images/icon/icon-questionMark-sm
 import IconFileSmallLine from '@/assets/images/icon/icon-file-small-line.svg?inline';
 import IconStarSmallFill from '@/assets/images/icon/icon-star-small-fill.svg?inline';
 import IconMegaphoneSmallLine from '@/assets/images/icon/icon-megaphone-small-line.svg?inline';
+import IconLinkSmallLine from '@/assets/images/icon/icon-link-small-line.svg?inline';
+
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
 import IconQuestionMediumLine from '@/assets/images/icon/icon-question-medium-line.svg?inline';
@@ -73,6 +75,7 @@ import IconQuestionMarkMediumLine from '@/assets/images/icon/icon-questionMark-m
 import IconMegaphoneMediumLine from '@/assets/images/icon/icon-megaphone-medium-line.svg?inline';
 import IconMinusMediumLine from '@/assets/images/icon/icon-minus-medium-line.svg?inline';
 import IconDiscountMediumLine from '@/assets/images/icon/icon-discount-medium-line.svg?inline';
+import IconLinkMediumLine from '@/assets/images/icon/icon-link-medium-line.svg?inline';
 
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -146,6 +149,8 @@ export const IconNames = [
 	'IconFileSmallLine',
 	'IconStarSmallFill',
 	'IconMegaphoneSmallLine',
+	'IconLinkSmallLine',
+
 	// medium
 	'IconCheckMediumFill',
 	'IconQuestionMediumLine',
@@ -189,6 +194,7 @@ export const IconNames = [
 	'IconMegaphoneMediumLine',
 	'IconMinusMediumLine',
 	'IconDiscountMediumLine',
+	'IconLinkMediumLine',
 
 	// large
 	'IconProfileLargeFill',
@@ -221,6 +227,7 @@ export const IconNames = [
 	'IconQuestionLargeLine',
 	'IconVideoLargeFill',
 	'IconStarLargeFill',
+
 	// XLarge
 	'IconProfileXLargeFill',
 	'IconArrowXLargeLine',
@@ -234,9 +241,13 @@ export const IconNames = [
 	'IconAnswerXLargeLine',
 	'IconMegaphoneXLargeLine',
 	'IconStarXLargeFill',
-	'IconProfile2XLargeFill',
 	'IconCheckXLargeFill',
 	'IconUnCheckedXLargeFill',
+
+	//2x-large
+	'IconProfile2XLargeFill',
+
+	//4x-large
 	'IconStar4XLargeFill',
 ];
 
@@ -314,6 +325,8 @@ export default {
 		IconFileSmallLine,
 		IconStarSmallFill,
 		IconMegaphoneSmallLine,
+		IconLinkSmallLine,
+
 		// medium
 		IconCheckMediumFill,
 		IconQuestionMediumLine,
@@ -357,6 +370,7 @@ export default {
 		IconMegaphoneMediumLine,
 		IconMinusMediumLine,
 		IconDiscountMediumLine,
+		IconLinkMediumLine,
 
 		// large
 		IconProfileLargeFill,
@@ -389,6 +403,7 @@ export default {
 		IconQuestionLargeLine,
 		IconVideoLargeFill,
 		IconStarLargeFill,
+
 		// x-large
 		IconArrowXLargeLine,
 		IconCloseXLargeLine,
@@ -404,8 +419,10 @@ export default {
 		IconCheckXLargeFill,
 		IconUnCheckedXLargeFill,
 		IconStarXLargeFill,
+
 		// 2x-large
 		IconProfile2XLargeFill,
+
 		// 4x-large
 		IconStar4XLargeFill,
 	},
