@@ -68,7 +68,9 @@
   },
   "files": [
     "dist/*",
-    "plugins/*"
+    "plugins/*",
+    "assets/style/base/color.scss",
+    "src/Elements/Core/Colors/index.js"
   ],
   "browserslist": [
     "last 2 version",
