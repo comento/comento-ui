@@ -10,7 +10,9 @@
   "homepage": "https://github.com/comento/comento-ui",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name comento-ui src/main.js && cp -R assets/style/base/color.scss dist && cp -R src/Elements/Core/Colors/index.js dist/color.js",
+    "bundle": "vue-cli-service build --target lib --name comento-ui src/main.js",
+    "copy": "cp -R assets/style/base/color.scss dist && cp -R src/Elements/Core/Colors/index.js dist/color.js",
+    "build": "yarn bundle && yarn copy",
     "lint": "vue-cli-service lint",
     "release": "shipjs prepare",
     "storybook": "start-storybook -p 6006 -c .storybook",
