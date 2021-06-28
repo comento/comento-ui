@@ -5,12 +5,11 @@
 			v-model="sync_value"
 			type="radio"
 			:disabled="disabled"
-			:checked="checked"
 			v-bind="$attrs"
 			:name="name"
 			v-on="$listeners"
 		/>
-		<label :class="{ disabled, checked }" :for="computedId">
+		<label :class="{ disabled, checked: value }" :for="computedId">
 			<Typography :color="computedColor" :type="computedTypographyType">
 				<slot />
 			</Typography>
@@ -36,13 +35,6 @@ export default {
 			},
 		},
 		disabled: {
-			type: Boolean,
-			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
-		},
-		checked: {
 			type: Boolean,
 			default: false,
 			validator(value) {

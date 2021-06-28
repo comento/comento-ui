@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
 import RadioButton, { radioButtonSizes } from "@/src/Components/DataEntry/RadioButton";
+import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
     title="Data Entry/RadioButton"
@@ -14,7 +15,7 @@ import RadioButton, { radioButtonSizes } from "@/src/Components/DataEntry/RadioB
             description: "라디오 박스 비활성화",
             control: { type: "boolean" },
         },
-        checked: {
+        value: {
             description: "라디오 박스 체크여부",
             control: { type: "boolean" },
         },
@@ -33,7 +34,19 @@ import RadioButton, { radioButtonSizes } from "@/src/Components/DataEntry/RadioB
                 type: "select",
                 options: radioButtonSizes,
             },
-        }
+        },
+        color: {
+          description: "폰트 색상<br/>`String`",
+          table: {
+            type: {
+              summary: null,
+            },
+          },
+          control: {
+            type: "select",
+            options: colorKeys,
+          },
+        },
     }}
 />
 
@@ -42,10 +55,7 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { RadioButton },
     template:
-        `<div>
-            <RadioButton :value.sync!="value" :size="size" :name="name" :disabled="disabled" :checked="checked">{{label}} 1</RadioButton>
-            <RadioButton :value.sync="value" :size="size" :name="name" :disabled="disabled">{{label}} 2</RadioButton>
-        </div>`,
+        `<RadioButton :value.sync="value" :size="size" :name="name" :disabled="disabled" :color="color">{{label}}</RadioButton>`,
 });
 
 # RadioButton
@@ -64,17 +74,26 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
     <Story name="All" height="100px">
         {{
+         data: () => ({
+            states:[false, false, false, false,]
+        }),
             template: `
                 <div>
                     <div>
-                        <h3>State</h3>
-                        <RadioButton :value="false" name="state">Unchecked</RadioButton>
-                        <RadioButton :value="true"  name="state">Checked</RadioButton>
-                        <RadioButton disabled name="state">Unchecked Disabled</RadioButton>
-                        <RadioButton :value="true" disabled name="state" :checked="true">Checked Disabled</RadioButton>
+                        <h3 class="mb-12">State</h3>
+                        <RadioButton
+                            v-for="(state,index) in states"
+                            :key="index"
+                            name="state"
+                            :value=state>
+                            state {{index + 1}}
+                        </RadioButton>
+                        <hr/>
+                        <RadioButton disabled name="disabled" :value="false">Unchecked Disabled</RadioButton>
+                        <RadioButton :value="true" disabled name="disabled">Checked Disabled</RadioButton>
                     </div>
                     <div class="mt-20">
-                        <h3>Size</h3>
+                        <h3 class="mb-12">Size</h3>
                         <RadioButton size="medium" class="mb-4" name="size">Medium Size</RadioButton>
                         <RadioButton size="small" class="mb-4" name="size">Small Size</RadioButton>
                     </div>
