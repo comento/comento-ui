@@ -206,7 +206,8 @@ export default {
 .c-select {
 	&--box {
 		border: 1px solid $input-border-color;
-		padding: 8px 16px;
+		@include border-radius(2px);
+		padding: 7px 16px;
 		cursor: pointer;
 		@include flexbox();
 		@include flex-direction(row);
