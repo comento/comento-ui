@@ -64,8 +64,7 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import clickOutside from '@/directives/click-outside';
 import customValidator from '@/utils/custom-validator';
-
-export const selectColors = ['primary', 'secondary', 'success', 'error'];
+import { colorKeys } from '@/src/Elements/Core/Colors';
 
 export default {
 	name: 'Select',
@@ -115,7 +114,7 @@ export default {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				const isValid = selectColors.indexOf(value) !== -1;
+				const isValid = colorKeys.indexOf(value) !== -1;
 				return customValidator(value, isValid, 'Select', 'color');
 			},
 		},

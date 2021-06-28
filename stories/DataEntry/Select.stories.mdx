@@ -1,6 +1,7 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Select, { selectColors } from "@/src/Components/DataEntry/Select";
+import Select  from "@/src/Components/DataEntry/Select";
 import Typography from "@/src/Elements/Core/Typography/Typography";
+import { colors } from "@/src/Elements/Core/Colors";
 
 <Meta
     title="Data Entry/Dropdown/Select"
@@ -23,7 +24,7 @@ import Typography from "@/src/Elements/Core/Typography/Typography";
             description: "화살표 색상",
             control: {
                 type: "select",
-                options: selectColors,
+                options: Object.keys(colors),
             },
         },
         value: {
