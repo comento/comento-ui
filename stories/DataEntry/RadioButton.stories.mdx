@@ -1,0 +1,87 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import RadioButton, { radioButtonSizes } from "@/src/Components/DataEntry/RadioButton";
+
+<Meta
+    title="Data Entry/RadioButton"
+    component={ RadioButton }
+    argTypes={{
+        label: {
+            description: "라디오 박스에 들어갈 텍스트",
+            defaultValue: "TEST",
+            control: { type: "text" },
+        },
+        disabled: {
+            description: "라디오 박스 비활성화",
+            control: { type: "boolean" },
+        },
+        checked: {
+            description: "라디오 박스 체크여부",
+            control: { type: "boolean" },
+        },
+        id: {
+            description: "라디오 박스 ID (값이 없으면 input-uid로 생성됨)",
+            control: { type: "text" },
+        },
+        name: {
+            description: "라디오 박스 name (값이 없으면 input-uid로 생성됨)",
+            defaultValue: "test",
+            control: { type: "text" },
+        },
+        size: {
+            description: "라디오 박스 크기",
+            control: {
+                type: "select",
+                options: radioButtonSizes,
+            },
+        }
+    }}
+/>
+
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { RadioButton },
+    template:
+        `<div>
+            <RadioButton :value.sync!="value" :size="size" :name="name" :disabled="disabled" :checked="checked">{{label}} 1</RadioButton>
+            <RadioButton :value.sync="value" :size="size" :name="name" :disabled="disabled">{{label}} 2</RadioButton>
+        </div>`,
+});
+
+# RadioButton
+
+**RadioButton** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                    <div>
+                        <h3>State</h3>
+                        <RadioButton :value="false" name="state">Unchecked</RadioButton>
+                        <RadioButton :value="true"  name="state">Checked</RadioButton>
+                        <RadioButton disabled name="state">Unchecked Disabled</RadioButton>
+                        <RadioButton :value="true" disabled name="state" :checked="true">Checked Disabled</RadioButton>
+                    </div>
+                    <div class="mt-20">
+                        <h3>Size</h3>
+                        <RadioButton size="medium" class="mb-4" name="size">Medium Size</RadioButton>
+                        <RadioButton size="small" class="mb-4" name="size">Small Size</RadioButton>
+                    </div>
+                </div>
+            `,
+            components: { RadioButton },
+        }}
+    </Story>
+</Canvas>
+
