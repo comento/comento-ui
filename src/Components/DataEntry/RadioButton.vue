@@ -80,7 +80,7 @@ export default {
 			validator(value) {
 				const isValid = radioButtonSizes.indexOf(value) !== -1;
 				if (!isValid) {
-					console.error(`${value} is not a valid value of the Checkbox size`);
+					console.error(`${value} is not a valid value of the RadioButton size`);
 				}
 				return isValid;
 			},
@@ -101,7 +101,7 @@ export default {
 			},
 		},
 		computedId() {
-			return this.id || `c-checkbox-${this.uid}`;
+			return this.id || `c-radio-button-${this.uid}`;
 		},
 		computedColor() {
 			return this.disabled ? 'gray300' : this.color;
