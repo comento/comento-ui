@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import RadioButton, { radioButtonSizes } from "@/src/Components/DataEntry/RadioButton";
+import RadioButton, { radioButtonSizes, radioColors } from "@/src/Components/DataEntry/RadioButton";
 import { colorKeys } from "@/src/Elements/Core/Colors";
 
 <Meta
@@ -35,7 +35,14 @@ import { colorKeys } from "@/src/Elements/Core/Colors";
                 options: radioButtonSizes,
             },
         },
-        color: {
+        radioColor: {
+          description: "라이오버튼 색상<br/>`String`",
+          control: {
+              type: "select",
+              options: radioColors,
+          },
+      },
+        fontColor: {
           description: "폰트 색상<br/>`String`",
           table: {
             type: {
@@ -55,7 +62,16 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { RadioButton },
     template:
-        `<RadioButton :value.sync="value" :size="size" :name="name" :disabled="disabled" :color="color">{{label}}</RadioButton>`,
+        `<RadioButton
+            :value.sync="value"
+            :size="size"
+            :name="name"
+            :disabled="disabled"
+            :fontColor="fontColor"
+            :radioColor="radioColor"
+            >
+        {{label}}
+        </RadioButton>`,
 });
 
 # RadioButton
@@ -96,6 +112,13 @@ export const Default = (args, { argTypes }) => ({
                         <h3 class="mb-12">Size</h3>
                         <RadioButton size="medium" class="mb-4" name="size">Medium Size</RadioButton>
                         <RadioButton size="small" class="mb-4" name="size">Small Size</RadioButton>
+                    </div>
+                    <div class="mt-20">
+                        <h3 class="mb-12"> color</h3>
+                        <RadioButton size="medium" class="mb-4" name="size" font-color="green600">primary</RadioButton>
+                        <RadioButton size="medium" class="mb-4" name="size" radio-color="success" font-color="blue600">success</RadioButton>
+                        <RadioButton size="medium" class="mb-4" name="size" radio-color="secondary" font-color="gray600">secondary</RadioButton>
+                        <RadioButton size="medium" class="mb-4" name="size" radio-color="error" font-color="red600">error</RadioButton>
                     </div>
                 </div>
             `,

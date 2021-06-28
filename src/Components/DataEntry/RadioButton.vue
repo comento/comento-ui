@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-radio-button" :class="computedClasses">
+	<div class="c-application c-radio-button" :class="[computedClasses, computedRadioColor]">
 		<input
 			:id="computedId"
 			v-model="sync_value"
@@ -21,6 +21,7 @@
 import { colorKeys } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import uniqueId from '@/utils/unique-id';
+export const radioColors = ['primary', 'success', 'secondary', 'error'];
 export const radioButtonSizes = ['small', 'medium'];
 
 export default {
@@ -55,7 +56,14 @@ export default {
 				return typeof value === 'string';
 			},
 		},
-		color: {
+		radioColor: {
+			type: String,
+			default: 'primary',
+			validator(value) {
+				return radioColors.indexOf(value) !== -1;
+			},
+		},
+		fontColor: {
 			type: String,
 			default: 'gray500',
 			validator(value) {
@@ -96,7 +104,7 @@ export default {
 			return this.id || `c-radio-button-${this.uid}`;
 		},
 		computedColor() {
-			return this.disabled ? 'gray300' : this.color;
+			return this.disabled ? 'gray300' : this.fontColor;
 		},
 		computedClasses() {
 			return [this.size];
@@ -108,6 +116,9 @@ export default {
 			};
 			return sizeForTypeList[this.size];
 		},
+		computedRadioColor() {
+			return this.radioColor;
+		},
 	},
 	components: { Typography },
 };
@@ -116,7 +127,6 @@ export default {
 <style lang="scss" scoped>
 .c-radio-button {
 	@include flexbox();
-
 	input[type='radio'] {
 		position: absolute;
 		clip: rect(1px, 1px, 1px, 1px);
@@ -126,13 +136,6 @@ export default {
 		width: 1px;
 		overflow: hidden;
 
-		&:hover:not(:disabled),
-		&:focus:not(:disabled) {
-			& + label:before {
-				background-color: $green000;
-				border-color: $green600;
-			}
-		}
 		&:disabled {
 			cursor: not-allowed !important;
 			& + label {
@@ -143,8 +146,7 @@ export default {
 				}
 				&.checked {
 					&:after {
-						display: block;
-						background-color: $input-border-color;
+						background-color: $input-border-color !important;
 					}
 				}
 			}
@@ -156,11 +158,9 @@ export default {
 		&:checked:not(:disabled) {
 			& + label:before {
 				background-color: $gray000;
-				border-color: $green600;
 			}
 			& + label:after {
 				display: block;
-				background-color: $green600;
 			}
 		}
 
@@ -172,6 +172,11 @@ export default {
 			position: relative;
 			> div {
 				display: inline-block;
+			}
+			&.checked {
+				&:after {
+					display: block;
+				}
 			}
 			&:before {
 				width: 20px;
@@ -196,10 +201,108 @@ export default {
 				@include border-radius(10px);
 				display: none;
 			}
-			&.checked {
-				&:after {
-					display: block;
+		}
+	}
+	&.primary {
+		input[type='radio'] {
+			&:hover:not(:disabled),
+			&:focus:not(:disabled) {
+				& + label:before {
+					background-color: $green000;
+					border-color: $green600;
+				}
+			}
+			& + label {
+				&.checked {
+					&:after {
+						background-color: $green600;
+					}
+				}
+			}
+			&:checked:not(:disabled) {
+				& + label:before {
+					border-color: $green600;
+				}
+				& + label:after {
 					background-color: $green600;
+				}
+			}
+		}
+	}
+	&.success {
+		input[type='radio'] {
+			&:hover:not(:disabled),
+			&:focus:not(:disabled) {
+				& + label:before {
+					background-color: $blue000;
+					border-color: $blue600;
+				}
+			}
+			& + label {
+				&.checked {
+					&:after {
+						background-color: $blue600;
+					}
+				}
+			}
+			&:checked:not(:disabled) {
+				& + label:before {
+					border-color: $blue600;
+				}
+				& + label:after {
+					background-color: $blue600;
+				}
+			}
+		}
+	}
+	&.secondary {
+		input[type='radio'] {
+			&:hover:not(:disabled),
+			&:focus:not(:disabled) {
+				& + label:before {
+					background-color: $gray000;
+					border-color: $gray600;
+				}
+			}
+			& + label {
+				&.checked {
+					&:after {
+						background-color: $gray600;
+					}
+				}
+			}
+			&:checked:not(:disabled) {
+				& + label:before {
+					border-color: $gray600;
+				}
+				& + label:after {
+					background-color: $gray600;
+				}
+			}
+		}
+	}
+	&.error {
+		input[type='radio'] {
+			&:hover:not(:disabled),
+			&:focus:not(:disabled) {
+				& + label:before {
+					background-color: $red000;
+					border-color: $red600;
+				}
+			}
+			& + label {
+				&.checked {
+					&:after {
+						background-color: $red600;
+					}
+				}
+			}
+			&:checked:not(:disabled) {
+				& + label:before {
+					border-color: $red600;
+				}
+				& + label:after {
+					background-color: $red600;
 				}
 			}
 		}
