@@ -1,19 +1,6 @@
-<template>
-	<!--컴포넌트 전환시 캐싱 가능 keep-alive-->
-	<keep-alive>
-		<component
-			:is="name"
-			ref="icon"
-			class="c-application c-icon"
-			:class="classes"
-			:style="styles"
-			v-bind="$attrs"
-			v-on="$listeners"
-		/>
-	</keep-alive>
-</template>
-
 <script>
+import IconFrame from '@/src/Elements/Core/Icon/IconFrame';
+
 // small
 import IconCheckSmallLine from '@/assets/images/icon/icon-check-small-line.svg?inline';
 import IconPlusSmallLine from '@/assets/images/icon/icon-plus-small-line.svg?inline';
@@ -129,8 +116,7 @@ import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fi
 
 // 4x-large
 import IconStar4XLargeFill from '@/assets/images/icon/icon-star-4xlarge-fill.svg?inline';
-
-import { colors, colorKeys } from '@/src/Elements/Core/Colors';
+import customValidator from '@/utils/custom-validator';
 
 export const IconNames = [
 	// small
@@ -253,59 +239,15 @@ export const IconNames = [
 
 export default {
 	name: 'Icon',
+	extends: IconFrame,
 	props: {
 		name: {
 			type: String,
 			default: null,
 			validator(value) {
 				const isValid = IconNames.indexOf(value) !== -1;
-				if (!isValid) {
-					console.error(`${value} is not a valid name of the icon`);
-				}
-				return isValid;
+				return customValidator(value, isValid, 'Icon', 'name');
 			},
-		},
-		color: {
-			type: String,
-			default: null,
-			validator(value) {
-				const isValid = colorKeys.indexOf(value) !== -1;
-				if (!isValid) {
-					console.error(`${value} is not a valid name of the icon color`);
-				}
-				return isValid;
-			},
-		},
-		rotate: {
-			type: Number,
-			default: 0,
-			validator(value) {
-				return typeof value === 'number';
-			},
-		},
-	},
-	computed: {
-		computedRotate() {
-			return this.rotate !== 0 ? { transform: `rotate(${this.rotate}deg)` } : null;
-		},
-		computedFill() {
-			if (this.color) {
-				return { fill: colors[this.color] };
-			} else {
-				return null;
-			}
-		},
-		hasEventListener() {
-			return Boolean(this.$listeners && this.$listeners.click);
-		},
-		classes() {
-			return [this.hasEventListener && 'c-icon--link'];
-		},
-		styles() {
-			return {
-				...this.computedFill,
-				...this.computedRotate,
-			};
 		},
 	},
 	components: {
@@ -428,13 +370,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-.c-icon {
-	cursor: auto;
-	background: transparent !important;
-	&--link {
-		cursor: pointer;
-	}
-}
-</style>
