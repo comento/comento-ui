@@ -21,6 +21,7 @@
 import { colorKeys } from '@/src/Elements/Core/Colors';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 import uniqueId from '@/utils/unique-id';
+import customValidator from '@/utils/custom-validator';
 export const radioColors = ['primary', 'success', 'secondary', 'error'];
 export const radioButtonSizes = ['small', 'medium'];
 
@@ -68,10 +69,7 @@ export default {
 			default: 'gray500',
 			validator(value) {
 				const isValid = colorKeys.indexOf(value) !== -1;
-				if (!isValid) {
-					console.error(`${value} is not a valid name of the typography color`);
-				}
-				return isValid;
+				return customValidator(value, isValid, 'RadioButton', 'fontColor');
 			},
 		},
 		size: {
@@ -209,22 +207,22 @@ export default {
 			&:focus:not(:disabled) {
 				& + label:before {
 					background-color: $green000;
-					border-color: $green600;
+					border-color: $primary;
 				}
 			}
 			& + label {
 				&.checked {
 					&:after {
-						background-color: $green600;
+						background-color: $primary;
 					}
 				}
 			}
 			&:checked:not(:disabled) {
 				& + label:before {
-					border-color: $green600;
+					border-color: $primary;
 				}
 				& + label:after {
-					background-color: $green600;
+					background-color: $primary;
 				}
 			}
 		}
@@ -235,22 +233,22 @@ export default {
 			&:focus:not(:disabled) {
 				& + label:before {
 					background-color: $blue000;
-					border-color: $blue600;
+					border-color: $success;
 				}
 			}
 			& + label {
 				&.checked {
 					&:after {
-						background-color: $blue600;
+						background-color: $success;
 					}
 				}
 			}
 			&:checked:not(:disabled) {
 				& + label:before {
-					border-color: $blue600;
+					border-color: $success;
 				}
 				& + label:after {
-					background-color: $blue600;
+					background-color: $success;
 				}
 			}
 		}
@@ -261,22 +259,22 @@ export default {
 			&:focus:not(:disabled) {
 				& + label:before {
 					background-color: $gray000;
-					border-color: $gray600;
+					border-color: $secondary;
 				}
 			}
 			& + label {
 				&.checked {
 					&:after {
-						background-color: $gray600;
+						background-color: $secondary;
 					}
 				}
 			}
 			&:checked:not(:disabled) {
 				& + label:before {
-					border-color: $gray600;
+					border-color: $secondary;
 				}
 				& + label:after {
-					background-color: $gray600;
+					background-color: $secondary;
 				}
 			}
 		}
@@ -287,22 +285,22 @@ export default {
 			&:focus:not(:disabled) {
 				& + label:before {
 					background-color: $red000;
-					border-color: $red600;
+					border-color: $error;
 				}
 			}
 			& + label {
 				&.checked {
 					&:after {
-						background-color: $red600;
+						background-color: $error;
 					}
 				}
 			}
 			&:checked:not(:disabled) {
 				& + label:before {
-					border-color: $red600;
+					border-color: $error;
 				}
 				& + label:after {
-					background-color: $red600;
+					background-color: $error;
 				}
 			}
 		}
