@@ -30,7 +30,7 @@
 					/>
 				</div>
 				<div class="c-select--icon">
-					<Icon name="IconArrowLargeLine" :color="color" :rotate="computedIconRotate" />
+					<EtcIcon name="IconDropdownMediumLineEtc" :color="color" :rotate="computedIconRotate" />
 				</div>
 			</div>
 		</template>
@@ -64,8 +64,8 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import clickOutside from '@/directives/click-outside';
 import customValidator from '@/utils/custom-validator';
-
-export const selectColors = ['primary', 'secondary', 'success', 'error'];
+import { colorKeys } from '@/src/Elements/Core/Colors';
+import EtcIcon from '@/src/Elements/Core/Icon/EtcIcon';
 
 export default {
 	name: 'Select',
@@ -113,9 +113,9 @@ export default {
 		},
 		color: {
 			type: String,
-			default: 'primary',
+			default: 'green800',
 			validator(value) {
-				const isValid = selectColors.indexOf(value) !== -1;
+				const isValid = colorKeys.indexOf(value) !== -1;
 				return customValidator(value, isValid, 'Select', 'color');
 			},
 		},
@@ -135,7 +135,7 @@ export default {
 	},
 	computed: {
 		computedIconRotate() {
-			return !this.open ? 180 : 0;
+			return !this.open ? 0 : 180;
 		},
 		hasObjectOptions() {
 			return this.options.every(option => typeof option === 'object');
@@ -189,6 +189,7 @@ export default {
 		},
 	},
 	components: {
+		EtcIcon,
 		Icon,
 		Divider,
 		Dropdown,
@@ -206,7 +207,8 @@ export default {
 .c-select {
 	&--box {
 		border: 1px solid $input-border-color;
-		padding: 8px 16px;
+		@include border-radius(2px);
+		padding: 7px 16px;
 		cursor: pointer;
 		@include flexbox();
 		@include flex-direction(row);
@@ -240,6 +242,7 @@ export default {
 
 	&--icon {
 		@include flexbox();
+		@include align-items(center);
 		svg {
 			transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), visibility 0s;
 			cursor: pointer;

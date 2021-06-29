@@ -1,7 +1,9 @@
 <template>
 	<div class="icon-wrapper">
 		<Tooltip placement="bottom">
-			<Icon :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)" />
+			<component :is="component" :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)">
+				<slot />
+			</component>
 			<template v-slot:popover>
 				<div>{{ name }}</div>
 			</template>
@@ -10,6 +12,8 @@
 </template>
 
 <script>
+import AnimationIcon from '@/src/Elements/Core/Icon/AnimationIcon';
+import EtcIcon from '@/src/Elements/Core/Icon/EtcIcon';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import Tooltip from '@/src/Components/Message/Tooltip';
 import copyToClipboard from '@/utils/copy-to-clipboard';
@@ -17,6 +21,12 @@ import copyToClipboard from '@/utils/copy-to-clipboard';
 export default {
 	name: 'IconWrapper',
 	props: {
+		component: {
+			type: String,
+			validator(value) {
+				return ['AnimationIcon', 'EtcIcon', 'Icon'].indexOf(value) !== -1;
+			},
+		},
 		name: {
 			type: String,
 		},
@@ -31,6 +41,8 @@ export default {
 		copyToClipboard,
 	},
 	components: {
+		AnimationIcon,
+		EtcIcon,
 		Icon,
 		Tooltip,
 	},

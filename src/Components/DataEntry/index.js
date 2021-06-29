@@ -5,6 +5,7 @@ import FormGroup from './FormGroup';
 import FileInput from './FileInput';
 import Input from './Input';
 import InputGroup from './InputGroup';
+import RadioButton from './RadioButton';
 import SearchInput from './SearchInput';
 import Select from './Select';
 import Textarea from './Textarea';
@@ -18,6 +19,7 @@ export {
 	FileInput,
 	Input,
 	InputGroup,
+	RadioButton,
 	SearchInput,
 	Select,
 	Textarea,
