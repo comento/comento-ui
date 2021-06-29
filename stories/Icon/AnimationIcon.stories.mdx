@@ -1,6 +1,6 @@
 import { ArgsTable, Meta, Story, Props, Canvas } from "@storybook/addon-docs/blocks";
 import AnimationIcon, { AnimationIconNames } from "@/src/Elements/Core/Icon/AnimationIcon";
-import AnimationIconWrapper from './AnimationIconWrapper';
+import IconWrapper from './IconWrapper';
 import Typography from '@/src/Elements/Core/Typography/Typography';
 
 <Meta
@@ -51,13 +51,13 @@ export const Default = (args, { argTypes }) => ({
                     <div>
                         <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <AnimationIconWrapper name="IconThreeDotMediumFillAnimation" :rotate="-90" />
-                            <AnimationIconWrapper name="IconCheckRoundMediumLineAnimation" :rotate="90" />
+                            <IconWrapper component="AnimationIcon" name="IconThreeDotMediumFillAnimation" :rotate="-90" />
+                            <IconWrapper component="AnimationIcon" name="IconCheckRoundMediumLineAnimation" :rotate="90" />
                         </div>
                     </div>
                 </div>
             `,
-             components: { AnimationIconWrapper, Typography },
+             components: { IconWrapper, Typography },
         }}
     </Story>
 </Canvas>
