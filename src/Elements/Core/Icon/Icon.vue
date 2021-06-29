@@ -1,5 +1,5 @@
 <script>
-import IconFrame from '@/src/Elements/Core/Icon/IconFrame';
+import BaseIcon from '@/src/Elements/Core/Icon/BaseIcon';
 
 // small
 import IconCheckSmallLine from '@/assets/images/icon/icon-check-small-line.svg?inline';
@@ -239,7 +239,7 @@ export const IconNames = [
 
 export default {
 	name: 'Icon',
-	extends: IconFrame,
+	extends: BaseIcon,
 	props: {
 		name: {
 			type: String,

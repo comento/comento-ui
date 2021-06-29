@@ -1,5 +1,5 @@
 <script>
-import IconFrame from '@/src/Elements/Core/Icon/IconFrame';
+import BaseIcon from '@/src/Elements/Core/Icon/BaseIcon';
 import IconDropdownMediumLineEtc from '@/assets/images/icon/etc/icon-dropdown-medium-line-etc.svg?inline';
 import IconDropdownSmallFillEtc from '@/assets/images/icon/etc/icon-dropdown-small-fill-etc.svg?inline';
 import customValidator from '@/utils/custom-validator';
@@ -8,7 +8,7 @@ export const EtcIconNames = ['IconDropdownMediumLineEtc', 'IconDropdownSmallFill
 
 export default {
 	name: 'EtcIcon',
-	extends: IconFrame,
+	extends: BaseIcon,
 	props: {
 		name: {
 			type: String,

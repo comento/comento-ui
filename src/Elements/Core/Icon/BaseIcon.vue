@@ -15,29 +15,29 @@
 
 <script>
 import { colorKeys, colors } from '@/src/Elements/Core/Colors';
-import customValidator from '@/utils/custom-validator.js';
+import customValidator from '@/utils/custom-validator';
 
 export default {
-	name: 'IconFrame',
+	name: 'BaseIcon',
 	props: {
 		name: {
 			type: String,
 			default: null,
 			required: true,
 		},
-		color: {
-			type: String,
-			default: null,
-			validator(value) {
-				const isValid = colorKeys.indexOf(value) !== -1;
-				return customValidator(value, isValid, 'IconFrame', 'color');
-			},
-		},
 		rotate: {
 			type: Number,
 			default: 0,
 			validator(value) {
 				return typeof value === 'number';
+			},
+		},
+		color: {
+			type: String,
+			default: null,
+			validator(value) {
+				const isValid = colorKeys.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'BaseIcon', 'color');
 			},
 		},
 	},

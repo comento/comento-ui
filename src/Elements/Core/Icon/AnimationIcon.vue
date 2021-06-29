@@ -1,14 +1,14 @@
 <script>
 import IconCheckRoundMediumLineAnimation from '@/assets/images/icon/animation/icon-checkRound-medium-line-animation.svg?inline';
 import IconThreeDotMediumFillAnimation from '@/assets/images/icon/animation/icon-threeDot-medium-fill-animation.svg?inline';
-import IconFrame from '@/src/Elements/Core/Icon/IconFrame';
+import BaseIcon from '@/src/Elements/Core/Icon/BaseIcon';
 import customValidator from '@/utils/custom-validator';
 
 export const AnimationIconNames = ['IconCheckRoundMediumLineAnimation', 'IconThreeDotMediumFillAnimation'];
 
 export default {
 	name: 'AnimationIcon',
-	extends: IconFrame,
+	extends: BaseIcon,
 	props: {
 		name: {
 			type: String,
