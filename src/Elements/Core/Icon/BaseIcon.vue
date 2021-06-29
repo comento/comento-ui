@@ -22,7 +22,6 @@ export default {
 	props: {
 		name: {
 			type: String,
-			default: null,
 			required: true,
 		},
 		rotate: {
