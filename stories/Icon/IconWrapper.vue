@@ -1,7 +1,7 @@
 <template>
 	<div class="icon-wrapper">
 		<Tooltip placement="bottom">
-			<component :is="componentName" :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)">
+			<component :is="component" :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)">
 				<slot />
 			</component>
 			<template v-slot:popover>
@@ -21,7 +21,7 @@ import copyToClipboard from '@/utils/copy-to-clipboard';
 export default {
 	name: 'IconWrapper',
 	props: {
-		componentName: {
+		component: {
 			type: String,
 			validator(value) {
 				return ['AnimationIcon', 'EtcIcon', 'Icon'].indexOf(value) !== -1;
