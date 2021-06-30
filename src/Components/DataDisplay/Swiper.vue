@@ -414,4 +414,14 @@ $swiper-control-circle-radius: 16px;
 		}
 	}
 }
+::v-deep .swiper-slide {
+	@include mobile {
+		&:first-child {
+			margin-left: $grid-gutter-width-mobile;
+		}
+		&:last-child {
+			margin-right: $grid-gutter-width-mobile;
+		}
+	}
+}
 </style>
