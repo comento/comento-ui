@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Select  from "@/src/Components/DataEntry/Select";
+import Select, { selectSizes }  from "@/src/Components/DataEntry/Select";
 import Typography from "@/src/Elements/Core/Typography/Typography";
 import { colors } from "@/src/Elements/Core/Colors";
 
@@ -37,6 +37,13 @@ import { colors } from "@/src/Elements/Core/Colors";
             description: "리스트 최대 높이",
             defaultValue: "130px"
         },
+        size: {
+            description: "크기",
+            control: {
+                type: "select",
+                options: selectSizes,
+            },
+        },
     }}
 />
 
@@ -57,6 +64,7 @@ export const Default = (args, { argTypes }) => ({
                 :max-height="maxHeight"
                 :color="color"
                 :full="full"
+                :size="size"
             />
         </div>
     `,
@@ -75,20 +83,28 @@ export const Default = (args, { argTypes }) => ({
 
 ### Size
 <Canvas>
-    <Story name="Size" height="200px">
+    <Story name="Size" height="250px">
         {{
             data: () => ({
                 select1: '',
                 select2: '',
+                select3: '',
+                select4: '',
                 options: [1, 2],
             }),
             template: `
                 <div>
-                    <div style="margin-bottom: 10px">
-                        <Select v-model="select1" :options="options" />
+                    <div class="mb-10">
+                        <Select v-model="select1" :options="options" size="small" />
+                    </div>
+                    <div class="mb-10">
+                        <Select v-model="select2" :options="options" size="medium" />
+                    </div>
+                    <div class="mb-10">
+                        <Select v-model="select3" :options="options" size="small" full />
                     </div>
                     <div>
-                        <Select v-model="select2" :options="options" full />
+                        <Select v-model="select4" :options="options" size="medium" full />
                     </div>
                 </div>
         `,
