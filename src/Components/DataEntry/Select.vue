@@ -7,6 +7,7 @@
 		:vertical="vertical"
 		:full="full"
 		class="c-select"
+		:class="classes"
 	>
 		<!-- select 영역 -->
 		<template v-slot:item>
@@ -30,7 +31,7 @@
 					/>
 				</div>
 				<div class="c-select--icon">
-					<EtcIcon name="IconDropdownMediumLineEtc" :color="color" :rotate="computedIconRotate" />
+					<EtcIcon :name="computedIconName" :color="computedIconColor" :rotate="computedIconRotate" />
 				</div>
 			</div>
 		</template>
@@ -45,7 +46,9 @@
 						class="c-select--list-item"
 						@click="handleSelect(option, true)"
 					>
-						<Typography type="body2" color="gray800">{{ handleOptions(option, 'label') }}</Typography>
+						<Typography :type="computedListItemTypography" color="gray800">
+							{{ handleOptions(option, 'label') }}
+						</Typography>
 						<Icon v-if="option.icon" :name="option.icon" class="c-pointer" />
 					</ListItem>
 					<Divider :key="index" />
@@ -66,6 +69,8 @@ import clickOutside from '@/directives/click-outside';
 import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/src/Elements/Core/Colors';
 import EtcIcon from '@/src/Elements/Core/Icon/EtcIcon';
+
+export const selectSizes = ['small', 'medium'];
 
 export default {
 	name: 'Select',
@@ -113,7 +118,7 @@ export default {
 		},
 		color: {
 			type: String,
-			default: 'green800',
+			default: null,
 			validator(value) {
 				const isValid = colorKeys.indexOf(value) !== -1;
 				return customValidator(value, isValid, 'Select', 'color');
@@ -124,6 +129,13 @@ export default {
 			default: false,
 			validator(value) {
 				return typeof value === 'boolean';
+			},
+		},
+		size: {
+			type: String,
+			default: 'medium',
+			validator(value) {
+				return selectSizes.indexOf(value) !== -1;
 			},
 		},
 	},
@@ -137,8 +149,34 @@ export default {
 		computedIconRotate() {
 			return !this.open ? 0 : 180;
 		},
+		computedIconName() {
+			const defaultIconNames = {
+				small: 'IconDropdownSmallFillEtc',
+				medium: 'IconDropdownMediumLineEtc',
+			};
+
+			return defaultIconNames[this.size];
+		},
+		computedIconColor() {
+			const defaultIconColors = {
+				small: 'gray700',
+				medium: 'green800',
+			};
+
+			return this.color || defaultIconColors[this.size];
+		},
 		hasObjectOptions() {
 			return this.options.every(option => typeof option === 'object');
+		},
+		classes() {
+			return [this.size];
+		},
+		computedListItemTypography() {
+			const defaultListItemTypography = {
+				small: 'caption1',
+				medium: 'body1',
+			};
+			return defaultListItemTypography[this.size];
 		},
 	},
 	watch: {
@@ -219,11 +257,12 @@ export default {
 	&--item {
 		cursor: pointer;
 		width: 100%;
-		@include body1();
-		color: $gray850;
+		@include flexbox();
 
 		> div,
 		input {
+			@include body1();
+			color: $gray850;
 			width: 100%;
 			cursor: pointer;
 		}
@@ -252,6 +291,23 @@ export default {
 	&--list-item {
 		@include flexbox();
 		@include justify-content(space-between);
+	}
+
+	// size
+	&.small {
+		.c-select {
+			&--box {
+				padding: 8px 12px;
+			}
+			&--item {
+				input {
+					@include caption1();
+					&::placeholder {
+						color: $gray500;
+					}
+				}
+			}
+		}
 	}
 }
 </style>
