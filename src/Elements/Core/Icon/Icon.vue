@@ -63,6 +63,7 @@ import IconMegaphoneMediumLine from '@/assets/images/icon/icon-megaphone-medium-
 import IconMinusMediumLine from '@/assets/images/icon/icon-minus-medium-line.svg?inline';
 import IconDiscountMediumLine from '@/assets/images/icon/icon-discount-medium-line.svg?inline';
 import IconLinkMediumLine from '@/assets/images/icon/icon-link-medium-line.svg?inline';
+import IconBrowseMediumLine from '@/assets/images/icon/icon-browse-medium-line.svg?inline';
 
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -182,6 +183,7 @@ export const IconNames = [
 	'IconMinusMediumLine',
 	'IconDiscountMediumLine',
 	'IconLinkMediumLine',
+	'IconBrowseMediumLine',
 
 	// large
 	'IconProfileLargeFill',
@@ -315,6 +317,7 @@ export default {
 		IconMinusMediumLine,
 		IconDiscountMediumLine,
 		IconLinkMediumLine,
+		IconBrowseMediumLine,
 
 		// large
 		IconProfileLargeFill,
