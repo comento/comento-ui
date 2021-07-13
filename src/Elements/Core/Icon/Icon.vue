@@ -64,6 +64,7 @@ import IconMinusMediumLine from '@/assets/images/icon/icon-minus-medium-line.svg
 import IconDiscountMediumLine from '@/assets/images/icon/icon-discount-medium-line.svg?inline';
 import IconLinkMediumLine from '@/assets/images/icon/icon-link-medium-line.svg?inline';
 import IconBrowseMediumLine from '@/assets/images/icon/icon-browse-medium-line.svg?inline';
+import IconVideoMediumFill from '@/assets/images/icon/icon-video-medium-fill.svg?inline';
 
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -184,6 +185,7 @@ export const IconNames = [
 	'IconDiscountMediumLine',
 	'IconLinkMediumLine',
 	'IconBrowseMediumLine',
+	'IconVideoMediumFill',
 
 	// large
 	'IconProfileLargeFill',
@@ -318,6 +320,7 @@ export default {
 		IconDiscountMediumLine,
 		IconLinkMediumLine,
 		IconBrowseMediumLine,
+		IconVideoMediumFill,
 
 		// large
 		IconProfileLargeFill,
