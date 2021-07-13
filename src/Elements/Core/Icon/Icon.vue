@@ -63,6 +63,8 @@ import IconMegaphoneMediumLine from '@/assets/images/icon/icon-megaphone-medium-
 import IconMinusMediumLine from '@/assets/images/icon/icon-minus-medium-line.svg?inline';
 import IconDiscountMediumLine from '@/assets/images/icon/icon-discount-medium-line.svg?inline';
 import IconLinkMediumLine from '@/assets/images/icon/icon-link-medium-line.svg?inline';
+import IconBrowseMediumLine from '@/assets/images/icon/icon-browse-medium-line.svg?inline';
+import IconVideoMediumFill from '@/assets/images/icon/icon-video-medium-fill.svg?inline';
 
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -113,6 +115,7 @@ import IconStarXLargeFill from '@/assets/images/icon/icon-star-xlarge-fill.svg?i
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
+import IconWriting2XLargeLine from '@/assets/images/icon/icon-writing-2xlarge-line.svg?inline';
 
 // 4x-large
 import IconStar4XLargeFill from '@/assets/images/icon/icon-star-4xlarge-fill.svg?inline';
@@ -181,6 +184,8 @@ export const IconNames = [
 	'IconMinusMediumLine',
 	'IconDiscountMediumLine',
 	'IconLinkMediumLine',
+	'IconBrowseMediumLine',
+	'IconVideoMediumFill',
 
 	// large
 	'IconProfileLargeFill',
@@ -232,6 +237,7 @@ export const IconNames = [
 
 	//2x-large
 	'IconProfile2XLargeFill',
+	'IconWriting2XLargeLine',
 
 	//4x-large
 	'IconStar4XLargeFill',
@@ -313,6 +319,8 @@ export default {
 		IconMinusMediumLine,
 		IconDiscountMediumLine,
 		IconLinkMediumLine,
+		IconBrowseMediumLine,
+		IconVideoMediumFill,
 
 		// large
 		IconProfileLargeFill,
@@ -364,6 +372,7 @@ export default {
 
 		// 2x-large
 		IconProfile2XLargeFill,
+		IconWriting2XLargeLine,
 
 		// 4x-large
 		IconStar4XLargeFill,
