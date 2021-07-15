@@ -33,6 +33,13 @@ import Avatar from '@/src/Components/DataDisplay/Avatar';
                 options: ["text", "profile", "logo", "image"],
             },
         },
+        text: {
+            description: "텍스트",
+            defaultValue: "",
+            control: {
+                type: "text",
+            },
+        },
         src: {
             description: "type이 image일 경우 이미지",
             defaultValue: null,
@@ -47,7 +54,7 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Avatar },
     template:
-        `<Avatar :type="type" :src="src" :size="size" />`,
+        `<Avatar :type="type" :src="src" :size="size" :text="text" />`,
 });
 
 # Avatar
