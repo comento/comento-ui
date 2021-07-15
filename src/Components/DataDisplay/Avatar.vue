@@ -5,7 +5,7 @@
 			<Icon v-if="isProfileType" :name="computedIconName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
 			<Typography v-if="isTextType" :type="computedTypography" :font-weight="700" color="white">
-				{{ computedRandomText }}
+				{{ text || computedRandomText }}
 			</Typography>
 		</div>
 	</div>
@@ -32,6 +32,10 @@ export default {
 			validator(value) {
 				return ['small', 'medium', 'large'].indexOf(value) !== -1;
 			},
+		},
+		text: {
+			type: String,
+			default: '',
 		},
 		// type : img 일 경우 이미지
 		src: {
