@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import NarrowButton, { narrowButtonColors, narrowButtonSizes } from "@/src/Components/Button/NarrowButton";
+import NarrowButton, { narrowButtonSizes } from "@/src/Components/Button/NarrowButton";
+import { colorKeys } from "@/src/Elements/Core/Colors";
 import Icon from "@/src/Elements/Core/Icon/Icon";
 
 <Meta
@@ -16,7 +17,7 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
             defaultValue: "gray600",
             control: {
                 type: "select",
-                options: narrowButtonColors,
+                options: colorKeys,
             },
         },
         size: {
