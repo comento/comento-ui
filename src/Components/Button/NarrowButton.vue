@@ -20,7 +20,6 @@
 <script>
 import { colors } from '@/src/Elements/Core/Colors';
 
-export const narrowButtonColors = ['gray400', 'gray600'];
 export const narrowButtonSizes = ['small', 'medium', 'large'];
 
 export default {
@@ -30,9 +29,6 @@ export default {
 		color: {
 			type: String,
 			default: 'gray600',
-			validator(value) {
-				return narrowButtonColors.indexOf(value) !== -1;
-			},
 		},
 		size: {
 			type: String,
