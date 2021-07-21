@@ -239,9 +239,9 @@
   user-select: $select;
 }
 
-@mixin remove-active-and-focus() {
+@mixin remove-active-and-focus($background: transparent) {
   &:active, &:focus {
-    background: transparent;
+    background: $background;
   }
 }
 
