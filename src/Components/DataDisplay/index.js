@@ -3,7 +3,7 @@ import Badge from './Badge';
 import Box from './Box';
 import Chip from './Chip';
 import ChipGroup from './ChipGroup';
-import Content from './Content';
+import Content from './Content/Content.vue';
 import EduCard from './EduCard';
 import EmptyBox from './EmptyBox';
 import FileItem from './FileItem';
@@ -31,5 +31,6 @@ export {
 	Tabs,
 	EmptyBox,
 };
+export * from './Content';
 export * from './Drawer';
 export * from './List';
