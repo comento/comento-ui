@@ -3,7 +3,6 @@ import Badge from './Badge';
 import Box from './Box';
 import Chip from './Chip';
 import ChipGroup from './ChipGroup';
-import Content from './Content';
 import EduCard from './EduCard';
 import EmptyBox from './EmptyBox';
 import FileItem from './FileItem';
@@ -20,7 +19,6 @@ export {
 	Box,
 	Chip,
 	ChipGroup,
-	Content,
 	EduCard,
 	FileItem,
 	FileList,
@@ -31,5 +29,6 @@ export {
 	Tabs,
 	EmptyBox,
 };
+export * from './Content';
 export * from './Drawer';
 export * from './List';
