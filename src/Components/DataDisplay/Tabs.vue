@@ -17,8 +17,8 @@
 			</div>
 		</swiper-slide>
 	</swiper>
-	<div v-else class="c-application c-tabs c-tabs--menu-container">
-		<div class="c-tabs--menu-wrapper" :class="classes">
+	<div v-else class="c-application c-tabs c-tabs--menu-container" :class="classes">
+		<div class="c-tabs--menu-wrapper">
 			<div
 				v-for="(node, index) in Object.keys(this.$slots).length"
 				:key="`tabs-item-${index}`"
@@ -126,9 +126,13 @@ export default {
 }
 .c-tabs {
 	&--vertical {
-		@include flex-direction(column);
 		.c-tabs {
 			&--menu {
+				&-wrapper {
+					@include flex-direction(column);
+					width: fit-content;
+					border-bottom: none;
+				}
 				&-button {
 					margin-right: 0;
 					width: fit-content;
@@ -142,14 +146,13 @@ export default {
 				}
 			}
 		}
-		&.c-tabs--menu-wrapper {
-			width: fit-content;
-			border-bottom: none;
-		}
 	}
 	&--horizontal {
 		.c-tabs {
 			&--menu {
+				&-wrapper {
+					width: 100%;
+				}
 				&-button {
 					&:not(:last-child) {
 						margin-right: 12px;
@@ -157,18 +160,17 @@ export default {
 				}
 			}
 		}
-		&.c-tabs--menu-wrapper {
-			width: 100%;
-		}
 	}
 	&--menu {
 		&-wrapper {
 			@include flexbox();
-			border-bottom: 1px solid rgba($gray200, 0.97);
 		}
 		&-container {
 			background-color: $white;
 			width: 100%;
+			&:not(.c-tabs--vertical) {
+				border-bottom: 1px solid $gray200;
+			}
 		}
 		&-button {
 			@include flexbox();
