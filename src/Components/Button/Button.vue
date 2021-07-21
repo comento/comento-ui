@@ -273,6 +273,9 @@ $error-text-color: $red600;
 	&:active {
 		background-color: $primary-hover-background-color;
 	}
+	@include mobile {
+		@include remove-active-and-focus($primary-background-color);
+	}
 	&:disabled {
 		background-color: $primary-disabled-background-color;
 		.c-button--icon::v-deep .c-icon {
@@ -293,6 +296,9 @@ $error-text-color: $red600;
 		&:active {
 			background-color: $primary-disabled-background-color;
 		}
+		@include mobile {
+			@include remove-active-and-focus();
+		}
 		&:disabled {
 			.c-button--icon::v-deep .c-icon {
 				fill: $primary-disabled-background-color !important;
@@ -309,6 +315,9 @@ $error-text-color: $red600;
 		&:focus,
 		&:active {
 			background-color: $primary-disabled-background-color;
+		}
+		@include mobile {
+			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $primary-disabled-background-color;
@@ -331,6 +340,9 @@ $error-text-color: $red600;
 	&:active {
 		background-color: $success-hover-background-color;
 	}
+	@include mobile {
+		@include remove-active-and-focus($success-background-color);
+	}
 	&:disabled {
 		background-color: $success-disabled-background-color;
 		.c-button--icon::v-deep .c-icon {
@@ -343,6 +355,7 @@ $error-text-color: $red600;
 	.c-button--loading {
 		background-color: $success-background-color;
 	}
+
 	&.text {
 		color: $success-text-color;
 		&:hover,
@@ -350,6 +363,10 @@ $error-text-color: $red600;
 		&:active {
 			background-color: $success-disabled-background-color;
 		}
+		@include mobile {
+			@include remove-active-and-focus();
+		}
+
 		&:disabled {
 			color: $success-disabled-background-color;
 			background: none;
@@ -366,6 +383,9 @@ $error-text-color: $red600;
 		&:focus,
 		&:active {
 			background-color: $success-disabled-background-color;
+		}
+		@include mobile {
+			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $success-disabled-background-color;
@@ -388,6 +408,9 @@ $error-text-color: $red600;
 	&:active {
 		background-color: $secondary-hover-background-color;
 	}
+	@include mobile {
+		@include remove-active-and-focus($secondary-background-color);
+	}
 	&:disabled {
 		background-color: $secondary-disabled-background-color;
 		.c-button--icon::v-deep .c-icon {
@@ -407,6 +430,9 @@ $error-text-color: $red600;
 		&:active {
 			background-color: $secondary-disabled-background-color;
 		}
+		@include mobile {
+			@include remove-active-and-focus();
+		}
 		&:disabled {
 			color: $secondary-disabled-background-color;
 			background: none;
@@ -423,6 +449,9 @@ $error-text-color: $red600;
 		&:focus,
 		&:active {
 			background-color: $secondary-disabled-background-color;
+		}
+		@include mobile {
+			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $secondary-disabled-background-color;
@@ -444,6 +473,9 @@ $error-text-color: $red600;
 	&:active {
 		background-color: $error-hover-background-color;
 	}
+	@include mobile {
+		@include remove-active-and-focus($error-background-color);
+	}
 	&:disabled {
 		background-color: $error-disabled-background-color;
 		.c-button--icon::v-deep .c-icon {
@@ -463,6 +495,9 @@ $error-text-color: $red600;
 		&:active {
 			background-color: $red000;
 		}
+		@include mobile {
+			@include remove-active-and-focus();
+		}
 		&:disabled {
 			color: $error-disabled-background-color;
 			background: none;
@@ -479,6 +514,9 @@ $error-text-color: $red600;
 		&:focus,
 		&:active {
 			background-color: $red100;
+		}
+		@include mobile {
+			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $red100;
