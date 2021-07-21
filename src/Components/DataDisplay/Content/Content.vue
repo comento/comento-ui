@@ -1,26 +1,57 @@
 <template>
-	<section class="c-application c-content">
-		<Typography type="caption1" element="p" color="gray400" class="c-content--overline">
-			<slot name="overline" />
-		</Typography>
-		<Typography type="headline6" element="h2" color="gray900" class="c-content--title">
-			<slot name="title" />
-		</Typography>
-		<Typography type="body1" element="p" color="gray850" class="c-content--body">
-			<slot name="body" />
-		</Typography>
-		<Typography type="body2" element="p" color="gray300" class="c-content--caption">
-			<slot name="caption" />
-		</Typography>
-		<slot name="action" />
-	</section>
+	<Typography
+		:type="contentItems[type].type"
+		:element="contentItems[type].element"
+		:color="computedColor"
+		class="c-application c-content"
+		:class="`c-content--${type}`"
+	>
+		<slot />
+	</Typography>
 </template>
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
+import customValidator from '@/utils/custom-validator';
+import { colorKeys } from '@/src/Elements/Core/Colors';
+
+export const contentTypes = ['overline', 'title', 'body', 'caption'];
 
 export default {
 	name: 'Content',
+	props: {
+		type: {
+			type: String,
+			default: 'body',
+			validator(value) {
+				const isValid = contentTypes.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Content', 'type');
+			},
+		},
+		color: {
+			type: String,
+			default: null,
+			validator(value) {
+				const isValid = colorKeys.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Content', 'color');
+			},
+		},
+	},
+	data() {
+		return {
+			contentItems: {
+				overline: { type: 'caption1', element: 'p', color: 'gray400' },
+				title: { type: 'headline6', element: 'h2', color: 'gray900' },
+				body: { type: 'body1', element: 'p', color: 'gray850' },
+				caption: { type: 'body2', element: 'p', color: 'gray300' },
+			},
+		};
+	},
+	computed: {
+		computedColor() {
+			return this.color || this.contentItems[this.type].color;
+		},
+	},
 	components: { Typography },
 };
 </script>
