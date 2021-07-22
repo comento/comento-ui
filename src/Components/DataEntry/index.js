@@ -25,3 +25,4 @@ export {
 	Textarea,
 	TextField,
 };
+export * from './Rating';
