@@ -66,7 +66,7 @@ export default {
 		margin-bottom: 8px;
 	}
 	&--body {
-		min-height: 78px;
+		min-height: 72px;
 		margin-bottom: 16px;
 	}
 	&--caption {

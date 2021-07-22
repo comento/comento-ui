@@ -1,3 +1,4 @@
+import CoreCard from './CoreCard';
 import EduCard from './EduCard';
 
-export { EduCard };
+export { CoreCard, EduCard };
