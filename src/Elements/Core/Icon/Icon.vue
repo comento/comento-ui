@@ -18,6 +18,7 @@ import IconFileSmallLine from '@/assets/images/icon/icon-file-small-line.svg?inl
 import IconStarSmallFill from '@/assets/images/icon/icon-star-small-fill.svg?inline';
 import IconMegaphoneSmallLine from '@/assets/images/icon/icon-megaphone-small-line.svg?inline';
 import IconLinkSmallLine from '@/assets/images/icon/icon-link-small-line.svg?inline';
+import IconTextArrowSmallLine from '@/assets/images/icon/icon-textArrow-small-line.svg?inline';
 
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
@@ -139,6 +140,7 @@ export const IconNames = [
 	'IconStarSmallFill',
 	'IconMegaphoneSmallLine',
 	'IconLinkSmallLine',
+	'IconTextArrowSmallLine',
 
 	// medium
 	'IconCheckMediumFill',
@@ -274,6 +276,7 @@ export default {
 		IconStarSmallFill,
 		IconMegaphoneSmallLine,
 		IconLinkSmallLine,
+		IconTextArrowSmallLine,
 
 		// medium
 		IconCheckMediumFill,
