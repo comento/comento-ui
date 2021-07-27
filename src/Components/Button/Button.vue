@@ -166,10 +166,9 @@ $success-hover-background-color: $blue800;
 $success-disabled-background-color: $blue100;
 $success-text-color: $blue600;
 
-$secondary-background-color: $gray600;
-$secondary-hover-background-color: $gray800;
-$secondary-disabled-background-color: $gray100;
-$secondary-text-color: $gray500;
+// secondary는 패턴화가 가능한 컬러만 변수로 만듦
+$secondary-default-background-color: $gray100;
+$secondary-disabled-color: $gray200;
 
 $error-background-color: $red600;
 $error-hover-background-color: $red800;
@@ -402,63 +401,65 @@ $error-text-color: $red600;
 }
 
 .secondary {
-	background-color: $secondary-background-color;
+	background-color: $secondary-default-background-color;
+	color: $gray700;
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: $secondary-hover-background-color;
+		background-color: $gray200;
 	}
 	@include mobile {
-		@include remove-active-and-focus($secondary-background-color);
+		@include remove-active-and-focus($secondary-default-background-color);
 	}
 	&:disabled {
-		background-color: $secondary-disabled-background-color;
+		background-color: $gray000;
+		color: $secondary-disabled-color;
 		.c-button--icon::v-deep .c-icon {
-			fill: $white !important;
+			fill: $secondary-disabled-color !important;
 		}
 		.c-button--loading {
-			background-color: $secondary-disabled-background-color;
+			background-color: $gray000;
 		}
 	}
 	.c-button--loading {
-		background-color: $secondary-background-color;
+		background-color: $secondary-default-background-color;
 	}
 	&.text {
-		color: $secondary-text-color;
+		color: $gray500;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $secondary-disabled-background-color;
+			background-color: $secondary-default-background-color;
 		}
 		@include mobile {
 			@include remove-active-and-focus();
 		}
 		&:disabled {
-			color: $secondary-disabled-background-color;
+			color: $secondary-disabled-color;
 			background: none;
 			.c-button--icon::v-deep .c-icon {
-				fill: $secondary-disabled-background-color !important;
+				fill: $secondary-disabled-color !important;
 			}
 		}
 	}
 	&.outlined {
 		background-color: transparent;
 		border: 1px solid $gray400;
-		color: $secondary-text-color;
+		color: $gray500;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $secondary-disabled-background-color;
+			background-color: $gray100;
 		}
 		@include mobile {
 			@include remove-active-and-focus();
 		}
 		&:disabled {
-			color: $secondary-disabled-background-color;
-			border: 1px solid $secondary-disabled-background-color;
+			color: $secondary-disabled-color;
+			border: 1px solid $secondary-disabled-color;
 			background-color: $white;
 			.c-button--icon::v-deep .c-icon {
-				fill: $secondary-disabled-background-color !important;
+				fill: $secondary-disabled-color !important;
 			}
 		}
 		.c-button--loading {
@@ -466,6 +467,7 @@ $error-text-color: $red600;
 		}
 	}
 }
+
 .error {
 	background-color: $error-background-color;
 	&:hover,

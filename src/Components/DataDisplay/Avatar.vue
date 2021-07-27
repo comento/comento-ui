@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-avatar--container">
+	<div class="c-application c-avatar--container" :class="[computedSize]">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
 		<div class="c-avatar--item">
 			<Icon v-if="isProfileType" :name="computedIconName" />
@@ -122,23 +122,6 @@ export default {
 		position: relative;
 	}
 
-	// 사이즈
-	&.small {
-		width: 40px;
-		height: 40px;
-		line-height: 40px;
-	}
-	&.medium {
-		width: 48px;
-		height: 48px;
-		line-height: 48px;
-	}
-	&.large {
-		width: 68px;
-		height: 68px;
-		line-height: 68px;
-	}
-
 	// 타입
 	&.profile {
 		background: $gray100;
@@ -174,5 +157,22 @@ export default {
 			height: 40px;
 		}
 	}
+}
+
+// 사이즈
+.small {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+}
+.medium {
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+}
+.large {
+	width: 68px;
+	height: 68px;
+	line-height: 68px;
 }
 </style>

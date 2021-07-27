@@ -11,7 +11,7 @@ import ProfileWithText from '@/src/Components/DataDisplay/Content/ProfileWithTex
 import Rating from '@/src/Components/DataEntry/Rating/Rating';
 import RatingGroup from '@/src/Components/DataEntry/Rating/RatingGroup';
 
-storiesOf('Card/CoreCard', module).add('Index', () => ({
+storiesOf('Data Display/Card/CoreCard', module).add('Index', () => ({
 	components: {
 		CoreCard,
 		Content,
