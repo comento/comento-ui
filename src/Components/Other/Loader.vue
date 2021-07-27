@@ -14,7 +14,6 @@ import { colors } from '@/src/Elements/Core/Colors';
 const {
 	gray200,
 	gray500,
-	gray800,
 	green100,
 	green600,
 	green800,
@@ -36,8 +35,8 @@ const colorMap = {
 		fill: gray500,
 	},
 	secondaryReversed: {
-		stroke: gray800,
-		fill: white,
+		stroke: gray200,
+		fill: gray500,
 	},
 	primary: {
 		stroke: green100,
