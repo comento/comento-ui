@@ -66,6 +66,8 @@ import IconDiscountMediumLine from '@/assets/images/icon/icon-discount-medium-li
 import IconLinkMediumLine from '@/assets/images/icon/icon-link-medium-line.svg?inline';
 import IconBrowseMediumLine from '@/assets/images/icon/icon-browse-medium-line.svg?inline';
 import IconVideoMediumFill from '@/assets/images/icon/icon-video-medium-fill.svg?inline';
+import IconPriceMediumLine from '@/assets/images/icon/icon-price-medium-line.svg?inline';
+import IconProfileMediumLine from '@/assets/images/icon/icon-profile-medium-line.svg?inline';
 
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -98,6 +100,7 @@ import IconResumeLargeLine from '@/assets/images/icon/icon-resume-large-line.svg
 import IconQuestionLargeLine from '@/assets/images/icon/icon-question-large-line.svg?inline';
 import IconVideoLargeFill from '@/assets/images/icon/icon-video-large-fill.svg?inline';
 import IconStarLargeFill from '@/assets/images/icon/icon-star-large-fill.svg?inline';
+
 // x-large
 import IconArrowXLargeLine from '@/assets/images/icon/icon-arrow-xlarge-line.svg?inline';
 import IconCloseXLargeLine from '@/assets/images/icon/icon-close-xlarge-line.svg?inline';
@@ -188,6 +191,8 @@ export const IconNames = [
 	'IconLinkMediumLine',
 	'IconBrowseMediumLine',
 	'IconVideoMediumFill',
+	'IconPriceMediumLine',
+	'IconProfileMediumLine',
 
 	// large
 	'IconProfileLargeFill',
@@ -324,6 +329,8 @@ export default {
 		IconLinkMediumLine,
 		IconBrowseMediumLine,
 		IconVideoMediumFill,
+		IconPriceMediumLine,
+		IconProfileMediumLine,
 
 		// large
 		IconProfileLargeFill,
