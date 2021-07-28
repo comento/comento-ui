@@ -18,6 +18,7 @@ import IconFileSmallLine from '@/assets/images/icon/icon-file-small-line.svg?inl
 import IconStarSmallFill from '@/assets/images/icon/icon-star-small-fill.svg?inline';
 import IconMegaphoneSmallLine from '@/assets/images/icon/icon-megaphone-small-line.svg?inline';
 import IconLinkSmallLine from '@/assets/images/icon/icon-link-small-line.svg?inline';
+import IconTextArrowSmallLine from '@/assets/images/icon/icon-textArrow-small-line.svg?inline';
 
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
@@ -65,6 +66,8 @@ import IconDiscountMediumLine from '@/assets/images/icon/icon-discount-medium-li
 import IconLinkMediumLine from '@/assets/images/icon/icon-link-medium-line.svg?inline';
 import IconBrowseMediumLine from '@/assets/images/icon/icon-browse-medium-line.svg?inline';
 import IconVideoMediumFill from '@/assets/images/icon/icon-video-medium-fill.svg?inline';
+import IconPriceMediumLine from '@/assets/images/icon/icon-price-medium-line.svg?inline';
+import IconProfileMediumLine from '@/assets/images/icon/icon-profile-medium-line.svg?inline';
 
 // large
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
@@ -97,6 +100,7 @@ import IconResumeLargeLine from '@/assets/images/icon/icon-resume-large-line.svg
 import IconQuestionLargeLine from '@/assets/images/icon/icon-question-large-line.svg?inline';
 import IconVideoLargeFill from '@/assets/images/icon/icon-video-large-fill.svg?inline';
 import IconStarLargeFill from '@/assets/images/icon/icon-star-large-fill.svg?inline';
+
 // x-large
 import IconArrowXLargeLine from '@/assets/images/icon/icon-arrow-xlarge-line.svg?inline';
 import IconCloseXLargeLine from '@/assets/images/icon/icon-close-xlarge-line.svg?inline';
@@ -139,6 +143,7 @@ export const IconNames = [
 	'IconStarSmallFill',
 	'IconMegaphoneSmallLine',
 	'IconLinkSmallLine',
+	'IconTextArrowSmallLine',
 
 	// medium
 	'IconCheckMediumFill',
@@ -186,6 +191,8 @@ export const IconNames = [
 	'IconLinkMediumLine',
 	'IconBrowseMediumLine',
 	'IconVideoMediumFill',
+	'IconPriceMediumLine',
+	'IconProfileMediumLine',
 
 	// large
 	'IconProfileLargeFill',
@@ -274,6 +281,7 @@ export default {
 		IconStarSmallFill,
 		IconMegaphoneSmallLine,
 		IconLinkSmallLine,
+		IconTextArrowSmallLine,
 
 		// medium
 		IconCheckMediumFill,
@@ -321,6 +329,8 @@ export default {
 		IconLinkMediumLine,
 		IconBrowseMediumLine,
 		IconVideoMediumFill,
+		IconPriceMediumLine,
+		IconProfileMediumLine,
 
 		// large
 		IconProfileLargeFill,
