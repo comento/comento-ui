@@ -2,7 +2,10 @@
 	<article class="c-application c-core-card">
 		<Box :paddings="[18, 20, 16, 20]" :has-border="!isMobile" border-color="gray200">
 			<div class="c-core-card--content-wrapper">
-				<Content type="overline"> {{ overlineLeft }}· {{ overlineRight }} </Content>
+				<Content type="overline">
+					<Typography element="span" v-html="overlineLeft" />
+					· <Typography element="span" v-html="overlineRight" />
+				</Content>
 				<Content type="title" v-html="title" />
 				<Content type="body" v-html="body" />
 				<RatingGroup>
@@ -38,6 +41,7 @@ import NarrowButton from '@/src/Components/Button/NarrowButton';
 import Content from '@/src/Components/DataDisplay/Content/Content';
 import RatingGroup from '@/src/Components/DataEntry/Rating/RatingGroup';
 import Rating from '@/src/Components/DataEntry/Rating/Rating';
+import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export default {
 	name: 'CoreCard',
@@ -76,6 +80,7 @@ export default {
 		Divider,
 		Box,
 		Content,
+		Typography,
 	},
 };
 </script>
