@@ -22,7 +22,7 @@
 				<div class="c-card--replies-wrapper">
 					<slot name="replies" />
 
-					<NarrowButton v-if="hiddenRepliesCount" color="blue400" size="medium">
+					<NarrowButton v-if="isShowHiddenRepliesCount" color="blue400" size="medium">
 						+ {{ hiddenRepliesCount }}개 답변 더보기
 					</NarrowButton>
 				</div>
@@ -62,6 +62,11 @@ export default {
 		},
 		likeCount: {
 			type: Number,
+		},
+	},
+	computed: {
+		isShowHiddenRepliesCount() {
+			return this.hiddenRepliesCount && this.hiddenRepliesCount > 0;
 		},
 	},
 	components: {
