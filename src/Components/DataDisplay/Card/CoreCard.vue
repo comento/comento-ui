@@ -25,8 +25,8 @@
 				<div class="c-card--replies-wrapper">
 					<slot name="replies" />
 
-					<NarrowButton v-if="isShowHiddenRepliesCount" color="blue400" size="medium">
-						+ {{ hiddenRepliesCount }}개 답변 더보기
+					<NarrowButton color="blue400" size="medium">
+						+ <template v-if="isShowHiddenRepliesCount">{{ hiddenRepliesCount }}개 답변 </template>더보기
 					</NarrowButton>
 				</div>
 			</template>
