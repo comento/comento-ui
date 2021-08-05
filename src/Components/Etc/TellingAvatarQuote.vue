@@ -93,7 +93,7 @@ $wrapper-margin-bottom: 40px;
 		&-title {
 			margin-bottom: 4px;
 			@include mobile {
-				max-width: 240px;
+				max-width: 270px;
 			}
 		}
 	}
