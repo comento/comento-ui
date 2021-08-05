@@ -92,6 +92,7 @@ $wrapper-margin-bottom: 40px;
 
 		&-title {
 			margin-bottom: 4px;
+			max-width: 240px;
 		}
 	}
 
