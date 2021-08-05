@@ -449,15 +449,3 @@ template {
 [hidden] {
   display: none;
 }
-
-/**
- * Add the correct display in IE 10-.
- */
-textarea, input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  /* 둥근 테두리 삭제 */
-  -webkit-border-radius:0;
-}
