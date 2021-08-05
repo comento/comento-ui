@@ -60,17 +60,20 @@ export default {
 		},
 		repliesCount: {
 			type: Number,
+			default: 0,
 		},
 		hiddenRepliesCount: {
 			type: Number,
+			default: 0,
 		},
 		likeCount: {
 			type: Number,
+			default: 0,
 		},
 	},
 	computed: {
 		isShowHiddenRepliesCount() {
-			return this.hiddenRepliesCount && this.hiddenRepliesCount > 0;
+			return this.hiddenRepliesCount > 0;
 		},
 	},
 	components: {
