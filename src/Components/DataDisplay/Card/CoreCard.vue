@@ -2,7 +2,10 @@
 	<article class="c-application c-core-card">
 		<Box :paddings="[18, 20, 16, 20]" :has-border="!isMobile" border-color="gray200">
 			<div class="c-core-card--content-wrapper">
-				<Content type="overline"> {{ overlineLeft }}· {{ overlineRight }} </Content>
+				<Content type="overline">
+					<Typography element="span" v-html="overlineLeft" />
+					· <Typography element="span" v-html="overlineRight" />
+				</Content>
 				<Content type="title" v-html="title" />
 				<Content type="body" v-html="body" />
 				<RatingGroup>
@@ -22,8 +25,8 @@
 				<div class="c-card--replies-wrapper">
 					<slot name="replies" />
 
-					<NarrowButton v-if="hiddenRepliesCount" color="blue400" size="medium">
-						+ {{ hiddenRepliesCount }}개 답변 더보기
+					<NarrowButton color="blue400" size="medium">
+						+ <template v-if="isShowHiddenRepliesCount">{{ hiddenRepliesCount }}개 답변 </template>더보기
 					</NarrowButton>
 				</div>
 			</template>
@@ -38,6 +41,7 @@ import NarrowButton from '@/src/Components/Button/NarrowButton';
 import Content from '@/src/Components/DataDisplay/Content/Content';
 import RatingGroup from '@/src/Components/DataEntry/Rating/RatingGroup';
 import Rating from '@/src/Components/DataEntry/Rating/Rating';
+import Typography from '@/src/Elements/Core/Typography/Typography';
 
 export default {
 	name: 'CoreCard',
@@ -56,12 +60,20 @@ export default {
 		},
 		repliesCount: {
 			type: Number,
+			default: 0,
 		},
 		hiddenRepliesCount: {
 			type: Number,
+			default: 0,
 		},
 		likeCount: {
 			type: Number,
+			default: 0,
+		},
+	},
+	computed: {
+		isShowHiddenRepliesCount() {
+			return this.hiddenRepliesCount > 0;
 		},
 	},
 	components: {
@@ -71,6 +83,7 @@ export default {
 		Divider,
 		Box,
 		Content,
+		Typography,
 	},
 };
 </script>
