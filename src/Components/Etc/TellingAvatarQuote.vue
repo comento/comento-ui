@@ -55,7 +55,7 @@ $wrapper-margin-bottom: 40px;
 	@include pc() {
 		background: $gray000;
 		@include flex-direction(row);
-		@include align-items(flex-start);
+		@include align-items(center);
 		@include justify-content(space-between);
 	}
 
