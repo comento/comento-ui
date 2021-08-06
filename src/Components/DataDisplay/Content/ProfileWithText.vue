@@ -37,7 +37,7 @@ export default {
 	}
 
 	.name-text-container {
-		max-width: calc(100% - 46px);
+		max-width: calc(100% - 40px);
 
 		.name-wrapper {
 			@include flexbox();
