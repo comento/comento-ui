@@ -41,8 +41,7 @@ $list-item-padding-x: 4px;
 	padding: 8px $list-item-padding-x;
 	@include flexbox();
 	@include align-items(center);
-	&:hover,
-	&:focus {
+	&:hover {
 		background: $gray100;
 	}
 
