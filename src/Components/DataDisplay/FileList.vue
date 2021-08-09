@@ -9,6 +9,7 @@
 			:is-edit="isEdit"
 			@clickFileDownloadIcon="handleClickFileDownloadIcon"
 			@clickFileItemContent="handleClickFileItemContent"
+			@clickFileItem="handleClickFileItem"
 			@clickFileTrashIcon="handleClickFileTrashIcon"
 		></FileItem>
 	</List>
@@ -40,6 +41,9 @@ export default {
 		},
 		handleClickFileTrashIcon(payload) {
 			this.$emit('clickFileTrashIcon', payload);
+		},
+		handleClickFileItem(payload) {
+			this.$emit('clickFileItem', payload);
 		},
 	},
 	components: { List, FileItem },
