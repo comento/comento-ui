@@ -48,6 +48,21 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		popperOptions: {
+			type: Object,
+			default() {
+				return {
+					modifiers: {
+						flip: {
+							enabled: false,
+						},
+						preventOverflow: {
+							escapeWithReference: true,
+						},
+					},
+				};
+			},
+		},
 	},
 	computed: {
 		mapPlacement() {
@@ -65,15 +80,6 @@ export default {
 			return {
 				'padding-left': `${this.paddingX}px`,
 				'padding-right': `${this.paddingX}px`,
-			};
-		},
-		popperOptions() {
-			return {
-				modifiers: {
-					flip: {
-						enabled: this.flip,
-					},
-				},
 			};
 		},
 	},
