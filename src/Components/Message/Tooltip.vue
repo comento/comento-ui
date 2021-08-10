@@ -45,6 +45,21 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		popperOptions: {
+			type: Object,
+			default() {
+				return {
+					modifiers: {
+						flip: {
+							enabled: false,
+						},
+						preventOverflow: {
+							escapeWithReference: true,
+						},
+					},
+				};
+			},
+		},
 	},
 	computed: {
 		mapPlacement() {
@@ -57,15 +72,6 @@ export default {
 				'right-bottom': 'right-end',
 			};
 			return placementMap[this.placement];
-		},
-		popperOptions() {
-			return {
-				modifiers: {
-					flip: {
-						enabled: this.flip,
-					},
-				},
-			};
 		},
 	},
 	components: { Typography },
