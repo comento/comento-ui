@@ -6,6 +6,7 @@
 		popover-base-class="c-tooltip"
 		popover-arrow-class="c-tooltip--arrow"
 		popover-inner-class="c-tooltip--inner"
+		:popper-options="popperOptions"
 		:container="false"
 		v-bind="$attrs"
 		v-on="$listeners"
@@ -40,6 +41,10 @@ export default {
 				return isValid;
 			},
 		},
+		flip: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		mapPlacement() {
@@ -53,13 +58,20 @@ export default {
 			};
 			return placementMap[this.placement];
 		},
+		popperOptions() {
+			return {
+				modifiers: {
+					flip: {
+						enabled: this.flip,
+					},
+				},
+			};
+		},
 	},
 	components: { Typography },
 };
 </script>
 
-<!--storybook 과의 동기화 때문에 전역으로 적용해야 함-->
-<!--main.scss에서 import하는 식으로 하려면 따로 설정해야 함-->
 <style lang="scss" scoped>
 ::v-deep {
 	@import '@/assets/style/tooltip/tooltip';
