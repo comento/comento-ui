@@ -31,13 +31,14 @@ export default {
 	padding: 2px 0 16px;
 	@include flexbox();
 	@include flex-direction(row);
+	overflow-x: hidden;
 
 	.avatar-wrapper {
 		margin-right: 6px;
 	}
 
 	.name-text-container {
-		max-width: calc(100% - 40px);
+		overflow-x: inherit;
 
 		.name-wrapper {
 			@include flexbox();
