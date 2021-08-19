@@ -4,7 +4,14 @@
 		@mouseenter="handleSwiperAutoplay('stop')"
 		@mouseleave="handleSwiperAutoplay('start')"
 	>
-		<base-swiper ref="mySwiper" class="swiper" :options="swiperOptions" v-bind="$attrs" v-on="$listeners">
+		<base-swiper
+			ref="mySwiper"
+			class="swiper"
+			:options="swiperOptions"
+			:cleanup-styles-on-destroy="false"
+			v-bind="$attrs"
+			v-on="$listeners"
+		>
 			<base-swiper-slide
 				v-for="(node, index) in Object.keys(this.$slots).length"
 				:key="`tabs-item-${index}-${key}`"
