@@ -34,7 +34,7 @@
   line-height: 1.42;
   height: 100%;
   outline: none;
-  overflow-y: auto;
+  overflow-y: visible;
   padding: 12px 15px;
   tab-size: 4;
   -moz-tab-size: 4;
@@ -637,6 +637,14 @@
   background-color: #23241f;
   color: #f8f8f2;
   overflow: visible;
+}
+.on-air .ql-snow .ql-editor pre.ql-syntax {
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+  /* h3 */
+  font-size: 1.17em;
+  font-weight: bold;
 }
 .ql-snow .ql-editor img {
   max-width: 100%;
