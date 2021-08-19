@@ -63,8 +63,9 @@ export default {
 	},
 	methods: {
 		handleCloseKeycode(e) {
-			if (this.show && e.keyCode === 27) {
-				this.close();
+			const isEsc = e.keyCode === 27;
+			if (this.show && isEsc) {
+				this.handleCloseModal();
 			}
 		},
 		handleCloseModal() {
