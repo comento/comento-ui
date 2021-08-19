@@ -3,7 +3,7 @@
 		v-if="show"
 		class="c-application c-overlay"
 		:class="[computedType]"
-		:style="[computedZindex]"
+		:style="[computedZIndex]"
 		@click="handleCloseModal"
 	>
 		<slot />
@@ -51,7 +51,7 @@ export default {
 		computedType() {
 			return `c-overlay--type-${this.type}`;
 		},
-		computedZindex() {
+		computedZIndex() {
 			return { zIndex: this.zIndex };
 		},
 	},
