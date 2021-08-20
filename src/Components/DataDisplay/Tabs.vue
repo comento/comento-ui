@@ -176,8 +176,10 @@ export default {
 			@include flexbox();
 			position: relative;
 			@include align-items(center);
-			&:hover {
-				background-color: $gray100;
+			@include pc {
+				&:hover {
+					background-color: $gray100;
+				}
 			}
 			&::v-deep .c-button {
 				background: none !important;
