@@ -254,7 +254,7 @@ $error-text-color: $red600;
 		width: 100%;
 	}
 	&.text {
-		@include f-normal();
+		font-weight: normal;
 		background: transparent;
 		border: none;
 		color: $gray500;
