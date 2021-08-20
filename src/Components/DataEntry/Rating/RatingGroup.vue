@@ -17,7 +17,7 @@ export default {
 		@include flex-direction(row);
 	}
 
-	margin-right: 6px;
+	margin-right: 12px;
 	&:last-child {
 		margin-right: 0;
 	}
