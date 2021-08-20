@@ -138,6 +138,10 @@ export default {
 				return selectSizes.indexOf(value) !== -1;
 			},
 		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -169,7 +173,7 @@ export default {
 			return this.options.every(option => typeof option === 'object');
 		},
 		classes() {
-			return [this.size];
+			return [this.size, this.computedDisabled];
 		},
 		computedListItemTypography() {
 			const defaultListItemTypography = {
@@ -177,6 +181,9 @@ export default {
 				medium: 'body1',
 			};
 			return defaultListItemTypography[this.size];
+		},
+		computedDisabled() {
+			return { disabled: this.disabled };
 		},
 	},
 	watch: {
@@ -220,6 +227,11 @@ export default {
 			this.close();
 		},
 		handleOpen() {
+			if (!this.disabled) {
+				this.toggleOpen();
+			}
+		},
+		toggleOpen() {
 			this.open = !this.open;
 		},
 		close() {
@@ -243,6 +255,18 @@ export default {
 
 <style lang="scss" scoped>
 .c-select {
+	&.disabled {
+		.c-select {
+			&--box,
+			&--item > div,
+			&--item > input,
+			&--icon svg {
+				opacity: 0.4;
+				cursor: not-allowed;
+			}
+		}
+	}
+
 	&--box {
 		border: 1px solid $input-border-color;
 		@include border-radius(2px);
@@ -255,7 +279,6 @@ export default {
 	}
 
 	&--item {
-		cursor: pointer;
 		width: 100%;
 		@include flexbox();
 
