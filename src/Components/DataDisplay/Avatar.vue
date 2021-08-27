@@ -92,6 +92,7 @@ export default {
 		},
 		computedTypography() {
 			const typographyBySize = {
+				xsmall: 'caption2',
 				small: 'body2',
 				medium: 'body1',
 				large: 'headline4',
@@ -100,6 +101,7 @@ export default {
 		},
 		computedIconName() {
 			const iconBySize = {
+				xsmall: 'Medium',
 				small: 'Large',
 				medium: 'XLarge',
 				large: '2XLarge',
@@ -147,6 +149,10 @@ export default {
 		background-repeat: no-repeat;
 		background-size: cover;
 
+		&.xsmall {
+			width: 12px;
+			height: 12px;
+		}
 		&.small {
 			width: 24px;
 			height: 24px;
@@ -163,6 +169,11 @@ export default {
 }
 
 // 사이즈
+.xsmall {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+}
 .small {
 	width: 40px;
 	height: 40px;
