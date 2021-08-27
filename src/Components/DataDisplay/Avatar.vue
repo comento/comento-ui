@@ -16,6 +16,9 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import uniqueId from '@/utils/unique-id';
 
+export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
+export const avatarTypes = ['text', 'profile', 'logo', 'image'];
+
 export default {
 	name: 'Avatar',
 	props: {
@@ -23,14 +26,14 @@ export default {
 			type: String,
 			default: 'profile',
 			validator(value) {
-				return ['text', 'profile', 'logo', 'image'].indexOf(value) !== -1;
+				return avatarTypes.indexOf(value) !== -1;
 			},
 		},
 		size: {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return ['small', 'medium', 'large'].indexOf(value) !== -1;
+				return avatarSizes.indexOf(value) !== -1;
 			},
 		},
 		text: {

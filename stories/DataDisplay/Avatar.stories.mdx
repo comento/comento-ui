@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import Avatar from '@/src/Components/DataDisplay/Avatar';
+import Avatar, { avatarSizes, avatarTypes } from '@/src/Components/DataDisplay/Avatar';
 
 <Meta
     title="Data Display/Avatar"
@@ -8,29 +8,17 @@ import Avatar from '@/src/Components/DataDisplay/Avatar';
         size: {
             description: "아바타 크기",
             defaultValue: "medium",
-            table: {
-                type: {
-                    summary: "목록",
-                    detail: '"small" "medium" "large"',
-                },
-            },
             control: {
                 type: "select",
-                options: ["small", "medium", "large"],
+                options: avatarSizes,
             },
         },
         type: {
             description: "아바타 타입",
             defaultValue: "text",
-            table: {
-                type: {
-                    summary: "목록",
-                    detail: '"text" "profile" "logo" "image"',
-                },
-            },
             control: {
                 type: "select",
-                options: ["text", "profile", "logo", "image"],
+                options: avatarTypes,
             },
         },
         text: {
