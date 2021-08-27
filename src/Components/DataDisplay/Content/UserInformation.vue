@@ -1,0 +1,135 @@
+<template>
+	<div class="c-application c-user-information" :class="[size]">
+		<div v-if="$slots['avatar']" class="avatar-wrapper">
+			<slot name="avatar" />
+		</div>
+		<div class="information-wrapper">
+			<div class="name-company-wrapper">
+				<div class="name-icon-wrapper">
+					<Typography :type="computedNameTypography" color="gray850" font-weight="bold" class="name">
+						<slot name="name" />
+					</Typography>
+					<div ref="icon" class="icon-wrapper">
+						<slot name="icon" />
+					</div>
+				</div>
+
+				<Typography
+					v-if="isShowCompany"
+					ref="company"
+					:type="computedCompanyTypography"
+					color="gray500"
+					class="company"
+				>
+					<slot name="company" />
+				</Typography>
+			</div>
+
+			<Typography v-if="isShowOther" class="other-wrapper" type="caption1" color="gray400">
+				<slot name="other" />
+			</Typography>
+		</div>
+	</div>
+</template>
+
+<script>
+import Typography from '@/src/Elements/Core/Typography/Typography';
+export const userInformationSizes = ['xsmall', 'small', 'medium'];
+
+export default {
+	name: 'UserInformation',
+	props: {
+		size: {
+			type: String,
+			validator(value) {
+				return userInformationSizes.indexOf(value) !== -1;
+			},
+		},
+	},
+	computed: {
+		computedNameTypography() {
+			return this.type === 'medium' ? 'body1' : 'body2';
+		},
+		computedCompanyTypography() {
+			return this.type === 'medium' ? 'body2' : 'caption1';
+		},
+		isShowCompany() {
+			return this.size !== 'xsmall';
+		},
+		isShowOther() {
+			return this.$slots['other'] && this.size === 'medium';
+		},
+	},
+	mounted() {
+		if (this.size === 'medium') {
+			this.$nextTick(() => {
+				const $company = this.$refs.company.$el;
+				const $icon = this.$refs.icon;
+				console.log($company, $company.offsetWidth, $icon);
+				$icon.style.right = `-${$icon.offsetWidth + $company.offsetWidth}px`;
+			});
+		}
+	},
+	components: { Typography },
+};
+</script>
+
+<style lang="scss" scoped>
+.c-user-information {
+	@include flexbox();
+	@include flex-direction(row);
+	@include align-items(center);
+	overflow: hidden;
+	padding: 2px 0 16px;
+	&.xsmall {
+		padding: 2px 0;
+	}
+	&.medium {
+		.icon-wrapper {
+			position: absolute;
+			margin-left: 0;
+		}
+		.name-company-wrapper {
+			@include flexbox();
+			@include flex-direction(row);
+			@include align-items(center);
+			overflow-x: inherit;
+			.name {
+				margin-right: 4px;
+				@include ellipsis(1);
+			}
+			.company {
+				@include ellipsis(1);
+				margin-right: 12px;
+			}
+		}
+	}
+	.information-wrapper {
+		overflow: hidden;
+	}
+	.avatar-wrapper {
+		margin-right: 6px;
+		@include flexbox();
+	}
+	.name-company-wrapper {
+		position: relative;
+	}
+	.name-icon-wrapper {
+		position: relative;
+		@include flexbox();
+		@include flex-direction(row);
+	}
+	.icon-wrapper {
+		margin-left: 2px;
+	}
+	.other-wrapper {
+		margin-top: 4px;
+		display: block;
+		::v-deep.c-chip-group {
+			display: inline-block;
+			vertical-align: text-bottom;
+			margin-left: 2px;
+		}
+	}
+}
+</style>
