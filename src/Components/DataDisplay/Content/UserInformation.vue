@@ -42,7 +42,7 @@ export default {
 		size: {
 			type: String,
 			validator(value) {
-				return userInformationSizes.indexOf(value) !== -1;
+				return userInformationSizes.includes(value);
 			},
 		},
 	},
@@ -65,7 +65,6 @@ export default {
 			this.$nextTick(() => {
 				const $company = this.$refs.company.$el;
 				const $icon = this.$refs.icon;
-				console.log($company, $company.offsetWidth, $icon);
 				$icon.style.right = `-${$icon.offsetWidth + $company.offsetWidth}px`;
 			});
 		}
