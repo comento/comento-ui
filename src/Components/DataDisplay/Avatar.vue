@@ -26,14 +26,14 @@ export default {
 			type: String,
 			default: 'profile',
 			validator(value) {
-				return avatarTypes.indexOf(value) !== -1;
+				return avatarTypes.includes(value);
 			},
 		},
 		size: {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return avatarSizes.indexOf(value) !== -1;
+				return avatarSizes.includes(value);
 			},
 		},
 		text: {
@@ -101,7 +101,7 @@ export default {
 		},
 		computedIconName() {
 			const iconBySize = {
-				xsmall: 'Medium',
+				xsmall: 'Small',
 				small: 'Large',
 				medium: 'XLarge',
 				large: '2XLarge',
