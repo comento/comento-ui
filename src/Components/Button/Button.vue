@@ -220,7 +220,7 @@ $error-text-color: $red600;
 	&.medium {
 		height: 36px;
 		padding: 0 12px;
-		min-width: 60px;
+		min-width: 50px;
 		@include body2;
 		font-weight: bold;
 		.loading {
