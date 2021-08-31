@@ -87,7 +87,8 @@ export default {
 	&.full {
 		.icon-wrapper {
 			position: absolute;
-			margin-left: 0;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 		.name-company-wrapper {
 			@include flexbox();
@@ -120,7 +121,7 @@ export default {
 		@include flex-direction(row);
 	}
 	.icon-wrapper {
-		margin-left: 2px;
+		padding-left: 2px;
 	}
 	.other-wrapper {
 		margin-top: 4px;
