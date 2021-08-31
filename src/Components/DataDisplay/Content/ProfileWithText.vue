@@ -34,7 +34,7 @@ export default {
 	overflow-x: hidden;
 
 	.avatar-wrapper {
-		margin-right: 6px;
+		margin-right: 8px;
 	}
 
 	.name-text-container {
