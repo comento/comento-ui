@@ -16,6 +16,9 @@ import Typography from '@/src/Elements/Core/Typography/Typography';
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import uniqueId from '@/utils/unique-id';
 
+export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
+export const avatarTypes = ['text', 'profile', 'logo', 'image'];
+
 export default {
 	name: 'Avatar',
 	props: {
@@ -23,14 +26,14 @@ export default {
 			type: String,
 			default: 'profile',
 			validator(value) {
-				return ['text', 'profile', 'logo', 'image'].indexOf(value) !== -1;
+				return avatarTypes.indexOf(value) !== -1;
 			},
 		},
 		size: {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return ['small', 'medium', 'large'].indexOf(value) !== -1;
+				return avatarSizes.indexOf(value) !== -1;
 			},
 		},
 		text: {
@@ -89,6 +92,7 @@ export default {
 		},
 		computedTypography() {
 			const typographyBySize = {
+				xsmall: 'caption2',
 				small: 'body2',
 				medium: 'body1',
 				large: 'headline4',
@@ -97,6 +101,7 @@ export default {
 		},
 		computedIconName() {
 			const iconBySize = {
+				xsmall: 'Medium',
 				small: 'Large',
 				medium: 'XLarge',
 				large: '2XLarge',
@@ -144,6 +149,10 @@ export default {
 		background-repeat: no-repeat;
 		background-size: cover;
 
+		&.xsmall {
+			width: 12px;
+			height: 12px;
+		}
 		&.small {
 			width: 24px;
 			height: 24px;
@@ -160,6 +169,11 @@ export default {
 }
 
 // 사이즈
+.xsmall {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+}
 .small {
 	width: 40px;
 	height: 40px;
