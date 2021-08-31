@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-user-information" :class="[size]">
+	<div class="c-application c-user-information" :class="[type]">
 		<div v-if="$slots['avatar']" class="avatar-wrapper">
 			<slot name="avatar" />
 		</div>
@@ -34,34 +34,35 @@
 
 <script>
 import Typography from '@/src/Elements/Core/Typography/Typography';
-export const userInformationSizes = ['xsmall', 'small', 'medium'];
+export const userInformationTypes = ['simple', 'normal', 'full'];
 
 export default {
 	name: 'UserInformation',
 	props: {
-		size: {
+		type: {
 			type: String,
+			default: 'normal',
 			validator(value) {
-				return userInformationSizes.includes(value);
+				return userInformationTypes.includes(value);
 			},
 		},
 	},
 	computed: {
 		computedNameTypography() {
-			return this.type === 'medium' ? 'body1' : 'body2';
+			return this.type === 'full' ? 'body1' : 'body2';
 		},
 		computedCompanyTypography() {
-			return this.type === 'medium' ? 'body2' : 'caption1';
+			return this.type === 'full' ? 'body2' : 'caption1';
 		},
 		isShowCompany() {
-			return this.size !== 'xsmall';
+			return this.type !== 'simple';
 		},
 		isShowOther() {
-			return this.$slots['other'] && this.size === 'medium';
+			return this.$slots['other'] && this.type === 'full';
 		},
 	},
 	mounted() {
-		if (this.size === 'medium') {
+		if (this.type === 'full') {
 			this.$nextTick(() => {
 				const $company = this.$refs.company.$el;
 				const $icon = this.$refs.icon;
@@ -80,13 +81,14 @@ export default {
 	@include align-items(center);
 	overflow: hidden;
 	padding: 2px 0 16px;
-	&.xsmall {
+	&.simple {
 		padding: 2px 0;
 	}
-	&.medium {
+	&.full {
 		.icon-wrapper {
 			position: absolute;
-			margin-left: 0;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 		.name-company-wrapper {
 			@include flexbox();
@@ -119,7 +121,7 @@ export default {
 		@include flex-direction(row);
 	}
 	.icon-wrapper {
-		margin-left: 2px;
+		padding-left: 2px;
 	}
 	.other-wrapper {
 		margin-top: 4px;
