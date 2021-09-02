@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
-import UserInformation, { userInformationSizes } from '@/src/Components/DataDisplay/Content/UserInformation';
+import UserInformation, { userInformationTypes } from '@/src/Components/DataDisplay/Content/UserInformation';
 import Content from "@/src/Components/DataDisplay/Content/Content";
 import Icon from "@/src/Elements/Core/Icon/Icon";
 import Avatar from "@/src/Components/DataDisplay/Avatar";
@@ -11,11 +11,11 @@ import Divider from "@/src/Elements/Utility/Divider";
     title="Data Display/Content/UserInformation"
     component={ UserInformation }
     argTypes={{
-        size: {
-            description: "사이즈",
+        type: {
+            description: "타입",
             control: {
                 type: "select",
-                options: userInformationSizes,
+                options: userInformationTypes,
             }
         },
         name: {
@@ -41,10 +41,20 @@ export const Basic = (args, { argTypes }) => ({
             matchedItems: ['회사', '산업', '직무', '학교'],
         };
     },
+    computed: {
+        avatarSize() {
+            const sizes = {
+                simple: 'xsmall',
+                normal: 'small',
+                full: 'medium'
+            };
+            return sizes[this.type];
+        }
+    },
     template: `
-        <UserInformation :size="size">
+        <UserInformation :type="type">
             <template v-slot:avatar>
-                <Avatar type="text" :text="name.substr(0, 1)" :size="size"/>
+                <Avatar type="text" :text="name.substr(0, 1)" :size="avatarSize"/>
             </template>
             <template v-slot:name>
                 {{ name }}
