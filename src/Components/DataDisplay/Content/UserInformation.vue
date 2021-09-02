@@ -80,10 +80,7 @@ export default {
 	@include flex-direction(row);
 	@include align-items(center);
 	overflow: hidden;
-	padding: 2px 0 16px;
-	&.simple {
-		padding: 2px 0;
-	}
+	padding: 2px 0;
 	&.full {
 		.icon-wrapper {
 			position: absolute;
