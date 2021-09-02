@@ -121,6 +121,7 @@ span,
 div,
 p {
 	word-break: keep-all;
+	word-wrap: break-word;
 }
 .c_display1 {
 	font-size: 42px;
