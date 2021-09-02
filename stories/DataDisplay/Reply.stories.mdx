@@ -54,10 +54,15 @@ export const Basic = (args, { argTypes }) => ({
                 return 'normal';
             }
             return this.type;
+        },
+    },
+    methods: {
+        openReportModal() {
+            alert('신고하기 버튼 클릭');
         }
     },
     template: `
-        <Reply :value="value" :date="date">
+        <Reply :value="value" :date="date" @clickReportButton="openReportModal">
             <template v-slot:user-information>
                 <UserInformation :type="userInformationType">
                     <template v-slot:avatar>
@@ -99,9 +104,14 @@ export const Basic = (args, { argTypes }) => ({
                     company: '코멘토',
                 };
             },
+            methods: {
+                openReportModal() {
+                    alert('신고하기 버튼 클릭');
+                }
+            },
             template: `
                 <div>
-                    <Reply value="댓글 내용이 표시됩니다." date="21.09.02">
+                    <Reply value="댓글 내용이 표시됩니다." date="21.09.02" @clickReportButton="openReportModal">
                         <template v-slot:user-information>
                             <UserInformation type="normal">
                                 <template v-slot:avatar>
