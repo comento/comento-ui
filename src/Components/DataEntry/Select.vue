@@ -20,6 +20,7 @@
 						:value="handleOptions(selectOption, 'label')"
 						readonly
 						class="c-select--input"
+						@input="value = $event.target.value"
 					/>
 					<input
 						v-else
@@ -28,6 +29,7 @@
 						:placeholder="placeholder"
 						readonly
 						class="c-select--input"
+						@input="value = $event.target.value"
 					/>
 				</div>
 				<div class="c-select--icon">
