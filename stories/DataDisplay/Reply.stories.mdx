@@ -28,6 +28,12 @@ import Icon from "@/src/Elements/Core/Icon/Icon";
                     "simple"
                 ],
             }
+        },
+        showReport: {
+            description: "신고 버튼 보여주기",
+            control: {
+                type: "boolean"
+            }
         }
     }}
 />
@@ -62,7 +68,7 @@ export const Basic = (args, { argTypes }) => ({
         }
     },
     template: `
-        <Reply :value="value" :date="date" @clickReportButton="openReportModal">
+        <Reply :value="value" :date="date" :show-report="showReport" @clickReportButton="openReportModal">
             <template v-slot:user-information>
                 <UserInformation :type="userInformationType">
                     <template v-slot:avatar>
