@@ -104,26 +104,29 @@ export const Basic = (args, { argTypes }) => ({
                         {
                             name: '레오나',
                             company: '코멘토',
+                            type: 'simple',
                             size: 'xsmall',
                         },
                         {
                             name: '레오나',
                             company: '코멘토',
+                            type: 'normal',
                             size: 'small',
                         },
                         {
                             name: '레오나',
                             company: '코멘토',
                             matchedItems: ['회사', '산업', '직무', '학교'],
+                            type: 'full',
                             size: 'medium',
-                        }
+                        },
                     ],
                 };
             },
             template: `
                 <div>
-                    <template v-for="({name, company, matchedItems, size}, index) in sampleItems">
-                        <UserInformation :size="size" :key="'user-information' + index">
+                    <template v-for="({ name, company, matchedItems, size, type }, index) in sampleItems">
+                        <UserInformation :type="type" :key="'user-information' + index">
                             <template v-slot:avatar>
                                 <Avatar type="text" :text="name.substr(0, 1)" :size="size"/>
                             </template>
@@ -154,6 +157,32 @@ export const Basic = (args, { argTypes }) => ({
                         </UserInformation>
                         <Divider :key="'divider' + index" class="my-8" />
                     </template>
+                    <UserInformation type="simple">
+                        <template v-slot:avatar>
+                            <Avatar type="profile" size="xsmall"/>
+                        </template>
+                        <template v-slot:name>
+                            질문자
+                        </template>
+                    </UserInformation>
+                    <Divider class="my-8" />
+                    <UserInformation type="normal">
+                        <template v-slot:avatar>
+                            <Avatar type="profile" size="small"/>
+                        </template>
+                        <template v-slot:name>
+                            질문자
+                        </template>
+                    </UserInformation>
+                    <Divider class="my-8" />
+                    <UserInformation type="full">
+                        <template v-slot:avatar>
+                            <Avatar type="profile" size="medium"/>
+                        </template>
+                        <template v-slot:name>
+                            질문자
+                        </template>
+                    </UserInformation>
                 </div>
             `,
             components: { UserInformation, Icon, ChipGroup, Chip, Avatar, Divider },
