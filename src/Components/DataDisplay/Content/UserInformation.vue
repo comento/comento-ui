@@ -101,6 +101,14 @@ export default {
 				margin-right: 12px;
 			}
 		}
+		.information-wrapper {
+			min-height: 44px;
+		}
+	}
+	&.normal {
+		.information-wrapper {
+			min-height: 33px;
+		}
 	}
 	.information-wrapper {
 		overflow: hidden;
