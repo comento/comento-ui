@@ -8,7 +8,9 @@
 		</Box>
 		<div class="c-reply--append">
 			<Label type="dataDisplay" class="c-reply--date" v-html="date" />
-			<Button type="text" color="secondary" size="small" @click="clickReportButton()">신고</Button>
+			<Button v-if="showReport" type="text" color="secondary" size="small" @click="clickReportButton()">
+				신고
+			</Button>
 		</div>
 	</div>
 </template>
@@ -28,6 +30,10 @@ export default {
 		},
 		date: {
 			type: String,
+		},
+		showReport: {
+			type: Boolean,
+			default: true,
 		},
 	},
 	methods: {
@@ -59,6 +65,7 @@ export default {
 		@include justify-content(space-between);
 		@include align-items(center);
 		padding: 0 8px 0 16px;
+		height: 24px;
 	}
 }
 </style>

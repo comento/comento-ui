@@ -2,7 +2,7 @@
 	<div>
 		<div class="c-application c-table" :class="classes">
 			<!-- head -->
-			<div class="c-table--head">
+			<div v-if="$slots['head']" class="c-table--head">
 				<slot name="head" />
 			</div>
 
