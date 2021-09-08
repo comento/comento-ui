@@ -14,6 +14,7 @@
 			:editable="false"
 			:clearable="clearable"
 			:popup-class="`c-calendar-${uid}`"
+			:append-to-body="false"
 			:open.sync="open"
 			v-on="$listeners"
 			@change="handleChange"
