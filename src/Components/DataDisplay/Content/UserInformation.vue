@@ -98,7 +98,7 @@ export default {
 			}
 			.company {
 				@include ellipsis(1);
-				margin-right: 12px;
+				margin-right: 14px;
 			}
 		}
 		.information-wrapper {
