@@ -46,7 +46,7 @@
 						:key="`c-select--option-${index}`"
 						size="small"
 						class="c-select--list-item"
-						@click="handleSelect(option, true)"
+						@click="handleEmitInputEvent(option)"
 					>
 						<Typography :type="computedListItemTypography" color="gray800">
 							{{ handleOptions(option, 'label') }}
@@ -192,19 +192,14 @@ export default {
 		// 이렇게 해야 options가 반응형일 때를 대응할 수 있다.
 		options() {
 			const option = this.options.find(option => option.value === this.value);
-			this.handleSelect(option, false);
+			this.handleSelect(option);
 		},
 		// 초기 렌더링 시 object option을 가지고 있어도 select를 하기 전 value 그대로 노출되는 이슈 해결
 		value: {
 			immediate: true,
-			handler(newVal, oldVal) {
-				// 초기 렌더링시 oldVal = undefined
-				// 초기 렌더링 시에만 this.handleSelect를 실행시키면 된다. (value에 맞는 label을 표시하기 위해)
-				const emitEvent = oldVal !== undefined;
-				if (!emitEvent) {
-					const option = this.options.find(option => option.value === newVal);
-					this.handleSelect(option, emitEvent);
-				}
+			handler(newVal) {
+				const option = this.options.find(option => option.value === newVal);
+				this.handleSelect(option);
 			},
 		},
 	},
@@ -221,11 +216,11 @@ export default {
 			}
 			return option;
 		},
-		handleSelect(option, emitEvent = false) {
+		handleEmitInputEvent(option) {
+			this.$emit('input', this.handleOptions(option, 'value'));
+		},
+		handleSelect(option) {
 			this.selectOption = option;
-			if (emitEvent) {
-				this.$emit('input', this.handleOptions(option, 'value'));
-			}
 			this.close();
 		},
 		handleOpen() {
