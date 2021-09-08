@@ -14,6 +14,7 @@
 			:editable="false"
 			:clearable="clearable"
 			:popup-class="`c-calendar-${uid}`"
+			:append-to-body="appendToBody"
 			:open.sync="open"
 			v-on="$listeners"
 			@change="handleChange"
@@ -77,6 +78,10 @@ export default {
 			default: null,
 		},
 		clearable: {
+			type: Boolean,
+			default: true,
+		},
+		appendToBody: {
 			type: Boolean,
 			default: true,
 		},
