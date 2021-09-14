@@ -18,6 +18,7 @@ import uniqueId from '@/utils/unique-id';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
 export const avatarTypes = ['text', 'profile', 'logo', 'image'];
+const avatarColors = ['#f5b3b6', '#f4c19f', '#efd76f', '#b0d0f5', '#b8bdea', '#b3e2de'];
 
 export default {
 	name: 'Avatar',
@@ -44,6 +45,10 @@ export default {
 		src: {
 			type: String,
 			default: null,
+		},
+		id: {
+			type: Number,
+			default: -1,
 		},
 	},
 	data() {
@@ -79,10 +84,12 @@ export default {
 			}
 			return {};
 		},
+		computedId() {
+			return this.id > -1 ? this.id : this.uid;
+		},
 		computedRandomBackground() {
-			const colors = ['#f5b3b6', '#f4c19f', '#efd76f', '#b0d0f5', '#b8bdea', '#b3e2de'];
-			const randomNo = this.uid % 5;
-			return colors[randomNo];
+			const randomNo = this.computedId % avatarColors.length;
+			return avatarColors[randomNo];
 		},
 		computedRandomText() {
 			const text = 'ABCDEGHIJKLMNOPQRSTUVWXYZ';
