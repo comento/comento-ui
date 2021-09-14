@@ -123,59 +123,55 @@ p {
 	word-break: keep-all;
 	word-wrap: break-word;
 }
+
+@mixin trans-font-size($size, $line, $math: round) {
+	font-size: $size;
+	line-height: $math($size * $line);
+}
+
 .c_display1 {
-	font-size: 42px;
-	line-height: 120%;
+	@include trans-font-size(42px, 1.2);
 	font-weight: bold;
 }
 .c_headline1 {
-	font-size: 32px;
-	line-height: 125%;
+	@include trans-font-size(32px, 1.25);
 	font-weight: bold;
 }
 .c_headline2 {
-	font-size: 28px;
-	line-height: 130%;
+	@include trans-font-size(28px, 1.3);
 	font-weight: bold;
 }
 .c_headline3 {
-	font-size: 26px;
-	line-height: 130%;
+	@include trans-font-size(26px, 1.3);
 	font-weight: bold;
 }
 .c_headline4 {
-	font-size: 24px;
-	line-height: 125%;
+	@include trans-font-size(24px, 1.25);
 	font-weight: bold;
 }
 .c_headline5 {
-	font-size: 22px;
-	line-height: 130%;
+	@include trans-font-size(22px, 1.3);
 	font-weight: normal;
 }
 .c_headline6 {
-	font-size: 18px;
-	line-height: 135%;
+	@include trans-font-size(18px, 1.35);
 	font-weight: bold;
 }
 .c_body1 {
-	font-size: 16px;
-	line-height: 150%;
+	@include trans-font-size(16px, 1.5);
 	font-weight: normal;
 }
 .c_body2 {
-	font-size: 14px;
-	line-height: 145%;
+	@include trans-font-size(14px, 1.45);
 	font-weight: normal;
 }
+
 .c_caption1 {
-	font-size: 12px;
-	line-height: 115%;
+	@include trans-font-size(12px, 1.15);
 	font-weight: 300;
 }
 .c_caption2 {
-	font-size: 10px;
-	line-height: 115%;
+	@include trans-font-size(10px, 1.15, floor);
 	font-weight: 300;
 }
 </style>
