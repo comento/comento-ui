@@ -126,7 +126,11 @@ p {
 
 @mixin trans-font-size($size, $line, $math: round) {
 	font-size: $size;
-	line-height: $math($size * $line);
+	@if $math == 'round' {
+		line-height: round($size * $line);
+	} @else if $math == 'floor' {
+		line-height: floor($size * $line);
+	}
 }
 
 .c_display1 {
