@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { colors, colorKeys } from '@/src/Elements/Core/Colors';
+import { colors } from '@/src/Elements/Core/Colors';
 
 export const TypographyTypes = [
 	'display1',
@@ -61,13 +61,6 @@ export default {
 		color: {
 			type: String,
 			default: null,
-			validator(value) {
-				const isValid = colorKeys.indexOf(value) !== -1;
-				if (!isValid) {
-					console.error(`${value} is not a valid name of the typography color`);
-				}
-				return isValid;
-			},
 		},
 		fontWeight: {
 			type: [Number, String],
@@ -94,7 +87,8 @@ export default {
 	},
 	computed: {
 		computedColor() {
-			return this.color && colors[this.color] ? colors[this.color] : 'inherit';
+			if (!this.color) return 'inherit';
+			return colors[this.color] ? colors[this.color] : this.color;
 		},
 		computedStyle() {
 			return {
