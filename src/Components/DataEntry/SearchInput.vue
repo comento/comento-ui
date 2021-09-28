@@ -38,7 +38,7 @@
 					tabindex="1"
 					name="IconSearchLargeLine"
 					size="large"
-					color="green600"
+					:color="iconColor"
 					class="icon_search ml-8"
 				/>
 			</div>
@@ -50,6 +50,7 @@
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
+import { colors } from '@/src/Elements/Core/Colors';
 
 export default {
 	name: 'SearchInput',
@@ -73,6 +74,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		iconColor: {
+			type: String,
+			default: 'green600',
+		},
 	},
 	data: () => ({
 		isTyping: false,
@@ -92,6 +97,17 @@ export default {
 		},
 		computedFull() {
 			return this.full ? 'full' : '';
+		},
+		computedColor() {
+			if (!this.color) return 'inherit';
+			return colors[this.color] ? colors[this.color] : this.color;
+		},
+		computedStyle() {
+			return {
+				color: this.computedColor,
+				'text-align': this.align,
+				'font-weight': this.fontWeight,
+			};
 		},
 	},
 	methods: {
