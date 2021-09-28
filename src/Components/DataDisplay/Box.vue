@@ -1,12 +1,13 @@
 <template>
-	<div class="c-application c-box" :class="classes" :style="styles">
+	<component :is="element" class="c-application c-box" :class="classes" :style="styles">
 		<slot />
-	</div>
+	</component>
 </template>
 
 <script>
 import colorMixin from '../../../mixins/colorMixin';
 import paddingMixin from '../../../mixins/paddingMixin';
+export const Elements = ['div', 'article'];
 
 export default {
 	name: 'Box',
@@ -33,6 +34,10 @@ export default {
 		hasShadow: {
 			type: Boolean,
 			default: false,
+		},
+		element: {
+			type: String,
+			default: 'div',
 		},
 	},
 	computed: {

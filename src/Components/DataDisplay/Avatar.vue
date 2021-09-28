@@ -18,7 +18,7 @@ import uniqueId from '@/utils/unique-id';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
 export const avatarTypes = ['text', 'profile', 'logo', 'image'];
-const avatarColors = ['#f5b3b6', '#f4c19f', '#efd76f', '#b0d0f5', '#b8bdea', '#b3e2de'];
+const avatarColors = ['#f5b3b3', '#f3c499', '#f0db80', '#b4d2a9', '#91cfd3', '#acc5ea', '#ceb9e2', '#b0aba4'];
 
 export default {
 	name: 'Avatar',
