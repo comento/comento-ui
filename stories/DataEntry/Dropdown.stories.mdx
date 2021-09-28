@@ -19,7 +19,7 @@ import { colorKeys } from "@/src/Elements/Core/Colors";
             defaultValue: "130px",
             control: { type: "text" },
         },
-        color: {
+        iconColor: {
             description: "아이콘 색상",
             control: {
                 type: "select",
@@ -56,7 +56,7 @@ export const Default = (args, { argTypes }) => ({
                     :showSearchDropdown.sync="showSearchDropdown"
                     :value.sync="value"
                     :style="computedSearchInputMaxWidth"
-                    :icon-color="color"
+                    :icon-color="iconColor"
                 />
             </template>
             <template v-slot:list>
