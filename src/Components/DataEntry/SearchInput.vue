@@ -99,8 +99,8 @@ export default {
 			return this.full ? 'full' : '';
 		},
 		computedColor() {
-			if (!this.color) return 'inherit';
-			return colors[this.color] ? colors[this.color] : this.color;
+			if (!this.iconColor) return 'inherit';
+			return colors[this.iconColor] ? colors[this.iconColor] : this.iconColor;
 		},
 		computedStyle() {
 			return {
