@@ -100,6 +100,7 @@ import IconResumeLargeLine from '@/assets/images/icon/icon-resume-large-line.svg
 import IconQuestionLargeLine from '@/assets/images/icon/icon-question-large-line.svg?inline';
 import IconVideoLargeFill from '@/assets/images/icon/icon-video-large-fill.svg?inline';
 import IconStarLargeFill from '@/assets/images/icon/icon-star-large-fill.svg?inline';
+import IconHamburgerLargeLine from '@/assets/images/icon/icon-hamburger-large-line.svg?inline';
 
 // x-large
 import IconArrowXLargeLine from '@/assets/images/icon/icon-arrow-xlarge-line.svg?inline';
@@ -225,6 +226,7 @@ export const IconNames = [
 	'IconQuestionLargeLine',
 	'IconVideoLargeFill',
 	'IconStarLargeFill',
+	'IconHamburgerLargeLine',
 
 	// XLarge
 	'IconProfileXLargeFill',
@@ -363,6 +365,7 @@ export default {
 		IconQuestionLargeLine,
 		IconVideoLargeFill,
 		IconStarLargeFill,
+		IconHamburgerLargeLine,
 
 		// x-large
 		IconArrowXLargeLine,
