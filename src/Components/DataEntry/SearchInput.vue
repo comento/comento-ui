@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application search_input_container" :class="[computedType, computedFull]">
+	<div class="c-application search_input_container" :class="[computedFull]">
 		<label :for="`c-search-input-${uid}`">
 			<!-- 자동완성 방지용 더미 input -->
 			<input style="display: none" aria-hidden="true" />
@@ -61,10 +61,6 @@ export default {
 			default: '내용을 입력해주세요.',
 		},
 		value: [String, Number],
-		mobileCaseList: {
-			type: Boolean,
-			default: false,
-		},
 		full: {
 			type: Boolean,
 			default: false,
@@ -91,9 +87,6 @@ export default {
 			set(val) {
 				this.$emit('update:value', val);
 			},
-		},
-		computedType() {
-			return this.mobileCaseList ? 'mobile_case_list' : '';
 		},
 		computedFull() {
 			return this.full ? 'full' : '';
@@ -211,16 +204,6 @@ export default {
 			margin-right: 12px;
 			display: block;
 			z-index: 2;
-		}
-	}
-
-	&.mobile_case_list {
-		.search_input {
-			background: $white;
-			border: 2px solid $primary;
-			@include border-radius(4px);
-			@include body1();
-			padding: 12px 48px 12px 16px;
 		}
 	}
 }
