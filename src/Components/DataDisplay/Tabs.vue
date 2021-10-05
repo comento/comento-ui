@@ -5,6 +5,7 @@
 		v-if="type === 'swiper'"
 		ref="mySwiper"
 		class="c-application c-tabs--menu-container swiper"
+		:class="computedTransparent"
 		:options="swiperOptions"
 	>
 		<swiper-slide
@@ -59,6 +60,10 @@ export default {
 			required: true,
 			default: 0,
 		},
+		transparent: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -93,8 +98,11 @@ export default {
 		computedDirection() {
 			return `c-tabs--${this.direction}`;
 		},
+		computedTransparent() {
+			return { transparent: this.transparent };
+		},
 		classes() {
-			return [this.computedDirection];
+			return [this.computedDirection, this.computedTransparent];
 		},
 		swiper() {
 			return this.$refs.mySwiper.$swiper;
@@ -124,6 +132,32 @@ export default {
 		}
 	}
 }
+
+// 투명 타입
+.transparent {
+	&.c-tabs--menu-container {
+		background-color: transparent;
+	}
+	.c-tabs--menu-button {
+		&::v-deep .c-button {
+			color: $gray200;
+		}
+		@include pc {
+			&:hover {
+				background-color: rgba(21, 22, 23, 0.1);
+			}
+		}
+	}
+	.active {
+		&::v-deep .c-button {
+			color: white;
+		}
+		&:after {
+			background-color: white;
+		}
+	}
+}
+
 .c-tabs {
 	&--vertical {
 		.c-tabs {
@@ -207,7 +241,7 @@ export default {
 		position: absolute;
 		width: 100%;
 		height: 2px;
-		background: $gray600;
+		background-color: $gray600;
 		left: 0;
 		bottom: -1px;
 	}
