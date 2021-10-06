@@ -140,7 +140,8 @@ export default {
 	}
 	.c-tabs--menu-button {
 		&::v-deep .c-button {
-			color: $gray200;
+			color: white;
+			opacity: 0.7;
 		}
 		@include pc {
 			&:hover {
@@ -151,9 +152,10 @@ export default {
 	.active {
 		&::v-deep .c-button {
 			color: white;
+			opacity: 0.8;
 		}
 		&:after {
-			background-color: white;
+			background-color: rgba(255, 255, 255, 0.8);
 		}
 	}
 }
