@@ -38,8 +38,9 @@
 					tabindex="1"
 					name="IconSearchLargeLine"
 					size="large"
-					color="primary"
+					:color="computedIconColor"
 					class="icon_search ml-8"
+					:style="computedTransparentStyles"
 				/>
 			</div>
 		</div>
@@ -99,6 +100,12 @@ export default {
 		closeButtonColor() {
 			return this.transparent ? 'gray300' : 'gray400';
 		},
+		computedIconColor() {
+			return this.transparent ? 'white' : 'gray400';
+		},
+		computedTransparentStyles() {
+			return { opacity: this.transparent && this.sync_value.length > 0 ? 1 : 0.6 };
+		},
 	},
 	methods: {
 		hideSearchDropdown() {
@@ -134,8 +141,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/*@import '@/assets/style/base/main';*/
-
 .search_input_container {
 	@include clearfix();
 	@include flexbox();
@@ -155,6 +160,10 @@ export default {
 		.search_input {
 			background: rgba(255, 255, 255, 0.06);
 			color: white;
+			@include placeholder {
+				color: white;
+				opacity: 0.6;
+			}
 		}
 	}
 
