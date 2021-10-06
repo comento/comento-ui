@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application search_input_container" :class="[computedFull]">
+	<div class="c-application search_input_container" :class="classes">
 		<label :for="`c-search-input-${uid}`">
 			<!-- 자동완성 방지용 더미 input -->
 			<input style="display: none" aria-hidden="true" />
@@ -26,7 +26,7 @@
 					v-if="isTyping && sync_value.length > 0"
 					name="IconCloseMediumFill"
 					size="medium"
-					:color="mobileCaseList ? 'gray200' : 'gray400'"
+					:color="closeButtonColor"
 					class="icon_reset"
 					role="button"
 					tabindex="2"
@@ -50,7 +50,6 @@
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
-import { colors } from '@/src/Elements/Core/Colors';
 
 export default {
 	name: 'SearchInput',
@@ -67,6 +66,10 @@ export default {
 		},
 		showSearchDropdown: {
 			// searchInput에 포커싱되거나, 검색어가 빈값일 때
+			type: Boolean,
+			default: false,
+		},
+		transparent: {
 			type: Boolean,
 			default: false,
 		},
@@ -89,18 +92,16 @@ export default {
 			},
 		},
 		computedFull() {
-			return this.full ? 'full' : '';
+			return { full: this.full };
 		},
-		computedColor() {
-			if (!this.iconColor) return 'inherit';
-			return colors[this.iconColor] ? colors[this.iconColor] : this.iconColor;
+		computedTransparent() {
+			return { transparent: this.transparent };
 		},
-		computedStyle() {
-			return {
-				color: this.computedColor,
-				'text-align': this.align,
-				'font-weight': this.fontWeight,
-			};
+		classes() {
+			return [this.computedFull, this.computedTransparent];
+		},
+		closeButtonColor() {
+			return this.transparent ? 'gray300' : 'gray400';
 		},
 	},
 	methods: {
@@ -151,6 +152,13 @@ export default {
 		label,
 		.search_input {
 			width: 100%;
+		}
+	}
+
+	&.transparent {
+		.search_input {
+			background: rgba(255, 255, 255, 0.06);
+			color: white;
 		}
 	}
 
