@@ -38,7 +38,7 @@
 					tabindex="1"
 					name="IconSearchLargeLine"
 					size="large"
-					:color="iconColor"
+					color="primary"
 					class="icon_search ml-8"
 				/>
 			</div>
@@ -72,10 +72,6 @@ export default {
 		transparent: {
 			type: Boolean,
 			default: false,
-		},
-		iconColor: {
-			type: String,
-			default: 'green600',
 		},
 	},
 	data: () => ({
