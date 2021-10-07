@@ -7,7 +7,7 @@
 		popover-arrow-class="c-tooltip--arrow"
 		popover-inner-class="c-tooltip--inner"
 		:popper-options="popperOptions"
-		:container="false"
+		:container="container"
 		v-bind="$attrs"
 		v-on="$listeners"
 		@show="$emit('showTooltip')"
@@ -59,6 +59,10 @@ export default {
 					},
 				};
 			},
+		},
+		container: {
+			type: [Boolean, String],
+			default: false,
 		},
 	},
 	computed: {
