@@ -117,6 +117,9 @@ import IconProfileXLargeFill from '@/assets/images/icon/icon-profile-xlarge-fill
 import IconCheckXLargeFill from '@/assets/images/icon/icon-check-xlarge-fill.svg?inline';
 import IconUnCheckedXLargeFill from '@/assets/images/icon/icon-unchecked-xlarge-fill.svg?inline';
 import IconStarXLargeFill from '@/assets/images/icon/icon-star-xlarge-fill.svg?inline';
+import IconProfileXLargeLine from '@/assets/images/icon/icon-profile-xlarge-line.svg?inline';
+import IconSettingXLargeLine from '@/assets/images/icon/icon-setting-xlarge-line.svg?inline';
+import IconSupportXLargeLine from '@/assets/images/icon/icon-support-xlarge-line.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
@@ -243,6 +246,9 @@ export const IconNames = [
 	'IconStarXLargeFill',
 	'IconCheckXLargeFill',
 	'IconUnCheckedXLargeFill',
+	'IconProfileXLargeLine',
+	'IconSettingXLargeLine',
+	'IconSupportXLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',
@@ -382,6 +388,9 @@ export default {
 		IconCheckXLargeFill,
 		IconUnCheckedXLargeFill,
 		IconStarXLargeFill,
+		IconProfileXLargeLine,
+		IconSettingXLargeLine,
+		IconSupportXLargeLine,
 
 		// 2x-large
 		IconProfile2XLargeFill,
