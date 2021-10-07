@@ -23,6 +23,12 @@ import Chip from "@/src/Components/DataDisplay/Chip";
                 options: TabsDirections
             },
         },
+        transparent: {
+            description: "투명타입",
+            control: {
+                type: "boolean",
+            }
+        }
     }}
 />
 
@@ -41,13 +47,15 @@ export const Default = (args, { argTypes }) => ({
         }
     },
     template:
-      `<Tabs :type="type" :direction="direction" :tabIndex="selectedNo" @changeTabIndex="handleChangeTabIndex">
-          <template v-for="(item, index) in items" :slot="'item' + index">
-                <Button>
-                  {{ item }}
-                </Button>
-          </template>
-      </Tabs>`,
+      `<div style="background: cadetblue">
+          <Tabs :type="type" :direction="direction" :tab-index="selectedNo" :transparent="transparent" @changeTabIndex="handleChangeTabIndex">
+              <template v-for="(item, index) in items" :slot="'item' + index">
+                    <Button>
+                      {{ item }}
+                    </Button>
+              </template>
+          </Tabs>
+        </div>`,
 });
 
 # Tabs
