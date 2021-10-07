@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application search_input_container" :class="[computedType, computedFull]">
+	<div class="c-application search_input_container" :class="classes">
 		<label :for="`c-search-input-${uid}`">
 			<!-- 자동완성 방지용 더미 input -->
 			<input style="display: none" aria-hidden="true" />
@@ -26,7 +26,7 @@
 					v-if="isTyping && sync_value.length > 0"
 					name="IconCloseMediumFill"
 					size="medium"
-					:color="mobileCaseList ? 'gray200' : 'gray400'"
+					:color="closeButtonColor"
 					class="icon_reset"
 					role="button"
 					tabindex="2"
@@ -38,8 +38,9 @@
 					tabindex="1"
 					name="IconSearchLargeLine"
 					size="large"
-					:color="iconColor"
+					:color="computedIconColor"
 					class="icon_search ml-8"
+					:style="computedTransparentStyles"
 				/>
 			</div>
 		</div>
@@ -50,7 +51,6 @@
 import Icon from '@/src/Elements/Core/Icon/Icon';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
-import { colors } from '@/src/Elements/Core/Colors';
 
 export default {
 	name: 'SearchInput',
@@ -61,10 +61,6 @@ export default {
 			default: '내용을 입력해주세요.',
 		},
 		value: [String, Number],
-		mobileCaseList: {
-			type: Boolean,
-			default: false,
-		},
 		full: {
 			type: Boolean,
 			default: false,
@@ -74,9 +70,9 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		iconColor: {
-			type: String,
-			default: 'green600',
+		transparent: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	data: () => ({
@@ -92,22 +88,23 @@ export default {
 				this.$emit('update:value', val);
 			},
 		},
-		computedType() {
-			return this.mobileCaseList ? 'mobile_case_list' : '';
-		},
 		computedFull() {
-			return this.full ? 'full' : '';
+			return { full: this.full };
 		},
-		computedColor() {
-			if (!this.iconColor) return 'inherit';
-			return colors[this.iconColor] ? colors[this.iconColor] : this.iconColor;
+		computedTransparent() {
+			return { transparent: this.transparent };
 		},
-		computedStyle() {
-			return {
-				color: this.computedColor,
-				'text-align': this.align,
-				'font-weight': this.fontWeight,
-			};
+		classes() {
+			return [this.computedFull, this.computedTransparent];
+		},
+		closeButtonColor() {
+			return this.transparent ? 'gray300' : 'gray400';
+		},
+		computedIconColor() {
+			return this.transparent ? 'white' : 'gray400';
+		},
+		computedTransparentStyles() {
+			return { opacity: this.transparent && this.sync_value.length > 0 ? 1 : 0.6 };
 		},
 	},
 	methods: {
@@ -144,8 +141,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/*@import '@/assets/style/base/main';*/
-
 .search_input_container {
 	@include clearfix();
 	@include flexbox();
@@ -158,6 +153,17 @@ export default {
 		label,
 		.search_input {
 			width: 100%;
+		}
+	}
+
+	&.transparent {
+		.search_input {
+			background: rgba(255, 255, 255, 0.06);
+			color: white;
+			@include placeholder {
+				color: white;
+				opacity: 0.6;
+			}
 		}
 	}
 
@@ -211,16 +217,6 @@ export default {
 			margin-right: 12px;
 			display: block;
 			z-index: 2;
-		}
-	}
-
-	&.mobile_case_list {
-		.search_input {
-			background: $white;
-			border: 2px solid $primary;
-			@include border-radius(4px);
-			@include body1();
-			padding: 12px 48px 12px 16px;
 		}
 	}
 }
