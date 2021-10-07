@@ -43,6 +43,7 @@ $list-item-padding-x: 4px;
 	@include align-items(center);
 	&:hover {
 		background: $gray100;
+		border-radius: 8px;
 	}
 
 	&.small {
