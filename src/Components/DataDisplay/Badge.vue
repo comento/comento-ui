@@ -6,7 +6,9 @@
 		<!-- badge -->
 		<div v-if="text" class="c-badge--wrapper">
 			<div class="c-badge" :style="[computedStyle]" :class="[computedSize, computedPosition]">
-				<Typography type="caption2" color="white" :font-weight="700">{{ text }}</Typography>
+				<Typography type="caption2" color="white" :font-weight="700" class="c-badge--text">
+					{{ text }}
+				</Typography>
 			</div>
 		</div>
 	</div>
@@ -89,8 +91,12 @@ export default {
 			const is2Byte = this.getByte(this.text) === 2;
 			const isN = this.text === 'N';
 			if (is2Byte || isN) {
-				// 2byte거나 'N'일 때는 동그란 모양을 위해 padding이 3px 4px로 된다.
-				return { padding: '3px 4px' };
+				// 2byte거나 'N'일 때는 동그란 모양을 위해 padding을 조정함
+				const paddings = {
+					medium: '3px 4px',
+					small: '3px',
+				};
+				return { padding: paddings[this.size] };
 			}
 			return false;
 		},
@@ -128,12 +134,19 @@ export default {
 	min-width: 0;
 	@include inline-block();
 	@include border-radius(28px);
+
 	&.medium {
 		padding: 3px 5px;
+		.c-badge--text {
+			line-height: 10px;
+		}
 	}
 	&.small {
-		padding: 2px 4px;
-		font-size: 8px;
+		padding: 3px 4px;
+		font-size: 10px;
+		.c-badge--text {
+			line-height: 8px;
+		}
 	}
 
 	&--container {
