@@ -26,7 +26,7 @@
 					v-if="isTyping && sync_value.length > 0"
 					name="IconCloseMediumFill"
 					size="medium"
-					:color="closeButtonColor"
+					color="gray300"
 					class="icon_reset"
 					role="button"
 					tabindex="2"
@@ -40,7 +40,6 @@
 					size="large"
 					:color="computedIconColor"
 					class="icon_search ml-8"
-					:style="computedTransparentStyles"
 				/>
 			</div>
 		</div>
@@ -60,7 +59,10 @@ export default {
 			type: String,
 			default: '내용을 입력해주세요.',
 		},
-		value: [String, Number],
+		value: {
+			type: [String, Number],
+			default: '',
+		},
 		full: {
 			type: Boolean,
 			default: false,
@@ -95,16 +97,13 @@ export default {
 			return { transparent: this.transparent };
 		},
 		classes() {
-			return [this.computedFull, this.computedTransparent];
-		},
-		closeButtonColor() {
-			return this.transparent ? 'gray300' : 'gray400';
+			return [this.computedFull, this.computedTransparent, this.computedActive];
 		},
 		computedIconColor() {
 			return this.transparent ? 'white' : 'gray400';
 		},
-		computedTransparentStyles() {
-			return { opacity: this.transparent && this.sync_value.length > 0 ? 1 : 0.6 };
+		computedActive() {
+			return { active: this.sync_value.length > 0 };
 		},
 	},
 	methods: {
@@ -161,9 +160,14 @@ export default {
 			background: rgba(255, 255, 255, 0.06);
 			color: white;
 			@include placeholder {
-				color: white;
-				opacity: 0.6;
+				color: rgba(255, 255, 255, 0.6);
 			}
+		}
+	}
+
+	&.active {
+		.search_input {
+			padding-right: 78px !important;
 		}
 	}
 
@@ -174,7 +178,7 @@ export default {
 		vertical-align: top;
 		@include transition(all 0.2s ease);
 		border: 0;
-		background: $gray000;
+		background: $gray100;
 		padding: 8px 48px 8px 12px;
 		@include body2();
 		width: 226px;

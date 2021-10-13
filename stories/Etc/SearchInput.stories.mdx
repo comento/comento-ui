@@ -1,0 +1,97 @@
+import { ArgsTable, Meta, Story, Canvas } from "@storybook/addon-docs/blocks";
+import SearchInput from "@/src/Components/DataEntry/SearchInput";
+import Divider from "@/src/Elements/Utility/Divider";
+
+<Meta
+    title="Etc/SearchInput"
+    component={ SearchInput }
+    argTypes={{
+        placeholder: {
+            description: "placeholder 문구",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        value: {
+            description: "키워드",
+            control: { type: "text" },
+        },
+        full: {
+            description: "width 100%를 차지할 것인지",
+            control: { type: "boolean" },
+        },
+        showSearchDropdown: {
+            description: "자동완성",
+            control: { type: "boolean" },
+        },
+        transparent: {
+            description: "투명 타입인지",
+            control: { type: "boolean" },
+        }
+    }}
+/>
+
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { SearchInput },
+    computed: {
+        transparentBackground() {
+            return { background: this.transparent ? 'black' : 'white' };
+        }
+    },
+    template: `
+      <div class="flex p-10" :style="transparentBackground">
+        <SearchInput
+            :placeholder="placeholder"
+            :value.sync="value"
+            :full="full"
+            :show-search-dropdown="showSearchDropdown"
+            :transparent="transparent"
+        />
+      </div>
+    `,
+});
+
+# SearchInput
+
+**SearchInput** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="200px">
+        {{
+            template: `
+              <div>
+                <div class="flex p-10" style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05)">
+                  <SearchInput :value.sync="value1"
+                  />
+                </div>
+                <Divider class="my-10" />
+                <div class="flex p-10" style="background-color: rgba(18, 109, 93, 0.7)">
+                  <SearchInput :value.sync="value2" :transparent="true" />
+                </div>
+                <Divider class="my-10" />
+                <div class="flex p-10 my-4" style="background-color: black">
+                  <SearchInput :value.sync="value3" :transparent="true" />
+                </div>
+              </div>
+            `,
+            data() {
+                return {
+                    placeholder: '',
+                    value1: '',
+                    value2: '',
+                    value3: '',
+                };
+            },
+            components: { SearchInput, Divider },
+        }}
+    </Story>
+</Canvas>
