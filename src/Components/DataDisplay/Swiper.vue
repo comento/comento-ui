@@ -348,6 +348,7 @@ $swiper-control-circle-radius: 16px;
 	&.swiper-button-disabled {
 		opacity: 1;
 		fill: $gray300 !important;
+		cursor: not-allowed !important;
 	}
 }
 .swiper-button-background-circle {
@@ -359,6 +360,7 @@ $swiper-control-circle-radius: 16px;
 		&.swiper-button-disabled {
 			background-color: rgba(0, 0, 0, 0.3) !important;
 			opacity: 0.1;
+			cursor: not-allowed !important;
 		}
 	}
 	&-dark {
@@ -366,6 +368,7 @@ $swiper-control-circle-radius: 16px;
 		&.swiper-button-disabled {
 			background-color: rgba(255, 255, 255, 0.9) !important;
 			opacity: 0.3;
+			cursor: not-allowed !important;
 		}
 	}
 }
