@@ -34,6 +34,12 @@ import NewCol from "@/src/Components/Layout/NewCol";
         type: "text",
       },
     },
+    container: {
+        description: "container 값",
+        control: {
+            type: "text",
+        },
+    },
   }}
 />
 
@@ -41,7 +47,7 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Popover, Icon },
   template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                <Popover :placement="placement" :padding-x="paddingX">
+                <Popover :placement="placement" :padding-x="paddingX" :container="container">
    			        <Icon name="IconProfileLargeFill"></Icon>
    			            <template v-slot:popover>
    				            <div>menu 1</div>
