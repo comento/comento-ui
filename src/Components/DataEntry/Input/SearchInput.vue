@@ -159,7 +159,7 @@ export default {
 		&.active .search_input,
 		.search_input {
 			@include background-opacity(white, 0.06);
-			color: $gray400;
+			color: $gray100;
 		}
 	}
 
