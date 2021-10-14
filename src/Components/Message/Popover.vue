@@ -7,7 +7,7 @@
 		popover-arrow-class="c-popover--arrow"
 		popover-inner-class="c-popover--inner"
 		:popper-options="popperOptions"
-		:container="false"
+		:container="container"
 		v-bind="$attrs"
 		v-on="$listeners"
 		@show="$emit('showPopover')"
@@ -63,6 +63,10 @@ export default {
 				};
 			},
 		},
+		container: {
+			type: [Boolean, String],
+			default: false,
+		},
 	},
 	computed: {
 		mapPlacement() {
@@ -86,9 +90,3 @@ export default {
 	components: { Typography },
 };
 </script>
-
-<style lang="scss" scoped>
-::v-deep {
-	@import '@/assets/style/tooltip/popover';
-}
-</style>
