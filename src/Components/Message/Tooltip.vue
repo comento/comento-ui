@@ -81,3 +81,8 @@ export default {
 	components: { Typography },
 };
 </script>
+<style lang="scss" scoped>
+::v-deep {
+	@import '@/assets/style/tooltip/tooltip';
+}
+</style>
