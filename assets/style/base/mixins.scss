@@ -130,6 +130,15 @@
   //filter: ~"alpha(opacity=${opacity-ie})";
 }
 
+@mixin background-opacity($color, $opacity: 1) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+@mixin color-opacity($color, $opacity: 1) {
+  color: rgba($color, $opacity);
+}
+
 //  # box, border, shadow, line
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
