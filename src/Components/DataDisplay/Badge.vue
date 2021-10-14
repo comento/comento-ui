@@ -132,17 +132,20 @@ export default {
 .c-badge {
 	@include caption2();
 	min-width: 0;
-	@include inline-block();
 	@include border-radius(28px);
-
+	@include flexbox();
+	@include align-items(center);
+	@include justify-content(center);
 	&.medium {
-		padding: 3px 5px;
+		height: 16px;
+		padding: 0 5px;
 		.c-badge--text {
 			line-height: 10px;
 		}
 	}
 	&.small {
-		padding: 3px 4px;
+		height: 14px;
+		padding: 0 4px;
 		font-size: 10px;
 		.c-badge--text {
 			line-height: 8px;
