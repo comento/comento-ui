@@ -1,6 +1,6 @@
 {
   "name": "comento-ui",
-  "version": "0.1.120",
+  "version": "0.1.121",
   "license": "MIT",
   "main": "dist/comento-ui.common.js",
   "repository": {
