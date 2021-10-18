@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Hint from '../DataDisplay/Hint';
+import Hint from '../../DataDisplay/Hint';
 import uniqueId from '@/utils/unique-id';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
