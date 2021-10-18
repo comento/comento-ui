@@ -20,17 +20,25 @@ import Alert, { AlertTypes } from "@/src/Components/Message/Alert";
                 type: "text",
             },
         },
+        closable: {
+            description: "닫기 버튼",
+            control: {
+                type: "boolean",
+            }
+        }
     }}
 />
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Alert },
-    template: `<div :type="type" style="width: 100%; position: relative">
-                  <Alert style="position: absolute;">
-                    {{text}}
-   			          </Alert>
-   			       </div>`,
+    template: `
+      <div style="width: 100%; position: relative">
+        <Alert style="position: absolute;" :type="type" :closable="closable">
+          {{text}}
+        </Alert>
+      </div>
+    `,
 });
 
 # Alert
@@ -46,7 +54,6 @@ export const Default = (args, { argTypes }) => ({
 ## Stories
 
 ### All
-
 <Canvas>
     <Story name="All" height="200px">
         {{
@@ -61,6 +68,33 @@ export const Default = (args, { argTypes }) => ({
                 </div>
             `,
             components: { Alert },
+        }}
+    </Story>
+</Canvas>
+
+### Closable
+<Canvas>
+    <Story name="Closable" height="100px">
+        {{
+            data() {
+                return {
+                    showAlert: true,
+                };
+            },
+            template: `
+              <div style="width: 100%; position: relative">
+                <Alert
+                  v-if="showAlert"
+                  type="information"
+                  closable
+                  @close="showAlert = false"
+                  style="position: absolute"
+                >
+                  공지 내용이 들어가는 영역입니다. 두 줄로 사용하지 않습니다.
+                </Alert>
+              </div>
+            `,
+            components: { Alert }
         }}
     </Story>
 </Canvas>
