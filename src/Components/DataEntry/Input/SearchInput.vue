@@ -39,7 +39,7 @@
 					name="IconSearchLargeLine"
 					size="large"
 					:color="computedIconColor"
-					class="icon_search ml-8"
+					class="icon_search"
 				/>
 			</div>
 		</div>
@@ -100,7 +100,7 @@ export default {
 			return [this.computedFull, this.computedTransparent, this.computedActive];
 		},
 		computedIconColor() {
-			return this.transparent ? 'white' : 'gray400';
+			return this.transparent ? 'gray100' : 'gray500';
 		},
 		computedActive() {
 			return { active: this.sync_value.length > 0 };
@@ -156,18 +156,17 @@ export default {
 	}
 
 	&.transparent {
+		&.active .search_input,
 		.search_input {
-			background: rgba(255, 255, 255, 0.06);
-			color: white;
-			@include placeholder {
-				color: rgba(255, 255, 255, 0.6);
-			}
+			@include background-opacity(white, 0.06);
+			color: $gray100;
 		}
 	}
 
 	&.active {
 		.search_input {
-			padding-right: 78px !important;
+			background: $gray000;
+			padding-right: 70px !important;
 		}
 	}
 
@@ -178,14 +177,14 @@ export default {
 		vertical-align: top;
 		@include transition(all 0.2s ease);
 		border: 0;
-		background: $gray100;
+		@include background-opacity($gray000, 0.6);
 		padding: 8px 48px 8px 12px;
 		@include body2();
 		width: 226px;
 		color: $gray800;
 
 		@include placeholder {
-			color: $gray400;
+			@include color-opacity($gray400, 0.6);
 			font-weight: normal;
 		}
 
@@ -211,14 +210,14 @@ export default {
 		.icon_reset {
 			cursor: pointer;
 			position: relative;
-			margin: 0 8px;
+			margin: 0 4px 0 8px;
 			display: block;
 			z-index: 2;
 		}
 		.icon_search {
 			cursor: pointer;
 			position: relative;
-			margin-right: 12px;
+			margin: 0 12px 0 4px;
 			display: block;
 			z-index: 2;
 		}
