@@ -35,7 +35,7 @@
 import Loader from '@/src/Components/Other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
-export const buttonColors = ['primary', 'success', 'secondary', 'error'];
+export const buttonColors = ['primary', 'light-success', 'success', 'secondary', 'error'];
 export const buttonTypes = ['fill', 'outlined', 'text', 'icon'];
 
 export default {
@@ -330,6 +330,32 @@ $error-text-color: $red600;
 		.c-button--loading {
 			background-color: $white;
 		}
+	}
+}
+
+.light-success {
+	background-color: $blue100;
+	color: $blue600;
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: #c5e3ff;
+	}
+	@include mobile {
+		@include remove-active-and-focus($blue100);
+	}
+	&:disabled {
+		color: $blue100;
+		background-color: $blue000;
+		.c-button--icon::v-deep .c-icon {
+			fill: $blue600 !important;
+		}
+		.c-button--loading {
+			background-color: $blue000;
+		}
+	}
+	.c-button--loading {
+		background-color: $blue100;
 	}
 }
 

@@ -70,6 +70,7 @@ import IconPriceMediumLine from '@/assets/images/icon/icon-price-medium-line.svg
 import IconProfileMediumLine from '@/assets/images/icon/icon-profile-medium-line.svg?inline';
 
 // large
+import IconLongArrowLargeLine from '@/assets/images/icon/icon-longArrow-large-line.svg?inline';
 import IconProfileLargeFill from '@/assets/images/icon/icon-profile-large-fill.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/icon-selected-large-line.svg?inline';
 import IconReplyLargeLine from '@/assets/images/icon/icon-reply-large-line.svg?inline';
@@ -120,6 +121,7 @@ import IconStarXLargeFill from '@/assets/images/icon/icon-star-xlarge-fill.svg?i
 import IconProfileXLargeLine from '@/assets/images/icon/icon-profile-xlarge-line.svg?inline';
 import IconSettingXLargeLine from '@/assets/images/icon/icon-setting-xlarge-line.svg?inline';
 import IconSupportXLargeLine from '@/assets/images/icon/icon-support-xlarge-line.svg?inline';
+import IconBookmarkXLargeFill from '@/assets/images/icon/icon-bookmark-xlarge-fill.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
@@ -199,6 +201,7 @@ export const IconNames = [
 	'IconProfileMediumLine',
 
 	// large
+	'IconLongArrowLargeLine',
 	'IconProfileLargeFill',
 	'IconSelectedLargeLine',
 	'IconReplyLargeLine',
@@ -249,6 +252,7 @@ export const IconNames = [
 	'IconProfileXLargeLine',
 	'IconSettingXLargeLine',
 	'IconSupportXLargeLine',
+	'IconBookmarkXLargeFill',
 
 	//2x-large
 	'IconProfile2XLargeFill',
@@ -341,6 +345,7 @@ export default {
 		IconProfileMediumLine,
 
 		// large
+		IconLongArrowLargeLine,
 		IconProfileLargeFill,
 		IconSelectedLargeLine,
 		IconReplyLargeLine,
@@ -391,7 +396,7 @@ export default {
 		IconProfileXLargeLine,
 		IconSettingXLargeLine,
 		IconSupportXLargeLine,
-
+		IconBookmarkXLargeFill,
 		// 2x-large
 		IconProfile2XLargeFill,
 		IconWriting2XLargeLine,
