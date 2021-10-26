@@ -257,6 +257,14 @@ export default {
 					},
 				}),
 				slidesPerGroup: this.slidesPerGroup,
+				on: {
+					// ios 15.0 이상 safari에서 resizeHandler로 인한 플리커링 버그 대응
+					imagesReady: () => {
+						if (this.$refs.mySwiper.$swiper.device.ios) {
+							window.removeEventListener('resize', this.$refs.mySwiper.$swiper.resize.resizeHandler);
+						}
+					},
+				},
 			};
 		},
 		computedIndicatorColorClass() {
