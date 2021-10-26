@@ -17,6 +17,7 @@
 				</Typography>
 				<Divider v-show="captionRight" vertical class="mx-8" />
 				<Typography type="caption1" element="span" color="gray500"> {{ captionRight }}</Typography>
+				<slot name="additionalCaptions" />
 			</div>
 		</div>
 		<div class="c-edu-card--image-container">
