@@ -68,6 +68,7 @@ import IconBrowseMediumLine from '@/assets/images/icon/icon-browse-medium-line.s
 import IconVideoMediumFill from '@/assets/images/icon/icon-video-medium-fill.svg?inline';
 import IconPriceMediumLine from '@/assets/images/icon/icon-price-medium-line.svg?inline';
 import IconProfileMediumLine from '@/assets/images/icon/icon-profile-medium-line.svg?inline';
+import IconBookmarkMediumFill from '@/assets/images/icon/icon-bookmark-medium-fill.svg?inline';
 
 // large
 import IconLongArrowLargeLine from '@/assets/images/icon/icon-longArrow-large-line.svg?inline';
@@ -199,6 +200,7 @@ export const IconNames = [
 	'IconVideoMediumFill',
 	'IconPriceMediumLine',
 	'IconProfileMediumLine',
+	'IconBookmarkMediumFill',
 
 	// large
 	'IconLongArrowLargeLine',
@@ -343,6 +345,7 @@ export default {
 		IconVideoMediumFill,
 		IconPriceMediumLine,
 		IconProfileMediumLine,
+		IconBookmarkMediumFill,
 
 		// large
 		IconLongArrowLargeLine,
