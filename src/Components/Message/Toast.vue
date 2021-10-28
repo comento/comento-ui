@@ -127,6 +127,7 @@ export default {
 
 	&--message {
 		margin: 0;
+		width: max-content;
 		@include flexbox();
 		@include align-items(center);
 	}
