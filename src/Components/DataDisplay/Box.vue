@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import colorMixin from '../../../mixins/colorMixin';
-import paddingMixin from '../../../mixins/paddingMixin';
+import colorMixin from '../../mixins/colorMixin';
+import paddingMixin from '../../mixins/paddingMixin';
 export const Elements = ['div', 'article'];
 
 export default {
