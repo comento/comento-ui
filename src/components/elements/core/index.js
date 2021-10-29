@@ -1,3 +1,3 @@
-export * from './Icon';
+export * from './icon';
 export * from './logo';
 export * from './typography';
