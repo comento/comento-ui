@@ -14,7 +14,8 @@
     "copy": "cp -R src/assets/style/base/color.scss dist && cp -R src/components/elements/core/colors/index.js dist/color.js",
     "build": "yarn bundle && yarn copy",
     "lint": "vue-cli-service lint",
-    "release": "shipjs prepare",
+    "web-types": "vue-docgen-web-types",
+    "release": "yarn web-types && shipjs prepare",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token",
@@ -65,7 +66,9 @@
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "shipjs": "0.21.1",
+    "vue-docgen-web-types": "^0.1.7",
     "vue-jest": "^3.0.7",
+    "vue-styleguidist": "^4.41.2",
     "vue-template-compiler": "^2.6.11"
   },
   "files": [
@@ -85,5 +88,6 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "web-types": "web-types.json"
 }
