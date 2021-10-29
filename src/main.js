@@ -1,5 +1,4 @@
-import * as components from './Components';
-import * as elements from './Elements';
+import * as components from './components';
 import './plugins';
 import './mixins';
 import './directives';
@@ -12,13 +11,6 @@ const ComponentLibrary = {
 		// components
 		for (const componentName in components) {
 			const component = components[componentName];
-
-			Vue.component(`C${component.name}`, component);
-		}
-
-		// elements
-		for (const componentName in elements) {
-			const component = elements[componentName];
 
 			Vue.component(`C${component.name}`, component);
 		}

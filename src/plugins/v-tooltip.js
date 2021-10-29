@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VTooltip from 'src/plugins/v-tooltip';
+import VTooltip from 'v-tooltip';
 
 const options = {
 	popover: {

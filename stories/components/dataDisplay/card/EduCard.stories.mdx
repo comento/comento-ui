@@ -1,0 +1,172 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import EduCard from '@/src/components/components/dataDisplay/card/EduCard';
+import Grid from '@/src/components/layout/Grid';
+import Row from '@/src/components/layout/Row';
+import StyleCol from '@/src/components/layout/StyleCol';
+import ChipGroup from '@/src/components/components/dataDisplay/chips/ChipGroup';
+import Chip from '@/src/components/components/dataDisplay/chips/Chip';
+
+<Meta
+    title="Data Display/Card/EduCard"
+    component={EduCard}
+    argTypes={{
+        backgroundImage: {
+            description: "카드 배경<br/>`String`",
+            defaultValue: "https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
+        },
+        category: {
+            description: "캠프 카테고리<br/>`String`",
+            defaultValue: "category",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
+        },
+        captionLeft: {
+            description: "좌측 캡션<br/>`String`",
+            defaultValue: "captionLeft",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
+        },
+        captionRight: {
+            description: "우측 캡션<br/>`String`",
+            defaultValue: "captionRight",
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+            control: {
+                type: "text",
+            },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Grid, Row, StyleCol, EduCard },
+    template: `
+        <Grid>
+            <Row>
+                <StyleCol :col-lg="4">
+                    <EduCard
+                        :background-image="backgroundImage"
+                        :category="category"
+                        :caption-left="captionLeft"
+                        :caption-right="captionRight"
+                    >
+                       <template v-slot:title>Title</template>
+                    </EduCard>
+                </StyleCol>
+                <StyleCol :col-lg="4">
+                    <EduCard
+                        :background-image="backgroundImage"
+                        :category="category"
+                        :caption-left="captionLeft"
+                        :caption-right="captionRight"
+                    >
+                       <template v-slot:title>Title</template>
+                    </EduCard>
+                </StyleCol>
+                <StyleCol :col-lg="4">
+                    <EduCard
+                        :background-image="backgroundImage"
+                        :category="category"
+                        :caption-left="captionLeft"
+                        :caption-right="captionRight"
+                    >
+                       <template v-slot:title>Title</template>
+                    </EduCard>
+                </StyleCol>
+            </Row>
+        </Grid>
+        `,
+});
+
+# EduCard
+
+**EduCard** 컴포넌트의 문서입니다.
+
+<Story name="Default">{Default.bind({})}</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### All
+
+<Canvas>
+    <Story name="All">
+        {{
+            data() {
+                return {
+                    exampleBackgroundImage:
+                        "https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg",
+                };
+            },
+            template: `
+                <Grid>
+                    <Row>
+                        <StyleCol :col-lg="4">
+                            <EduCard
+                                :background-image="exampleBackgroundImage"
+                                category="category"
+                                caption-left="captionLeft"
+                                caption-right="captionRight"
+                            >
+                               <template v-slot:chip>
+                                  <ChipGroup>
+                                    <Chip size="small">복습 VOD</Chip>
+                                  </ChipGroup>
+                               </template>
+                               <template v-slot:title>Title</template>
+                            </EduCard>
+                        </StyleCol>
+                        <StyleCol :col-lg="4">
+                            <EduCard
+                                :background-image="exampleBackgroundImage"
+                                category="category"
+                                title="대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심알아보고 보고서 작성과 직무 체험하기"
+                                caption-left="captionLeft"
+                                caption-right="captionRight"
+                            >
+                               <template v-slot:title>Title</template>
+                            </EduCard>
+                        </StyleCol>
+                        <StyleCol :col-lg="4">
+                            <EduCard
+                                :background-image="exampleBackgroundImage"
+                                category="category"
+                                title="title"
+                                caption-left="captionLeft"
+                                caption-right="captionRight"
+                            >
+                               <template v-slot:title>Title</template>
+                            </EduCard>
+                        </StyleCol>
+                    </Row>
+                </Grid>
+            `,
+            components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip },
+        }}
+    </Story>
+</Canvas>
