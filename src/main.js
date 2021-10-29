@@ -1,4 +1,4 @@
-import * as components from './components';
+import * as components from './Components/components';
 import './plugins';
 import './mixins';
 import './directives';
