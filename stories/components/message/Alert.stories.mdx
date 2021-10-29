@@ -1,0 +1,100 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Alert, { AlertTypes } from '@/src/components/components/message/Alert';
+
+<Meta
+    title="Message/Alert"
+    component={Alert}
+    argTypes={{
+        type: {
+            description: "alert type",
+            control: {
+                type: "select",
+                options: AlertTypes,
+            },
+        },
+        text: {
+            description: "alert text",
+            defaultValue:
+                "공지 내용이 들어가는 영역입니다. 두 줄로 사용하지 않습니다.",
+            control: {
+                type: "text",
+            },
+        },
+        closable: {
+            description: "닫기 버튼",
+            control: {
+                type: "boolean",
+            }
+        }
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Alert },
+    template: `
+      <div style="width: 100%; position: relative">
+        <Alert style="position: absolute;" :type="type" :closable="closable">
+          {{text}}
+        </Alert>
+      </div>
+    `,
+});
+
+# Alert
+
+**Alert** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### All
+<Canvas>
+    <Story name="All" height="200px">
+        {{
+            template: `
+                <div style="width: 100%; position: relative">
+                    <Alert style="position: absolute;">
+                        공지 내용이 들어가는 영역입니다. 두 줄로 사용하지 않습니다.
+                    </Alert>
+                    <Alert style="position: absolute; top: 100px" type="warning">
+                        공지 내용이 들어가는 영역입니다. 두 줄로 사용하지 않습니다.
+                    </Alert>
+                </div>
+            `,
+            components: { Alert },
+        }}
+    </Story>
+</Canvas>
+
+### Closable
+<Canvas>
+    <Story name="Closable" height="100px">
+        {{
+            data() {
+                return {
+                    showAlert: true,
+                };
+            },
+            template: `
+              <div style="width: 100%; position: relative">
+                <Alert
+                  v-if="showAlert"
+                  type="information"
+                  closable
+                  @close="showAlert = false"
+                  style="position: absolute"
+                >
+                  공지 내용이 들어가는 영역입니다. 두 줄로 사용하지 않습니다.
+                </Alert>
+              </div>
+            `,
+            components: { Alert }
+        }}
+    </Story>
+</Canvas>

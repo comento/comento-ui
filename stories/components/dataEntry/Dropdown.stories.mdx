@@ -1,0 +1,168 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Dropdown from '@/src/components/components/dataEntry/Dropdown';
+import List from '@/src/components/components/dataDisplay/list/list/List';
+import ListItem from '@/src/components/components/dataDisplay/list/list/ListItem';
+import Divider from '@/src/components/elements/utility/Divider';
+import SearchInput from '@/src/components/components/dataEntry/input/SearchInput';
+import TextField from '@/src/components/components/dataEntry/input/TextField';
+import Label from '@/src/components/components/dataDisplay/Label';
+import clickOutside from '@/src/directives/click-outside';
+import { colorKeys } from '@/src/components/elements/core/colors';
+
+<Meta
+    title="Data Entry/Dropdown/Dropdown"
+    component={ Dropdown }
+    argTypes={{
+        maxHeight: {
+            description: "리스트 최대 높이",
+            defaultValue: "130px",
+            control: { type: "text" },
+        },
+        iconColor: {
+            description: "아이콘 색상",
+            control: {
+                type: "select",
+                options: colorKeys,
+            },
+        },
+    }}
+/>
+
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Dropdown, SearchInput, List, ListItem, Divider },
+    data: () => ({
+        listItems: ['List1', 'List2', 'List3', 'List4', 'List5'],
+        showSearchDropdown: false,
+        value: '',
+    }),
+    computed: {
+        computedSearchInputMaxWidth() {
+            return { 'max-width': this. full ? '100%' : this.maxWidth };
+        }
+    },
+    methods: {
+        clickDropdownItem(item) {
+            this.value = item;
+        },
+    },
+    template:
+        `<Dropdown :max-width="maxWidth" :max-height="maxHeight" :label="label" :full="full" :vertical="vertical">
+            <template v-slot:item>
+                <SearchInput
+                    full
+                    :showSearchDropdown.sync="showSearchDropdown"
+                    :value.sync="value"
+                    :style="computedSearchInputMaxWidth"
+                    :icon-color="iconColor"
+                />
+            </template>
+            <template v-slot:list>
+                <List v-if="showSearchDropdown" spacing>
+                    <template v-for="(item, index) in listItems">
+                        <ListItem :key="'list-item-' + index" @click="clickDropdownItem(item)">
+                            {{ item }}
+                        </ListItem>
+                        <Divider :key="'divider-' + index" />
+                    </template>
+                </List>
+            </template>
+        </Dropdown>`,
+});
+
+# Dropdown
+
+**Dropdown** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="150px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="240px">
+        {{
+            data: () => ({
+                showSearchDropdown: false,
+                showInputDropdown: false,
+                listItems: ['List1', 'List2'],
+                searchInputValue: '',
+                inputValue: '',
+            }),
+            methods: {
+                clickSearchInputDropdownItem(item) {
+                    this.searchInputValue = item;
+                },
+                clickInputDropdownItem(item) {
+                    this.inputValue = item;
+                },
+                closeList() {
+                    this.showInputDropdown = false;
+                },
+            },
+            template: `
+                <div>
+                    <div style="margin-bottom: 20px">
+                        <Dropdown max-width="230px" label="searchInput Dropdown">
+                            <template v-slot:item>
+                                <SearchInput
+                                    full
+                                    :showSearchDropdown.sync="showSearchDropdown"
+                                    :value.sync="searchInputValue"
+                                    style="width: 230px"
+                                />
+                            </template>
+                            <template v-slot:list v-if="showSearchDropdown">
+                                <Label type="dataDisplay" style="margin: 4px 0">
+                                    인기검색어
+                                </Label>
+                                <List spacing>
+                                    <template v-for="(item, index) in listItems">
+                                        <ListItem
+                                            size="small"
+                                            :key="'list-item-' + index"
+                                            @click="clickSearchInputDropdownItem(item)"
+                                        >
+                                            {{ item }}
+                                        </ListItem>
+                                        <Divider :key="'divider-' + index" />
+                                    </template>
+                                </List>
+                            </template>
+                        </Dropdown>
+                    </div>
+                    <Dropdown max-width="230px" label="Input Dropdown">
+                        <template v-slot:item>
+                            <TextField
+                                v-click-outside="closeList"
+                                :value.sync="inputValue"
+                                outlined
+                                full
+                                @click="showInputDropdown = !showInputDropdown"
+                                style="width: 230px"
+                            />
+                        </template>
+                        <template v-slot:list>
+                            <List v-if="showInputDropdown" spacing>
+                                <template v-for="(item, index) in listItems">
+                                    <ListItem :key="'list-item-' + index" @click="clickInputDropdownItem(item)">
+                                        {{ item }}
+                                    </ListItem>
+                                    <Divider :key="'divider-' + index" />
+                                </template>
+                            </List>
+                        </template>
+                    </Dropdown>
+                </div>
+            `,
+            components: { Dropdown, SearchInput, List, ListItem, Divider, TextField, Label },
+            directives: {
+                clickOutside,
+            },
+        }}
+    </Story>
+</Canvas>

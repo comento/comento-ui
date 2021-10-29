@@ -1,0 +1,79 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Logo from '@/src/components/elements/core/logo/Logo';
+
+<Meta
+  title="Core/Logo"
+  component={ Logo }
+  argTypes={{
+    name: {
+      description: "로고 아이콘 이름",
+      defaultValue: "LogoComentoHorizontal",
+      control: {
+        type: "select",
+        options: ["LogoComentoHorizontal"],
+      },
+    },
+    url: {
+      description: "이동할 url",
+      defaultValue: "https://comento.kr",
+      control: { type: "text" },
+    },
+    width: {
+      description: "로고 너비",
+      defaultValue: "140",
+      control: { type: "text" },
+    },
+    height: {
+      description: "로고 높이",
+      defaultValue: "24",
+      control: { type: "text" },
+    },
+    color: {
+      description: "로고 색상",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "text",
+      },
+    },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Logo },
+  template:
+    `<Logo :name="name" :url="url" :width="width" :height="height" :color="color"/>`,
+});
+
+# Logo
+
+**Logo** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                  <Logo color="primary" class="p-14" />
+                  <Logo color="#353535" class="p-14"  />
+                  <div style="background: rgba(18, 109, 93, 0.7);" class="d-inline-block p-14">
+                    <Logo color="white"  />
+                  </div>
+                </div>
+        `,
+            components: { Logo },
+        }}
+    </Story>
+</Canvas>

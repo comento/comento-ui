@@ -1,0 +1,80 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Checkbox, { checkboxSizes } from '@/src/components/components/dataEntry/Checkbox';
+
+<Meta
+    title="Data Entry/Checkbox"
+    component={ Checkbox }
+    argTypes={{
+        label: {
+            description: "체크박스에 들어갈 텍스트",
+            defaultValue: "이용약관 및 유의사항 동의",
+            control: { type: "text" },
+        },
+        value: {
+            description: "체크박스의 값",
+            control: { type: "boolean" },
+        },
+        disabled: {
+            description: "체크박스 비활성화",
+            control: { type: "boolean" },
+        },
+        id: {
+            description: "체크박스 ID (값이 없으면 input-uid로 생성됨)",
+            control: { type: "text" },
+        },
+        size: {
+            description: "체크박스 크기",
+            control: {
+                type: "select",
+                options: checkboxSizes,
+            },
+        }
+    }}
+/>
+
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Checkbox },
+    template:
+        `<Checkbox :value.sync="value" :disabled="disabled" :id="id" :size="size">{{label}}</Checkbox>`,
+});
+
+# Checkbox
+
+**Checkbox** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                    <div>
+                        <h3>State</h3>
+                        <Checkbox :value="false">Unchecked</Checkbox>
+                        <Checkbox :value="true">Checked</Checkbox>
+                        <Checkbox disabled>Unchecked Disabled</Checkbox>
+                        <Checkbox :value="true" disabled>Checked Disabled</Checkbox>
+                    </div>
+                    <div class="mt-20">
+                        <h3>Size</h3>
+                        <Checkbox size="medium" class="mb-4">Medium<br />Size</Checkbox>
+                        <Checkbox size="small" class="mb-4">Small<br/>Size</Checkbox>
+                        <Checkbox size="xsmall">Xsmall<br/>Size</Checkbox>
+                    </div>
+                </div>
+            `,
+            components: { Checkbox },
+        }}
+    </Story>
+</Canvas>
+

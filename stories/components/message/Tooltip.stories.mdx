@@ -1,0 +1,125 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Tooltip, { placements } from '@/src/components/components/message/Tooltip';
+import Icon from '@/src/components/elements/core/icon/Icon';
+import NewGrid from '@/src/components/layout/NewGrid';
+import NewRow from '@/src/components/layout/NewRow';
+import NewCol from '@/src/components/layout/NewCol';
+
+<Meta
+  title="Message/Tooltip"
+  component={ Tooltip }
+  argTypes={{
+    placement: {
+      description: "기준점에서 Tooltip이 보이는 위치<br/>`String`",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: placements
+      },
+    },
+    text: {
+      description: "내부 텍스트<br/>`String`",
+      defaultValue: "tooltip text",
+      table: {
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "text",
+      },
+    },
+    container: {
+        description: "container 값",
+        control: {
+            type: "text",
+        },
+    },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Tooltip, Icon },
+  template: `<div style="width: 100%; display: flex; justify-content: center;">
+                 <Tooltip :placement="placement" :container="container">
+                     <Icon name="IconProfileLargeFill"></Icon>
+                     <template v-slot:popover>
+                           <div>{{ text }}</div>
+                     </template>
+                 </Tooltip>
+             </div>`
+});
+
+# Tooltip
+
+**Tooltip** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <NewGrid>
+                    <NewRow>
+                        <NewCol class="flex flex-row justify-around" style="height: 120px">
+                            <Tooltip placement="bottom-right" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>bottom-right</div>
+                                    </template>
+                            </Tooltip>
+                            <Tooltip placement="bottom" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>bottom</div>
+                                    </template>
+                            </Tooltip>
+                            <Tooltip placement="bottom-left" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>bottom-left</div>
+                                    </template>
+                            </Tooltip>
+                        </NewCol>
+                    </NewRow>
+                    <NewRow>
+                        <NewCol class="flex flex-row justify-around" style="height: 40px">
+                            <Tooltip placement="right-top" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>right-top</div>
+                                    </template>
+                            </Tooltip>
+                            <Tooltip placement="right" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>right</div>
+                                    </template>
+                            </Tooltip>
+                            <Tooltip placement="right-bottom" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>right-bottom</div>
+                                    </template>
+                            </Tooltip>
+                        </NewCol>
+                    </NewRow>
+                </NewGrid>
+          `,
+          components: { NewGrid, NewRow, NewCol, Tooltip, Icon },
+        }}
+    </Story>
+</Canvas>

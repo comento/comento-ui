@@ -1,0 +1,89 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import ListItem, { ListItemSizes, ListItemCursors } from '@/src/components/components/dataDisplay/list/list/ListItem';
+import Typography from '@/src/components/elements/core/typography/Typography';
+
+<Meta
+    title="Data Display/List/List/ListItem"
+    component={ ListItem }
+    argTypes={{
+        label: {
+            description: "내부 텍스트",
+            defaultValue: "내부 텍스트",
+            control: { type: "text" },
+            table: {
+                type: {
+                    summary: null,
+                },
+            },
+        },
+        size: {
+            description: "ListItem 사이즈",
+            defaultValue: "medium",
+            control: {
+                type: "select",
+                options: ListItemSizes,
+            },
+        },
+        cursor: {
+            description: "커서 모양",
+            defaultValue: "pointer",
+            control: {
+                type: "select",
+                options: ListItemCursors,
+            }
+        }
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { ListItem, Typography },
+    template:
+      `<ListItem :size="size" :cursor="cursor">
+        <Typography type="body2" color="gray800">
+          {{ label }}
+        </Typography>
+      </ListItem>`,
+});
+
+# ListItem
+
+**ListItem** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### Sizes
+<Canvas>
+    <Story name="Sizes" height="100px">
+        {{
+            template: `
+                <div>
+                  <ListItem size="small">Small</ListItem>
+                  <ListItem size="medium">Medium</ListItem>
+                  <ListItem size="large">Large</ListItem>
+                </div>
+        `,
+            components: { ListItem },
+        }}
+    </Story>
+</Canvas>
+
+### Cursors
+<Canvas>
+    <Story name="Cursors" height="100px">
+        {{
+            template: `
+                <div>
+                  <ListItem size="medium" cursor="pointer">Pointer</ListItem>
+                  <ListItem size="medium" cursor="default">Default</ListItem>
+                </div>
+        `,
+            components: { ListItem },
+        }}
+    </Story>
+</Canvas>
