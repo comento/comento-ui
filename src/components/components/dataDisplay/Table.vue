@@ -20,6 +20,9 @@
 <script>
 export const cursors = ['pointer', 'default'];
 
+/**
+ * @displayName c-table
+ */
 export default {
 	name: 'Table',
 	props: {

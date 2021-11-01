@@ -15,6 +15,10 @@ export const ChipColors = ['secondary', 'primary', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outlined', 'oval-fill', 'oval-outline'];
 
+/**
+ * 작은 정보를 전달하기 위해 사용
+ * @displayName c-chip
+ */
 export default {
 	name: 'Chip',
 	mixins: [paddingMixin],

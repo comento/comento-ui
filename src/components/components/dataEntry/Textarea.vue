@@ -16,6 +16,9 @@
 <script>
 export const textareaTypes = ['basic', 'outlined', 'reply'];
 
+/**
+ * @displayName c-textarea
+ */
 export default {
 	name: 'Textarea',
 	inheritAttrs: false,

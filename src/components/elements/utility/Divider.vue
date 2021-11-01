@@ -11,6 +11,9 @@ import { colors, colorKeys } from '@/src/components/elements/core/colors';
 
 export const dividerTypes = ['line', 'dash'];
 
+/**
+ * @displayName c-divider
+ */
 export default {
 	name: 'Divider',
 	props: {

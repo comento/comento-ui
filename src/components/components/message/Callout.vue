@@ -35,6 +35,9 @@ import Typography from '@/src/components/elements/core/typography/Typography';
 export const CalloutTypes = ['information', 'alert', 'success'];
 export const CalloutSizes = ['x-small', 'small', 'medium'];
 
+/**
+ * @displayName c-callout
+ */
 export default {
 	name: 'Callout',
 	props: {

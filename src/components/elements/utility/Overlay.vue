@@ -14,6 +14,9 @@
 import scrollMixin from '@/src/mixins/scrollMixin';
 export const OverlayTypes = ['dimmer'];
 
+/**
+ * @displayName c-overlay
+ */
 export default {
 	name: 'Overlay',
 	mixins: [scrollMixin],

@@ -36,6 +36,9 @@ import Typography from '@/src/components/elements/core/typography/Typography';
 
 export const AlertTypes = ['information', 'warning'];
 
+/**
+ * @displayName c-alert
+ */
 export default {
 	name: 'Alert',
 	props: {

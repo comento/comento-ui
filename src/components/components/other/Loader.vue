@@ -64,6 +64,9 @@ const colorMap = {
 	},
 };
 
+/**
+ * @displayName c-loader
+ */
 export default {
 	name: 'Loader',
 	props: {

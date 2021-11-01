@@ -33,6 +33,9 @@ export const Aligns = ['left', 'center', 'right'];
 
 export const FontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal', 'bold', 'lighter', 'bolder'];
 
+/**
+ * @displayName c-typography
+ */
 export default {
 	name: 'Typography',
 	props: {

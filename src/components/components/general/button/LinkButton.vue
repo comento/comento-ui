@@ -28,6 +28,9 @@ import Typography, { TypographyTypes } from '@/src/components/elements/core/typo
 export const linkButtonColors = ['blue600', 'blue400'];
 export const linkButtonTargets = ['_blank', '_self', '_parent', '_top'];
 
+/**
+ * @displayName c-link-button
+ */
 export default {
 	name: 'LinkButton',
 	inheritAttrs: false,

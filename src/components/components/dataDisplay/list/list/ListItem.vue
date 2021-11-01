@@ -8,6 +8,9 @@
 export const ListItemSizes = ['small', 'medium', 'large'];
 export const ListItemCursors = ['pointer', 'default'];
 
+/**
+ * @displayName c-list-item
+ */
 export default {
 	name: 'ListItem',
 	props: {

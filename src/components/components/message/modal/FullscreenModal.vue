@@ -46,6 +46,9 @@ import Divider from '@/src/components/elements/utility/Divider';
 export const fullScreenAlign = ['left', 'right', 'top', 'bottom', 'none'];
 export const fullScreenCloseType = ['icon', 'button', 'none'];
 
+/**
+ * @displayName c-fullscreen-modal
+ */
 export default {
 	name: 'FullscreenModal',
 	props: {

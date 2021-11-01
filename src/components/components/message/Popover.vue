@@ -26,6 +26,9 @@ import Typography from '@/src/components/elements/core/typography/Typography';
 
 export const placements = ['bottom', 'bottom-right', 'bottom-left', 'right-top', 'right', 'right-bottom'];
 
+/**
+ * @displayName c-popover
+ */
 export default {
 	name: 'Popover',
 	inheritAttrs: false,

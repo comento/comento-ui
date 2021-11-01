@@ -22,6 +22,9 @@ export const badgeColors = ['primary', 'error'];
 export const badgeSizes = ['medium', 'small'];
 export const badgeTypes = ['inline', 'absolute'];
 
+/**
+ * @displayName c-badge
+ */
 export default {
 	name: 'Badge',
 	props: {

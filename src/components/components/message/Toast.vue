@@ -28,6 +28,9 @@ import customValidator from '@/src/utils/custom-validator';
 export const toastTypes = ['basic', 'error', 'success'];
 export const toastPositions = ['top', 'bottom'];
 
+/**
+ * @displayName c-toast
+ */
 export default {
 	name: 'Toast',
 	props: {

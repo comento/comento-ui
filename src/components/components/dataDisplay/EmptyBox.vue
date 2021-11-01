@@ -19,6 +19,9 @@ import Typography from '@/src/components/elements/core/typography/Typography';
 
 export const Types = ['simple', 'emphasized'];
 
+/**
+ * @displayName c-empty-box
+ */
 export default {
 	name: 'EmptyBox',
 	props: {

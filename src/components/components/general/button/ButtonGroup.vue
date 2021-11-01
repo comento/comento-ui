@@ -7,6 +7,9 @@
 <script>
 export const buttonGroupSizes = ['small', 'medium', 'large'];
 
+/**
+ * @displayName c-button-group
+ */
 export default {
 	name: 'ButtonGroup',
 	props: {

@@ -36,6 +36,9 @@
 import Typography from '@/src/components/elements/core/typography/Typography';
 export const userInformationTypes = ['simple', 'normal', 'full'];
 
+/**
+ * @displayName c-user-information
+ */
 export default {
 	name: 'UserInformation',
 	props: {

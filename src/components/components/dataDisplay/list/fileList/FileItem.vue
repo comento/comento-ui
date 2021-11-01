@@ -26,6 +26,9 @@ import Icon from '@/src/components/elements/core/icon/Icon';
 import Loader from '@/src/components/components/other/Loader';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-file-item
+ */
 export default {
 	name: 'FileItem',
 	props: {

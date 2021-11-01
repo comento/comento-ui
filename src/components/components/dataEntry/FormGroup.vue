@@ -5,6 +5,9 @@
 </template>
 
 <script>
+/**
+ * @displayName c-form-group
+ */
 export default {
 	name: 'FormGroup',
 };

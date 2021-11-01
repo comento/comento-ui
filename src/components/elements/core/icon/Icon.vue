@@ -264,6 +264,9 @@ export const IconNames = [
 	'IconStar4XLargeFill',
 ];
 
+/**
+ * @displayName c-icon
+ */
 export default {
 	name: 'Icon',
 	extends: BaseIcon,

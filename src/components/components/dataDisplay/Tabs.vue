@@ -39,6 +39,9 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 export const TabsTypes = ['basic', 'swiper'];
 export const TabsDirections = ['horizontal', 'vertical'];
 
+/**
+ * @displayName c-tabs
+ */
 export default {
 	name: 'Tabs',
 	props: {

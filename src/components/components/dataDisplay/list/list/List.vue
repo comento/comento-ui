@@ -5,6 +5,9 @@
 </template>
 
 <script>
+/**
+ * @displayName c-list
+ */
 export default {
 	name: 'List',
 	props: {

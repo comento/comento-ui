@@ -25,6 +25,9 @@ import customValidator from '@/src/utils/custom-validator';
 export const radioColors = ['primary', 'success', 'secondary', 'error'];
 export const radioButtonSizes = ['small', 'medium'];
 
+/**
+ * @displayName c-radio-button
+ */
 export default {
 	name: 'RadioButton',
 	inheritAttrs: false,

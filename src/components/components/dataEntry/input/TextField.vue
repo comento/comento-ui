@@ -42,6 +42,9 @@ export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'ur
 export const TextFieldAligns = ['left', 'center', 'right'];
 export const TextFieldColor = ['primary', 'success', 'secondary', 'error'];
 
+/**
+ * @displayName c-text-field
+ */
 export default {
 	name: 'TextField',
 	inheritAttrs: false,

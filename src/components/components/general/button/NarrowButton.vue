@@ -22,6 +22,9 @@ import { colors } from '@/src/components/elements/core/colors';
 
 export const narrowButtonSizes = ['small', 'medium', 'large'];
 
+/**
+ * @displayName c-narrow-button
+ */
 export default {
 	name: 'NarrowButton',
 	inheritAttrs: false,

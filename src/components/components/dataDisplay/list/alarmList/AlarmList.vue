@@ -5,6 +5,9 @@
 </template>
 
 <script>
+/**
+ * @displayName c-alarm-list
+ */
 export default {
 	name: 'AlarmList',
 };

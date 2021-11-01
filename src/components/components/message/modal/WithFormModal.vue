@@ -37,6 +37,9 @@ import Button from '@/src/components/components/general/button/Button';
 
 export const aligns = ['left', 'center', 'right'];
 
+/**
+ * @displayName c-with-form-modal
+ */
 export default {
 	name: 'WithFormModal',
 	props: {

@@ -20,6 +20,9 @@
 <script>
 export const bannerTypes = ['full', 'standard'];
 
+/**
+ * @displayName c-banner
+ */
 export default {
 	name: 'Banner',
 	props: {

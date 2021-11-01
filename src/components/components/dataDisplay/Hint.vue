@@ -14,6 +14,9 @@ import Icon from '@/src/components/elements/core/icon/Icon';
 
 export const color = ['primary', 'success', 'secondary', 'error'];
 
+/**
+ * @displayName c-hint
+ */
 export default {
 	name: 'Hint',
 	props: {

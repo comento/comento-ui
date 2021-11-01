@@ -38,6 +38,9 @@ export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-success', 'success', 'secondary', 'error'];
 export const buttonTypes = ['fill', 'outlined', 'text', 'icon'];
 
+/**
+ * @displayName c-button
+ */
 export default {
 	name: 'Button',
 	inheritAttrs: false,

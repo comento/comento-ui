@@ -22,6 +22,9 @@ import Typography from '@/src/components/elements/core/typography/Typography';
 import uniqueId from '@/src/utils/unique-id';
 export const checkboxSizes = ['xsmall', 'small', 'medium'];
 
+/**
+ * @displayName c-checkbox
+ */
 export default {
 	name: 'Checkbox',
 	inheritAttrs: false,

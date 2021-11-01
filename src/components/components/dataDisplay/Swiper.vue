@@ -103,6 +103,9 @@ export const SwiperControlPositions = ['inside', 'outside', 'top'];
 export const SwiperIndicatorColors = ['light', 'dark'];
 export const SwiperIndicatorPositions = ['inside', 'outside'];
 
+/**
+ * @displayName c-swiper
+ */
 export default {
 	name: 'Swiper',
 	inheritAttrs: false,

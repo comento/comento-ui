@@ -17,6 +17,10 @@ import { colorKeys } from '@/src/components/elements/core/colors';
 
 export const contentTypes = ['overline', 'title', 'body', 'caption'];
 
+/**
+ * 주로 게시글의 본문에 사용
+ * @displayName c-content
+ */
 export default {
 	name: 'Content',
 	props: {

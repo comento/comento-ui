@@ -7,6 +7,9 @@
 <script>
 import { ChipSizes } from './Chip';
 
+/**
+ * @displayName c-chip-group
+ */
 export default {
 	name: 'ChipGroup',
 	props: {

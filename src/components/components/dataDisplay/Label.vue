@@ -7,6 +7,9 @@
 <script>
 export const labelTypes = ['dataEntry', 'dataDisplay'];
 
+/**
+ * @displayName c-label
+ */
 export default {
 	name: 'Label',
 	props: {
