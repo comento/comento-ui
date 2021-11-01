@@ -49,6 +49,9 @@ export const fullScreenCloseType = ['icon', 'button', 'none'];
 export default {
 	name: 'FullscreenModal',
 	props: {
+		/**
+		 * 정렬(left, right, top, bottom, none)
+		 */
 		align: {
 			type: String,
 			default: 'top',
@@ -63,6 +66,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		/**
+		 *  닫기버튼영역 타입(icon, button, none)
+		 */
 		closeType: {
 			type: String,
 			default: 'icon',

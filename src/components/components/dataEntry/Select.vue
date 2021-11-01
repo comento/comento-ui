@@ -133,6 +133,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		/**
+		 * 크기(small, medium)
+		 */
 		size: {
 			type: String,
 			default: 'medium',

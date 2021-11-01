@@ -114,6 +114,9 @@ export default {
 				return customValidator(value, typeof value === 'boolean', 'Swiper', 'withControls');
 			},
 		},
+		/**
+		 * 화살표 위치(inside, outside, top)
+		 */
 		controlsPosition: {
 			type: String,
 			default: 'inside',
@@ -126,6 +129,9 @@ export default {
 				);
 			},
 		},
+		/**
+		 * 화살표 색상(light, dark)
+		 */
 		controlsColor: {
 			type: String,
 			default: 'light',
@@ -133,6 +139,9 @@ export default {
 				return customValidator(value, SwiperControlsColors.indexOf(value) !== -1, 'Swiper', 'controlsColor');
 			},
 		},
+		/**
+		 * 원형 화살표
+		 */
 		controlsCircle: {
 			type: Boolean,
 			default: false,
@@ -144,6 +153,9 @@ export default {
 				return customValidator(value, typeof value === 'boolean', 'Swiper', 'withIndicator');
 			},
 		},
+		/**
+		 * 인디케이터 위치(inside, outside)
+		 */
 		indicatorPosition: {
 			type: String,
 			default: 'inside',
@@ -156,6 +168,9 @@ export default {
 				);
 			},
 		},
+		/**
+		 * 인디케이터 색상(light, dark)
+		 */
 		indicatorColor: {
 			type: String,
 			default: 'light',

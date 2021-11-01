@@ -39,6 +39,9 @@ export const userInformationTypes = ['simple', 'normal', 'full'];
 export default {
 	name: 'UserInformation',
 	props: {
+		/**
+		 * 타입(simple, normal, full)
+		 */
 		type: {
 			type: String,
 			default: 'normal',

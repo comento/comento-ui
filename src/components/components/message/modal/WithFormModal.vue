@@ -47,6 +47,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		/**
+		 * 정렬(left, center, right)
+		 */
 		align: {
 			type: String,
 			default: 'center',

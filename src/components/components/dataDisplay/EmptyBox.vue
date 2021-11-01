@@ -22,6 +22,9 @@ export const Types = ['simple', 'emphasized'];
 export default {
 	name: 'EmptyBox',
 	props: {
+		/**
+		 * 타입(simple, emphasized)
+		 */
 		type: {
 			type: String,
 			default: 'simple',

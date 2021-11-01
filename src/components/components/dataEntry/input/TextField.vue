@@ -46,6 +46,9 @@ export default {
 	name: 'TextField',
 	inheritAttrs: false,
 	props: {
+		/**
+		 * 타입(text, number, password, email, tel, url)
+		 */
 		type: {
 			type: String,
 			default: 'text',
@@ -77,6 +80,9 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		/**
+		 * 정렬(left, center, right)
+		 */
 		align: {
 			type: String,
 			default: 'left',
@@ -96,6 +102,9 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		/**
+		 * 색상(primary, success, secondary, error)
+		 */
 		color: {
 			type: String,
 			default: 'secondary',

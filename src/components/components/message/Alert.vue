@@ -39,6 +39,9 @@ export const AlertTypes = ['information', 'warning'];
 export default {
 	name: 'Alert',
 	props: {
+		/**
+		 * 타입(information, warning)
+		 */
 		type: {
 			type: String,
 			default: 'information',

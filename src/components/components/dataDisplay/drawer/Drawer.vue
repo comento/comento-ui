@@ -27,6 +27,9 @@ export default {
 	name: 'Drawer',
 	mixins: [paddingMixin, scrollMixin],
 	props: {
+		/**
+		 * 위치(left, up, right, down)
+		 */
 		align: {
 			type: String,
 			default: 'right',

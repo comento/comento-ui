@@ -30,6 +30,9 @@ export default {
 			type: String,
 			default: 'gray600',
 		},
+		/**
+		 * 크기(small, medium, large)
+		 */
 		size: {
 			type: String,
 			default: 'small',

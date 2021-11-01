@@ -19,6 +19,9 @@ export default {
 	name: 'Chip',
 	mixins: [paddingMixin],
 	props: {
+		/**
+		 * 타입(fill, outlined, oval-fill, oval-outline)
+		 */
 		type: {
 			type: String,
 			default: 'fill',
@@ -26,6 +29,9 @@ export default {
 				return ChipTypes.indexOf(value) !== -1;
 			},
 		},
+		/**
+		 * 색상(secondary, primary, success)
+		 */
 		color: {
 			type: String,
 			default: 'secondary',
@@ -33,6 +39,9 @@ export default {
 				return ChipColors.indexOf(value) !== -1;
 			},
 		},
+		/**
+		 * 크기(small, medium, large, xlarge)
+		 */
 		size: {
 			type: String,
 			default: 'medium',

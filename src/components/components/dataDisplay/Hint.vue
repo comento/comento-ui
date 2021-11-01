@@ -17,6 +17,9 @@ export const color = ['primary', 'success', 'secondary', 'error'];
 export default {
 	name: 'Hint',
 	props: {
+		/**
+		 * 색상(primary, success, secondary, error)
+		 */
 		color: {
 			type: String,
 			default: 'secondary',

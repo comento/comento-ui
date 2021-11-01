@@ -31,6 +31,9 @@ export default {
 	name: 'SideDrawer',
 	mixins: [scrollMixin],
 	props: {
+		/**
+		 * 위치(left, right)
+		 */
 		align: {
 			type: String,
 			default: 'right',

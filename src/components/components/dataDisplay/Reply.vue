@@ -31,6 +31,9 @@ export default {
 		date: {
 			type: String,
 		},
+		/**
+		 * 신고 버튼 보여주기
+		 */
 		showReport: {
 			type: Boolean,
 			default: true,

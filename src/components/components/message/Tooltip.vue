@@ -30,6 +30,9 @@ export default {
 	name: 'Tooltip',
 	inheritAttrs: false,
 	props: {
+		/**
+		 * 위치(bottom, bottom-right, bottom-left, right-top, right, right-bottom)
+		 */
 		placement: {
 			type: String,
 			default: 'bottom',

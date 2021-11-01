@@ -25,6 +25,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		/**
+		 * 타입(dimmer)
+		 */
 		type: {
 			type: String,
 			default: 'dimmer',

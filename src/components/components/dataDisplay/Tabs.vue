@@ -42,6 +42,9 @@ export const TabsDirections = ['horizontal', 'vertical'];
 export default {
 	name: 'Tabs',
 	props: {
+		/**
+		 * 타입(basic, swiper)
+		 */
 		type: {
 			type: String,
 			default: 'basic',
@@ -49,6 +52,9 @@ export default {
 				return TabsTypes.indexOf(value) !== -1;
 			},
 		},
+		/**
+		 * 방향(horizontal, vertical)
+		 */
 		direction: {
 			type: String,
 			default: 'horizontal',

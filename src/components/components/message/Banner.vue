@@ -18,15 +18,19 @@
 </template>
 
 <script>
-export const buttonSizes = ['full', 'standard'];
+export const bannerTypes = ['full', 'standard'];
+
 export default {
 	name: 'Banner',
 	props: {
+		/**
+		 * 타입(full, standard)
+		 */
 		type: {
 			type: String,
 			default: 'standard',
 			validator(value) {
-				const isValid = buttonSizes.indexOf(value) !== -1;
+				const isValid = bannerTypes.indexOf(value) !== -1;
 				if (!isValid) {
 					console.error(`${value} is not a valid value of Banner type`);
 				}

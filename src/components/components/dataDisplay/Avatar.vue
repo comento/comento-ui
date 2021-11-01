@@ -23,6 +23,9 @@ const avatarColors = ['#f5b3b3', '#f3c499', '#f0db80', '#b4d2a9', '#91cfd3', '#a
 export default {
 	name: 'Avatar',
 	props: {
+		/**
+		 * 타입(text, profile, logo, image)
+		 */
 		type: {
 			type: String,
 			default: 'profile',
@@ -30,6 +33,9 @@ export default {
 				return avatarTypes.includes(value);
 			},
 		},
+		/**
+		 * xsmall, small, medium, large
+		 */
 		size: {
 			type: String,
 			default: 'medium',
@@ -41,7 +47,9 @@ export default {
 			type: String,
 			default: '',
 		},
-		// type : img 일 경우 이미지
+		/**
+		 * 이미지 경로
+		 */
 		src: {
 			type: String,
 			default: null,

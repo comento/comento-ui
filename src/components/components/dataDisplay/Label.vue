@@ -10,6 +10,9 @@ export const labelTypes = ['dataEntry', 'dataDisplay'];
 export default {
 	name: 'Label',
 	props: {
+		/**
+		 * 타입(dataEntry, dataDisplay)
+		 */
 		type: {
 			type: String,
 			default: 'dataEntry',

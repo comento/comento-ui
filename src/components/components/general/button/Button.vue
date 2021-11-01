@@ -42,6 +42,9 @@ export default {
 	name: 'Button',
 	inheritAttrs: false,
 	props: {
+		/**
+		 * 크기(small, medium, large, xlarge)
+		 */
 		size: {
 			type: String,
 			default: 'medium',
@@ -49,6 +52,9 @@ export default {
 				return buttonSizes.indexOf(value) !== -1;
 			},
 		},
+		/**
+		 * 색상(primary, light-success, success, secondary, error)
+		 */
 		color: {
 			type: String,
 			default: 'primary',
@@ -60,6 +66,9 @@ export default {
 				return isValid;
 			},
 		},
+		/**
+		 * 타입(fill, outlined, text, icon)
+		 */
 		type: {
 			type: String,
 			default: 'fill',

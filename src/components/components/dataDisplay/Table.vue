@@ -23,6 +23,9 @@ export const cursors = ['pointer', 'default'];
 export default {
 	name: 'Table',
 	props: {
+		/**
+		 * 커서 모양(pointer, default)
+		 */
 		cursor: {
 			type: String,
 			default: 'default',

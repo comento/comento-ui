@@ -38,6 +38,9 @@ export const CalloutSizes = ['x-small', 'small', 'medium'];
 export default {
 	name: 'Callout',
 	props: {
+		/**
+		 * 타입(information, alert, success)
+		 */
 		type: {
 			type: String,
 			default: 'information',
@@ -49,6 +52,9 @@ export default {
 				return isValid;
 			},
 		},
+		/**
+		 * 크기(x-small, small, medium)
+		 */
 		size: {
 			type: String,
 			default: 'small',

@@ -10,6 +10,9 @@ export const buttonGroupSizes = ['small', 'medium', 'large'];
 export default {
 	name: 'ButtonGroup',
 	props: {
+		/**
+		 * 크기(small, medium, large)
+		 */
 		size: {
 			type: String,
 			default: 'small',

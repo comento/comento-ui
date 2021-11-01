@@ -10,6 +10,9 @@ import { ChipSizes } from './Chip';
 export default {
 	name: 'ChipGroup',
 	props: {
+		/**
+		 * 크기(small, medium, large, xlarge)
+		 */
 		size: {
 			type: String,
 			default: 'medium',

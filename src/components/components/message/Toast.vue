@@ -41,6 +41,9 @@ export default {
 			required: true,
 		},
 		type: {
+			/**
+			 * 타입(basic, error, success)
+			 */
 			type: String,
 			default: 'basic',
 			validator(value) {
@@ -52,6 +55,9 @@ export default {
 			type: Number,
 			default: 3000,
 		},
+		/**
+		 * 위치(top, bottom)
+		 */
 		position: {
 			type: String,
 			default: 'bottom',

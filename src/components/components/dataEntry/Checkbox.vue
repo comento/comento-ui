@@ -58,6 +58,9 @@ export default {
 				return isValid;
 			},
 		},
+		/**
+		 * 크기(xsmall, small, medium)
+		 */
 		size: {
 			type: String,
 			default: 'medium',

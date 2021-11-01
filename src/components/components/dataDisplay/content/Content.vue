@@ -20,6 +20,9 @@ export const contentTypes = ['overline', 'title', 'body', 'caption'];
 export default {
 	name: 'Content',
 	props: {
+		/**
+		 * overline, title, body, caption
+		 */
 		type: {
 			type: String,
 			default: 'body',

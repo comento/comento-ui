@@ -32,6 +32,9 @@ export default {
 	name: 'LinkButton',
 	inheritAttrs: false,
 	props: {
+		/**
+		 * 타입(display1, headline1~6, body1~2, caption1~2)
+		 */
 		type: {
 			type: String,
 			default: 'body1',
@@ -49,6 +52,9 @@ export default {
 				return isString || isObject;
 			},
 		},
+		/**
+		 * 색상(blue600, blue400)
+		 */
 		color: {
 			type: String,
 			default: 'blue600',
@@ -64,7 +70,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		// external일 때만 적용됨
+		/**
+		 * 열리는 위치(_blank, _self, _parent, _top)
+		 * external일 때만 적용됨
+		 */
 		target: {
 			type: String,
 			default: '_self',

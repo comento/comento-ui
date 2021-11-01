@@ -14,6 +14,9 @@ export const dividerTypes = ['line', 'dash'];
 export default {
 	name: 'Divider',
 	props: {
+		/**
+		 * 타입(line, dash)
+		 */
 		type: {
 			type: String,
 			default: 'line',

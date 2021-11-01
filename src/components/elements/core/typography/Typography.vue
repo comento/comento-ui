@@ -36,6 +36,9 @@ export const FontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal
 export default {
 	name: 'Typography',
 	props: {
+		/**
+		 * 태그(h1~6, span, div, p, u, strong, dt, dd, em)
+		 */
 		element: {
 			type: String,
 			default: 'div',
@@ -47,6 +50,9 @@ export default {
 				return isValid;
 			},
 		},
+		/**
+		 * 정렬(left, center, right)
+		 */
 		align: {
 			type: String,
 			default: null,
@@ -62,6 +68,9 @@ export default {
 			type: String,
 			default: null,
 		},
+		/**
+		 * 굵기(100~900, normal, bold, lighter, bolder)
+		 */
 		fontWeight: {
 			type: [Number, String],
 			default: null,
@@ -73,6 +82,9 @@ export default {
 				return isValid;
 			},
 		},
+		/**
+		 * 타입(display1, headline1~6, body1~2, caption1~2)
+		 */
 		type: {
 			type: String,
 			default: null,
