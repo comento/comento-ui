@@ -1,3 +1,12 @@
+## [0.1.128](https://github.com/comento/comento-ui/compare/v0.1.127...v0.1.128) (2021-11-02)
+
+
+### Bug Fixes
+
+* ios 15.0 대응 코드 삭제 ([#631](https://github.com/comento/comento-ui/issues/631)) ([d972fac](https://github.com/comento/comento-ui/commit/d972fac33be96f56c11666478c249d459939aa98))
+
+
+
 ## [0.1.127](https://github.com/comento/comento-ui/compare/v0.1.126...v0.1.127) (2021-10-28)
 
 
