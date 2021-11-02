@@ -1,0 +1,470 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Grid from '@/src/components/layout/Grid';
+import Row from '@/src/components/layout/Row';
+import StyleCol from '@/src/components/layout/StyleCol';
+import TextField, { TextFieldTypes, TextFieldAligns, TextFieldColor } from '@/src/components/components/dataEntry/input/TextField';
+import Typography from '@/src/components/elements/core/typography/Typography';
+import Icon from '@/src/components/elements/core/icon/Icon';
+import Loader from '@/src/components/components/other/Loader';
+
+<Meta
+    title="Data Entry/Input/TextField"
+    component={ TextField }
+    argTypes={{
+        type: {
+            description: "텍스트필드 type",
+            control: {
+            type: "select",
+            options: TextFieldTypes,
+           },
+        },
+        outlined: {
+            description: "텍스트필드 outlined (true) / underline(false)",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        placeholder: {
+            description: "체크박스 placeholder 문구",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        label: {
+            description: "텍스트필드 label에 들어갈 텍스트",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        active: {
+            description: "텍스트필드 활성화 여부 ",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        focus: {
+            description: "텍스트필드 focus 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        align: {
+            description: "텍스트필드 text 정렬",
+            control: {
+                type: "select",
+                options: TextFieldAligns,
+            },
+        },
+        readonly: {
+            description: "텍스트필드 readonly 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        disabled: {
+            description: "텍스트필드 disabled 활성화",
+            defaultValue: false,
+            control: { type: "boolean" },
+        },
+        color: {
+            description: "hint color",
+            control: {
+                type: "select",
+                options: TextFieldColor,
+           },
+        },
+        hint:{
+            description: "텍스트필드 에러메시지",
+            defaultValue: '',
+            control: { type: "text" },
+        },
+        value: {
+            description: "TextArea 들어갈 텍스트",
+            defaultValue: null,
+            control: { type: "text" },
+        },
+        full: {
+            description: "width 100%를 차지할 것인지",
+            control: { type: "boolean" },
+        },
+        autocomplete: {
+            description: "자동완성",
+            control: { type: "boolean" },
+        },
+        id: {
+            description: "아이디 (없으면 textField-randomNumber)",
+            control: {
+                type: "text"
+            }
+        }
+    }}
+/>
+
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { TextField },
+    template:
+        `<TextField
+            :type="type"
+            :outlined="outlined"
+            :placeholder="placeholder"
+            :label="label"
+            :active="active"
+            :align="align"
+            :focus="focus"
+            :readonly="readonly"
+            :disabled="disabled"
+            :value.sync="value"
+            :hint="hint"
+            :color="color"
+            :full="full"
+            :autocomplete="autocomplete"
+            :id="id"
+        />`,
+});
+
+# TextField
+
+**TextField** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### Hint default
+<Canvas>
+    <Story name="Hint Default" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <TextField
+                        type="text"
+                        color="error"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + hint "
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        color="error"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        label="label"
+                        placeholder="underlined + hint + label"
+                        active
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        color="error"
+                        hint="내용을 입력해주세요."
+                        outlined
+                        placeholder="outlined + hint "
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        color="error"
+                        hint="내용을 입력해주세요."
+                        outlined
+                        label="label"
+                        placeholder="outlined + hint + label"
+                        active
+                        class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Hint Secondary
+
+<Canvas>
+    <Story name="Hint Secondary" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <TextField
+                        type="text"
+                        color="secondary"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + hint "
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        color="secondary"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        label="label"
+                        placeholder="underlined + hint + label"
+                        active
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        hint="내용을 입력해주세요."
+                        color="secondary"
+                        outlined
+                        placeholder="outlined + hint"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        hint="내용을 입력해주세요."
+                        color="secondary"
+                        outlined
+                        label="label"
+                        placeholder="outlined + hint + label"
+                        active
+                        class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Hint Success
+<Canvas>
+    <Story name="Hint Success" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <TextField
+                        type="text"
+                        color="success"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + hint"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        color="success"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        label="label"
+                        placeholder="underlined + hint + label"
+                        active
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        hint="내용을 입력해주세요."
+                        color="success"
+                        outlined
+                        placeholder="outlined + hint"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        hint="내용을 입력해주세요."
+                        color="success"
+                        outlined
+                        label="label"
+                        placeholder="outlined + hint + label"
+                        active
+                        class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Hint Primary
+<Canvas>
+    <Story name="Hint Primary" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <TextField
+                        type="text"
+                        color="primary"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + hint "
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        color="primary"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        label="label"
+                        placeholder="underlined + hint + label"
+                        active
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        hint="내용을 입력해주세요."
+                        color="primary"
+                        outlined
+                        placeholder="outlined + hint"
+                        class="mb-20"
+                    />
+                    <TextField
+                        type="text"
+                        hint="내용을 입력해주세요."
+                        color="primary"
+                        outlined
+                        label="label"
+                        placeholder="outlined + hint + label"
+                        active
+                        class="mb-20"
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Full
+<Canvas>
+    <Story name="Full" height="200px">
+        {{
+            template: `
+                <div>
+                    <TextField
+                        type="text"
+                        color="primary"
+                        hint="내용을 입력해주세요."
+                        :outlined="false"
+                        placeholder="underlined + hint "
+                        class="mb-20"
+                        full
+                    />
+                </div>
+            `,
+            components: { TextField },
+        }}
+    </Story>
+</Canvas>
+
+### Validate
+<Canvas>
+    <Story name="Validate" height="200px">
+        {{
+            template: `
+                <div>
+                    <Typography type="body2" color="gray500" class="mb-4">이름</Typography>
+                    <TextField
+                        type="text"
+                        :color="isError ? 'error' : 'secondary'"
+                        :hint="isError ? '두 글자 이상 입력해 주세요.' : '실명을 입력하세요. 입력된 이름으로 수료증이 발급됩니다.'"
+                        outlined
+                        placeholder="코멘티"
+                        :active="isError"
+                        :value.sync="name"
+                    />
+                </div>
+            `,
+            data() {
+                return {
+                    name: null,
+                    isError: false,
+                };
+            },
+            watch: {
+                name() {
+                    this.isError = this.name.length < 2;
+                }
+            },
+            components: { TextField, Typography },
+        }}
+    </Story>
+</Canvas>
+
+### Append Slot
+<Canvas>
+    <Story name="AppendSlot" height="200px">
+        {{
+            template: `
+                <Grid>
+                    <Row class="mb-10">
+                        <StyleCol :col-lg="4" col-gutters>
+                            <TextField
+                                type="text"
+                                outlined
+                                label="대학"
+                                placeholder="학교명"
+                                hint="대학명을 입력해주세요."
+                                :value.sync="name"
+                            >
+                                <template v-slot:append>
+                                    <Typography type="caption2" color="gray700" class="mr-2">제휴 확인 중</Typography>
+                                    <Loader size="small" color="secondary" style="margin-right: -2px" />
+                                </template>
+                            </TextField>
+                        </StyleCol>
+                    </Row>
+                    <Row class="mb-10">
+                        <StyleCol :col-lg="4" col-gutters>
+                            <TextField
+                                type="text"
+                                outlined
+                                label="대학"
+                                placeholder="학교명"
+                                :value.sync="name"
+                            >
+                                <template v-slot:append>
+                                    <Typography type="caption2" color="gray800" class="mr-2">미제휴기관</Typography>
+                                    <Icon name="IconExclamationSmallFill" color="gray500" />
+                                </template>
+                            </TextField>
+                        </StyleCol>
+                    </Row>
+                    <Row class="mb-10">
+                        <StyleCol :col-lg="4" col-gutters>
+                            <TextField
+                                type="text"
+                                outlined
+                                label="대학"
+                                placeholder="학교명"
+                                :value.sync="name"
+                            >
+                                <template v-slot:append>
+                                    <Typography type="caption2" color="primary" class="mr-2">제휴기관</Typography>
+                                    <Icon name="IconExclamationSmallFill" color="primary" />
+                                </template>
+                            </TextField>
+                        </StyleCol>
+                    </Row>
+                    <Row>
+                        <StyleCol :col-lg="4" col-gutters>
+                            <TextField
+                                type="text"
+                                placeholder="인증번호"
+                                :value.sync="name"
+                                full
+                            >
+                                <template v-slot:append>
+                                    <Typography type="caption1" color="error">30:00</Typography>
+                                </template>
+                            </TextField>
+                        </StyleCol>
+                    </Row>
+                </Grid>
+            `,
+            data() {
+                return {
+                    name: null,
+                    isError: false,
+                };
+            },
+            watch: {
+                name() {
+                    this.isError = this.name.length < 2;
+                }
+            },
+            components: { Grid, Row, StyleCol, TextField, Typography, Loader, Icon },
+        }}
+    </Story>
+</Canvas>

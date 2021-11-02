@@ -1,0 +1,152 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Select, { selectSizes }  from '@/src/components/components/dataEntry/Select';
+import Typography from '@/src/components/elements/core/typography/Typography';
+import { colors } from '@/src/components/elements/core/colors';
+
+<Meta
+    title="Data Entry/Dropdown/Select"
+    component={ Select }
+    argTypes={{
+        options: {
+            description: "select 리스트",
+            defaultValue: ['List1', 'List2', 'List3', 'List4', 'List5'],
+            control: { type: "array" },
+        },
+        placeholder: {
+            description: "설명 텍스트",
+            control: { type: "text" },
+        },
+        label: {
+            description: "라벨 텍스트",
+            control: { type: "text" },
+        },
+        color: {
+            description: "화살표 색상",
+            control: {
+                type: "select",
+                options: Object.keys(colors),
+            },
+        },
+        value: {
+            description: "셀렉트한 값 (스토리북에서는 동작하지 않음)",
+        },
+        vertical: {
+            description: "방향 (label 값이 있어야 함)",
+        },
+        maxHeight: {
+            description: "리스트 최대 높이",
+            defaultValue: "130px"
+        },
+        size: {
+            description: "크기",
+            control: {
+                type: "select",
+                options: selectSizes,
+            },
+        },
+        disabled: {
+            description: "비활성화 여부",
+        }
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Select },
+    data: () => ({
+        listItems: ['List1', 'List2', 'List3', 'List4', 'List5'],
+    }),
+    template: `
+        <div>
+            <Select
+                v-model="value"
+                :options="options"
+                :placeholder="placeholder"
+                :label="label"
+                :vertical="vertical"
+                :max-height="maxHeight"
+                :color="color"
+                :full="full"
+                :size="size"
+                :disabled="disabled"
+            />
+        </div>
+    `,
+});
+
+# Select
+**Select** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="150px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### Size
+<Canvas>
+    <Story name="Size" height="250px">
+        {{
+            data: () => ({
+                select1: '',
+                select2: '',
+                select3: '',
+                select4: '',
+                options: [1, 2],
+            }),
+            template: `
+                <div>
+                    <div class="mb-10">
+                        <Select v-model="select1" :options="options" size="small" />
+                    </div>
+                    <div class="mb-10">
+                        <Select v-model="select2" :options="options" size="medium" />
+                    </div>
+                    <div class="mb-10">
+                        <Select v-model="select3" :options="options" size="small" full />
+                    </div>
+                    <div>
+                        <Select v-model="select4" :options="options" size="medium" full />
+                    </div>
+                </div>
+        `,
+            components: { Select },
+        }}
+    </Story>
+</Canvas>
+
+### With Label
+<Canvas>
+    <Story name="Direction" height="300px">
+        {{
+            data: () => ({
+                select1: 1,
+                select2: 1,
+                options1: [{label: '라벨1', value: 1}, {label: '라벨2', value: 2, icon: 'IconExportMediumLine'}],
+                options2: [1, 2],
+            }),
+            template: `
+                <div>
+                    <div style="margin-bottom: 30px">
+                        <Select v-model="select1" :options="options1" label="Label" />
+                        <Typography color="gray800" type="body2">
+                          options: {{ options1 }}<br />
+                          선택된 값: {{ select1 }}
+                        </Typography>
+                        <Typography></Typography>
+                    </div>
+                    <div>
+                        <Select v-model="select2" :options="options2" label="Label" :vertical="false" />
+                        <Typography color="gray800" type="body2">
+                          options: {{ options2 }}<br />
+                          선택된 값: {{ select2 }}
+                        </Typography>
+                    </div>
+                </div>
+        `,
+            components: { Select, Typography },
+        }}
+    </Story>
+</Canvas>

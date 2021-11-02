@@ -1,0 +1,288 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Button, { buttonSizes, buttonColors, buttonTypes } from '@/src/components/components/general/button/Button';
+import Icon from '@/src/components/elements/core/icon/Icon';
+
+<Meta
+  title="General/Button/Button"
+  component={ Button }
+  argTypes={{
+    label: {
+      description: "버튼에 들어갈 텍스트",
+      defaultValue: "버튼",
+      control: { type: "text" },
+    },
+    size: {
+      description: "버튼의 크기",
+      control: {
+        type: "select",
+        options: buttonSizes,
+      },
+    },
+    color: {
+      description: "버튼의 색상 타입",
+      control: {
+        type: "select",
+        options: buttonColors,
+      },
+    },
+    type: {
+      description: "버튼의 타입",
+      control: {
+        type: "select",
+        options: buttonTypes,
+      },
+    },
+    full: {
+      description: "width: 100%",
+    },
+    disabled: {
+      description: "버튼의 disabled 상태",
+    },
+    loading: {
+      description: "버튼의 loading 상태",
+    },
+    fixed: {
+        description: "position: fixed"
+    },
+    absolute: {
+        description: "position: absolute"
+    },
+    shadow: {
+        description: "그림자"
+    },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Button },
+  template:
+    `<Button
+        :size="size"
+        :color="color"
+        :type="type"
+        :full="full"
+        :disabled="disabled"
+        :loading="loading"
+        :absolute="absolute"
+        :fixed="fixed"
+        :shadow="shadow"
+    >
+      {{label}}
+    </Button>`,
+});
+
+# Button
+
+**Button** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex">
+                    <Button color="primary">Fill Primary</Button>
+                    <Button color="success">Fill Success</Button>
+                    <Button color="error">Fill Error</Button>
+                    <Button color="secondary">Fill Gray</Button>
+                  </div>
+                  <div style="display: flex">
+                    <Button color="primary" type="outlined">Outlined Primary</Button>
+                    <Button color="success" type="outlined">Outlined Success</Button>
+                    <Button color="error" type="outlined">Outlined Error</Button>
+                    <Button color="secondary" type="outlined">Outlined Gray</Button>
+                  </div>
+                  <div style="display: flex">
+                    <Button color="primary" type="text">Text Primary</Button>
+                    <Button color="success" type="text">Text Success</Button>
+                    <Button color="error" type="text">Text Error</Button>
+                    <Button color="secondary" type="text">Text Gray</Button>
+                  </div>
+                </div>
+        `,
+            components: { Button },
+        }}
+    </Story>
+</Canvas>
+
+
+### Sizes
+<Canvas>
+    <Story name="Sizes" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex">
+                    <Button size="small">Small</Button>
+                    <Button size="medium">Medium</Button>
+                    <Button size="large">Large</Button>
+                    <Button size="xlarge">XLarge</Button>
+                  </div>
+                </div>
+        `,
+            components: { Button },
+        }}
+    </Story>
+</Canvas>
+
+### Loading
+<Canvas>
+    <Story name="Loading" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex">
+                    <Button color="primary" type="fill" size="medium" loading>Fill Primary</Button>
+                    <Button color="success" type="fill" size="medium" loading>Fill Success</Button>
+                    <Button color="error" type="fill" size="medium" loading>Fill Gray</Button>
+                    <Button color="secondary" type="fill" size="medium" loading>Fill Gray</Button>
+                  </div>
+                  <div style="display: flex">
+                    <Button color="primary" type="outlined" size="medium" loading>Fill Primary</Button>
+                    <Button color="success" type="outlined" size="medium" loading>Fill Success</Button>
+                    <Button color="error" type="outlined" size="medium" loading>Fill Gray</Button>
+                    <Button color="secondary" type="outlined" size="medium" loading>Fill Gray</Button>
+                  </div>
+                </div>
+        `,
+            components: { Button },
+        }}
+    </Story>
+</Canvas>
+
+### Disabled
+<Canvas>
+    <Story name="Disabled" height="100px">
+        {{
+            template: `
+                <div>
+                  <div style="display: flex">
+                    <Button color="primary" type="fill" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="primary" />
+                        </template>
+                        Fill Primary
+                    </Button>
+                    <Button color="success" type="fill" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="success" />
+                        </template>
+                        Fill Success
+                    </Button>
+                    <Button color="error" type="fill" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="error" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                    <Button color="secondary" type="fill" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="secondary" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                  </div>
+                  <div style="display: flex">
+                    <Button color="primary" type="outlined" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="primary" />
+                        </template>
+                        Fill Primary
+                    </Button>
+                    <Button color="success" type="outlined" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="success" />
+                        </template>
+                        Fill Success
+                    </Button>
+                    <Button color="error" type="outlined" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="error" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                    <Button color="secondary" type="outlined" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="secondary" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                  </div>
+                  <div style="display: flex">
+                    <Button color="primary" type="text" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="primary" />
+                        </template>
+                        Fill Primary
+                    </Button>
+                    <Button color="success" type="text" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="success" />
+                        </template>
+                        Fill Success
+                    </Button>
+                    <Button color="error" type="text" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="error" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                    <Button color="secondary" type="text" size="medium" disabled>
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="secondary" />
+                        </template>
+                        Fill Gray
+                    </Button>
+                  </div>
+                </div>
+        `,
+            components: { Button, Icon },
+        }}
+    </Story>
+</Canvas>
+
+### With Icon
+<Canvas>
+    <Story name="WithIcon" height="100px">
+        {{
+            template: `
+                <div style="display: flex">
+                    <Button color="primary" type="fill" size="small">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusSmallLine" color="white" />
+                        </template>
+                        Small
+                    </Button>
+                    <Button color="primary" type="fill" size="medium">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusMediumLine" color="white" />
+                        </template>
+                        Medium
+                    </Button>
+                    <Button color="primary" type="fill" size="large">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusLargeLine" color="white" />
+                        </template>
+                        Large
+                    </Button>
+                    <Button color="primary" type="fill" size="xlarge">
+                        <template v-slot:left-icon>
+                            <Icon name="IconPlusLargeLine" color="white" />
+                        </template>
+                        XLarge
+                    </Button>
+                </div>
+        `,
+            components: { Button, Icon },
+        }}
+    </Story>
+</Canvas>

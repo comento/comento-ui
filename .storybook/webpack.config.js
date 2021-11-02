@@ -44,7 +44,7 @@ module.exports = ({config}) => {
             {
                 loader: 'sass-loader',
                 options: {
-                  additionalData: `@import "assets/style/base/main.scss";`,
+                  additionalData: `@import "~@/src/assets/style/base/main.scss";`,
                     sourceMap: true,
             }
         }],

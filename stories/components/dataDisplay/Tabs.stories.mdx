@@ -1,0 +1,175 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Tabs, { TabsTypes, TabsDirections } from '@/src/components/components/dataDisplay/Tabs';
+import Button from '@/src/components/components/general/button/Button';
+
+<Meta
+    title="Data Display/Tabs"
+    component={ Tabs }
+    argTypes={{
+        type: {
+            description: "Swiper 사용 여부<br/>String",
+            control: {
+                type: "select",
+                options: TabsTypes
+            },
+        },
+        direction: {
+            description: "Tabs 방향<br/>String",
+            control: {
+                type: "select",
+                options: TabsDirections
+            },
+        },
+        transparent: {
+            description: "투명타입",
+            control: {
+                type: "boolean",
+            }
+        }
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Tabs, Button },
+    data() {
+        return {
+            selectedNo: 2,
+            items: ['캠프 일정', '새 댓글', '수료증'],
+        }
+    },
+    methods: {
+        handleChangeTabIndex(index) {
+            this.selectedNo = index
+        }
+    },
+    template:
+      `<div style="background: cadetblue">
+          <Tabs :type="type" :direction="direction" :tab-index="selectedNo" :transparent="transparent" @changeTabIndex="handleChangeTabIndex">
+              <template v-for="(item, index) in items" :slot="'item' + index">
+                    <Button>
+                      {{ item }}
+                    </Button>
+              </template>
+          </Tabs>
+        </div>`,
+});
+
+# Tabs
+
+**Tabs** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            data() {
+                return {
+                    selectedNo1: 0,
+                    selectedNo2: 0,
+                    selectedNo3: 0,
+                    selectedNo4: 0,
+                    length: 10,
+                    items: ['캠프 일정', '새 댓글', '수료증'],
+                }
+            },
+            methods: {
+                handleChangeTabIndex1(index) {
+                    this.selectedNo1 = index;
+                },
+                handleChangeTabIndex2(index) {
+                    this.selectedNo2 = index;
+                },
+                handleChangeTabIndex3(index) {
+                    this.selectedNo3 = index;
+                },
+                handleChangeTabIndex4(index) {
+                    this.selectedNo4 = index;
+                },
+            },
+            template: `
+            <div>
+                <Tabs :tabIndex="selectedNo1"  @changeTabIndex="handleChangeTabIndex1">
+                    <template v-for="(item, index) in this.length" :slot="'item' + index">
+                            <Button>
+                                Tab{{ item }}
+                            </Button>
+                    </template>
+                </Tabs>
+                <Typography type="caption1">basic type</Typography>
+                <br/>
+                <Tabs type="swiper" :tabIndex="selectedNo2" @changeTabIndex="handleChangeTabIndex2">
+                    <template v-for="(item, index) in this.length" :slot="'item' + index">
+                            <Button>
+                                Tab{{ item }}
+                            </Button>
+                    </template>
+                </Tabs>
+                <Typography type="caption1">swiper type</Typography>
+                <br/>
+                <Tabs :tabIndex="selectedNo3" @changeTabIndex="handleChangeTabIndex3">
+                   <template v-for="(item, index) in this.length" :slot="'item' + index">
+                           <Button style="position: relative">
+                               Tab{{ item }}
+                           </Button>
+                          <Badge type="inline" text="1" :offsetX="20" :offsetY="10"/>
+                   </template>
+               </Tabs>
+               <Tabs :tabIndex="selectedNo4" type="swiper" @changeTabIndex="handleChangeTabIndex4">
+                  <template v-for="(item, index) in this.length" :slot="'item' + index">
+                          <Button style="position: relative">
+                              Tab{{ item }}
+                          </Button>
+                         <Badge type="inline" text="1" :offsetX="20" :offsetY="10"/>
+                  </template>
+              </Tabs>
+            <br/>
+            <Typography type="caption1">탭에 여러 컴포넌트가 들어가는 경우</Typography>
+            </div>
+            `,
+            components: { Tabs, Typography, Button, Chip, Badge },
+        }}
+    </Story>
+</Canvas>
+
+### Direction Vertical && Badge와 함께 사용
+<Canvas>
+    <Story name="Vertical" height="100px">
+        {{
+            data() {
+                return {
+                    selectedNo1: 0,
+                    items: ['캠프 일정', '새 댓글', '수료증'],
+                }
+            },
+            methods: {
+                handleChangeTabIndex1(index) {
+                    this.selectedNo1 = index;
+                },
+            },
+            template: `
+            <div>
+                <Tabs :tabIndex="selectedNo1" direction="vertical" @changeTabIndex="handleChangeTabIndex1">
+                    <template v-for="(item, index) in items" :slot="'item' + index">
+                            <Button>
+                                {{ item }}
+                            </Button>
+                            <template v-if="item === '새 댓글'">
+                                <Badge text="3" color="error" type="inline"/>
+                            </template>
+                    </template>
+                </Tabs>
+            </div>
+            `,
+            components: { Tabs, Typography, Button, Chip, Badge },
+        }}
+    </Story>
+</Canvas>
