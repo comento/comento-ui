@@ -1,0 +1,129 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Box, { Elements } from '@/src/components/components/general/Box';
+import { colors } from '@/src/components/elements/core/colors';
+
+<Meta
+  title="General/Box"
+  component={Box}
+  argTypes={{
+    label: {
+      description: "Box에 들어갈 slot",
+      defaultValue: "콘텐츠가 들어가는 영역입니다.",
+      control: { type: "text" },
+      table: {
+        type: {
+          summary: "slot",
+        },
+      },
+    },
+    hasBorder: {
+      description: "border 유무",
+      table: {
+        type: {
+          summary: "Boolean",
+        },
+      },
+    },
+    backgroundColor: {
+      description: "배경색",
+      table: {
+        type: {
+          summary: "String",
+        },
+      },
+      control: {
+        type: "select",
+        options: Object.keys(colors),
+      },
+    },
+    borderColor: {
+      description: "테두리색",
+      table: {
+        type: {
+          summary: "String",
+        },
+      },
+      control: {
+        type: "select",
+        options: Object.keys(colors),
+      },
+    },
+    paddings: {
+      description: "패딩",
+      table: {
+        type: {
+          summary: "Array",
+        },
+      },
+      control: {
+        type: "array",
+      },
+      defaultValue: [16, 16, 16, 16],
+    },
+    hasShadow: {
+      description: "boxShadow 유무",
+      table: {
+        type: {
+          summary: "Boolean",
+        },
+      },
+    },
+    element: {
+      description: "태그명",
+      control: {
+         type: "select",
+         options: Elements,
+      },
+    }
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Box },
+  template: `
+    <div style="display: flex; justify-content:center; align-items: center; background-color: #F4F5F7; width: 100%; height: 200px;">
+      <Box
+        :has-border="hasBorder"
+        :background-color="backgroundColor"
+        :border-color="borderColor"
+        :paddings="paddings"
+        :has-shadow="hasShadow"
+        :element="element"
+      >
+        <div style="background-color: #F4F5F7;">{{label}}</div>
+      </Box>
+    </div>`,
+});
+
+# Box
+
+**Box** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### All
+
+<Canvas>
+  <Story name="All" height="200px">
+    {{
+      template: `
+        <div style="display: flex; justify-content:center; align-items: center; backgroundColor: #F4F5F7; width: 100%; height: 200px; ">
+          <Box style="marginRight: 10px;" background-color="white">
+            <div style="backgroundColor: #F4F5F7;">without Shadow</div>
+          </Box>
+          <Box :has-shadow="true" background-color="white">
+            <div style="backgroundColor: #F4F5F7;">with Shadow</div>
+          </Box>
+        </div>
+        `,
+      components: { Box },
+    }}
+  </Story>
+</Canvas>
