@@ -19,9 +19,9 @@
 	</div>
 </template>
 <script>
-import Icon from '@/src/components/elements/core/icon/Icon';
-import paddingMixin from '@/src/mixins/paddingMixin';
-import scrollMixin from '@/src/mixins/scrollMixin';
+import Icon from '@/components/elements/core/icon/Icon';
+import paddingMixin from '@/mixins/paddingMixin';
+import scrollMixin from '@/mixins/scrollMixin';
 
 /**
  * @displayName c-drawer
@@ -132,7 +132,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import '@/src/assets/style/base/animation.scss';
+@import '@/assets/style/base/animation.scss';
 
 $--c-drawer-close-width: 14px !default;
 .c-drawer {

@@ -35,8 +35,8 @@
 </template>
 
 <script>
-import Hint from '@/src/components/components/dataDisplay/Hint';
-import uniqueId from '@/src/utils/unique-id';
+import Hint from '@/components/components/dataDisplay/Hint';
+import uniqueId from '@/utils/unique-id';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const TextFieldAligns = ['left', 'center', 'right'];

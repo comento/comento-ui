@@ -38,10 +38,10 @@
 </template>
 
 <script>
-import Modal from '@/src/components/components/message/modal/Modal';
-import NarrowButton from '@/src/components/components/general/button/NarrowButton';
-import Icon from '@/src/components/elements/core/icon/Icon';
-import Divider from '@/src/components/elements/utility/Divider';
+import Modal from '@/components/components/message/modal/Modal';
+import NarrowButton from '@/components/components/general/button/NarrowButton';
+import Icon from '@/components/elements/core/icon/Icon';
+import Divider from '@/components/elements/utility/Divider';
 
 export const fullScreenAlign = ['left', 'right', 'top', 'bottom', 'none'];
 export const fullScreenCloseType = ['icon', 'button', 'none'];

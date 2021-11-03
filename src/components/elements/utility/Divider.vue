@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { colors, colorKeys } from '@/src/components/elements/core/colors';
+import { colors, colorKeys } from '@/components/elements/core/colors';
 
 export const dividerTypes = ['line', 'dash'];
 
@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/src/assets/style/base/main';*/
+/*@import '@/assets/style/base/main';*/
 .c-divider {
 	margin: 0;
 	border: 0;

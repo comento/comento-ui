@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import customValidator from '@/src/utils/custom-validator.js';
-import FileButton from '@/src/components/components/general/button/FileButton';
+import customValidator from '@/utils/custom-validator.js';
+import FileButton from '@/components/components/general/button/FileButton';
 
 /**
  * @displayName c-file-input

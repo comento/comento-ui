@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import Box from '@/src/components/components/general/Box';
-import Typography from '@/src/components/elements/core/typography/Typography';
-import Button from '@/src/components/components/general/button/Button';
-import Label from '@/src/components/components/dataDisplay/Label';
-import nl2br from '@/src/utils/nl2br';
+import Box from '@/components/components/general/Box';
+import Typography from '@/components/elements/core/typography/Typography';
+import Button from '@/components/components/general/button/Button';
+import Label from '@/components/components/dataDisplay/Label';
+import nl2br from '@/utils/nl2br';
 
 /**
  * @displayName c-reply

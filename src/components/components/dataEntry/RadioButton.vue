@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import { colorKeys } from '@/src/components/elements/core/colors';
-import Typography from '@/src/components/elements/core/typography/Typography';
-import uniqueId from '@/src/utils/unique-id';
-import customValidator from '@/src/utils/custom-validator';
+import { colorKeys } from '@/components/elements/core/colors';
+import Typography from '@/components/elements/core/typography/Typography';
+import uniqueId from '@/utils/unique-id';
+import customValidator from '@/utils/custom-validator';
 export const radioColors = ['primary', 'success', 'secondary', 'error'];
 export const radioButtonSizes = ['small', 'medium'];
 

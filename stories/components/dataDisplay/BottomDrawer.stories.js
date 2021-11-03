@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue';
-import BottomDrawerExample from '@/src/components/components/dataDisplay/drawer/BottomDrawerExample';
+import BottomDrawerExample from '@/components/components/dataDisplay/drawer/BottomDrawerExample';
 
 storiesOf('Data Display/BottomDrawer', module).add('BottomDrawer', () => ({
 	components: { BottomDrawerExample },

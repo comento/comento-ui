@@ -7,10 +7,10 @@
 
 <script>
 // spinner
-import IconSpinnerSmall from '@/src/assets/images/icon/icon-spinner-small.svg?inline';
-import IconSpinnerMedium from '@/src/assets/images/icon/icon-spinner-medium.svg?inline';
-import IconSpinnerLarge from '@/src/assets/images/icon/icon-spinner-large.svg?inline';
-import { colors } from '@/src/components/elements/core/colors';
+import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline';
+import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
+import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
+import { colors } from '@/components/elements/core/colors';
 const {
 	gray200,
 	gray500,

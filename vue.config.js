@@ -5,7 +5,7 @@ module.exports = {
 		// extract: false,
 		loaderOptions: {
 			scss: {
-				additionalData: '@import "~@/src/assets/style/base/main.scss";',
+				additionalData: '@import "~@/assets/style/base/main.scss";',
 			},
 		},
 	},
@@ -35,7 +35,7 @@ module.exports = {
 				esModule: false,
 			});
 
-		config.resolve.alias.set('@', path.join(__dirname, './'));
+		config.resolve.alias.set('@', path.join(__dirname, 'src/'));
 	},
 	transpileDependencies: ['dom7', 'swiper'],
 };

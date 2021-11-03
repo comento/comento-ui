@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import Typography from '@/src/components/elements/core/typography/Typography';
-import Icon from '@/src/components/elements/core/icon/Icon';
-import uniqueId from '@/src/utils/unique-id';
+import Typography from '@/components/elements/core/typography/Typography';
+import Icon from '@/components/elements/core/icon/Icon';
+import uniqueId from '@/utils/unique-id';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
 export const avatarTypes = ['text', 'profile', 'logo', 'image'];

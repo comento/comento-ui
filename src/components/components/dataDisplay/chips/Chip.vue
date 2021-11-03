@@ -102,7 +102,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/src/assets/style/base/main';*/
+/*@import '@/assets/style/base/main';*/
 
 .c-chip {
 	position: relative;

@@ -21,9 +21,9 @@
 </template>
 
 <script>
-import Typography from '@/src/components/elements/core/typography/Typography';
-import Icon, { IconNames } from '@/src/components/elements/core/icon/Icon';
-import customValidator from '@/src/utils/custom-validator';
+import Typography from '@/components/elements/core/typography/Typography';
+import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
+import customValidator from '@/utils/custom-validator';
 
 export const toastTypes = ['basic', 'error', 'success'];
 export const toastPositions = ['top', 'bottom'];

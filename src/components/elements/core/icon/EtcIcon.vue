@@ -1,8 +1,8 @@
 <script>
-import BaseIcon from '@/src/components/elements/core/icon/BaseIcon';
-import IconDropdownMediumLineEtc from '@/src/assets/images/icon/etc/icon-dropdown-medium-line-etc.svg?inline';
-import IconDropdownSmallFillEtc from '@/src/assets/images/icon/etc/icon-dropdown-small-fill-etc.svg?inline';
-import customValidator from '@/src/utils/custom-validator';
+import BaseIcon from '@/components/elements/core/icon/BaseIcon';
+import IconDropdownMediumLineEtc from '@/assets/images/icon/etc/icon-dropdown-medium-line-etc.svg?inline';
+import IconDropdownSmallFillEtc from '@/assets/images/icon/etc/icon-dropdown-small-fill-etc.svg?inline';
+import customValidator from '@/utils/custom-validator';
 
 export const EtcIconNames = ['IconDropdownMediumLineEtc', 'IconDropdownSmallFillEtc'];
 

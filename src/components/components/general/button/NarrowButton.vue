@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { colors } from '@/src/components/elements/core/colors';
+import { colors } from '@/components/elements/core/colors';
 
 export const narrowButtonSizes = ['small', 'medium', 'large'];
 

@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import customValidator from '@/src/utils/custom-validator.js';
-import Typography from '@/src/components/elements/core/typography/Typography';
-import Icon from '@/src/components/elements/core/icon/Icon';
+import customValidator from '@/utils/custom-validator.js';
+import Typography from '@/components/elements/core/typography/Typography';
+import Icon from '@/components/elements/core/icon/Icon';
 
 export const color = ['primary', 'success', 'secondary', 'error'];
 

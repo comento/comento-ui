@@ -1,8 +1,8 @@
 <script>
-import IconCheckRoundMediumLineAnimation from '@/src/assets/images/icon/animation/icon-checkRound-medium-line-animation.svg?inline';
-import IconThreeDotMediumFillAnimation from '@/src/assets/images/icon/animation/icon-threeDot-medium-fill-animation.svg?inline';
-import BaseIcon from '@/src/components/elements/core/icon/BaseIcon';
-import customValidator from '@/src/utils/custom-validator';
+import IconCheckRoundMediumLineAnimation from '@/assets/images/icon/animation/icon-checkRound-medium-line-animation.svg?inline';
+import IconThreeDotMediumFillAnimation from '@/assets/images/icon/animation/icon-threeDot-medium-fill-animation.svg?inline';
+import BaseIcon from '@/components/elements/core/icon/BaseIcon';
+import customValidator from '@/utils/custom-validator';
 
 export const AnimationIconNames = ['IconCheckRoundMediumLineAnimation', 'IconThreeDotMediumFillAnimation'];
 
@@ -30,8 +30,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/src/assets/style/animation/icon-threeDot-fill-animation';
-@import '@/src/assets/style/animation/icon-checkRound-line-animation';
+@import '@/assets/style/animation/icon-threeDot-fill-animation';
+@import '@/assets/style/animation/icon-checkRound-line-animation';
 
 .c-animation-icon {
 	cursor: auto;

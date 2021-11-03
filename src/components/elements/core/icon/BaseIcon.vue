@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import { colorKeys, colors } from '@/src/components/elements/core/colors';
-import customValidator from '@/src/utils/custom-validator';
+import { colorKeys, colors } from '@/components/elements/core/colors';
+import customValidator from '@/utils/custom-validator';
 
 export default {
 	name: 'BaseIcon',

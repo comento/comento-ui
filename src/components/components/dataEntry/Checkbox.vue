@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import { colorKeys } from '@/src/components/elements/core/colors';
-import Typography from '@/src/components/elements/core/typography/Typography';
-import uniqueId from '@/src/utils/unique-id';
+import { colorKeys } from '@/components/elements/core/colors';
+import Typography from '@/components/elements/core/typography/Typography';
+import uniqueId from '@/utils/unique-id';
 export const checkboxSizes = ['xsmall', 'small', 'medium'];
 
 /**

@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import { colors } from '@/src/components/elements/core/colors';
-import Typography from '@/src/components/elements/core/typography/Typography';
+import { colors } from '@/components/elements/core/colors';
+import Typography from '@/components/elements/core/typography/Typography';
 
 export const badgeColors = ['primary', 'error'];
 export const badgeSizes = ['medium', 'small'];

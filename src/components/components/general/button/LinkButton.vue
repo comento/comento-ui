@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import Typography, { TypographyTypes } from '@/src/components/elements/core/typography/Typography';
+import Typography, { TypographyTypes } from '@/components/elements/core/typography/Typography';
 
 export const linkButtonColors = ['blue600', 'blue400'];
 export const linkButtonTargets = ['_blank', '_self', '_parent', '_top'];

@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import Typography from '@/src/components/elements/core/typography/Typography';
-import customValidator from '@/src/utils/custom-validator';
-import { colorKeys } from '@/src/components/elements/core/colors';
+import Typography from '@/components/elements/core/typography/Typography';
+import customValidator from '@/utils/custom-validator';
+import { colorKeys } from '@/components/elements/core/colors';
 
 export const contentTypes = ['overline', 'title', 'body', 'caption'];
 
