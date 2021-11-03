@@ -23,6 +23,9 @@
 import Label from '@/src/components/components/dataDisplay/Label';
 import uniqueId from '@/src/utils/unique-id';
 
+/**
+ * @displayName c-dropdown
+ */
 export default {
 	name: 'Dropdown',
 	props: {

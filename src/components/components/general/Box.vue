@@ -9,6 +9,9 @@ import colorMixin from '../../../mixins/colorMixin';
 import paddingMixin from '../../../mixins/paddingMixin';
 export const Elements = ['div', 'article'];
 
+/**
+ * @displayName c-box
+ */
 export default {
 	name: 'Box',
 	mixins: [colorMixin, paddingMixin],

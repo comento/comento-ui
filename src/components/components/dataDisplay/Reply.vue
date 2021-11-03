@@ -22,6 +22,9 @@ import Button from '@/src/components/components/general/button/Button';
 import Label from '@/src/components/components/dataDisplay/Label';
 import nl2br from '@/src/utils/nl2br';
 
+/**
+ * @displayName c-reply
+ */
 export default {
 	name: 'Reply',
 	props: {
@@ -31,6 +34,9 @@ export default {
 		date: {
 			type: String,
 		},
+		/**
+		 * 신고 버튼 보여주기
+		 */
 		showReport: {
 			type: Boolean,
 			default: true,

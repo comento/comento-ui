@@ -5,6 +5,10 @@
 </template>
 
 <script>
+/**
+ * [deprecated]
+ * @displayName c-row
+ */
 export default {
 	name: 'Row',
 	props: {

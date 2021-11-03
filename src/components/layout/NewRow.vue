@@ -5,6 +5,9 @@
 </template>
 
 <script>
+/**
+ * @displayName c-new-row
+ */
 export default {
 	name: 'NewRow',
 	props: {

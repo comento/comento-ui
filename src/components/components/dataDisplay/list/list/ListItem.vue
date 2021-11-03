@@ -8,9 +8,15 @@
 export const ListItemSizes = ['small', 'medium', 'large'];
 export const ListItemCursors = ['pointer', 'default'];
 
+/**
+ * @displayName c-list-item
+ */
 export default {
 	name: 'ListItem',
 	props: {
+		/**
+		 * 크기(small, medium, large)
+		 */
 		size: {
 			type: String,
 			default: 'medium',
@@ -18,6 +24,9 @@ export default {
 				return ListItemSizes.indexOf(value) !== -1;
 			},
 		},
+		/**
+		 * 커서 모양(pointer, default)
+		 */
 		cursor: {
 			type: String,
 			default: 'pointer',

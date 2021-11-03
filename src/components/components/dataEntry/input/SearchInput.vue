@@ -51,6 +51,9 @@ import Icon from '@/src/components/elements/core/icon/Icon';
 import clickOutside from '@/src/directives/click-outside';
 import uniqueId from '@/src/utils/unique-id';
 
+/**
+ * @displayName c-search-input
+ */
 export default {
 	name: 'SearchInput',
 	inheritAttrs: false,

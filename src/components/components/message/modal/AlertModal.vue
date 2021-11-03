@@ -26,6 +26,9 @@
 import Modal from '@/src/components/components/message/modal/Modal';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-alert-modal
+ */
 export default {
 	name: 'AlertModal',
 	props: {

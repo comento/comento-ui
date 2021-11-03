@@ -9,6 +9,9 @@
 </template>
 
 <script>
+/**
+ * @displayName c-new-col
+ */
 export default {
 	name: 'NewCol',
 	props: {

@@ -26,17 +26,25 @@ import Icon from '@/src/components/elements/core/icon/Icon';
 import Loader from '@/src/components/components/other/Loader';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-file-item
+ */
 export default {
 	name: 'FileItem',
 	props: {
-		// 파일은 내장 타입이 없음.
-		file: {},
-		// 파일 리스트 내부 인덱스
+		file: {
+			// 파일은 내장 타입이 없음.
+		},
+		/**
+		 * 파일 리스트 내부 인덱스
+		 */
 		index: {
 			type: Number,
 			default: -1,
 		},
-		// 수정인지 다운로드인지
+		/**
+		 * 수정 or 다운로드
+		 */
 		isEdit: {
 			type: Boolean,
 			default: false,

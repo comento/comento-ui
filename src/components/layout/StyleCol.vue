@@ -9,6 +9,10 @@
 </template>
 
 <script>
+/**
+ * [deprecated]
+ * @displayName c-style-col
+ */
 export default {
 	name: 'StyleCol',
 	props: {

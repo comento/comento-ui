@@ -46,9 +46,15 @@ import Divider from '@/src/components/elements/utility/Divider';
 export const fullScreenAlign = ['left', 'right', 'top', 'bottom', 'none'];
 export const fullScreenCloseType = ['icon', 'button', 'none'];
 
+/**
+ * @displayName c-fullscreen-modal
+ */
 export default {
 	name: 'FullscreenModal',
 	props: {
+		/**
+		 * 정렬(left, right, top, bottom, none)
+		 */
 		align: {
 			type: String,
 			default: 'top',
@@ -63,6 +69,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		/**
+		 *  닫기버튼영역 타입(icon, button, none)
+		 */
 		closeType: {
 			type: String,
 			default: 'icon',

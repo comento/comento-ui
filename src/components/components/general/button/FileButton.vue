@@ -12,6 +12,9 @@ import NarrowButton from '@/src/components/components/general/button/NarrowButto
 import Icon from '@/src/components/elements/core/icon/Icon';
 import customValidator from '@/src/utils/custom-validator.js';
 
+/**
+ * @displayName c-file-button
+ */
 export default {
 	name: 'FileButton',
 	props: {

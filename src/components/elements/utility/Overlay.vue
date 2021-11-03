@@ -14,6 +14,9 @@
 import scrollMixin from '@/src/mixins/scrollMixin';
 export const OverlayTypes = ['dimmer'];
 
+/**
+ * @displayName c-overlay
+ */
 export default {
 	name: 'Overlay',
 	mixins: [scrollMixin],
@@ -25,6 +28,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		/**
+		 * 타입(dimmer)
+		 */
 		type: {
 			type: String,
 			default: 'dimmer',

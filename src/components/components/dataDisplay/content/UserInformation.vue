@@ -36,9 +36,15 @@
 import Typography from '@/src/components/elements/core/typography/Typography';
 export const userInformationTypes = ['simple', 'normal', 'full'];
 
+/**
+ * @displayName c-user-information
+ */
 export default {
 	name: 'UserInformation',
 	props: {
+		/**
+		 * 타입(simple, normal, full)
+		 */
 		type: {
 			type: String,
 			default: 'normal',

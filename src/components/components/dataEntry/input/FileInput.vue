@@ -21,6 +21,9 @@
 import customValidator from '@/src/utils/custom-validator.js';
 import FileButton from '@/src/components/components/general/button/FileButton';
 
+/**
+ * @displayName c-file-input
+ */
 export default {
 	name: 'FileInput',
 	props: {

@@ -33,6 +33,10 @@
 import Typography from '@/src/components/elements/core/typography/Typography';
 import Divider from '@/src/components/elements/utility/Divider';
 
+/**
+ * 직무부트캠프 카드
+ * @displayName c-edu-card
+ */
 export default {
 	name: 'EduCard',
 	props: {
