@@ -51,11 +51,6 @@ import Chip, { ChipColors, ChipSizes } from '@/src/components/components/dataDis
               },
               defaultValue: null,
         },
-        isHover: {
-            description: "Chip hover 활성화",
-            defaultValue: false,
-            control: { type: "boolean" },
-        },
         transparent: {
             description: "outline transparent",
             defaultValue: false,
@@ -68,7 +63,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Chip },
     template:
-        `<Chip :type="type"  :size="size" :color="color" :full="full" :paddings="paddings" :isHover="isHover" :transparent="transparent"> {{text}}</Chip>`,
+        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent">{{text}}</Chip>`,
 });
 
 # Chip

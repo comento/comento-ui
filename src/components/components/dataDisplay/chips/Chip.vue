@@ -1,7 +1,7 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull, computedIsHover, computedTransparent]"
+		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
@@ -63,10 +63,6 @@ export default {
 				return null;
 			},
 		},
-		isHover: {
-			type: Boolean,
-			default: false,
-		},
 		transparent: {
 			type: Boolean,
 			default: false,
@@ -96,11 +92,6 @@ export default {
 				return null;
 			}
 		},
-		computedIsHover() {
-			return {
-				'is-hover': this.isHover,
-			};
-		},
 		computedTransparent() {
 			return {
 				transparent: this.transparent,
@@ -125,7 +116,7 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.is-hover:hover {
+		&:hover {
 			background-color: $gray200;
 		}
 
@@ -134,7 +125,7 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.is-hover:hover {
+			&:hover {
 				background-color: $gray100;
 			}
 
@@ -147,7 +138,7 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.is-hover:hover {
+			&:hover {
 				background-color: $gray100;
 			}
 
@@ -161,7 +152,7 @@ export default {
 		border: 1px solid $primary;
 		background-color: $primary;
 
-		&.is-hover:hover {
+		&:hover {
 			background-color: $green800;
 		}
 
@@ -170,7 +161,7 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.is-hover:hover {
+			&:hover {
 				background-color: $green100;
 			}
 
@@ -183,7 +174,7 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.is-hover:hover {
+			&:hover {
 				background-color: $green100;
 			}
 
@@ -197,7 +188,7 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.is-hover:hover {
+		&:hover {
 			background-color: $blue800;
 		}
 
@@ -206,7 +197,7 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.is-hover:hover {
+			&:hover {
 				background-color: $blue100;
 			}
 
@@ -219,7 +210,7 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.is-hover:hover {
+			&:hover {
 				background-color: $blue100;
 			}
 
@@ -290,7 +281,7 @@ export default {
 	&.full {
 		width: 100%;
 	}
-	&.is-hover:hover {
+	&:hover {
 		cursor: pointer;
 	}
 }
