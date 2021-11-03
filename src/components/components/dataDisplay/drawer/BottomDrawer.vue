@@ -36,7 +36,7 @@ import Typography from '@/src/components/elements/core/typography/Typography';
 import Button from '@/src/components/components/general/button/Button';
 
 /**
- * @displayName bottom-drawer
+ * @displayName c-bottom-drawer
  */
 export default {
 	name: 'BottomDrawer',
