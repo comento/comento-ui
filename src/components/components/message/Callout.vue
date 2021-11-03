@@ -33,7 +33,7 @@ import Icon from '@/src/components/elements/core/icon/Icon';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
 export const CalloutTypes = ['information', 'alert', 'success'];
-export const CalloutSizes = ['x-small', 'small', 'medium'];
+export const CalloutSizes = ['xsmall', 'small', 'medium'];
 
 /**
  * @displayName c-callout
@@ -56,7 +56,7 @@ export default {
 			},
 		},
 		/**
-		 * 크기(x-small, small, medium)
+		 * 크기(xsmall, small, medium)
 		 */
 		size: {
 			type: String,
@@ -106,12 +106,12 @@ export default {
 			const mapSizeToFontType = {
 				medium: 'body2',
 				small: 'caption1',
-				'x-small': 'caption2',
+				xsmall: 'caption2',
 			};
 			return mapSizeToFontType[this.size];
 		},
 		computedCloseIconName() {
-			const iconSize = this.size === 'x-small' ? 'Small' : 'Medium';
+			const iconSize = this.size === 'xsmall' ? 'Small' : 'Medium';
 			return `IconClose${iconSize}Line`;
 		},
 		computedTransition() {
@@ -121,7 +121,7 @@ export default {
 	methods: {
 		mapIconNameFromSize(size) {
 			const iconSet = {
-				'x-small': 'IconExclamationSmallFill',
+				xsmall: 'IconExclamationSmallFill',
 				small: 'IconExclamationMediumLine',
 				medium: 'IconExclamationLargeLine',
 			};
@@ -158,7 +158,7 @@ export default {
 			flex-shrink: 0;
 		}
 
-		&.x-small {
+		&.xsmall {
 			padding: 4px 8px;
 			border-radius: 4px;
 			@include callout-icon-margin-right(4px);
