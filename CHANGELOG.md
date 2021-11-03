@@ -1,6 +1,16 @@
 ## [0.1.129](https://github.com/comento/comento-ui/compare/v0.1.128...v0.1.129) (2021-11-03)
 
 
+### Bug Fixes
+
+* build 오류 수정 ([#635](https://github.com/comento/comento-ui/issues/635)) ([b136cf9](https://github.com/comento/comento-ui/commit/b136cf9d748519ad0a2ad789e61d3c18b5afcca0))
+* node version 14로 변경 ([#636](https://github.com/comento/comento-ui/issues/636)) ([37fa392](https://github.com/comento/comento-ui/commit/37fa392ab6cd3d3bdcf1ff620423013d7c202d16))
+
+
+
+## [0.1.129](https://github.com/comento/comento-ui/compare/v0.1.128...v0.1.129) (2021-11-03)
+
+
 
 ## [0.1.128](https://github.com/comento/comento-ui/compare/v0.1.127...v0.1.128) (2021-11-02)
 
