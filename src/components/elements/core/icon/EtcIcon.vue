@@ -6,6 +6,9 @@ import customValidator from '@/src/utils/custom-validator';
 
 export const EtcIconNames = ['IconDropdownMediumLineEtc', 'IconDropdownSmallFillEtc'];
 
+/**
+ * @displayName c-etc-icon
+ */
 export default {
 	name: 'EtcIcon',
 	extends: BaseIcon,

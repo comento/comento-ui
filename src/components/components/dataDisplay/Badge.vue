@@ -22,9 +22,15 @@ export const badgeColors = ['primary', 'error'];
 export const badgeSizes = ['medium', 'small'];
 export const badgeTypes = ['inline', 'absolute'];
 
+/**
+ * @displayName c-badge
+ */
 export default {
 	name: 'Badge',
 	props: {
+		/**
+		 * 색상(primary, error)
+		 */
 		color: {
 			type: String,
 			default: 'primary',
@@ -32,6 +38,9 @@ export default {
 				return badgeColors.indexOf(value) !== -1;
 			},
 		},
+		/**
+		 * 크기(medium, small)
+		 */
 		size: {
 			type: String,
 			default: 'medium',
@@ -60,6 +69,9 @@ export default {
 				return typeof value === 'number';
 			},
 		},
+		/**
+		 * 타입(inline, absolute)
+		 */
 		type: {
 			type: String,
 			default: 'absolute',

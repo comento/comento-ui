@@ -16,6 +16,10 @@
 
 <script>
 import Typography from '@/src/components/elements/core/typography/Typography';
+
+/**
+ * @displayName c-alarm-list-item
+ */
 export default {
 	name: 'AlarmListItem',
 	components: { Typography },

@@ -20,9 +20,15 @@ export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
 export const avatarTypes = ['text', 'profile', 'logo', 'image'];
 const avatarColors = ['#f5b3b3', '#f3c499', '#f0db80', '#b4d2a9', '#91cfd3', '#acc5ea', '#ceb9e2', '#b0aba4'];
 
+/**
+ * @displayName c-avatar
+ */
 export default {
 	name: 'Avatar',
 	props: {
+		/**
+		 * 타입(text, profile, logo, image)
+		 */
 		type: {
 			type: String,
 			default: 'profile',
@@ -30,6 +36,9 @@ export default {
 				return avatarTypes.includes(value);
 			},
 		},
+		/**
+		 * xsmall, small, medium, large
+		 */
 		size: {
 			type: String,
 			default: 'medium',
@@ -41,7 +50,9 @@ export default {
 			type: String,
 			default: '',
 		},
-		// type : img 일 경우 이미지
+		/**
+		 * 이미지 경로
+		 */
 		src: {
 			type: String,
 			default: null,

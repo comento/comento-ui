@@ -7,6 +7,9 @@
 <script>
 import { colors } from '@/src/components/elements/core/colors';
 
+/**
+ * @displayName c-new-grid
+ */
 export default {
 	name: 'NewGrid',
 	props: {

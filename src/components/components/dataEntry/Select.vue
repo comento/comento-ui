@@ -74,6 +74,9 @@ import EtcIcon from '@/src/components/elements/core/icon/EtcIcon';
 
 export const selectSizes = ['small', 'medium'];
 
+/**
+ * @displayName c-select
+ */
 export default {
 	name: 'Select',
 	inheritAttrs: false,
@@ -133,6 +136,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		/**
+		 * 크기(small, medium)
+		 */
 		size: {
 			type: String,
 			default: 'medium',

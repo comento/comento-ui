@@ -20,6 +20,9 @@
 <script>
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-profile-with-text
+ */
 export default {
 	name: 'ProfileWithText',
 	components: { Typography },

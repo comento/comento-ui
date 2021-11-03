@@ -49,6 +49,10 @@ import RatingGroup from '@/src/components/components/dataEntry/rating/RatingGrou
 import Rating from '@/src/components/components/dataEntry/rating/Rating';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * 멘토링 카드
+ * @displayName c-core-card
+ */
 export default {
 	name: 'CoreCard',
 	props: {

@@ -5,6 +5,9 @@
 </template>
 
 <script>
+/**
+ * @displayName c-rating-group
+ */
 export default {
 	name: 'RatingGroup',
 };

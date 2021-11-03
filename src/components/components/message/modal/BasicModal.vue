@@ -39,6 +39,9 @@ import Button from '@/src/components/components/general/button/Button';
 
 export const aligns = ['left', 'center', 'right'];
 
+/**
+ * @displayName c-basic-modal
+ */
 export default {
 	name: 'BasicModal',
 	props: {
@@ -49,6 +52,9 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		/**
+		 * 정렬(left, center, right)
+		 */
 		align: {
 			type: String,
 			default: 'center',

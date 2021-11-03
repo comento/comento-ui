@@ -9,6 +9,9 @@
 import Icon from '@/src/components/elements/core/icon/Icon';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-rating
+ */
 export default {
 	name: 'Rating',
 	props: {

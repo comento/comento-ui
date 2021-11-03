@@ -7,9 +7,15 @@
 <script>
 export const buttonGroupSizes = ['small', 'medium', 'large'];
 
+/**
+ * @displayName c-button-group
+ */
 export default {
 	name: 'ButtonGroup',
 	props: {
+		/**
+		 * 크기(small, medium, large)
+		 */
 		size: {
 			type: String,
 			default: 'small',

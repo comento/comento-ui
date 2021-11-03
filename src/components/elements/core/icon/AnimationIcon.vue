@@ -6,6 +6,9 @@ import customValidator from '@/src/utils/custom-validator';
 
 export const AnimationIconNames = ['IconCheckRoundMediumLineAnimation', 'IconThreeDotMediumFillAnimation'];
 
+/**
+ * @displayName c-animation-icon
+ */
 export default {
 	name: 'AnimationIcon',
 	extends: BaseIcon,

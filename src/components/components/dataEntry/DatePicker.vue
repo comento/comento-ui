@@ -34,6 +34,9 @@ import Hint from '@/src/components/components/dataDisplay/Hint';
 export const valueTypes = ['format', 'date', 'timestamp'];
 export const colors = ['primary', 'success', 'secondary', 'error'];
 
+/**
+ * @displayName c-date-picker
+ */
 export default {
 	name: 'DatePicker',
 	props: {
@@ -48,6 +51,9 @@ export default {
 			type: String,
 			default: 'YYYY.MM.DD',
 		},
+		/**
+		 * 값타입(format, date, timestamp)
+		 */
 		valueType: {
 			type: String,
 			default: 'format',
@@ -66,6 +72,9 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		/**
+		 * 색상(primary, success, secondary, error)
+		 */
 		color: {
 			type: String,
 			default: 'secondary',
