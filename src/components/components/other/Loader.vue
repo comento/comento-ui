@@ -64,9 +64,15 @@ const colorMap = {
 	},
 };
 
+/**
+ * @displayName c-loader
+ */
 export default {
 	name: 'Loader',
 	props: {
+		/**
+		 * 크기(small, medium, large)
+		 */
 		size: {
 			type: String,
 			default: 'medium',
@@ -74,6 +80,9 @@ export default {
 				return LoaderSizes.indexOf(value) !== -1;
 			},
 		},
+		/**
+		 * 색상(secondary, primary, success, error)
+		 */
 		color: {
 			type: String,
 			default: 'secondary',

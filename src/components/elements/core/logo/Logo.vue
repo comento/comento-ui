@@ -12,6 +12,9 @@
 import LogoComentoHorizontal from '@/src/assets/images/logo/logo-comento-horizontal.svg?inline';
 import { colors } from '@/src/components/elements/core/colors';
 
+/**
+ * @displayName c-logo
+ */
 export default {
 	name: 'Logo',
 	props: {

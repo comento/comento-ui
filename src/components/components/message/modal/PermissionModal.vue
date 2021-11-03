@@ -41,6 +41,9 @@
 import Modal from '@/src/components/components/message/modal/Modal';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-permission-modal
+ */
 export default {
 	name: 'PermissionModal',
 	props: {

@@ -25,6 +25,9 @@ import customValidator from '@/src/utils/custom-validator';
 export const radioColors = ['primary', 'success', 'secondary', 'error'];
 export const radioButtonSizes = ['small', 'medium'];
 
+/**
+ * @displayName c-radio-button
+ */
 export default {
 	name: 'RadioButton',
 	inheritAttrs: false,
@@ -57,6 +60,9 @@ export default {
 				return typeof value === 'string';
 			},
 		},
+		/**
+		 * 색상(primary, success, secondary, error)
+		 */
 		radioColor: {
 			type: String,
 			default: 'primary',
@@ -72,6 +78,9 @@ export default {
 				return customValidator(value, isValid, 'RadioButton', 'fontColor');
 			},
 		},
+		/**
+		 * 크기(small, medium)
+		 */
 		size: {
 			type: String,
 			default: 'medium',

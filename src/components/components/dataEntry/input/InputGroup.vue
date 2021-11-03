@@ -5,6 +5,9 @@
 </template>
 
 <script>
+/**
+ * @displayName c-input-group
+ */
 export default {
 	name: 'InputGroup',
 };

@@ -22,6 +22,9 @@ import { colors } from '@/src/components/elements/core/colors';
 
 export const narrowButtonSizes = ['small', 'medium', 'large'];
 
+/**
+ * @displayName c-narrow-button
+ */
 export default {
 	name: 'NarrowButton',
 	inheritAttrs: false,
@@ -30,6 +33,9 @@ export default {
 			type: String,
 			default: 'gray600',
 		},
+		/**
+		 * 크기(small, medium, large)
+		 */
 		size: {
 			type: String,
 			default: 'small',

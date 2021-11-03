@@ -16,6 +16,9 @@
 <script>
 export const textareaTypes = ['basic', 'outlined', 'reply'];
 
+/**
+ * @displayName c-textarea
+ */
 export default {
 	name: 'Textarea',
 	inheritAttrs: false,
@@ -24,6 +27,9 @@ export default {
 			type: String,
 			default: '내용을 입력해주세요.',
 		},
+		/**
+		 * 타입(basic, outlined, reply)
+		 */
 		type: {
 			type: String,
 			default: 'basic',

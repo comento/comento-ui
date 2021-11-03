@@ -35,6 +35,9 @@ import Drawer from '@/src/components/components/dataDisplay/drawer/Drawer';
 import Typography from '@/src/components/elements/core/typography/Typography';
 import Button from '@/src/components/components/general/button/Button';
 
+/**
+ * @displayName bottom-drawer
+ */
 export default {
 	name: 'BottomDrawer',
 	mixins: [scrollMixin],

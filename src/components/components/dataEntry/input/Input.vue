@@ -18,6 +18,10 @@
 </template>
 
 <script>
+/**
+ * [deprecated]
+ * @displayName c-input
+ */
 export default {
 	name: 'Input',
 	inheritAttrs: false,

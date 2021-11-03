@@ -39,9 +39,15 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 export const TabsTypes = ['basic', 'swiper'];
 export const TabsDirections = ['horizontal', 'vertical'];
 
+/**
+ * @displayName c-tabs
+ */
 export default {
 	name: 'Tabs',
 	props: {
+		/**
+		 * 타입(basic, swiper)
+		 */
 		type: {
 			type: String,
 			default: 'basic',
@@ -49,6 +55,9 @@ export default {
 				return TabsTypes.indexOf(value) !== -1;
 			},
 		},
+		/**
+		 * 방향(horizontal, vertical)
+		 */
 		direction: {
 			type: String,
 			default: 'horizontal',

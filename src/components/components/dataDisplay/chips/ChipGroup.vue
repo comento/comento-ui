@@ -7,9 +7,15 @@
 <script>
 import { ChipSizes } from './Chip';
 
+/**
+ * @displayName c-chip-group
+ */
 export default {
 	name: 'ChipGroup',
 	props: {
+		/**
+		 * 크기(small, medium, large, xlarge)
+		 */
 		size: {
 			type: String,
 			default: 'medium',

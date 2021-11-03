@@ -27,10 +27,16 @@ import Box from '@/src/components/components/general/Box';
 import Drawer from '@/src/components/components/dataDisplay/drawer/Drawer';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-side-drawer
+ */
 export default {
 	name: 'SideDrawer',
 	mixins: [scrollMixin],
 	props: {
+		/**
+		 * 위치(left, right)
+		 */
 		align: {
 			type: String,
 			default: 'right',

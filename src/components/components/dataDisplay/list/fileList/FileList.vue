@@ -19,6 +19,9 @@
 import List from '@/src/components/components/dataDisplay/list/list/List';
 import FileItem from '@/src/components/components/dataDisplay/list/fileList/FileItem';
 
+/**
+ * @displayName c-file-list
+ */
 export default {
 	name: 'FileList',
 	props: {

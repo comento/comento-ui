@@ -28,6 +28,9 @@
 import Avatar from '@/src/components/components/dataDisplay/Avatar';
 import Typography from '@/src/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-telling-avatar-quote
+ */
 export default {
 	name: 'TellingAvatarQuote',
 	props: {
