@@ -69,7 +69,7 @@ import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 import clickOutside from '@/directives/click-outside';
 import customValidator from '@/utils/custom-validator';
-import { colorKeys } from '@/components/elements/core/colors';
+import { colorKeys } from '@/utils/constants/color';
 import EtcIcon from '@/components/elements/core/icon/EtcIcon';
 
 export const selectSizes = ['small', 'medium'];

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { colors } from '@/components/elements/core/colors';
+import { colors } from '@/utils/constants/color';
 
 export const TypographyTypes = [
 	'display1',

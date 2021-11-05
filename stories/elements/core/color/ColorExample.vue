@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import { colors } from './index.js';
+import { colors } from '@/utils/constants/color';
 
 export default {
-	name: 'Color',
+	name: 'ColorExample',
 	data() {
 		return {
 			colors,

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { colors, colorKeys } from '@/components/elements/core/colors';
+import { colors, colorKeys } from '@/utils/constants/color';
 
 export const dividerTypes = ['line', 'dash'];
 

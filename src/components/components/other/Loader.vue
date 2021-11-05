@@ -10,7 +10,7 @@
 import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline';
 import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
 import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
-import { colors } from '@/components/elements/core/colors';
+import { colors } from '@/utils/constants/color';
 const {
 	gray200,
 	gray500,

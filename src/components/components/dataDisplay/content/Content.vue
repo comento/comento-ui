@@ -13,7 +13,7 @@
 <script>
 import Typography from '@/components/elements/core/typography/Typography';
 import customValidator from '@/utils/custom-validator';
-import { colorKeys } from '@/components/elements/core/colors';
+import { colorKeys } from '@/utils/constants/color';
 
 export const contentTypes = ['overline', 'title', 'body', 'caption'];
 

@@ -1,4 +1,4 @@
-import { colors } from '@/components/elements/core/colors';
+import { colors } from '@/utils/constants/color';
 
 const colorMixin = {
 	methods: {

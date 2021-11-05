@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { colorKeys } from '@/components/elements/core/colors';
+import { colorKeys } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
 import uniqueId from '@/utils/unique-id';
 import customValidator from '@/utils/custom-validator';
