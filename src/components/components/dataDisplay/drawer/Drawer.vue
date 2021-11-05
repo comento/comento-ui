@@ -23,16 +23,10 @@ import Icon from '@/components/elements/core/icon/Icon';
 import paddingMixin from '@/mixins/paddingMixin';
 import scrollMixin from '@/mixins/scrollMixin';
 
-/**
- * @displayName c-drawer
- */
 export default {
 	name: 'Drawer',
 	mixins: [paddingMixin, scrollMixin],
 	props: {
-		/**
-		 * 위치(left, up, right, down)
-		 */
 		align: {
 			type: String,
 			default: 'right',
