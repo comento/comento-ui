@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import Button from '@/src/components/components/general/button/Button';
-import Typography from '@/src/components/elements/core/typography/Typography';
-import Icon from '@/src/components/elements/core/icon/Icon';
+import Button from '@/components/components/general/button/Button';
+import Typography from '@/components/elements/core/typography/Typography';
+import Icon from '@/components/elements/core/icon/Icon';
 
 /**
  * @displayName c-file-summary

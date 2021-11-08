@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import Loader from '@/src/components/components/other/Loader';
+import Loader from '@/components/components/other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-success', 'success', 'secondary', 'error'];

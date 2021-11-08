@@ -30,10 +30,10 @@
 </template>
 
 <script>
-import scrollMixin from '@/src/mixins/scrollMixin';
-import Drawer from '@/src/components/components/dataDisplay/drawer/Drawer';
-import Typography from '@/src/components/elements/core/typography/Typography';
-import Button from '@/src/components/components/general/button/Button';
+import scrollMixin from '@/mixins/scrollMixin';
+import Drawer from '@/components/components/dataDisplay/drawer/Drawer';
+import Typography from '@/components/elements/core/typography/Typography';
+import Button from '@/components/components/general/button/Button';
 
 /**
  * @displayName c-bottom-drawer

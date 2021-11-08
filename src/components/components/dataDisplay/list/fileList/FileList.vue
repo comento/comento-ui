@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import List from '@/src/components/components/dataDisplay/list/list/List';
-import FileItem from '@/src/components/components/dataDisplay/list/fileList/FileItem';
+import List from '@/components/components/dataDisplay/list/list/List';
+import FileItem from '@/components/components/dataDisplay/list/fileList/FileItem';
 
 /**
  * @displayName c-file-list

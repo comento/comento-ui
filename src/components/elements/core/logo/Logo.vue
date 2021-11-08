@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import LogoComentoHorizontal from '@/src/assets/images/logo/logo-comento-horizontal.svg?inline';
-import { colors } from '@/src/components/elements/core/colors';
+import LogoComentoHorizontal from '@/assets/images/logo/logo-comento-horizontal.svg?inline';
+import { colors } from '@/utils/constants/color';
 
 /**
  * @displayName c-logo

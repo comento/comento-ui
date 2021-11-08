@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import scrollMixin from '@/src/mixins/scrollMixin';
+import scrollMixin from '@/mixins/scrollMixin';
 export const OverlayTypes = ['dimmer'];
 
 /**

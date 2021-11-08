@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import paddingMixin from '../../../../mixins/paddingMixin';
+import paddingMixin from '@/mixins/paddingMixin';
+
 export const ChipColors = ['secondary', 'primary', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outlined', 'oval-fill', 'oval-outline'];
@@ -102,7 +103,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/src/assets/style/base/main';*/
+/*@import '@/assets/style/base/main';*/
 
 .c-chip {
 	position: relative;

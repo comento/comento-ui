@@ -47,9 +47,9 @@
 </template>
 
 <script>
-import Icon from '@/src/components/elements/core/icon/Icon';
-import clickOutside from '@/src/directives/click-outside';
-import uniqueId from '@/src/utils/unique-id';
+import Icon from '@/components/elements/core/icon/Icon';
+import clickOutside from '@/directives/click-outside';
+import uniqueId from '@/utils/unique-id';
 
 /**
  * @displayName c-search-input

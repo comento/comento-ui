@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import ListItem from '@/src/components/components/dataDisplay/list/list/ListItem';
-import Icon from '@/src/components/elements/core/icon/Icon';
-import Loader from '@/src/components/components/other/Loader';
-import Typography from '@/src/components/elements/core/typography/Typography';
+import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
+import Icon from '@/components/elements/core/icon/Icon';
+import Loader from '@/components/components/other/Loader';
+import Typography from '@/components/elements/core/typography/Typography';
 
 /**
  * @displayName c-file-item

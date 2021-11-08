@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import Icon from '@/src/components/elements/core/icon/Icon';
-import Typography from '@/src/components/elements/core/typography/Typography';
+import Icon from '@/components/elements/core/icon/Icon';
+import Typography from '@/components/elements/core/typography/Typography';
 
 export const CalloutTypes = ['information', 'alert', 'success'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
