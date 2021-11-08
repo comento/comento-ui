@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import AnimationIcon from '@/src/components/elements/core/icon/AnimationIcon';
-import EtcIcon from '@/src/components/elements/core/icon/EtcIcon';
-import Icon from '@/src/components/elements/core/icon/Icon';
-import Tooltip from '@/src/components/components/message/Tooltip';
-import copyToClipboard from '@/src/utils/copy-to-clipboard';
+import AnimationIcon from '@/components/elements/core/icon/AnimationIcon';
+import EtcIcon from '@/components/elements/core/icon/EtcIcon';
+import Icon from '@/components/elements/core/icon/Icon';
+import Tooltip from '@/components/components/message/Tooltip';
+import copyToClipboard from '@/utils/copy-to-clipboard';
 
 export default {
 	name: 'IconWrapper',

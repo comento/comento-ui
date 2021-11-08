@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import Modal from '@/src/components/components/message/modal/Modal';
-import Typography from '@/src/components/elements/core/typography/Typography';
+import Modal from '@/components/components/message/modal/Modal';
+import Typography from '@/components/elements/core/typography/Typography';
 
 /**
  * @displayName c-alert-modal

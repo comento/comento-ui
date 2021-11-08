@@ -1,38 +1,17 @@
 <template>
-	<NewGrid>
-		<NewRow class="mb-20">
-			<NewCol>
-				<div class="flex flex-row">
-					<div class="mr-20">
-						<input id="left" v-model="align" type="radio" value="left" />
-						<label for="left">left</label>
-					</div>
-
-					<div>
-						<input id="right" v-model="align" type="radio" value="right" />
-						<label for="right">right</label>
-					</div>
-				</div>
-			</NewCol>
-		</NewRow>
-		<NewRow>
-			<NewCol>
-				<Button color="primary" @click="toggle">Open</Button>
-			</NewCol>
-		</NewRow>
-		<SideDrawer
+	<div id="app">
+		<Button @click="toggle">Open</Button>
+		<BottomDrawer
 			:mask-closable="true"
 			:z-index="1002"
-			:align="align"
 			:closeable="false"
 			:show-drawer="open"
+			scroll
+			show-action-button
 			@close="toggle"
 		>
 			<template v-slot:title>test</template>
-			<template v-slot:right-content>
-				<Button color="secondary" type="outlined" size="small">모두 읽음 표시</Button>
-			</template>
-			<p>
+			<div>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
 				tortor id purus varius, sit amet sodales erat consequat. Integer ultrices mauris vehicula eros lacinia,
 				at vulputate nibh euismod. Fusce at convallis nisl. Curabitur dui quam, rutrum quis semper vitae,
@@ -61,17 +40,14 @@
 				nec scelerisque elit condimentum vitae. In porta magna eget augue egestas pulvinar. Suspendisse
 				malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
 				lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
-			</p>
-		</SideDrawer>
-	</NewGrid>
+			</div>
+		</BottomDrawer>
+	</div>
 </template>
 
 <script>
-import Button from '@/src/components/components/general/button/Button';
-import SideDrawer from './SideDrawer';
-import NewGrid from '@/src/components/layout/NewGrid';
-import NewRow from '@/src/components/layout/NewRow';
-import NewCol from '@/src/components/layout/NewCol';
+import BottomDrawer from '@/components/components/dataDisplay/drawer/BottomDrawer';
+import Button from '@/components/components/general/button/Button';
 
 export default {
 	name: 'app',
@@ -79,13 +55,7 @@ export default {
 		return {
 			open: false,
 			innerOpen: false,
-			align: 'left',
 		};
-	},
-	watch: {
-		align() {
-			this.open = false;
-		},
 	},
 	methods: {
 		toggle() {
@@ -96,11 +66,22 @@ export default {
 		},
 	},
 	components: {
-		NewCol,
-		NewRow,
-		NewGrid,
 		Button,
-		SideDrawer,
+		BottomDrawer,
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+#app {
+	.demo-container {
+		text-align: center;
+		display: flex;
+		margin: 0 auto;
+		justify-content: space-around;
+		width: 60%;
+		align-content: center;
+		align-items: center;
+	}
+}
+</style>

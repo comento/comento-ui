@@ -132,7 +132,7 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep {
-	@import '@/src/assets/style/swiper/swiper';
+	@import '@/assets/style/swiper/swiper';
 }
 ::v-deep .swiper {
 	&-slide {

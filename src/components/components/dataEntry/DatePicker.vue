@@ -27,9 +27,9 @@
 // https://github.com/mengxiong10/vue2-datepicker#props
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ko';
-import customValidator from '@/src/utils/custom-validator.js';
-import uniqueId from '@/src/utils/unique-id';
-import Hint from '@/src/components/components/dataDisplay/Hint';
+import customValidator from '@/utils/custom-validator.js';
+import uniqueId from '@/utils/unique-id';
+import Hint from '@/components/components/dataDisplay/Hint';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
 export const colors = ['primary', 'success', 'secondary', 'error'];

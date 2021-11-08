@@ -94,8 +94,8 @@
 </template>
 
 <script>
-import customValidator from '@/src/utils/custom-validator.js';
-import Icon from '@/src/components/elements/core/icon/Icon';
+import customValidator from '@/utils/custom-validator.js';
+import Icon from '@/components/elements/core/icon/Icon';
 import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesome-swiper';
 
 export const SwiperControlsColors = ['light', 'dark'];
@@ -323,7 +323,7 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep {
-	@import '@/src/assets/style/swiper/swiper';
+	@import '@/assets/style/swiper/swiper';
 }
 $swiper-control-size: 24px;
 $swiper-control-circle-radius: 16px;

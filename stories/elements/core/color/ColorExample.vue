@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import { colors } from './index.js';
+import { colors } from '@/utils/constants/color';
 
 export default {
-	name: 'Color',
+	name: 'ColorExample',
 	data() {
 		return {
 			colors,
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/src/assets/style/base/main';*/
+/*@import '@/assets/style/base/main';*/
 
 .c-color {
 	display: flex;

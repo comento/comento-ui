@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import scrollMixin from '@/src/mixins/scrollMixin';
-import Box from '@/src/components/components/general/Box';
-import Drawer from '@/src/components/components/dataDisplay/drawer/Drawer';
-import Typography from '@/src/components/elements/core/typography/Typography';
+import scrollMixin from '@/mixins/scrollMixin';
+import Box from '@/components/components/general/Box';
+import Drawer from '@/components/components/dataDisplay/drawer/Drawer';
+import Typography from '@/components/elements/core/typography/Typography';
 
 /**
  * @displayName c-side-drawer

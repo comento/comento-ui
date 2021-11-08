@@ -33,9 +33,9 @@
 </template>
 
 <script>
-import Modal from '@/src/components/components/message/modal/Modal';
-import Typography from '@/src/components/elements/core/typography/Typography';
-import Button from '@/src/components/components/general/button/Button';
+import Modal from '@/components/components/message/modal/Modal';
+import Typography from '@/components/elements/core/typography/Typography';
+import Button from '@/components/components/general/button/Button';
 
 export const aligns = ['left', 'center', 'right'];
 

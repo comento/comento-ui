@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ChipSizes } from './Chip';
+import { ChipSizes } from '@/components/components/dataDisplay/chips/Chip';
 
 /**
  * @displayName c-chip-group

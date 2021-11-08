@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import Label from '@/src/components/components/dataDisplay/Label';
-import uniqueId from '@/src/utils/unique-id';
+import Label from '@/components/components/dataDisplay/Label';
+import uniqueId from '@/utils/unique-id';
 
 /**
  * @displayName c-dropdown
