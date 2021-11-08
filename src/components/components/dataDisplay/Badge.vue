@@ -166,12 +166,8 @@ export default {
 
 	&--container {
 		&.inline {
-			display: flex;
-			.c-badge {
-				display: block;
-				&--wrapper {
-					position: static;
-				}
+			.c-badge--wrapper {
+				position: static;
 			}
 		}
 		&.absolute {
