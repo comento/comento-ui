@@ -1,3 +1,19 @@
+# [0.2.0](https://github.com/comento/comento-ui/compare/v0.1.129...v0.2.0) (2021-11-08)
+
+
+### Bug Fixes
+
+* storybook build할 때 node version 14로 변경 ([#638](https://github.com/comento/comento-ui/issues/638)) ([23d8525](https://github.com/comento/comento-ui/commit/23d8525fa86c0175f54ebde388920daa817a16d5))
+
+
+### Features
+
+* **change:** Callout size prop xsmall 이름 변경 ([#640](https://github.com/comento/comento-ui/issues/640)) ([9869e6c](https://github.com/comento/comento-ui/commit/9869e6cf2396f9e2b235a8d6f4da4b5e115e3dd5))
+* **change:** Chip isHover prop 제거 ([#641](https://github.com/comento/comento-ui/issues/641)) ([a575eda](https://github.com/comento/comento-ui/commit/a575eda874fa3e1fd4ca35510ad7dca3c40eef84))
+* **remove:** Input 컴포넌트 제거(TextField와 중복) ([#639](https://github.com/comento/comento-ui/issues/639)) ([e12ccad](https://github.com/comento/comento-ui/commit/e12ccadf08014fb6ef7117ddd12b4d862afa6e97))
+
+
+
 ## [0.1.129](https://github.com/comento/comento-ui/compare/v0.1.128...v0.1.129) (2021-11-03)
 
 
