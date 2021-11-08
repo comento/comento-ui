@@ -61,16 +61,16 @@
 </template>
 
 <script>
-import List from '@/src/components/components/dataDisplay/list/list/List';
-import ListItem from '@/src/components/components/dataDisplay/list/list/ListItem';
-import Divider from '@/src/components/elements/utility/Divider';
-import Dropdown from '@/src/components/components/dataEntry/Dropdown';
-import Typography from '@/src/components/elements/core/typography/Typography';
-import Icon from '@/src/components/elements/core/icon/Icon';
-import clickOutside from '@/src/directives/click-outside';
-import customValidator from '@/src/utils/custom-validator';
-import { colorKeys } from '@/src/components/elements/core/colors';
-import EtcIcon from '@/src/components/elements/core/icon/EtcIcon';
+import List from '@/components/components/dataDisplay/list/list/List';
+import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
+import Divider from '@/components/elements/utility/Divider';
+import Dropdown from '@/components/components/dataEntry/Dropdown';
+import Typography from '@/components/elements/core/typography/Typography';
+import Icon from '@/components/elements/core/icon/Icon';
+import clickOutside from '@/directives/click-outside';
+import customValidator from '@/utils/custom-validator';
+import { colorKeys } from '@/utils/constants/color';
+import EtcIcon from '@/components/elements/core/icon/EtcIcon';
 
 export const selectSizes = ['small', 'medium'];
 

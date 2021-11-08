@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Typography from '@/src/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography';
 
 /**
  * @displayName c-profile-with-text

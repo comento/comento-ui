@@ -12,13 +12,10 @@
 </template>
 
 <script>
-import scrollMixin from '@/src/mixins/scrollMixin';
-import Icon from '@/src/components/elements/core/icon/Icon';
-import Overlay from '@/src/components/elements/utility/Overlay';
+import scrollMixin from '@/mixins/scrollMixin';
+import Icon from '@/components/elements/core/icon/Icon';
+import Overlay from '@/components/elements/utility/Overlay';
 
-/**
- * @displayName c-modal
- */
 export default {
 	name: 'Modal',
 	mixins: [scrollMixin],

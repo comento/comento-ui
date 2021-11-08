@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/vue';
-import Rating from '@/src/components/components/dataEntry/rating/Rating';
-import RatingGroup from '@/src/components/components/dataEntry/rating/RatingGroup';
-import Icon from '@/src/components/elements/core/icon/Icon';
-import NewGrid from '@/src/components/layout/NewGrid';
-import NewRow from '@/src/components/layout/NewRow';
-import NewCol from '@/src/components/layout/NewCol';
-import Typography from '@/src/components/elements/core/typography/Typography';
+import Rating from '@/components/components/dataEntry/rating/Rating';
+import RatingGroup from '@/components/components/dataEntry/rating/RatingGroup';
+import Icon from '@/components/elements/core/icon/Icon';
+import NewGrid from '@/components/layout/NewGrid';
+import NewRow from '@/components/layout/NewRow';
+import NewCol from '@/components/layout/NewCol';
+import Typography from '@/components/elements/core/typography/Typography';
 
 storiesOf('Data Entry/rating/RatingGroup', module).add('Index', () => ({
 	components: { Rating, RatingGroup, Icon, NewGrid, NewRow, NewCol, Typography },

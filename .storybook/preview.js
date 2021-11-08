@@ -1,6 +1,6 @@
-import '@/src/plugins/v-tooltip'
-import '@/src/mixins';
-import '@/src/assets/style/base/global.scss';
+import '@/plugins/v-tooltip'
+import '@/mixins';
+import '@/assets/style/base/global.scss';
 import { addParameters } from '@storybook/vue';
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 

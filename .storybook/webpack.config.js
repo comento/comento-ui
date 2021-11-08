@@ -44,7 +44,7 @@ module.exports = ({config}) => {
             {
                 loader: 'sass-loader',
                 options: {
-                  additionalData: `@import "~@/src/assets/style/base/main.scss";`,
+                  additionalData: `@import "~@/assets/style/base/main.scss";`,
                     sourceMap: true,
             }
         }],
@@ -53,7 +53,7 @@ module.exports = ({config}) => {
     // setup URL Alias
     config.resolve.alias = {
         ...config.resolve.alias,
-        "@": path.resolve(__dirname, "../")
+        "@": path.resolve(__dirname, "../src/")
     };
     return config;
 };

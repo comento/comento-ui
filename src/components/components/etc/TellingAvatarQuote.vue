@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import Avatar from '@/src/components/components/dataDisplay/Avatar';
-import Typography from '@/src/components/elements/core/typography/Typography';
+import Avatar from '@/components/components/dataDisplay/Avatar';
+import Typography from '@/components/elements/core/typography/Typography';
 
 /**
  * @displayName c-telling-avatar-quote

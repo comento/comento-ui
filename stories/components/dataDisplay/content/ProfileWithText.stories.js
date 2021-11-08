@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/vue';
-import ProfileWithText from '@/src/components/components/dataDisplay/content/ProfileWithText';
-import Avatar from '@/src/components/components/dataDisplay/Avatar';
-import Icon from '@/src/components/elements/core/icon/Icon';
-import NewGrid from '@/src/components/layout/NewGrid';
-import NewRow from '@/src/components/layout/NewRow';
-import NewCol from '@/src/components/layout/NewCol';
-import Typography from '@/src/components/elements/core/typography/Typography';
+import ProfileWithText from '@/components/components/dataDisplay/content/ProfileWithText';
+import Avatar from '@/components/components/dataDisplay/Avatar';
+import Icon from '@/components/elements/core/icon/Icon';
+import NewGrid from '@/components/layout/NewGrid';
+import NewRow from '@/components/layout/NewRow';
+import NewCol from '@/components/layout/NewCol';
+import Typography from '@/components/elements/core/typography/Typography';
 
 storiesOf('Data Display/content/ProfileWithText', module).add('Index', () => ({
 	components: { ProfileWithText, Avatar, Icon, NewGrid, NewRow, NewCol, Typography },

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { colors } from '@/src/components/elements/core/colors';
+import { colors } from '@/utils/constants/color';
 
 /**
  * @displayName c-new-grid
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/*@import '@/src/assets/style/base/main';*/
+/*@import '@/assets/style/base/main';*/
 
 /* Mobile first */
 .c-new-grid {
