@@ -1,6 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import BasicModal, { aligns } from '@/components/components/message/modal/BasicModal';
-import Button from '@/components/components/general/button/Button';
+import Button, { buttonColors } from '@/components/components/general/button/Button';
 
 <Meta
     title="Message/Modal/BasicModal"
@@ -71,6 +71,13 @@ import Button from '@/components/components/general/button/Button';
                 type: "boolean",
             },
         },
+        buttonColor: {
+            description: "action 버튼 색상",
+            control: {
+                type: "select",
+                options: buttonColors,
+            },
+        },
     }}
 />
 
@@ -91,6 +98,7 @@ export const Default = (args, { argTypes }) => ({
                 :full="full"
                 :scroll="scroll"
                 :success-callback="closeModal"
+                :button-color="buttonColor"
             >
                 <template v-slot:title>
                     {{ title }}
