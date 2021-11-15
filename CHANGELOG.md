@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/comento/comento-ui/compare/v0.2.0...v0.2.1) (2021-11-15)
+
+
+### Bug Fixes
+
+* Badge inline type style 오류 수정 ([#646](https://github.com/comento/comento-ui/issues/646)) ([079f7a8](https://github.com/comento/comento-ui/commit/079f7a815a56b4e8848f2b597ab6410de1dd2b77))
+
+
+
 # [0.2.0](https://github.com/comento/comento-ui/compare/v0.1.129...v0.2.0) (2021-11-08)
 
 
