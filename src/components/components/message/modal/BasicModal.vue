@@ -24,7 +24,7 @@
 
 			<!-- button 영역 -->
 			<div v-if="showActionButton" class="c-modal--action-button-wrapper">
-				<Button size="large" :loading="loading" full @click="successCallback">
+				<Button size="large" :loading="loading" :type="buttonColor" full @click="successCallback">
 					{{ successMessage }}
 				</Button>
 			</div>
@@ -35,7 +35,7 @@
 <script>
 import Modal from '@/components/components/message/modal/Modal';
 import Typography from '@/components/elements/core/typography/Typography';
-import Button from '@/components/components/general/button/Button';
+import Button, { buttonColors } from '@/components/components/general/button/Button';
 
 export const aligns = ['left', 'center', 'right'];
 
@@ -114,6 +114,13 @@ export default {
 			default: false,
 			validator(value) {
 				return typeof value === 'boolean';
+			},
+		},
+		buttonColor: {
+			type: String,
+			default: 'primary',
+			validator(value) {
+				return buttonColors.indexOf(value) !== -1;
 			},
 		},
 	},
