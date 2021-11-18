@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/comento/comento-ui/compare/v0.2.1...v0.2.2) (2021-11-18)
+
+
+### Reverts
+
+* Revert "add: IconCalendarError2XLargeFill icon (#649)" (#650) ([99ede35](https://github.com/comento/comento-ui/commit/99ede3573346d6c656c46bcb2da29f1050c9d786)), closes [#649](https://github.com/comento/comento-ui/issues/649) [#650](https://github.com/comento/comento-ui/issues/650)
+
+
+
 ## [0.2.1](https://github.com/comento/comento-ui/compare/v0.2.0...v0.2.1) (2021-11-15)
 
 
