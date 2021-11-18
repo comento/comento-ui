@@ -127,6 +127,7 @@ import IconBookmarkXLargeFill from '@/assets/images/icon/icon-bookmark-xlarge-fi
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
 import IconWriting2XLargeLine from '@/assets/images/icon/icon-writing-2xlarge-line.svg?inline';
+import IconCalendarError2XLargeFill from '@/assets/images/icon/icon-calendar-error-2xlarge-fill.svg?inline';
 
 // 4x-large
 import IconStar4XLargeFill from '@/assets/images/icon/icon-star-4xlarge-fill.svg?inline';
@@ -259,6 +260,7 @@ export const IconNames = [
 	//2x-large
 	'IconProfile2XLargeFill',
 	'IconWriting2XLargeLine',
+	'IconCalendarError2XLargeFill',
 
 	//4x-large
 	'IconStar4XLargeFill',
@@ -406,6 +408,7 @@ export default {
 		// 2x-large
 		IconProfile2XLargeFill,
 		IconWriting2XLargeLine,
+		IconCalendarError2XLargeFill,
 
 		// 4x-large
 		IconStar4XLargeFill,
