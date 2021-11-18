@@ -1,7 +1,6 @@
 <template>
 	<ListItem class="c-application c-file-item--container" @click="handleClickFileItem({ file, index })">
 		<div class="c-file-item--content" @click="handleClickFileItemContent({ file, index })">
-			<Icon v-if="isEdit" name="IconFileMediumLineLight" class="mr-4" color="gray500" />
 			<Typography type="caption1" color="gray700">{{ file.title || file.name }}</Typography>
 		</div>
 		<Icon
