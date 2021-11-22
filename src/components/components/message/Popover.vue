@@ -23,18 +23,7 @@
 
 <script>
 import Typography from '@/components/elements/core/typography/Typography';
-
-export const placements = [
-	'top',
-	'top-right',
-	'top-left',
-	'bottom',
-	'bottom-right',
-	'bottom-left',
-	'right-top',
-	'right',
-	'right-bottom',
-];
+import { placements, placementMap } from '@/utils/constants/tooltip';
 
 /**
  * @displayName c-popover
@@ -86,17 +75,6 @@ export default {
 	},
 	computed: {
 		mapPlacement() {
-			const placementMap = {
-				top: 'top',
-				'top-right': 'top-end',
-				'top-left': 'top-start',
-				bottom: 'bottom',
-				'bottom-right': 'bottom-end',
-				'bottom-left': 'bottom-start',
-				right: 'right',
-				'right-top': 'right-start',
-				'right-bottom': 'right-end',
-			};
 			return placementMap[this.placement];
 		},
 		styles() {
