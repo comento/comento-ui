@@ -24,7 +24,17 @@
 <script>
 import Typography from '@/components/elements/core/typography/Typography';
 
-export const placements = ['bottom', 'bottom-right', 'bottom-left', 'right-top', 'right', 'right-bottom'];
+export const placements = [
+	'top',
+	'top-right',
+	'top-left',
+	'bottom',
+	'bottom-right',
+	'bottom-left',
+	'right-top',
+	'right',
+	'right-bottom',
+];
 
 /**
  * @displayName c-tooltip
@@ -34,7 +44,7 @@ export default {
 	inheritAttrs: false,
 	props: {
 		/**
-		 * 위치(bottom, bottom-right, bottom-left, right-top, right, right-bottom)
+		 * 위치(top, top-right, top-left, bottom, bottom-right, bottom-left, right-top, right, right-bottom)
 		 */
 		placement: {
 			type: String,
@@ -74,11 +84,14 @@ export default {
 	computed: {
 		mapPlacement() {
 			const placementMap = {
-				'bottom-right': 'bottom-end',
+				top: 'top',
+				'top-right': 'top-end',
+				'top-left': 'top-start',
 				bottom: 'bottom',
+				'bottom-right': 'bottom-end',
 				'bottom-left': 'bottom-start',
-				'right-top': 'right-start',
 				right: 'right',
+				'right-top': 'right-start',
 				'right-bottom': 'right-end',
 			};
 			return placementMap[this.placement];

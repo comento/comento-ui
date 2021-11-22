@@ -74,6 +74,28 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <NewGrid>
                     <NewRow>
+                        <NewCol class="flex flex-row justify-around" style="margin-top: 50px; margin-bottom: 40px">
+                            <Tooltip placement="top-right" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>top-right</div>
+                                    </template>
+                            </Tooltip>
+                            <Tooltip placement="top" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>top</div>
+                                    </template>
+                            </Tooltip>
+                            <Tooltip placement="top-left" open>
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                    <template v-slot:popover>
+                                        <div>top-left</div>
+                                    </template>
+                            </Tooltip>
+                        </NewCol>
+                    </NewRow>
+                    <NewRow>
                         <NewCol class="flex flex-row justify-around" style="height: 120px">
                             <Tooltip placement="bottom-right" open>
                                 <Icon name="IconProfileLargeFill"></Icon>

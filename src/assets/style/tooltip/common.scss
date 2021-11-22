@@ -25,20 +25,19 @@
     z-index: 3;
   }
 
-  //&[x-placement^='top'] {
-  //  margin-bottom: 5px;
-  //
-  //  .tooltip-arrow {
-  //    border-width: 5px 5px 0 5px;
-  //    border-left-color: transparent !important;
-  //    border-right-color: transparent !important;
-  //    border-bottom-color: transparent !important;
-  //    bottom: -5px;
-  //    left: calc(50% - 5px);
-  //    margin-top: 0;
-  //    margin-bottom: 0;
-  //  }
-  //}
+  &[x-placement^='top'] {
+    padding-bottom: 10px;
+
+    .c-popover--arrow, .c-tooltip--arrow {
+      border-width: 8px 5px 0 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 
   &[x-placement^='bottom'] {
     padding-top: 10px;

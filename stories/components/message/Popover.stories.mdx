@@ -75,6 +75,56 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <NewGrid>
                     <NewRow>
+                        <NewCol class="flex flex-row justify-around" style="height: 120px; margin-top: 50px">
+                            <Popover placement="top-right" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <div>top-right</div>
+                                </template>
+                            </Popover>
+                            <Popover placement="top" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <div>top</div>
+                                </template>
+                            </Popover>
+                            <Popover placement="top-left" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <div>top-left</div>
+                                </template>
+                            </Popover>
+                        </NewCol>
+                    </NewRow>
+                    <NewRow>
+                        <NewCol class="flex flex-row justify-around" style="margin-top: 30px; margin-bottom: 70px">
+                            <Popover placement="top-right" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <Typography type="body2">Title</Typography>
+                                    <Typography type="caption1" color="gray800">content</Typography>
+                                    <Button>button</Button>
+                                </template>
+                            </Popover>
+                            <Popover placement="top" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <Typography type="body2">Title</Typography>
+                                    <Typography type="caption1" color="gray800">content</Typography>
+                                    <Button>button</Button>
+                                </template>
+                            </Popover>
+                            <Popover placement="top-left" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <Typography type="body2">Title</Typography>
+                                    <Typography type="caption1" color="gray800">content</Typography>
+                                    <Button>button</Button>
+                                </template>
+                            </Popover>
+                        </NewCol>
+                    </NewRow>
+                    <NewRow>
                         <NewCol class="flex flex-row justify-around" style="height: 120px">
                             <Popover placement="bottom-right" :open="true">
                                 <Icon name="IconProfileLargeFill"></Icon>
@@ -187,6 +237,28 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <NewGrid>
+                    <NewRow>
+                        <NewCol class="flex flex-row justify-around" style="margin-top: 50px; margin-bottom: 30px">
+                            <Popover placement="top-right" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <div>top-right</div>
+                                </template>
+                            </Popover>
+                            <Popover placement="top" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <div>top</div>
+                                </template>
+                            </Popover>
+                            <Popover placement="top-left" :open="true">
+                                <Icon name="IconProfileLargeFill"></Icon>
+                                <template v-slot:popover>
+                                    <div>top-left</div>
+                                </template>
+                            </Popover>
+                        </NewCol>
+                    </NewRow>
                     <NewRow>
                         <NewCol class="flex flex-row justify-around" style="height: 60px">
                             <Popover placement="bottom-right" :open="true">
