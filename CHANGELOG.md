@@ -1,3 +1,12 @@
+## [0.2.4](https://github.com/comento/comento-ui/compare/v0.2.3...v0.2.4) (2021-11-23)
+
+
+### Features
+
+* **change:** Tooltip, Popover top props 추가 ([#655](https://github.com/comento/comento-ui/issues/655)) ([e04ba5c](https://github.com/comento/comento-ui/commit/e04ba5c5d921eef9ddafc3f039730de5876db992))
+
+
+
 ## [0.2.3](https://github.com/comento/comento-ui/compare/v0.2.2...v0.2.3) (2021-11-18)
 
 
