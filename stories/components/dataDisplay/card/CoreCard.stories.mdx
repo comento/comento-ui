@@ -1,19 +1,19 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import CoreCard from '@/components/components/dataDisplay/card/CoreCard';
-import Content from '@/components/components/dataDisplay/content/Content';
-import Avatar from '@/components/components/dataDisplay/Avatar';
-import Icon from '@/components/elements/core/icon/Icon';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Typography from '@/components/elements/core/typography/Typography';
-import ProfileWithText from '@/components/components/dataDisplay/content/ProfileWithText';
-import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
-import Chip from '@/components/components/dataDisplay/chips/Chip';
+import CCoreCard from '@/components/components/dataDisplay/card/CCoreCard';
+import CContent from '@/components/components/dataDisplay/content/CContent';
+import CAvatar from '@/components/components/dataDisplay/CAvatar';
+import CIcon from '@/components/elements/core/icon/CIcon';
+import CNewGrid from '@/components/layout/CNewGrid';
+import CNewRow from '@/components/layout/CNewRow';
+import CNewCol from '@/components/layout/CNewCol';
+import CTypography from '@/components/elements/core/typography/CTypography';
+import CProfileWithText from '@/components/components/dataDisplay/content/CProfileWithText';
+import CChipGroup from '@/components/components/dataDisplay/chips/CChipGroup';
+import CChip from '@/components/components/dataDisplay/chips/CChip';
 
 <Meta
     title="Data Display/Card/CoreCard"
-    component={ CoreCard }
+    component={ CCoreCard }
     argTypes={{
         overlineLeft: {
             defaultValue: 'lg화학'
@@ -42,17 +42,17 @@ import Chip from '@/components/components/dataDisplay/chips/Chip';
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: {
-        CoreCard,
-        Content,
-        Avatar,
-        Icon,
-        NewGrid,
-        NewRow,
-        NewCol,
-        Typography,
-        ProfileWithText,
-        Chip,
-        ChipGroup,
+        CCoreCard,
+        CContent,
+        CAvatar,
+        CIcon,
+        CNewGrid,
+        CNewRow,
+        CNewCol,
+        CTypography,
+        CProfileWithText,
+        CChip,
+        CChipGroup,
     },
     computed: {
         repliesTemp() {
@@ -66,10 +66,10 @@ export const Default = (args, { argTypes }) => ({
         }
     },
     template: `
-        <NewGrid fluid>
-			<NewRow :style="isMobile ? 'background: #F4F5F7' : ''">
-				<NewCol :col-sm="12" :col-lg="6" no-gutters>
-					<CoreCard
+        <CNewGrid fluid>
+			<CNewRow :style="isMobile ? 'background: #F4F5F7' : ''">
+				<CNewCol :col-sm="12" :col-lg="6" no-gutters>
+					<CCoreCard
 						:overline-left="overlineLeft"
 						:overline-right="overlineRight"
 						:title="title"
@@ -80,28 +80,28 @@ export const Default = (args, { argTypes }) => ({
 					>
 						<template v-slot:replies>
 							<template v-if="repliesTemp" >
-								<ProfileWithText v-for="(item, index) in repliesTemp" v-if="index < showRepliesCount" :key="'reply-' + index">
+								<CProfileWithText v-for="(item, index) in repliesTemp" v-if="index < showRepliesCount" :key="'reply-' + index">
 									<template v-slot:avatar>
-										<Avatar type="text" :text="item.belong.substr(0, 1)" size="small"/>
+										<CAvatar type="text" :text="item.belong.substr(0, 1)" size="small"/>
 									</template>
 									<template v-slot:name>
 										{{ item.belong }}
 									</template>
 									<template v-slot:icon>
-										<Icon name="IconCheckSmallFill" color="primary"/>
+										<CIcon name="IconCheckSmallFill" color="primary"/>
 									</template>
 									<template v-slot:text>
-										<Typography element="p" type="body2" color="gray800" class="text-truncate">
+										<CTypography element="p" type="body2" color="gray800" class="text-truncate">
 											{{ item.answer }}
-										</Typography>
+										</CTypography>
 									</template>
-								</ProfileWithText>
+								</CProfileWithText>
 							</template>
 						</template>
-					</CoreCard>
-				</NewCol>
-			</NewRow>
-		</NewGrid>
+					</CCoreCard>
+				</CNewCol>
+			</CNewRow>
+		</CNewGrid>
         `,
 });
 
@@ -121,17 +121,17 @@ export const Default = (args, { argTypes }) => ({
     <Story name="All">
         {{
             components: {
-                CoreCard,
-                Content,
-                Avatar,
-                Icon,
-                NewGrid,
-                NewRow,
-                NewCol,
-                Typography,
-                ProfileWithText,
-                Chip,
-                ChipGroup,
+                CCoreCard,
+                CContent,
+                CAvatar,
+                CIcon,
+                CNewGrid,
+                CNewRow,
+                CNewCol,
+                CTypography,
+                CProfileWithText,
+                CChip,
+                CChipGroup,
             },
             data() {
                 return {
@@ -204,10 +204,10 @@ export const Default = (args, { argTypes }) => ({
                 },
             },
             template: `
-                <NewGrid fluid>
-                    <NewRow :style="isMobile ? 'background: #F4F5F7' : ''">
-                        <NewCol :col-sm="12" :col-lg="6" no-gutters v-for="(item, index) in questions" :key="index">
-                            <CoreCard
+                <CNewGrid fluid>
+                    <CNewRow :style="isMobile ? 'background: #F4F5F7' : ''">
+                        <CNewCol :col-sm="12" :col-lg="6" no-gutters v-for="(item, index) in questions" :key="index">
+                            <CCoreCard
                                 :overline-left="item.company"
                                 :overline-right="item.job"
                                 :title="item.title"
@@ -218,35 +218,35 @@ export const Default = (args, { argTypes }) => ({
                                 :class="isMobile ? 'mb-20' : index + 1 < questions.length ? 'mr-20' : ''"
                             >
                                 <template v-slot:chips>
-                                    <ChipGroup class="mb-8" style="margin-top: -2px">
-                                        <Chip size="small" style="background: #D6EBFF; color: #0074CC">조회수 TOP</Chip>
-                                        <Chip size="small">이직 고민</Chip>
-                                    </ChipGroup>
+                                    <CChipGroup class="mb-8" style="margin-top: -2px">
+                                        <CChip size="small" style="background: #D6EBFF; color: #0074CC">조회수 TOP</CChip>
+                                        <CChip size="small">이직 고민</CChip>
+                                    </CChipGroup>
                                 </template>
                                 <template v-slot:replies>
                                     <template v-for="(item, index) in item.replies">
-                                        <ProfileWithText v-if="index < 2" :key="'reply-' + item.id">
+                                        <CProfileWithText v-if="index < 2" :key="'reply-' + item.id">
                                             <template v-slot:avatar>
-                                                <Avatar type="text" :text="item.belong.substr(0, 1)" size="small"/>
+                                                <CAvatar type="text" :text="item.belong.substr(0, 1)" size="small"/>
                                             </template>
                                             <template v-slot:name>
                                                 {{ item.belong }}
                                             </template>
                                             <template v-slot:icon>
-                                                <Icon name="IconCheckSmallFill" color="primary"/>
+                                                <CIcon name="IconCheckSmallFill" color="primary"/>
                                             </template>
                                             <template v-slot:text>
-                                                <Typography element="p" type="body2" color="gray800" class="text-truncate">
+                                                <CTypography element="p" type="body2" color="gray800" class="text-truncate">
                                                     {{ item.answer }}
-                                                </Typography>
+                                                </CTypography>
                                             </template>
-                                        </ProfileWithText>
+                                        </CProfileWithText>
                                     </template>
                                 </template>
-                            </CoreCard>
-                        </NewCol>
-                    </NewRow>
-                </NewGrid>
+                            </CCoreCard>
+                        </CNewCol>
+                    </CNewRow>
+                </CNewGrid>
             `,
         }}
     </Story>

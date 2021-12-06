@@ -1,3 +1,3 @@
-import TellingAvatarQuote from './TellingAvatarQuote';
+import CTellingAvatarQuote from './CTellingAvatarQuote';
 
-export { TellingAvatarQuote };
+export { CTellingAvatarQuote };

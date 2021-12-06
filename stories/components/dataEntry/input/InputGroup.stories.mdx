@@ -1,28 +1,28 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
-import InputGroup from '@/components/components/dataEntry/input/InputGroup';
-import TextField from '@/components/components/dataEntry/input/TextField';
-import Button from '@/components/components/general/button/Button';
-import Box from '@/components/components/general/Box';
-import Hint from '@/components/components/dataDisplay/Hint';
+import CGrid from '@/components/layout/CGrid';
+import CRow from '@/components/layout/CRow';
+import CStyleCol from '@/components/layout/CStyleCol';
+import CInputGroup from '@/components/components/dataEntry/input/CInputGroup';
+import CTextField from '@/components/components/dataEntry/input/CTextField';
+import CButton from '@/components/components/general/button/CButton';
+import CBox from '@/components/components/general/CBox';
+import CHint from '@/components/components/dataDisplay/CHint';
 
 <Meta
     title="Data Entry/Input/InputGroup"
-    component={ InputGroup }
+    component={ CInputGroup }
 />
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Box, InputGroup, TextField, Button },
+    components: { CBox, CInputGroup, CTextField, CButton },
     template:
-        `<Box>
-             <InputGroup>
-                 <TextField placeholder="쿠폰 코드를 입력하세요" full />
-                 <Button type="outlined" color="secondary">등록하기</Button>
-             </InputGroup>
-         </Box>`,
+        `<CBox>
+             <CInputGroup>
+                 <CTextField placeholder="쿠폰 코드를 입력하세요" full />
+                 <CButton type="outlined" color="secondary">등록하기</CButton>
+             </CInputGroup>
+         </CBox>`,
 });
 
 # InputGroup
@@ -40,35 +40,35 @@ export const Default = (args, { argTypes }) => ({
     <Story name="Hint" height="200px">
         {{
             template: `
-                <Grid>
-                    <Row class="mb-10">
-                        <StyleCol :col-lg="4" col-gutters>
-                            <InputGroup>
-                                <TextField
+                <CGrid>
+                    <CRow class="mb-10">
+                        <CStyleCol :col-lg="4" col-gutters>
+                            <CInputGroup>
+                                <CTextField
                                     type="text"
                                     outlined
                                     placeholder="닉네임"
                                     full
                                     :value.sync="name"
                                 />
-                                <Button
+                                <CButton
                                     color="primary"
                                     type="outlined"
                                 >
                                     중복검사
-                                </Button>
-                            </InputGroup>
-                            <Hint>한글 10자, 영문∙숫자∙특수문자 20자까지 입력 가능합니다.<br v-show="isMobile">(혼용 가능)</Hint>
-                        </StyleCol>
-                    </Row>
-                </Grid>
+                                </CButton>
+                            </CInputGroup>
+                            <CHint>한글 10자, 영문∙숫자∙특수문자 20자까지 입력 가능합니다.<br v-show="isMobile">(혼용 가능)</CHint>
+                        </CStyleCol>
+                    </CRow>
+                </CGrid>
             `,
             data() {
                 return {
                     name: null,
                 };
             },
-            components: { Grid, Row, StyleCol, InputGroup, TextField, Button, Hint },
+            components: { CGrid, CRow, CStyleCol, CInputGroup, CTextField, CButton, CHint },
         }}
     </Story>
 </Canvas>

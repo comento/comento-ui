@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import BasicModal, { aligns } from '@/components/components/message/modal/BasicModal';
-import Button, { buttonColors } from '@/components/components/general/button/Button';
+import CBasicModal, { aligns } from '@/components/components/message/modal/CBasicModal';
+import CButton, { buttonColors } from '@/components/components/general/button/CButton';
 
 <Meta
     title="Message/Modal/BasicModal"
-    component={ BasicModal }
+    component={ CBasicModal }
     argTypes={{
         show: {
             description: "모달 활성화",
@@ -83,11 +83,11 @@ import Button, { buttonColors } from '@/components/components/general/button/But
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { BasicModal, Button },
+    components: { CBasicModal, CButton },
     template: `
         <div>
-            <Button @click="show = true">Open</Button>
-            <BasicModal
+            <CButton @click="show = true">Open</CButton>
+            <CBasicModal
                 :show.sync="show"
                 :show-close-button="showCloseButton"
                 :persistent="persistent"
@@ -106,7 +106,7 @@ export const Default = (args, { argTypes }) => ({
                 <template v-slot:content>
                     <div v-for="content in content" v-html="content" />
                 </template>
-            </BasicModal>
+            </CBasicModal>
         </div>
     `,
     methods: {
@@ -136,8 +136,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <BasicModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CBasicModal
                         :show.sync="show"
                         align="left"
                     >
@@ -150,11 +150,11 @@ export const Default = (args, { argTypes }) => ({
                             - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
                             - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                         </template>
-                    </BasicModal>
+                    </CBasicModal>
                 </div>
             `,
             components: {
-                BasicModal, Button
+                CBasicModal, CButton
             }
         }}
     </Story>
@@ -169,8 +169,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <BasicModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CBasicModal
                         :show.sync="show"
                         align="left"
                         show-action-button
@@ -184,11 +184,11 @@ export const Default = (args, { argTypes }) => ({
                             - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
                             - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                         </template>
-                    </BasicModal>
+                    </CBasicModal>
                 </div>
             `,
             components: {
-                BasicModal, Button
+                CBasicModal, CButton
             }
         }}
     </Story>
@@ -205,8 +205,8 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <div style="margin-bottom: 10px">
-                        <Button @click="showModal1 = true">Open</Button>
-                        <BasicModal :show.sync="showModal1" align="left" scroll>
+                        <CButton @click="showModal1 = true">Open</CButton>
+                        <CBasicModal :show.sync="showModal1" align="left" scroll>
                             <template v-slot:title>
                                 모달 제목
                             </template>
@@ -240,11 +240,11 @@ export const Default = (args, { argTypes }) => ({
                                 malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
                                 lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
                             </template>
-                        </BasicModal>
+                        </CBasicModal>
                     </div>
                     <div>
-                        <Button @click="showModal2 = true">Open</Button>
-                        <BasicModal :show.sync="showModal2" align="left" show-action-button scroll :success-callback="closeModal">
+                        <CButton @click="showModal2 = true">Open</CButton>
+                        <CBasicModal :show.sync="showModal2" align="left" show-action-button scroll :success-callback="closeModal">
                             <template v-slot:title>
                                 모달 제목
                             </template>
@@ -278,7 +278,7 @@ export const Default = (args, { argTypes }) => ({
                                 malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
                                 lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
                             </template>
-                        </BasicModal>
+                        </CBasicModal>
                     </div>
                 </div>
             `,
@@ -287,7 +287,7 @@ export const Default = (args, { argTypes }) => ({
                     this.showModal2 = false;
                 }
             },
-            components: { Button, BasicModal }
+            components: { CButton, CBasicModal }
         }}
     </Story>
 </Canvas>

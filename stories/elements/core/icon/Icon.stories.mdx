@@ -1,12 +1,12 @@
 import { ArgsTable, Meta, Story, Props, Canvas } from '@storybook/addon-docs/blocks';
-import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
+import CIcon, { IconNames } from '@/components/elements/core/icon/CIcon';
 import { colorKeys } from '@/utils/constants/color';
 import IconWrapper from './IconWrapper';
-import Typography from '@/components/elements/core/typography/Typography';
+import CTypography from '@/components/elements/core/typography/CTypography';
 
 <Meta
     title="Core/Icon/Icon"
-    component={ Icon }
+    component={ CIcon }
     argTypes={{
         name: {
             description: "아이콘 이름",
@@ -40,8 +40,8 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Icon },
-    template: '<icon :name="name" :color="color" :rotate="Number(rotate)" />',
+    components: { CIcon },
+    template: '<CIcon :name="name" :color="color" :rotate="Number(rotate)" />',
 });
 
 # Icon
@@ -61,10 +61,10 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <Typography type="body1" color="gray500">아이콘을 클릭하면 클립보드에 아이콘 이름이 복사됩니다.</Typography>
+                    <CTypography type="body1" color="gray500">아이콘을 클릭하면 클립보드에 아이콘 이름이 복사됩니다.</CTypography>
                     <!--small-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Small</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="Icon" name="IconCheckSmallLine" />
                             <IconWrapper component="Icon" name="IconPlusSmallLine" color="black" />
@@ -86,7 +86,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--medium-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Medium</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="Icon" name=IconCheckMediumFill />
                             <IconWrapper component="Icon" name=IconLikeMediumLine />
@@ -141,7 +141,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Large</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="Icon" name=IconLongArrowLargeLine />
                             <IconWrapper component="Icon" name=IconProfileLargeFill />
@@ -181,7 +181,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--x-large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">XLarge</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">XLarge</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="Icon" name=IconProfileXLargeFill />
                             <IconWrapper component="Icon" name=IconArrowXLargeLine />
@@ -205,7 +205,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--2x-large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">2XLarge</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">2XLarge</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="Icon" name=IconProfile2XLargeFill />
                             <IconWrapper component="Icon" name=IconWriting2XLargeLine />
@@ -214,14 +214,14 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--4x-large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">4XLarge</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">4XLarge</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="Icon" name=IconStar4XLargeFill color="gray400" />
                         </div>
                     </div>
                 </div>
             `,
-             components: { IconWrapper, Typography },
+             components: { IconWrapper, CTypography },
         }}
     </Story>
 </Canvas>

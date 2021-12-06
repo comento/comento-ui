@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { TypographyTypes } from '@/components/elements/core/typography/Typography';
-import LinkButton, { linkButtonColors, linkButtonTargets } from '@/components/components/general/button/LinkButton';
+import { TypographyTypes } from '@/components/elements/core/typography/CTypography';
+import CLinkButton, { linkButtonColors, linkButtonTargets } from '@/components/components/general/button/CLinkButton';
 
 <Meta
     title="General/Button/LinkButton"
-    component={ LinkButton }
+    component={ CLinkButton }
     argTypes={{
         label: {
             description: "버튼에 들어갈 텍스트",
@@ -51,9 +51,9 @@ import LinkButton, { linkButtonColors, linkButtonTargets } from '@/components/co
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { LinkButton },
+    components: { CLinkButton },
     template:
-        `<LinkButton
+        `<CLinkButton
             :type="type"
             :to="to"
             :color="color"
@@ -62,7 +62,7 @@ export const Default = (args, { argTypes }) => ({
             :target="target"
         >
             {{label}}
-        </LinkButton>`,
+        </CLinkButton>`,
 });
 
 # LinkButton
@@ -83,12 +83,12 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <LinkButton>이동하지 않는 링크 버튼</LinkButton>
-                    <LinkButton to="#" color="blue400" type="body2">맨위로 이동하기</LinkButton>
-                    <LinkButton to="https://comento.kr" type="headline5">코멘토로 이동하기</LinkButton>
+                    <CLinkButton>이동하지 않는 링크 버튼</CLinkButton>
+                    <CLinkButton to="#" color="blue400" type="body2">맨위로 이동하기</CLinkButton>
+                    <CLinkButton to="https://comento.kr" type="headline5">코멘토로 이동하기</CLinkButton>
                 </div>
         `,
-            components: { LinkButton },
+            components: { CLinkButton },
         }}
     </Story>
 </Canvas>
@@ -99,11 +99,11 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <LinkButton color="blue400">blue400</LinkButton>
-                    <LinkButton color="blue600">blue600</LinkButton>
+                    <CLinkButton color="blue400">blue400</CLinkButton>
+                    <CLinkButton color="blue600">blue600</CLinkButton>
                 </div>
         `,
-            components: { LinkButton },
+            components: { CLinkButton },
         }}
     </Story>
 </Canvas>

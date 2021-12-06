@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Divider,  { dividerTypes } from '@/components/elements/utility/Divider';
+import CDivider,  { dividerTypes } from '@/components/elements/utility/CDivider';
 import { colorKeys } from '@/utils/constants/color';
 
 <Meta
   title="Utility/Divider"
-  component={Divider}
+  component={CDivider}
     argTypes={{
         type: {
           description: "Divider의 타입",
@@ -33,18 +33,18 @@ import { colorKeys } from '@/utils/constants/color';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Divider },
+  components: { CDivider },
   template: `
-  <div class="mt-20" style="position:relative; height:300px; width:300px; background:lightcyan">
+    <div class="mt-20" style="position:relative; height:300px; width:300px; background:lightcyan">
         <p style="position: absolute;
-                      top: 50%;
-                      transform: translateY(-50%);
-                      width: 100%;
-                      text-align: center;"
-                      >300 x 300 사이즈 기준</p>
-        <Divider :type="type"
-                 :vertical="vertical"
-                 :color="color"/>
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 100%;
+                  text-align: center;"
+        >
+            300 x 300 사이즈 기준
+        </p>
+        <CDivider :type="type" :vertical="vertical" :color="color" />
     </div>`,
 });
 

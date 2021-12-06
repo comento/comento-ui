@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/vue';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import AlarmList from '@/components/components/dataDisplay/list/alarmList/AlarmList';
-import AlarmListItem from '@/components/components/dataDisplay/list/alarmList/AlarmListItem';
-import Typography from '@/components/elements/core/typography/Typography';
-import Divider from '@/components/elements/utility/Divider';
+import CNewGrid from '@/components/layout/CNewGrid';
+import CNewRow from '@/components/layout/CNewRow';
+import CNewCol from '@/components/layout/CNewCol';
+import CAlarmList from '@/components/components/dataDisplay/list/alarmList/CAlarmList';
+import CAlarmListItem from '@/components/components/dataDisplay/list/alarmList/CAlarmListItem';
+import CTypography from '@/components/elements/core/typography/CTypography';
+import CDivider from '@/components/elements/utility/CDivider';
 
 storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => ({
-	components: { NewGrid, NewRow, NewCol, AlarmList, AlarmListItem, Typography, Divider },
+	components: { CNewGrid, CNewRow, CNewCol, CAlarmList, CAlarmListItem, CTypography, CDivider },
 	data() {
 		return {
 			alarms: [
@@ -32,12 +32,12 @@ storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => 
 		};
 	},
 	template: `
-		<NewGrid fluid>
-			<NewRow>
-				<NewCol :col-lg="3" :col-sm="12">
-					<AlarmList>
+		<CNewGrid fluid>
+			<CNewRow>
+				<CNewCol :col-lg="3" :col-sm="12">
+					<CAlarmList>
 						<template v-for="({icon, message, date, confirm_style}, index) in alarms">
-							<AlarmListItem :key="'alarm-list-item-' + index" :class="confirm_style">
+							<CAlarmListItem :key="'alarm-list-item-' + index" :class="confirm_style">
 								<template v-slot:icon>
 									<img :src="'https://cdn.comento.kr/images/icon/alarm/icon-alarm-' + icon + '.svg'" />
 								</template>
@@ -47,11 +47,11 @@ storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => 
 								<template v-slot:date>
 									{{ date }}
 								</template>
-							</AlarmListItem>
-							<Divider :key="'alarm-divider-' + index"/>
+							</CAlarmListItem>
+							<CDivider :key="'alarm-divider-' + index"/>
 						</template>
-					</AlarmList>
-				</NewCol>
-			</NewRow>
-		</NewGrid>`,
+					</CAlarmList>
+				</CNewCol>
+			</CNewRow>
+		</CNewGrid>`,
 }));

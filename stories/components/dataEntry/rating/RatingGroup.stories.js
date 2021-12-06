@@ -1,24 +1,24 @@
 import { storiesOf } from '@storybook/vue';
-import Rating from '@/components/components/dataEntry/rating/Rating';
-import RatingGroup from '@/components/components/dataEntry/rating/RatingGroup';
-import Icon from '@/components/elements/core/icon/Icon';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Typography from '@/components/elements/core/typography/Typography';
+import CRating from '@/components/components/dataEntry/rating/CRating';
+import CRatingGroup from '@/components/components/dataEntry/rating/CRatingGroup';
+import CIcon from '@/components/elements/core/icon/CIcon';
+import CNewGrid from '@/components/layout/CNewGrid';
+import CNewRow from '@/components/layout/CNewRow';
+import CNewCol from '@/components/layout/CNewCol';
+import CTypography from '@/components/elements/core/typography/CTypography';
 
 storiesOf('Data Entry/rating/RatingGroup', module).add('Index', () => ({
-	components: { Rating, RatingGroup, Icon, NewGrid, NewRow, NewCol, Typography },
+	components: { CRating, CRatingGroup, CIcon, CNewGrid, CNewRow, CNewCol, CTypography },
 	template: `
-		<NewGrid fluid>
-		<NewRow>
-			<NewCol :col-sm="12" :col-lg="8">
-				<RatingGroup>
-					<Rating icon-name="IconCommentMediumLine" icon-color="primary" text="6" text-color="primary"/>
-					<Rating icon-name="IconLikeMediumLine" icon-color="red400" text="6" text-color="red600"/>
-				</RatingGroup>
-			</NewCol>
-		</NewRow>
-		</NewGrid>
+		<CNewGrid fluid>
+			<CNewRow>
+				<CNewCol :col-sm="12" :col-lg="8">
+					<CRatingGroup>
+						<CRating icon-name="IconCommentMediumLine" icon-color="primary" text="6" text-color="primary"/>
+						<CRating icon-name="IconLikeMediumLine" icon-color="red400" text="6" text-color="red600"/>
+					</CRatingGroup>
+				</CNewCol>
+			</CNewRow>
+		</CNewGrid>
 		`,
 }));

@@ -1,15 +1,15 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
-import TextField, { TextFieldTypes, TextFieldAligns, TextFieldColor } from '@/components/components/dataEntry/input/TextField';
-import Typography from '@/components/elements/core/typography/Typography';
-import Icon from '@/components/elements/core/icon/Icon';
-import Loader from '@/components/components/other/Loader';
+import CGrid from '@/components/layout/CGrid';
+import CRow from '@/components/layout/CRow';
+import CStyleCol from '@/components/layout/CStyleCol';
+import CTextField, { TextFieldTypes, TextFieldAligns, TextFieldColor } from '@/components/components/dataEntry/input/CTextField';
+import CTypography from '@/components/elements/core/typography/CTypography';
+import CIcon from '@/components/elements/core/icon/CIcon';
+import CLoader from '@/components/components/other/CLoader';
 
 <Meta
     title="Data Entry/Input/TextField"
-    component={ TextField }
+    component={ CTextField }
     argTypes={{
         type: {
             description: "텍스트필드 type",
@@ -97,9 +97,9 @@ import Loader from '@/components/components/other/Loader';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { TextField },
+    components: { CTextField },
     template:
-        `<TextField
+        `<CTextField
             :type="type"
             :outlined="outlined"
             :placeholder="placeholder"
@@ -135,7 +135,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <TextField
+                    <CTextField
                         type="text"
                         color="error"
                         hint="내용을 입력해주세요."
@@ -143,7 +143,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         color="error"
                         hint="내용을 입력해주세요."
@@ -153,7 +153,7 @@ export const Default = (args, { argTypes }) => ({
                         active
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         color="error"
                         hint="내용을 입력해주세요."
@@ -161,7 +161,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="outlined + hint "
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         color="error"
                         hint="내용을 입력해주세요."
@@ -173,7 +173,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { TextField },
+            components: { CTextField },
         }}
     </Story>
 </Canvas>
@@ -185,7 +185,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <TextField
+                    <CTextField
                         type="text"
                         color="secondary"
                         hint="내용을 입력해주세요."
@@ -193,7 +193,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         color="secondary"
                         hint="내용을 입력해주세요."
@@ -203,7 +203,7 @@ export const Default = (args, { argTypes }) => ({
                         active
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="secondary"
@@ -211,7 +211,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="outlined + hint"
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="secondary"
@@ -223,7 +223,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { TextField },
+            components: { CTextField },
         }}
     </Story>
 </Canvas>
@@ -234,7 +234,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <TextField
+                    <CTextField
                         type="text"
                         color="success"
                         hint="내용을 입력해주세요."
@@ -242,7 +242,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint"
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         color="success"
                         hint="내용을 입력해주세요."
@@ -252,7 +252,7 @@ export const Default = (args, { argTypes }) => ({
                         active
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="success"
@@ -260,7 +260,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="outlined + hint"
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="success"
@@ -272,7 +272,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { TextField },
+            components: { CTextField },
         }}
     </Story>
 </Canvas>
@@ -283,7 +283,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <TextField
+                    <CTextField
                         type="text"
                         color="primary"
                         hint="내용을 입력해주세요."
@@ -291,7 +291,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         color="primary"
                         hint="내용을 입력해주세요."
@@ -301,7 +301,7 @@ export const Default = (args, { argTypes }) => ({
                         active
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="primary"
@@ -309,7 +309,7 @@ export const Default = (args, { argTypes }) => ({
                         placeholder="outlined + hint"
                         class="mb-20"
                     />
-                    <TextField
+                    <CTextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="primary"
@@ -321,7 +321,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { TextField },
+            components: { CTextField },
         }}
     </Story>
 </Canvas>
@@ -332,7 +332,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <TextField
+                    <CTextField
                         type="text"
                         color="primary"
                         hint="내용을 입력해주세요."
@@ -343,7 +343,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                 </div>
             `,
-            components: { TextField },
+            components: { CTextField },
         }}
     </Story>
 </Canvas>
@@ -354,8 +354,8 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <Typography type="body2" color="gray500" class="mb-4">이름</Typography>
-                    <TextField
+                    <CTypography type="body2" color="gray500" class="mb-4">이름</CTypography>
+                    <CTextField
                         type="text"
                         :color="isError ? 'error' : 'secondary'"
                         :hint="isError ? '두 글자 이상 입력해 주세요.' : '실명을 입력하세요. 입력된 이름으로 수료증이 발급됩니다.'"
@@ -377,7 +377,7 @@ export const Default = (args, { argTypes }) => ({
                     this.isError = this.name.length < 2;
                 }
             },
-            components: { TextField, Typography },
+            components: { CTextField, CTypography },
         }}
     </Story>
 </Canvas>
@@ -387,10 +387,10 @@ export const Default = (args, { argTypes }) => ({
     <Story name="AppendSlot" height="200px">
         {{
             template: `
-                <Grid>
-                    <Row class="mb-10">
-                        <StyleCol :col-lg="4" col-gutters>
-                            <TextField
+                <CGrid>
+                    <CRow class="mb-10">
+                        <CStyleCol :col-lg="4" col-gutters>
+                            <CTextField
                                 type="text"
                                 outlined
                                 label="대학"
@@ -399,15 +399,15 @@ export const Default = (args, { argTypes }) => ({
                                 :value.sync="name"
                             >
                                 <template v-slot:append>
-                                    <Typography type="caption2" color="gray700" class="mr-2">제휴 확인 중</Typography>
-                                    <Loader size="small" color="secondary" style="margin-right: -2px" />
+                                    <CTypography type="caption2" color="gray700" class="mr-2">제휴 확인 중</CTypography>
+                                    <CLoader size="small" color="secondary" style="margin-right: -2px" />
                                 </template>
-                            </TextField>
-                        </StyleCol>
-                    </Row>
-                    <Row class="mb-10">
-                        <StyleCol :col-lg="4" col-gutters>
-                            <TextField
+                            </CTextField>
+                        </CStyleCol>
+                    </CRow>
+                    <CRow class="mb-10">
+                        <CStyleCol :col-lg="4" col-gutters>
+                            <CTextField
                                 type="text"
                                 outlined
                                 label="대학"
@@ -415,15 +415,15 @@ export const Default = (args, { argTypes }) => ({
                                 :value.sync="name"
                             >
                                 <template v-slot:append>
-                                    <Typography type="caption2" color="gray800" class="mr-2">미제휴기관</Typography>
-                                    <Icon name="IconExclamationSmallFill" color="gray500" />
+                                    <CTypography type="caption2" color="gray800" class="mr-2">미제휴기관</CTypography>
+                                    <CIcon name="IconExclamationSmallFill" color="gray500" />
                                 </template>
-                            </TextField>
-                        </StyleCol>
-                    </Row>
-                    <Row class="mb-10">
-                        <StyleCol :col-lg="4" col-gutters>
-                            <TextField
+                            </CTextField>
+                        </CStyleCol>
+                    </CRow>
+                    <CRow class="mb-10">
+                        <CStyleCol :col-lg="4" col-gutters>
+                            <CTextField
                                 type="text"
                                 outlined
                                 label="대학"
@@ -431,27 +431,27 @@ export const Default = (args, { argTypes }) => ({
                                 :value.sync="name"
                             >
                                 <template v-slot:append>
-                                    <Typography type="caption2" color="primary" class="mr-2">제휴기관</Typography>
-                                    <Icon name="IconExclamationSmallFill" color="primary" />
+                                    <CTypography type="caption2" color="primary" class="mr-2">제휴기관</CTypography>
+                                    <CIcon name="IconExclamationSmallFill" color="primary" />
                                 </template>
-                            </TextField>
-                        </StyleCol>
-                    </Row>
-                    <Row>
-                        <StyleCol :col-lg="4" col-gutters>
-                            <TextField
+                            </CTextField>
+                        </CStyleCol>
+                    </CRow>
+                    <CRow>
+                        <CStyleCol :col-lg="4" col-gutters>
+                            <CTextField
                                 type="text"
                                 placeholder="인증번호"
                                 :value.sync="name"
                                 full
                             >
                                 <template v-slot:append>
-                                    <Typography type="caption1" color="error">30:00</Typography>
+                                    <CTypography type="caption1" color="error">30:00</CTypography>
                                 </template>
-                            </TextField>
-                        </StyleCol>
-                    </Row>
-                </Grid>
+                            </CTextField>
+                        </CStyleCol>
+                    </CRow>
+                </CGrid>
             `,
             data() {
                 return {
@@ -464,7 +464,7 @@ export const Default = (args, { argTypes }) => ({
                     this.isError = this.name.length < 2;
                 }
             },
-            components: { Grid, Row, StyleCol, TextField, Typography, Loader, Icon },
+            components: { CGrid, CRow, CStyleCol, CTextField, CTypography, CLoader, CIcon },
         }}
     </Story>
 </Canvas>

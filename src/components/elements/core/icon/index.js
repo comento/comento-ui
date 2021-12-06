@@ -1,5 +1,5 @@
-import AnimationIcon from './AnimationIcon';
-import EtcIcon from './EtcIcon';
-import Icon from './Icon';
+import CAnimationIcon from './CAnimationIcon';
+import CEtcIcon from './CEtcIcon';
+import CIcon from './CIcon';
 
-export { AnimationIcon, EtcIcon, Icon };
+export { CAnimationIcon, CEtcIcon, CIcon };

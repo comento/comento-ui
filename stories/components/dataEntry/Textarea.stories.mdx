@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
-import Textarea, { textareaTypes } from '@/components/components/dataEntry/Textarea';
+import CTextarea, { textareaTypes } from '@/components/components/dataEntry/CTextarea';
 
 <Meta
     title="Data Entry/Textarea"
-    component={ Textarea }
+    component={ CTextarea }
     argTypes={{
         placeholder: {
             description: "Textarea placeholder",
@@ -37,7 +37,7 @@ import Textarea, { textareaTypes } from '@/components/components/dataEntry/Texta
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Textarea },
+    components: { CTextarea },
     data() {
         return {
             value: '',
@@ -45,12 +45,13 @@ export const Default = (args, { argTypes }) => ({
     },
     template:
         `<div style="background:aliceblue; padding:20px">
-            <Textarea :type="type"
+            <CTextarea :type="type"
                       :placeholder="placeholder"
                       :max-height="maxHeight"
                       :min-height="minHeight"
                       :read-only="readOnly"
-                      :value.sync="value"/>
+                      :value.sync="value"
+            />
         </div>`,
 });
 

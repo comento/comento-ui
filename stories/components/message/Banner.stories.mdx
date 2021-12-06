@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
-import Banner from '@/components/components/message/Banner';
-import Button from '@/components/components/general/button/Button';
-import Typography from '@/components/elements/core/typography/Typography';
+import CBanner from '@/components/components/message/CBanner';
+import CButton from '@/components/components/general/button/CButton';
+import CTypography from '@/components/elements/core/typography/CTypography';
 
 <Meta
     title="Message/Banner"
-    component={ Banner }
+    component={ CBanner }
     argTypes={{
         title: {
             description: "Banner에 main 텍스트",
@@ -30,26 +30,26 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Button, Banner, Typography },
+    components: { CButton, CBanner, CTypography },
     template: `
         <div>
-            <Banner :type="type">
+            <CBanner :type="type">
                 <template v-slot:image>
                     <div style="background: lightgray; height: 250px;"></div>
                 </template>
                 <template v-slot:title>
-                    <Typography type="headline1" color="gray900" align="center">
+                    <CTypography type="headline1" color="gray900" align="center">
                         {{title}}
-                    </Typography>
+                    </CTypography>
                 </template>
                 <template v-slot:description>
-                    <Typography type="headline6" color="gray800" align="center">
+                    <CTypography type="headline6" color="gray800" align="center">
                         {{description}}
-                    </Typography>
+                    </CTypography>
                 </template>
                 <template v-slot:action>
                 </template>
-            </Banner>
+            </CBanner>
         </div>`
 });
 

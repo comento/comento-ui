@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Callout, { CalloutTypes, CalloutSizes } from '@/components/components/message/Callout';
-import Icon from '@/components/elements/core/icon/Icon';
+import CCallout, { CalloutTypes, CalloutSizes } from '@/components/components/message/CCallout';
+import CIcon from '@/components/elements/core/icon/CIcon';
 
 <Meta
   title="Message/Callout"
-  component={Callout}
+  component={CCallout}
   argTypes={{
     text: {
       description: "메시지",
@@ -44,14 +44,14 @@ import Icon from '@/components/elements/core/icon/Icon';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Callout },
+    components: { CCallout },
     data() {
         return {
             showCallout: true,
         }
     },
     template: `
-        <Callout
+        <CCallout
             v-if="showCallout"
             :type="type" :size="size"
             :full="full"
@@ -59,7 +59,7 @@ export const Default = (args, { argTypes }) => ({
             @closeCallout="showCallout = false"
         >
             {{ text }}
-        </Callout>`,
+        </CCallout>`,
 });
 
 # Callout
@@ -90,62 +90,62 @@ export const Default = (args, { argTypes }) => ({
         <div>
             <div style="margin-bottom: 10px">
                 <div>
-                    <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout type='information'>문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout type='alert'>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout type='alert'>문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
-                </div>
-            </div>
-            <div style="margin-bottom: 10px">
-                <div>
-                    <Callout size="xsmall">문구가 들어가는 자리입니다.</Callout>
-                </div>
-                <div>
-                    <Callout size="small">문구가 들어가는 자리입니다.</Callout>
-                </div>
-                <div>
-                    <Callout size="medium">문구가 들어가는 자리입니다.</Callout>
+                    <CCallout type='success'>문구가 들어가는 자리입니다.</CCallout>
                 </div>
             </div>
             <div style="margin-bottom: 10px">
                 <div>
-                    <Callout size="xsmall" full>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="xsmall">문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout size="small" full>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="small">문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout size="medium" full>문구가 들어가는 자리입니다.</Callout>
-                </div>
-            </div>
-            <div style="margin-bottom: 10px">
-                <div>
-                    <Callout v-if="showXSmallCallout" size="xsmall" closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
-                </div>
-                <div>
-                    <Callout v-if="showSmallCallout" size="small" closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
-                </div>
-                <div>
-                    <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="medium">문구가 들어가는 자리입니다.</CCallout>
                 </div>
             </div>
             <div style="margin-bottom: 10px">
                 <div>
-                    <Callout size="medium">
+                    <CCallout size="xsmall" full>문구가 들어가는 자리입니다.</CCallout>
+                </div>
+                <div>
+                    <CCallout size="small" full>문구가 들어가는 자리입니다.</CCallout>
+                </div>
+                <div>
+                    <CCallout size="medium" full>문구가 들어가는 자리입니다.</CCallout>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px">
+                <div>
+                    <CCallout v-if="showXSmallCallout" size="xsmall" closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</CCallout>
+                </div>
+                <div>
+                    <CCallout v-if="showSmallCallout" size="small" closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</CCallout>
+                </div>
+                <div>
+                    <CCallout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</CCallout>
+                </div>
+            </div>
+            <div style="margin-bottom: 10px">
+                <div>
+                    <CCallout size="medium">
                         <template v-slot:icon>
-                            <Icon name="IconVideoLargeFill" color="gray850" />
+                            <CIcon name="IconVideoLargeFill" color="gray850" />
                         </template>
                         1주차 세션 종료 후,<br />
                         복습을 위한 VOD가 제공됩니다.
-                    </Callout>
+                    </CCallout>
                 </div>
             </div>
         </div>
             `,
-      components: { Callout, Icon },
+      components: { CCallout, CIcon },
     }}
   </Story>
 </Canvas>
@@ -158,17 +158,17 @@ export const Default = (args, { argTypes }) => ({
         template: `
             <div>
                 <div>
-                    <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout type='information'>문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout type='alert'>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout type='alert'>문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout type='success'>문구가 들어가는 자리입니다.</CCallout>
                 </div>
             </div>
             `,
-        components: { Callout },
+        components: { CCallout },
     }}
     </Story>
 </Canvas>
@@ -181,17 +181,17 @@ export const Default = (args, { argTypes }) => ({
         template: `
             <div>
                 <div>
-                    <Callout size="xsmall">문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="xsmall">문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout size="small">문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="small">문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout size="medium">문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="medium">문구가 들어가는 자리입니다.</CCallout>
                 </div>
             </div>
             `,
-        components: { Callout },
+        components: { CCallout },
     }}
     </Story>
 </Canvas>
@@ -204,17 +204,17 @@ export const Default = (args, { argTypes }) => ({
         template: `
             <div>
                 <div>
-                    <Callout size="xsmall" full>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="xsmall" full>문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout size="small" full>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="small" full>문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout size="medium" full>문구가 들어가는 자리입니다.</Callout>
+                    <CCallout size="medium" full>문구가 들어가는 자리입니다.</CCallout>
                 </div>
             </div>
             `,
-        components: { Callout },
+        components: { CCallout },
     }}
     </Story>
 </Canvas>
@@ -234,17 +234,17 @@ export const Default = (args, { argTypes }) => ({
         template: `
             <div>
                 <div>
-                    <Callout v-if="showXSmallCallout" size="xsmall" closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                    <CCallout v-if="showXSmallCallout" size="xsmall" closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout v-if="showSmallCallout" size="small" closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                    <CCallout v-if="showSmallCallout" size="small" closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</CCallout>
                 </div>
                 <div>
-                    <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
+                    <CCallout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</CCallout>
                 </div>
             </div>
             `,
-        components: { Callout },
+        components: { CCallout },
     }}
     </Story>
 </Canvas>
@@ -263,25 +263,25 @@ export const Default = (args, { argTypes }) => ({
         template: `
             <div>
                 <div>
-                    <Callout size="small" type="success">
+                    <CCallout size="small" type="success">
                         <template v-slot:icon>
-                            <Icon name="IconCheckRoundMediumLine" />
+                            <CIcon name="IconCheckRoundMediumLine" />
                         </template>
                         문구가 들어가는 자리입니다.
-                    </Callout>
+                    </CCallout>
                 </div>
                 <div>
-                    <Callout size="medium">
+                    <CCallout size="medium">
                         <template v-slot:icon>
-                            <Icon name="IconVideoLargeFill" color="gray850" />
+                            <CIcon name="IconVideoLargeFill" color="gray850" />
                         </template>
                         1주차 세션 종료 후,<br />
                         복습을 위한 VOD가 제공됩니다.
-                    </Callout>
+                    </CCallout>
                 </div>
             </div>
             `,
-        components: { Callout, Icon },
+        components: { CCallout, CIcon },
     }}
     </Story>
 </Canvas>

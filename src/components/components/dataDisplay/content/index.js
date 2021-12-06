@@ -1,5 +1,5 @@
-import Content from './Content';
-import ProfileWithText from './ProfileWithText';
-import UserInformation from './UserInformation';
+import CContent from './CContent';
+import CProfileWithText from './CProfileWithText';
+import CUserInformation from './CUserInformation';
 
-export { Content, ProfileWithText, UserInformation };
+export { CContent, CProfileWithText, CUserInformation };

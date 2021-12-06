@@ -1,13 +1,13 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
-import List from '@/components/components/dataDisplay/list/list/List';
-import Typography from '@/components/elements/core/typography/Typography';
-import Divider from '@/components/elements/utility/Divider';
-import Icon from '@/components/elements/core/icon/Icon';
+import CListItem from '@/components/components/dataDisplay/list/list/CListItem';
+import CList from '@/components/components/dataDisplay/list/list/CList';
+import CTypography from '@/components/elements/core/typography/CTypography';
+import CDivider from '@/components/elements/utility/CDivider';
+import CIcon from '@/components/elements/core/icon/CIcon';
 
 <Meta
     title="Data Display/List/List/List"
-    component={ List }
+    component={ CList }
     argTypes={{
         listItems: {
             description: "리스트 콘텐츠",
@@ -49,18 +49,18 @@ import Icon from '@/components/elements/core/icon/Icon';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { List, ListItem, Typography, Divider },
+    components: { CList, CListItem, CTypography, CDivider },
     template:
-        `<List :spacing="spacing">
+        `<CList :spacing="spacing">
           <template v-for="(item, index) in listItems">
-            <ListItem :key="'item-' + index" :size="size">
-              <Typography type="body2" color="gray800">
+            <CListItem :key="'item-' + index" :size="size">
+              <CTypography type="body2" color="gray800">
                 {{ item }}
-              </Typography>
-            </ListItem>
-            <Divider v-if="divider" :key="'divider-' + index" />
+              </CTypography>
+            </CListItem>
+            <CDivider v-if="divider" :key="'divider-' + index" />
           </template>
-        </List>`,
+        </CList>`,
 });
 
 # List
@@ -104,20 +104,20 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
                 <div>
-                    <List>
+                    <CList>
                         <template v-for="(item, index) in menus">
-                            <ListItem :key="'item-'+index" @click="activeIndex = index">
-                                <Icon :name="item.icon" :color="handleActiveColor(index)" style="margin-right: 4px" />
-                                <Typography type="body2" :color="handleActiveColor(index)">
+                            <CListItem :key="'item-'+index" @click="activeIndex = index">
+                                <CIcon :name="item.icon" :color="handleActiveColor(index)" style="margin-right: 4px" />
+                                <CTypography type="body2" :color="handleActiveColor(index)">
                                     {{ item.name }}
-                                </Typography>
-                            </ListItem>
-                            <Divider :key="'divider-' + index" />
+                                </CTypography>
+                            </CListItem>
+                            <CDivider :key="'divider-' + index" />
                         </template>
-                    </List>
+                    </CList>
                 </div>
         `,
-            components: { List, ListItem, Typography, Divider, Icon },
+            components: { CList, CListItem, CTypography, CDivider, CIcon },
         }}
     </Story>
 </Canvas>

@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Loader, { LoaderColors, LoaderSizes } from '@/components/components/other/Loader';
-import Typography from '@/components/elements/core/typography/Typography';
+import CLoader, { LoaderColors, LoaderSizes } from '@/components/components/other/CLoader';
+import CTypography from '@/components/elements/core/typography/CTypography';
 
 <Meta
   title="Other/Loader"
-  component={ Loader }
+  component={ CLoader }
   argTypes={{
       size: {
         description: "로더 크기<br/>`String`",
@@ -44,9 +44,9 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Loader },
+  components: { CLoader },
   template:
-    '<Loader :color="color" :size="size" :reversed="reversed"/>',
+    '<CLoader :color="color" :size="size" :reversed="reversed"/>',
 });
 
 # Loader
@@ -70,70 +70,70 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <!--small-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Small</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="small"></Loader>
-                            <Loader size="small" color="success"></Loader>
-                            <Loader size="small" color="primary"></Loader>
-                            <Loader size="small" color="error"></Loader>
+                            <CLoader size="small"></CLoader>
+                            <CLoader size="small" color="success"></CLoader>
+                            <CLoader size="small" color="primary"></CLoader>
+                            <CLoader size="small" color="error"></CLoader>
                         </div>
                     </div>
                     <!--medium-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Medium</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader></Loader>
-                            <Loader color="success"></Loader>
-                            <Loader color="primary"></Loader>
-                            <Loader color="error"></Loader>
+                            <CLoader></CLoader>
+                            <CLoader color="success"></CLoader>
+                            <CLoader color="primary"></CLoader>
+                            <CLoader color="error"></CLoader>
                         </div>
                     </div>
                     <!--large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Large</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="large"></Loader>
-                            <Loader size="large" color="success"></Loader>
-                            <Loader size="large" color="primary"></Loader>
-                            <Loader size="large" color="error"></Loader>
+                            <CLoader size="large"></CLoader>
+                            <CLoader size="large" color="success"></CLoader>
+                            <CLoader size="large" color="primary"></CLoader>
+                            <CLoader size="large" color="error"></CLoader>
                         </div>
                     </div>
                 </div>
                 <div>
                     <!--small-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Small</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="small" reversed></Loader>
-                            <Loader size="small" color="success" reversed></Loader>
-                            <Loader size="small" color="primary" reversed></Loader>
-                            <Loader size="small" color="error" reversed></Loader>
+                            <CLoader size="small" reversed></CLoader>
+                            <CLoader size="small" color="success" reversed></CLoader>
+                            <CLoader size="small" color="primary" reversed></CLoader>
+                            <CLoader size="small" color="error" reversed></CLoader>
                         </div>
                     </div>
                     <!--medium-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Medium</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader reversed></Loader>
-                            <Loader color="success" reversed></Loader>
-                            <Loader color="primary" reversed></Loader>
-                            <Loader color="error" reversed></Loader>
+                            <CLoader reversed></CLoader>
+                            <CLoader color="success" reversed></CLoader>
+                            <CLoader color="primary" reversed></CLoader>
+                            <CLoader color="error" reversed></CLoader>
                         </div>
                     </div>
                     <!--large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Large</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="large" reversed></Loader>
-                            <Loader size="large" color="success" reversed></Loader>
-                            <Loader size="large" color="primary" reversed></Loader>
-                            <Loader size="large" color="error" reversed></Loader>
+                            <CLoader size="large" reversed></CLoader>
+                            <CLoader size="large" color="success" reversed></CLoader>
+                            <CLoader size="large" color="primary" reversed></CLoader>
+                            <CLoader size="large" color="error" reversed></CLoader>
                         </div>
                     </div>
                 </div>
             </div>
             `,
-             components: { Loader, Typography },
+             components: { CLoader, CTypography },
         }}
     </Story>
 </Canvas>
@@ -147,15 +147,15 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <div>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="small"></Loader>
-                            <Loader></Loader>
-                            <Loader size="large"></Loader>
+                            <CLoader size="small"></CLoader>
+                            <CLoader></CLoader>
+                            <CLoader size="large"></CLoader>
                         </div>
                     </div>
                 </div>
             </div>
             `,
-             components: { Loader },
+             components: { CLoader },
         }}
     </Story>
 </Canvas>
@@ -169,16 +169,16 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <div>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader></Loader>
-                            <Loader color="primary"></Loader>
-                            <Loader color="success"></Loader>
-                            <Loader color="error"></Loader>
+                            <CLoader></CLoader>
+                            <CLoader color="primary"></CLoader>
+                            <CLoader color="success"></CLoader>
+                            <CLoader color="error"></CLoader>
                         </div>
                     </div>
                 </div>
             </div>
             `,
-             components: { Loader },
+             components: { CLoader },
         }}
     </Story>
 </Canvas>
@@ -192,16 +192,16 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <div>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader reversed></Loader>
-                            <Loader color="primary" reversed></Loader>
-                            <Loader color="success" reversed></Loader>
-                            <Loader color="error" reversed></Loader>
+                            <CLoader reversed></CLoader>
+                            <CLoader color="primary" reversed></CLoader>
+                            <CLoader color="success" reversed></CLoader>
+                            <CLoader color="error" reversed></CLoader>
                         </div>
                     </div>
                 </div>
             </div>
             `,
-             components: { Loader },
+             components: { CLoader },
         }}
     </Story>
 </Canvas>

@@ -1,13 +1,13 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import EmptyBox, { Types } from '@/components/components/dataDisplay/EmptyBox';
-import Typography from '@/components/elements/core/typography/Typography';
+import CNewGrid from '@/components/layout/CNewGrid';
+import CNewRow from '@/components/layout/CNewRow';
+import CNewCol from '@/components/layout/CNewCol';
+import CEmptyBox, { Types } from '@/components/components/dataDisplay/CEmptyBox';
+import CTypography from '@/components/elements/core/typography/CTypography';
 
 <Meta
     title="Data Display/EmptyBox"
-    component={ EmptyBox }
+    component={ CEmptyBox }
     argTypes={{
         type: {
             description: "빈화면 타입<br/>",
@@ -21,28 +21,28 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { EmptyBox, NewGrid, NewRow, NewCol, Typography },
+    components: { CEmptyBox, CNewGrid, CNewRow, CNewCol, CTypography },
     template:
-        `<NewGrid>
-            <NewRow>
-                <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
-                    <EmptyBox :type="type" >
+        `<CNewGrid>
+            <CNewRow>
+                <CNewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
+                    <CEmptyBox :type="type" >
                         <template v-slot:contents>
                             제출된 과제가 없습니다.<br/>
                             여기를 눌러 과제를 제출하세요.
                         </template>
-                    </EmptyBox>
-                    <EmptyBox :type="type">
+                    </CEmptyBox>
+                    <CEmptyBox :type="type">
                       <template v-slot:contents>
-                          <Typography color="gray700" type="body1" font-weight="bold" class="mb-2">제출된 과제가 없습니다.</Typography>
-                          <Typography type="caption1">
+                          <CTypography color="gray700" type="body1" font-weight="bold" class="mb-2">제출된 과제가 없습니다.</CTypography>
+                          <CTypography type="caption1">
                             <a style="color: #1e90ff;margin:0">여기</a>를 눌러 과제를 제출하세요.
-                          </Typography>
+                          </CTypography>
                       </template>
-                    </EmptyBox>
-                </NewCol>
-            </NewRow>
-        </NewGrid>`,
+                    </CEmptyBox>
+                </CNewCol>
+            </CNewRow>
+        </CNewGrid>`,
 });
 
 **EmptyBox** 컴포넌트의 문서입니다.
@@ -57,28 +57,28 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
     <Story name="Empty" height="100px">
         {{
-            components: { EmptyBox, Typography, NewGrid, NewRow, NewCol },
+            components: { CEmptyBox, CTypography, CNewGrid, CNewRow, CNewCol },
             template:
-                `<NewGrid>
-                    <NewRow>
-                        <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
-                            <EmptyBox type="simple" >
+                `<CNewGrid>
+                    <CNewRow>
+                        <CNewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
+                            <CEmptyBox type="simple" >
                                 <template v-slot:contents>
                                     제출된 과제가 없습니다.<br/>
                                     여기를 눌러 과제를 제출하세요.
                                 </template>
-                            </EmptyBox>
-                            <EmptyBox type="emphasized">
+                            </CEmptyBox>
+                            <CEmptyBox type="emphasized">
                               <template v-slot:contents>
-                                  <Typography color="gray700" type="body1" font-weight="bold" class="mb-2">제출된 과제가 없습니다.</Typography>
-                                  <Typography type="caption1">
+                                  <CTypography color="gray700" type="body1" font-weight="bold" class="mb-2">제출된 과제가 없습니다.</CTypography>
+                                  <CTypography type="caption1">
                                     <a style="color: #1e90ff;margin:0">여기</a>를 눌러 과제를 제출하세요.
-                                  </Typography>
+                                  </CTypography>
                               </template>
-                            </EmptyBox>
-                        </NewCol>
-                    </NewRow>
-                </NewGrid>`,
+                            </CEmptyBox>
+                        </CNewCol>
+                    </CNewRow>
+                </CNewGrid>`,
         }}
     </Story>
 </Canvas>

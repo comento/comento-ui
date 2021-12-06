@@ -1,8 +1,7 @@
-import AlertModal from './AlertModal';
-import BasicModal from './BasicModal';
-import FullscreenModal from './FullscreenModal';
-import Modal from './Modal';
-import PermissionModal from './PermissionModal';
-import WithFormModal from './WithFormModal';
+import CAlertModal from './CAlertModal';
+import CBasicModal from './CBasicModal';
+import CFullscreenModal from './CFullscreenModal';
+import CPermissionModal from './CPermissionModal';
+import CWithFormModal from './CWithFormModal';
 
-export { AlertModal, BasicModal, FullscreenModal, Modal, PermissionModal, WithFormModal };
+export { CAlertModal, CBasicModal, CFullscreenModal, CPermissionModal, CWithFormModal };

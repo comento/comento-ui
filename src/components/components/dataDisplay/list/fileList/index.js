@@ -1,5 +1,5 @@
-import FileItem from './FileItem';
-import FileList from './FileList';
-import FileSummary from './FileSummary';
+import CFileItem from './CFileItem';
+import CFileList from './CFileList';
+import CFileSummary from './CFileSummary';
 
-export { FileItem, FileList, FileSummary };
+export { CFileItem, CFileList, CFileSummary };

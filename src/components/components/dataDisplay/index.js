@@ -1,14 +1,14 @@
-import Avatar from './Avatar';
-import Badge from './Badge';
-import EmptyBox from './EmptyBox';
-import Hint from './Hint';
-import Label from './Label';
-import Reply from './Reply';
-import Swiper from './Swiper';
-import Table from './Table';
-import Tabs from './Tabs';
+import CAvatar from './CAvatar';
+import CBadge from './CBadge';
+import CEmptyBox from './CEmptyBox';
+import CHint from './CHint';
+import CLabel from './CLabel';
+import CReply from './CReply';
+import CSwiper from './CSwiper';
+import CTable from './CTable';
+import CTabs from './CTabs';
 
-export { Avatar, Badge, EmptyBox, Hint, Label, Reply, Swiper, Table, Tabs };
+export { CAvatar, CBadge, CEmptyBox, CHint, CLabel, CReply, CSwiper, CTable, CTabs };
 export * from './card';
 export * from './chips';
 export * from './content';

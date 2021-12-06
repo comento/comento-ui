@@ -1,14 +1,14 @@
 import { storiesOf } from '@storybook/vue';
-import ProfileWithText from '@/components/components/dataDisplay/content/ProfileWithText';
-import Avatar from '@/components/components/dataDisplay/Avatar';
-import Icon from '@/components/elements/core/icon/Icon';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Typography from '@/components/elements/core/typography/Typography';
+import CProfileWithText from '@/components/components/dataDisplay/content/CProfileWithText';
+import CAvatar from '@/components/components/dataDisplay/CAvatar';
+import CIcon from '@/components/elements/core/icon/CIcon';
+import CNewGrid from '@/components/layout/CNewGrid';
+import CNewRow from '@/components/layout/CNewRow';
+import CNewCol from '@/components/layout/CNewCol';
+import CTypography from '@/components/elements/core/typography/CTypography';
 
 storiesOf('Data Display/content/ProfileWithText', module).add('Index', () => ({
-	components: { ProfileWithText, Avatar, Icon, NewGrid, NewRow, NewCol, Typography },
+	components: { CProfileWithText, CAvatar, CIcon, CNewGrid, CNewRow, CNewCol, CTypography },
 	data() {
 		return {
 			replies: [
@@ -28,27 +28,27 @@ storiesOf('Data Display/content/ProfileWithText', module).add('Index', () => ({
 		};
 	},
 	template: `
-		<NewGrid fluid>
-			<NewRow>
-				<NewCol :col-sm="12" :col-lg="5">
-					<ProfileWithText v-for="item in replies" :key="'reply-' + item.id">
+		<CNewGrid fluid>
+			<CNewRow>
+				<CNewCol :col-sm="12" :col-lg="5">
+					<CProfileWithText v-for="item in replies" :key="'reply-' + item.id">
 						<template v-slot:avatar>
-							<Avatar type="text" :text="item.belong.substr(0, 1)" size="small"/>
+							<CAvatar type="text" :text="item.belong.substr(0, 1)" size="small"/>
 						</template>
 						<template v-slot:name>
 							{{ item.belong }}
 						</template>
 						<template v-slot:icon>
-							<Icon name="IconCheckSmallFill" color="primary"/>
+							<CIcon name="IconCheckSmallFill" color="primary"/>
 						</template>
 						<template v-slot:text>
-							<Typography element="p" type="body2" color="gray800" class="text-truncate">
+							<CTypography element="p" type="body2" color="gray800" class="text-truncate">
 								{{ item.answer }}
-							</Typography>
+							</CTypography>
 						</template>
-					</ProfileWithText>
-				</NewCol>
-			</NewRow>
-		</NewGrid>
+					</CProfileWithText>
+				</CNewCol>
+			</CNewRow>
+		</CNewGrid>
 	`,
 }));

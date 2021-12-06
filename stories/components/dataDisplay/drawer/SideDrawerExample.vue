@@ -67,11 +67,11 @@
 </template>
 
 <script>
-import Button from '@/components/components/general/button/Button';
-import SideDrawer from '@/components/components/dataDisplay/drawer/SideDrawer';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
+import Button from '@/components/components/general/button/CButton';
+import SideDrawer from '@/components/components/dataDisplay/drawer/CSideDrawer';
+import NewGrid from '@/components/layout/CNewGrid';
+import NewRow from '@/components/layout/CNewRow';
+import NewCol from '@/components/layout/CNewCol';
 
 export default {
 	name: 'app',

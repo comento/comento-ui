@@ -1,22 +1,22 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FormGroup from '@/components/components/dataEntry/FormGroup';
-import Textarea from '@/components/components/dataEntry/Textarea';
-import TextField from '@/components/components/dataEntry/input/TextField';
+import CFormGroup from '@/components/components/dataEntry/CFormGroup';
+import CTextarea from '@/components/components/dataEntry/CTextarea';
+import CTextField from '@/components/components/dataEntry/input/CTextField';
 
 <Meta
     title="Data Entry/FormGroup"
-    component={ FormGroup }
+    component={ CFormGroup }
 />
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { FormGroup, TextField, Textarea },
+    components: { CFormGroup, CTextField, CTextarea },
     template:
         `<div style="width:300px">
-             <FormGroup>
-                 <TextField outlined placeholder="사이 사이 간격 12px"/>
-                 <Textarea type="outlined" />
-             </FormGroup>
+             <CFormGroup>
+                 <CTextField outlined placeholder="사이 사이 간격 12px"/>
+                 <CTextarea type="outlined" />
+             </CFormGroup>
          </div>`,
 });
 

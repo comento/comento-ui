@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Button, { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/Button';
-import Icon from '@/components/elements/core/icon/Icon';
+import CButton, { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/CButton';
+import CIcon from '@/components/elements/core/icon/CIcon';
 
 <Meta
   title="General/Button/Button"
-  component={ Button }
+  component={ CButton }
   argTypes={{
     label: {
       description: "버튼에 들어갈 텍스트",
@@ -55,9 +55,9 @@ import Icon from '@/components/elements/core/icon/Icon';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Button },
+  components: { CButton },
   template:
-    `<Button
+    `<CButton
         :size="size"
         :color="color"
         :type="type"
@@ -69,7 +69,7 @@ export const Default = (args, { argTypes }) => ({
         :shadow="shadow"
     >
       {{label}}
-    </Button>`,
+    </CButton>`,
 });
 
 # Button
@@ -90,26 +90,26 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <div style="display: flex">
-                    <Button color="primary">Fill Primary</Button>
-                    <Button color="success">Fill Success</Button>
-                    <Button color="error">Fill Error</Button>
-                    <Button color="secondary">Fill Gray</Button>
+                    <CButton color="primary">Fill Primary</CButton>
+                    <CButton color="success">Fill Success</CButton>
+                    <CButton color="error">Fill Error</CButton>
+                    <CButton color="secondary">Fill Gray</CButton>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="outlined">Outlined Primary</Button>
-                    <Button color="success" type="outlined">Outlined Success</Button>
-                    <Button color="error" type="outlined">Outlined Error</Button>
-                    <Button color="secondary" type="outlined">Outlined Gray</Button>
+                    <CButton color="primary" type="outlined">Outlined Primary</CButton>
+                    <CButton color="success" type="outlined">Outlined Success</CButton>
+                    <CButton color="error" type="outlined">Outlined Error</CButton>
+                    <CButton color="secondary" type="outlined">Outlined Gray</CButton>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="text">Text Primary</Button>
-                    <Button color="success" type="text">Text Success</Button>
-                    <Button color="error" type="text">Text Error</Button>
-                    <Button color="secondary" type="text">Text Gray</Button>
+                    <CButton color="primary" type="text">Text Primary</CButton>
+                    <CButton color="success" type="text">Text Success</CButton>
+                    <CButton color="error" type="text">Text Error</CButton>
+                    <CButton color="secondary" type="text">Text Gray</CButton>
                   </div>
                 </div>
         `,
-            components: { Button },
+            components: { CButton },
         }}
     </Story>
 </Canvas>
@@ -122,14 +122,14 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <div style="display: flex">
-                    <Button size="small">Small</Button>
-                    <Button size="medium">Medium</Button>
-                    <Button size="large">Large</Button>
-                    <Button size="xlarge">XLarge</Button>
+                    <CButton size="small">Small</CButton>
+                    <CButton size="medium">Medium</CButton>
+                    <CButton size="large">Large</CButton>
+                    <CButton size="xlarge">XLarge</CButton>
                   </div>
                 </div>
         `,
-            components: { Button },
+            components: { CButton },
         }}
     </Story>
 </Canvas>
@@ -141,20 +141,20 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <div style="display: flex">
-                    <Button color="primary" type="fill" size="medium" loading>Fill Primary</Button>
-                    <Button color="success" type="fill" size="medium" loading>Fill Success</Button>
-                    <Button color="error" type="fill" size="medium" loading>Fill Gray</Button>
-                    <Button color="secondary" type="fill" size="medium" loading>Fill Gray</Button>
+                    <CButton color="primary" type="fill" size="medium" loading>Fill Primary</CButton>
+                    <CButton color="success" type="fill" size="medium" loading>Fill Success</CButton>
+                    <CButton color="error" type="fill" size="medium" loading>Fill Gray</CButton>
+                    <CButton color="secondary" type="fill" size="medium" loading>Fill Gray</CButton>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="outlined" size="medium" loading>Fill Primary</Button>
-                    <Button color="success" type="outlined" size="medium" loading>Fill Success</Button>
-                    <Button color="error" type="outlined" size="medium" loading>Fill Gray</Button>
-                    <Button color="secondary" type="outlined" size="medium" loading>Fill Gray</Button>
+                    <CButton color="primary" type="outlined" size="medium" loading>Fill Primary</CButton>
+                    <CButton color="success" type="outlined" size="medium" loading>Fill Success</CButton>
+                    <CButton color="error" type="outlined" size="medium" loading>Fill Gray</CButton>
+                    <CButton color="secondary" type="outlined" size="medium" loading>Fill Gray</CButton>
                   </div>
                 </div>
         `,
-            components: { Button },
+            components: { CButton },
         }}
     </Story>
 </Canvas>
@@ -166,86 +166,86 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <div style="display: flex">
-                    <Button color="primary" type="fill" size="medium" disabled>
+                    <CButton color="primary" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="primary" />
+                            <CIcon name="IconPlusMediumLine" color="primary" />
                         </template>
                         Fill Primary
-                    </Button>
-                    <Button color="success" type="fill" size="medium" disabled>
+                    </CButton>
+                    <CButton color="success" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="success" />
+                            <CIcon name="IconPlusMediumLine" color="success" />
                         </template>
                         Fill Success
-                    </Button>
-                    <Button color="error" type="fill" size="medium" disabled>
+                    </CButton>
+                    <CButton color="error" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="error" />
+                            <CIcon name="IconPlusMediumLine" color="error" />
                         </template>
                         Fill Gray
-                    </Button>
-                    <Button color="secondary" type="fill" size="medium" disabled>
+                    </CButton>
+                    <CButton color="secondary" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="secondary" />
+                            <CIcon name="IconPlusMediumLine" color="secondary" />
                         </template>
                         Fill Gray
-                    </Button>
+                    </CButton>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="outlined" size="medium" disabled>
+                    <CButton color="primary" type="outlined" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="primary" />
+                            <CIcon name="IconPlusMediumLine" color="primary" />
                         </template>
                         Fill Primary
-                    </Button>
-                    <Button color="success" type="outlined" size="medium" disabled>
+                    </CButton>
+                    <CButton color="success" type="outlined" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="success" />
+                            <CIcon name="IconPlusMediumLine" color="success" />
                         </template>
                         Fill Success
-                    </Button>
-                    <Button color="error" type="outlined" size="medium" disabled>
+                    </CButton>
+                    <CButton color="error" type="outlined" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="error" />
+                            <CIcon name="IconPlusMediumLine" color="error" />
                         </template>
                         Fill Gray
-                    </Button>
-                    <Button color="secondary" type="outlined" size="medium" disabled>
+                    </CButton>
+                    <CButton color="secondary" type="outlined" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="secondary" />
+                            <CIcon name="IconPlusMediumLine" color="secondary" />
                         </template>
                         Fill Gray
-                    </Button>
+                    </CButton>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="text" size="medium" disabled>
+                    <CButton color="primary" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="primary" />
+                            <CIcon name="IconPlusMediumLine" color="primary" />
                         </template>
                         Fill Primary
-                    </Button>
-                    <Button color="success" type="text" size="medium" disabled>
+                    </CButton>
+                    <CButton color="success" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="success" />
+                            <CIcon name="IconPlusMediumLine" color="success" />
                         </template>
                         Fill Success
-                    </Button>
-                    <Button color="error" type="text" size="medium" disabled>
+                    </CButton>
+                    <CButton color="error" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="error" />
+                            <CIcon name="IconPlusMediumLine" color="error" />
                         </template>
                         Fill Gray
-                    </Button>
-                    <Button color="secondary" type="text" size="medium" disabled>
+                    </CButton>
+                    <CButton color="secondary" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="secondary" />
+                            <CIcon name="IconPlusMediumLine" color="secondary" />
                         </template>
                         Fill Gray
-                    </Button>
+                    </CButton>
                   </div>
                 </div>
         `,
-            components: { Button, Icon },
+            components: { CButton, CIcon },
         }}
     </Story>
 </Canvas>
@@ -256,33 +256,33 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="display: flex">
-                    <Button color="primary" type="fill" size="small">
+                    <CButton color="primary" type="fill" size="small">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="white" />
+                            <CIcon name="IconPlusSmallLine" color="white" />
                         </template>
                         Small
-                    </Button>
-                    <Button color="primary" type="fill" size="medium">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="medium">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusMediumLine" color="white" />
+                            <CIcon name="IconPlusMediumLine" color="white" />
                         </template>
                         Medium
-                    </Button>
-                    <Button color="primary" type="fill" size="large">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="large">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusLargeLine" color="white" />
+                            <CIcon name="IconPlusLargeLine" color="white" />
                         </template>
                         Large
-                    </Button>
-                    <Button color="primary" type="fill" size="xlarge">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="xlarge">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusLargeLine" color="white" />
+                            <CIcon name="IconPlusLargeLine" color="white" />
                         </template>
                         XLarge
-                    </Button>
+                    </CButton>
                 </div>
         `,
-            components: { Button, Icon },
+            components: { CButton, CIcon },
         }}
     </Story>
 </Canvas>

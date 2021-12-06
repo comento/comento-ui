@@ -1,4 +1,4 @@
-import List from './List';
-import ListItem from './ListItem';
+import CList from './CList';
+import CListItem from './CListItem';
 
-export { List, ListItem };
+export { CList, CListItem };

@@ -1,9 +1,9 @@
-import Alert from './Alert';
-import Banner from './Banner';
-import Callout from './Callout';
-import Popover from './Popover';
-import Toast from './Toast';
-import Tooltip from './Tooltip';
+import CAlert from './CAlert';
+import CBanner from './CBanner';
+import CCallout from './CCallout';
+import CPopover from './CPopover';
+import CToast from './CToast';
+import CTooltip from './CTooltip';
 
-export { Alert, Banner, Callout, Popover, Toast, Tooltip };
+export { CAlert, CBanner, CCallout, CPopover, CToast, CTooltip };
 export * from './modal';

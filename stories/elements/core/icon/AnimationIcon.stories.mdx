@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Props, Canvas } from '@storybook/addon-docs/blocks';
-import AnimationIcon, { AnimationIconNames } from '@/components/elements/core/icon/AnimationIcon';
+import CAnimationIcon, { AnimationIconNames } from '@/components/elements/core/icon/CAnimationIcon';
 import IconWrapper from './IconWrapper';
-import Typography from '@/components/elements/core/typography/Typography';
+import CTypography from '@/components/elements/core/typography/CTypography';
 
 <Meta
     title="Core/Icon/AnimationIcon"
-    component={ AnimationIcon }
+    component={ CAnimationIcon }
     argTypes={{
         name: {
             description: "아이콘 이름",
@@ -25,8 +25,8 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { AnimationIcon },
-    template: '<AnimationIcon :name="name" :rotate="Number(rotate)" />',
+    components: { CAnimationIcon },
+    template: '<CAnimationIcon :name="name" :rotate="Number(rotate)" />',
 });
 
 # AnimationIcon
@@ -46,10 +46,10 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <Typography type="body1" color="gray500">아이콘을 클릭하면 클립보드에 아이콘 이름이 복사됩니다.</Typography>
+                    <CTypography type="body1" color="gray500">아이콘을 클릭하면 클립보드에 아이콘 이름이 복사됩니다.</CTypography>
                     <!--medium-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Medium</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="AnimationIcon" name="IconThreeDotMediumFillAnimation" :rotate="-90" />
                             <IconWrapper component="AnimationIcon" name="IconCheckRoundMediumLineAnimation" :rotate="90" />
@@ -57,7 +57,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                 </div>
             `,
-             components: { IconWrapper, Typography },
+             components: { IconWrapper, CTypography },
         }}
     </Story>
 </Canvas>

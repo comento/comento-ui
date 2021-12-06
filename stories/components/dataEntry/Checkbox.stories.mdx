@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Checkbox, { checkboxSizes } from '@/components/components/dataEntry/Checkbox';
+import CCheckbox, { checkboxSizes } from '@/components/components/dataEntry/CCheckbox';
 
 <Meta
     title="Data Entry/Checkbox"
-    component={ Checkbox }
+    component={ CCheckbox }
     argTypes={{
         label: {
             description: "체크박스에 들어갈 텍스트",
@@ -35,9 +35,9 @@ import Checkbox, { checkboxSizes } from '@/components/components/dataEntry/Check
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Checkbox },
+    components: { CCheckbox },
     template:
-        `<Checkbox :value.sync="value" :disabled="disabled" :id="id" :size="size">{{label}}</Checkbox>`,
+        `<CCheckbox :value.sync="value" :disabled="disabled" :id="id" :size="size">{{label}}</CCheckbox>`,
 });
 
 # Checkbox
@@ -60,20 +60,20 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <div>
                         <h3>State</h3>
-                        <Checkbox :value="false">Unchecked</Checkbox>
-                        <Checkbox :value="true">Checked</Checkbox>
-                        <Checkbox disabled>Unchecked Disabled</Checkbox>
-                        <Checkbox :value="true" disabled>Checked Disabled</Checkbox>
+                        <CCheckbox :value="false">Unchecked</CCheckbox>
+                        <CCheckbox :value="true">Checked</CCheckbox>
+                        <CCheckbox disabled>Unchecked Disabled</CCheckbox>
+                        <CCheckbox :value="true" disabled>Checked Disabled</CCheckbox>
                     </div>
                     <div class="mt-20">
                         <h3>Size</h3>
-                        <Checkbox size="medium" class="mb-4">Medium<br />Size</Checkbox>
-                        <Checkbox size="small" class="mb-4">Small<br/>Size</Checkbox>
-                        <Checkbox size="xsmall">Xsmall<br/>Size</Checkbox>
+                        <CCheckbox size="medium" class="mb-4">Medium<br />Size</CCheckbox>
+                        <CCheckbox size="small" class="mb-4">Small<br/>Size</CCheckbox>
+                        <CCheckbox size="xsmall">Xsmall<br/>Size</CCheckbox>
                     </div>
                 </div>
             `,
-            components: { Checkbox },
+            components: { CCheckbox },
         }}
     </Story>
 </Canvas>

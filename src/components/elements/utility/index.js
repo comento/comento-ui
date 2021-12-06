@@ -1,4 +1,4 @@
-import Divider from './Divider';
-import Overlay from './Overlay';
+import CDivider from './CDivider';
+import COverlay from './COverlay';
 
-export { Divider, Overlay };
+export { CDivider, COverlay };

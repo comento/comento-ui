@@ -1,12 +1,12 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FullscreenModal, {fullScreenAlign, fullScreenCloseType} from '@/components/components/message/modal/FullscreenModal';
-import Button from '@/components/components/general/button/Button';
-import SearchInput from '@/components/components/dataEntry/input/SearchInput';
-import Icon from '@/components/elements/core/icon/Icon';
+import CFullscreenModal, {fullScreenAlign, fullScreenCloseType} from '@/components/components/message/modal/CFullscreenModal';
+import CButton from '@/components/components/general/button/CButton';
+import CSearchInput from '@/components/components/dataEntry/input/CSearchInput';
+import CIcon from '@/components/elements/core/icon/CIcon';
 
 <Meta
     title="Message/Modal/FullscreenModal"
-    component={ FullscreenModal }
+    component={ CFullscreenModal }
     argTypes={{
         show: {
             description: "모달 활성화",
@@ -43,11 +43,11 @@ import Icon from '@/components/elements/core/icon/Icon';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { FullscreenModal, Button },
+    components: { CFullscreenModal, CButton },
     template: `
         <div>
-            <Button @click="show = true">Open</Button>
-            <FullscreenModal
+            <CButton @click="show = true">Open</CButton>
+            <CFullscreenModal
                 :show.sync="show"
                 :align="align"
                 :closeType="closeType"
@@ -66,7 +66,7 @@ export const Default = (args, { argTypes }) => ({
                         - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                     </div>
                 </template>
-            </FullscreenModal>
+            </CFullscreenModal>
         </div>`
 });
 
@@ -90,8 +90,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal
                         :show.sync="show"
                         align="left"
                         closeType="button"
@@ -107,11 +107,11 @@ export const Default = (args, { argTypes }) => ({
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                             </div>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button
+                CFullscreenModal, CButton
             }
         }}
     </Story>
@@ -126,8 +126,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal
                         :show.sync="show"
                         align="right"
                         closeType="icon"
@@ -146,11 +146,11 @@ export const Default = (args, { argTypes }) => ({
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                             </div>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button
+                CFullscreenModal, CButton
             }
         }}
     </Story>
@@ -166,8 +166,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal
                         :show.sync="show"
                         align="top"
                         closeType="none"
@@ -176,7 +176,7 @@ export const Default = (args, { argTypes }) => ({
                             title
                         </template>
                         <template v-slot:action>
-                            <Button size="small" type="outlined"  @click="show = false">초기화</Button>
+                            <CButton size="small" type="outlined"  @click="show = false">초기화</CButton>
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
@@ -186,11 +186,11 @@ export const Default = (args, { argTypes }) => ({
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                             </div>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button
+                CFullscreenModal, CButton
             }
         }}
     </Story>
@@ -205,21 +205,21 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal
                         :show.sync="show"
                         align="none"
                     >
                         <template v-slot:content>
                             <div class="pa-16 flex">
                                 <div class="mr-8" @click="show = false" style="float:left; margin-top:4px">
-                                    <Icon name="IconArrowLargeLine" :rotate="-90"></Icon>
+                                    <CIcon name="IconArrowLargeLine" :rotate="-90"></CIcon>
                                 </div>
-                                <SearchInput
+                                <CSearchInput
                                     ref="searchModalInput"
                                     placeholder="예시로 들어 갈 수 있습니다."
                                     full
-                                ></SearchInput>
+                                ></CSearchInput>
                             </div>
                             <div style="padding:25px">
                                 content영역만 있을 경우 보여지는 fullcreenModal 입니다.<br>
@@ -227,11 +227,11 @@ export const Default = (args, { argTypes }) => ({
                                 align값을 none으로 설정하면 됩니다. <br>
                             </div>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button, SearchInput, Icon
+                CFullscreenModal, CButton, CSearchInput, CIcon
             }
         }}
     </Story>
@@ -246,8 +246,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal
                         :show.sync="show"
                         align="bottom"
                         closeType="icon"
@@ -256,7 +256,7 @@ export const Default = (args, { argTypes }) => ({
                             title
                         </template>
                         <template v-slot:action>
-                            <Button size="small" type="outlined" >초기화</Button>
+                            <CButton size="small" type="outlined" >초기화</CButton>
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
@@ -266,11 +266,11 @@ export const Default = (args, { argTypes }) => ({
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                             </div>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button
+                CFullscreenModal, CButton
             }
         }}
     </Story>

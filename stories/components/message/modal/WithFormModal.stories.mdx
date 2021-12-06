@@ -1,14 +1,14 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import WithFormModal, { aligns } from '@/components/components/message/modal/WithFormModal';
-import TextField from '@/components/components/dataEntry/input/TextField';
-import Button from '@/components/components/general/button/Button';
-import Typography from '@/components/elements/core/typography/Typography';
-import InputGroup from '@/components/components/dataEntry/input/InputGroup';
-import Select from '@/components/components/dataEntry/Select';
+import CWithFormModal, { aligns } from '@/components/components/message/modal/CWithFormModal';
+import CTextField from '@/components/components/dataEntry/input/CTextField';
+import CButton from '@/components/components/general/button/CButton';
+import CTypography from '@/components/elements/core/typography/CTypography';
+import CInputGroup from '@/components/components/dataEntry/input/CInputGroup';
+import CSelect from '@/components/components/dataEntry/CSelect';
 
 <Meta
     title="Message/Modal/WithFormModal"
-    component={ WithFormModal }
+    component={ CWithFormModal }
     argTypes={{
         show: {
             description: "모달 활성화",
@@ -85,11 +85,11 @@ import Select from '@/components/components/dataEntry/Select';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { WithFormModal, TextField, Button, Typography },
+    components: { CWithFormModal, CTextField, CButton, CTypography },
     template: `
         <div>
-            <Button @click="show = true">Open</Button>
-            <WithFormModal
+            <CButton @click="show = true">Open</CButton>
+            <CWithFormModal
                 :show.sync="show"
                 :show-close-button="showCloseButton"
                 :persistent="persistent"
@@ -105,10 +105,10 @@ export const Default = (args, { argTypes }) => ({
                     {{ title }}
                 </template>
                 <template v-slot:content>
-                  <Typography type="body2" color="gray700" class="mb-12">title 아래 여백이 20px로 증가한다.</Typography>
-                  <TextField full />
+                  <CTypography type="body2" color="gray700" class="mb-12">title 아래 여백이 20px로 증가한다.</CTypography>
+                  <CTextField full />
                 </template>
-            </WithFormModal>
+            </CWithFormModal>
         </div>`
 });
 
@@ -137,8 +137,8 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <WithFormModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CWithFormModal
                         :show.sync="show"
                         :show-close-button="true"
                         :persistent="false"
@@ -149,30 +149,30 @@ export const Default = (args, { argTypes }) => ({
                           InputGroup
                         </template>
                         <template v-slot:content>
-                            <InputGroup class="mb-12">
+                            <CInputGroup class="mb-12">
                                 <span style="width: 100%" class="mr-4">
-                                    <TextField
+                                    <CTextField
                                         placeholder="쿠폰코드를 입력하세요"
                                         full
                                     />
                                 </span>
-                                <Button type="outlined" color="primary" @click="handleSubmitModal">등록하기</Button>
-                            </InputGroup>
-                            <InputGroup>
+                                <CButton type="outlined" color="primary" @click="handleSubmitModal">등록하기</CButton>
+                            </CInputGroup>
+                            <CInputGroup>
                                 <span class="mr-4">
-                                    <TextField
+                                    <CTextField
                                         full
                                         placeholder="쿠폰코드를 입력하세요"
                                     />
                                 </span>
-                                <Button type="outlined" color="secondary" @click="handleSubmitModal">등록하기</Button>
-                            </InputGroup>
+                                <CButton type="outlined" color="secondary" @click="handleSubmitModal">등록하기</CButton>
+                            </CInputGroup>
                         </template>
-                    </WithFormModal>
+                    </CWithFormModal>
                 </div>
             `,
             components: {
-                WithFormModal, TextField, Button, InputGroup
+                CWithFormModal, CTextField, CButton, CInputGroup
             }
         }}
     </Story>
@@ -193,8 +193,8 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <WithFormModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CWithFormModal
                         :show.sync="show"
                         :show-close-button="true"
                         :persistent="false"
@@ -205,16 +205,16 @@ export const Default = (args, { argTypes }) => ({
                           With Select
                         </template>
                         <template v-slot:content>
-                            <Typography type="body2" color="gray700" align="center" class="mb-8">
+                            <CTypography type="body2" color="gray700" align="center" class="mb-8">
                                 아래 항목 중 선택하세요.
-                            </Typography>
-                            <Select v-model="value" full :options="['Option1', 'Option2', 'Option3', 'Option4', 'Option5']"></Select>
+                            </CTypography>
+                            <CSelect v-model="value" full :options="['Option1', 'Option2', 'Option3', 'Option4', 'Option5']"></CSelect>
                         </template>
-                    </WithFormModal>
+                    </CWithFormModal>
                 </div>
             `,
             components: {
-                WithFormModal, Select, Button, Typography,
+                CWithFormModal, CSelect, CButton, CTypography,
             }
         }}
     </Story>
@@ -240,8 +240,8 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <WithFormModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CWithFormModal
                         :show.sync="show"
                         :show-close-button="true"
                         :persistent="false"
@@ -254,21 +254,21 @@ export const Default = (args, { argTypes }) => ({
                           과제 제출 확인
                         </template>
                         <template v-slot:content>
-                            <Typography type="body2" color="gray700" align="center" class="mb-8">
+                            <CTypography type="body2" color="gray700" align="center" class="mb-8">
                                 한 번 제출된 과제는 수정할 수 없으니 제출 전 다시 한번 확인해주세요 :)
-                            </Typography>
-                            <Typography type="body2" color="gray700" align="center" class="mb-8">
+                            </CTypography>
+                            <CTypography type="body2" color="gray700" align="center" class="mb-8">
                                 제출을 원한다면 아래 문구를 작성하세요.
-                            </Typography>
+                            </CTypography>
                             <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-                                <TextField :value.sync="checkValue" full outlined placeholder="제출합니다" align="center" class="mr-4" />
+                                <CTextField :value.sync="checkValue" full outlined placeholder="제출합니다" align="center" class="mr-4" />
                             </div>
                         </template>
-                    </WithFormModal>
+                    </CWithFormModal>
                 </div>
             `,
             components: {
-                WithFormModal, TextField, Button, Typography
+                CWithFormModal, CTextField, CButton, CTypography
             }
         }}
     </Story>
@@ -284,8 +284,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show1 = true">Open</Button>
-                    <WithFormModal :show.sync="show1" align="left" scroll>
+                    <CButton @click="show1 = true">Open</CButton>
+                    <CWithFormModal :show.sync="show1" align="left" scroll>
                         <template v-slot:title>
                             모달 제목
                         </template>
@@ -319,9 +319,9 @@ export const Default = (args, { argTypes }) => ({
                             malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
                             lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
                         </template>
-                    </WithFormModal>
-                    <Button @click="show2 = true">Open</Button>
-                    <WithFormModal :show.sync="show2" align="left" :show-action-button="true" scroll>
+                    </CWithFormModal>
+                    <CButton @click="show2 = true">Open</CButton>
+                    <CWithFormModal :show.sync="show2" align="left" :show-action-button="true" scroll>
                         <template v-slot:title>
                             모달 제목
                         </template>
@@ -355,10 +355,10 @@ export const Default = (args, { argTypes }) => ({
                             malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
                             lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
                         </template>
-                    </WithFormModal>
+                    </CWithFormModal>
                 </div>
             `,
-            components: { Button, WithFormModal }
+            components: { CButton, CWithFormModal }
         }}
     </Story>
 </Canvas>

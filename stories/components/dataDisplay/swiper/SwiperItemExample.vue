@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Box from '@/components/components/general/Box';
-import Typography from '@/components/elements/core/typography/Typography';
+import Box from '@/components/components/general/CBox';
+import Typography from '@/components/elements/core/typography/CTypography';
 
 export default {
 	name: 'SwiperItemExample',

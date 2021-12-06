@@ -1,14 +1,14 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import EduCard from '@/components/components/dataDisplay/card/EduCard';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
-import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
-import Chip from '@/components/components/dataDisplay/chips/Chip';
+import CEduCard from '@/components/components/dataDisplay/card/CEduCard';
+import CGrid from '@/components/layout/CGrid';
+import CRow from '@/components/layout/CRow';
+import CStyleCol from '@/components/layout/CStyleCol';
+import CChipGroup from '@/components/components/dataDisplay/chips/CChipGroup';
+import CChip from '@/components/components/dataDisplay/chips/CChip';
 
 <Meta
     title="Data Display/Card/EduCard"
-    component={EduCard}
+    component={CEduCard}
     argTypes={{
         backgroundImage: {
             description: "카드 배경<br/>`String`",
@@ -63,42 +63,42 @@ import Chip from '@/components/components/dataDisplay/chips/Chip';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Grid, Row, StyleCol, EduCard },
+    components: { CGrid, CRow, CStyleCol, CEduCard },
     template: `
-        <Grid>
-            <Row>
-                <StyleCol :col-lg="4">
-                    <EduCard
+        <CGrid>
+            <CRow>
+                <CStyleCol :col-lg="4">
+                    <CEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
-                </StyleCol>
-                <StyleCol :col-lg="4">
-                    <EduCard
+                    </CEduCard>
+                </CStyleCol>
+                <CStyleCol :col-lg="4">
+                    <CEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
-                </StyleCol>
-                <StyleCol :col-lg="4">
-                    <EduCard
+                    </CEduCard>
+                </CStyleCol>
+                <CStyleCol :col-lg="4">
+                    <CEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
-                </StyleCol>
-            </Row>
-        </Grid>
+                    </CEduCard>
+                </CStyleCol>
+            </CRow>
+        </CGrid>
         `,
 });
 
@@ -124,25 +124,25 @@ export const Default = (args, { argTypes }) => ({
                 };
             },
             template: `
-                <Grid>
-                    <Row>
-                        <StyleCol :col-lg="4">
-                            <EduCard
+                <CGrid>
+                    <CRow>
+                        <CStyleCol :col-lg="4">
+                            <CEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 caption-left="captionLeft"
                                 caption-right="captionRight"
                             >
                                <template v-slot:chip>
-                                  <ChipGroup>
-                                    <Chip size="small">복습 VOD</Chip>
-                                  </ChipGroup>
+                                  <CChipGroup>
+                                    <CChip size="small">복습 VOD</CChip>
+                                  </CChipGroup>
                                </template>
                                <template v-slot:title>Title</template>
-                            </EduCard>
-                        </StyleCol>
-                        <StyleCol :col-lg="4">
-                            <EduCard
+                            </CEduCard>
+                        </CStyleCol>
+                        <CStyleCol :col-lg="4">
+                            <CEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 title="대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심알아보고 보고서 작성과 직무 체험하기"
@@ -150,10 +150,10 @@ export const Default = (args, { argTypes }) => ({
                                 caption-right="captionRight"
                             >
                                <template v-slot:title>Title</template>
-                            </EduCard>
-                        </StyleCol>
-                        <StyleCol :col-lg="4">
-                            <EduCard
+                            </CEduCard>
+                        </CStyleCol>
+                        <CStyleCol :col-lg="4">
+                            <CEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 title="title"
@@ -161,12 +161,12 @@ export const Default = (args, { argTypes }) => ({
                                 caption-right="captionRight"
                             >
                                <template v-slot:title>Title</template>
-                            </EduCard>
-                        </StyleCol>
-                    </Row>
-                </Grid>
+                            </CEduCard>
+                        </CStyleCol>
+                    </CRow>
+                </CGrid>
             `,
-            components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip },
+            components: { CGrid, CRow, CStyleCol, CEduCard, CChipGroup, CChip },
         }}
     </Story>
 </Canvas>

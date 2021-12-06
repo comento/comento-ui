@@ -1,4 +1,4 @@
-import Chip from './Chip';
-import ChipGroup from './ChipGroup';
+import CChip from './CChip';
+import CChipGroup from './CChipGroup';
 
-export { Chip, ChipGroup };
+export { CChip, CChipGroup };

@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import BottomDrawer from '@/components/components/dataDisplay/drawer/BottomDrawer';
-import Button from '@/components/components/general/button/Button';
+import BottomDrawer from '@/components/components/dataDisplay/drawer/CBottomDrawer';
+import Button from '@/components/components/general/button/CButton';
 
 export default {
 	name: 'app',

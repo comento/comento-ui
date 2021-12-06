@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Overlay from '@/components/elements/utility/Overlay';
-import Button from '@/components/components/general/button/Button';
+import COverlay from '@/components/elements/utility/COverlay';
+import CButton from '@/components/components/general/button/CButton';
 
 <Meta
   title="Utility/Overlay"
-  component={Overlay}
+  component={COverlay}
     argTypes={{
         show: {
             description: "Overlay 활성화",
@@ -36,11 +36,11 @@ import Button from '@/components/components/general/button/Button';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Overlay, Button },
+  components: { COverlay, CButton },
   template: `
   <div>
-        <Button @click="show = true">Open</Button>
-        <Overlay
+        <CButton @click="show = true">Open</CButton>
+        <COverlay
             :show.sync="show"
             :type="type"
             :persistent="persistent"

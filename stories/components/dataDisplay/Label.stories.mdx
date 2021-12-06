@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Label from '@/components/components/dataDisplay/Label';
+import CLabel from '@/components/components/dataDisplay/CLabel';
 
 <Meta
     title="Data Display/Label"
-    component={ Label }
+    component={ CLabel }
     argTypes={{
         text: {
             description: "Label 들어갈 텍스트",
@@ -23,9 +23,9 @@ import Label from '@/components/components/dataDisplay/Label';
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Label },
+    components: { CLabel },
     template:
-        `<Label :type="type" >{{text}}</Label>`,
+        `<CLabel :type="type" >{{text}}</CLabel>`,
 });
 
 # Label
@@ -47,14 +47,14 @@ export const Basic = (args, { argTypes }) => ({
             template: `
                 <div>
                  <div>
-                    <Label type="dataEntry" >dataEntry Label</Label>
+                    <CLabel type="dataEntry" >dataEntry Label</CLabel>
                  </div>
                  <div class="mt-4">
-                    <Label type="dataDisplay" >dataDisplay Label</Label>
+                    <CLabel type="dataDisplay" >dataDisplay Label</CLabel>
                  </div>
                 </div>
         `,
-            components: { Label },
+            components: { CLabel },
         }}
     </Story>
 </Canvas>

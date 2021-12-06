@@ -1,3 +1,3 @@
-import Typography from './Typography';
+import CTypography from './CTypography';
 
-export { Typography };
+export { CTypography };

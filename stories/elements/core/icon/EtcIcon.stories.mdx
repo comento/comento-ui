@@ -1,12 +1,12 @@
 import { ArgsTable, Meta, Story, Props, Canvas } from '@storybook/addon-docs/blocks';
-import EtcIcon, { EtcIconNames } from '@/components/elements/core/icon/EtcIcon';
+import CEtcIcon, { EtcIconNames } from '@/components/elements/core/icon/CEtcIcon';
 import { colorKeys } from '@/utils/constants/color';
 import IconWrapper from './IconWrapper';
-import Typography from '@/components/elements/core/typography/Typography';
+import CTypography from '@/components/elements/core/typography/CTypography';
 
 <Meta
     title="Core/Icon/EtcIcon"
-    component={ EtcIcon }
+    component={ CEtcIcon }
     argTypes={{
         name: {
             description: "아이콘 이름",
@@ -39,8 +39,8 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { EtcIcon },
-    template: '<EtcIcon :name="name" :rotate="Number(rotate)" :color="color" />',
+    components: { CEtcIcon },
+    template: '<CEtcIcon :name="name" :rotate="Number(rotate)" :color="color" />',
 });
 
 # EtcIcon
@@ -61,24 +61,24 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <Typography type="body1" color="gray500">아이콘을 클릭하면 클립보드에 아이콘 이름이 복사됩니다.</Typography>
+                    <CTypography type="body1" color="gray500">아이콘을 클릭하면 클립보드에 아이콘 이름이 복사됩니다.</CTypography>
                     <!-- small -->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Small</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="EtcIcon" name="IconDropdownSmallFillEtc" />
                         </div>
                     </div>
                     <!-- medium -->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">Medium</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <IconWrapper component="EtcIcon" name="IconDropdownMediumLineEtc" />
                         </div>
                     </div>
                 </div>
             `,
-             components: { IconWrapper, Typography },
+             components: { IconWrapper, CTypography },
         }}
     </Story>
 </Canvas>

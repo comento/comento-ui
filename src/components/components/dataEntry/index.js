@@ -1,11 +1,11 @@
-import Checkbox from './Checkbox';
-import DatePicker from './DatePicker';
-import Dropdown from './Dropdown';
-import FormGroup from './FormGroup';
-import RadioButton from './RadioButton';
-import Select from './Select';
-import Textarea from './Textarea';
+import CCheckbox from './CCheckbox';
+import CDatePicker from './CDatePicker';
+import CDropdown from './CDropdown';
+import CFormGroup from './CFormGroup';
+import CRadioButton from './CRadioButton';
+import CSelect from './CSelect';
+import CTextarea from './CTextarea';
 
-export { Checkbox, DatePicker, Dropdown, FormGroup, RadioButton, Select, Textarea };
+export { CCheckbox, CDatePicker, CDropdown, CFormGroup, CRadioButton, CSelect, CTextarea };
 export * from './input';
 export * from './rating';

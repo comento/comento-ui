@@ -1,8 +1,8 @@
-import Grid from './Grid';
-import Row from './Row';
-import StyleCol from './StyleCol';
-import NewGrid from './NewGrid';
-import NewRow from './NewRow';
-import NewCol from './NewCol';
+import CGrid from './CGrid';
+import CRow from './CRow';
+import CStyleCol from './CStyleCol';
+import CNewGrid from './CNewGrid';
+import CNewRow from './CNewRow';
+import CNewCol from './CNewCol';
 
-export { Grid, Row, StyleCol, NewGrid, NewRow, NewCol };
+export { CGrid, CRow, CStyleCol, CNewGrid, CNewRow, CNewCol };

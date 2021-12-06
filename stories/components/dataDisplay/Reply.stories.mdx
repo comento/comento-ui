@@ -1,12 +1,12 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Reply from '@/components/components/dataDisplay/Reply';
-import UserInformation from '@/components/components/dataDisplay/content/UserInformation';
-import Avatar from '@/components/components/dataDisplay/Avatar';
-import Icon from '@/components/elements/core/icon/Icon';
+import CReply from '@/components/components/dataDisplay/CReply';
+import CUserInformation from '@/components/components/dataDisplay/content/CUserInformation';
+import CAvatar from '@/components/components/dataDisplay/CAvatar';
+import CIcon from '@/components/elements/core/icon/CIcon';
 
 <Meta
     title="Data Display/Reply"
-    component={ Reply }
+    component={ CReply }
     argTypes={{
         value: {
             description: "댓글 내용",
@@ -40,7 +40,7 @@ import Icon from '@/components/elements/core/icon/Icon';
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Reply, UserInformation, Avatar, Icon },
+    components: { CReply, CUserInformation, CAvatar, CIcon },
     data() {
         return {
             name: '닉네임',
@@ -68,24 +68,24 @@ export const Basic = (args, { argTypes }) => ({
         }
     },
     template: `
-        <Reply :value="value" :date="date" :show-report="showReport" @clickReportButton="openReportModal">
+        <CReply :value="value" :date="date" :show-report="showReport" @clickReportButton="openReportModal">
             <template v-slot:user-information>
-                <UserInformation :type="userInformationType">
+                <CUserInformation :type="userInformationType">
                     <template v-slot:avatar>
-                        <Avatar type="text" :text="name.substr(0, 1)" :size="avatarSize"/>
+                        <CAvatar type="text" :text="name.substr(0, 1)" :size="avatarSize"/>
                     </template>
                     <template v-slot:name>
                         {{ name }}
                     </template>
                     <template v-slot:icon>
-                        <Icon name="IconCheckSmallFill" color="primary"/>
+                        <CIcon name="IconCheckSmallFill" color="primary"/>
                     </template>
                     <template v-slot:company>
                         {{ company }}
                     </template>
-                </UserInformation>
+                </CUserInformation>
             </template>
-        </Reply>`,
+        </CReply>`,
 });
 
 # Reply
@@ -117,45 +117,45 @@ export const Basic = (args, { argTypes }) => ({
             },
             template: `
                 <div>
-                    <Reply value="댓글 내용이 표시됩니다." date="21.09.02" @clickReportButton="openReportModal">
+                    <CReply value="댓글 내용이 표시됩니다." date="21.09.02" @clickReportButton="openReportModal">
                         <template v-slot:user-information>
-                            <UserInformation type="normal">
+                            <CUserInformation type="normal">
                                 <template v-slot:avatar>
-                                    <Avatar type="text" :text="nickname.substr(0, 1)" size="small"/>
+                                    <CAvatar type="text" :text="nickname.substr(0, 1)" size="small"/>
                                 </template>
                                 <template v-slot:name>
                                     {{ nickname }}
                                 </template>
                                 <template v-slot:icon>
-                                    <Icon name="IconCheckSmallFill" color="primary"/>
+                                    <CIcon name="IconCheckSmallFill" color="primary"/>
                                 </template>
                                 <template v-slot:company>
                                     {{ company }}
                                 </template>
-                            </UserInformation>
+                            </CUserInformation>
                         </template>
-                    </Reply>
-                    <Reply value="댓글 내용이 표시됩니다." date="21.09.02">
+                    </CReply>
+                    <CReply value="댓글 내용이 표시됩니다." date="21.09.02">
                         <template v-slot:user-information>
-                            <UserInformation type="simple">
+                            <CUserInformation type="simple">
                                 <template v-slot:avatar>
-                                    <Avatar type="text" :text="nickname.substr(0, 1)" size="xsmall"/>
+                                    <CAvatar type="text" :text="nickname.substr(0, 1)" size="xsmall"/>
                                 </template>
                                 <template v-slot:name>
                                     {{ nickname }}
                                 </template>
                                 <template v-slot:icon>
-                                    <Icon name="IconCheckSmallFill" color="primary"/>
+                                    <CIcon name="IconCheckSmallFill" color="primary"/>
                                 </template>
                                 <template v-slot:company>
                                     {{ company }}
                                 </template>
-                            </UserInformation>
+                            </CUserInformation>
                         </template>
-                    </Reply>
+                    </CReply>
                 </div>
             `,
-            components: { Reply, UserInformation, Avatar, Icon },
+            components: { CReply, CUserInformation, CAvatar, CIcon },
         }}
     </Story>
 </Canvas>

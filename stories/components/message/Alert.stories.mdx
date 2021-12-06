@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Alert, { AlertTypes } from '@/components/components/message/Alert';
+import CAlert, { AlertTypes } from '@/components/components/message/CAlert';
 
 <Meta
     title="Message/Alert"
-    component={Alert}
+    component={CAlert}
     argTypes={{
         type: {
             description: "alert type",
@@ -31,12 +31,12 @@ import Alert, { AlertTypes } from '@/components/components/message/Alert';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Alert },
+    components: { CAlert },
     template: `
       <div style="width: 100%; position: relative">
-        <Alert style="position: absolute;" :type="type" :closable="closable">
+        <CAlert style="position: absolute;" :type="type" :closable="closable">
           {{text}}
-        </Alert>
+        </CAlert>
       </div>
     `,
 });
@@ -59,15 +59,15 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width: 100%; position: relative">
-                    <Alert style="position: absolute;">
+                    <CAlert style="position: absolute;">
                         공지 내용이 들어가는 영역입니다. 두 줄로 사용하지 않습니다.
-                    </Alert>
-                    <Alert style="position: absolute; top: 100px" type="warning">
+                    </CAlert>
+                    <CAlert style="position: absolute; top: 100px" type="warning">
                         공지 내용이 들어가는 영역입니다. 두 줄로 사용하지 않습니다.
-                    </Alert>
+                    </CAlert>
                 </div>
             `,
-            components: { Alert },
+            components: { CAlert },
         }}
     </Story>
 </Canvas>
@@ -83,7 +83,7 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
               <div style="width: 100%; position: relative">
-                <Alert
+                <CAlert
                   v-if="showAlert"
                   type="information"
                   closable
@@ -91,10 +91,10 @@ export const Default = (args, { argTypes }) => ({
                   style="position: absolute"
                 >
                   공지 내용이 들어가는 영역입니다. 두 줄로 사용하지 않습니다.
-                </Alert>
+                </CAlert>
               </div>
             `,
-            components: { Alert }
+            components: { CAlert }
         }}
     </Story>
 </Canvas>

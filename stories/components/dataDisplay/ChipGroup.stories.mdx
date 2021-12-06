@@ -1,13 +1,13 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Chip, { ChipSizes, ChipTypes, ChipColors } from '@/components/components/dataDisplay/chips/Chip';
-import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
+import CChip, { ChipSizes, ChipTypes, ChipColors } from '@/components/components/dataDisplay/chips/CChip';
+import CChipGroup from '@/components/components/dataDisplay/chips/CChipGroup';
+import CGrid from '@/components/layout/CGrid';
+import CRow from '@/components/layout/CRow';
+import CStyleCol from '@/components/layout/CStyleCol';
 
 <Meta
     title="Data Display/Chip/ChipGroup"
-    component={ ChipGroup }
+    component={ CChipGroup }
     argTypes={{
         size: {
             description: "ChipGroup 크기",
@@ -43,11 +43,11 @@ import StyleCol from '@/components/layout/StyleCol';
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { ChipGroup, Chip },
+    components: { CChipGroup, CChip },
     template:
-        `<ChipGroup :size="size">
-            <Chip :type="type" :color="color" :size="size" v-for="item in 3" :key="'chips-' + item">Chip</Chip>
-        </ChipGroup>`,
+        `<CChipGroup :size="size">
+            <CChip :type="type" :color="color" :size="size" v-for="item in 3" :key="'chips-' + item">Chip</CChip>
+        </CChipGroup>`,
 });
 
 # ChipGroup
@@ -67,77 +67,77 @@ export const Basic = (args, { argTypes }) => ({
     <Story name="All" height="100px">
         {{
             template: `
-                <Grid>
-                    <Row>
-                        <StyleCol :col-sm="12">
-                            <ChipGroup size="small">
-                                <Chip type="fill" color="secondary" size="small">Chip</Chip>
-                                <Chip type="outlined" color="secondary" size="small">Chip</Chip>
-                                <Chip type="fill" color="secondary" size="small">Chip</Chip>
-                            </ChipGroup>
+                <CGrid>
+                    <CRow>
+                        <CStyleCol :col-sm="12">
+                            <CChipGroup size="small">
+                                <CChip type="fill" color="secondary" size="small">Chip</CChip>
+                                <CChip type="outlined" color="secondary" size="small">Chip</CChip>
+                                <CChip type="fill" color="secondary" size="small">Chip</CChip>
+                            </CChipGroup>
                             <hr/>
-                        </StyleCol>
-                        <StyleCol :col-sm="12">
-                             <ChipGroup size="medium">
-                                <Chip type="fill" color="primary" size="medium">Chip</Chip>
-                                <Chip type="outlined" color="primary" size="medium">Chip</Chip>
-                                <Chip type="fill" color="primary" size="medium">Chip</Chip>
-                             </ChipGroup>
+                        </CStyleCol>
+                        <CStyleCol :col-sm="12">
+                             <CChipGroup size="medium">
+                                <CChip type="fill" color="primary" size="medium">Chip</CChip>
+                                <CChip type="outlined" color="primary" size="medium">Chip</CChip>
+                                <CChip type="fill" color="primary" size="medium">Chip</CChip>
+                             </CChipGroup>
                              <hr/>
-                         </StyleCol>
-                         <StyleCol :col-sm="12">
-                             <ChipGroup size="large">
-                                <Chip type="fill" color="success" size="large">Chip</Chip>
-                                <Chip type="outlined" color="success" size="large">Chip</Chip>
-                                <Chip type="fill" color="success" size="large">Chip</Chip>
-                             </ChipGroup>
+                         </CStyleCol>
+                         <CStyleCol :col-sm="12">
+                             <CChipGroup size="large">
+                                <CChip type="fill" color="success" size="large">Chip</CChip>
+                                <CChip type="outlined" color="success" size="large">Chip</CChip>
+                                <CChip type="fill" color="success" size="large">Chip</CChip>
+                             </CChipGroup>
                              <hr/>
-                         </StyleCol>
-                        <StyleCol :col-sm="12">
-                            <ChipGroup size="large" style="background:antiquewhite; padding :10px 0">
-                                <Row>
-                                    <StyleCol :col-sm="6">
-                                        <Chip type="fill" color="secondary" size="large" full>Chip</Chip>
-                                    </StyleCol>
-                                    <StyleCol :col-sm="6">
-                                        <Chip type="outlined" color="secondary" size="large" full>Chip</Chip>
-                                    </StyleCol>
-                                </Row>
-                            </ChipGroup>
+                         </CStyleCol>
+                        <CStyleCol :col-sm="12">
+                            <CChipGroup size="large" style="background:antiquewhite; padding :10px 0">
+                                <CRow>
+                                    <CStyleCol :col-sm="6">
+                                        <CChip type="fill" color="secondary" size="large" full>Chip</CChip>
+                                    </CStyleCol>
+                                    <CStyleCol :col-sm="6">
+                                        <CChip type="outlined" color="secondary" size="large" full>Chip</CChip>
+                                    </CStyleCol>
+                                </CRow>
+                            </CChipGroup>
                             <hr/>
-                        </StyleCol>
-                        <StyleCol :col-sm="12">
-                            <ChipGroup size="medium" style="background:antiquewhite; padding :10px 0">
-                                <Row>
-                                    <StyleCol :col-sm="2">
-                                        <Chip type="fill" color="primary" size="medium" full>Chip</Chip>
-                                    </StyleCol>
-                                    <StyleCol :col-sm="2">
-                                        <Chip type="outlined" color="primary" size="medium" full>Chip</Chip>
-                                    </StyleCol>
-                                    <StyleCol :col-sm="2">
-                                        <Chip type="fill" color="primary" size="medium" full>Chip</Chip>
-                                    </StyleCol>
-                                </Row>
-                            </ChipGroup>
+                        </CStyleCol>
+                        <CStyleCol :col-sm="12">
+                            <CChipGroup size="medium" style="background:antiquewhite; padding :10px 0">
+                                <CRow>
+                                    <CStyleCol :col-sm="2">
+                                        <CChip type="fill" color="primary" size="medium" full>Chip</CChip>
+                                    </CStyleCol>
+                                    <CStyleCol :col-sm="2">
+                                        <CChip type="outlined" color="primary" size="medium" full>Chip</CChip>
+                                    </CStyleCol>
+                                    <CStyleCol :col-sm="2">
+                                        <CChip type="fill" color="primary" size="medium" full>Chip</CChip>
+                                    </CStyleCol>
+                                </CRow>
+                            </CChipGroup>
                             <hr/>
-                        </StyleCol>
-                        <StyleCol :col-sm="12">
-                            <ChipGroup size="small" style="background:antiquewhite; padding :10px 0">
-                                <Row>
-                                    <StyleCol :col-sm="1">
-                                        <Chip type="fill" color="success" size="small" full>Chip</Chip>
-                                    </StyleCol>
-                                    <StyleCol :col-sm="1">
-                                        <Chip type="outlined" color="success" size="small" full>Chip</Chip>
-                                    </StyleCol>
-                                </Row>
-                            </ChipGroup>
-                        </StyleCol>
-                    </Row>
-                </Grid>
+                        </CStyleCol>
+                        <CStyleCol :col-sm="12">
+                            <CChipGroup size="small" style="background:antiquewhite; padding :10px 0">
+                                <CRow>
+                                    <CStyleCol :col-sm="1">
+                                        <CChip type="fill" color="success" size="small" full>Chip</CChip>
+                                    </CStyleCol>
+                                    <CStyleCol :col-sm="1">
+                                        <CChip type="outlined" color="success" size="small" full>Chip</CChip>
+                                    </CStyleCol>
+                                </CRow>
+                            </CChipGroup>
+                        </CStyleCol>
+                    </CRow>
+                </CGrid>
         `,
-            components: { ChipGroup, Chip, Grid, Row, StyleCol },
+            components: { CChipGroup, CChip, CGrid, CRow, CStyleCol },
         }}
     </Story>
 </Canvas>

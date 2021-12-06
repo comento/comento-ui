@@ -1,4 +1,4 @@
-import CoreCard from './CoreCard';
-import EduCard from './EduCard';
+import CCoreCard from './CCoreCard';
+import CEduCard from './CEduCard';
 
-export { CoreCard, EduCard };
+export { CCoreCard, CEduCard };

@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import AnimationIcon from '@/components/elements/core/icon/AnimationIcon';
-import EtcIcon from '@/components/elements/core/icon/EtcIcon';
-import Icon from '@/components/elements/core/icon/Icon';
-import Tooltip from '@/components/components/message/Tooltip';
+import AnimationIcon from '@/components/elements/core/icon/CAnimationIcon';
+import EtcIcon from '@/components/elements/core/icon/CEtcIcon';
+import Icon from '@/components/elements/core/icon/CIcon';
+import Tooltip from '@/components/components/message/CTooltip';
 import copyToClipboard from '@/utils/copy-to-clipboard';
 
 export default {

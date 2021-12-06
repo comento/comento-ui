@@ -1,7 +1,7 @@
-import Button from './Button';
-import ButtonGroup from './ButtonGroup';
-import FileButton from './FileButton';
-import LinkButton from './LinkButton';
-import NarrowButton from './NarrowButton';
+import CButton from './CButton';
+import CButtonGroup from './CButtonGroup';
+import CFileButton from './CFileButton';
+import CLinkButton from './CLinkButton';
+import CNarrowButton from './CNarrowButton';
 
-export { Button, ButtonGroup, FileButton, LinkButton, NarrowButton };
+export { CButton, CButtonGroup, CFileButton, CLinkButton, CNarrowButton };

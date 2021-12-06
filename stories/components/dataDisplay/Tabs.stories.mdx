@@ -1,13 +1,13 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Tabs, { TabsTypes, TabsDirections } from '@/components/components/dataDisplay/Tabs';
-import Button from '@/components/components/general/button/Button';
-import Typography from '@/components/elements/core/typography/Typography';
-import Chip from '@/components/components/dataDisplay/chips/Chip';
-import Badge from '@/components/components/dataDisplay/Badge';
+import CTabs, { TabsTypes, TabsDirections } from '@/components/components/dataDisplay/CTabs';
+import CButton from '@/components/components/general/button/CButton';
+import CTypography from '@/components/elements/core/typography/CTypography';
+import CChip from '@/components/components/dataDisplay/chips/CChip';
+import CBadge from '@/components/components/dataDisplay/CBadge';
 
 <Meta
     title="Data Display/Tabs"
-    component={ Tabs }
+    component={ CTabs }
     argTypes={{
         type: {
             description: "Swiper 사용 여부<br/>String",
@@ -34,7 +34,7 @@ import Badge from '@/components/components/dataDisplay/Badge';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Tabs, Button },
+    components: { CTabs, CButton },
     data() {
         return {
             selectedNo: 2,
@@ -48,13 +48,13 @@ export const Default = (args, { argTypes }) => ({
     },
     template:
       `<div style="background: cadetblue">
-          <Tabs :type="type" :direction="direction" :tab-index="selectedNo" :transparent="transparent" @changeTabIndex="handleChangeTabIndex">
+          <CTabs :type="type" :direction="direction" :tab-index="selectedNo" :transparent="transparent" @changeTabIndex="handleChangeTabIndex">
               <template v-for="(item, index) in items" :slot="'item' + index">
-                    <Button>
+                    <CButton>
                       {{ item }}
-                    </Button>
+                    </CButton>
               </template>
-          </Tabs>
+          </CTabs>
         </div>`,
 });
 
@@ -100,45 +100,45 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
             <div>
-                <Tabs :tabIndex="selectedNo1"  @changeTabIndex="handleChangeTabIndex1">
+                <CTabs :tabIndex="selectedNo1"  @changeTabIndex="handleChangeTabIndex1">
                     <template v-for="(item, index) in this.length" :slot="'item' + index">
-                            <Button>
+                            <CButton>
                                 Tab{{ item }}
-                            </Button>
+                            </CButton>
                     </template>
-                </Tabs>
-                <Typography type="caption1">basic type</Typography>
+                </CTabs>
+                <CTypography type="caption1">basic type</CTypography>
                 <br/>
-                <Tabs type="swiper" :tabIndex="selectedNo2" @changeTabIndex="handleChangeTabIndex2">
+                <CTabs type="swiper" :tabIndex="selectedNo2" @changeTabIndex="handleChangeTabIndex2">
                     <template v-for="(item, index) in this.length" :slot="'item' + index">
-                            <Button>
+                            <CButton>
                                 Tab{{ item }}
-                            </Button>
+                            </CButton>
                     </template>
-                </Tabs>
-                <Typography type="caption1">swiper type</Typography>
+                </CTabs>
+                <CTypography type="caption1">swiper type</CTypography>
                 <br/>
-                <Tabs :tabIndex="selectedNo3" @changeTabIndex="handleChangeTabIndex3">
+                <CTabs :tabIndex="selectedNo3" @changeTabIndex="handleChangeTabIndex3">
                    <template v-for="(item, index) in this.length" :slot="'item' + index">
-                           <Button style="position: relative">
+                           <CButton style="position: relative">
                                Tab{{ item }}
-                           </Button>
-                          <Badge type="inline" text="1" :offsetX="20" :offsetY="10"/>
+                           </CButton>
+                          <CBadge type="inline" text="1" :offsetX="20" :offsetY="10"/>
                    </template>
-               </Tabs>
-               <Tabs :tabIndex="selectedNo4" type="swiper" @changeTabIndex="handleChangeTabIndex4">
+               </CTabs>
+               <CTabs :tabIndex="selectedNo4" type="swiper" @changeTabIndex="handleChangeTabIndex4">
                   <template v-for="(item, index) in this.length" :slot="'item' + index">
-                          <Button style="position: relative">
+                          <CButton style="position: relative">
                               Tab{{ item }}
-                          </Button>
-                         <Badge type="inline" text="1" :offsetX="20" :offsetY="10"/>
+                          </CButton>
+                         <CBadge type="inline" text="1" :offsetX="20" :offsetY="10"/>
                   </template>
-              </Tabs>
+              </CTabs>
             <br/>
-            <Typography type="caption1">탭에 여러 컴포넌트가 들어가는 경우</Typography>
+            <CTypography type="caption1">탭에 여러 컴포넌트가 들어가는 경우</CTypography>
             </div>
             `,
-            components: { Tabs, Typography, Button, Chip, Badge },
+            components: { CTabs, CTypography, CButton, CChip, CBadge },
         }}
     </Story>
 </Canvas>
@@ -160,19 +160,19 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
             <div>
-                <Tabs :tabIndex="selectedNo1" direction="vertical" @changeTabIndex="handleChangeTabIndex1">
+                <CTabs :tabIndex="selectedNo1" direction="vertical" @changeTabIndex="handleChangeTabIndex1">
                     <template v-for="(item, index) in items" :slot="'item' + index">
-                            <Button>
+                            <CButton>
                                 {{ item }}
-                            </Button>
+                            </CButton>
                             <template v-if="item === '새 댓글'">
-                                <Badge text="3" color="error" type="inline"/>
+                                <CBadge text="3" color="error" type="inline"/>
                             </template>
                     </template>
-                </Tabs>
+                </CTabs>
             </div>
             `,
-            components: { Tabs, Typography, Button, Chip, Badge },
+            components: { CTabs, CTypography, CButton, CChip, CBadge },
         }}
     </Story>
 </Canvas>

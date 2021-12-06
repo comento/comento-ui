@@ -1,4 +1,4 @@
-import AlarmList from './AlarmList';
-import AlarmListItem from './AlarmListItem';
+import CAlarmList from './CAlarmList';
+import CAlarmListItem from './CAlarmListItem';
 
-export { AlarmList, AlarmListItem };
+export { CAlarmList, CAlarmListItem };

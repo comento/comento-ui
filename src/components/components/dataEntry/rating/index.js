@@ -1,4 +1,4 @@
-import Rating from './Rating';
-import RatingGroup from './RatingGroup';
+import CRating from './CRating';
+import CRatingGroup from './CRatingGroup';
 
-export { Rating, RatingGroup };
+export { CRating, CRatingGroup };
