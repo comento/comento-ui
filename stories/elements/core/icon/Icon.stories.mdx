@@ -5,43 +5,43 @@ import IconWrapper from './IconWrapper';
 import Typography from '@/components/elements/core/typography/Typography';
 
 <Meta
-    title="Core/Icon/Icon"
-    component={ Icon }
-    argTypes={{
-        name: {
-            description: "아이콘 이름",
-            defaultValue: "IconSearchLargeLine",
-            control: {
-                type: "select",
-                options: IconNames,
-            },
-        },
-        color: {
-            description: "아이콘 색상",
-            table: {
-                type: {
-                    summary: "목록",
-                    detail: colorKeys.toString(),
-                },
-            },
-            control: {
-                type: "select",
-                options: colorKeys,
-            },
-        },
-        rotate: {
-            description: "아이콘의 회전 각도",
-            control: {
-                type: "text",
-            },
-        },
-    }}
+	title="Core/Icon/Icon"
+	component={Icon}
+	argTypes={{
+		name: {
+			description: '아이콘 이름',
+			defaultValue: 'IconSearchLargeLine',
+			control: {
+				type: 'select',
+				options: IconNames,
+			},
+		},
+		color: {
+			description: '아이콘 색상',
+			table: {
+				type: {
+					summary: '목록',
+					detail: colorKeys.toString(),
+				},
+			},
+			control: {
+				type: 'select',
+				options: colorKeys,
+			},
+		},
+		rotate: {
+			description: '아이콘의 회전 각도',
+			control: {
+				type: 'text',
+			},
+		},
+	}}
 />
 
 export const Default = (args, { argTypes }) => ({
-    props: Object.keys(argTypes),
-    components: { Icon },
-    template: '<icon :name="name" :color="color" :rotate="Number(rotate)" />',
+	props: Object.keys(argTypes),
+	components: { Icon },
+	template: '<icon :name="name" :color="color" :rotate="Number(rotate)" />',
 });
 
 # Icon
@@ -49,13 +49,15 @@ export const Default = (args, { argTypes }) => ({
 **Icon** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
-    {Default.bind({})}
+	{Default.bind({})}
 </Story>
 
 <ArgsTable story="Default" />
 
 ## Stories
+
 ### All
+
 <Canvas>
     <Story name="All" height="100px">
         {{
@@ -177,6 +179,7 @@ export const Default = (args, { argTypes }) => ({
                             <IconWrapper component="Icon" name=IconHamburgerLargeLine />
                             <IconWrapper component="Icon" name=IconWarningLargeFill />
                             <IconWrapper component="Icon" name=IconBookmarkLargeLine />
+                            <IconWrapper component="Icon" name=IconLockLargeFill />
                         </div>
                     </div>
                     <!--x-large-->
