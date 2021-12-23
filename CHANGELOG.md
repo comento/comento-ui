@@ -1,3 +1,12 @@
+## [0.2.8](https://github.com/comento/comento-ui/compare/v0.2.7...v0.2.8) (2021-12-23)
+
+
+### Features
+
+* IconLockLargeFill 추가 ([#669](https://github.com/comento/comento-ui/issues/669)) ([461cb3b](https://github.com/comento/comento-ui/commit/461cb3b445e28170b02ddf96283045d514a06200)), closes [#670](https://github.com/comento/comento-ui/issues/670)
+
+
+
 ## [0.2.7](https://github.com/comento/comento-ui/compare/v0.2.6...v0.2.7) (2021-12-22)
 
 
