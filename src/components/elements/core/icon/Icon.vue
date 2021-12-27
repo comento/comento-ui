@@ -127,6 +127,7 @@ import IconProfileXLargeLine from '@/assets/images/icon/icon-profile-xlarge-line
 import IconSettingXLargeLine from '@/assets/images/icon/icon-setting-xlarge-line.svg?inline';
 import IconSupportXLargeLine from '@/assets/images/icon/icon-support-xlarge-line.svg?inline';
 import IconBookmarkXLargeFill from '@/assets/images/icon/icon-bookmark-xlarge-fill.svg?inline';
+import IconPhotoXLargeLine from '@/assets/images/icon/icon-photo-xlarge-line.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
@@ -264,6 +265,7 @@ export const IconNames = [
 	'IconSettingXLargeLine',
 	'IconSupportXLargeLine',
 	'IconBookmarkXLargeFill',
+	'IconPhotoXLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',
@@ -417,6 +419,7 @@ export default {
 		IconSettingXLargeLine,
 		IconSupportXLargeLine,
 		IconBookmarkXLargeFill,
+		IconPhotoXLargeLine,
 		// 2x-large
 		IconProfile2XLargeFill,
 		IconWriting2XLargeLine,
