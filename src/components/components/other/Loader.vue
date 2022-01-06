@@ -11,20 +11,8 @@ import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline
 import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
 import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
 import { colors } from '@/utils/constants/color';
-const {
-	gray200,
-	gray500,
-	green100,
-	green600,
-	green800,
-	blue100,
-	blue600,
-	blue800,
-	red100,
-	red600,
-	red800,
-	white,
-} = colors;
+const { gray200, gray500, green100, green600, green800, blue100, blue600, blue800, red100, red600, red800, white } =
+	colors;
 
 export const LoaderSizes = ['small', 'medium', 'large'];
 export const LoaderColors = ['secondary', 'primary', 'success', 'error'];

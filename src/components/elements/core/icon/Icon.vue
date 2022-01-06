@@ -106,6 +106,7 @@ import IconStarLargeFill from '@/assets/images/icon/icon-star-large-fill.svg?inl
 import IconHamburgerLargeLine from '@/assets/images/icon/icon-hamburger-large-line.svg?inline';
 import IconWarningLargeFill from '@/assets/images/icon/icon-warning-large-fill.svg?inline';
 import IconBookmarkLargeLine from '@/assets/images/icon/icon-bookmark-large-line.svg?inline';
+import IconBookmarkLargeFill from '@/assets/images/icon/icon-bookmark-large-fill.svg?inline';
 import IconLockLargeFill from '@/assets/images/icon/icon-lock-large-fill.svg?inline';
 
 // x-large
@@ -244,6 +245,7 @@ export const IconNames = [
 	'IconHamburgerLargeLine',
 	'IconWarningLargeFill',
 	'IconBookmarkLargeLine',
+	'IconBookmarkLargeFill',
 	'IconLockLargeFill',
 
 	// XLarge
@@ -398,6 +400,7 @@ export default {
 		IconHamburgerLargeLine,
 		IconWarningLargeFill,
 		IconBookmarkLargeLine,
+		IconBookmarkLargeFill,
 		IconLockLargeFill,
 
 		// x-large
