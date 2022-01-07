@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/comento/comento-ui/compare/v0.2.9...v0.3.0) (2022-01-07)
+
+
+### Features
+
+* IconBookmarkLargeFill 추가 및 EduCard 변경 ([#676](https://github.com/comento/comento-ui/issues/676)) ([3f4d4fd](https://github.com/comento/comento-ui/commit/3f4d4fd1b44d5807160fc010cc0481abaeabb52a))
+
+
+
 ## [0.2.9](https://github.com/comento/comento-ui/compare/v0.2.8...v0.2.9) (2021-12-27)
 
 
