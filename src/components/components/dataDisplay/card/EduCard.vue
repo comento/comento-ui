@@ -22,6 +22,9 @@
 		</div>
 		<div class="c-edu-card--image-container">
 			<img class="c-edu-card--image" :src="backgroundImage" alt="" />
+			<div v-if="$slots['additionalButton']" class="c-edu-card--additional-button">
+				<slot name="additionalButton" />
+			</div>
 		</div>
 		<div v-if="$slots['chip']" class="c-edu-card--chip-container">
 			<slot name="chip" />
@@ -120,6 +123,12 @@ $thumbnail-height-pc: 128px;
 	&--caption {
 		@include flexbox();
 		@include flex-direction(row);
+	}
+
+	&--additional-button {
+		position: absolute;
+		top: 8px;
+		right: 8px;
 	}
 
 	&:hover {
