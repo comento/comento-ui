@@ -2,23 +2,34 @@
 import BaseIcon from '@/components/elements/core/icon/BaseIcon';
 
 // small
-import IconCheckSmallLine from '@/assets/images/icon/icon-check-small-line.svg?inline';
-import IconPlusSmallLine from '@/assets/images/icon/icon-plus-small-line.svg?inline';
+import IconProfileSmallLine from '@/assets/images/icon/icon-profile-small-line.svg?inline';
+import IconProfileSmallFill from '@/assets/images/icon/icon-profile-small-fill.svg?inline';
 import IconArrowSmallLine from '@/assets/images/icon/icon-arrow-small-line.svg?inline';
+import IconTextArrowSmallLine from '@/assets/images/icon/icon-textArrow-small-line.svg?inline';
+import IconPlusSmallLine from '@/assets/images/icon/icon-plus-small-line.svg?inline';
+import IconCloseSmallLine from '@/assets/images/icon/icon-close-small-line.svg?inline';
+import IconSearchSmallLine from '@/assets/images/icon/icon-search-small-line.svg?inline';
+import IconCheckSmallLine from '@/assets/images/icon/icon-check-small-line.svg?inline';
+import IconCheckRoundSmallLine from '@/assets/images/icon/icon-checkRound-small-line.svg?inline';
+import IconCheckRoundSmallFill from '@/assets/images/icon/icon-checkRound-small-fill.svg?inline';
+import IconQuestionMarkSmallLine from '@/assets/images/icon/icon-questionMark-small-line.svg?inline';
+import IconQuestionMarkSmallFill from '@/assets/images/icon/icon-questionMark-small-fill.svg?inline';
+import IconExclamationSmallLine from '@/assets/images/icon/icon-exclamation-small-line.svg?inline';
+import IconExclamationSmallFill from '@/assets/images/icon/icon-exclamation-small-fill.svg?inline';
+import IconSettingSmallFill from '@/assets/images/icon/icon-setting-small-fill.svg?inline';
+import IconMegaphoneSmallLine from '@/assets/images/icon/icon-megaphone-small-line.svg?inline';
+import IconStarSmallLine from '@/assets/images/icon/icon-star-small-line.svg?inline';
+import IconStarSmallFill from '@/assets/images/icon/icon-star-small-fill.svg?inline';
+import IconFileSmallLine from '@/assets/images/icon/icon-file-small-line.svg?inline';
+import IconLinkSmallLine from '@/assets/images/icon/icon-link-small-line.svg?inline';
+import IconLikeSmallLine from '@/assets/images/icon/icon-like-small-line.svg?inline';
+import IconLikeSmallFill from '@/assets/images/icon/icon-like-small-fill.svg?inline';
+
+// 제외
 import IconThreeDotSmallFill from '@/assets/images/icon/icon-threeDot-small-fill.svg?inline';
 import IconTextArrowSmallFill from '@/assets/images/icon/icon-textArrow-small-fill.svg?inline';
 import IconOfficialSmallFill from '@/assets/images/icon/icon-official-small-fill.svg?inline';
-import IconExclamationSmallFill from '@/assets/images/icon/icon-exclamation-small-fill.svg?inline';
-import IconProfileSmallFill from '@/assets/images/icon/icon-profile-small-fill.svg?inline';
 import IconCheckSmallFill from '@/assets/images/icon/icon-check-small-fill.svg?inline';
-import IconCloseSmallLine from '@/assets/images/icon/icon-close-small-line.svg?inline';
-import IconSettingSmallFill from '@/assets/images/icon/icon-setting-small-fill.svg?inline';
-import IconQuestionMarkSmallFill from '@/assets/images/icon/icon-questionMark-small-fill.svg?inline';
-import IconFileSmallLine from '@/assets/images/icon/icon-file-small-line.svg?inline';
-import IconStarSmallFill from '@/assets/images/icon/icon-star-small-fill.svg?inline';
-import IconMegaphoneSmallLine from '@/assets/images/icon/icon-megaphone-small-line.svg?inline';
-import IconLinkSmallLine from '@/assets/images/icon/icon-link-small-line.svg?inline';
-import IconTextArrowSmallLine from '@/assets/images/icon/icon-textArrow-small-line.svg?inline';
 
 // medium
 import IconCheckMediumFill from '@/assets/images/icon/icon-check-medium-fill.svg?inline';
@@ -296,23 +307,33 @@ export default {
 	},
 	components: {
 		// small
-		IconCheckSmallLine,
-		IconPlusSmallLine,
+		IconProfileSmallLine,
+		IconProfileSmallFill,
 		IconArrowSmallLine,
+		IconTextArrowSmallLine,
+		IconPlusSmallLine,
+		IconCloseSmallLine,
+		IconSearchSmallLine,
+		IconCheckSmallLine,
+		IconCheckRoundSmallLine,
+		IconCheckRoundSmallFill,
+		IconQuestionMarkSmallLine,
+		IconQuestionMarkSmallFill,
+		IconExclamationSmallLine,
+		IconExclamationSmallFill,
+		IconSettingSmallFill,
+		IconMegaphoneSmallLine,
+		IconStarSmallLine,
+		IconStarSmallFill,
+		IconFileSmallLine,
+		IconLinkSmallLine,
+		IconLikeSmallLine,
+		IconLikeSmallFill,
+		// 제외
 		IconThreeDotSmallFill,
 		IconTextArrowSmallFill,
 		IconOfficialSmallFill,
-		IconExclamationSmallFill,
-		IconProfileSmallFill,
 		IconCheckSmallFill,
-		IconCloseSmallLine,
-		IconSettingSmallFill,
-		IconQuestionMarkSmallFill,
-		IconFileSmallLine,
-		IconStarSmallFill,
-		IconMegaphoneSmallLine,
-		IconLinkSmallLine,
-		IconTextArrowSmallLine,
 
 		// medium
 		IconCheckMediumFill,
