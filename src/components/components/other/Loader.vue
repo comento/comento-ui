@@ -7,7 +7,7 @@
 
 <script>
 // spinner
-import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline';
+import IconSpinnerSmall from '@/assets/images/icon/small/icon-spinner-small.svg';
 import IconSpinnerMedium from '@/assets/images/icon/medium/icon-spinner-medium.svg';
 import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
 import { colors } from '@/utils/constants/color';
