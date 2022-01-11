@@ -140,33 +140,33 @@ import IconBookmarkLargeFill from '@/assets/images/icon/icon-bookmark-large-fill
 import IconLockLargeFill from '@/assets/images/icon/icon-lock-large-fill.svg?inline';
 
 // x-large
-import IconArrowXLargeLine from '@/assets/images/icon/icon-arrow-xlarge-line.svg?inline';
-import IconCloseXLargeLine from '@/assets/images/icon/icon-close-xlarge-line.svg?inline';
-import IconQuestionXLargeLine from '@/assets/images/icon/icon-question-xlarge-line.svg?inline';
-import IconAdoptXLargeLine from '@/assets/images/icon/icon-adopt-xlarge-line.svg?inline';
-import IconCreditPlusXLargeLine from '@/assets/images/icon/icon-creditPlus-xlarge-line.svg?inline';
-import IconCreditMinusXLargeLine from '@/assets/images/icon/icon-creditMinus-xlarge-line.svg?inline';
-import IconLikeXLargeLine from '@/assets/images/icon/icon-like-xlarge-line.svg?inline';
-import IconCelebrateXLargeLine from '@/assets/images/icon/icon-celebrate-xlarge-line.svg?inline';
-import IconAnswerXLargeLine from '@/assets/images/icon/icon-answer-xlarge-line.svg?inline';
-import IconMegaphoneXLargeLine from '@/assets/images/icon/icon-megaphone-xlarge-line.svg?inline';
-import IconProfileXLargeFill from '@/assets/images/icon/icon-profile-xlarge-fill.svg?inline';
-import IconCheckXLargeFill from '@/assets/images/icon/icon-check-xlarge-fill.svg?inline';
-import IconUnCheckedXLargeFill from '@/assets/images/icon/icon-unchecked-xlarge-fill.svg?inline';
-import IconStarXLargeFill from '@/assets/images/icon/icon-star-xlarge-fill.svg?inline';
-import IconProfileXLargeLine from '@/assets/images/icon/icon-profile-xlarge-line.svg?inline';
-import IconSettingXLargeLine from '@/assets/images/icon/icon-setting-xlarge-line.svg?inline';
-import IconSupportXLargeLine from '@/assets/images/icon/icon-support-xlarge-line.svg?inline';
-import IconBookmarkXLargeFill from '@/assets/images/icon/icon-bookmark-xlarge-fill.svg?inline';
-import IconPhotoXLargeLine from '@/assets/images/icon/icon-photo-xlarge-line.svg?inline';
+import IconArrowXLargeLine from '@/assets/images/icon/xlarge/icon-arrow-xlarge-line.svg?inline';
+import IconCloseXLargeLine from '@/assets/images/icon/xlarge/icon-close-xlarge-line.svg?inline';
+import IconQuestionXLargeLine from '@/assets/images/icon/xlarge/icon-question-xlarge-line.svg?inline';
+import IconAdoptXLargeLine from '@/assets/images/icon/xlarge/icon-adopt-xlarge-line.svg?inline';
+import IconCreditPlusXLargeLine from '@/assets/images/icon/xlarge/icon-creditPlus-xlarge-line.svg?inline';
+import IconCreditMinusXLargeLine from '@/assets/images/icon/xlarge/icon-creditMinus-xlarge-line.svg?inline';
+import IconLikeXLargeLine from '@/assets/images/icon/xlarge/icon-like-xlarge-line.svg?inline';
+import IconCelebrateXLargeLine from '@/assets/images/icon/xlarge/icon-celebrate-xlarge-line.svg?inline';
+import IconAnswerXLargeLine from '@/assets/images/icon/xlarge/icon-answer-xlarge-line.svg?inline';
+import IconMegaphoneXLargeLine from '@/assets/images/icon/xlarge/icon-megaphone-xlarge-line.svg?inline';
+import IconProfileXLargeFill from '@/assets/images/icon/xlarge/icon-profile-xlarge-fill.svg?inline';
+import IconCheckXLargeFill from '@/assets/images/icon/xlarge/icon-check-xlarge-fill.svg?inline';
+import IconUnCheckedXLargeFill from '@/assets/images/icon/xlarge/icon-unchecked-xlarge-fill.svg?inline';
+import IconStarXLargeFill from '@/assets/images/icon/xlarge/icon-star-xlarge-fill.svg?inline';
+import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
+import IconSettingXLargeLine from '@/assets/images/icon/xlarge/icon-setting-xlarge-line.svg?inline';
+import IconSupportXLargeLine from '@/assets/images/icon/xlarge/icon-support-xlarge-line.svg?inline';
+import IconBookmarkXLargeFill from '@/assets/images/icon/xlarge/icon-bookmark-xlarge-fill.svg?inline';
+import IconPhotoXLargeLine from '@/assets/images/icon/xlarge/icon-photo-xlarge-line.svg?inline';
 
 // 2x-large
-import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
-import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?inline';
-import IconCalendarError2XLargeFill from '@/assets/images/icon/2xlarge/icon-calendar-error-2xlarge-fill.svg?inline';
+import IconProfile2XLargeFill from '@/assets/images/icon/xlarge/2xlarge/icon-profile-2xlarge-fill.svg?inline';
+import IconWriting2XLargeLine from '@/assets/images/icon/xlarge/2xlarge/icon-writing-2xlarge-line.svg?inline';
+import IconCalendarError2XLargeFill from '@/assets/images/icon/xlarge/2xlarge/icon-calendar-error-2xlarge-fill.svg?inline';
 
 // 4x-large
-import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
+import IconStar4XLargeFill from '@/assets/images/icon/xlarge/4xlarge/icon-star-4xlarge-fill.svg?inline';
 import customValidator from '@/utils/custom-validator';
 
 export const IconNames = [
