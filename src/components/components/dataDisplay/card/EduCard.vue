@@ -124,7 +124,7 @@ $thumbnail-height-pc: 128px;
 		@include flexbox();
 		@include flex-direction(row);
 	}
-
+  
 	&-additional-button {
 		position: absolute;
 		top: 8px;
