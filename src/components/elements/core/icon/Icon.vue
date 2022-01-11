@@ -161,9 +161,9 @@ import IconBookmarkXLargeFill from '@/assets/images/icon/icon-bookmark-xlarge-fi
 import IconPhotoXLargeLine from '@/assets/images/icon/icon-photo-xlarge-line.svg?inline';
 
 // 2x-large
-import IconProfile2XLargeFill from '@/assets/images/icon/icon-profile-2xlarge-fill.svg?inline';
-import IconWriting2XLargeLine from '@/assets/images/icon/icon-writing-2xlarge-line.svg?inline';
-import IconCalendarError2XLargeFill from '@/assets/images/icon/icon-calendar-error-2xlarge-fill.svg?inline';
+import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
+import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?inline';
+import IconCalendarError2XLargeFill from '@/assets/images/icon/2xlarge/icon-calendar-error-2xlarge-fill.svg?inline';
 
 // 4x-large
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
