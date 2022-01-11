@@ -1,17 +1,17 @@
 <template>
 	<article class="c-application c-edu-card" v-bind="$attrs" v-on="$listeners">
-		<div class="c-edu-card--info-container">
-			<div class="c-edu-card--subtitle mb-4">
+		<div class="c-edu-card-info-container">
+			<div class="c-edu-card-subtitle mb-4">
 				<Typography type="caption1" color="gray800" :font-weight="700">
 					{{ category }}
 				</Typography>
 			</div>
-			<div class="c-edu-card--title mb-8">
+			<div class="c-edu-card-title mb-8">
 				<Typography type="body1" color="gray900">
 					<slot name="title" />
 				</Typography>
 			</div>
-			<div class="c-edu-card--caption">
+			<div class="c-edu-card-caption">
 				<Typography type="caption1" element="span" color="gray500">
 					{{ captionLeft }}
 				</Typography>
@@ -20,10 +20,13 @@
 				<slot name="additionalCaptions" />
 			</div>
 		</div>
-		<div class="c-edu-card--image-container">
-			<img class="c-edu-card--image" :src="backgroundImage" alt="" />
+		<div class="c-edu-card-image-container">
+			<img class="c-edu-card-image" :src="backgroundImage" alt="" />
+			<div v-if="$slots['additionalButton']" class="c-edu-card-additional-button">
+				<slot name="additionalButton" />
+			</div>
 		</div>
-		<div v-if="$slots['chip']" class="c-edu-card--chip-container">
+		<div v-if="$slots['chip']" class="c-edu-card-chip-container">
 			<slot name="chip" />
 		</div>
 	</article>
@@ -79,15 +82,15 @@ $thumbnail-height-pc: 128px;
 	z-index: 1;
 	cursor: pointer;
 
-	&--title {
+	&-title {
 		height: 48px;
 		@include ellipsis(2);
 	}
-	&--info-container {
+	&-info-container {
 		margin-top: 12px;
 		width: 100%;
 	}
-	&--image {
+	&-image {
 		border: none;
 		width: 100%;
 		position: absolute;
@@ -111,19 +114,25 @@ $thumbnail-height-pc: 128px;
 			}
 		}
 	}
-	&--chip-container {
+	&-chip-container {
 		position: absolute;
 		top: 8px;
 		left: 10px;
 	}
 
-	&--caption {
+	&-caption {
 		@include flexbox();
 		@include flex-direction(row);
 	}
 
+	&-additional-button {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+	}
+
 	&:hover {
-		.c-edu-card--image {
+		.c-edu-card-image {
 			@include pc {
 				animation: scale-up-center 0.2s ease-in both;
 			}
