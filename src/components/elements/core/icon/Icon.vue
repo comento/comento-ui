@@ -32,6 +32,10 @@ import IconOfficialSmallFill from '@/assets/images/icon/small/icon-official-smal
 import IconCheckSmallFill from '@/assets/images/icon/small/icon-check-small-fill.svg?inline';
 
 // medium
+import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
+import IconProfileMediumFill from '@/assets/images/icon/medium/icon-profile-medium-fill.svg?inline';
+import IconQuestionMediumLine from '@/assets/images/icon/medium/icon-question-medium-line.svg?inline';
+import IconEssayMediumLine from '@/assets/images/icon/medium/icon-essay-medium-line.svg?inline';
 import IconInterviewMediumLine from '@/assets/images/icon/medium/icon-interview-medium-line.svg?inline';
 import IconCommentMediumLine from '@/assets/images/icon/medium/icon-comment-medium-line.svg?inline';
 import IconArrowMediumLine from '@/assets/images/icon/medium/icon-arrow-medium-line.svg?inline';
@@ -43,7 +47,6 @@ import IconCloseMediumLine from '@/assets/images/icon/medium/icon-close-medium-l
 import IconFilterMediumLine from '@/assets/images/icon/medium/icon-filter-medium-line.svg?inline';
 import IconBookmarkMediumLine from '@/assets/images/icon/medium/icon-bookmark-medium-line.svg?inline';
 import IconBookmarkMediumFill from '@/assets/images/icon/medium/icon-bookmark-medium-fill.svg?inline';
-import IconThreeDotMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
 import IconCheckMediumLine from '@/assets/images/icon/medium/icon-check-medium-line.svg?inline';
 import IconSelectedMediumLine from '@/assets/images/icon/medium/icon-selected-medium-line.svg?inline';
 import IconCheckRoundMediumFill from '@/assets/images/icon/medium/icon-checkRound-medium-fill.svg?inline';
@@ -51,10 +54,14 @@ import IconQuestionMarkMediumLine from '@/assets/images/icon/medium/icon-questio
 import IconQuestionMarkMediumFill from '@/assets/images/icon/medium/icon-questionMark-medium-fill.svg?inline';
 import IconExclamationMediumLine from '@/assets/images/icon/medium/icon-exclamation-medium-line.svg?inline';
 import IconExclamationMediumFill from '@/assets/images/icon/medium/icon-exclamation-medium-fill.svg?inline';
+import IconInformationMediumLine from '@/assets/images/icon/medium/icon-information-medium-line.svg?inline';
 import IconInformationMediumFill from '@/assets/images/icon/medium/icon-information-medium-fill.svg?inline';
+import IconCloseRoundMediumLine from '@/assets/images/icon/medium/icon-closeRound-medium-line.svg?inline';
 import IconCloseRoundMediumFill from '@/assets/images/icon/medium/icon-closeRound-medium-fill.svg?inline';
 import IconPlusRoundMediumLine from '@/assets/images/icon/medium/icon-plusRound-medium-line.svg?inline';
 import IconArrowRoundMediumLine from '@/assets/images/icon/medium/icon-arrowRound-medium-line.svg?inline';
+import IconLockMediumLine from '@/assets/images/icon/medium/icon-lock-medium-line.svg?inline';
+import IconLockMediumFill from '@/assets/images/icon/medium/icon-lock-medium-fill.svg?inline';
 import IconImportMediumLine from '@/assets/images/icon/medium/icon-import-medium-line.svg?inline';
 import IconLinkMediumLine from '@/assets/images/icon/medium/icon-link-medium-line.svg?inline';
 import IconDownloadMediumLine from '@/assets/images/icon/medium/icon-download-medium-line.svg?inline';
@@ -75,11 +82,11 @@ import IconLocationMediumFill from '@/assets/images/icon/medium/icon-location-me
 import IconSupportMediumLine from '@/assets/images/icon/medium/icon-support-medium-line.svg?inline';
 import IconCouponMediumLine from '@/assets/images/icon/medium/icon-coupon-medium-line.svg?inline';
 import IconMegaphoneMediumLine from '@/assets/images/icon/medium/icon-megaphone-medium-line.svg?inline';
-import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
+import IconStarMediumLine from '@/assets/images/icon/medium/icon-star-medium-line.svg?inline';
 import IconStarMediumFill from '@/assets/images/icon/medium/icon-star-medium-fill.svg?inline';
+import IconThreeDotMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
 // 제외
 import IconCheckMediumFill from '@/assets/images/icon/medium/icon-check-medium-fill.svg?inline';
-import IconQuestionMediumLine from '@/assets/images/icon/medium/icon-question-medium-line.svg?inline';
 import IconFileMediumLineLight from '@/assets/images/icon/medium/icon-file-medium-line-light.svg?inline';
 import IconTrashMediumLineLight from '@/assets/images/icon/medium/icon-trash-medium-line-light.svg?inline';
 import IconDownloadMediumLineLight from '@/assets/images/icon/medium/icon-download-medium-line-light.svg?inline';
@@ -91,7 +98,6 @@ import IconMentoringMediumLine from '@/assets/images/icon/medium/icon-mentoring-
 import IconResumeMediumLine from '@/assets/images/icon/medium/icon-resume-medium-line.svg?inline';
 import IconJobWikiMediumLine from '@/assets/images/icon/medium/icon-jobWiki-medium-line.svg?inline';
 import IconAnalyticsMediumLine from '@/assets/images/icon/medium/icon-analytics-medium-line.svg?inline';
-import IconEssayMediumLine from '@/assets/images/icon/medium/icon-essay-medium-line.svg?inline';
 import IconVodMediumLine from '@/assets/images/icon/medium/icon-vod-medium-line.svg?inline';
 import IconEduMediumLine from '@/assets/images/icon/medium/icon-edu-medium-line.svg?inline';
 
@@ -184,55 +190,73 @@ export const IconNames = [
 	'IconTextArrowSmallLine',
 
 	// medium
-	'IconCheckMediumFill',
+	'IconProfileMediumLine',
+	'IconProfileMediumFill',
 	'IconQuestionMediumLine',
-	'IconLikeMediumLine',
-	'IconLikeMediumFill',
+	'IconEssayMediumLine',
+	'IconInterviewMediumLine',
 	'IconCommentMediumLine',
-	'IconCheckMediumLine',
-	'IconPlusMediumLine',
-	'IconExclamationMediumLine',
 	'IconArrowMediumLine',
 	'IconTextArrowMediumLine',
+	'IconRevertMediumLine',
+	'IconPlusMediumLine',
+	'IconMinusMediumLine',
+	'IconCloseMediumLine',
+	'IconFilterMediumLine',
+	'IconBookmarkMediumLine',
+	'IconBookmarkMediumFill',
+	'IconCheckMediumLine',
+	'IconSelectedMediumLine',
+	'IconCheckRoundMediumFill',
+	'IconQuestionMarkMediumLine',
+	'IconQuestionMarkMediumFill',
+	'IconExclamationMediumLine',
+	'IconExclamationMediumFill',
+	'IconInformationMediumLine',
+	'IconInformationMediumFill',
+	'IconCloseRoundMediumLine',
+	'IconCloseRoundMediumFill',
+	'IconPlusRoundMediumLine',
+	'IconArrowRoundMediumLine',
+	'IconLockMediumLine',
+	'IconLockMediumFill',
+	'IconImportMediumLine',
+	'IconLinkMediumLine',
+	'IconDownloadMediumLine',
+	'IconTrashMediumLine',
+	'IconLikeMediumLine',
+	'IconLikeMediumFill',
+	'IconBrowseMediumLine',
+	'IconBrowseMediumFill',
+	'IconExportMediumLine',
+	'IconVideoMediumLine',
+	'IconVideoMediumFill',
+	'IconClockMediumLine',
+	'IconClockMediumFill',
+	'IconPriceMediumLine',
+	'IconDiscountMediumLine',
+	'IconLocationMediumLine',
+	'IconLocationMediumFill',
+	'IconSupportMediumLine',
+	'IconCouponMediumLine',
+	'IconMegaphoneMediumLine',
+	'IconStarMediumLine',
+	'IconStarMediumFill',
+	'IconThreeDotMediumFill',
+	'IconCheckMediumFill',
 	'IconFileMediumLineLight',
 	'IconTrashMediumLineLight',
 	'IconDownloadMediumLineLight',
-	'IconThreeDotMediumFill',
 	'IconHourglassMediumLine',
 	'IconCloseMediumFill',
 	'IconInfoMediumFill',
 	'IconInfoMediumLine',
-	'IconCloseMediumLine',
-	'IconCheckRoundMediumLine',
-	'IconFilterMediumLine',
-	'IconLocationMediumFill',
 	'IconMentoringMediumLine',
 	'IconResumeMediumLine',
 	'IconJobWikiMediumLine',
 	'IconAnalyticsMediumLine',
-	'IconInterviewMediumLine',
-	'IconEssayMediumLine',
 	'IconVodMediumLine',
 	'IconEduMediumLine',
-	'IconCouponMediumLine',
-	'IconRevertMediumLine',
-	'IconDownloadMediumLine',
-	'IconExportMediumLine',
-	'IconClockMediumFill',
-	'IconClockMediumLine',
-	'IconSupportMediumLine',
-	'IconStarMediumFill',
-	'IconQuestionMarkMediumLine',
-	'IconMegaphoneMediumLine',
-	'IconMinusMediumLine',
-	'IconDiscountMediumLine',
-	'IconLinkMediumLine',
-	'IconBrowseMediumLine',
-	'IconVideoMediumFill',
-	'IconPriceMediumLine',
-	'IconProfileMediumLine',
-	'IconBookmarkMediumFill',
-	'IconBookmarkMediumLine',
 
 	// large
 	'IconLongArrowLargeLine',
@@ -349,6 +373,10 @@ export default {
 		IconCheckSmallFill,
 
 		// medium
+		IconProfileMediumLine,
+		IconProfileMediumFill,
+		IconQuestionMediumLine,
+		IconEssayMediumLine,
 		IconInterviewMediumLine,
 		IconCommentMediumLine,
 		IconArrowMediumLine,
@@ -368,10 +396,14 @@ export default {
 		IconQuestionMarkMediumFill,
 		IconExclamationMediumLine,
 		IconExclamationMediumFill,
+		IconInformationMediumLine,
 		IconInformationMediumFill,
+		IconCloseRoundMediumLine,
 		IconCloseRoundMediumFill,
 		IconPlusRoundMediumLine,
 		IconArrowRoundMediumLine,
+		IconLockMediumLine,
+		IconLockMediumFill,
 		IconImportMediumLine,
 		IconLinkMediumLine,
 		IconDownloadMediumLine,
@@ -392,11 +424,9 @@ export default {
 		IconSupportMediumLine,
 		IconCouponMediumLine,
 		IconMegaphoneMediumLine,
-		IconProfileMediumLine,
+		IconStarMediumLine,
 		IconStarMediumFill,
-		// 제외
 		IconCheckMediumFill,
-		IconQuestionMediumLine,
 		IconFileMediumLineLight,
 		IconTrashMediumLineLight,
 		IconDownloadMediumLineLight,
@@ -408,7 +438,6 @@ export default {
 		IconResumeMediumLine,
 		IconJobWikiMediumLine,
 		IconAnalyticsMediumLine,
-		IconEssayMediumLine,
 		IconVodMediumLine,
 		IconEduMediumLine,
 
