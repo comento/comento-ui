@@ -166,7 +166,7 @@ import IconWriting2XLargeLine from '@/assets/images/icon/icon-writing-2xlarge-li
 import IconCalendarError2XLargeFill from '@/assets/images/icon/icon-calendar-error-2xlarge-fill.svg?inline';
 
 // 4x-large
-import IconStar4XLargeFill from '@/assets/images/icon/icon-star-4xlarge-fill.svg?inline';
+import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
 import customValidator from '@/utils/custom-validator';
 
 export const IconNames = [
