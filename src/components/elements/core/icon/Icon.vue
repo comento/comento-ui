@@ -134,6 +134,7 @@ import IconQuestionMarkLargeFill from '@/assets/images/icon/large/icon-questionM
 import IconExclamationLargeLine from '@/assets/images/icon/large/icon-exclamation-large-line.svg?inline';
 import IconExclamationLargeFill from '@/assets/images/icon/large/icon-exclamation-large-fill.svg?inline';
 import IconInformationLargeLine from '@/assets/images/icon/large/icon-information-large-line.svg?inline';
+import IconInformationLargeFill from '@/assets/images/icon/large/icon-information-large-fill.svg?inline';
 import IconPlusRoundLargeLine from '@/assets/images/icon/large/icon-plusRound-large-line.svg?inline';
 import IconStarRoundLargeFill from '@/assets/images/icon/large/icon-starRound-large-fill.svg?inline';
 import IconSettingLargeLine from '@/assets/images/icon/large/icon-setting-large-line.svg?inline';
@@ -545,6 +546,7 @@ export default {
 		IconExclamationLargeLine,
 		IconExclamationLargeFill,
 		IconInformationLargeLine,
+		IconInformationLargeFill,
 		IconPlusRoundLargeLine,
 		IconStarRoundLargeFill,
 		IconSettingLargeLine,
