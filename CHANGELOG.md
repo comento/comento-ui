@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/comento/comento-ui/compare/v0.3.0...v0.3.1) (2022-01-12)
+
+
+### Bug Fixes
+
+* bottom-drawer 애니메이션 수정 ([#679](https://github.com/comento/comento-ui/issues/679)) ([4ce99b0](https://github.com/comento/comento-ui/commit/4ce99b0818af2722d1e4878f7a10de043d33fd13))
+
+
+
 # [0.3.0](https://github.com/comento/comento-ui/compare/v0.2.9...v0.3.0) (2022-01-07)
 
 
