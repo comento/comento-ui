@@ -1,50 +1,62 @@
-//Gray
+// Gray
 $black: #000000;
-$gray900: #151617;
-$gray850: #21282F;
-$gray800: #495057;
-$gray700: #6F767D;
-$gray600: #838990;
-$gray500: #979CA2;
-$gray400: #BEC2C6;
-$gray300: #D2D5D8;
-$gray250: #DEE0E3;
-$gray200: #E8EAED;
-$gray100: #F4F5F7;
-$gray000: #FAFBFC;
+$gray900: #040505;
+$gray850: #202325;
+$gray800: #3C4144;
+$gray700: #595F63;
+$gray600: #767D82;
+$gray500: #949BA0;
+$gray400: #ADB3B8;
+$gray300: #CFD4D7;
+$gray250: #E1E4E6;
+$gray200: #EAECEE;
+$gray100: #F3F4F5;
+$gray000: #FCFCFC;
 $white: #FFFFFF;
 
-//Green
-$green800: #00B334;
-$green600: #00C854;
-$green400: #5CE596;
-$green100: #DEFAEB;
-$green000: #F7FCF9;
+// Primary
+// Blue
+$blue800: #1B5192;
+$blue600: #2A7DE1;
+$blue400: #6EA7EB;
+$blue100: #D4E5F9;
+$blue000: #F7FAFE;
 
-//Red
-$red800: #CC2727;
-$red600: #FA5252;
-$red400: #FF8888;
-$red100: #FFDFDF;
-$red000: #FFF7F7;
+// Success
+// Green
+$green800: #038542;
+$green600: #04CD66;
+$green400: #54DD97;
+$green100: #CDF5E0;
+$green000: #F5FDF9;
 
+// Error
+// Red
+$red800: #971818;
+$red600: #E92525;
+$red400: #F06B6B;
+$red100: #FBD3D3;
+$red000: #FEF6F6;
 
-//Blue
-$blue800: #0074CC;
-$blue600: #1E90FF;
-$blue400: #7EC1FF;
-$blue100: #D6EBFF;
-$blue000: #F2FAFF;
+// Secondary
+// Orange
+$orange800: #CF5310;
+$orange600: #EE7E41;
+$orange400: #F3A77E;
+$orange100: #FCE5D9;
+$orange000: #FEFAF7;
 
-//Yellow
-$yellow600: #FFDD33;
-$yellow400: #FFEE7A;
-$yellow100: #FFFACC;
+// Secondary
+// Yellow
+$yellow600: #FFD700;
+$yellow400: #FFE452;
+$yellow100: #FFF7CC;
+$yellow000: #FFFDF5;
 
-$primary: $green600;
-$success: $blue600;
+$primary: $blue600;
+$success: $green600;
 $error: $red600;
-$secondary: $gray600;
+$secondary: $orange600;
 
 $border-color: $gray200;
 $input-border-color: $gray250; // Input, Select, Textarea, TextField
