@@ -1,7 +1,7 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent]"
+		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent, computedInteractive]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
@@ -68,6 +68,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		interactive: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		computedType() {
@@ -98,6 +102,11 @@ export default {
 				transparent: this.transparent,
 			};
 		},
+		computedInteractive() {
+			return {
+				interactive: this.interactive,
+			};
+		},
 	},
 };
 </script>
@@ -117,7 +126,7 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&:hover {
+		&.interactive:hover {
 			background-color: $gray200;
 		}
 
@@ -126,7 +135,7 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&:hover {
+			&.interactive:hover {
 				background-color: $gray100;
 			}
 
@@ -139,7 +148,7 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&:hover {
+			&.interactive:hover {
 				background-color: $gray100;
 			}
 
@@ -153,7 +162,7 @@ export default {
 		border: 1px solid $primary;
 		background-color: $primary;
 
-		&:hover {
+		&.interactive:hover {
 			background-color: $green800;
 		}
 
@@ -162,7 +171,7 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&:hover {
+			&.interactive:hover {
 				background-color: $green100;
 			}
 
@@ -175,7 +184,7 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&:hover {
+			&.interactive:hover {
 				background-color: $green100;
 			}
 
@@ -189,7 +198,7 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&:hover {
+		&.interactive:hover {
 			background-color: $blue800;
 		}
 
@@ -198,7 +207,7 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&:hover {
+			&.interactive:hover {
 				background-color: $blue100;
 			}
 
@@ -211,7 +220,7 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&:hover {
+			&.interactive:hover {
 				background-color: $blue100;
 			}
 
@@ -282,7 +291,7 @@ export default {
 	&.full {
 		width: 100%;
 	}
-	&:hover {
+	&.interactive:hover {
 		cursor: pointer;
 	}
 }
