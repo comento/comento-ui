@@ -102,42 +102,63 @@ import IconVodMediumLine from '@/assets/images/icon/medium/icon-vod-medium-line.
 import IconEduMediumLine from '@/assets/images/icon/medium/icon-edu-medium-line.svg?inline';
 
 // large
-import IconLongArrowLargeLine from '@/assets/images/icon/large/icon-longArrow-large-line.svg?inline';
-import IconProfileLargeFill from '@/assets/images/icon/large/icon-profile-large-fill.svg?inline';
-import IconSelectedLargeLine from '@/assets/images/icon/large/icon-selected-large-line.svg?inline';
-import IconReplyLargeLine from '@/assets/images/icon/large/icon-reply-large-line.svg?inline';
-import IconSendLargeFill from '@/assets/images/icon/large/icon-send-large-fill.svg?inline';
-import IconPlusLargeLine from '@/assets/images/icon/large/icon-plus-large-line.svg?inline';
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
-import IconAlarmLargeLine from '@/assets/images/icon/large/icon-alarm-large-line.svg?inline';
-import IconSearchLargeLine from '@/assets/images/icon/large/icon-search-large-line.svg?inline';
-import IconBackwardLargeLine from '@/assets/images/icon/large/icon-backward-large-line.svg?inline';
+import IconProfileLargeFill from '@/assets/images/icon/large/icon-profile-large-fill.svg?inline';
+import IconAnswerLargeLine from '@/assets/images/icon/large/icon-answer-large-line.svg?inline';
+import IconVodLargeLine from '@/assets/images/icon/large/icon-vod-large-line.svg?inline';
+import IconQuestionLargeLine from '@/assets/images/icon/large/icon-question-large-line.svg?inline';
+import IconEssayLargeLine from '@/assets/images/icon/large/icon-essay-large-line.svg?inline';
+import IconInterviewLargeLine from '@/assets/images/icon/large/icon-interview-large-line.svg?inline';
+import IconResumeLargeLine from '@/assets/images/icon/large/icon-resume-large-line.svg?inline';
+import IconAnalyticsLargeLine from '@/assets/images/icon/large/icon-analytics-large-line.svg?inline';
+import IconMentoringLargeLine from '@/assets/images/icon/large/icon-mentoring-large-line.svg?inline';
+import IconEduLargeLine from '@/assets/images/icon/large/icon-edu-large-line.svg?inline';
 import IconArrowLargeLine from '@/assets/images/icon/large/icon-arrow-large-line.svg?inline';
 import IconTextArrowLargeLine from '@/assets/images/icon/large/icon-textArrow-large-line.svg?inline';
+import IconBackwardLargeLine from '@/assets/images/icon/large/icon-backward-large-line.svg?inline';
+import IconReplyLargeLine from '@/assets/images/icon/large/icon-reply-large-line.svg?inline';
+import IconPlusLargeLine from '@/assets/images/icon/large/icon-plus-large-line.svg?inline';
 import IconCloseLargeLine from '@/assets/images/icon/large/icon-close-large-line.svg?inline';
-import IconKeylineLargeLine from '@/assets/images/icon/large/icon-keyline-large-line.svg?inline';
-import IconExclamationLargeLine from '@/assets/images/icon/large/icon-exclamation-large-line.svg?inline';
-import IconFilterLargeLine from '@/assets/images/icon/large/icon-filter-large-line.svg?inline';
-import IconCheckLargeFill from '@/assets/images/icon/large/icon-check-large-fill.svg?inline';
-import IconSecurityLargeFill from '@/assets/images/icon/large/icon-security-large-fill.svg?inline';
-import IconDownloadLargeLine from '@/assets/images/icon/large/icon-download-large-line.svg?inline';
-import IconMentoringLargeLine from '@/assets/images/icon/large/icon-mentoring-large-line.svg?inline';
-import IconVodLargeLine from '@/assets/images/icon/large/icon-vod-large-line.svg?inline';
-import IconAnswerLargeLine from '@/assets/images/icon/large/icon-answer-large-line.svg?inline';
-import IconEduLargeLine from '@/assets/images/icon/large/icon-edu-large-line.svg?inline';
-import IconAnalyticsLargeLine from '@/assets/images/icon/large/icon-analytics-large-line.svg?inline';
-import IconInterviewLargeLine from '@/assets/images/icon/large/icon-interview-large-line.svg?inline';
-import IconEssayLargeLine from '@/assets/images/icon/large/icon-essay-large-line.svg?inline';
-import IconCheckLargeLine from '@/assets/images/icon/large/icon-check-large-line.svg?inline';
-import IconResumeLargeLine from '@/assets/images/icon/large/icon-resume-large-line.svg?inline';
-import IconQuestionLargeLine from '@/assets/images/icon/large/icon-question-large-line.svg?inline';
-import IconVideoLargeFill from '@/assets/images/icon/large/icon-video-large-fill.svg?inline';
-import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.svg?inline';
 import IconHamburgerLargeLine from '@/assets/images/icon/large/icon-hamburger-large-line.svg?inline';
-import IconWarningLargeFill from '@/assets/images/icon/large/icon-warning-large-fill.svg?inline';
-import IconBookmarkLargeLine from '@/assets/images/icon/large/icon-bookmark-large-line.svg?inline';
-import IconBookmarkLargeFill from '@/assets/images/icon/large/icon-bookmark-large-fill.svg?inline';
+import IconFilterLargeLine from '@/assets/images/icon/large/icon-filter-large-line.svg?inline';
+import IconSearchLargeLine from '@/assets/images/icon/large/icon-search-large-line.svg?inline';
+import IconAlarmLargeLine from '@/assets/images/icon/large/icon-alarm-large-line.svg?inline';
+import IconBookmarkLargeLine from '@/assets/images/icon/large/icon-bookMark-large-line.svg?inline';
+import IconBookmarkLargeFill from '@/assets/images/icon/large/icon-bookMark-large-fill.svg?inline';
+import IconCheckLargeLine from '@/assets/images/icon/large/icon-check-large-line.svg?inline';
+import IconCheckRoundLargeLine from '@/assets/images/icon/large/icon-checkRound-large-line.svg?inline';
+import IconCheckRoundLargeFill from '@/assets/images/icon/large/icon-checkRound-large-fill.svg?inline';
+import IconQuestionMarkLargeLine from '@/assets/images/icon/large/icon-questionMark-large-line.svg?inline';
+import IconQuestionMarkLargeFill from '@/assets/images/icon/large/icon-questionMark-large-fill.svg?inline';
+import IconExclamationLargeLine from '@/assets/images/icon/large/icon-exclamation-large-line.svg?inline';
+import IconExclamationLargeFill from '@/assets/images/icon/large/icon-exclamation-large-fill.svg?inline';
+import IconInformationLargeLine from '@/assets/images/icon/large/icon-information-large-line.svg?inline';
+import IconPlusRoundLargeLine from '@/assets/images/icon/large/icon-plusRound-large-line.svg?inline';
+import IconStarRoundLargeFill from '@/assets/images/icon/large/icon-starRound-large-fill.svg?inline';
+import IconSettingLargeLine from '@/assets/images/icon/large/icon-setting-large-line.svg?inline';
+import IconLockLargeLine from '@/assets/images/icon/large/icon-lock-large-line.svg?inline';
 import IconLockLargeFill from '@/assets/images/icon/large/icon-lock-large-fill.svg?inline';
+import IconSecurityLargeLine from '@/assets/images/icon/large/icon-security-large-line.svg?inline';
+import IconSecurityLargeFill from '@/assets/images/icon/large/icon-security-large-fill.svg?inline';
+import IconImportLargeLine from '@/assets/images/icon/large/icon-import-large-line.svg?inline';
+import IconLinkLargeLine from '@/assets/images/icon/large/icon-link-large-line.svg?inline';
+import IconDownloadLargeLine from '@/assets/images/icon/large/icon-download-large-line.svg?inline';
+import IconTrashLargeLine from '@/assets/images/icon/large/icon-trash-large-line.svg?inline';
+import IconPhotoLargeLine from '@/assets/images/icon/large/icon-photo-large-line.svg?inline';
+import IconWritingLargeLine from '@/assets/images/icon/large/icon-writing-large-line.svg?inline';
+import IconSendLargeFill from '@/assets/images/icon/large/icon-send-large-fill.svg?inline';
+import IconCouponLargeLine from '@/assets/images/icon/large/icon-coupon-large-line.svg?inline';
+import IconMegaphoneLargeLine from '@/assets/images/icon/large/icon-megaphone-large-line.svg?inline';
+import IconVideoLargeLine from '@/assets/images/icon/large/icon-video-large-line.svg?inline';
+import IconVideoLargeFill from '@/assets/images/icon/large/icon-video-large-fill.svg?inline';
+import IconStarLargeLine from '@/assets/images/icon/large/icon-star-large-line.svg?inline';
+import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.svg?inline';
+// 제외
+import IconLongArrowLargeLine from '@/assets/images/icon/large/icon-longArrow-large-line.svg?inline';
+import IconSelectedLargeLine from '@/assets/images/icon/large/icon-selected-large-line.svg?inline';
+import IconKeylineLargeLine from '@/assets/images/icon/large/icon-keyline-large-line.svg?inline';
+import IconCheckLargeFill from '@/assets/images/icon/large/icon-check-large-fill.svg?inline';
+import IconWarningLargeFill from '@/assets/images/icon/large/icon-warning-large-fill.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -278,42 +299,62 @@ export const IconNames = [
 	'IconEduMediumLine',
 
 	// large
-	'IconLongArrowLargeLine',
-	'IconProfileLargeFill',
-	'IconSelectedLargeLine',
-	'IconReplyLargeLine',
-	'IconSendLargeFill',
-	'IconPlusLargeLine',
 	'IconProfileLargeLine',
-	'IconAlarmLargeLine',
-	'IconSearchLargeLine',
-	'IconBackwardLargeLine',
+	'IconProfileLargeFill',
+	'IconAnswerLargeLine',
+	'IconVodLargeLine',
+	'IconQuestionLargeLine',
+	'IconEssayLargeLine',
+	'IconInterviewLargeLine',
+	'IconResumeLargeLine',
+	'IconAnalyticsLargeLine',
+	'IconMentoringLargeLine',
+	'IconEduLargeLine',
 	'IconArrowLargeLine',
 	'IconTextArrowLargeLine',
+	'IconBackwardLargeLine',
+	'IconReplyLargeLine',
+	'IconPlusLargeLine',
 	'IconCloseLargeLine',
-	'IconKeylineLargeLine',
-	'IconExclamationLargeLine',
-	'IconFilterLargeLine',
-	'IconCheckLargeFill',
-	'IconSecurityLargeFill',
-	'IconDownloadLargeLine',
-	'IconMentoringLargeLine',
-	'IconVodLargeLine',
-	'IconAnswerLargeLine',
-	'IconEduLargeLine',
-	'IconAnalyticsLargeLine',
-	'IconInterviewLargeLine',
-	'IconEssayLargeLine',
-	'IconCheckLargeLine',
-	'IconResumeLargeLine',
-	'IconQuestionLargeLine',
-	'IconVideoLargeFill',
-	'IconStarLargeFill',
 	'IconHamburgerLargeLine',
-	'IconWarningLargeFill',
+	'IconFilterLargeLine',
+	'IconSearchLargeLine',
+	'IconAlarmLargeLine',
 	'IconBookmarkLargeLine',
 	'IconBookmarkLargeFill',
+	'IconCheckLargeLine',
+	'IconCheckRoundLargeLine',
+	'IconCheckRoundLargeFill',
+	'IconQuestionMarkLargeLine',
+	'IconQuestionMarkLargeFill',
+	'IconExclamationLargeLine',
+	'IconExclamationLargeFill',
+	'IconInformationLargeLine',
+	'IconPlusRoundLargeLine',
+	'IconStarRoundLargeFill',
+	'IconSettingLargeLine',
+	'IconLockLargeLine',
 	'IconLockLargeFill',
+	'IconSecurityLargeLine',
+	'IconSecurityLargeFill',
+	'IconImportLargeLine',
+	'IconLinkLargeLine',
+	'IconDownloadLargeLine',
+	'IconTrashLargeLine',
+	'IconPhotoLargeLine',
+	'IconWritingLargeLine',
+	'IconSendLargeFill',
+	'IconCouponLargeLine',
+	'IconMegaphoneLargeLine',
+	'IconVideoLargeLine',
+	'IconVideoLargeFill',
+	'IconStarLargeLine',
+	'IconStarLargeFill',
+	'IconLongArrowLargeLine',
+	'IconSelectedLargeLine',
+	'IconKeylineLargeLine',
+	'IconCheckLargeFill',
+	'IconWarningLargeFill',
 
 	// XLarge
 	'IconProfileXLargeLine',
@@ -470,42 +511,62 @@ export default {
 		IconEduMediumLine,
 
 		// large
-		IconLongArrowLargeLine,
-		IconProfileLargeFill,
-		IconSelectedLargeLine,
-		IconReplyLargeLine,
-		IconSendLargeFill,
-		IconPlusLargeLine,
 		IconProfileLargeLine,
-		IconAlarmLargeLine,
-		IconSearchLargeLine,
-		IconBackwardLargeLine,
+		IconProfileLargeFill,
+		IconAnswerLargeLine,
+		IconVodLargeLine,
+		IconQuestionLargeLine,
+		IconEssayLargeLine,
+		IconInterviewLargeLine,
+		IconResumeLargeLine,
+		IconAnalyticsLargeLine,
+		IconMentoringLargeLine,
+		IconEduLargeLine,
 		IconArrowLargeLine,
 		IconTextArrowLargeLine,
+		IconBackwardLargeLine,
+		IconReplyLargeLine,
+		IconPlusLargeLine,
 		IconCloseLargeLine,
-		IconKeylineLargeLine,
-		IconExclamationLargeLine,
-		IconFilterLargeLine,
-		IconCheckLargeFill,
-		IconSecurityLargeFill,
-		IconMentoringLargeLine,
-		IconVodLargeLine,
-		IconAnswerLargeLine,
-		IconEduLargeLine,
-		IconAnalyticsLargeLine,
-		IconInterviewLargeLine,
-		IconEssayLargeLine,
-		IconDownloadLargeLine,
-		IconCheckLargeLine,
-		IconResumeLargeLine,
-		IconQuestionLargeLine,
-		IconVideoLargeFill,
-		IconStarLargeFill,
 		IconHamburgerLargeLine,
-		IconWarningLargeFill,
+		IconFilterLargeLine,
+		IconSearchLargeLine,
+		IconAlarmLargeLine,
 		IconBookmarkLargeLine,
 		IconBookmarkLargeFill,
+		IconCheckLargeLine,
+		IconCheckRoundLargeLine,
+		IconCheckRoundLargeFill,
+		IconQuestionMarkLargeLine,
+		IconQuestionMarkLargeFill,
+		IconExclamationLargeLine,
+		IconExclamationLargeFill,
+		IconInformationLargeLine,
+		IconPlusRoundLargeLine,
+		IconStarRoundLargeFill,
+		IconSettingLargeLine,
+		IconLockLargeLine,
 		IconLockLargeFill,
+		IconSecurityLargeLine,
+		IconSecurityLargeFill,
+		IconImportLargeLine,
+		IconLinkLargeLine,
+		IconDownloadLargeLine,
+		IconTrashLargeLine,
+		IconPhotoLargeLine,
+		IconWritingLargeLine,
+		IconSendLargeFill,
+		IconCouponLargeLine,
+		IconMegaphoneLargeLine,
+		IconVideoLargeLine,
+		IconVideoLargeFill,
+		IconStarLargeLine,
+		IconStarLargeFill,
+		IconLongArrowLargeLine,
+		IconSelectedLargeLine,
+		IconKeylineLargeLine,
+		IconCheckLargeFill,
+		IconWarningLargeFill,
 
 		// x-large
 		IconProfileXLargeLine,
