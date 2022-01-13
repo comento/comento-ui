@@ -1,9 +1,9 @@
 <template>
 	<NarrowButton size="medium" @click="$emit('clickFileButton')">
-		<template v-slot:left-icon>
-			<Icon name="IconPlusMediumLine" color="gray600"></Icon>
-		</template>
 		{{ text }}
+		<template v-slot:right-icon>
+			<Icon name="IconPlusMediumLine" color="gray600" />
+		</template>
 	</NarrowButton>
 </template>
 
