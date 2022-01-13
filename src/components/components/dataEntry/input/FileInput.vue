@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-file-input" :class="classes">
 		<label for="files">
-			<FileButton @clickFileButton="handleClickFileButton"></FileButton>
+			<FileButton :text="buttonText" @clickFileButton="handleClickFileButton" />
 			<input
 				id="files"
 				ref="files"
@@ -47,6 +47,10 @@ export default {
 			validator(value) {
 				return customValidator(value, typeof value === 'boolean', 'FileInput', 'full');
 			},
+		},
+		buttonText: {
+			type: String,
+			default: '파일 첨부하기',
 		},
 	},
 	computed: {
