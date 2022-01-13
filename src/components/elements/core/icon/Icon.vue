@@ -28,7 +28,6 @@ import IconLikeSmallFill from '@/assets/images/icon/small/icon-like-small-fill.s
 // 제외
 import IconThreeDotSmallFill from '@/assets/images/icon/small/icon-threeDot-small-fill.svg?inline';
 import IconTextArrowSmallFill from '@/assets/images/icon/small/icon-textArrow-small-fill.svg?inline';
-import IconOfficialSmallFill from '@/assets/images/icon/small/icon-official-small-fill.svg?inline';
 import IconCheckSmallFill from '@/assets/images/icon/small/icon-check-small-fill.svg?inline';
 
 // medium
@@ -228,7 +227,6 @@ export const IconNames = [
 	'IconLikeSmallFill',
 	'IconThreeDotSmallFill',
 	'IconTextArrowSmallFill',
-	'IconOfficialSmallFill',
 	'IconCheckSmallFill',
 
 	// medium
@@ -441,7 +439,6 @@ export default {
 		// 제외
 		IconThreeDotSmallFill,
 		IconTextArrowSmallFill,
-		IconOfficialSmallFill,
 		IconCheckSmallFill,
 
 		// medium
