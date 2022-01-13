@@ -51,7 +51,12 @@
 						<Typography :type="computedListItemTypography" color="gray800">
 							{{ handleOptions(option, 'label') }}
 						</Typography>
-						<Icon v-if="option.icon" :name="option.icon" class="c-pointer" />
+						<Icon
+							v-if="option.icon"
+							:name="option.icon"
+							:color="option.iconColor || 'black'"
+							class="c-pointer"
+						/>
 					</ListItem>
 					<Divider :key="index" />
 				</template>
