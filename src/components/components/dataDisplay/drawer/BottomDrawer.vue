@@ -21,7 +21,7 @@
 
 			<!-- button 영역 -->
 			<div v-if="showActionButton" class="c-bottom-drawer--action-button-wrapper">
-				<Button size="large" :loading="loading" full @click="successCallback">
+				<Button size="large" :disabled="disabled" :loading="loading" full @click="successCallback">
 					{{ successMessage }}
 				</Button>
 			</div>
@@ -66,6 +66,13 @@ export default {
 		successMessage: {
 			type: String,
 			default: '확인',
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
 		},
 	},
 	computed: {
