@@ -33,7 +33,13 @@ import Divider from '@/components/elements/utility/Divider';
       control: {
           type: "text"
       }
-    }
+    },
+      disabled: {
+        type: Boolean,
+        control: {
+          type: "boolean",
+        }
+      }
   }}
 />
 
@@ -66,6 +72,7 @@ export const Default = (args, { argTypes }) => ({
                     :multiple="multiple"
                     :full="full"
                     :button-text="buttonText"
+                    :disabled="disabled"
                     @uploadFiles="handleUploadFiles"
                  />
                  <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>

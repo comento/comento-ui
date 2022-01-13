@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-file-input" :class="classes">
 		<label for="files">
-			<FileButton :text="buttonText" @clickFileButton="handleClickFileButton" />
+			<FileButton :text="buttonText" :disabled="disabled" @clickFileButton="handleClickFileButton" />
 			<input
 				id="files"
 				ref="files"
@@ -10,6 +10,7 @@
 				style="display: none"
 				:accept="accept"
 				:multiple="multiple"
+				:disabled="disabled"
 				@change="handleFilesUpload"
 				@click="handleFileInputClick"
 			/>
@@ -52,11 +53,16 @@ export default {
 			type: String,
 			default: '파일 첨부하기',
 		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		classes() {
 			return {
 				full: this.full,
+				disabled: this.disabled,
 			};
 		},
 	},
@@ -84,6 +90,12 @@ export default {
 		width: 100%;
 		&:hover {
 			background-color: $gray100;
+		}
+
+		&.disabled {
+			label {
+				cursor: not-allowed;
+			}
 		}
 	}
 }
