@@ -83,8 +83,6 @@ import IconStarMediumLine from '@/assets/images/icon/medium/icon-star-medium-lin
 import IconStarMediumFill from '@/assets/images/icon/medium/icon-star-medium-fill.svg?inline';
 import IconThreeDotMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
 import IconFileMediumLine from '@/assets/images/icon/medium/icon-file-medium-line.svg?inline';
-// 제외
-import IconEduMediumLine from '@/assets/images/icon/medium/icon-edu-medium-line.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -267,7 +265,6 @@ export const IconNames = [
 	'IconStarMediumLine',
 	'IconStarMediumFill',
 	'IconThreeDotMediumFill',
-	'IconEduMediumLine',
 	'IconFileMediumLine',
 
 	// large
@@ -465,7 +462,6 @@ export default {
 		IconMegaphoneMediumLine,
 		IconStarMediumLine,
 		IconStarMediumFill,
-		IconEduMediumLine,
 		IconFileMediumLine,
 
 		// large
