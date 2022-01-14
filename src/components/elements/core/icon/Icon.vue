@@ -138,7 +138,6 @@ import IconVideoLargeFill from '@/assets/images/icon/large/icon-video-large-fill
 import IconStarLargeLine from '@/assets/images/icon/large/icon-star-large-line.svg?inline';
 import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.svg?inline';
 // 제외
-import IconCheckLargeFill from '@/assets/images/icon/large/icon-check-large-fill.svg?inline';
 import IconWarningLargeFill from '@/assets/images/icon/large/icon-warning-large-fill.svg?inline';
 
 // x-large
@@ -316,7 +315,6 @@ export const IconNames = [
 	'IconVideoLargeFill',
 	'IconStarLargeLine',
 	'IconStarLargeFill',
-	'IconCheckLargeFill',
 	'IconWarningLargeFill',
 
 	// XLarge
@@ -511,7 +509,6 @@ export default {
 		IconVideoLargeFill,
 		IconStarLargeLine,
 		IconStarLargeFill,
-		IconCheckLargeFill,
 		IconWarningLargeFill,
 
 		// x-large
