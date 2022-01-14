@@ -138,7 +138,6 @@ import IconVideoLargeFill from '@/assets/images/icon/large/icon-video-large-fill
 import IconStarLargeLine from '@/assets/images/icon/large/icon-star-large-line.svg?inline';
 import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.svg?inline';
 // 제외
-import IconLongArrowLargeLine from '@/assets/images/icon/large/icon-longArrow-large-line.svg?inline';
 import IconSelectedLargeLine from '@/assets/images/icon/large/icon-selected-large-line.svg?inline';
 import IconKeylineLargeLine from '@/assets/images/icon/large/icon-keyline-large-line.svg?inline';
 import IconCheckLargeFill from '@/assets/images/icon/large/icon-check-large-fill.svg?inline';
@@ -319,7 +318,6 @@ export const IconNames = [
 	'IconVideoLargeFill',
 	'IconStarLargeLine',
 	'IconStarLargeFill',
-	'IconLongArrowLargeLine',
 	'IconSelectedLargeLine',
 	'IconKeylineLargeLine',
 	'IconCheckLargeFill',
@@ -517,7 +515,6 @@ export default {
 		IconVideoLargeFill,
 		IconStarLargeLine,
 		IconStarLargeFill,
-		IconLongArrowLargeLine,
 		IconSelectedLargeLine,
 		IconKeylineLargeLine,
 		IconCheckLargeFill,
