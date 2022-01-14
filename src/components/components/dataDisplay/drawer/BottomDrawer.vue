@@ -70,9 +70,6 @@ export default {
 		disabled: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	computed: {
