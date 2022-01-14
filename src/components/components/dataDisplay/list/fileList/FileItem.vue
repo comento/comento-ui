@@ -5,7 +5,7 @@
 		</div>
 		<Icon
 			v-if="isEdit"
-			name="IconTrashMediumLineLight"
+			name="IconTrashMediumLine"
 			color="gray500"
 			@click="handleClickFileTrashIcon({ file, index })"
 		/>
