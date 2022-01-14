@@ -1,9 +1,9 @@
 <template>
-	<NarrowButton size="medium" @click="$emit('clickFileButton')">
-		<template v-slot:left-icon>
-			<Icon name="IconPlusMediumLine" color="gray600"></Icon>
-		</template>
+	<NarrowButton size="medium" :class="classes" @click="$emit('clickFileButton')">
 		{{ text }}
+		<template v-slot:right-icon>
+			<Icon name="IconPlusMediumLine" color="gray600" :class="classes" />
+		</template>
 	</NarrowButton>
 </template>
 
@@ -24,6 +24,15 @@ export default {
 			validator(value) {
 				return customValidator(value, typeof value === 'string', 'FileButton', 'text');
 			},
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		classes() {
+			return { 'c-not-allowed': this.disabled };
 		},
 	},
 	components: {
