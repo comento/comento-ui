@@ -83,21 +83,6 @@ import IconStarMediumLine from '@/assets/images/icon/medium/icon-star-medium-lin
 import IconStarMediumFill from '@/assets/images/icon/medium/icon-star-medium-fill.svg?inline';
 import IconThreeDotMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
 import IconFileMediumLine from '@/assets/images/icon/medium/icon-file-medium-line.svg?inline';
-// 제외
-import IconCheckMediumFill from '@/assets/images/icon/medium/icon-check-medium-fill.svg?inline';
-import IconFileMediumLineLight from '@/assets/images/icon/medium/icon-file-medium-line-light.svg?inline';
-import IconTrashMediumLineLight from '@/assets/images/icon/medium/icon-trash-medium-line-light.svg?inline';
-import IconDownloadMediumLineLight from '@/assets/images/icon/medium/icon-download-medium-line-light.svg?inline';
-import IconHourglassMediumLine from '@/assets/images/icon/medium/icon-hourglass-medium-line.svg?inline';
-import IconCloseMediumFill from '@/assets/images/icon/medium/icon-close-medium-fill.svg?inline';
-import IconInfoMediumFill from '@/assets/images/icon/medium/icon-info-medium-fill.svg?inline';
-import IconInfoMediumLine from '@/assets/images/icon/medium/icon-info-medium-line.svg?inline';
-import IconMentoringMediumLine from '@/assets/images/icon/medium/icon-mentoring-medium-line.svg?inline';
-import IconResumeMediumLine from '@/assets/images/icon/medium/icon-resume-medium-line.svg?inline';
-import IconJobWikiMediumLine from '@/assets/images/icon/medium/icon-jobWiki-medium-line.svg?inline';
-import IconAnalyticsMediumLine from '@/assets/images/icon/medium/icon-analytics-medium-line.svg?inline';
-import IconVodMediumLine from '@/assets/images/icon/medium/icon-vod-medium-line.svg?inline';
-import IconEduMediumLine from '@/assets/images/icon/medium/icon-edu-medium-line.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -280,20 +265,6 @@ export const IconNames = [
 	'IconStarMediumLine',
 	'IconStarMediumFill',
 	'IconThreeDotMediumFill',
-	'IconCheckMediumFill',
-	'IconFileMediumLineLight',
-	'IconTrashMediumLineLight',
-	'IconDownloadMediumLineLight',
-	'IconHourglassMediumLine',
-	'IconCloseMediumFill',
-	'IconInfoMediumFill',
-	'IconInfoMediumLine',
-	'IconMentoringMediumLine',
-	'IconResumeMediumLine',
-	'IconJobWikiMediumLine',
-	'IconAnalyticsMediumLine',
-	'IconVodMediumLine',
-	'IconEduMediumLine',
 	'IconFileMediumLine',
 
 	// large
@@ -491,20 +462,6 @@ export default {
 		IconMegaphoneMediumLine,
 		IconStarMediumLine,
 		IconStarMediumFill,
-		IconCheckMediumFill,
-		IconFileMediumLineLight,
-		IconTrashMediumLineLight,
-		IconDownloadMediumLineLight,
-		IconHourglassMediumLine,
-		IconCloseMediumFill,
-		IconInfoMediumFill,
-		IconInfoMediumLine,
-		IconMentoringMediumLine,
-		IconResumeMediumLine,
-		IconJobWikiMediumLine,
-		IconAnalyticsMediumLine,
-		IconVodMediumLine,
-		IconEduMediumLine,
 		IconFileMediumLine,
 
 		// large

@@ -5,13 +5,13 @@
 		</div>
 		<Icon
 			v-if="isEdit"
-			name="IconTrashMediumLineLight"
+			name="IconTrashMediumLine"
 			color="gray500"
 			@click="handleClickFileTrashIcon({ file, index })"
 		/>
 		<Icon
 			v-else-if="!isLoading"
-			name="IconDownloadMediumLineLight"
+			name="IconDownloadMediumLine"
 			color="gray500"
 			@click="handleClickFileDownloadIcon({ file, index })"
 		/>

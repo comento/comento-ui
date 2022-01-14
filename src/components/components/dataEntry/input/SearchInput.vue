@@ -24,7 +24,7 @@
 			<div @click="resetKeyword()">
 				<Icon
 					v-if="isTyping && sync_value.length > 0"
-					name="IconCloseMediumFill"
+					name="IconCloseRoundMediumFill"
 					size="medium"
 					color="gray300"
 					class="icon_reset"

@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-file--summary">
 		<div class="c-file--summary-info-wrapper">
-			<Icon name="IconFileMediumLineLight"></Icon>
+			<Icon name="IconImportMediumLine" color="gray500"></Icon>
 			<Typography type="body2" color="gray500"> 첨부파일 ({{ length }}개) </Typography>
 		</div>
 		<Button type="outlined" size="small" color="secondary" @click="$emit('clickAllFileDownloadButton')">
