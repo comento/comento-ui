@@ -11,7 +11,7 @@
 		/>
 		<Icon
 			v-else-if="!isLoading"
-			name="IconDownloadMediumLineLight"
+			name="IconDownloadMediumLine"
 			color="gray500"
 			@click="handleClickFileDownloadIcon({ file, index })"
 		/>
