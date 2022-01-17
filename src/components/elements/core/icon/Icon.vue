@@ -155,7 +155,6 @@ import IconSupportXLargeLine from '@/assets/images/icon/xlarge/icon-support-xlar
 import IconStarXLargeLine from '@/assets/images/icon/xlarge/icon-star-xlarge-line.svg?inline';
 import IconStarXLargeFill from '@/assets/images/icon/xlarge/icon-star-xlarge-fill.svg?inline';
 // 제외
-import IconCelebrateXLargeLine from '@/assets/images/icon/xlarge/icon-celebrate-xlarge-line.svg?inline';
 import IconMegaphoneXLargeLine from '@/assets/images/icon/xlarge/icon-megaphone-xlarge-line.svg?inline';
 import IconCheckXLargeFill from '@/assets/images/icon/xlarge/icon-check-xlarge-fill.svg?inline';
 import IconUnCheckedXLargeFill from '@/assets/images/icon/xlarge/icon-unchecked-xlarge-fill.svg?inline';
@@ -325,7 +324,6 @@ export const IconNames = [
 	'IconSupportXLargeLine',
 	'IconStarXLargeLine',
 	'IconStarXLargeFill',
-	'IconCelebrateXLargeLine',
 	'IconMegaphoneXLargeLine',
 	'IconCheckXLargeFill',
 	'IconUnCheckedXLargeFill',
@@ -513,7 +511,6 @@ export default {
 		IconSupportXLargeLine,
 		IconStarXLargeLine,
 		IconStarXLargeFill,
-		IconCelebrateXLargeLine,
 		IconMegaphoneXLargeLine,
 		IconCheckXLargeFill,
 		IconUnCheckedXLargeFill,
