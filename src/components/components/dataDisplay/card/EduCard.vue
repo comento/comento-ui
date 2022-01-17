@@ -1,12 +1,26 @@
 <template>
 	<article class="c-application c-edu-card" v-bind="$attrs" v-on="$listeners">
 		<div class="c-edu-card-info-container">
-			<div class="c-edu-card-subtitle mb-4">
+			<div class="c-edu-card-subtitle JB012-A mb-4">
 				<Typography type="caption1" color="gray800" :font-weight="700">
 					{{ category }}
 				</Typography>
 			</div>
-			<div class="c-edu-card-title mb-8">
+			<div class="c-edu-card-subtitle JB012-B mb-4">
+				<Typography type="caption1" color="gray800" :font-weight="700" element="span">
+					{{ category }}
+				</Typography>
+				<Typography type="caption1" color="gray300" element="span"> ∙ </Typography>
+				<Typography v-if="round > 0" type="caption1" color="blue800" :font-weight="700" element="span">
+					{{ round }}차 앵콜
+				</Typography>
+			</div>
+			<div class="c-edu-card-title JB012-A mb-8">
+				<Typography type="body1" color="gray900">
+					<slot name="title" />
+				</Typography>
+			</div>
+			<div class="c-edu-card-title JB012-B mb-8">
 				<Typography type="body1" color="gray900">
 					<slot name="title" />
 				</Typography>
@@ -57,6 +71,9 @@ export default {
 		},
 		captionRight: {
 			type: String,
+		},
+		round: {
+			type: Number,
 		},
 	},
 	components: {
@@ -160,5 +177,9 @@ $thumbnail-height-pc: 128px;
 			transform: translate(-50%, -50%) scale(1);
 		}
 	}
+}
+
+.JB012-B {
+	display: none;
 }
 </style>
