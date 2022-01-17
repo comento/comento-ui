@@ -137,12 +137,6 @@ import IconVideoLargeLine from '@/assets/images/icon/large/icon-video-large-line
 import IconVideoLargeFill from '@/assets/images/icon/large/icon-video-large-fill.svg?inline';
 import IconStarLargeLine from '@/assets/images/icon/large/icon-star-large-line.svg?inline';
 import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.svg?inline';
-// 제외
-import IconLongArrowLargeLine from '@/assets/images/icon/large/icon-longArrow-large-line.svg?inline';
-import IconSelectedLargeLine from '@/assets/images/icon/large/icon-selected-large-line.svg?inline';
-import IconKeylineLargeLine from '@/assets/images/icon/large/icon-keyline-large-line.svg?inline';
-import IconCheckLargeFill from '@/assets/images/icon/large/icon-check-large-fill.svg?inline';
-import IconWarningLargeFill from '@/assets/images/icon/large/icon-warning-large-fill.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -319,11 +313,6 @@ export const IconNames = [
 	'IconVideoLargeFill',
 	'IconStarLargeLine',
 	'IconStarLargeFill',
-	'IconLongArrowLargeLine',
-	'IconSelectedLargeLine',
-	'IconKeylineLargeLine',
-	'IconCheckLargeFill',
-	'IconWarningLargeFill',
 
 	// XLarge
 	'IconProfileXLargeLine',
@@ -517,11 +506,6 @@ export default {
 		IconVideoLargeFill,
 		IconStarLargeLine,
 		IconStarLargeFill,
-		IconLongArrowLargeLine,
-		IconSelectedLargeLine,
-		IconKeylineLargeLine,
-		IconCheckLargeFill,
-		IconWarningLargeFill,
 
 		// x-large
 		IconProfileXLargeLine,
