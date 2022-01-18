@@ -153,10 +153,12 @@ import IconPhotoXLargeLine from '@/assets/images/icon/xlarge/icon-photo-xlarge-l
 import IconSupportXLargeLine from '@/assets/images/icon/xlarge/icon-support-xlarge-line.svg?inline';
 import IconStarXLargeLine from '@/assets/images/icon/xlarge/icon-star-xlarge-line.svg?inline';
 import IconStarXLargeFill from '@/assets/images/icon/xlarge/icon-star-xlarge-fill.svg?inline';
+import IconBookmarkXLargeFill from '@/assets/images/icon/xlarge/icon-bookmark-xlarge-fill.svg?inline';
+import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookmark-xlarge-line.svg?inline';
+
 // 제외
 import IconUnCheckedXLargeFill from '@/assets/images/icon/xlarge/icon-unchecked-xlarge-fill.svg?inline';
 import IconSettingXLargeLine from '@/assets/images/icon/xlarge/icon-setting-xlarge-line.svg?inline';
-import IconBookmarkXLargeFill from '@/assets/images/icon/xlarge/icon-bookmark-xlarge-fill.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
@@ -503,6 +505,7 @@ export default {
 		IconUnCheckedXLargeFill,
 		IconSettingXLargeLine,
 		IconBookmarkXLargeFill,
+		IconBookmarkXLargeLine,
 		// 2x-large
 		IconProfile2XLargeFill,
 		IconWriting2XLargeLine,
