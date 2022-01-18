@@ -141,7 +141,6 @@ import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.s
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
 import IconProfileXLargeFill from '@/assets/images/icon/xlarge/icon-profile-xlarge-fill.svg?inline';
-import IconAnswerXLargeLine from '@/assets/images/icon/xlarge/icon-answer-xlarge-line.svg?inline';
 import IconVodXLargeLine from '@/assets/images/icon/xlarge/icon-vod-xlarge-line.svg?inline';
 import IconEssayXLargeLine from '@/assets/images/icon/xlarge/icon-essay-xlarge-line.svg?inline';
 import IconAnalyticsXLargeLine from '@/assets/images/icon/xlarge/icon-analytics-xlarge-line.svg?inline';
@@ -154,25 +153,13 @@ import IconPhotoXLargeLine from '@/assets/images/icon/xlarge/icon-photo-xlarge-l
 import IconSupportXLargeLine from '@/assets/images/icon/xlarge/icon-support-xlarge-line.svg?inline';
 import IconStarXLargeLine from '@/assets/images/icon/xlarge/icon-star-xlarge-line.svg?inline';
 import IconStarXLargeFill from '@/assets/images/icon/xlarge/icon-star-xlarge-fill.svg?inline';
-// 제외
-import IconQuestionXLargeLine from '@/assets/images/icon/xlarge/icon-question-xlarge-line.svg?inline';
-import IconAdoptXLargeLine from '@/assets/images/icon/xlarge/icon-adopt-xlarge-line.svg?inline';
-import IconCreditPlusXLargeLine from '@/assets/images/icon/xlarge/icon-creditPlus-xlarge-line.svg?inline';
-import IconCreditMinusXLargeLine from '@/assets/images/icon/xlarge/icon-creditMinus-xlarge-line.svg?inline';
-import IconLikeXLargeLine from '@/assets/images/icon/xlarge/icon-like-xlarge-line.svg?inline';
-import IconCelebrateXLargeLine from '@/assets/images/icon/xlarge/icon-celebrate-xlarge-line.svg?inline';
-import IconMegaphoneXLargeLine from '@/assets/images/icon/xlarge/icon-megaphone-xlarge-line.svg?inline';
-import IconCheckXLargeFill from '@/assets/images/icon/xlarge/icon-check-xlarge-fill.svg?inline';
-import IconUnCheckedXLargeFill from '@/assets/images/icon/xlarge/icon-unchecked-xlarge-fill.svg?inline';
-import IconSettingXLargeLine from '@/assets/images/icon/xlarge/icon-setting-xlarge-line.svg?inline';
 import IconBookmarkXLargeFill from '@/assets/images/icon/xlarge/icon-bookmark-xlarge-fill.svg?inline';
+import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookmark-xlarge-line.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
 import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?inline';
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
-// 제외
-import IconCalendarError2XLargeFill from '@/assets/images/icon/2xlarge/icon-calendar-error-2xlarge-fill.svg?inline';
 
 // 4x-large
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
@@ -317,7 +304,6 @@ export const IconNames = [
 	// XLarge
 	'IconProfileXLargeLine',
 	'IconProfileXLargeFill',
-	'IconAnswerXLargeLine',
 	'IconVodXLargeLine',
 	'IconEssayXLargeLine',
 	'IconAnalyticsXLargeLine',
@@ -330,24 +316,12 @@ export const IconNames = [
 	'IconSupportXLargeLine',
 	'IconStarXLargeLine',
 	'IconStarXLargeFill',
-	'IconQuestionXLargeLine',
-	'IconAdoptXLargeLine',
-	'IconCreditPlusXLargeLine',
-	'IconCreditMinusXLargeLine',
-	'IconLikeXLargeLine',
-	'IconCelebrateXLargeLine',
-	'IconMegaphoneXLargeLine',
-	'IconCheckXLargeFill',
-	'IconUnCheckedXLargeFill',
-	'IconSettingXLargeLine',
 	'IconBookmarkXLargeFill',
 
 	//2x-large
 	'IconProfile2XLargeFill',
 	'IconWriting2XLargeLine',
 	'IconPhoto2XLargeLine',
-	// 제외
-	'IconCalendarError2XLargeFill',
 
 	//4x-large
 	'IconStar4XLargeFill',
@@ -510,7 +484,6 @@ export default {
 		// x-large
 		IconProfileXLargeLine,
 		IconProfileXLargeFill,
-		IconAnswerXLargeLine,
 		IconVodXLargeLine,
 		IconEssayXLargeLine,
 		IconAnalyticsXLargeLine,
@@ -523,23 +496,12 @@ export default {
 		IconSupportXLargeLine,
 		IconStarXLargeLine,
 		IconStarXLargeFill,
-		IconQuestionXLargeLine,
-		IconAdoptXLargeLine,
-		IconCreditPlusXLargeLine,
-		IconCreditMinusXLargeLine,
-		IconLikeXLargeLine,
-		IconCelebrateXLargeLine,
-		IconMegaphoneXLargeLine,
-		IconCheckXLargeFill,
-		IconUnCheckedXLargeFill,
-		IconSettingXLargeLine,
 		IconBookmarkXLargeFill,
+		IconBookmarkXLargeLine,
 		// 2x-large
 		IconProfile2XLargeFill,
 		IconWriting2XLargeLine,
 		IconPhoto2XLargeLine,
-		// 제외
-		IconCalendarError2XLargeFill,
 
 		// 4x-large
 		IconStar4XLargeFill,
