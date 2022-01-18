@@ -162,8 +162,6 @@ import IconBookmarkXLargeFill from '@/assets/images/icon/xlarge/icon-bookmark-xl
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
 import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?inline';
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
-// 제외
-import IconCalendarError2XLargeFill from '@/assets/images/icon/2xlarge/icon-calendar-error-2xlarge-fill.svg?inline';
 
 // 4x-large
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
@@ -328,8 +326,6 @@ export const IconNames = [
 	'IconProfile2XLargeFill',
 	'IconWriting2XLargeLine',
 	'IconPhoto2XLargeLine',
-	// 제외
-	'IconCalendarError2XLargeFill',
 
 	//4x-large
 	'IconStar4XLargeFill',
@@ -511,8 +507,6 @@ export default {
 		IconProfile2XLargeFill,
 		IconWriting2XLargeLine,
 		IconPhoto2XLargeLine,
-		// 제외
-		IconCalendarError2XLargeFill,
 
 		// 4x-large
 		IconStar4XLargeFill,
