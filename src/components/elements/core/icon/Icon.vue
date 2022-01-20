@@ -153,8 +153,8 @@ import IconPhotoXLargeLine from '@/assets/images/icon/xlarge/icon-photo-xlarge-l
 import IconSupportXLargeLine from '@/assets/images/icon/xlarge/icon-support-xlarge-line.svg?inline';
 import IconStarXLargeLine from '@/assets/images/icon/xlarge/icon-star-xlarge-line.svg?inline';
 import IconStarXLargeFill from '@/assets/images/icon/xlarge/icon-star-xlarge-fill.svg?inline';
-import IconBookmarkXLargeFill from '@/assets/images/icon/xlarge/icon-bookmark-xlarge-fill.svg?inline';
-import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookmark-xlarge-line.svg?inline';
+import IconBookmarkXLargeFill from '@/assets/images/icon/xlarge/icon-bookMark-xlarge-fill.svg?inline';
+import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookMark-xlarge-line.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
