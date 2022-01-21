@@ -53,9 +53,6 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		/**
 		 * 정렬(left, center, right)
@@ -70,51 +67,30 @@ export default {
 		showActionButton: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		successCallback: {
 			type: Function,
 			default: () => {},
-			validator(value) {
-				return typeof value === 'function';
-			},
 		},
 		successMessage: {
 			type: String,
 			default: '확인',
-			validator(value) {
-				return typeof value === 'string';
-			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		persistent: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		full: {
 			type: Boolean,
