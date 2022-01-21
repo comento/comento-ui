@@ -55,8 +55,8 @@ export const yellow400 = '#FFE452';
 export const yellow100 = '#FFF7CC';
 export const yellow000 = '#FFFDF5';
 
-export const primary = green600;
-export const success = blue600;
+export const primary = blue600;
+export const success = green600;
 export const error = red600;
 export const secondary = orange600;
 
