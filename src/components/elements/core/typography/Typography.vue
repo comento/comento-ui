@@ -133,58 +133,38 @@ p {
 	word-wrap: break-word;
 }
 
-@mixin trans-font-size($size, $line, $math: round) {
-	font-size: $size;
-	@if $math == 'round' {
-		line-height: round($size * $line);
-	} @else if $math == 'floor' {
-		line-height: floor($size * $line);
-	}
-}
-
 .c_display1 {
-	@include trans-font-size(42px, 1.2);
-	font-weight: bold;
+	@include display1();
 }
 .c_headline1 {
-	@include trans-font-size(32px, 1.25);
-	font-weight: bold;
+	@include headline1();
 }
 .c_headline2 {
-	@include trans-font-size(28px, 1.3);
-	font-weight: bold;
+	@include headline2();
 }
 .c_headline3 {
-	@include trans-font-size(26px, 1.3);
-	font-weight: bold;
+	@include headline3();
 }
 .c_headline4 {
-	@include trans-font-size(24px, 1.25);
-	font-weight: bold;
+	@include headline4();
 }
 .c_headline5 {
-	@include trans-font-size(22px, 1.3);
-	font-weight: normal;
+	@include headline5();
 }
 .c_headline6 {
-	@include trans-font-size(18px, 1.35);
-	font-weight: bold;
+	@include headline6();
 }
 .c_body1 {
-	@include trans-font-size(16px, 1.5);
-	font-weight: normal;
+	@include body1();
 }
 .c_body2 {
-	@include trans-font-size(14px, 1.45);
-	font-weight: normal;
+	@include body2();
 }
 
 .c_caption1 {
-	@include trans-font-size(12px, 1.15);
-	font-weight: 300;
+	@include caption1();
 }
 .c_caption2 {
-	@include trans-font-size(10px, 1.15, floor);
-	font-weight: 300;
+	@include caption2();
 }
 </style>
