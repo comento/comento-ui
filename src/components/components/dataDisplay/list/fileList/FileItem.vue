@@ -1,7 +1,7 @@
 <template>
 	<ListItem class="c-application c-file-item--container" @click="handleClickFileItem({ file, index })">
 		<div class="c-file-item--content" @click="handleClickFileItemContent({ file, index })">
-			<Typography type="caption1" color="gray700">{{ file.title || file.name }}</Typography>
+			<Typography type="caption1" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
 		</div>
 		<Icon
 			v-if="isEdit"
@@ -79,6 +79,7 @@ export default {
 			cursor: pointer;
 			@include flexbox();
 			@include align-items(center);
+			overflow: hidden;
 		}
 	}
 }
