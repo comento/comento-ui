@@ -61,7 +61,7 @@ export default {
 			type: String,
 			default: 'center',
 			validator(value) {
-				return aligns.indexOf(value) !== -1;
+				return aligns.includes(value);
 			},
 		},
 		showActionButton: {

@@ -56,7 +56,7 @@ export default {
 			type: String,
 			default: 'center',
 			validator(value) {
-				return aligns.indexOf(value) !== -1;
+				return aligns.includes(value);
 			},
 		},
 		// 버튼 로딩
@@ -96,7 +96,7 @@ export default {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				return buttonColors.indexOf(value) !== -1;
+				return buttonColors.includes(value);
 			},
 		},
 	},
