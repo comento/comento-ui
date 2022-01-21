@@ -1,7 +1,7 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import WithFormModal, { aligns } from '@/components/components/message/modal/WithFormModal';
 import TextField from '@/components/components/dataEntry/input/TextField';
-import Button from '@/components/components/general/button/Button';
+import Button, { buttonColors } from '@/components/components/general/button/Button';
 import Typography from '@/components/elements/core/typography/Typography';
 import InputGroup from '@/components/components/dataEntry/input/InputGroup';
 import Select from '@/components/components/dataEntry/Select';
@@ -80,6 +80,13 @@ import Select from '@/components/components/dataEntry/Select';
                 type: "boolean",
             },
         },
+         buttonColor: {
+            description: "action 버튼 색상",
+            control: {
+                type: "select",
+                options: buttonColors,
+            },
+        },
     }}
 />
 
@@ -100,6 +107,7 @@ export const Default = (args, { argTypes }) => ({
                 :full="full"
                 :scroll="scroll"
                 :disabled="disabled"
+                :button-color="buttonColor"
             >
                 <template v-slot:title>
                     {{ title }}
