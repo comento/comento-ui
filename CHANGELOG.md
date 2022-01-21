@@ -1,3 +1,17 @@
+## [0.3.4](https://github.com/comento/comento-ui/compare/v0.3.3...v0.3.4) (2022-01-21)
+
+
+### Bug Fixes
+
+* 파일 이름이 길 때 말줄임표 추가 ([#688](https://github.com/comento/comento-ui/issues/688)) ([b0fae08](https://github.com/comento/comento-ui/commit/b0fae085d1fe8ce2275891d8e251154eff64aa18))
+
+
+### Features
+
+* WithFormModal, BasicModal에 buttonColor props 추가 ([#690](https://github.com/comento/comento-ui/issues/690)) ([e4c460a](https://github.com/comento/comento-ui/commit/e4c460a80f74de074f6860c41ac572d90be2c795))
+
+
+
 ## [0.3.3](https://github.com/comento/comento-ui/compare/v0.3.2...v0.3.3) (2022-01-18)
 
 
