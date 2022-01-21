@@ -24,7 +24,7 @@
 
 			<!-- button 영역 -->
 			<div v-if="showActionButton" class="c-modal--action-button-wrapper">
-				<Button size="large" :loading="loading" :type="buttonColor" full @click="successCallback">
+				<Button size="large" :loading="loading" :color="buttonColor" full @click="successCallback">
 					{{ successMessage }}
 				</Button>
 			</div>
