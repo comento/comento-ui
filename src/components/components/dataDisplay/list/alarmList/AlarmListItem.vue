@@ -7,7 +7,7 @@
 			<Typography type="body2" color="gray850" class="c-alarm-list-item--message mb-8">
 				<slot name="message" />
 			</Typography>
-			<Typography v-if="$slots['date']" type="caption1" color="gray500">
+			<Typography v-if="$slots['date']" type="caption1" color="gray400">
 				<slot name="date" />
 			</Typography>
 		</div>
