@@ -34,8 +34,8 @@ export default {
 	@include flex-direction(row);
 	background-color: white;
 
-	&.alarm-not-confirm {
-		background-color: rgba(222, 250, 235, 0.4);
+	&.alarm-unread {
+		background-color: $blue000;
 	}
 	&.alarm-edu {
 		background-color: $blue000;
