@@ -16,7 +16,7 @@ storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => 
 					icon: 'won',
 					message: '현금 환급을 신청한 30,000원이 계좌로 입금됐어요.',
 					date: '2021.02.22',
-					confirm_style: 'alarm-not-confirm',
+					confirm_style: 'alarm-unread',
 				},
 				{
 					icon: 'question',
