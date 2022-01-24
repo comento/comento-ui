@@ -170,14 +170,14 @@ export default {
 
 <style lang="scss" scoped>
 $primary-background-color: $primary;
-$primary-hover-background-color: $green800;
-$primary-disabled-background-color: $green100;
-$primary-text-color: $green600;
+$primary-hover-background-color: $blue800;
+$primary-disabled-background-color: $blue100;
+$primary-text-color: $blue600;
 
 $success-background-color: $success;
-$success-hover-background-color: $blue800;
-$success-disabled-background-color: $blue100;
-$success-text-color: $blue600;
+$success-hover-background-color: $green800;
+$success-disabled-background-color: $green100;
+$success-text-color: $green600;
 
 $info-default-background-color: $gray100;
 $info-disabled-color: $gray200;
@@ -186,6 +186,7 @@ $error-background-color: $red600;
 $error-hover-background-color: $red800;
 $error-disabled-background-color: $red100;
 $error-text-color: $red600;
+
 .c-button {
 	color: $white;
 	background-color: $primary;
