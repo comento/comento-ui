@@ -3,6 +3,7 @@ import Button, { buttonSizes, buttonColors, buttonTypes } from '@/components/com
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 import Loader from '@/components/components/other/Loader';
+import IconButton from "@/components/components/general/button/IconButton";
 
 <Meta
   title="General/Button/Button"
@@ -321,6 +322,49 @@ export const Default = (args, { argTypes }) => ({
                 </div>
         `,
             components: { Button, Icon },
+        }}
+    </Story>
+</Canvas>
+
+### IconButton Sizes
+<Canvas>
+    <Story name="IconButtonSizes" height="100px">
+        {{
+            template: `
+                <div>
+                      <template v-for="(item, index) in exampleData">
+                        <div class="flex mb-10">
+                            <IconButton :icon-name="item.iconName" :size="item.iconSize" class="mr-10"/>
+                            <IconButton :icon-name="item.iconName" :size="item.iconSize" class="hover-test mr-10"/>
+                            <IconButton :icon-name="item.iconName" :size="item.iconSize" disabled class="mr-10"/>
+                        </div>
+                      </template>
+                </div>
+            `,
+            data() {
+                return {
+                    exampleData: [
+                        {
+                            iconName: 'IconBookmarkMediumFill',
+                            iconSize: 'small'
+                        },
+                        {
+                            iconName:  'IconSendLargeFill',
+                            iconSize: 'medium',
+                        },
+                        {
+                            iconName:  'IconStarXLargeLine',
+                            iconSize: 'large'
+                        },
+                    ]
+                }
+            },
+            components: { IconButton,
+                'ButtonStateTitle': {
+                    template: `<Typography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></Typography>`,
+                    components: {Typography},
+                },
+            },
         }}
     </Story>
 </Canvas>
