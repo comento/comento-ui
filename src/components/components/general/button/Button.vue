@@ -35,7 +35,7 @@
 import Loader from '@/components/components/other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
-export const buttonColors = ['primary', 'light-success', 'success', 'secondary', 'error'];
+export const buttonColors = ['primary', 'light-primary', 'success', 'secondary', 'error'];
 export const buttonTypes = ['fill', 'outlined', 'text', 'icon'];
 
 /**
@@ -56,7 +56,7 @@ export default {
 			},
 		},
 		/**
-		 * 색상(primary, light-success, success, gray, error)
+		 * 색상(primary, light-primary, success, gray, error)
 		 */
 		color: {
 			type: String,
@@ -327,7 +327,7 @@ $error-text-color: $red600;
 	}
 }
 
-.light-success {
+.light-primary {
 	background-color: $blue100;
 	color: $blue600;
 	&:hover,
