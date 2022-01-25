@@ -1,6 +1,8 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Button, { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/Button';
+import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
+import Loader from '@/components/components/other/Loader';
 
 <Meta
   title="General/Button/Button"
@@ -90,10 +92,31 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <template v-for="(type, index) in buttonTypes">
-                    <div class="flex mb-10">
-                        <template v-for="(color, index) in buttonColors">
-                            <Button :color="color" :type="type" class="mr-4">{{type}} {{color}}</Button>
-                        </template>
+                    <div class="flex">
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>default</ButtonStateTitle>
+                            <template v-for="(color, index) in buttonColors">
+                                <Button :color="color" :type="type" class="mb-16">Button</Button>
+                            </template>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>hover</ButtonStateTitle>
+                            <template v-for="(color, index) in buttonColors">
+                                <Button :color="color" :type="type" class="mb-16">Button</Button>
+                            </template>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>disabled</ButtonStateTitle>
+                            <template v-for="(color, index) in buttonColors">
+                                <Button :color="color" :type="type" disabled class="mb-16">Button</Button>
+                            </template>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>loading</ButtonStateTitle>
+                            <template v-for="(color, index) in buttonColors">
+                                <Button :color="color" :type="type" disabled class="mb-16" loading></Button>
+                            </template>
+                        </div>
                     </div>
                   </template>
                 </div>
@@ -104,7 +127,12 @@ export const Default = (args, { argTypes }) => ({
                     buttonTypes,
                 }
             },
-            components: { Button },
+            components: { Button, Typography, Loader,
+                'ButtonStateTitle': {
+                    template: `<Typography type="body2" color="gray400" align="center" class="mb-10"><slot/></Typography>`,
+                    components: {Typography},
+                },
+            },
         }}
     </Story>
 </Canvas>
