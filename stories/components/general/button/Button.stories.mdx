@@ -89,26 +89,21 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <div style="display: flex">
-                    <Button color="primary">Fill Primary</Button>
-                    <Button color="success">Fill Success</Button>
-                    <Button color="error">Fill Error</Button>
-                    <Button color="secondary">Fill Gray</Button>
-                  </div>
-                  <div style="display: flex">
-                    <Button color="primary" type="outlined">Outlined Primary</Button>
-                    <Button color="success" type="outlined">Outlined Success</Button>
-                    <Button color="error" type="outlined">Outlined Error</Button>
-                    <Button color="secondary" type="outlined">Outlined Gray</Button>
-                  </div>
-                  <div style="display: flex">
-                    <Button color="primary" type="text">Text Primary</Button>
-                    <Button color="success" type="text">Text Success</Button>
-                    <Button color="error" type="text">Text Error</Button>
-                    <Button color="secondary" type="text">Text Gray</Button>
-                  </div>
+                  <template v-for="(type, index) in buttonTypes">
+                    <div class="flex mb-10">
+                        <template v-for="(color, index) in buttonColors">
+                            <Button :color="color" :type="type" class="mr-4">{{type}} {{color}}</Button>
+                        </template>
+                    </div>
+                  </template>
                 </div>
-        `,
+            `,
+            data() {
+                return {
+                    buttonColors,
+                    buttonTypes,
+                }
+            },
             components: { Button },
         }}
     </Story>
