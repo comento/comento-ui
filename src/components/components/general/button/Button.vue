@@ -333,7 +333,7 @@ $error-text-color: $red600;
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: #c5e3ff;
+		background-color: $blue400;
 	}
 	@include mobile {
 		@include remove-active-and-focus($blue100);
