@@ -91,30 +91,30 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <template v-for="(type, index) in buttonTypes">
+                  <template v-for="(type, index) in filteredButtonTypes">
                     <div class="flex">
                         <ButtonStateTitle class="mr-30">{{type}}</ButtonStateTitle>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>default</ButtonStateTitle>
-                            <template v-for="(color, index) in buttonColors">
+                            <template v-for="(color, index) in getFilterButtonColors(type)">
                                 <Button :color="color" :type="type" class="mb-16">Button</Button>
                             </template>
                         </div>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>hover</ButtonStateTitle>
-                            <template v-for="(color, index) in buttonColors">
+                            <template v-for="(color, index) in getFilterButtonColors(type)">
                                 <Button :color="color" :type="type" class="mb-16 hover-test">Button</Button>
                             </template>
                         </div>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>disabled</ButtonStateTitle>
-                            <template v-for="(color, index) in buttonColors">
+                            <template v-for="(color, index) in getFilterButtonColors(type)">
                                 <Button :color="color" :type="type" disabled class="mb-16">Button</Button>
                             </template>
                         </div>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>loading</ButtonStateTitle>
-                            <template v-for="(color, index) in buttonColors">
+                            <template v-for="(color, index) in getFilterButtonColors(type)">
                                 <Button :color="color" :type="type" class="mb-16" loading></Button>
                             </template>
                         </div>
@@ -127,6 +127,20 @@ export const Default = (args, { argTypes }) => ({
                     buttonColors,
                     buttonTypes,
                 }
+            },
+            methods: {
+                getFilterButtonColors(type) {
+                    return type === 'fill' ? this.buttonColors : this.filteredButtonColors
+                }
+            },
+            computed: {
+                // light-primary는 fill type에서만 쓰임
+                filteredButtonColors() {
+                    return Object.assign(buttonColors, {}).filter(item => item !== 'light-primary')
+                },
+                filteredButtonTypes() {
+                    return Object.assign(buttonTypes, {}).filter(item => item !== 'icon')
+                },
             },
             components: { Button, Typography, Loader,
                 'ButtonStateTitle': {
