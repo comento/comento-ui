@@ -11,46 +11,33 @@ import IconSpinnerSmall from '@/assets/images/icon/small/icon-spinner-small.svg?
 import IconSpinnerMedium from '@/assets/images/icon/medium/icon-spinner-medium.svg?inline';
 import IconSpinnerLarge from '@/assets/images/icon/large/icon-spinner-large.svg?inline';
 import { colors } from '@/utils/constants/color';
-const {
-	gray200,
-	gray500,
-	green100,
-	green600,
-	green800,
-	blue100,
-	blue600,
-	blue800,
-	red100,
-	red600,
-	red800,
-	white,
-} = colors;
+const { gray200, gray500, blue100, blue800, red100, red600, red800, orange800, orange100, white } = colors;
 
 export const LoaderSizes = ['small', 'medium', 'large'];
 export const LoaderColors = ['secondary', 'primary', 'success', 'error'];
 
 const colorMap = {
-	secondary: {
-		stroke: gray200,
-		fill: gray500,
-	},
-	secondaryReversed: {
-		stroke: gray200,
-		fill: gray500,
-	},
 	primary: {
-		stroke: green100,
-		fill: green600,
+		stroke: blue100,
+		fill: blue800,
 	},
-	primaryReversed: {
-		stroke: green800,
+	'primary-reversed': {
+		stroke: blue800,
+		fill: white,
+	},
+	'light-primary': {
+		stroke: blue100,
+		fill: blue800,
+	},
+	'light-primary-reversed': {
+		stroke: blue800,
 		fill: white,
 	},
 	success: {
-		stroke: blue100,
-		fill: blue600,
+		stroke: orange100,
+		fill: orange800,
 	},
-	successReversed: {
+	'success-reversed': {
 		stroke: blue800,
 		fill: white,
 	},
@@ -58,9 +45,25 @@ const colorMap = {
 		stroke: red100,
 		fill: red600,
 	},
-	errorReversed: {
+	'error-reversed': {
 		stroke: red800,
 		fill: white,
+	},
+	secondary: {
+		stroke: gray200,
+		fill: orange800,
+	},
+	'secondary-reversed': {
+		stroke: orange800,
+		fill: white,
+	},
+	gray: {
+		stroke: gray200,
+		fill: gray500,
+	},
+	'gray-reversed': {
+		stroke: gray200,
+		fill: gray500,
 	},
 };
 
@@ -105,7 +108,7 @@ export default {
 		},
 	},
 	mounted() {
-		const colorMapKey = this.reversed ? `${this.color}Reversed` : this.color;
+		const colorMapKey = this.reversed ? `${this.color}-reversed` : this.color;
 		this.$refs['icon'].querySelectorAll('.circle')[0].setAttribute('stroke', colorMap[colorMapKey]['stroke']);
 		this.$refs['icon'].querySelectorAll('.quarter')[0].setAttribute('fill', colorMap[colorMapKey]['fill']);
 	},
