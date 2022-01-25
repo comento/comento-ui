@@ -161,9 +161,9 @@ $success-hover-background-color: $green800;
 $success-disabled-background-color: $green100;
 $success-text-color: $green600;
 
-// secondary는 패턴화가 가능한 컬러만 변수로 만듦
-$secondary-default-background-color: $orange100;
-$secondary-disabled-color: $gray200;
+// gray는 패턴화가 가능한 컬러만 변수로 만듦
+$gray-default-background-color: $gray100;
+$gray-disabled-color: $gray200;
 
 $error-background-color: $red600;
 $error-hover-background-color: $red800;
@@ -422,8 +422,8 @@ $error-text-color: $red600;
 	}
 }
 
-.secondary {
-	background-color: $secondary-default-background-color;
+.gray {
+	background-color: $gray-default-background-color;
 	color: $gray700;
 	&:hover,
 	&:focus,
@@ -431,36 +431,36 @@ $error-text-color: $red600;
 		background-color: $gray200;
 	}
 	@include mobile {
-		@include remove-active-and-focus($secondary-default-background-color);
+		@include remove-active-and-focus($gray-default-background-color);
 	}
 	&:disabled {
 		background-color: $gray000;
-		color: $secondary-disabled-color;
+		color: $gray-disabled-color;
 		.c-button--icon::v-deep .c-icon {
-			fill: $secondary-disabled-color !important;
+			fill: $gray-disabled-color !important;
 		}
 		.c-button--loading {
 			background-color: $gray000;
 		}
 	}
 	.c-button--loading {
-		background-color: $secondary-default-background-color;
+		background-color: $gray-default-background-color;
 	}
 	&.text {
 		color: $gray500;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: $secondary-default-background-color;
+			background-color: $gray-default-background-color;
 		}
 		@include mobile {
 			@include remove-active-and-focus();
 		}
 		&:disabled {
-			color: $secondary-disabled-color;
+			color: $gray-disabled-color;
 			background: none;
 			.c-button--icon::v-deep .c-icon {
-				fill: $secondary-disabled-color !important;
+				fill: $gray-disabled-color !important;
 			}
 		}
 	}
@@ -477,11 +477,11 @@ $error-text-color: $red600;
 			@include remove-active-and-focus();
 		}
 		&:disabled {
-			color: $secondary-disabled-color;
-			border: 1px solid $secondary-disabled-color;
+			color: $gray-disabled-color;
+			border: 1px solid $gray-disabled-color;
 			background-color: $white;
 			.c-button--icon::v-deep .c-icon {
-				fill: $secondary-disabled-color !important;
+				fill: $gray-disabled-color !important;
 			}
 		}
 		.c-button--loading {
