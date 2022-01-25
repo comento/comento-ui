@@ -271,7 +271,8 @@ $gray-text-color: $gray;
 	background-color: $primary-background-color;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $primary-hover-background-color;
 	}
 	@include mobile {
@@ -294,7 +295,8 @@ $gray-text-color: $gray;
 		color: $primary-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $primary-disabled-background-color;
 		}
 		@include mobile {
@@ -314,7 +316,8 @@ $gray-text-color: $gray;
 		color: $primary-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $primary-disabled-background-color;
 		}
 		@include mobile {
@@ -339,7 +342,8 @@ $gray-text-color: $gray;
 	color: $blue600;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $blue400;
 	}
 	@include mobile {
@@ -364,7 +368,8 @@ $gray-text-color: $gray;
 	background-color: $success-background-color;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $success-hover-background-color;
 	}
 	@include mobile {
@@ -387,7 +392,8 @@ $gray-text-color: $gray;
 		color: $success-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $success-disabled-background-color;
 		}
 		@include mobile {
@@ -408,7 +414,8 @@ $gray-text-color: $gray;
 		color: $success-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $success-disabled-background-color;
 		}
 		@include mobile {
@@ -433,7 +440,8 @@ $gray-text-color: $gray;
 	color: $gray-text-color;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $gray250;
 	}
 	@include mobile {
@@ -456,7 +464,8 @@ $gray-text-color: $gray;
 		color: $gray-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $gray-default-background-color;
 		}
 		@include mobile {
@@ -476,7 +485,8 @@ $gray-text-color: $gray;
 		color: $gray-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $gray100;
 		}
 		@include mobile {
@@ -500,7 +510,8 @@ $gray-text-color: $gray;
 	background-color: $error-background-color;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $error-hover-background-color;
 	}
 	@include mobile {
@@ -522,7 +533,8 @@ $gray-text-color: $gray;
 		color: $error-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $red000;
 		}
 		@include mobile {
@@ -542,7 +554,8 @@ $gray-text-color: $gray;
 		color: $error-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $error-disabled-background-color;
 		}
 		@include mobile {
@@ -566,7 +579,8 @@ $gray-text-color: $gray;
 	background-color: $secondary-background-color;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $secondary-hover-background-color;
 	}
 	@include mobile {
@@ -588,7 +602,8 @@ $gray-text-color: $gray;
 		color: $secondary-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $orange000;
 		}
 		@include mobile {
@@ -608,7 +623,8 @@ $gray-text-color: $gray;
 		color: $secondary-background-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $secondary-disabled-background-color;
 		}
 		@include mobile {
