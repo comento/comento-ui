@@ -11,11 +11,26 @@ import IconSpinnerSmall from '@/assets/images/icon/small/icon-spinner-small.svg?
 import IconSpinnerMedium from '@/assets/images/icon/medium/icon-spinner-medium.svg?inline';
 import IconSpinnerLarge from '@/assets/images/icon/large/icon-spinner-large.svg?inline';
 import { colors } from '@/utils/constants/color';
-const { gray200, gray500, blue100, blue800, red100, red600, red800, orange800, orange100, white } = colors;
+const {
+	gray200,
+	gray400,
+	gray800,
+	blue000,
+	blue100,
+	blue400,
+	blue800,
+	red100,
+	red800,
+	orange800,
+	green100,
+	green800,
+	white,
+} = colors;
+
 import { buttonColors } from '@/components/components/general/button/Button';
 
 export const LoaderSizes = ['small', 'medium', 'large'];
-export const LoaderColors = ['secondary', 'primary', 'success', 'error'];
+export const LoaderColors = buttonColors;
 
 const colorMap = {
 	primary: {
@@ -27,24 +42,24 @@ const colorMap = {
 		fill: white,
 	},
 	'light-primary': {
-		stroke: blue100,
-		fill: blue800,
+		stroke: '#E8EAED',
+		fill: red800,
 	},
 	'light-primary-reversed': {
-		stroke: blue800,
-		fill: white,
+		stroke: blue000,
+		fill: blue400,
 	},
 	success: {
-		stroke: orange100,
-		fill: orange800,
+		stroke: green100,
+		fill: green800,
 	},
 	'success-reversed': {
-		stroke: blue800,
+		stroke: green800,
 		fill: white,
 	},
 	error: {
 		stroke: red100,
-		fill: red600,
+		fill: red800,
 	},
 	'error-reversed': {
 		stroke: red800,
@@ -59,12 +74,12 @@ const colorMap = {
 		fill: white,
 	},
 	gray: {
-		stroke: gray200,
-		fill: gray500,
+		stroke: '#979CA2',
+		fill: gray400,
 	},
 	'gray-reversed': {
-		stroke: gray200,
-		fill: gray500,
+		stroke: '#979CA2',
+		fill: gray800,
 	},
 };
 
@@ -91,7 +106,7 @@ export default {
 			type: String,
 			default: 'secondary',
 			validator(value) {
-				return buttonColors.includes(value);
+				return LoaderColors.includes(value);
 			},
 		},
 		reversed: {
