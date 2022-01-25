@@ -106,7 +106,7 @@ export default {
 			type: String,
 			default: 'secondary',
 			validator(value) {
-				return LoaderColors.includes(value);
+				return buttonColors.includes(value);
 			},
 		},
 		reversed: {
