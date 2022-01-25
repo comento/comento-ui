@@ -12,6 +12,7 @@ import IconSpinnerMedium from '@/assets/images/icon/medium/icon-spinner-medium.s
 import IconSpinnerLarge from '@/assets/images/icon/large/icon-spinner-large.svg?inline';
 import { colors } from '@/utils/constants/color';
 const { gray200, gray500, blue100, blue800, red100, red600, red800, orange800, orange100, white } = colors;
+import { buttonColors } from '@/components/components/general/button/Button';
 
 export const LoaderSizes = ['small', 'medium', 'large'];
 export const LoaderColors = ['secondary', 'primary', 'success', 'error'];
@@ -80,7 +81,7 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return LoaderSizes.indexOf(value) !== -1;
+				return LoaderSizes.includes(value);
 			},
 		},
 		/**
@@ -90,15 +91,12 @@ export default {
 			type: String,
 			default: 'secondary',
 			validator(value) {
-				return LoaderColors.indexOf(value) !== -1;
+				return buttonColors.includes(value);
 			},
 		},
 		reversed: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	computed: {
