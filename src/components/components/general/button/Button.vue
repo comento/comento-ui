@@ -52,17 +52,17 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return buttonSizes.indexOf(value) !== -1;
+				return buttonSizes.includes(value);
 			},
 		},
 		/**
-		 * 색상(primary, light-success, success, secondary, error)
+		 * 색상(primary, light-success, success, gray, error)
 		 */
 		color: {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				const isValid = buttonColors.indexOf(value) !== -1;
+				const isValid = buttonColors.includes(value);
 				if (!isValid) {
 					console.error(`${value} is not a valid value of Button color`);
 				}
@@ -76,50 +76,32 @@ export default {
 			type: String,
 			default: 'fill',
 			validator(value) {
-				return buttonTypes.indexOf(value) !== -1;
+				return buttonTypes.includes(value);
 			},
 		},
 		full: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		fixed: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		absolute: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		shadow: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	computed: {
