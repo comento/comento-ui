@@ -93,6 +93,7 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                   <template v-for="(type, index) in buttonTypes">
                     <div class="flex">
+                        <ButtonStateTitle class="mr-30">{{type}}</ButtonStateTitle>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>default</ButtonStateTitle>
                             <template v-for="(color, index) in buttonColors">
@@ -129,7 +130,7 @@ export const Default = (args, { argTypes }) => ({
             },
             components: { Button, Typography, Loader,
                 'ButtonStateTitle': {
-                    template: `<Typography type="body2" color="gray400" align="center" class="mb-10"><slot/></Typography>`,
+                    template: `<Typography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></Typography>`,
                     components: {Typography},
                 },
             },
