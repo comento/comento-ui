@@ -17,6 +17,9 @@ import { buttonColors } from '@/components/components/general/button/Button';
 import Icon from '@/components/elements/core/icon/Icon';
 export const IconButtonSizes = ['small', 'medium', 'large'];
 
+/**
+ * @displayName c-icon-button
+ */
 export default {
 	name: 'IconButton',
 	props: {
