@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import EduCard from '@/components/components/dataDisplay/card/EduCard';
+import PromotionEduCard from '@/components/components/dataDisplay/card/PromotionEduCard';
 import Grid from '@/components/layout/Grid';
 import Row from '@/components/layout/Row';
 import StyleCol from '@/components/layout/StyleCol';
@@ -7,8 +7,8 @@ import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
 import Chip from '@/components/components/dataDisplay/chips/Chip';
 
 <Meta
-	title="Data Display/Card/EduCard"
-	component={EduCard}
+	title="Data Display/Card/PromotionEduCard"
+	component={PromotionEduCard}
 	argTypes={{
 		backgroundImage: {
 			description: '카드 배경<br/>`String`',
@@ -63,50 +63,51 @@ import Chip from '@/components/components/dataDisplay/chips/Chip';
 
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Grid, Row, StyleCol, EduCard },
+	components: { Grid, Row, StyleCol, PromotionEduCard },
 	template: `
         <Grid>
             <Row>
                 <StyleCol :col-lg="4">
-                    <EduCard
+                    <PromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
-                        :caption-left="captionLeft"
-                        :caption-right="captionRight"
-                        width="152px"
-                        imageHeight="100px"
+                        :scoreAverage="4.4"
+                        :reviewCount="10"
+                        :applicantCount="70"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
+                    </PromotionEduCard>
                 </StyleCol>
                 <StyleCol :col-lg="4">
-                    <EduCard
+                    <PromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
-                        :caption-left="captionLeft"
-                        :caption-right="captionRight"
+                        :scoreAverage="4.4"
+                        :reviewCount="10"
+                        :applicantCount="70"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
+                    </PromotionEduCard>
                 </StyleCol>
                 <StyleCol :col-lg="4">
-                    <EduCard
+                    <PromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
-                        :caption-left="captionLeft"
-                        :caption-right="captionRight"
+                        :scoreAverage="4.4"
+                        :reviewCount="10"
+                        :applicantCount="70"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
+                    </PromotionEduCard>
                 </StyleCol>
             </Row>
         </Grid>
         `,
 });
 
-# EduCard
+# PromotionEduCard
 
-**EduCard** 컴포넌트의 문서입니다.
+**PromotionEduCard** 컴포넌트의 문서입니다.
 
 <Story name="Default">{Default.bind({})}</Story>
 
@@ -128,7 +129,7 @@ export const Default = (args, { argTypes }) => ({
                 <Grid>
                     <Row>
                         <StyleCol :col-lg="4">
-                            <EduCard
+                            <PromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 caption-left="captionLeft"
@@ -140,10 +141,10 @@ export const Default = (args, { argTypes }) => ({
                                   </ChipGroup>
                                </template>
                                <template v-slot:title>Title</template>
-                            </EduCard>
+                            </PromotionEduCard>
                         </StyleCol>
                         <StyleCol :col-lg="4">
-                            <EduCard
+                            <PromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 title="대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심알아보고 보고서 작성과 직무 체험하기"
@@ -151,10 +152,10 @@ export const Default = (args, { argTypes }) => ({
                                 caption-right="captionRight"
                             >
                                <template v-slot:title>Title</template>
-                            </EduCard>
+                            </PromotionEduCard>
                         </StyleCol>
                         <StyleCol :col-lg="4">
-                            <EduCard
+                            <PromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 title="title"
@@ -162,12 +163,12 @@ export const Default = (args, { argTypes }) => ({
                                 caption-right="captionRight"
                             >
                                <template v-slot:title>Title</template>
-                            </EduCard>
+                            </PromotionEduCard>
                         </StyleCol>
                     </Row>
                 </Grid>
             `,
-			components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip },
+			components: { Grid, Row, StyleCol, PromotionEduCard, ChipGroup, Chip },
 		}}
 	</Story>
 </Canvas>
