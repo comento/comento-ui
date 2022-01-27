@@ -25,6 +25,7 @@ export default {
 	props: {
 		iconName: {
 			type: String,
+			required: true,
 		},
 		/**
 		 * 크기(small, medium, large, xlarge)
