@@ -14,3 +14,4 @@ export * from './chips';
 export * from './content';
 export * from './drawer';
 export * from './list';
+export * from './rating';
