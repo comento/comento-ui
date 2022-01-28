@@ -8,4 +8,3 @@ import Textarea from './Textarea';
 
 export { Checkbox, DatePicker, Dropdown, FormGroup, RadioButton, Select, Textarea };
 export * from './input';
-export * from './rating';
