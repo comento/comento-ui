@@ -179,7 +179,6 @@ $success-hover-background-color: $blue800;
 $success-disabled-background-color: $blue100;
 $success-text-color: $blue600;
 
-// secondary는 패턴화가 가능한 컬러만 변수로 만듦
 $info-default-background-color: $gray100;
 $info-disabled-color: $gray200;
 
