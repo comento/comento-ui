@@ -34,28 +34,70 @@ import Chip from '@/components/components/dataDisplay/chips/Chip';
 				type: 'text',
 			},
 		},
-		captionLeft: {
-			description: '좌측 캡션<br/>`String`',
-			defaultValue: 'captionLeft',
+		scoreAverage: {
+			description: '평점<br/>`Number`',
+			defaultValue: 0,
 			table: {
 				type: {
 					summary: null,
 				},
 			},
 			control: {
-				type: 'text',
+				type: 'number',
 			},
 		},
-		captionRight: {
-			description: '우측 캡션<br/>`String`',
-			defaultValue: 'captionRight',
+		reviewCount: {
+			description: '리뷰 수<br/>`Number`',
+			defaultValue: 0,
 			table: {
 				type: {
 					summary: null,
 				},
 			},
 			control: {
-				type: 'text',
+				type: 'number',
+			},
+		},
+		applicantCount: {
+			description: '수강생 수<br/>`Number`',
+			defaultValue: 0,
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'number',
+			},
+		},
+		title: {
+			description: '카드 타이틀',
+			defaultValue: null,
+			table: {
+				type: {
+					category: 'slots',
+					summary: 'HTMLElement',
+				},
+			},
+		},
+		additionalButton: {
+			description: '우상단 추가 버튼',
+			defaultValue: null,
+			table: {
+				type: {
+					category: 'slots',
+					summary: 'HTMLElement',
+				},
+			},
+		},
+		alternativeCaption: {
+			description: '대체 캡션',
+			defaultValue: null,
+			table: {
+				type: {
+					category: 'slots',
+					summary: 'HTMLElement',
+				},
 			},
 		},
 	}}
@@ -71,9 +113,9 @@ export const Default = (args, { argTypes }) => ({
                     <PromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
-                        :scoreAverage="4.4"
-                        :reviewCount="10"
-                        :applicantCount="70"
+                        :score-average="scoreAverage"
+                        :review-count="reviewCount"
+                        :applicant-count="applicantCount"
                     >
                        <template v-slot:title>Title</template>
                     </PromotionEduCard>
@@ -82,9 +124,9 @@ export const Default = (args, { argTypes }) => ({
                     <PromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
-                        :scoreAverage="4.4"
-                        :reviewCount="10"
-                        :applicantCount="70"
+                        :score-average="scoreAverage"
+                        :review-count="reviewCount"
+                        :applicant-count="applicantCount"
                     >
                        <template v-slot:title>Title</template>
                     </PromotionEduCard>
@@ -93,9 +135,9 @@ export const Default = (args, { argTypes }) => ({
                     <PromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
-                        :scoreAverage="4.4"
-                        :reviewCount="10"
-                        :applicantCount="70"
+                        :score-average="scoreAverage"
+                        :review-count="reviewCount"
+                        :applicant-count="applicantCount"
                     >
                        <template v-slot:title>Title</template>
                     </PromotionEduCard>
@@ -132,37 +174,34 @@ export const Default = (args, { argTypes }) => ({
                             <PromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
-                                caption-left="captionLeft"
-                                caption-right="captionRight"
+                                :score-average="4.4"
+                                :review-count="50"
+                                :applicant-count="72"
                             >
-                               <template v-slot:chip>
-                                  <ChipGroup>
-                                    <Chip size="small">복습 VOD</Chip>
-                                  </ChipGroup>
-                               </template>
-                               <template v-slot:title>Title</template>
+                                <template v-slot:title>Title</template>
+                                <template v-slot:alternativeCaption>대체 캡션 사용</template>
                             </PromotionEduCard>
                         </StyleCol>
                         <StyleCol :col-lg="4">
                             <PromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
-                                title="대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심알아보고 보고서 작성과 직무 체험하기"
-                                caption-left="captionLeft"
-                                caption-right="captionRight"
+                                :score-average="4.4"
+                                :review-count="50"
+                                :applicant-count="72"
                             >
-                               <template v-slot:title>Title</template>
+                                <template v-slot:title>Title</template>
                             </PromotionEduCard>
                         </StyleCol>
                         <StyleCol :col-lg="4">
                             <PromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
-                                title="title"
-                                caption-left="captionLeft"
-                                caption-right="captionRight"
+                                :score-average="5"
+                                :review-count="50"
+                                :applicant-count="72"
                             >
-                               <template v-slot:title>Title</template>
+                                <template v-slot:title>Title</template>
                             </PromotionEduCard>
                         </StyleCol>
                     </Row>
