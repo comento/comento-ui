@@ -1,26 +1,30 @@
 <template>
 	<article class="c-application c-edu-card" v-bind="$attrs" :style="computedStyle" v-on="$listeners">
-		<div class="c-edu-card-image-container">
-			<div v-if="$slots['chip']" class="c-edu-card-chip-container">
+		<div class="c-edu-card--image-container">
+			<div v-if="$slots['chip']" class="c-edu-card--chip-container">
 				<slot name="chip" />
 			</div>
-			<div v-if="$slots['additionalButton']" class="c-edu-card-additional-button">
+			<div v-if="$slots['additionalButton']" class="c-edu-card--additional-button">
 				<slot name="additionalButton" />
 			</div>
-			<img class="c-edu-card-image" :src="backgroundImage" alt />
+			<img class="c-edu-card--image" :src="backgroundImage" alt />
 		</div>
-		<div class="c-edu-card-info-container">
-			<div class="c-edu-card-subtitle">
+		<div class="c-edu-card--info-container">
+			<div class="c-edu-card--subtitle">
 				<Typography type="caption1" color="gray800" :font-weight="400">
 					{{ category }}
 				</Typography>
+				<Typography v-if="additionalSubtitle" type="caption1" color="gray300" class="mx-4"> ∙ </Typography>
+				<Typography v-if="additionalSubtitle" type="caption1" color="secondary">
+					{{ additionalSubtitle }}
+				</Typography>
 			</div>
-			<div class="c-edu-card-title mt-4">
+			<div class="c-edu-card--title mt-4">
 				<Typography type="body1" color="gray900" :font-weight="400">
 					<slot name="title" />
 				</Typography>
 			</div>
-			<div class="c-edu-card-caption mt-8">
+			<div class="c-edu-card--caption mt-8">
 				<Typography type="caption1" element="span" color="gray400">
 					{{ captionLeft }}
 				</Typography>
@@ -48,6 +52,10 @@ export default {
 		backgroundImage: {
 			type: String,
 		},
+		backgroundColor: {
+			type: String,
+			default: 'white',
+		},
 		category: {
 			type: String,
 		},
@@ -68,12 +76,17 @@ export default {
 			type: String,
 			default: '',
 		},
+		additionalSubtitle: {
+			type: String,
+			default: '',
+		},
 	},
 	computed: {
 		computedStyle() {
 			return {
 				'--card-width': this.width,
 				'--image-height': this.computedImageHeight,
+				'--background-color': this.backgroundColor,
 			};
 		},
 		computedImageHeight() {
@@ -94,13 +107,13 @@ export default {
 <style lang="scss" scoped>
 .c-edu-card {
 	padding-bottom: 12px;
-	background-color: $white;
+	background-color: var(--background-color);
 	@include border-radius(4px);
 	width: var(--card-width);
 	max-width: 343px;
 	cursor: pointer;
 
-	&-image {
+	&--image {
 		border: none;
 		width: 100%;
 		@include opacity(0.9);
@@ -115,31 +128,36 @@ export default {
 		}
 	}
 
-	&-chip-container {
+	&--chip-container {
 		position: absolute;
 		z-index: 1;
 		top: 8px;
 		left: 10px;
 	}
 
-	&-additional-button {
+	&--additional-button {
 		position: absolute;
 		z-index: 1;
 		top: 8px;
 		right: 8px;
 	}
 
-	&-info-container {
+	&--info-container {
 		margin-top: 12px;
 		width: 100%;
 	}
 
-	&-title {
+	&--subtitle {
+		@include flexbox();
+		@include align-items(center);
+	}
+
+	&--title {
 		height: 50px;
 		@include ellipsis(2);
 	}
 
-	&-caption {
+	&--caption {
 		@include flexbox();
 	}
 
@@ -169,7 +187,7 @@ export default {
 		max-width: 259px;
 
 		&:hover {
-			& .c-edu-card-image {
+			& .c-edu-card--image {
 				animation: scale-up-center 0.2s ease-in both;
 			}
 		}

@@ -1,20 +1,20 @@
 <template>
 	<article class="c-application c-p-edu-card" v-bind="$attrs" :style="computedStyle" v-on="$listeners">
-		<div class="c-p-edu-card-image-container">
-			<div v-if="$slots['additionalButton']" class="c-p-edu-card-additional-button">
+		<div class="c-p-edu-card--image-container">
+			<div v-if="$slots['additionalButton']" class="c-p-edu-card--additional-button">
 				<slot name="additionalButton" />
 			</div>
-			<img class="c-p-edu-card-image" :src="backgroundImage" alt />
+			<img class="c-p-edu-card--image" :src="backgroundImage" alt />
 		</div>
-		<div class="c-p-edu-card-info-container">
-			<div class="c-p-edu-card-subtitle">
-				<div class="c-p-edu-card-subtitle-category">
+		<div class="c-p-edu-card--info-container">
+			<div class="c-p-edu-card--subtitle">
+				<div class="c-p-edu-card--subtitle-category">
 					<Typography :type="isMobile ? 'caption1' : 'body2'" color="white" :font-weight="400" element="span">
 						{{ category }}
 					</Typography>
 				</div>
 			</div>
-			<div class="c-p-edu-card-title">
+			<div class="c-p-edu-card--title">
 				<Typography
 					:type="isMobile ? 'body2' : 'headline6'"
 					color="gray900"
@@ -23,9 +23,9 @@
 					<slot name="title" />
 				</Typography>
 			</div>
-			<div class="c-p-edu-card-caption mt-12">
+			<div class="c-p-edu-card--caption mt-12">
 				<template v-if="!$slots['alternativeCaption']">
-					<div class="c-p-edu-card-caption-side c-p-edu-card-caption-left">
+					<div class="c-p-edu-card--caption-side c-p-edu-card--caption-left">
 						<Icon name="IconStarMediumFill" color="yellow600" element="span" />
 						<Typography
 							:type="isMobile ? 'caption2' : 'caption1'"
@@ -39,8 +39,8 @@
 							({{ reviewCount }})
 						</Typography>
 					</div>
-					<Divider class="c-p-edu-card-divider mx-8" vertical color="gray300" />
-					<div class="c-p-edu-card-caption-side c-p-edu-card-caption-right">
+					<Divider class="c-p-edu-card--divider mx-8" vertical color="gray300" />
+					<div class="c-p-edu-card--caption-side c-p-edu-card--caption-right">
 						<Typography
 							:type="isMobile ? 'caption2' : 'caption1'"
 							color="blue600"
@@ -126,7 +126,7 @@ export default {
 	max-width: 152px;
 	cursor: pointer;
 
-	&-image {
+	&--image {
 		border: none;
 		width: 100%;
 		height: 100%;
@@ -143,25 +143,25 @@ export default {
 		}
 	}
 
-	&-additional-button {
+	&--additional-button {
 		position: absolute;
 		z-index: 1;
 		top: 12px;
 		right: 12px;
 	}
 
-	&-info-container {
+	&--info-container {
 		position: relative;
 		width: 100%;
 	}
 
-	&-title {
+	&--title {
 		margin-top: 10px;
 		height: 60px;
 		@include ellipsis(3);
 	}
 
-	&-subtitle {
+	&--subtitle {
 		margin-left: -10px;
 		z-index: 1;
 		&-category {
@@ -173,7 +173,7 @@ export default {
 		}
 	}
 
-	&-caption {
+	&--caption {
 		@include flexbox();
 		@include align-items(center);
 
@@ -183,7 +183,7 @@ export default {
 		}
 	}
 
-	&-divider {
+	&--divider {
 		@include align-self(stretch);
 	}
 
@@ -213,7 +213,7 @@ export default {
 		padding: 0 16px 16px;
 		max-width: 259px;
 
-		&-image {
+		&--image {
 			border: none;
 			width: 100%;
 			height: 100%;
@@ -230,13 +230,13 @@ export default {
 			}
 		}
 
-		&-title {
+		&--title {
 			margin-top: 16px;
 			height: 75px;
 			@include ellipsis(2);
 		}
 
-		&-subtitle {
+		&--subtitle {
 			margin-left: -16px;
 			&-category {
 				background-color: #46617f;
@@ -245,7 +245,7 @@ export default {
 		}
 
 		&:hover {
-			& .c-p-edu-card-image {
+			& .c-p-edu-card--image {
 				animation: scale-up-center 0.2s ease-in both;
 			}
 		}
