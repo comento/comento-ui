@@ -181,7 +181,7 @@ export default {
 	&.secondary {
 		&::v-deep .c-input {
 			&:focus {
-				border-color: $secondary;
+				border-color: $info;
 			}
 		}
 	}

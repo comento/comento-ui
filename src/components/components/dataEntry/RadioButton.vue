@@ -268,22 +268,22 @@ export default {
 			&:focus:not(:disabled) {
 				& + label:before {
 					background-color: $gray000;
-					border-color: $secondary;
+					border-color: $info;
 				}
 			}
 			& + label {
 				&.checked {
 					&:after {
-						background-color: $secondary;
+						background-color: $info;
 					}
 				}
 			}
 			&:checked:not(:disabled) {
 				& + label:before {
-					border-color: $secondary;
+					border-color: $info;
 				}
 				& + label:after {
-					background-color: $secondary;
+					background-color: $info;
 				}
 			}
 		}
