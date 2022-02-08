@@ -255,7 +255,7 @@ $underlined-padding: 4px;
 			@include border-radius(2px);
 			&:focus,
 			&.active {
-				border-color: $secondary;
+				border-color: $info;
 			}
 			&.error {
 				&:focus,
@@ -278,7 +278,7 @@ $underlined-padding: 4px;
 			&.secondary {
 				&:focus,
 				&.active {
-					border-color: $secondary;
+					border-color: $info;
 				}
 			}
 
@@ -291,7 +291,7 @@ $underlined-padding: 4px;
 			border-bottom: 1px solid $input-border-color;
 			&:focus,
 			&.active {
-				border-color: $secondary;
+				border-color: $info;
 			}
 			&.error {
 				&:focus,
@@ -313,7 +313,7 @@ $underlined-padding: 4px;
 			}
 			&.secondary {
 				&:focus {
-					border-color: $secondary;
+					border-color: $info;
 				}
 			}
 
@@ -373,9 +373,9 @@ $underlined-padding: 4px;
 				&.secondary {
 					&:focus,
 					&.active {
-						border-color: $secondary;
+						border-color: $info;
 						+ .c-text-field--label {
-							color: $secondary;
+							color: $info;
 						}
 					}
 				}
