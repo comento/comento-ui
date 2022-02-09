@@ -175,11 +175,14 @@ export default {
 				background-color: $gray000;
 				background-position: center center;
 				border: 1px solid $input-border-color;
-				border-radius: 2px;
+				border-radius: 4px;
 				display: inline-block;
-				margin-top: 3px;
 				margin-right: 8px;
 				box-sizing: border-box;
+				&:hover {
+					border-color: $blue600;
+					background-color: $blue100;
+				}
 			}
 		}
 	}
