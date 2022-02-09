@@ -2,7 +2,7 @@
 	<div class="c-application c-avatar--container" :class="[computedSize]">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
 		<div class="c-avatar--item">
-			<Icon v-if="isProfileType" :name="computedIconName" />
+			<Icon v-if="isProfileType" :name="computedIconName" :color="computedColorName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
 			<Typography v-if="isTextType" :type="computedTypography" :font-weight="700" color="white">
 				{{ text || computedRandomText }}
@@ -60,6 +60,10 @@ export default {
 		id: {
 			type: Number,
 			default: -1,
+		},
+		color: {
+			type: String,
+			default: 'black',
 		},
 	},
 	data() {
@@ -125,6 +129,9 @@ export default {
 				large: '2XLarge',
 			};
 			return `IconProfile${iconBySize[this.size]}Fill`;
+		},
+		computedColorName() {
+			return this.color.toLowerCase();
 		},
 	},
 	components: {
