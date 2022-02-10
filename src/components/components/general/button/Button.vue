@@ -35,7 +35,7 @@
 import Loader from '@/components/components/other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
-export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'gray'];
+export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
 export const buttonTypes = ['fill', 'outlined', 'text', 'icon'];
 
 /**
@@ -161,9 +161,6 @@ $success-hover-background-color: $green800;
 $success-disabled-background-color: $green100;
 $success-text-color: $success;
 
-$info-default-background-color: $gray100;
-$info-disabled-color: $gray200;
-
 $error-background-color: $error;
 $error-hover-background-color: $red800;
 $error-disabled-background-color: $red100;
@@ -173,6 +170,10 @@ $secondary-background-color: $secondary;
 $secondary-hover-background-color: $orange800;
 $secondary-disabled-background-color: $orange100;
 $secondary-text-color: $secondary;
+
+$info-default-background-color: $gray100;
+$info-disabled-color: $gray200;
+$info-text-color: $info;
 
 .c-button {
 	color: $white;
@@ -433,12 +434,9 @@ $secondary-text-color: $secondary;
 	}
 }
 
-.secondary {
+.info {
 	background-color: $info-default-background-color;
-	color: $gray700;
-.gray {
-	background-color: $gray-default-background-color;
-	color: $gray-text-color;
+	color: $info-text-color;
 	&:hover,
 	&:focus,
 	&:active,
@@ -447,15 +445,12 @@ $secondary-text-color: $secondary;
 	}
 	@include mobile {
 		@include remove-active-and-focus($info-default-background-color);
-		@include remove-active-and-focus($gray-default-background-color);
 	}
 	&:disabled {
 		background-color: $gray000;
 		color: $info-disabled-color;
-		color: $gray-disabled-color;
 		.c-button--icon::v-deep .c-icon {
 			fill: $info-disabled-color !important;
-			fill: $gray-disabled-color !important;
 		}
 		.c-button--loading {
 			background-color: $gray000;
@@ -463,36 +458,33 @@ $secondary-text-color: $secondary;
 	}
 	.c-button--loading {
 		background-color: $info-default-background-color;
-		background-color: $gray-default-background-color;
+		background-color: $info-default-background-color;
 	}
 	&.text {
-		color: $gray-text-color;
+		color: $info-text-color;
 		&:hover,
 		&:focus,
 		&:active,
 		&.hover-test {
 			background-color: $info-default-background-color;
-		&:active,
-		&.hover-test {
-			background-color: $gray-default-background-color;
 		}
 		@include mobile {
 			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $info-disabled-color;
-			color: $gray-disabled-color;
+			color: $info-disabled-color;
 			background: none;
 			.c-button--icon::v-deep .c-icon {
 				fill: $info-disabled-color !important;
-				fill: $gray-disabled-color !important;
+				fill: $info-disabled-color !important;
 			}
 		}
 	}
 	&.outlined {
 		background-color: transparent;
 		border: 1px solid $gray500;
-		color: $gray-text-color;
+		color: $info-text-color;
 		&:hover,
 		&:focus,
 		&:active,
@@ -505,12 +497,9 @@ $secondary-text-color: $secondary;
 		&:disabled {
 			color: $info-disabled-color;
 			border: 1px solid $info-disabled-color;
-			color: $gray-disabled-color;
-			border: 1px solid $gray-disabled-color;
-			background-color: $white;
+			background: none;
 			.c-button--icon::v-deep .c-icon {
 				fill: $info-disabled-color !important;
-				fill: $gray-disabled-color !important;
 			}
 		}
 		.c-button--loading {
