@@ -164,6 +164,16 @@ $success-text-color: $success;
 $info-default-background-color: $gray100;
 $info-disabled-color: $gray200;
 
+$error-background-color: $error;
+$error-hover-background-color: $red800;
+$error-disabled-background-color: $red100;
+$error-text-color: $error;
+
+$secondary-background-color: $secondary;
+$secondary-hover-background-color: $orange800;
+$secondary-disabled-background-color: $orange100;
+$secondary-text-color: $secondary;
+
 .c-button {
 	color: $white;
 	background-color: $primary;
@@ -426,6 +436,9 @@ $info-disabled-color: $gray200;
 .secondary {
 	background-color: $info-default-background-color;
 	color: $gray700;
+.gray {
+	background-color: $gray-default-background-color;
+	color: $gray-text-color;
 	&:hover,
 	&:focus,
 	&:active,
@@ -434,12 +447,15 @@ $info-disabled-color: $gray200;
 	}
 	@include mobile {
 		@include remove-active-and-focus($info-default-background-color);
+		@include remove-active-and-focus($gray-default-background-color);
 	}
 	&:disabled {
 		background-color: $gray000;
 		color: $info-disabled-color;
+		color: $gray-disabled-color;
 		.c-button--icon::v-deep .c-icon {
 			fill: $info-disabled-color !important;
+			fill: $gray-disabled-color !important;
 		}
 		.c-button--loading {
 			background-color: $gray000;
@@ -447,6 +463,7 @@ $info-disabled-color: $gray200;
 	}
 	.c-button--loading {
 		background-color: $info-default-background-color;
+		background-color: $gray-default-background-color;
 	}
 	&.text {
 		color: $gray-text-color;
@@ -455,15 +472,20 @@ $info-disabled-color: $gray200;
 		&:active,
 		&.hover-test {
 			background-color: $info-default-background-color;
+		&:active,
+		&.hover-test {
+			background-color: $gray-default-background-color;
 		}
 		@include mobile {
 			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $info-disabled-color;
+			color: $gray-disabled-color;
 			background: none;
 			.c-button--icon::v-deep .c-icon {
 				fill: $info-disabled-color !important;
+				fill: $gray-disabled-color !important;
 			}
 		}
 	}
@@ -483,9 +505,12 @@ $info-disabled-color: $gray200;
 		&:disabled {
 			color: $info-disabled-color;
 			border: 1px solid $info-disabled-color;
+			color: $gray-disabled-color;
+			border: 1px solid $gray-disabled-color;
 			background-color: $white;
 			.c-button--icon::v-deep .c-icon {
 				fill: $info-disabled-color !important;
+				fill: $gray-disabled-color !important;
 			}
 		}
 		.c-button--loading {
