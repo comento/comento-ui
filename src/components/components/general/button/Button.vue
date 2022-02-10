@@ -458,7 +458,6 @@ $info-text-color: $info;
 	}
 	.c-button--loading {
 		background-color: $info-default-background-color;
-		background-color: $info-default-background-color;
 	}
 	&.text {
 		color: $info-text-color;
@@ -473,10 +472,8 @@ $info-text-color: $info;
 		}
 		&:disabled {
 			color: $info-disabled-color;
-			color: $info-disabled-color;
 			background: none;
 			.c-button--icon::v-deep .c-icon {
-				fill: $info-disabled-color !important;
 				fill: $info-disabled-color !important;
 			}
 		}
