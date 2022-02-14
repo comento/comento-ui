@@ -1,6 +1,8 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Button, { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/Button';
+import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
+import Loader from '@/components/components/other/Loader';
 
 <Meta
   title="General/Button/Button"
@@ -89,27 +91,63 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <div style="display: flex">
-                    <Button color="primary">Fill Primary</Button>
-                    <Button color="success">Fill Success</Button>
-                    <Button color="error">Fill Error</Button>
-                    <Button color="secondary">Fill Gray</Button>
-                  </div>
-                  <div style="display: flex">
-                    <Button color="primary" type="outlined">Outlined Primary</Button>
-                    <Button color="success" type="outlined">Outlined Success</Button>
-                    <Button color="error" type="outlined">Outlined Error</Button>
-                    <Button color="secondary" type="outlined">Outlined Gray</Button>
-                  </div>
-                  <div style="display: flex">
-                    <Button color="primary" type="text">Text Primary</Button>
-                    <Button color="success" type="text">Text Success</Button>
-                    <Button color="error" type="text">Text Error</Button>
-                    <Button color="secondary" type="text">Text Gray</Button>
-                  </div>
+                  <template v-for="(type, index) in filteredButtonTypes">
+                    <div class="flex">
+                        <ButtonStateTitle class="mr-30">{{type}}</ButtonStateTitle>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>default</ButtonStateTitle>
+                            <template v-for="(color, index) in getFilterButtonColors(type)">
+                                <Button :color="color" :type="type" class="mb-16">Button</Button>
+                            </template>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>hover</ButtonStateTitle>
+                            <template v-for="(color, index) in getFilterButtonColors(type)">
+                                <Button :color="color" :type="type" class="mb-16 hover-test">Button</Button>
+                            </template>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>disabled</ButtonStateTitle>
+                            <template v-for="(color, index) in getFilterButtonColors(type)">
+                                <Button :color="color" :type="type" disabled class="mb-16">Button</Button>
+                            </template>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>loading</ButtonStateTitle>
+                            <template v-for="(color, index) in getFilterButtonColors(type)">
+                                <Button :color="color" :type="type" class="mb-16" loading></Button>
+                            </template>
+                        </div>
+                    </div>
+                  </template>
                 </div>
-        `,
-            components: { Button },
+            `,
+            data() {
+                return {
+                    buttonColors,
+                    buttonTypes,
+                }
+            },
+            methods: {
+                getFilterButtonColors(type) {
+                    return type === 'fill' ? this.buttonColors : this.filteredButtonColors
+                }
+            },
+            computed: {
+                // light-primary는 fill type에서만 쓰임
+                filteredButtonColors() {
+                    return Object.assign(buttonColors, {}).filter(item => item !== 'light-primary')
+                },
+                filteredButtonTypes() {
+                    return Object.assign(buttonTypes, {}).filter(item => item !== 'icon')
+                },
+            },
+            components: { Button, Typography, Loader,
+                'ButtonStateTitle': {
+                    template: `<Typography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></Typography>`,
+                    components: {Typography},
+                },
+            },
         }}
     </Story>
 </Canvas>

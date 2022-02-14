@@ -1,0 +1,103 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/Button';
+import Typography from '@/components/elements/core/typography/Typography';
+import IconButton, { IconButtonSizes } from "@/components/components/general/button/IconButton";
+import { IconNames } from "@/components/elements/core/icon/Icon";
+
+<Meta
+    title="General/Button/IconButton"
+    component={ IconButton }
+    argTypes={{
+        iconName: {
+            description: "버튼에 들어갈 텍스트",
+            defaultValue: "IconSendLargeFill",
+            control: {
+                type: "select",
+                options: IconNames
+            },
+        },
+        size: {
+            description: "버튼의 크기",
+            control: {
+                type: "select",
+                options: IconButtonSizes,
+            },
+        },
+        color: {
+            description: "버튼의 색상 타입",
+            control: {
+                type: "select",
+                options: buttonColors,
+            },
+        },
+        disabled: {
+            description: "버튼의 disabled 상태",
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { IconButton },
+    template:
+        `<IconButton
+            :iconName="iconName"
+            :size="size"
+            :color="color"
+            :disabled="disabled"
+        />`,
+});
+
+# Button
+
+**Button** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                      <template v-for="(item, index) in exampleData">
+                        <div class="flex mb-10">
+                            <IconButton :icon-name="item.iconName" :size="item.iconSize" class="mr-10"/>
+                            <IconButton :icon-name="item.iconName" :size="item.iconSize" class="hover-test mr-10"/>
+                            <IconButton :icon-name="item.iconName" :size="item.iconSize" disabled class="mr-10"/>
+                        </div>
+                      </template>
+                </div>
+            `,
+            data() {
+                return {
+                    exampleData: [
+                        {
+                            iconName: 'IconBookmarkMediumFill',
+                            iconSize: 'small'
+                        },
+                        {
+                            iconName:  'IconSendLargeFill',
+                            iconSize: 'medium',
+                        },
+                        {
+                            iconName:  'IconStarXLargeLine',
+                            iconSize: 'large'
+                        },
+                    ]
+                }
+            },
+            components: { IconButton,
+                'ButtonStateTitle': {
+                    template: `<Typography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></Typography>`,
+                    components: {Typography},
+                },
+            },
+        }}
+    </Story>
+</Canvas>
