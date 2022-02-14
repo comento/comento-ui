@@ -56,7 +56,7 @@ export default {
 			},
 		},
 		/**
-		 * 색상(primary, light-primary, success, gray, error)
+		 * 색상(primary, light-primary, success, error, secondary, info)
 		 */
 		color: {
 			type: String,
