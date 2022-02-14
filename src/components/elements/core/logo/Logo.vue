@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import LogoComentoHorizontal from '@/assets/images/logo/logo-comento-horizontal.svg?inline';
+import LogoComentoTypoType from '@/assets/images/logo/logo-comento-typo-type.svg?inline';
 import { colors } from '@/utils/constants/color';
 
 /**
@@ -20,7 +20,7 @@ export default {
 	props: {
 		name: {
 			type: String,
-			default: 'LogoComentoHorizontal',
+			default: 'LogoComentoTypoType',
 		},
 		url: {
 			type: String,
@@ -48,7 +48,7 @@ export default {
 		},
 	},
 	components: {
-		LogoComentoHorizontal,
+		LogoComentoTypoType,
 	},
 };
 </script>
