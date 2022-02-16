@@ -34,7 +34,6 @@ const {
 import { buttonColors } from '@/components/components/general/button/Button';
 
 export const LoaderSizes = ['small', 'medium', 'large'];
-export const LoaderColors = buttonColors;
 
 const colorMap = {
 	primary: {
