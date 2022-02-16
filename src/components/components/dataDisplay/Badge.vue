@@ -18,7 +18,7 @@
 import { colors } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
 
-export const badgeColors = ['primary', 'error'];
+export const badgeColors = ['primary', 'secondary'];
 export const badgeSizes = ['medium', 'small'];
 export const badgeTypes = ['inline', 'absolute'];
 
@@ -29,7 +29,7 @@ export default {
 	name: 'Badge',
 	props: {
 		/**
-		 * 색상(primary, error)
+		 * 색상(primary, secondary)
 		 */
 		color: {
 			type: String,
@@ -150,16 +150,20 @@ export default {
 	@include justify-content(center);
 	&.medium {
 		height: 16px;
+		min-width: 16px;
 		padding: 0 5px;
 		.c-badge--text {
 			line-height: 10px;
 		}
 	}
 	&.small {
-		height: 14px;
+		height: 12px;
+		min-width: 12px;
 		padding: 0 4px;
 		font-size: 10px;
 		.c-badge--text {
+			//chrome은 최소 font-size 10px
+			-webkit-transform: scale(0.8);
 			line-height: 8px;
 		}
 	}
