@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Loader, { LoaderColors, LoaderSizes } from '@/components/components/other/Loader';
+import Loader, { LoaderSizes } from '@/components/components/other/Loader';
+import { buttonColors } from '@/components/components/general/button/Button';
 import Typography from '@/components/elements/core/typography/Typography';
 
 <Meta
@@ -27,7 +28,7 @@ import Typography from '@/components/elements/core/typography/Typography';
         },
         control: {
           type: "select",
-          options: LoaderColors,
+          options: buttonColors,
         },
       },
       reversed: {
