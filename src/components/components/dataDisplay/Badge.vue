@@ -17,6 +17,7 @@
 <script>
 import { colors } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
+import globalMixin from '@/mixins/globalMixin';
 
 export const badgeColors = ['primary', 'error'];
 export const badgeSizes = ['medium', 'small'];
@@ -27,6 +28,7 @@ export const badgeTypes = ['inline', 'absolute'];
  */
 export default {
 	name: 'Badge',
+	mixins: [globalMixin],
 	props: {
 		/**
 		 * 색상(primary, error)
