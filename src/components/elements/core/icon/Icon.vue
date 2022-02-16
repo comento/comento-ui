@@ -96,6 +96,7 @@ import IconResumeLargeLine from '@/assets/images/icon/large/icon-resume-large-li
 import IconAnalyticsLargeLine from '@/assets/images/icon/large/icon-analytics-large-line.svg?inline';
 import IconMentoringLargeLine from '@/assets/images/icon/large/icon-mentoring-large-line.svg?inline';
 import IconEduLargeLine from '@/assets/images/icon/large/icon-edu-large-line.svg?inline';
+import IconPtLargeLine from '@/assets/images/icon/large/icon-pt-large-line.svg?inline';
 import IconArrowLargeLine from '@/assets/images/icon/large/icon-arrow-large-line.svg?inline';
 import IconTextArrowLargeLine from '@/assets/images/icon/large/icon-textArrow-large-line.svg?inline';
 import IconBackwardLargeLine from '@/assets/images/icon/large/icon-backward-large-line.svg?inline';
@@ -260,6 +261,7 @@ export const IconNames = [
 	'IconAnalyticsLargeLine',
 	'IconMentoringLargeLine',
 	'IconEduLargeLine',
+	'IconPtLargeLine',
 	'IconArrowLargeLine',
 	'IconTextArrowLargeLine',
 	'IconBackwardLargeLine',
@@ -439,6 +441,7 @@ export default {
 		IconAnalyticsLargeLine,
 		IconMentoringLargeLine,
 		IconEduLargeLine,
+		IconPtLargeLine,
 		IconArrowLargeLine,
 		IconTextArrowLargeLine,
 		IconBackwardLargeLine,
