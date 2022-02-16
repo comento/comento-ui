@@ -12,8 +12,7 @@
 </template>
 
 <script>
-import { buttonColors } from '@/components/components/general/button/Button';
-
+import { colorKeys } from '@/utils/constants/color';
 import Icon from '@/components/elements/core/icon/Icon';
 export const IconButtonSizes = ['small', 'medium', 'large'];
 
@@ -41,7 +40,7 @@ export default {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				return buttonColors.includes(value);
+				return colorKeys.includes(value);
 			},
 		},
 		disabled: {
