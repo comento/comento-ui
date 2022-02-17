@@ -252,7 +252,7 @@
   }
 }
 
-@mixin hover-style() {
+@mixin state-style() {
   &:focus,&:active,&.hover-test {
     @content
   }

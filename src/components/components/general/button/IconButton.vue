@@ -80,7 +80,7 @@ export default {
 		cursor: inherit;
 	}
 
-	@include hover-style {
+	@include state-style {
 		background-color: $gray100;
 	}
 
@@ -96,7 +96,7 @@ export default {
 	}
 
 	&.transparent {
-		@include hover-style {
+		@include state-style {
 			background-color: $button-transparent-hover-background-color;
 		}
 	}
