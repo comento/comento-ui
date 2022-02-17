@@ -159,7 +159,8 @@ export default {
 	&.small {
 		height: 12px;
 		min-width: 12px;
-		padding: 0 4px;
+		//font scale 때문에 padding 4가 아닌 2
+		padding: 0 2px;
 		font-size: 10px;
 		.c-badge--text {
 			//chrome은 최소 font-size 10px
