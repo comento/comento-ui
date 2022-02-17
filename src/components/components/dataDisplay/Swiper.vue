@@ -28,7 +28,7 @@
 				class="swiper-button swiper-button-prev"
 				:class="[computedControlsPosition, computedControlsCircle]"
 				:color="computedControlsColor"
-			></Icon>
+			/>
 			<Icon
 				v-if="showInsideControl"
 				:id="`swiper-button-next-${_uid}`"
@@ -38,14 +38,14 @@
 				class="swiper-button swiper-button-next"
 				:class="[computedControlsPosition, computedControlsCircle]"
 				:color="computedControlsColor"
-			></Icon>
+			/>
 			<div
 				v-if="showInsideIndicator"
 				:id="`swiper-pagination-${_uid}`"
 				slot="pagination"
 				class="swiper-pagination"
 				:class="computedIndicatorColorClass"
-			></div>
+			/>
 		</base-swiper>
 		<Icon
 			v-if="showOutsideControl"
@@ -55,7 +55,7 @@
 			class="swiper-button swiper-button-outside swiper-button-prev-outside"
 			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showOutsideControl"
 			:id="`swiper-button-next-outside-${_uid}`"
@@ -64,7 +64,7 @@
 			class="swiper-button swiper-button-outside swiper-button-next-outside"
 			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showTopControl"
 			:id="`swiper-button-prev-top-${_uid}`"
@@ -73,7 +73,7 @@
 			class="swiper-button-top swiper-button-prev-top"
 			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showTopControl"
 			:id="`swiper-button-next-top-${_uid}`"
@@ -82,14 +82,14 @@
 			class="swiper-button-top swiper-button-next-top"
 			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<div
 			v-if="showOutsideIndicator"
 			:id="`swiper-pagination-outside-${_uid}`"
 			slot="pagination"
 			class="swiper-pagination-outside"
 			:class="computedIndicatorColorClass"
-		></div>
+		/>
 	</div>
 </template>
 
