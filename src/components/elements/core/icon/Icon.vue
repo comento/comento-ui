@@ -157,6 +157,14 @@ import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookMark-xl
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
+import IconJob2XLargeLine from '@/assets/images/icon/2xlarge/icon-job-2xlarge-line.svg?inline';
+import IconChangeJob2XLargeLine from '@/assets/images/icon/2xlarge/icon-changeJob-2xlarge-line.svg?inline';
+import IconSupervisor2XLargeLine from '@/assets/images/icon/2xlarge/icon-supervisor-2xlarge-line.svg?inline';
+import IconCollege2XLargeLine from '@/assets/images/icon/2xlarge/icon-college-2xlarge-line.svg?inline';
+import IconAnswer2XLargeLine from '@/assets/images/icon/2xlarge/icon-answer-2xlarge-line.svg?inline';
+import IconBoard2XLargeLine from '@/assets/images/icon/2xlarge/icon-board-2xlarge-line.svg?inline';
+import IconCheckRound2XLargeLine from '@/assets/images/icon/2xlarge/icon-checkRound-2xlarge-line.svg?inline';
+import IconCheckRound2XLargeFill from '@/assets/images/icon/2xlarge/icon-checkRound-2xlarge-fill.svg?inline';
 import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?inline';
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
 
@@ -321,6 +329,14 @@ export const IconNames = [
 
 	//2x-large
 	'IconProfile2XLargeFill',
+	'IconJob2XLargeLine',
+	'IconChangeJob2XLargeLine',
+	'IconSupervisor2XLargeLine',
+	'IconCollege2XLargeLine',
+	'IconAnswer2XLargeLine',
+	'IconBoard2XLargeLine',
+	'IconCheckRound2XLargeLine',
+	'IconCheckRound2XLargeFill',
 	'IconWriting2XLargeLine',
 	'IconPhoto2XLargeLine',
 
@@ -498,8 +514,17 @@ export default {
 		IconStarXLargeFill,
 		IconBookmarkXLargeFill,
 		IconBookmarkXLargeLine,
+
 		// 2x-large
 		IconProfile2XLargeFill,
+		IconJob2XLargeLine,
+		IconChangeJob2XLargeLine,
+		IconSupervisor2XLargeLine,
+		IconCollege2XLargeLine,
+		IconAnswer2XLargeLine,
+		IconBoard2XLargeLine,
+		IconCheckRound2XLargeLine,
+		IconCheckRound2XLargeFill,
 		IconWriting2XLargeLine,
 		IconPhoto2XLargeLine,
 
