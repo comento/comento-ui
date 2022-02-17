@@ -80,6 +80,10 @@ export default {
 			type: String,
 			default: '',
 		},
+		emphasized: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		computedStyle() {
@@ -90,9 +94,8 @@ export default {
 			};
 		},
 		computedImageHeight() {
-			if (this.imageHeight !== '') {
-				return this.imageHeight;
-			}
+			if (this.imageHeight) return this.imageHeight;
+			if (this.emphasized) return '300px';
 
 			return this.isMobile ? '144px' : '136px';
 		},
@@ -114,8 +117,12 @@ export default {
 	cursor: pointer;
 
 	&--image {
+		position: absolute;
+		left: 50%;
+		@include transform(translateX(-50%));
 		border: none;
-		width: 100%;
+		max-width: none;
+		height: 100%;
 		@include opacity(0.9);
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
@@ -125,7 +132,7 @@ export default {
 			@include border-radius(4px);
 			overflow: hidden;
 			width: 100%;
-			max-height: var(--image-height);
+			height: var(--image-height);
 		}
 	}
 
@@ -164,23 +171,23 @@ export default {
 
 	@keyframes scale-up-center {
 		0% {
-			-webkit-transform: scale(1);
-			transform: scale(1);
+			-webkit-transform: translateX(-50%) scale(1);
+			transform: translateX(-50%) scale(1);
 		}
 		100% {
-			-webkit-transform: scale(1.07);
-			transform: scale(1.07);
+			-webkit-transform: translateX(-50%) scale(1.07);
+			transform: translateX(-50%) scale(1.07);
 		}
 	}
 
 	@keyframes scale-down-center {
 		0% {
-			-webkit-transform: scale(1.07);
-			transform: scale(1.07);
+			-webkit-transform: translateX(-50%) scale(1.07);
+			transform: translateX(-50%) scale(1.07);
 		}
 		100% {
-			-webkit-transform: scale(1);
-			transform: scale(1);
+			-webkit-transform: translateX(-50%) scale(1);
+			transform: translateX(-50%) scale(1);
 		}
 	}
 

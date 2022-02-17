@@ -107,6 +107,12 @@ import Icon from '@/components/elements/core/icon/Icon';
 				type: 'text',
 			},
 		},
+		emphasized: {
+		    description: "강조하는 카드 여부",
+		    control: {
+		        type: "boolean",
+		    },
+		},
 	}}
 />
 
@@ -214,6 +220,50 @@ export const Default = (args, { argTypes }) => ({
                             </StyleCol>
                             <StyleCol :col-lg="4">
                                 <EduCard
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                >
+                                    <template v-slot:additionalButton>
+                                        <Icon name="IconBookmarkLargeLine" color="white" />
+                                    </template>
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                        </Row>
+                        <Row class="mt-50">
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    emphasized
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                    additional-subtitle="2차 앵콜"
+                                >
+                                   <template v-slot:chip>
+                                      <ChipGroup>
+                                        <Chip size="medium">복습 VOD</Chip>
+                                      </ChipGroup>
+                                   </template>
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    emphasized
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                >
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    emphasized
                                     :background-image="exampleBackgroundImage"
                                     category="생산기술"
                                     caption-left="3개의 스케줄"
