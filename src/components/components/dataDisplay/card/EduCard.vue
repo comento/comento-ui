@@ -120,11 +120,12 @@ export default {
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			position: relative;
+			@include flexbox();
 			border: none;
 			@include border-radius(4px);
 			overflow: hidden;
 			width: 100%;
-			height: var(--image-height);
+			max-height: var(--image-height);
 		}
 	}
 
