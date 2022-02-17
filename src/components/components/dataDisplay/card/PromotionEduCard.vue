@@ -1,20 +1,20 @@
 <template>
-	<article class="c-application c-p-edu-card" v-bind="$attrs" :style="computedStyle" v-on="$listeners">
-		<div class="c-p-edu-card--image-container">
-			<div v-if="$slots['additionalButton']" class="c-p-edu-card--additional-button">
+	<article class="c-application c-promotion-edu-card" v-bind="$attrs" :style="computedStyle" v-on="$listeners">
+		<div class="c-promotion-edu-card--image-container">
+			<div v-if="$slots['additionalButton']" class="c-promotion-edu-card--additional-button">
 				<slot name="additionalButton" />
 			</div>
-			<img class="c-p-edu-card--image" :src="backgroundImage" alt />
+			<img class="c-promotion-edu-card--image" :src="backgroundImage" alt />
 		</div>
-		<div class="c-p-edu-card--info-container">
-			<div class="c-p-edu-card--subtitle">
-				<div class="c-p-edu-card--subtitle-category">
+		<div class="c-promotion-edu-card--info-container">
+			<div class="c-promotion-edu-card--subtitle">
+				<div class="c-promotion-edu-card--subtitle-category">
 					<Typography :type="isMobile ? 'caption1' : 'body2'" color="white" :font-weight="400" element="span">
 						{{ category }}
 					</Typography>
 				</div>
 			</div>
-			<div class="c-p-edu-card--title">
+			<div class="c-promotion-edu-card--title">
 				<Typography
 					:type="isMobile ? 'body2' : 'headline6'"
 					color="gray900"
@@ -23,9 +23,9 @@
 					<slot name="title" />
 				</Typography>
 			</div>
-			<div class="c-p-edu-card--caption mt-12">
+			<div class="c-promotion-edu-card--caption mt-12">
 				<template v-if="!$slots['alternativeCaption']">
-					<div class="c-p-edu-card--caption-side c-p-edu-card--caption-left">
+					<div class="c-promotion-edu-card--caption-side c-promotion-edu-card--caption-left">
 						<Icon name="IconStarMediumFill" color="yellow600" element="span" />
 						<Typography
 							:type="isMobile ? 'caption2' : 'caption1'"
@@ -39,8 +39,8 @@
 							({{ reviewCount }})
 						</Typography>
 					</div>
-					<Divider class="c-p-edu-card--divider mx-8" vertical color="gray300" />
-					<div class="c-p-edu-card--caption-side c-p-edu-card--caption-right">
+					<Divider class="c-promotion-edu-card--divider mx-8" vertical color="gray300" />
+					<div class="c-promotion-edu-card--caption-side c-promotion-edu-card--caption-right">
 						<Typography
 							:type="isMobile ? 'caption2' : 'caption1'"
 							color="blue600"
@@ -117,7 +117,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-p-edu-card {
+.c-promotion-edu-card {
 	padding: 0 10px 10px;
 	overflow: hidden;
 	background-color: rgba(70, 97, 127, 0.04);
@@ -245,7 +245,7 @@ export default {
 		}
 
 		&:hover {
-			& .c-p-edu-card--image {
+			& .c-promotion-edu-card--image {
 				animation: scale-up-center 0.2s ease-in both;
 			}
 		}
