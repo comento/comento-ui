@@ -33,6 +33,12 @@ import { IconNames } from "@/components/elements/core/icon/Icon";
         disabled: {
             description: "버튼의 disabled 상태",
         },
+        transparent: {
+            description: "투명타입 여부",
+            control: {
+                type: "boolean",
+            },
+        },
     }}
 />
 
@@ -45,6 +51,7 @@ export const Default = (args, { argTypes }) => ({
             :size="size"
             :color="color"
             :disabled="disabled"
+            :transparent="transparent"
         />`,
 });
 
@@ -69,6 +76,7 @@ export const Default = (args, { argTypes }) => ({
                         <div class="flex mb-10">
                             <IconButton :icon-name="item.iconName" :size="item.iconSize" class="mr-10"/>
                             <IconButton :icon-name="item.iconName" :size="item.iconSize" class="hover-test mr-10"/>
+                            <IconButton :icon-name="item.iconName" :size="item.iconSize" transparent class="hover-test mr-10"/>
                             <IconButton :icon-name="item.iconName" :size="item.iconSize" disabled class="mr-10"/>
                         </div>
                       </template>

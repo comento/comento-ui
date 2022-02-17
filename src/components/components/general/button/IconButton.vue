@@ -1,7 +1,7 @@
 <template>
 	<button
 		class="c-application c-icon-button"
-		:class="[computedSize]"
+		:class="computedClasses"
 		v-bind="$attrs"
 		:disabled="disabled"
 		v-on="$listeners"
@@ -47,13 +47,17 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		transparent: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
-		computedSize() {
-			return this.size;
-		},
 		computedColor() {
 			return this.disabled ? 'gray200' : this.color;
+		},
+		computedClasses() {
+			return [this.size, { transparent: this.transparent }];
 		},
 	},
 	components: {
@@ -95,6 +99,15 @@ export default {
 		}
 		.c-button--icon::v-deep .c-icon {
 			@include disabled();
+		}
+	}
+
+	&.transparent {
+		&:hover,
+		&:focus,
+		&:active,
+		&.hover-test {
+			background-color: rgba(0, 0, 0, 0.2);
 		}
 	}
 
