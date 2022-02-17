@@ -282,6 +282,7 @@ export const IconNames = [
 	'IconExclamationLargeLine',
 	'IconExclamationLargeFill',
 	'IconInformationLargeLine',
+	'IconInformationLargeFill',
 	'IconPlusRoundLargeLine',
 	'IconStarRoundLargeFill',
 	'IconSettingLargeLine',
@@ -319,6 +320,7 @@ export const IconNames = [
 	'IconStarXLargeLine',
 	'IconStarXLargeFill',
 	'IconBookmarkXLargeFill',
+	'IconBookmarkXLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',
