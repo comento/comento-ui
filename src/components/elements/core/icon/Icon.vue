@@ -25,8 +25,6 @@ import IconLinkSmallLine from '@/assets/images/icon/small/icon-link-small-line.s
 import IconLikeSmallLine from '@/assets/images/icon/small/icon-like-small-line.svg?inline';
 import IconLikeSmallFill from '@/assets/images/icon/small/icon-like-small-fill.svg?inline';
 import IconThreeDotSmallFill from '@/assets/images/icon/small/icon-threeDot-small-fill.svg?inline';
-// 제외
-import IconCheckSmallFill from '@/assets/images/icon/small/icon-check-small-fill.svg?inline';
 
 // medium
 import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
@@ -191,7 +189,6 @@ export const IconNames = [
 	'IconLikeSmallLine',
 	'IconLikeSmallFill',
 	'IconThreeDotSmallFill',
-	'IconCheckSmallFill',
 
 	// medium
 	'IconProfileMediumLine',
@@ -372,8 +369,6 @@ export default {
 		IconLikeSmallLine,
 		IconLikeSmallFill,
 		IconThreeDotSmallFill,
-		// 제외
-		IconCheckSmallFill,
 
 		// medium
 		IconProfileMediumLine,
