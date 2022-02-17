@@ -107,7 +107,7 @@ export default {
 		&:focus,
 		&:active,
 		&.hover-test {
-			background-color: rgba(0, 0, 0, 0.2);
+			background-color: $button-transparent-hover-background-color;
 		}
 	}
 
