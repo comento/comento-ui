@@ -171,8 +171,13 @@ export default {
 
 	&--container {
 		&.inline {
-			.c-badge--wrapper {
-				position: static;
+			@include flexbox();
+			@include align-items(center);
+			.c-badge {
+				@include flexbox();
+				&--wrapper {
+					position: inherit;
+				}
 			}
 		}
 		&.absolute {
