@@ -103,11 +103,11 @@ export default {
 			},
 		},
 		/**
-		 * 색상(secondary, primary, success, error)
+		 * 색상(primary, light-primary, success, error, secondary, info)
 		 */
 		color: {
 			type: String,
-			default: 'secondary',
+			default: 'info',
 			validator(value) {
 				return buttonColors.includes(value);
 			},
