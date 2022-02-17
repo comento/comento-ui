@@ -339,22 +339,34 @@ $swiper-control-circle-radius: 16px;
 		align-items: center;
 	}
 }
+// pagination (클래스를 직접 주입할 수 없으므로, 그 상위에 주입)
 ::v-deep .swiper-pagination-bullet {
-	width: 20px;
-	height: 3px;
-	border-radius: 0;
+	width: 10px;
+	height: 10px;
+	border: 1px solid white;
+	border-radius: 50%;
+	background: transparent !important;
+	opacity: 0.4 !important;
+	&.swiper-pagination-bullet-active {
+		opacity: 1 !important;
+	}
 }
-/* 클래스를 직접 주입할 수 없으므로, 그 상위에 주입 */
 ::v-deep .swiper-indicator-dark {
 	.swiper-pagination-bullet {
-		background-color: $gray850;
+		border-color: $gray850;
+		&.swiper-pagination-bullet-active {
+			background-color: $gray850 !important;
+		}
 	}
 }
 ::v-deep .swiper-indicator-light {
 	.swiper-pagination-bullet {
-		background-color: $white;
+		&.swiper-pagination-bullet-active {
+			background-color: $white !important;
+		}
 	}
 }
+
 .swiper-button-outside {
 	position: absolute;
 	z-index: 10;
