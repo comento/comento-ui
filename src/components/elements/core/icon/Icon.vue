@@ -169,7 +169,14 @@ import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2x
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
 
 // 4x-large
+import IconJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-job-4xlarge-line.svg?inline';
+import IconChangeJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-changeJob-4xlarge-line.svg?inline';
+import IconSupervisor4XLargeLine from '@/assets/images/icon/4xlarge/icon-supervisor-4xlarge-line.svg?inline';
+import IconCollege4XLargeLine from '@/assets/images/icon/4xlarge/icon-college-4xlarge-line.svg?inline';
+import IconAnswer4XLargeLine from '@/assets/images/icon/4xlarge/icon-answer-4xlarge-line.svg?inline';
+import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarge-line.svg?inline';
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
+
 import customValidator from '@/utils/custom-validator';
 
 export const IconNames = [
@@ -341,6 +348,12 @@ export const IconNames = [
 	'IconPhoto2XLargeLine',
 
 	//4x-large
+	'IconJob4XLargeLine',
+	'IconChangeJob4XLargeLine',
+	'IconSupervisor4XLargeLine',
+	'IconCollege4XLargeLine',
+	'IconAnswer4XLargeLine',
+	'IconBoard4XLargeLine',
 	'IconStar4XLargeFill',
 ];
 
@@ -529,6 +542,12 @@ export default {
 		IconPhoto2XLargeLine,
 
 		// 4x-large
+		IconJob4XLargeLine,
+		IconChangeJob4XLargeLine,
+		IconSupervisor4XLargeLine,
+		IconCollege4XLargeLine,
+		IconAnswer4XLargeLine,
+		IconBoard4XLargeLine,
 		IconStar4XLargeFill,
 	},
 };
