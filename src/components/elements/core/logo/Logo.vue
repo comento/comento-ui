@@ -28,11 +28,11 @@ export default {
 		},
 		width: {
 			type: String,
-			default: '140',
+			default: '105',
 		},
 		height: {
 			type: String,
-			default: '24',
+			default: '18',
 		},
 		color: {
 			type: String,
