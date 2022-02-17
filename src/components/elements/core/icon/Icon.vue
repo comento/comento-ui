@@ -25,8 +25,6 @@ import IconLinkSmallLine from '@/assets/images/icon/small/icon-link-small-line.s
 import IconLikeSmallLine from '@/assets/images/icon/small/icon-like-small-line.svg?inline';
 import IconLikeSmallFill from '@/assets/images/icon/small/icon-like-small-fill.svg?inline';
 import IconThreeDotSmallFill from '@/assets/images/icon/small/icon-threeDot-small-fill.svg?inline';
-// 제외
-import IconCheckSmallFill from '@/assets/images/icon/small/icon-check-small-fill.svg?inline';
 
 // medium
 import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
@@ -159,11 +157,26 @@ import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookMark-xl
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
+import IconJob2XLargeLine from '@/assets/images/icon/2xlarge/icon-job-2xlarge-line.svg?inline';
+import IconChangeJob2XLargeLine from '@/assets/images/icon/2xlarge/icon-changeJob-2xlarge-line.svg?inline';
+import IconSupervisor2XLargeLine from '@/assets/images/icon/2xlarge/icon-supervisor-2xlarge-line.svg?inline';
+import IconCollege2XLargeLine from '@/assets/images/icon/2xlarge/icon-college-2xlarge-line.svg?inline';
+import IconAnswer2XLargeLine from '@/assets/images/icon/2xlarge/icon-answer-2xlarge-line.svg?inline';
+import IconBoard2XLargeLine from '@/assets/images/icon/2xlarge/icon-board-2xlarge-line.svg?inline';
+import IconCheckRound2XLargeLine from '@/assets/images/icon/2xlarge/icon-checkRound-2xlarge-line.svg?inline';
+import IconCheckRound2XLargeFill from '@/assets/images/icon/2xlarge/icon-checkRound-2xlarge-fill.svg?inline';
 import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?inline';
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
 
 // 4x-large
+import IconJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-job-4xlarge-line.svg?inline';
+import IconChangeJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-changeJob-4xlarge-line.svg?inline';
+import IconSupervisor4XLargeLine from '@/assets/images/icon/4xlarge/icon-supervisor-4xlarge-line.svg?inline';
+import IconCollege4XLargeLine from '@/assets/images/icon/4xlarge/icon-college-4xlarge-line.svg?inline';
+import IconAnswer4XLargeLine from '@/assets/images/icon/4xlarge/icon-answer-4xlarge-line.svg?inline';
+import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarge-line.svg?inline';
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
+
 import customValidator from '@/utils/custom-validator';
 
 export const IconNames = [
@@ -191,7 +204,6 @@ export const IconNames = [
 	'IconLikeSmallLine',
 	'IconLikeSmallFill',
 	'IconThreeDotSmallFill',
-	'IconCheckSmallFill',
 
 	// medium
 	'IconProfileMediumLine',
@@ -282,6 +294,7 @@ export const IconNames = [
 	'IconExclamationLargeLine',
 	'IconExclamationLargeFill',
 	'IconInformationLargeLine',
+	'IconInformationLargeFill',
 	'IconPlusRoundLargeLine',
 	'IconStarRoundLargeFill',
 	'IconSettingLargeLine',
@@ -319,13 +332,28 @@ export const IconNames = [
 	'IconStarXLargeLine',
 	'IconStarXLargeFill',
 	'IconBookmarkXLargeFill',
+	'IconBookmarkXLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',
+	'IconJob2XLargeLine',
+	'IconChangeJob2XLargeLine',
+	'IconSupervisor2XLargeLine',
+	'IconCollege2XLargeLine',
+	'IconAnswer2XLargeLine',
+	'IconBoard2XLargeLine',
+	'IconCheckRound2XLargeLine',
+	'IconCheckRound2XLargeFill',
 	'IconWriting2XLargeLine',
 	'IconPhoto2XLargeLine',
 
 	//4x-large
+	'IconJob4XLargeLine',
+	'IconChangeJob4XLargeLine',
+	'IconSupervisor4XLargeLine',
+	'IconCollege4XLargeLine',
+	'IconAnswer4XLargeLine',
+	'IconBoard4XLargeLine',
 	'IconStar4XLargeFill',
 ];
 
@@ -370,8 +398,6 @@ export default {
 		IconLikeSmallLine,
 		IconLikeSmallFill,
 		IconThreeDotSmallFill,
-		// 제외
-		IconCheckSmallFill,
 
 		// medium
 		IconProfileMediumLine,
@@ -501,12 +527,27 @@ export default {
 		IconStarXLargeFill,
 		IconBookmarkXLargeFill,
 		IconBookmarkXLargeLine,
+
 		// 2x-large
 		IconProfile2XLargeFill,
+		IconJob2XLargeLine,
+		IconChangeJob2XLargeLine,
+		IconSupervisor2XLargeLine,
+		IconCollege2XLargeLine,
+		IconAnswer2XLargeLine,
+		IconBoard2XLargeLine,
+		IconCheckRound2XLargeLine,
+		IconCheckRound2XLargeFill,
 		IconWriting2XLargeLine,
 		IconPhoto2XLargeLine,
 
 		// 4x-large
+		IconJob4XLargeLine,
+		IconChangeJob4XLargeLine,
+		IconSupervisor4XLargeLine,
+		IconCollege4XLargeLine,
+		IconAnswer4XLargeLine,
+		IconBoard4XLargeLine,
 		IconStar4XLargeFill,
 	},
 };
