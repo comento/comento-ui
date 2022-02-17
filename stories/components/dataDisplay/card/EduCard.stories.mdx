@@ -6,6 +6,7 @@ import StyleCol from '@/components/layout/StyleCol';
 import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
 import Chip from '@/components/components/dataDisplay/chips/Chip';
 import Icon from '@/components/elements/core/icon/Icon';
+import Swiper from '@/components/components/dataDisplay/Swiper';
 
 <Meta
 	title="Data Display/Card/EduCard"
@@ -109,6 +110,12 @@ import Icon from '@/components/elements/core/icon/Icon';
 		},
 		emphasized: {
 		    description: "강조하는 카드 여부",
+		    control: {
+		        type: "boolean",
+		    },
+		},
+		withSwiper: {
+		    description: "swiper에서 사용 여부",
 		    control: {
 		        type: "boolean",
 		    },
@@ -280,6 +287,94 @@ export const Default = (args, { argTypes }) => ({
                 </div>
             `,
 			components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip, Icon },
+		}}
+	</Story>
+</Canvas>
+
+### With Swiper
+<Canvas>
+	<Story name="WithSwiper">
+		{{
+			data() {
+				return {
+					exampleBackgroundImage: 'https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg',
+				};
+			},
+			template: `
+                <div>
+                    <Grid :fluid="isMobile">
+                        <Row>
+                            <StyleCol :col-lg="12">
+                                <Swiper
+                                    controls-color="dark"
+                                    controls-position="outside"
+                                    :with-controls="!isMobile"
+                                    :slides-per-view="isMobile ? 'auto' : 3"
+                                    :slides-per-group="isMobile ? 1 : 3"
+                                    :spacing="isMobile ? 16 : 24"
+                                >
+                                    <template v-for="(_, index) in 6" :slot="'item' + index">
+                                        <EduCard
+                                            with-swiper
+                                            :background-image="exampleBackgroundImage"
+                                            category="생산기술"
+                                            caption-left="3개의 스케줄"
+                                            caption-right="1월 20일까지"
+                                            additional-subtitle="2차 앵콜"
+                                        >
+                                           <template v-if="index % 3 === 0" v-slot:chip>
+                                              <ChipGroup>
+                                                <Chip size="medium">복습 VOD</Chip>
+                                              </ChipGroup>
+                                           </template>
+                                           <template v-if="index % 2 === 1" v-slot:additionalButton>
+                                               <Icon name="IconBookmarkLargeLine" color="white" />
+                                           </template>
+                                           <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                        </EduCard>
+                                    </template>
+                                </Swiper>
+                            </StyleCol>
+                        </Row>
+                        <Row class="mt-50">
+                            <StyleCol :col-lg="12">
+                                <Swiper
+                                    controls-color="dark"
+                                    controls-position="outside"
+                                    :with-controls="!isMobile"
+                                    :slides-per-view="isMobile ? 'auto' : 3"
+                                    :slides-per-group="isMobile ? 1 : 3"
+                                    :spacing="isMobile ? 16 : 24"
+                                    :autoplay="isMobile"
+                                >
+                                    <template v-for="(_, index) in 6" :slot="'item' + index">
+                                        <EduCard
+                                            emphasized
+                                            with-swiper
+                                            :background-image="exampleBackgroundImage"
+                                            category="생산기술"
+                                            caption-left="3개의 스케줄"
+                                            caption-right="1월 20일까지"
+                                            additional-subtitle="2차 앵콜"
+                                        >
+                                           <template v-if="index % 3 === 0" v-slot:chip>
+                                              <ChipGroup>
+                                                <Chip size="medium">복습 VOD</Chip>
+                                              </ChipGroup>
+                                           </template>
+                                           <template v-if="index % 2 === 1" v-slot:additionalButton>
+                                              <Icon name="IconBookmarkLargeLine" color="white" />
+                                          </template>
+                                           <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                        </EduCard>
+                                    </template>
+                                </Swiper>
+                            </StyleCol>
+                        </Row>
+                    </Grid>
+                </div>
+            `,
+			components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip, Icon, Swiper },
 		}}
 	</Story>
 </Canvas>
