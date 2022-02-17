@@ -283,10 +283,10 @@ export default {
 		computedControlsColor() {
 			const colorMap = {
 				light: 'white',
-				dark: 'gray800',
+				dark: 'gray900',
 			};
 			if (this.controlsCircle && this.controlsColor === 'dark') {
-				return 'gray500';
+				return 'gray900';
 			} else {
 				return colorMap[this.controlsColor];
 			}
@@ -347,7 +347,7 @@ $swiper-control-circle-radius: 16px;
 /* 클래스를 직접 주입할 수 없으므로, 그 상위에 주입 */
 ::v-deep .swiper-indicator-dark {
 	.swiper-pagination-bullet {
-		background-color: $gray800;
+		background-color: $gray850;
 	}
 }
 ::v-deep .swiper-indicator-light {
@@ -364,8 +364,7 @@ $swiper-control-circle-radius: 16px;
 /* 원형 컨트롤의 disabled 기존 스타일을 초기화 */
 :not(.swiper-button-background-circle) {
 	&.swiper-button-disabled {
-		opacity: 1;
-		fill: $gray300 !important;
+		opacity: 0.3;
 		cursor: not-allowed !important;
 	}
 }
@@ -373,11 +372,12 @@ $swiper-control-circle-radius: 16px;
 	border-radius: 50%;
 	padding: calc((#{$swiper-control-circle-radius} * 2 - #{$swiper-control-size}) / 2);
 	margin-top: calc(-1 * #{$swiper-control-circle-radius} / 2);
+	@include shadow1();
 	&-light {
-		background-color: rgba(0, 0, 0, 0.3) !important;
+		background-color: rgba(0, 0, 0, 0.4) !important;
 		&.swiper-button-disabled {
-			background-color: rgba(0, 0, 0, 0.3) !important;
-			opacity: 0.1;
+			background-color: rgba(0, 0, 0, 0.4) !important;
+			opacity: 0.3;
 			cursor: not-allowed !important;
 		}
 	}
