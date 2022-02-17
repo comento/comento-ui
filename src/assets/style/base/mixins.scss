@@ -257,7 +257,9 @@
     @content
   }
   @include pc {
-    @content
+    &:hover {
+      @content
+    }
   }
 }
 
