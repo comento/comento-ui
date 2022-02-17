@@ -252,6 +252,15 @@
   }
 }
 
+@mixin hover-style() {
+  &:focus,&:active,&.hover-test {
+    @content
+  }
+  @include pc {
+    @content
+  }
+}
+
 @mixin spacing {
   // 간격 조절
   $sides: ("b": "bottom", "t": "top", "l": "left", "r": "right", "": "all",  "x": "x", "y": "y");

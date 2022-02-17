@@ -80,14 +80,7 @@ export default {
 		cursor: inherit;
 	}
 
-	@include mobile {
-		@include remove-active-and-focus();
-	}
-
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include hover-style {
 		background-color: $gray100;
 	}
 
@@ -103,10 +96,7 @@ export default {
 	}
 
 	&.transparent {
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include hover-style {
 			background-color: $button-transparent-hover-background-color;
 		}
 	}
