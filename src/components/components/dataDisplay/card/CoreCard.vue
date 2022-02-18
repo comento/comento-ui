@@ -45,8 +45,8 @@ import Box from '@/components/components/general/Box';
 import Divider from '@/components/elements/utility/Divider';
 import NarrowButton from '@/components/components/general/button/NarrowButton';
 import Content from '@/components/components/dataDisplay/content/Content';
-import RatingGroup from '@/components/components/dataEntry/rating/RatingGroup';
-import Rating from '@/components/components/dataEntry/rating/Rating';
+import RatingGroup from '@/components/components/dataDisplay/rating/RatingGroup';
+import Rating from '@/components/components/dataDisplay/rating/Rating';
 import Typography from '@/components/elements/core/typography/Typography';
 
 /**

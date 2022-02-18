@@ -22,7 +22,14 @@
 
 			<!-- button 영역 -->
 			<div v-if="showActionButton" class="c-modal--action-button-wrapper">
-				<Button size="large" :disabled="disabled" :loading="loading" full @click="successCallback">
+				<Button
+					size="large"
+					:disabled="disabled"
+					:loading="loading"
+					:color="buttonColor"
+					full
+					@click="successCallback"
+				>
 					{{ successMessage }}
 				</Button>
 			</div>
@@ -33,7 +40,7 @@
 <script>
 import Modal from '@/components/components/message/modal/Modal';
 import Typography from '@/components/elements/core/typography/Typography';
-import Button from '@/components/components/general/button/Button';
+import Button, { buttonColors } from '@/components/components/general/button/Button';
 
 export const aligns = ['left', 'center', 'right'];
 
@@ -46,9 +53,6 @@ export default {
 		show: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		/**
 		 * 정렬(left, center, right)
@@ -57,57 +61,36 @@ export default {
 			type: String,
 			default: 'center',
 			validator(value) {
-				return aligns.indexOf(value) !== -1;
+				return aligns.includes(value);
 			},
 		},
 		showActionButton: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		successCallback: {
 			type: Function,
 			default: () => {},
-			validator(value) {
-				return typeof value === 'function';
-			},
 		},
 		successMessage: {
 			type: String,
 			default: '확인',
-			validator(value) {
-				return typeof value === 'string';
-			},
 		},
 		showCloseButton: {
 			type: Boolean,
 			default: true,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		persistent: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		full: {
 			type: Boolean,
@@ -116,8 +99,12 @@ export default {
 		scroll: {
 			type: Boolean,
 			default: false,
+		},
+		buttonColor: {
+			type: String,
+			default: 'primary',
 			validator(value) {
-				return typeof value === 'boolean';
+				return buttonColors.includes(value);
 			},
 		},
 	},

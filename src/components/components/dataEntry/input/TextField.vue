@@ -64,7 +64,7 @@ export default {
 			},
 		},
 		value: {
-			type: String,
+			type: [String, Number],
 			default: '',
 		},
 		placeholder: {
@@ -224,6 +224,7 @@ export default {
 <style lang="scss" scoped>
 $outlined-padding: 16px;
 $underlined-padding: 4px;
+$disabled-background-color: $gray000;
 
 .c-text-field {
 	position: relative;
@@ -242,7 +243,17 @@ $underlined-padding: 4px;
 			color: $gray300;
 		}
 		&:disabled {
-			background: $gray000;
+			cursor: not-allowed !important;
+			background: $disabled-background-color;
+
+			&:active {
+				pointer-events: none;
+			}
+
+			~ .c-text-field--append {
+				cursor: not-allowed !important;
+				background: $disabled-background-color;
+			}
 		}
 
 		&-wrapper {
@@ -321,12 +332,7 @@ $underlined-padding: 4px;
 				padding-right: $underlined-padding;
 			}
 		}
-		&:disabled {
-			cursor: not-allowed !important;
-			&:active {
-				pointer-events: none;
-			}
-		}
+
 		&[readonly],
 		&[readonly='readonly'] {
 			&:focus {
