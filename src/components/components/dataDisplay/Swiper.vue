@@ -378,6 +378,7 @@ $swiper-control-circle-radius: 16px;
 	&.swiper-button-disabled {
 		opacity: 0.3;
 		cursor: not-allowed !important;
+		pointer-events: visible;
 	}
 }
 .swiper-button-background-circle {
