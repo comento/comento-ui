@@ -385,7 +385,6 @@ $swiper-control-circle-radius: 16px;
 	border-radius: 50%;
 	padding: calc((#{$swiper-control-circle-radius} * 2 - #{$swiper-control-size}) / 2);
 	margin-top: calc(-1 * #{$swiper-control-circle-radius} / 2);
-	@include shadow1();
 	&-light {
 		background-color: rgba(0, 0, 0, 0.4) !important;
 		&.swiper-button-disabled {
@@ -406,6 +405,7 @@ $swiper-control-circle-radius: 16px;
 .swiper-button {
 	width: auto;
 	height: auto;
+	filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.1));
 	margin-top: calc(-1 * #{$swiper-control-size} / 2) !important;
 	&.swiper-button-background-circle {
 		margin-top: calc(-1 * #{$swiper-control-circle-radius}) !important;
