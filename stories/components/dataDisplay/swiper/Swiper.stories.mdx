@@ -140,7 +140,7 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
                 };
             },
             template: `
-                    <div style="padding: 12px 24px;">
+                <div style="padding: 12px 24px;">
                     <Swiper controls-color="light" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
@@ -161,22 +161,13 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                     <Swiper controls-color="light" controls-position="outside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
                     <Swiper controls-color="dark" controls-position="top" with-controls :loop="false" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                   <Swiper controls-color="light" controls-position="top" controls-circle with-controls :loop="false" style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                    </div>`,
+                </div>
+            `,
             components: { Swiper, SwiperItemExample },
         }}
     </Story>
