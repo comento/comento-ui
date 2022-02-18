@@ -41,8 +41,13 @@ import Icon from '@/components/elements/core/icon/Icon';
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { NarrowButton },
-    template:
-     `<NarrowButton :color="color" :size="size" :transparent="transparent">{{label}}</NarrowButton>`,
+    template: `
+        <div class="p-10" :style="{background: transparent ? '#ee7e41' : '' }">
+            <NarrowButton :color="color" :size="size" :transparent="transparent">
+                {{label}}
+            </NarrowButton>
+        </div>
+    `,
 });
 
 # NarrowButton
