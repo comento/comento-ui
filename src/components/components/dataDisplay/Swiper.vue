@@ -283,10 +283,10 @@ export default {
 		computedControlsColor() {
 			const colorMap = {
 				light: 'white',
-				dark: 'gray900',
+				dark: 'gray850',
 			};
 			if (this.controlsCircle && this.controlsColor === 'dark') {
-				return 'gray900';
+				return 'gray850';
 			} else {
 				return colorMap[this.controlsColor];
 			}
