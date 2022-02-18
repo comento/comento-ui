@@ -266,7 +266,7 @@ $disabled-background-color: $gray000;
 			@include border-radius(2px);
 			&:focus,
 			&.active {
-				border-color: $secondary;
+				border-color: $info;
 			}
 			&.error {
 				&:focus,
@@ -289,7 +289,7 @@ $disabled-background-color: $gray000;
 			&.secondary {
 				&:focus,
 				&.active {
-					border-color: $secondary;
+					border-color: $info;
 				}
 			}
 
@@ -302,7 +302,7 @@ $disabled-background-color: $gray000;
 			border-bottom: 1px solid $input-border-color;
 			&:focus,
 			&.active {
-				border-color: $secondary;
+				border-color: $info;
 			}
 			&.error {
 				&:focus,
@@ -324,7 +324,7 @@ $disabled-background-color: $gray000;
 			}
 			&.secondary {
 				&:focus {
-					border-color: $secondary;
+					border-color: $info;
 				}
 			}
 
@@ -379,9 +379,9 @@ $disabled-background-color: $gray000;
 				&.secondary {
 					&:focus,
 					&.active {
-						border-color: $secondary;
+						border-color: $info;
 						+ .c-text-field--label {
-							color: $secondary;
+							color: $info;
 						}
 					}
 				}

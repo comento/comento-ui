@@ -1,3 +1,4 @@
-<svg width="13" height="8" viewBox="0 0 13 8" fill="#00B334" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M6.49999 8C6.21969 8 5.95225 7.88235 5.76284 7.67573L0.26284 1.67573C-0.110353 1.26861 -0.0828501 0.636039 0.324269 0.262847C0.731388 -0.110346 1.36396 -0.0828428 1.73715 0.324276L6.49999 5.52011L11.2628 0.324276C11.636 -0.0828437 12.2686 -0.110346 12.6757 0.262846C13.0828 0.636038 13.1103 1.26861 12.7371 1.67572L7.23715 7.67573C7.04774 7.88235 6.7803 8 6.49999 8Z" />
+<!-- TODO: fill로 깨서 바꿔야함 -->
+<svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L6.23071 6.23071L11.4614 1" stroke="#2A7DE1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

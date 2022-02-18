@@ -2,60 +2,58 @@
 @import "flexbox";
 @import "functions";
 
+@mixin trans-font-size($size, $line, $math: round) {
+  font-size: $size;
+  @if $math == 'round' {
+    line-height: round($size * $line);
+  } @else if $math == 'floor' {
+    line-height: floor($size * $line);
+  }
+}
+
 @mixin display1 {
-  font-size: 48px;
-  line-height: 120%;
+  @include trans-font-size(42px, 1.22);
   font-weight: $bold;
 }
 @mixin headline1 {
-  font-size: 32px;
-  line-height: 130%;
+  @include trans-font-size(32px, 1.26);
   font-weight: $bold;
 }
 @mixin headline2 {
-  font-size: 28px;
-  line-height: 130%;
+  @include trans-font-size(28px, 1.28);
   font-weight: $bold;
 }
 @mixin headline3 {
-  font-size: 26px;
-  line-height: 130%;
+  @include trans-font-size(26px, 1.28);
   font-weight: $bold;
 }
 @mixin headline4 {
-  font-size: 24px;
-  line-height: 125%;
+  @include trans-font-size(24px, 1.28);
   font-weight: $bold;
 }
 @mixin headline5 {
-  font-size: 22px;
-  line-height: 135%;
+  @include trans-font-size(22px, 1.26);
   font-weight: $normal;
 }
 @mixin headline6 {
-  font-size: 18px;
-  line-height: 135%;
+  @include trans-font-size(18px, 1.38);
   font-weight: $bold;
 }
 @mixin body1 {
-  font-size: 16px;
-  line-height: 150%;
+  @include trans-font-size(16px, 1.54);
   font-weight: $normal;
 }
 @mixin body2 {
-  font-size: 14px;
-  line-height: 150%;
+  @include trans-font-size(14px, 1.4);
   font-weight: $normal;
 }
 @mixin caption1 {
-  font-size: 12px;
-  line-height: 110%;
-  font-weight: $light;
+  @include trans-font-size(12px, 1.22);
+  font-weight: $normal;
 }
 @mixin caption2 {
-  font-size: 10px;
-  line-height: 100%;
-  font-weight: $light;
+  @include trans-font-size(10px, 1.26, floor);
+  font-weight: $normal;
 }
 @mixin f-thin {
   font-weight: $thin;
@@ -251,6 +249,17 @@
 @mixin remove-active-and-focus($background: transparent) {
   &:active, &:focus {
     background: $background;
+  }
+}
+
+@mixin state-style() {
+  &:focus,&:active,&.hover-test {
+    @content
+  }
+  @include pc {
+    &:hover {
+      @content
+    }
   }
 }
 

@@ -28,6 +28,12 @@ import Icon from '@/components/elements/core/icon/Icon';
                 options: narrowButtonSizes,
             },
         },
+        transparent: {
+            description: "투명 타입 여부",
+            control: {
+                type: "boolean",
+            },
+        },
     }}
 />
 
@@ -35,8 +41,13 @@ import Icon from '@/components/elements/core/icon/Icon';
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { NarrowButton },
-    template:
-     `<NarrowButton :color="color" :size="size">{{label}}</NarrowButton>`,
+    template: `
+        <div class="p-10" :style="{background: transparent ? '#ee7e41' : '' }">
+            <NarrowButton :color="color" :size="size" :transparent="transparent">
+                {{label}}
+            </NarrowButton>
+        </div>
+    `,
 });
 
 # NarrowButton
@@ -59,43 +70,43 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <div style="display: flex">
                         <NarrowButton color="gray400">
-                            Small Gray500
+                            Small Gray400
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallFill" color="gray400" />
+                                <Icon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
                         </NarrowButton>
                         <NarrowButton color="gray600">
                             Small Gray600
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallFill" color="gray500" />
+                                <Icon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
                         </NarrowButton>
                     </div>
                     <div style="display: flex">
                         <NarrowButton color="gray400" size="medium">
-                            Medium Gray500
+                            Medium Gray400
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallFill" color="gray400" />
+                                <Icon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
                         </NarrowButton>
                         <NarrowButton color="gray600" size="medium">
                             Medium Gray600
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallFill" color="gray500" />
+                                <Icon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
                         </NarrowButton>
                     </div>
                     <div style="display: flex">
                         <NarrowButton color="gray400" size="large">
-                            Large Gray500
+                            Large Gray400
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallFill" color="gray400" />
+                                <Icon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
                         </NarrowButton>
                         <NarrowButton color="gray600" size="large">
                             Large Gray600
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallFill" color="gray500" />
+                                <Icon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
                         </NarrowButton>
                     </div>
@@ -154,21 +165,62 @@ export const Default = (args, { argTypes }) => ({
                         </template>
                         WithIcon
                         <template v-slot:right-icon>
-                            <Icon name="IconTextArrowSmallFill" color="gray400" />
+                            <Icon name="IconTextArrowSmallLine" color="gray400" />
                         </template>
                     </NarrowButton>
                     <NarrowButton color="gray600">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="gray500" />
+                            <Icon name="IconPlusSmallLine" color="gray400" />
                         </template>
                         WithIcon
                         <template v-slot:right-icon>
-                            <Icon name="IconTextArrowSmallFill" color="gray500" />
+                            <Icon name="IconTextArrowSmallLine" color="gray400" />
                         </template>
                     </NarrowButton>
                 </div>
             </div>
         `,
+            components: { NarrowButton, Icon },
+        }}
+    </Story>
+</Canvas>
+
+### Transparent
+<Canvas>
+    <Story name="Transparent" height="100px">
+        {{
+            template: `
+                <div>
+                    <div style="background: #CF5310" class="p-8 mb-10">
+                        <div class="flex">
+                            <NarrowButton size="small" color="white" transparent class="mr-10">Small</NarrowButton>
+                            <NarrowButton size="small" color="white" transparent class="hover-test">Small</NarrowButton>
+                        </div>
+                        <div class="flex my-10">
+                            <NarrowButton size="medium" color="white" transparent class="mr-10">Medium</NarrowButton>
+                            <NarrowButton size="medium" color="white" transparent class="hover-test">Medium</NarrowButton>
+                        </div>
+                        <div class="flex">
+                            <NarrowButton size="large" color="white" transparent class="mr-10">Large</NarrowButton>
+                            <NarrowButton size="large" color="white" transparent class="hover-test">Large</NarrowButton>
+                        </div>
+                    </div>
+                    <div style="background: #040505" class="p-8">
+                        <div class="flex">
+                            <NarrowButton size="small" color="white" transparent class="mr-10">Small</NarrowButton>
+                            <NarrowButton size="small" color="white" transparent class="hover-test">Small</NarrowButton>
+                        </div>
+                        <div class="flex my-10">
+                            <NarrowButton size="medium" color="white" transparent class="mr-10">Medium</NarrowButton>
+                            <NarrowButton size="medium" color="white" transparent class="hover-test">Medium</NarrowButton>
+                        </div>
+                        <div class="flex">
+                            <NarrowButton size="large" color="white" transparent class="mr-10">Large</NarrowButton>
+                            <NarrowButton size="large" color="white" transparent class="hover-test">Large</NarrowButton>
+                        </div>
+                    </div>
+                </div>
+            `,
             components: { NarrowButton, Icon },
         }}
     </Story>

@@ -11,7 +11,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "bundle": "vue-cli-service build --target lib --name comento-ui src/main.js",
-    "copy": "cp -R src/assets/style/base/color.scss dist && cp -R src/utils/constants/color.js dist/color.js",
+    "copy": "yarn copy-color && yarn copy-font",
+    "copy-color": "cp -R src/assets/style/base/color.scss dist && cp -R src/utils/constants/color.js dist/color.js",
+    "copy-font": "cp -R src/assets/style/base/fonts.scss dist",
     "web-types": "vue-docgen-web-types",
     "build": "yarn bundle && yarn copy && yarn web-types",
     "lint": "vue-cli-service lint",
