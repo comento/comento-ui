@@ -5,66 +5,128 @@ import Row from '@/components/layout/Row';
 import StyleCol from '@/components/layout/StyleCol';
 import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
 import Chip from '@/components/components/dataDisplay/chips/Chip';
+import Icon from '@/components/elements/core/icon/Icon';
+import Swiper from '@/components/components/dataDisplay/Swiper';
 
 <Meta
-    title="Data Display/Card/EduCard"
-    component={EduCard}
-    argTypes={{
-        backgroundImage: {
-            description: "카드 배경<br/>`String`",
-            defaultValue: "https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg",
-            table: {
-                type: {
-                    summary: null,
-                },
-            },
-            control: {
-                type: "text",
-            },
-        },
-        category: {
-            description: "캠프 카테고리<br/>`String`",
-            defaultValue: "category",
-            table: {
-                type: {
-                    summary: null,
-                },
-            },
-            control: {
-                type: "text",
-            },
-        },
-        captionLeft: {
-            description: "좌측 캡션<br/>`String`",
-            defaultValue: "captionLeft",
-            table: {
-                type: {
-                    summary: null,
-                },
-            },
-            control: {
-                type: "text",
-            },
-        },
-        captionRight: {
-            description: "우측 캡션<br/>`String`",
-            defaultValue: "captionRight",
-            table: {
-                type: {
-                    summary: null,
-                },
-            },
-            control: {
-                type: "text",
-            },
-        },
-    }}
+	title="Data Display/Card/EduCard"
+	component={EduCard}
+	argTypes={{
+		backgroundImage: {
+			description: '카드 배경<br/>`String`',
+			defaultValue: 'https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		category: {
+			description: '캠프 카테고리<br/>`String`',
+			defaultValue: 'category',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		captionLeft: {
+			description: '좌측 캡션<br/>`String`',
+			defaultValue: 'captionLeft',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		captionRight: {
+			description: '우측 캡션<br/>`String`',
+			defaultValue: 'captionRight',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		width: {
+			description: '너비<br/>`String`',
+			defaultValue: '100%',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		imageHeight: {
+			description: '이미지 높이<br/>`String`',
+			defaultValue: '',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		additionalSubtitle: {
+			description: '보조 정보<br/>`String`',
+			defaultValue: '2차 앵콜',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		backgroundColor: {
+			description: '배경색<br/>`String`',
+			defaultValue: 'white',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		emphasized: {
+		    description: "강조하는 카드 여부",
+		    control: {
+		        type: "boolean",
+		    },
+		},
+		withSwiper: {
+		    description: "swiper에서 사용 여부",
+		    control: {
+		        type: "boolean",
+		    },
+		},
+	}}
 />
 
 export const Default = (args, { argTypes }) => ({
-    props: Object.keys(argTypes),
-    components: { Grid, Row, StyleCol, EduCard },
-    template: `
+	props: Object.keys(argTypes),
+	components: { Grid, Row, StyleCol, EduCard },
+	template: `
         <Grid>
             <Row>
                 <StyleCol :col-lg="4">
@@ -73,6 +135,10 @@ export const Default = (args, { argTypes }) => ({
                         :category="category"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
+                        :width="width"
+                        :image-height="imageHeight"
+                        :additional-subtitle="additionalSubtitle"
+                        :background-color="backgroundColor"
                     >
                        <template v-slot:title>Title</template>
                     </EduCard>
@@ -83,6 +149,10 @@ export const Default = (args, { argTypes }) => ({
                         :category="category"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
+                        :width="width"
+                        :image-height="imageHeight"
+                        :additional-subtitle="additionalSubtitle"
+                        :background-color="backgroundColor"
                     >
                        <template v-slot:title>Title</template>
                     </EduCard>
@@ -93,6 +163,10 @@ export const Default = (args, { argTypes }) => ({
                         :category="category"
                         :caption-left="captionLeft"
                         :caption-right="captionRight"
+                        :width="width"
+                        :image-height="imageHeight"
+                        :additional-subtitle="additionalSubtitle"
+                        :background-color="backgroundColor"
                     >
                        <template v-slot:title>Title</template>
                     </EduCard>
@@ -113,60 +187,194 @@ export const Default = (args, { argTypes }) => ({
 ## Stories
 
 ### All
-
 <Canvas>
-    <Story name="All">
-        {{
-            data() {
-                return {
-                    exampleBackgroundImage:
-                        "https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg",
-                };
-            },
-            template: `
-                <Grid>
-                    <Row>
-                        <StyleCol :col-lg="4">
-                            <EduCard
-                                :background-image="exampleBackgroundImage"
-                                category="category"
-                                caption-left="captionLeft"
-                                caption-right="captionRight"
-                            >
-                               <template v-slot:chip>
-                                  <ChipGroup>
-                                    <Chip size="small">복습 VOD</Chip>
-                                  </ChipGroup>
-                               </template>
-                               <template v-slot:title>Title</template>
-                            </EduCard>
-                        </StyleCol>
-                        <StyleCol :col-lg="4">
-                            <EduCard
-                                :background-image="exampleBackgroundImage"
-                                category="category"
-                                title="대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심알아보고 보고서 작성과 직무 체험하기"
-                                caption-left="captionLeft"
-                                caption-right="captionRight"
-                            >
-                               <template v-slot:title>Title</template>
-                            </EduCard>
-                        </StyleCol>
-                        <StyleCol :col-lg="4">
-                            <EduCard
-                                :background-image="exampleBackgroundImage"
-                                category="category"
-                                title="title"
-                                caption-left="captionLeft"
-                                caption-right="captionRight"
-                            >
-                               <template v-slot:title>Title</template>
-                            </EduCard>
-                        </StyleCol>
-                    </Row>
-                </Grid>
+	<Story name="All">
+		{{
+			data() {
+				return {
+					exampleBackgroundImage: 'https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg',
+				};
+			},
+			template: `
+                <div>
+                    <Grid>
+                        <Row>
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                    additional-subtitle="2차 앵콜"
+                                >
+                                   <template v-slot:chip>
+                                      <ChipGroup>
+                                        <Chip size="medium">복습 VOD</Chip>
+                                      </ChipGroup>
+                                   </template>
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                >
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                >
+                                    <template v-slot:additionalButton>
+                                        <Icon name="IconBookmarkLargeLine" color="white" />
+                                    </template>
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                        </Row>
+                        <Row class="mt-50">
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    emphasized
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                    additional-subtitle="2차 앵콜"
+                                >
+                                   <template v-slot:chip>
+                                      <ChipGroup>
+                                        <Chip size="medium">복습 VOD</Chip>
+                                      </ChipGroup>
+                                   </template>
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    emphasized
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                >
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                            <StyleCol :col-lg="4">
+                                <EduCard
+                                    emphasized
+                                    :background-image="exampleBackgroundImage"
+                                    category="생산기술"
+                                    caption-left="3개의 스케줄"
+                                    caption-right="1월 20일까지"
+                                >
+                                    <template v-slot:additionalButton>
+                                        <Icon name="IconBookmarkLargeLine" color="white" />
+                                    </template>
+                                   <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                </EduCard>
+                            </StyleCol>
+                        </Row>
+                    </Grid>
+                </div>
             `,
-            components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip },
-        }}
-    </Story>
+			components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip, Icon },
+		}}
+	</Story>
+</Canvas>
+
+### With Swiper
+<Canvas>
+	<Story name="WithSwiper">
+		{{
+			data() {
+				return {
+					exampleBackgroundImage: 'https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg',
+				};
+			},
+			template: `
+                <div>
+                    <Grid :fluid="isMobile">
+                        <Row>
+                            <StyleCol :col-lg="12">
+                                <Swiper
+                                    controls-color="dark"
+                                    controls-position="outside"
+                                    :with-controls="!isMobile"
+                                    :slides-per-view="isMobile ? 'auto' : 3"
+                                    :slides-per-group="isMobile ? 1 : 3"
+                                    :spacing="isMobile ? 16 : 24"
+                                >
+                                    <template v-for="(_, index) in 6" :slot="'item' + index">
+                                        <EduCard
+                                            with-swiper
+                                            :background-image="exampleBackgroundImage"
+                                            category="생산기술"
+                                            caption-left="3개의 스케줄"
+                                            caption-right="1월 20일까지"
+                                            additional-subtitle="2차 앵콜"
+                                        >
+                                           <template v-if="index % 3 === 0" v-slot:chip>
+                                              <ChipGroup>
+                                                <Chip size="medium">복습 VOD</Chip>
+                                              </ChipGroup>
+                                           </template>
+                                           <template v-if="index % 2 === 1" v-slot:additionalButton>
+                                               <Icon name="IconBookmarkLargeLine" color="white" />
+                                           </template>
+                                           <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                        </EduCard>
+                                    </template>
+                                </Swiper>
+                            </StyleCol>
+                        </Row>
+                        <Row class="mt-50">
+                            <StyleCol :col-lg="12">
+                                <Swiper
+                                    controls-color="dark"
+                                    controls-position="outside"
+                                    :with-controls="!isMobile"
+                                    :slides-per-view="isMobile ? 'auto' : 3"
+                                    :slides-per-group="isMobile ? 1 : 3"
+                                    :spacing="isMobile ? 16 : 24"
+                                    :autoplay="isMobile"
+                                >
+                                    <template v-for="(_, index) in 6" :slot="'item' + index">
+                                        <EduCard
+                                            emphasized
+                                            with-swiper
+                                            :background-image="exampleBackgroundImage"
+                                            category="생산기술"
+                                            caption-left="3개의 스케줄"
+                                            caption-right="1월 20일까지"
+                                            additional-subtitle="2차 앵콜"
+                                        >
+                                           <template v-if="index % 3 === 0" v-slot:chip>
+                                              <ChipGroup>
+                                                <Chip size="medium">복습 VOD</Chip>
+                                              </ChipGroup>
+                                           </template>
+                                           <template v-if="index % 2 === 1" v-slot:additionalButton>
+                                              <Icon name="IconBookmarkLargeLine" color="white" />
+                                          </template>
+                                           <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
+                                        </EduCard>
+                                    </template>
+                                </Swiper>
+                            </StyleCol>
+                        </Row>
+                    </Grid>
+                </div>
+            `,
+			components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip, Icon, Swiper },
+		}}
+	</Story>
 </Canvas>

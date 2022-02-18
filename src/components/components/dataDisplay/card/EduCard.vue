@@ -1,33 +1,37 @@
 <template>
-	<article class="c-application c-edu-card" v-bind="$attrs" v-on="$listeners">
-		<div class="c-edu-card--info-container">
-			<div class="c-edu-card--subtitle mb-4">
-				<Typography type="caption1" color="gray800" :font-weight="700">
-					{{ category }}
-				</Typography>
-			</div>
-			<div class="c-edu-card--title mb-8">
-				<Typography type="body1" color="gray900">
-					<slot name="title" />
-				</Typography>
-			</div>
-			<div class="c-edu-card--caption">
-				<Typography type="caption1" element="span" color="gray500">
-					{{ captionLeft }}
-				</Typography>
-				<Divider v-show="captionRight" vertical class="mx-8" />
-				<Typography type="caption1" element="span" color="gray500"> {{ captionRight }}</Typography>
-				<slot name="additionalCaptions" />
-			</div>
-		</div>
+	<article class="c-application c-edu-card" v-bind="$attrs" :style="computedStyle" v-on="$listeners">
 		<div class="c-edu-card--image-container">
-			<img class="c-edu-card--image" :src="backgroundImage" alt="" />
+			<div v-if="$slots['chip']" class="c-edu-card--chip-container">
+				<slot name="chip" />
+			</div>
 			<div v-if="$slots['additionalButton']" class="c-edu-card--additional-button">
 				<slot name="additionalButton" />
 			</div>
+			<img class="c-edu-card--image" :src="backgroundImage" alt />
 		</div>
-		<div v-if="$slots['chip']" class="c-edu-card--chip-container">
-			<slot name="chip" />
+		<div class="c-edu-card--info-container">
+			<div class="c-edu-card--subtitle">
+				<Typography type="caption1" color="gray800" :font-weight="400">
+					{{ category }}
+				</Typography>
+				<Typography v-if="additionalSubtitle" type="caption1" color="gray300" class="mx-4"> ∙ </Typography>
+				<Typography v-if="additionalSubtitle" type="caption1" color="secondary">
+					{{ additionalSubtitle }}
+				</Typography>
+			</div>
+			<div class="c-edu-card--title mt-4">
+				<Typography :type="getTypography('title')" color="gray900" :font-weight="400">
+					<slot name="title" />
+				</Typography>
+			</div>
+			<div class="c-edu-card--caption mt-8">
+				<Typography :type="getTypography('caption')" element="span" color="gray400">
+					{{ captionLeft }}
+				</Typography>
+				<Divider v-show="captionRight" vertical color="gray200" class="mx-8" />
+				<Typography type="caption1" element="span" color="gray400"> {{ captionRight }}</Typography>
+				<slot name="additionalCaptions" />
+			</div>
 		</div>
 	</article>
 </template>
@@ -35,6 +39,7 @@
 <script>
 import Typography from '@/components/elements/core/typography/Typography';
 import Divider from '@/components/elements/utility/Divider';
+import windowMixin from '@/mixins/windowMixin';
 
 /**
  * 직무부트캠프 카드
@@ -42,9 +47,14 @@ import Divider from '@/components/elements/utility/Divider';
  */
 export default {
 	name: 'EduCard',
+	mixins: [windowMixin],
 	props: {
 		backgroundImage: {
 			type: String,
+		},
+		backgroundColor: {
+			type: String,
+			default: 'white',
 		},
 		category: {
 			type: String,
@@ -58,6 +68,59 @@ export default {
 		captionRight: {
 			type: String,
 		},
+		width: {
+			type: String,
+			default: '100%',
+		},
+		imageHeight: {
+			type: String,
+			default: '',
+		},
+		additionalSubtitle: {
+			type: String,
+			default: '',
+		},
+		emphasized: {
+			type: Boolean,
+			default: false,
+		},
+		withSwiper: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		computedStyle() {
+			return {
+				'--card-width': this.width,
+				'--image-height': this.computedImageHeight,
+				'--background-color': this.backgroundColor,
+				'--title-height': this.computedTitleHeight,
+			};
+		},
+		computedImageHeight() {
+			if (this.imageHeight) return this.imageHeight;
+			if (this.emphasized) return this.isMobile ? '180px' : '300px';
+
+			return this.isMobile ? '144px' : '136px';
+		},
+		computedTitleHeight() {
+			return this.isMobileWithSwiper ? '40px' : '50px';
+		},
+		isMobileWithSwiper() {
+			return this.isMobile && this.withSwiper;
+		},
+		computedTypographyForMobileWithSwiper() {
+			return {
+				title: ['body1', 'body2'],
+				caption: ['caption1', 'caption2'],
+			};
+		},
+	},
+	methods: {
+		getTypography(type) {
+			return this.computedTypographyForMobileWithSwiper[type][Number(this.isMobileWithSwiper)];
+		},
 	},
 	components: {
 		Divider,
@@ -67,97 +130,96 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$thumbnail-height-mobile: 120px;
-$thumbnail-height-pc: 128px;
-
 .c-edu-card {
-	padding: $thumbnail-height-mobile 0 12px 0;
-	background-color: $white;
-	@include pc {
-		padding: $thumbnail-height-pc 0 12px 0;
-	}
-	border-radius: 4px;
-	width: 100%;
-	position: relative;
-	z-index: 1;
+	padding-bottom: 12px;
+	background-color: var(--background-color);
+	@include border-radius(4px);
+	width: var(--card-width);
+	max-width: 343px;
 	cursor: pointer;
 
-	&--title {
-		height: 48px;
-		@include ellipsis(2);
-	}
-	&--info-container {
-		margin-top: 12px;
-		width: 100%;
-	}
 	&--image {
-		border: none;
-		width: 100%;
 		position: absolute;
-		top: 50%;
 		left: 50%;
-		@include transform(translate(-50%, -50%));
+		@include transform(translateX(-50%));
+		border: none;
+		max-width: none;
+		height: 100%;
 		@include opacity(0.9);
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
+			position: relative;
+			@include flexbox();
 			border: none;
 			@include border-radius(4px);
-			position: absolute;
-			top: 0;
-			right: 0;
-			z-index: -1;
 			overflow: hidden;
 			width: 100%;
-			height: $thumbnail-height-mobile;
-			@include pc {
-				height: $thumbnail-height-pc;
-			}
+			height: var(--image-height);
 		}
 	}
+
 	&--chip-container {
 		position: absolute;
+		z-index: 1;
 		top: 8px;
 		left: 10px;
 	}
 
-	&--caption {
-		@include flexbox();
-		@include flex-direction(row);
-	}
-
 	&--additional-button {
 		position: absolute;
+		z-index: 1;
 		top: 8px;
 		right: 8px;
 	}
 
-	&:hover {
-		.c-edu-card--image {
-			@include pc {
-				animation: scale-up-center 0.2s ease-in both;
-			}
-		}
+	&--info-container {
+		margin-top: 12px;
+		width: 100%;
+	}
+
+	&--subtitle {
+		@include flexbox();
+		@include align-items(center);
+	}
+
+	&--title {
+		height: var(--title-height);
+		@include ellipsis(2);
+	}
+
+	&--caption {
+		@include flexbox();
 	}
 
 	@keyframes scale-up-center {
 		0% {
-			-webkit-transform: translate(-50%, -50%) scale(1);
-			transform: translate(-50%, -50%) scale(1);
+			-webkit-transform: translateX(-50%) scale(1);
+			transform: translateX(-50%) scale(1);
 		}
 		100% {
-			-webkit-transform: translate(-50%, -50%) scale(1.07);
-			transform: translate(-50%, -50%) scale(1.07);
+			-webkit-transform: translateX(-50%) scale(1.07);
+			transform: translateX(-50%) scale(1.07);
 		}
 	}
 
 	@keyframes scale-down-center {
 		0% {
-			-webkit-transform: translate(-50%, -50%) scale(1.07);
-			transform: translate(-50%, -50%) scale(1.07);
+			-webkit-transform: translateX(-50%) scale(1.07);
+			transform: translateX(-50%) scale(1.07);
 		}
 		100% {
-			-webkit-transform: translate(-50%, -50%) scale(1);
-			transform: translate(-50%, -50%) scale(1);
+			-webkit-transform: translateX(-50%) scale(1);
+			transform: translateX(-50%) scale(1);
+		}
+	}
+
+	@include pc {
+		max-width: 259px;
+
+		&:hover {
+			& .c-edu-card--image {
+				animation: scale-up-center 0.2s ease-in both;
+			}
 		}
 	}
 }
