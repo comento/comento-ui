@@ -1,7 +1,7 @@
 <template>
 	<button
 		class="c-application c-narrow-button"
-		:class="size"
+		:class="computedClasses"
 		:style="[computedColor]"
 		v-bind="$attrs"
 		type="button"
@@ -43,6 +43,10 @@ export default {
 				return narrowButtonSizes.indexOf(value) !== -1;
 			},
 		},
+		transparent: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		mappedColor() {
@@ -54,6 +58,9 @@ export default {
 		computedIconMargin() {
 			const isMoreThanLarge = this.size.indexOf('large') !== -1;
 			return isMoreThanLarge ? '4px' : '2px';
+		},
+		computedClasses() {
+			return [this.size, { transparent: this.transparent }];
 		},
 	},
 	methods: {
@@ -75,8 +82,17 @@ export default {
 	@include align-items(center);
 	@include justify-content(center);
 
-	&:hover {
+	&:hover,
+	&.hover-test {
 		background-color: $gray100;
+	}
+
+	// transparent
+	&.transparent {
+		&:hover,
+		&.hover-test {
+			background-color: $button-transparent-hover-background-color;
+		}
 	}
 
 	// 사이즈

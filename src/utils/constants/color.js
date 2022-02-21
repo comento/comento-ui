@@ -56,9 +56,13 @@ export const yellow100 = '#FFF7CC';
 export const yellow000 = '#FFFDF5';
 
 export const primary = blue600;
+export const lightPrimary = blue100;
 export const success = green600;
 export const error = red600;
+export const info = gray600;
 export const secondary = orange600;
+export const yellow = yellow600;
+export const link = blue600;
 
 export const colors = {
     black: black,
@@ -100,9 +104,13 @@ export const colors = {
     yellow100: yellow100,
     yellow000: yellow000,
     primary: primary,
+    lightPrimary: lightPrimary,
     success: success,
     error: error,
+    info: info,
     secondary: secondary,
+    yellow: yellow,
+    link: link
 };
 
 export const colorKeys = [...Object.keys(colors)];

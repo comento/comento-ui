@@ -20,12 +20,12 @@
 				</Typography>
 			</div>
 			<div class="c-edu-card--title mt-4">
-				<Typography type="body1" color="gray900" :font-weight="400">
+				<Typography :type="getTypography('title')" color="gray900" :font-weight="400">
 					<slot name="title" />
 				</Typography>
 			</div>
 			<div class="c-edu-card--caption mt-8">
-				<Typography type="caption1" element="span" color="gray400">
+				<Typography :type="getTypography('caption')" element="span" color="gray400">
 					{{ captionLeft }}
 				</Typography>
 				<Divider v-show="captionRight" vertical color="gray200" class="mx-8" />
@@ -80,6 +80,14 @@ export default {
 			type: String,
 			default: '',
 		},
+		emphasized: {
+			type: Boolean,
+			default: false,
+		},
+		withSwiper: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		computedStyle() {
@@ -87,14 +95,33 @@ export default {
 				'--card-width': this.width,
 				'--image-height': this.computedImageHeight,
 				'--background-color': this.backgroundColor,
+				'--title-height': this.computedTitleHeight,
 			};
 		},
 		computedImageHeight() {
 			if (this.imageHeight !== '') {
 				return this.imageHeight;
 			}
+			if (this.emphasized) return this.isMobile ? '180px' : '300px';
 
 			return this.isMobile ? '144px' : '136px';
+		},
+		computedTitleHeight() {
+			return this.isMobileWithSwiper ? '40px' : '50px';
+		},
+		isMobileWithSwiper() {
+			return this.isMobile && this.withSwiper;
+		},
+		computedTypographyForMobileWithSwiper() {
+			return {
+				title: ['body1', 'body2'],
+				caption: ['caption1', 'caption2'],
+			};
+		},
+	},
+	methods: {
+		getTypography(type) {
+			return this.computedTypographyForMobileWithSwiper[type][Number(this.isMobileWithSwiper)];
 		},
 	},
 	components: {
@@ -153,7 +180,7 @@ export default {
 	}
 
 	&--title {
-		height: 50px;
+		height: var(--title-height);
 		@include ellipsis(2);
 	}
 
