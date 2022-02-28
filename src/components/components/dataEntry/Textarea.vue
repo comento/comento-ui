@@ -3,26 +3,25 @@
 		<textarea
 			ref="textarea"
 			v-model="sync_value"
-			:style="[computedHeight, computedStyles]"
+			:style="[computedStyles]"
 			:placeholder="placeholder"
 			:readonly="readOnly"
-			v-bind="$attrs"
 			v-on="$listeners"
-			@input="resize"
+			@input="onInput"
 		/>
-		<Icon
+		<!-- v-bind="$attrs" -->
+		<IconButton
 			v-if="type === 'reply' && !readOnly"
 			class="c-textarea--reply-icon"
-			name="IconSendLargeFill"
+			iconName="IconSendLargeFill"
 			:color="replyIconColor"
-			:class="value && 'active'"
 			@click="onSubmitReply"
 		/>
 	</div>
 </template>
 
 <script>
-import Icon from '@/components/elements/core/icon/Icon';
+import IconButton from '@/components/components/general/button/IconButton';
 
 export const textareaTypes = ['basic', 'outlined', 'reply'];
 
@@ -57,7 +56,7 @@ export default {
 		},
 		minHeight: {
 			type: String,
-			default: '110px',
+			default: null,
 		},
 		readOnly: {
 			type: Boolean,
@@ -71,10 +70,10 @@ export default {
 		computedType() {
 			return `${this.type}`;
 		},
-		computedHeight() {
+		computedStyles() {
 			return {
 				'max-height': this.maxHeight,
-				'min-height': this.minHeight,
+				'min-height': this.minHeight ? this.minHeight : this.type === 'reply' ? '38px' : '110px',
 				'overflow-y': this.maxHeight === 'auto' ? 'hidden' : 'auto',
 			};
 		},
@@ -95,7 +94,7 @@ export default {
 		},
 	},
 	methods: {
-		resize(event) {
+		onInput(event) {
 			event.target.style.height = '1px';
 			event.target.style.height = `${event.target.scrollHeight}px`;
 			this.$emit('input', event.target.value);
@@ -104,14 +103,14 @@ export default {
 			this.value && this.$emit('submit');
 		},
 	},
-	components: { Icon },
+	components: { IconButton },
 };
 </script>
 
 <style scoped lang="scss">
 /* 공통 */
 .c-textarea {
-	display: block;
+	@include flexbox();
 	position: relative;
 	textarea {
 		padding: 16px;
@@ -157,9 +156,7 @@ export default {
 	}
 
 	&--reply-icon {
-		position: relative;
-		right: -6px;
-		bottom: 8px;
+		margin: auto 0 4px 8px;
 
 		&.active {
 			cursor: pointer;
