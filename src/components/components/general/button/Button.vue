@@ -469,8 +469,21 @@ $info-text-color: $info;
 				fill: $info-disabled-color !important;
 			}
 		}
-		.c-button--loading {
+		@include loading-style {
 			background-color: $white;
+		}
+		@include ghost-style {
+			color: $gray850;
+			border-color: $gray850;
+			@include state-style {
+				background: rgba(32, 35, 37, 0.2);
+			}
+			&:disabled {
+				opacity: 0.2;
+			}
+			@include loading-style {
+				background-color: transparent;
+			}
 		}
 	}
 }
