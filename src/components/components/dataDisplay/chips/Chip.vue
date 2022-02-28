@@ -156,7 +156,7 @@ export default {
 		}
 	}
 	&.primary {
-		color: $white;
+		color: $primary;
 		border: 1px solid $light-primary;
 		background-color: $light-primary;
 
