@@ -1,7 +1,7 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent, computedInteractive]"
+		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent, computedClickable]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
@@ -68,7 +68,7 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		interactive: {
+		clickable: {
 			type: Boolean,
 			default: false,
 		},
@@ -102,9 +102,9 @@ export default {
 				transparent: this.transparent,
 			};
 		},
-		computedInteractive() {
+		computedClickable() {
 			return {
-				interactive: this.interactive,
+				clickable: this.clickable,
 			};
 		},
 	},
@@ -124,7 +124,7 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.interactive:hover {
+		&.clickable:hover {
 			background-color: $gray200;
 		}
 
@@ -133,7 +133,7 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.interactive:hover {
+			&.clickable:hover {
 				background-color: $gray100;
 			}
 
@@ -146,7 +146,7 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.interactive:hover {
+			&.clickable:hover {
 				background-color: $gray100;
 			}
 
@@ -160,7 +160,7 @@ export default {
 		border: 1px solid $light-primary;
 		background-color: $light-primary;
 
-		&.interactive:hover {
+		&.clickable:hover {
 			background-color: $green800;
 		}
 
@@ -169,7 +169,7 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.interactive:hover {
+			&.clickable:hover {
 				background-color: $green100;
 			}
 
@@ -182,7 +182,7 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.interactive:hover {
+			&.clickable:hover {
 				background-color: $green100;
 			}
 
@@ -196,7 +196,7 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.interactive:hover {
+		&.clickable:hover {
 			background-color: $blue800;
 		}
 
@@ -205,7 +205,7 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.interactive:hover {
+			&.clickable:hover {
 				background-color: $blue100;
 			}
 
@@ -218,7 +218,7 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.interactive:hover {
+			&.clickable:hover {
 				background-color: $blue100;
 			}
 
@@ -289,7 +289,7 @@ export default {
 	&.full {
 		width: 100%;
 	}
-	&.interactive:hover {
+	&.clickable:hover {
 		cursor: pointer;
 	}
 }
