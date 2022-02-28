@@ -111,9 +111,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
+<style lang="scss" scoped>
 .c-chip {
 	position: relative;
 	display: inline-flex;
