@@ -6,6 +6,7 @@
 			computedColor,
 			computedFull,
 			computedType,
+			computedGhostTypeClass,
 			computedLoading,
 			computedFixed,
 			computedAbsolute,
@@ -36,7 +37,7 @@ import Loader from '@/components/components/other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
-export const buttonTypes = ['fill', 'outlined', 'text'];
+export const buttonTypes = ['fill', 'outlined', 'ghost', 'text'];
 
 /**
  * @displayName c-button
@@ -113,6 +114,9 @@ export default {
 		},
 		computedType() {
 			return this.type;
+		},
+		computedGhostTypeClass() {
+			return this.type === 'ghost' ? 'outlined' : '';
 		},
 		computedFull() {
 			return { full: this.full };

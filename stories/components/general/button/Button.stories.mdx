@@ -96,27 +96,35 @@ export const Default = (args, { argTypes }) => ({
                         <ButtonStateTitle class="mr-30">{{type}}</ButtonStateTitle>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>default</ButtonStateTitle>
-                            <template v-for="(color, index) in getFilterButtonColors(type)">
-                                <Button :color="color" :type="type" class="mb-16">Button</Button>
-                            </template>
+                            <div :style="getGhostTypeBackgroundColor(type)">
+                                <template v-for="(color, index) in getFilterButtonColors(type)">
+                                    <Button :color="color" :type="type" class="mb-16">Button</Button>
+                                </template>
+                            </div>
                         </div>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>hover</ButtonStateTitle>
-                            <template v-for="(color, index) in getFilterButtonColors(type)">
-                                <Button :color="color" :type="type" class="mb-16 hover-test">Button</Button>
-                            </template>
+                            <div :style="getGhostTypeBackgroundColor(type)">
+                                <template v-for="(color, index) in getFilterButtonColors(type)">
+                                    <Button :color="color" :type="type" class="mb-16 hover-test">Button</Button>
+                                </template>
+                            </div>
                         </div>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>disabled</ButtonStateTitle>
-                            <template v-for="(color, index) in getFilterButtonColors(type)">
-                                <Button :color="color" :type="type" disabled class="mb-16">Button</Button>
-                            </template>
+                            <div :style="getGhostTypeBackgroundColor(type)">
+                                <template v-for="(color, index) in getFilterButtonColors(type)">
+                                    <Button :color="color" :type="type" disabled class="mb-16">Button</Button>
+                                </template>
+                            </div>
                         </div>
                         <div class="flex-column mr-30">
                             <ButtonStateTitle>loading</ButtonStateTitle>
-                            <template v-for="(color, index) in getFilterButtonColors(type)">
-                                <Button :color="color" :type="type" class="mb-16" loading></Button>
-                            </template>
+                            <div :style="getGhostTypeBackgroundColor(type)">
+                                <template v-for="(color, index) in getFilterButtonColors(type)">
+                                    <Button :color="color" :type="type" class="mb-16" loading></Button>
+                                </template>
+                            </div>
                         </div>
                     </div>
                   </template>
@@ -131,7 +139,10 @@ export const Default = (args, { argTypes }) => ({
             methods: {
                 getFilterButtonColors(type) {
                     return type === 'fill' ? this.buttonColors : this.filteredButtonColors
-                }
+                },
+                getGhostTypeBackgroundColor(type) {
+                    return type === 'ghost' ? 'backgroundColor: #EE7E41' : ''
+                },
             },
             computed: {
                 // light-primary는 fill type에서만 쓰임
