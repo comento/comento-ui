@@ -54,10 +54,15 @@ $yellow100: #FFF7CC;
 $yellow000: #FFFDF5;
 
 $primary: $blue600;
+$light-primary: $blue100;
 $success: $green600;
 $error: $red600;
+$info: $gray600;
 $secondary: $orange600;
+$yellow: $yellow600;
+$link: $blue600;
 
 $border-color: $gray200;
 $input-border-color: $gray250; // Input, Select, Textarea, TextField
-$input-hover-border-color: $gray400 // Input, Select, Textarea, TextField
+$input-hover-border-color: $gray400; // Input, Select, Textarea, TextField
+$button-transparent-hover-background-color: rgba(255, 255, 255, 0.2);

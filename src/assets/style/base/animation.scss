@@ -2,339 +2,339 @@ $side-drawer-pc-width: 360px;
 $side-drawer-mobile-width: 308px;
 
 .animated {
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+	-webkit-animation-duration: 0.4s;
+	animation-duration: 0.4s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 // bounceInRight
 @-webkit-keyframes bounceInRight {
-  from,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0,0,1,1);
-    animation-timing-function: cubic-bezier(0,0,1,1);
-  }
+	from,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	}
 
-  from {
-    //opacity: 0;
-    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
-    @include pc {
-      @include transform(translate3d($side-drawer-pc-width, 0, 0));
-    }
-  }
+	from {
+		//opacity: 0;
+		@include transform(translate3d($side-drawer-mobile-width, 0, 0));
+		@include pc {
+			@include transform(translate3d($side-drawer-pc-width, 0, 0));
+		}
+	}
 
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 @keyframes bounceInRight {
-  from,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0,0,1,1);
-    animation-timing-function: cubic-bezier(0,0,1,1);
-  }
+	from,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	}
 
-  from {
-    //opacity: 0;
-    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
-    @include pc {
-      @include transform(translate3d($side-drawer-pc-width, 0, 0));
-    }
-  }
+	from {
+		//opacity: 0;
+		@include transform(translate3d($side-drawer-mobile-width, 0, 0));
+		@include pc {
+			@include transform(translate3d($side-drawer-pc-width, 0, 0));
+		}
+	}
 
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 .bounceInright {
-  -webkit-animation: bounceInRight .2s ease-out;
-  animation: bounceInRight .2s ease-out;
+	-webkit-animation: bounceInRight 0.2s ease-out;
+	animation: bounceInRight 0.2s ease-out;
 }
 
 // bounceOutLeft
 @-webkit-keyframes bounceOutLeft {
-  20% {
-    -webkit-transform: translate3d(0px, 0, 0);
-    transform: translate3d(0px, 0, 0);
-  }
+	20% {
+		-webkit-transform: translate3d(0px, 0, 0);
+		transform: translate3d(0px, 0, 0);
+	}
 
-  to {
-    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
-    @include pc {
-      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
-    }
-  }
+	to {
+		@include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+		@include pc {
+			@include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+		}
+	}
 }
 
 @keyframes bounceOutLeft {
-  20% {
-    -webkit-transform: translate3d(0px, 0, 0);
-    transform: translate3d(0px, 0, 0);
-  }
+	20% {
+		-webkit-transform: translate3d(0px, 0, 0);
+		transform: translate3d(0px, 0, 0);
+	}
 
-  to {
-    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
-    @include pc {
-      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
-    }
-  }
+	to {
+		@include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+		@include pc {
+			@include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+		}
+	}
 }
 
 .bounceOutleft {
-  -webkit-animation-name: bounceOutLeft;
-  animation-name: bounceOutLeft;
+	-webkit-animation-name: bounceOutLeft;
+	animation-name: bounceOutLeft;
 }
 // bounceInLeft
 @-webkit-keyframes bounceInLeft {
-  from,
-  0%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0,0,1,1);
-    animation-timing-function: cubic-bezier(0,0,1,1);
-  }
+	from,
+	0%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	}
 
-  0% {
-    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
-    @include pc {
-      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
-    }
-  }
+	0% {
+		@include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+		@include pc {
+			@include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+		}
+	}
 
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 @keyframes bounceInLeft {
-  from,
-  0%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0,0,1,1);
-    animation-timing-function: cubic-bezier(0,0,1,1);
-  }
+	from,
+	0%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	}
 
-  0% {
-    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
-    @include pc {
-      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
-    }
-  }
+	0% {
+		@include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+		@include pc {
+			@include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+		}
+	}
 
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 .bounceInleft {
-  -webkit-animation-name: bounceInLeft;
-  animation-name: bounceInLeft;
+	-webkit-animation-name: bounceInLeft;
+	animation-name: bounceInLeft;
 }
 // bounceOutRight
 @-webkit-keyframes bounceOutRight {
-  20% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0px, 0, 0);
-  }
+	20% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0px, 0, 0);
+	}
 
-  to {
-    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
-    @include pc {
-      @include transform(translate3d($side-drawer-pc-width, 0, 0));
-    }
-  }
+	to {
+		@include transform(translate3d($side-drawer-mobile-width, 0, 0));
+		@include pc {
+			@include transform(translate3d($side-drawer-pc-width, 0, 0));
+		}
+	}
 }
 
 @keyframes bounceOutRight {
-  20% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0px, 0, 0);
-  }
+	20% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0px, 0, 0);
+	}
 
-  to {
-    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
-    @include pc {
-      @include transform(translate3d($side-drawer-pc-width, 0, 0));
-    }
-  }
+	to {
+		@include transform(translate3d($side-drawer-mobile-width, 0, 0));
+		@include pc {
+			@include transform(translate3d($side-drawer-pc-width, 0, 0));
+		}
+	}
 }
 
 .bounceOutright {
-  -webkit-animation: bounceOutRight .35s ease-out;
-  animation: bounceOutRight .35s ease-out;
+	-webkit-animation: bounceOutRight 0.35s ease-out;
+	animation: bounceOutRight 0.35s ease-out;
 }
 
 @-webkit-keyframes bounceInDown {
-  from,
-  0%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0,0,1,1);
-    animation-timing-function: cubic-bezier(0,0,1,1);
-  }
+	from,
+	0%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	}
 
-  0% {
-    opacity: 0;
-    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
-    @include pc {
-      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
-    }
-  }
+	0% {
+		opacity: 0;
+		@include transform(translate3d(0, #{$side-drawer-mobile-width}, 0));
+		@include pc {
+			@include transform(translate3d(0, #{$side-drawer-pc-width}, 0));
+		}
+	}
 
-  to {
-      opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 @keyframes bounceInDown {
-  from,
-  0%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0,0,1,1);
-    animation-timing-function: cubic-bezier(0,0,1,1);
-  }
+	from,
+	0%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	}
 
-  0% {
-    opacity: 0;
-    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
-    @include pc {
-      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
-    }
-  }
+	0% {
+		opacity: 0;
+		@include transform(translate3d(0, #{$side-drawer-mobile-width}, 0));
+		@include pc {
+			@include transform(translate3d(0, #{$side-drawer-pc-width}, 0));
+		}
+	}
 
-  to {
-      opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
-.bounceInup {
-  -webkit-animation-name: bounceInDown;
-  animation-name: bounceInDown;
+.bounceInUp {
+	-webkit-animation-name: bounceInUp;
+	animation-name: bounceInUp;
 }
 @-webkit-keyframes bounceInUp {
-  from,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0,0,1,1);
-    animation-timing-function: cubic-bezier(0,0,1,1);
-  }
+	from,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	}
 
-  from {
-    opacity: 0;
-    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
-    @include pc {
-      @include transform(translate3d($side-drawer-pc-width, 0, 0));
-    }
-  }
+	from {
+		opacity: 0;
+		@include transform(translate3d(0, #{-$side-drawer-mobile-width}, 0));
+		@include pc {
+			@include transform(translate3d(0, #{-$side-drawer-pc-width}, 0));
+		}
+	}
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
 @keyframes bounceInUp {
-  from,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0,0,1,1);
-    animation-timing-function: cubic-bezier(0,0,1,1);
-  }
+	from,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0, 0, 1, 1);
+		animation-timing-function: cubic-bezier(0, 0, 1, 1);
+	}
 
-  from {
-    opacity: 0;
-    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
-    @include pc {
-      @include transform(translate3d($side-drawer-pc-width, 0, 0));
-    }
-  }
+	from {
+		opacity: 0;
+		@include transform(translate3d(0, #{-$side-drawer-mobile-width}, 0));
+		@include pc {
+			@include transform(translate3d(0, #{-$side-drawer-pc-width}, 0));
+		}
+	}
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+	to {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
 }
 
-.bounceIndown {
-  -webkit-animation-name: bounceInUp;
-  animation-name: bounceInUp;
+.bounceInDown {
+	-webkit-animation: bounceInDown 0.3s ease-out;
+	animation: bounceInDown 0.3s ease-out;
 }
 @-webkit-keyframes bounceOutDown {
-  20% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0px, 0);
-    transform: translate3d(0, 0px, 0);
-  }
+	20% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0px, 0);
+		transform: translate3d(0, 0px, 0);
+	}
 
-  to {
-    opacity: 0;
-    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
-    @include pc {
-      @include transform(translate3d($side-drawer-pc-width, 0, 0));
-    }
-  }
+	to {
+		opacity: 0;
+		@include transform(translate3d(0, #{$side-drawer-mobile-width}, 0));
+		@include pc {
+			@include transform(translate3d(0, #{$side-drawer-pc-width}, 0));
+		}
+	}
 }
 
 @keyframes bounceOutDown {
-  20% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0px, 0);
-    transform: translate3d(0, 0px, 0);
-  }
-  to {
-    opacity: 0;
-    @include transform(translate3d($side-drawer-mobile-width, 0, 0));
-    @include pc {
-      @include transform(translate3d($side-drawer-pc-width, 0, 0));
-    }
-  }
+	20% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0px, 0);
+		transform: translate3d(0, 0px, 0);
+	}
+	to {
+		opacity: 0;
+		@include transform(translate3d(0, #{$side-drawer-mobile-width}, 0));
+		@include pc {
+			@include transform(translate3d(0, #{$side-drawer-pc-width}, 0));
+		}
+	}
 }
 
 .bounceOutdown {
-  -webkit-animation-name: bounceOutDown;
-  animation-name: bounceOutDown;
+	-webkit-animation-name: bounceOutDown;
+	animation-name: bounceOutDown;
 }
 @-webkit-keyframes bounceOutUp {
-  20% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0px, 0);
-    transform: translate3d(0, 0px, 0);
-  }
+	20% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0px, 0);
+		transform: translate3d(0, 0px, 0);
+	}
 
-  to {
-    opacity: 0;
-    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
-    @include pc {
-      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
-    }
-  }
+	to {
+		opacity: 0;
+		@include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+		@include pc {
+			@include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+		}
+	}
 }
 
 @keyframes bounceOutUp {
-  20% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0px, 0);
-    transform: translate3d(0, 0px, 0);
-  }
+	20% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 0px, 0);
+		transform: translate3d(0, 0px, 0);
+	}
 
-  to {
-    opacity: 0;
-    @include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
-    @include pc {
-      @include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
-    }
-  }
+	to {
+		opacity: 0;
+		@include transform(translate3d(#{-$side-drawer-mobile-width}, 0, 0));
+		@include pc {
+			@include transform(translate3d(#{-$side-drawer-pc-width}, 0, 0));
+		}
+	}
 }
 
 .bounceOutup {
-  -webkit-animation-name: bounceOutUp;
-  animation-name: bounceOutUp;
+	-webkit-animation-name: bounceOutUp;
+	animation-name: bounceOutUp;
 }

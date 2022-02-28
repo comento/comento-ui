@@ -28,7 +28,7 @@
 				class="swiper-button swiper-button-prev"
 				:class="[computedControlsPosition, computedControlsCircle]"
 				:color="computedControlsColor"
-			></Icon>
+			/>
 			<Icon
 				v-if="showInsideControl"
 				:id="`swiper-button-next-${_uid}`"
@@ -38,14 +38,14 @@
 				class="swiper-button swiper-button-next"
 				:class="[computedControlsPosition, computedControlsCircle]"
 				:color="computedControlsColor"
-			></Icon>
+			/>
 			<div
 				v-if="showInsideIndicator"
 				:id="`swiper-pagination-${_uid}`"
 				slot="pagination"
 				class="swiper-pagination"
 				:class="computedIndicatorColorClass"
-			></div>
+			/>
 		</base-swiper>
 		<Icon
 			v-if="showOutsideControl"
@@ -55,7 +55,7 @@
 			class="swiper-button swiper-button-outside swiper-button-prev-outside"
 			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showOutsideControl"
 			:id="`swiper-button-next-outside-${_uid}`"
@@ -64,7 +64,7 @@
 			class="swiper-button swiper-button-outside swiper-button-next-outside"
 			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showTopControl"
 			:id="`swiper-button-prev-top-${_uid}`"
@@ -73,7 +73,7 @@
 			class="swiper-button-top swiper-button-prev-top"
 			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showTopControl"
 			:id="`swiper-button-next-top-${_uid}`"
@@ -82,14 +82,14 @@
 			class="swiper-button-top swiper-button-next-top"
 			:class="[computedControlsPosition, computedControlsCircle]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<div
 			v-if="showOutsideIndicator"
 			:id="`swiper-pagination-outside-${_uid}`"
 			slot="pagination"
 			class="swiper-pagination-outside"
 			:class="computedIndicatorColorClass"
-		></div>
+		/>
 	</div>
 </template>
 
@@ -283,10 +283,10 @@ export default {
 		computedControlsColor() {
 			const colorMap = {
 				light: 'white',
-				dark: 'gray800',
+				dark: 'gray850',
 			};
 			if (this.controlsCircle && this.controlsColor === 'dark') {
-				return 'gray500';
+				return 'gray850';
 			} else {
 				return colorMap[this.controlsColor];
 			}
@@ -339,22 +339,34 @@ $swiper-control-circle-radius: 16px;
 		align-items: center;
 	}
 }
+// pagination (클래스를 직접 주입할 수 없으므로, 그 상위에 주입)
 ::v-deep .swiper-pagination-bullet {
-	width: 20px;
-	height: 3px;
-	border-radius: 0;
+	width: 10px;
+	height: 10px;
+	border: 1px solid white;
+	border-radius: 50%;
+	background: transparent !important;
+	opacity: 0.4 !important;
+	&.swiper-pagination-bullet-active {
+		opacity: 1 !important;
+	}
 }
-/* 클래스를 직접 주입할 수 없으므로, 그 상위에 주입 */
 ::v-deep .swiper-indicator-dark {
 	.swiper-pagination-bullet {
-		background-color: $gray800;
+		border-color: $gray850;
+		&.swiper-pagination-bullet-active {
+			background-color: $gray850 !important;
+		}
 	}
 }
 ::v-deep .swiper-indicator-light {
 	.swiper-pagination-bullet {
-		background-color: $white;
+		&.swiper-pagination-bullet-active {
+			background-color: $white !important;
+		}
 	}
 }
+
 .swiper-button-outside {
 	position: absolute;
 	z-index: 10;
@@ -364,9 +376,9 @@ $swiper-control-circle-radius: 16px;
 /* 원형 컨트롤의 disabled 기존 스타일을 초기화 */
 :not(.swiper-button-background-circle) {
 	&.swiper-button-disabled {
-		opacity: 1;
-		fill: $gray300 !important;
+		opacity: 0.3;
 		cursor: not-allowed !important;
+		pointer-events: visible;
 	}
 }
 .swiper-button-background-circle {
@@ -374,10 +386,10 @@ $swiper-control-circle-radius: 16px;
 	padding: calc((#{$swiper-control-circle-radius} * 2 - #{$swiper-control-size}) / 2);
 	margin-top: calc(-1 * #{$swiper-control-circle-radius} / 2);
 	&-light {
-		background-color: rgba(0, 0, 0, 0.3) !important;
+		background-color: rgba(0, 0, 0, 0.4) !important;
 		&.swiper-button-disabled {
-			background-color: rgba(0, 0, 0, 0.3) !important;
-			opacity: 0.1;
+			background-color: rgba(0, 0, 0, 0.4) !important;
+			opacity: 0.3;
 			cursor: not-allowed !important;
 		}
 	}
@@ -393,6 +405,7 @@ $swiper-control-circle-radius: 16px;
 .swiper-button {
 	width: auto;
 	height: auto;
+	filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.1));
 	margin-top: calc(-1 * #{$swiper-control-size} / 2) !important;
 	&.swiper-button-background-circle {
 		margin-top: calc(-1 * #{$swiper-control-circle-radius}) !important;

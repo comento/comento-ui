@@ -1,5 +1,5 @@
 <template>
-	<Box :paddings="[100, 32, 100, 32]" background-color="blue100">
+	<Box :paddings="[100, 32, 100, 32]" background-color="orange600">
 		<Typography type="display1" color="white">{{ text }}</Typography>
 	</Box>
 </template>

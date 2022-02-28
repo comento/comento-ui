@@ -76,6 +76,7 @@ import clickOutside from '@/directives/click-outside';
 import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
 import EtcIcon from '@/components/elements/core/icon/EtcIcon';
+import globalMixin from '@/mixins/globalMixin';
 
 export const selectSizes = ['small', 'medium'];
 
@@ -84,6 +85,7 @@ export const selectSizes = ['small', 'medium'];
  */
 export default {
 	name: 'Select',
+	mixins: [globalMixin],
 	inheritAttrs: false,
 	props: {
 		value: {

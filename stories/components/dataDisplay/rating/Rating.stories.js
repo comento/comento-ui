@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/vue';
-import Rating from '@/components/components/dataEntry/rating/Rating';
+import Rating from '@/components/components/dataDisplay/rating/Rating';
 import Icon from '@/components/elements/core/icon/Icon';
 import NewGrid from '@/components/layout/NewGrid';
 import NewRow from '@/components/layout/NewRow';
 import NewCol from '@/components/layout/NewCol';
 import Typography from '@/components/elements/core/typography/Typography';
 
-storiesOf('Data Entry/rating/rating', module).add('Index', () => ({
+storiesOf('Data Display/Rating/Rating', module).add('Index', () => ({
 	components: { Rating, Icon, NewGrid, NewRow, NewCol, Typography },
 	template: `
 		<NewGrid fluid>

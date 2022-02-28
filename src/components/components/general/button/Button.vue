@@ -35,8 +35,8 @@
 import Loader from '@/components/components/other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
-export const buttonColors = ['primary', 'light-success', 'success', 'secondary', 'error'];
-export const buttonTypes = ['fill', 'outlined', 'text', 'icon'];
+export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
+export const buttonTypes = ['fill', 'outlined', 'text'];
 
 /**
  * @displayName c-button
@@ -52,17 +52,17 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return buttonSizes.indexOf(value) !== -1;
+				return buttonSizes.includes(value);
 			},
 		},
 		/**
-		 * 색상(primary, light-success, success, secondary, error)
+		 * 색상(primary, light-primary, success, error, secondary, info)
 		 */
 		color: {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				const isValid = buttonColors.indexOf(value) !== -1;
+				const isValid = buttonColors.includes(value);
 				if (!isValid) {
 					console.error(`${value} is not a valid value of Button color`);
 				}
@@ -70,56 +70,38 @@ export default {
 			},
 		},
 		/**
-		 * 타입(fill, outlined, text, icon)
+		 * 타입(fill, outlined, text)
 		 */
 		type: {
 			type: String,
 			default: 'fill',
 			validator(value) {
-				return buttonTypes.indexOf(value) !== -1;
+				return buttonTypes.includes(value);
 			},
 		},
 		full: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		loading: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		fixed: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		absolute: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 		shadow: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	computed: {
@@ -170,23 +152,29 @@ export default {
 
 <style lang="scss" scoped>
 $primary-background-color: $primary;
-$primary-hover-background-color: $green800;
-$primary-disabled-background-color: $green100;
-$primary-text-color: $green600;
+$primary-hover-background-color: $blue800;
+$primary-disabled-background-color: $blue100;
+$primary-text-color: $primary;
 
 $success-background-color: $success;
-$success-hover-background-color: $blue800;
-$success-disabled-background-color: $blue100;
-$success-text-color: $blue600;
+$success-hover-background-color: $green800;
+$success-disabled-background-color: $green100;
+$success-text-color: $success;
 
-// secondary는 패턴화가 가능한 컬러만 변수로 만듦
-$secondary-default-background-color: $gray100;
-$secondary-disabled-color: $gray200;
-
-$error-background-color: $red600;
+$error-background-color: $error;
 $error-hover-background-color: $red800;
 $error-disabled-background-color: $red100;
-$error-text-color: $red600;
+$error-text-color: $error;
+
+$secondary-background-color: $secondary;
+$secondary-hover-background-color: $orange800;
+$secondary-disabled-background-color: $orange100;
+$secondary-text-color: $secondary;
+
+$info-default-background-color: $gray100;
+$info-disabled-color: $gray200;
+$info-text-color: $info;
+
 .c-button {
 	color: $white;
 	background-color: $primary;
@@ -282,7 +270,8 @@ $error-text-color: $red600;
 	background-color: $primary-background-color;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $primary-hover-background-color;
 	}
 	@include mobile {
@@ -305,7 +294,8 @@ $error-text-color: $red600;
 		color: $primary-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $primary-disabled-background-color;
 		}
 		@include mobile {
@@ -325,7 +315,8 @@ $error-text-color: $red600;
 		color: $primary-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $primary-disabled-background-color;
 		}
 		@include mobile {
@@ -345,13 +336,14 @@ $error-text-color: $red600;
 	}
 }
 
-.light-success {
+.light-primary {
 	background-color: $blue100;
 	color: $blue600;
 	&:hover,
 	&:focus,
-	&:active {
-		background-color: #c5e3ff;
+	&:active,
+	&.hover-test {
+		background-color: $blue400;
 	}
 	@include mobile {
 		@include remove-active-and-focus($blue100);
@@ -375,7 +367,8 @@ $error-text-color: $red600;
 	background-color: $success-background-color;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $success-hover-background-color;
 	}
 	@include mobile {
@@ -398,7 +391,8 @@ $error-text-color: $red600;
 		color: $success-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $success-disabled-background-color;
 		}
 		@include mobile {
@@ -419,7 +413,8 @@ $error-text-color: $red600;
 		color: $success-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $success-disabled-background-color;
 		}
 		@include mobile {
@@ -439,66 +434,69 @@ $error-text-color: $red600;
 	}
 }
 
-.secondary {
-	background-color: $secondary-default-background-color;
-	color: $gray700;
+.info {
+	background-color: $info-default-background-color;
+	color: $info-text-color;
 	&:hover,
 	&:focus,
-	&:active {
-		background-color: $gray200;
+	&:active,
+	&.hover-test {
+		background-color: $gray250;
 	}
 	@include mobile {
-		@include remove-active-and-focus($secondary-default-background-color);
+		@include remove-active-and-focus($info-default-background-color);
 	}
 	&:disabled {
 		background-color: $gray000;
-		color: $secondary-disabled-color;
+		color: $info-disabled-color;
 		.c-button--icon::v-deep .c-icon {
-			fill: $secondary-disabled-color !important;
+			fill: $info-disabled-color !important;
 		}
 		.c-button--loading {
 			background-color: $gray000;
 		}
 	}
 	.c-button--loading {
-		background-color: $secondary-default-background-color;
+		background-color: $info-default-background-color;
 	}
 	&.text {
-		color: $gray500;
+		color: $info-text-color;
 		&:hover,
 		&:focus,
-		&:active {
-			background-color: $secondary-default-background-color;
+		&:active,
+		&.hover-test {
+			background-color: $info-default-background-color;
 		}
 		@include mobile {
 			@include remove-active-and-focus();
 		}
 		&:disabled {
-			color: $secondary-disabled-color;
+			color: $info-disabled-color;
 			background: none;
 			.c-button--icon::v-deep .c-icon {
-				fill: $secondary-disabled-color !important;
+				fill: $info-disabled-color !important;
 			}
 		}
 	}
 	&.outlined {
 		background-color: transparent;
-		border: 1px solid $gray400;
-		color: $gray500;
+		border: 1px solid $gray500;
+		color: $info-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $gray100;
 		}
 		@include mobile {
 			@include remove-active-and-focus();
 		}
 		&:disabled {
-			color: $secondary-disabled-color;
-			border: 1px solid $secondary-disabled-color;
-			background-color: $white;
+			color: $info-disabled-color;
+			border: 1px solid $info-disabled-color;
+			background: none;
 			.c-button--icon::v-deep .c-icon {
-				fill: $secondary-disabled-color !important;
+				fill: $info-disabled-color !important;
 			}
 		}
 		.c-button--loading {
@@ -511,7 +509,8 @@ $error-text-color: $red600;
 	background-color: $error-background-color;
 	&:hover,
 	&:focus,
-	&:active {
+	&:active,
+	&.hover-test {
 		background-color: $error-hover-background-color;
 	}
 	@include mobile {
@@ -533,7 +532,8 @@ $error-text-color: $red600;
 		color: $error-text-color;
 		&:hover,
 		&:focus,
-		&:active {
+		&:active,
+		&.hover-test {
 			background-color: $red000;
 		}
 		@include mobile {
@@ -543,28 +543,98 @@ $error-text-color: $red600;
 			color: $error-disabled-background-color;
 			background: none;
 			.c-button--icon::v-deep .c-icon {
-				fill: $red100 !important;
+				fill: $error-disabled-background-color !important;
 			}
 		}
 	}
 	&.outlined {
 		background-color: transparent;
-		border: 1px solid $red600;
-		color: $red600;
+		border: 1px solid $error-text-color;
+		color: $error-text-color;
 		&:hover,
 		&:focus,
-		&:active {
-			background-color: $red100;
+		&:active,
+		&.hover-test {
+			background-color: $error-disabled-background-color;
 		}
 		@include mobile {
 			@include remove-active-and-focus();
 		}
 		&:disabled {
-			color: $red100;
-			border: 1px solid $red100;
+			color: $error-disabled-background-color;
+			border: 1px solid $error-disabled-background-color;
 			background-color: $white;
 			.c-button--icon::v-deep .c-icon {
 				fill: $error-disabled-background-color !important;
+			}
+		}
+		.c-button--loading {
+			background-color: $white;
+		}
+	}
+}
+
+.secondary {
+	background-color: $secondary-background-color;
+	&:hover,
+	&:focus,
+	&:active,
+	&.hover-test {
+		background-color: $secondary-hover-background-color;
+	}
+	@include mobile {
+		@include remove-active-and-focus($secondary-background-color);
+	}
+	&:disabled {
+		background-color: $secondary-disabled-background-color;
+		.c-button--icon::v-deep .c-icon {
+			fill: $white !important;
+		}
+		.c-button--loading {
+			background-color: $secondary-disabled-background-color;
+		}
+	}
+	.c-button--loading {
+		background-color: $secondary-background-color;
+	}
+	&.text {
+		color: $secondary-text-color;
+		&:hover,
+		&:focus,
+		&:active,
+		&.hover-test {
+			background-color: $orange000;
+		}
+		@include mobile {
+			@include remove-active-and-focus();
+		}
+		&:disabled {
+			color: $secondary-disabled-background-color;
+			background: none;
+			.c-button--icon::v-deep .c-icon {
+				fill: $secondary-disabled-background-color !important;
+			}
+		}
+	}
+	&.outlined {
+		background-color: transparent;
+		border: 1px solid $secondary-background-color;
+		color: $secondary-background-color;
+		&:hover,
+		&:focus,
+		&:active,
+		&.hover-test {
+			background-color: $secondary-disabled-background-color;
+		}
+		@include mobile {
+			@include remove-active-and-focus();
+		}
+		&:disabled {
+			color: $secondary-disabled-background-color;
+			border: 1px solid $secondary-disabled-background-color;
+			background-color: $white;
+			.c-button--icon::v-deep .c-icon {
+				fill: $secondary-disabled-background-color !important;
 			}
 		}
 		.c-button--loading {
