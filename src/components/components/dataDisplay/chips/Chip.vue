@@ -231,7 +231,7 @@ export default {
 	&.small {
 		@include caption2();
 		height: 16px;
-		padding: 0 4px;
+		padding: 1.5px 4px;
 		font-weight: normal;
 		&.oval-fill {
 			border-radius: 10px;
@@ -245,7 +245,7 @@ export default {
 	&.medium {
 		@include caption1();
 		height: 24px;
-		padding: 5.5px 8px;
+		padding: 4.5px 8px;
 		font-weight: normal;
 		&.oval-fill {
 			border-radius: 12px;
@@ -259,7 +259,7 @@ export default {
 	&.large {
 		@include body2();
 		height: 30px;
-		padding: 4.5px 10px;
+		padding: 5px 10px;
 		font-weight: normal;
 		&.oval-fill {
 			border-radius: 15px;
