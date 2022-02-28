@@ -75,7 +75,7 @@ export default {
 	},
 	computed: {
 		computedType() {
-			return `${this.type}`;
+			return `${this.type} ${this.type.includes('clickable') ? 'clickable' : ''}`;
 		},
 		computedColor() {
 			return `${this.color}`;
@@ -170,7 +170,7 @@ export default {
 			background-color: $white;
 
 			&.clickable:hover {
-				background-color: $green100;
+				background-color: $gray100;
 			}
 
 			&.transparent {
@@ -183,7 +183,7 @@ export default {
 			background-color: $white;
 
 			&.clickable:hover {
-				background-color: $green100;
+				background-color: $gray100;
 			}
 
 			&.transparent {
@@ -197,17 +197,13 @@ export default {
 		background-color: $success;
 
 		&.clickable:hover {
-			background-color: $blue800;
+			background-color: $green800;
 		}
 
 		&.outlined {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
-
-			&.clickable:hover {
-				background-color: $blue100;
-			}
 
 			&.transparent {
 				background-color: transparent;
@@ -219,7 +215,7 @@ export default {
 			background-color: $white;
 
 			&.clickable:hover {
-				background-color: $blue100;
+				background-color: $green100;
 			}
 
 			&.transparent {
