@@ -1,19 +1,29 @@
 <template>
-	<div class="c-application c-textarea" :class="[computedType]" :style="[computedStyles]">
+	<div class="c-application c-textarea" :class="[computedType]">
 		<textarea
 			ref="textarea"
 			v-model="sync_value"
-			:style="[computedHeight]"
+			:style="[computedHeight, computedStyles]"
 			:placeholder="placeholder"
 			:readonly="readOnly"
 			v-bind="$attrs"
 			v-on="$listeners"
 			@input="resize"
 		/>
+		<Icon
+			v-if="type === 'reply' && !readOnly"
+			class="c-textarea--reply-icon"
+			name="IconSendLargeFill"
+			:color="replyIconColor"
+			:class="value && 'active'"
+			@click="onSubmitReply"
+		/>
 	</div>
 </template>
 
 <script>
+import Icon from '@/components/elements/core/icon/Icon';
+
 export const textareaTypes = ['basic', 'outlined', 'reply'];
 
 /**
@@ -63,13 +73,9 @@ export default {
 		},
 		computedHeight() {
 			return {
-				maxHeight: this.maxHeight,
-				overflowY: this.maxHeight === 'auto' ? 'hidden' : 'auto',
-			};
-		},
-		computedStyles() {
-			return {
-				minHeight: this.minHeight,
+				'max-height': this.maxHeight,
+				'min-height': this.minHeight,
+				'overflow-y': this.maxHeight === 'auto' ? 'hidden' : 'auto',
 			};
 		},
 		sync_value: {
@@ -80,6 +86,13 @@ export default {
 				this.$emit('update:value', val);
 			},
 		},
+		replyIconColor() {
+			if (this.value) {
+				return 'blue600';
+			} else {
+				return 'gray200';
+			}
+		},
 	},
 	methods: {
 		resize(event) {
@@ -87,22 +100,25 @@ export default {
 			event.target.style.height = `${event.target.scrollHeight}px`;
 			this.$emit('input', event.target.value);
 		},
+		onSubmitReply() {
+			this.value && this.$emit('submit');
+		},
 	},
+	components: { Icon },
 };
 </script>
 
 <style scoped lang="scss">
 /* 공통 */
 .c-textarea {
+	display: block;
 	position: relative;
 	textarea {
 		padding: 16px;
-		display: block;
 		width: 100%;
 		border: 0;
 		height: 100%;
 		box-sizing: border-box;
-		min-height: inherit;
 		background: transparent;
 		color: $gray800;
 		overflow: hidden;
@@ -110,29 +126,43 @@ export default {
 		resize: none;
 		&::placeholder {
 			color: $gray300;
+			@include body2;
 		}
 	}
 	&.basic {
-		background: $white;
+		textarea {
+			background: $white;
+		}
 	}
 	&.outlined {
-		background: $white;
 		textarea {
+			background: $white;
 			border: 1px solid $input-border-color;
+			@include border-radius(4px);
 			&:focus {
 				border-color: $input-hover-border-color;
 			}
 		}
 	}
 	&.reply {
-		width: calc(100% - 100px);
-		background: $gray100;
-		border: 1px solid $input-border-color;
-		@include border-radius(20px);
 		textarea {
+			width: calc(100% - 34px);
+			border: 1px solid $input-border-color;
+			@include border-radius(4px);
+			background: $gray100;
 			min-height: 38px;
 			height: 38px;
 			padding: 8px 16px;
+		}
+	}
+
+	&--reply-icon {
+		position: relative;
+		right: -6px;
+		bottom: 8px;
+
+		&.active {
+			cursor: pointer;
 		}
 	}
 }
