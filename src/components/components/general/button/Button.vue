@@ -591,6 +591,20 @@ $info-text-color: $info;
 	}
 }
 
+.white {
+	&.outlined {
+		background-color: transparent;
+		border: 1px solid $white;
+		color: $white;
+		@include state-style {
+			background: rgba(255, 255, 255, 0.2);
+		}
+		&:disabled {
+			opacity: 0.2;
+		}
+	}
+}
+
 .loading {
 	@include disabled();
 }
