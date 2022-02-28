@@ -37,6 +37,7 @@ import Loader from '@/components/components/other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
+export const ghostTypeButtonColors = ['primary', 'info', 'white'];
 export const buttonTypes = ['fill', 'outlined', 'ghost', 'text'];
 
 /**

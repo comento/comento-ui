@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Button, { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/Button';
+import Button, { buttonSizes, buttonColors, buttonTypes, ghostTypeButtonColors } from '@/components/components/general/button/Button';
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 import Loader from '@/components/components/other/Loader';
@@ -138,6 +138,9 @@ export const Default = (args, { argTypes }) => ({
             },
             methods: {
                 getFilterButtonColors(type) {
+                    if (type==='ghost') {
+                        return ghostTypeButtonColors;
+                    }
                     return type === 'fill' ? this.buttonColors : this.filteredButtonColors
                 },
                 getGhostTypeBackgroundColor(type) {
