@@ -12,9 +12,9 @@
 <script>
 import paddingMixin from '@/mixins/paddingMixin';
 
-export const ChipColors = ['secondary', 'primary', 'success'];
+export const ChipColors = ['primary', 'secondary', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
-export const ChipTypes = ['fill', 'outlined', 'oval-fill', 'oval-outline'];
+export const ChipTypes = ['fill', 'outlined', 'clickable-fill', 'clickable-outlined'];
 
 /**
  * 작은 정보를 전달하기 위해 사용
@@ -25,7 +25,7 @@ export default {
 	mixins: [paddingMixin],
 	props: {
 		/**
-		 * 타입(fill, outlined, oval-fill, oval-outline)
+		 * 타입(fill, outlined, clickable-fill, clickable-outlined)
 		 */
 		type: {
 			type: String,
@@ -141,7 +141,7 @@ export default {
 				background-color: transparent;
 			}
 		}
-		&.oval-outline {
+		&.clickable-outlined {
 			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
@@ -157,8 +157,8 @@ export default {
 	}
 	&.primary {
 		color: $white;
-		border: 1px solid $primary;
-		background-color: $primary;
+		border: 1px solid $light-primary;
+		background-color: $light-primary;
 
 		&.interactive:hover {
 			background-color: $green800;
@@ -177,7 +177,7 @@ export default {
 				background-color: transparent;
 			}
 		}
-		&.oval-outline {
+		&.clickable-outlined {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
@@ -213,7 +213,7 @@ export default {
 				background-color: transparent;
 			}
 		}
-		&.oval-outline {
+		&.clickable-outlined {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
@@ -233,11 +233,11 @@ export default {
 		height: 16px;
 		padding: 1.5px 4px;
 		font-weight: normal;
-		&.oval-fill {
+		&.clickable-fill {
 			border-radius: 10px;
-			padding: 3px 4px;
+			padding: 1.5px 6px;
 		}
-		&.oval-outline {
+		&.clickable-outlined {
 			border-radius: 10px;
 			padding: 2px 3px;
 		}
@@ -247,11 +247,11 @@ export default {
 		height: 24px;
 		padding: 4.5px 8px;
 		font-weight: normal;
-		&.oval-fill {
+		&.clickable-fill {
 			border-radius: 12px;
 			padding: 5.5px 10px;
 		}
-		&.oval-outline {
+		&.clickable-outlined {
 			border-radius: 12px;
 			padding: 4.5px 9px;
 		}
@@ -261,11 +261,11 @@ export default {
 		height: 30px;
 		padding: 5px 10px;
 		font-weight: normal;
-		&.oval-fill {
+		&.clickable-fill {
 			border-radius: 15px;
 			padding: 5px 14px;
 		}
-		&.oval-outline {
+		&.clickable-outlined {
 			border-radius: 15px;
 			padding: 4px 13px;
 		}
@@ -274,16 +274,16 @@ export default {
 		@include body1();
 		padding: 4.5px 12px;
 		font-weight: normal;
-		&.oval-fill {
+		&.clickable-fill {
 			border-radius: 19px;
 			padding: 5px 16px;
 		}
-		&.oval-outline {
+		&.clickable-outlined {
 			border-radius: 19px;
 			padding: 4px 15px;
 		}
 	}
-	&.oval-fill {
+	&.clickable-fill {
 		border: 0;
 	}
 	&.full {
