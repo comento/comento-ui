@@ -268,14 +268,8 @@ $info-text-color: $info;
 
 .primary {
 	background-color: $primary-background-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $primary-hover-background-color;
-	}
-	@include mobile {
-		@include remove-active-and-focus($primary-background-color);
 	}
 	&:disabled {
 		background-color: $primary-disabled-background-color;
@@ -292,14 +286,8 @@ $info-text-color: $info;
 
 	&.text {
 		color: $primary-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $primary-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			.c-button--icon::v-deep .c-icon {
@@ -313,14 +301,8 @@ $info-text-color: $info;
 		background-color: transparent;
 		border: 1px solid $primary-text-color;
 		color: $primary-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $primary-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $primary-disabled-background-color;
@@ -339,14 +321,8 @@ $info-text-color: $info;
 .light-primary {
 	background-color: $blue100;
 	color: $blue600;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $blue400;
-	}
-	@include mobile {
-		@include remove-active-and-focus($blue100);
 	}
 	&:disabled {
 		color: $blue100;
@@ -365,14 +341,8 @@ $info-text-color: $info;
 
 .success {
 	background-color: $success-background-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $success-hover-background-color;
-	}
-	@include mobile {
-		@include remove-active-and-focus($success-background-color);
 	}
 	&:disabled {
 		background-color: $success-disabled-background-color;
@@ -389,16 +359,9 @@ $info-text-color: $info;
 
 	&.text {
 		color: $success-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $success-disabled-background-color;
 		}
-		@include mobile {
-			@include remove-active-and-focus();
-		}
-
 		&:disabled {
 			color: $success-disabled-background-color;
 			background: none;
@@ -411,14 +374,8 @@ $info-text-color: $info;
 		background-color: transparent;
 		border: 1px solid $success-text-color;
 		color: $success-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $success-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $success-disabled-background-color;
@@ -437,14 +394,8 @@ $info-text-color: $info;
 .info {
 	background-color: $info-default-background-color;
 	color: $info-text-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $gray250;
-	}
-	@include mobile {
-		@include remove-active-and-focus($info-default-background-color);
 	}
 	&:disabled {
 		background-color: $gray000;
@@ -461,14 +412,8 @@ $info-text-color: $info;
 	}
 	&.text {
 		color: $info-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $info-default-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $info-disabled-color;
@@ -482,14 +427,8 @@ $info-text-color: $info;
 		background-color: transparent;
 		border: 1px solid $gray500;
 		color: $info-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $gray100;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $info-disabled-color;
@@ -507,14 +446,8 @@ $info-text-color: $info;
 
 .error {
 	background-color: $error-background-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $error-hover-background-color;
-	}
-	@include mobile {
-		@include remove-active-and-focus($error-background-color);
 	}
 	&:disabled {
 		background-color: $error-disabled-background-color;
@@ -530,14 +463,8 @@ $info-text-color: $info;
 	}
 	&.text {
 		color: $error-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $red000;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $error-disabled-background-color;
@@ -551,14 +478,8 @@ $info-text-color: $info;
 		background-color: transparent;
 		border: 1px solid $error-text-color;
 		color: $error-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $error-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $error-disabled-background-color;
@@ -576,14 +497,8 @@ $info-text-color: $info;
 
 .secondary {
 	background-color: $secondary-background-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $secondary-hover-background-color;
-	}
-	@include mobile {
-		@include remove-active-and-focus($secondary-background-color);
 	}
 	&:disabled {
 		background-color: $secondary-disabled-background-color;
@@ -599,14 +514,8 @@ $info-text-color: $info;
 	}
 	&.text {
 		color: $secondary-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $orange000;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $secondary-disabled-background-color;
@@ -620,14 +529,8 @@ $info-text-color: $info;
 		background-color: transparent;
 		border: 1px solid $secondary-background-color;
 		color: $secondary-background-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $secondary-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $secondary-disabled-background-color;
