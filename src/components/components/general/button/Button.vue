@@ -179,6 +179,18 @@ $info-default-background-color: $gray100;
 $info-disabled-color: $gray200;
 $info-text-color: $info;
 
+@mixin ghost-style() {
+	&.ghost {
+		@content;
+	}
+}
+
+@mixin loading-style() {
+	.c-button--loading {
+		@content;
+	}
+}
+
 .c-button {
 	color: $white;
 	background-color: $primary;
@@ -316,8 +328,23 @@ $info-text-color: $info;
 				fill: $primary-disabled-background-color !important;
 			}
 		}
-		.c-button--loading {
+		@include loading-style {
 			background-color: $white;
+		}
+		// type ghost
+		@include ghost-style {
+			background-color: transparent;
+			@include state-style {
+				background: rgba(42, 125, 225, 0.2);
+			}
+			&:disabled {
+				color: $blue600;
+				border-color: $blue600;
+				opacity: 0.2;
+			}
+			@include loading-style {
+				background-color: transparent;
+			}
 		}
 	}
 }
