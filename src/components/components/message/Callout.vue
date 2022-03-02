@@ -32,7 +32,7 @@
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 
-export const CalloutTypes = ['information', 'alert', 'success'];
+export const CalloutTypes = ['information', 'error', 'success'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
 
 /**
@@ -42,7 +42,7 @@ export default {
 	name: 'Callout',
 	props: {
 		/**
-		 * 타입(information, alert, success)
+		 * 타입(information, error, success)
 		 */
 		type: {
 			type: String,
@@ -90,8 +90,8 @@ export default {
 		},
 		computedIconColor() {
 			const iconColors = {
-				information: 'gray500',
-				alert: 'red600',
+				information: 'gray600',
+				error: 'red600',
 				success: 'blue600',
 			};
 			return iconColors[this.type];
@@ -121,7 +121,7 @@ export default {
 	methods: {
 		mapIconNameFromSize(size) {
 			const iconSet = {
-				xsmall: 'IconExclamationSmallFill',
+				xsmall: 'IconExclamationSmallLine',
 				small: 'IconExclamationMediumLine',
 				medium: 'IconExclamationLargeLine',
 			};
@@ -178,7 +178,7 @@ export default {
 		&.information {
 			background-color: $gray000;
 		}
-		&.alert {
+		&.error {
 			background-color: $red000;
 		}
 		&.success {
