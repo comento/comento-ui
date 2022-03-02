@@ -20,6 +20,7 @@
 				<Icon
 					v-if="closable"
 					class="c-callout--close-button c-pointer"
+					color="gray300"
 					:name="computedCloseIconName"
 					@click.stop.capture="handleClose"
 				/>
@@ -123,7 +124,7 @@ export default {
 			const iconSet = {
 				xsmall: 'IconExclamationSmallLine',
 				small: 'IconExclamationMediumLine',
-				medium: 'IconExclamationLargeLine',
+				medium: 'IconExclamationMediumLine',
 			};
 			return iconSet[size];
 		},
@@ -160,18 +161,18 @@ export default {
 
 		&.xsmall {
 			padding: 4px 8px;
-			border-radius: 4px;
-			@include callout-icon-margin-right(4px);
+			border-radius: 6px;
+			@include callout-icon-margin-right(5px);
 		}
 		&.small {
 			padding: 8px;
-			border-radius: 4px;
-			@include callout-icon-margin-right(6px);
+			border-radius: 6px;
+			@include callout-icon-margin-right(7px);
 		}
 		&.medium {
-			padding: 16px 16px 16px 16px;
-			border-radius: 6px;
-			@include callout-icon-margin-right(8px);
+			padding: 12px;
+			border-radius: 8px;
+			@include callout-icon-margin-right(7px);
 		}
 
 		// type
