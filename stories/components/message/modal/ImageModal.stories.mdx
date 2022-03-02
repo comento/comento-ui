@@ -1,0 +1,91 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { aligns } from '@/components/components/message/modal/BasicModal';
+import ImageModal from "@/components/components/message/modal/ImageModal";
+import Button, { buttonColors } from '@/components/components/general/button/Button';
+
+<Meta
+    title="Message/Modal/ImageModal"
+    component={ ImageModal }
+    argTypes={{
+        show: {
+            description: "모달 활성화",
+            control: {
+                type: "boolean",
+            },
+        },
+        align: {
+            description: "정렬",
+            control: {
+                type: "select",
+                options: aligns,
+            },
+        },
+        persistent: {
+            description: "overlay 클릭해도 모달 닫지 않기",
+            control: {
+                type: "boolean",
+            },
+        },
+        title: {
+            description: "모달 제목",
+            defaultValue: "Basic Modal",
+            control: { type: "text" },
+        },
+        content: {
+            description: "모달 내용",
+            defaultValue: ['본문을 작성하세요.', '문단을 분리할 때에는 margin:8px로 구분합니다.'],
+            control: { type: "array" },
+        },
+        imageSrc: {
+            description: "이미지 경로",
+            defaultValue: "https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/images/default-image.jpg",
+            control: { type: "text" },
+        },
+        imageAlt: {
+            description: "이미지 alt",
+            control: { type: "text" },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { ImageModal, Button },
+    template: `
+        <div>
+            <Button @click="show = true">Open</Button>
+            <ImageModal
+                :show.sync="show"
+                :persistent="persistent"
+                :align="align"
+                :loading="loading"
+                :show-action-button="showActionButton"
+                :button-color="buttonColor"
+                :image-src="imageSrc"
+                :image-alt="imageAlt"
+            >
+                <template v-slot:title>
+                    {{ title }}
+                </template>
+                <template v-slot:content>
+                    <div v-for="content in content" v-html="content" />
+                </template>
+            </ImageModal>
+        </div>
+    `,
+    methods: {
+        closeModal() {
+            this.show = false;
+        }
+    }
+});
+
+# ImageModal
+
+**ImageModal** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
