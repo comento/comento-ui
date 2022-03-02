@@ -81,6 +81,7 @@ export default {
 	&-item {
 		&--content {
 			width: 100%;
+			height: 20px;
 			cursor: pointer;
 			@include flexbox();
 			@include align-items(center);

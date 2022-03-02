@@ -75,9 +75,8 @@ export const Default = (args, { argTypes }) => ({
                     :disabled="disabled"
                     @uploadFiles="handleUploadFiles"
                  />
-                 <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
+                 <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 8.5px;"/>
                  <FileList :files="files"
-                    :show-download-icon="false"
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
                     @clickFileItemContent="handleClickFileItemContent"
                  />
