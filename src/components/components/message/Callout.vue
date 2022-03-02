@@ -3,6 +3,7 @@
 		<div
 			class="c-application c-callout--container"
 			:class="[computedSize, computedType, computedFull]"
+			:style="[computedPadding]"
 			v-bind="$attrs"
 			v-on="$listeners"
 		>
@@ -32,6 +33,7 @@
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
+import paddingMixin from '@/mixins/paddingMixin';
 
 export const CalloutTypes = ['information', 'error', 'success'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
@@ -41,6 +43,7 @@ export const CalloutSizes = ['xsmall', 'small', 'medium'];
  */
 export default {
 	name: 'Callout',
+	mixins: [paddingMixin],
 	props: {
 		/**
 		 * 타입(information, error, success)
@@ -84,6 +87,12 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		paddings: {
+			type: Array,
+			default() {
+				return null;
+			},
+		},
 	},
 	computed: {
 		computedFull() {
@@ -117,6 +126,9 @@ export default {
 		},
 		computedTransition() {
 			return this.closable ? 'callout-fade' : null;
+		},
+		computedPadding() {
+			return this.paddings ? { ...this.$_setPadding(this.paddings) } : null;
 		},
 	},
 	methods: {
