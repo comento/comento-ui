@@ -1,6 +1,7 @@
 <template>
 	<ListItem class="c-application c-file-item--container" @click="handleClickFileItem({ file, index })">
 		<div class="c-file-item--content" @click="handleClickFileItemContent({ file, index })">
+			<Icon class="c-file-item--content-icon" name="IconFileMediumLine" color="gray700" />
 			<Typography type="caption1" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
 		</div>
 		<Icon
@@ -80,6 +81,9 @@ export default {
 			@include flexbox();
 			@include align-items(center);
 			overflow: hidden;
+			&-icon {
+				margin-right: 4px;
+			}
 		}
 	}
 }
