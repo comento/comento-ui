@@ -1,7 +1,8 @@
 <template>
 	<ListItem class="c-application c-file-item--container" @click="handleClickFileItem({ file, index })">
 		<div class="c-file-item--content" @click="handleClickFileItemContent({ file, index })">
-			<Icon class="c-file-item--content-icon" name="IconFileMediumLine" color="gray700" />
+			<Loader v-if="isLoading" class="c-file-item--content-icon" size="small" />
+			<Icon v-else class="c-file-item--content-icon" name="IconFileMediumLine" color="gray700" />
 			<Typography type="caption1" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
 		</div>
 		<Icon
@@ -11,12 +12,11 @@
 			@click="handleClickFileTrashIcon({ file, index })"
 		/>
 		<Icon
-			v-else-if="!isLoading"
+			v-else-if="showDownloadIcon"
 			name="IconDownloadMediumLine"
 			color="gray500"
 			@click="handleClickFileDownloadIcon({ file, index })"
 		/>
-		<Loader v-else size="small"></Loader>
 	</ListItem>
 </template>
 
@@ -48,6 +48,10 @@ export default {
 		isEdit: {
 			type: Boolean,
 			default: false,
+		},
+		showDownloadIcon: {
+			type: Boolean,
+			default: true,
 		},
 		isLoading: {
 			type: Boolean,

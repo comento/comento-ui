@@ -34,12 +34,12 @@ import Divider from '@/components/elements/utility/Divider';
           type: "text"
       }
     },
-      disabled: {
-        type: Boolean,
-        control: {
-          type: "boolean",
-        }
+    disabled: {
+      type: Boolean,
+      control: {
+        type: "boolean",
       }
+    },
   }}
 />
 
@@ -76,7 +76,11 @@ export const Default = (args, { argTypes }) => ({
                     @uploadFiles="handleUploadFiles"
                  />
                  <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
-                 <FileList :files="files" @clickFileDownloadIcon="handleClickFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                 <FileList :files="files"
+                    :show-download-icon="false"
+                    @clickFileDownloadIcon="handleClickFileDownloadIcon"
+                    @clickFileItemContent="handleClickFileItemContent"
+                 />
                  </div>
               </div>`,
    components: { FileInput, FileList, Divider },

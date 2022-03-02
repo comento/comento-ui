@@ -7,6 +7,7 @@
 			:is-loading="item.isLoading"
 			:index="index"
 			:is-edit="isEdit"
+			:show-download-icon="showDownloadIcon"
 			@clickFileDownloadIcon="handleClickFileDownloadIcon"
 			@clickFileItemContent="handleClickFileItemContent"
 			@clickFileItem="handleClickFileItem"
@@ -34,6 +35,10 @@ export default {
 		isEdit: {
 			type: Boolean,
 			default: false,
+		},
+		showDownloadIcon: {
+			type: Boolean,
+			default: true,
 		},
 	},
 	methods: {
