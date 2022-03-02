@@ -1,18 +1,10 @@
 <template>
-	<div class="c-application c-banner" :class="[computedType]">
-		<div class="c-banner--image">
-			<slot name="image" />
+	<div class="c-application c-banner" :class="[computedType]" :style="computedHeight">
+		<div class="c-banner--background" :class="[computedBlur]">
+			<slot name="background" />
 		</div>
-		<div class="c-banner--container">
-			<div class="c-banner--container-title">
-				<slot name="title" />
-			</div>
-			<div class="c-banner--container-description">
-				<slot name="description" />
-			</div>
-			<div class="c-banner--container-action">
-				<slot name="action" />
-			</div>
+		<div class="c-banner--content">
+			<slot />
 		</div>
 	</div>
 </template>
@@ -31,7 +23,7 @@ export default {
 		 */
 		type: {
 			type: String,
-			default: 'standard',
+			default: 'full',
 			validator(value) {
 				const isValid = bannerTypes.indexOf(value) !== -1;
 				if (!isValid) {
@@ -40,10 +32,25 @@ export default {
 				return isValid;
 			},
 		},
+		blur: {
+			type: Boolean,
+			default: false,
+		},
+		height: {
+			type: String,
+		},
 	},
 	computed: {
 		computedType() {
 			return this.type;
+		},
+		computedBlur() {
+			return this.blur ? 'blur' : '';
+		},
+		computedHeight() {
+			return {
+				'--height': this.height,
+			};
 		},
 	},
 };
@@ -52,29 +59,46 @@ export default {
 <style scoped lang="scss">
 .c-banner {
 	position: relative;
-	&.full {
-		max-width: 1920px;
-		width: 100%;
-	}
+	display: grid;
+	height: var(--height);
+
 	&.standard {
 		max-width: 1108px;
-		width: 100%;
-		@include border-radius(20px);
 		overflow: hidden;
+		@include border-radius(20px);
 	}
-	&--container {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		@include transform(translate(-50%, -50%));
-		&-description {
-			margin-top: 8px;
+
+	&--content,
+	&--background {
+		grid-area: 1/-1;
+	}
+
+	&--background {
+		height: 100%;
+
+		& > * {
+			width: 100%;
+			max-height: 100%;
+			height: var(--height);
+			object-fit: cover;
 		}
-	}
-	&--image {
-		display: block;
-		vertical-align: top;
-		width: 100%;
+
+		&.blur {
+			position: relative;
+			backdrop-filter: blur(0);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.25);
+				backdrop-filter: blur(30px);
+			}
+		}
 	}
 }
 </style>
