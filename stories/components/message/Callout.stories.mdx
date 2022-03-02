@@ -103,13 +103,16 @@ export const Default = (args, { argTypes }) => ({
         <div>
             <div style="margin-bottom: 10px">
                 <div>
-                    <Callout type='information' :paddings='[0,0,0,0]'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
                     <Callout type='error'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
                     <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout type='notice'>문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
             <div style="margin-bottom: 10px">
@@ -178,6 +181,9 @@ export const Default = (args, { argTypes }) => ({
                 </div>
                 <div>
                     <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout type='notice'>문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
             `,
@@ -275,14 +281,6 @@ export const Default = (args, { argTypes }) => ({
         },
         template: `
             <div>
-                <div>
-                    <Callout size="small" type="success">
-                        <template v-slot:icon>
-                            <Icon name="IconCheckRoundMediumLine" />
-                        </template>
-                        문구가 들어가는 자리입니다.
-                    </Callout>
-                </div>
                 <div>
                     <Callout size="medium">
                         <template v-slot:icon>

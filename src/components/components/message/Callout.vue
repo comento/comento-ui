@@ -10,7 +10,7 @@
 			<div class="c-callout--wrapper">
 				<!-- 아이콘 -->
 				<slot v-if="$slots['icon']" name="icon" />
-				<Icon v-else :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+				<Icon v-else :name="iconName" :color="computedIconColor" />
 
 				<!-- 문구 -->
 				<Typography class="c-callout--message" color="gray700" :type="computedFontType">
@@ -35,7 +35,7 @@ import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 import paddingMixin from '@/mixins/paddingMixin';
 
-export const CalloutTypes = ['information', 'error', 'success'];
+export const CalloutTypes = ['information', 'error', 'success', 'notice'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
 
 /**
@@ -46,7 +46,7 @@ export default {
 	mixins: [paddingMixin],
 	props: {
 		/**
-		 * 타입(information, error, success)
+		 * 타입(information, error, success, notice)
 		 */
 		type: {
 			type: String,
@@ -99,12 +99,12 @@ export default {
 			return this.full && 'full';
 		},
 		computedIconColor() {
-			const iconColors = {
+			return {
 				information: 'gray600',
 				error: 'red600',
-				success: 'blue600',
-			};
-			return iconColors[this.type];
+				success: 'green600',
+				notice: 'blue600',
+			}[this.type];
 		},
 		computedSize() {
 			return this.size;
@@ -113,12 +113,11 @@ export default {
 			return this.type;
 		},
 		computedFontType() {
-			const mapSizeToFontType = {
+			return {
 				medium: 'body2',
 				small: 'caption1',
 				xsmall: 'caption2',
-			};
-			return mapSizeToFontType[this.size];
+			}[this.size];
 		},
 		computedCloseIconName() {
 			const iconSize = this.size === 'xsmall' ? 'Small' : 'Medium';
@@ -130,16 +129,22 @@ export default {
 		computedPadding() {
 			return this.paddings ? { ...this.$_setPadding(this.paddings) } : null;
 		},
+		iconName() {
+			const name = {
+				information: 'Exclamation',
+				error: 'Exclamation',
+				notice: 'Megaphone',
+				success: 'Selected',
+			}[this.type];
+			const size = {
+				xsmall: 'Small',
+				small: 'Medium',
+				medium: 'Medium',
+			}[this.size];
+			return `Icon${name + size}Line`;
+		},
 	},
 	methods: {
-		mapIconNameFromSize(size) {
-			const iconSet = {
-				xsmall: 'IconExclamationSmallLine',
-				small: 'IconExclamationMediumLine',
-				medium: 'IconExclamationMediumLine',
-			};
-			return iconSet[size];
-		},
 		handleClose() {
 			this.$emit('closeCallout');
 		},
@@ -195,6 +200,9 @@ export default {
 			background-color: $red000;
 		}
 		&.success {
+			background-color: $green000;
+		}
+		&.notice {
 			background-color: $blue000;
 		}
 	}
