@@ -2,7 +2,7 @@
 	<div class="c-application c-avatar--container" :class="[computedSize]">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
 		<div class="c-avatar--item">
-			<Icon v-if="isMenteeType" :name="computedIconName" />
+			<Icon v-if="isMenteeType" :name="computedIconName" color="gray300" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
 			<Typography v-if="isMentorType" :type="computedTypography" :font-weight="700" color="white">
 				{{ text || computedRandomText }}
@@ -119,7 +119,7 @@ export default {
 		},
 		computedIconName() {
 			const iconBySize = {
-				xsmall: 'Small',
+				xsmall: 'Medium',
 				small: 'Large',
 				medium: 'XLarge',
 				large: '2XLarge',
