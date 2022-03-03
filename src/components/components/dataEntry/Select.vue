@@ -287,7 +287,7 @@ export default {
 		@include justify-content(space-between);
 		width: 100%;
 		&-focused {
-			border: 1px solid $gray400 !important;
+			border: 1px solid $gray400;
 		}
 	}
 

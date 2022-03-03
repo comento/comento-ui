@@ -196,7 +196,7 @@ export default {
 	}
 
 	.search_input {
-		@include border-radius(2px);
+		@include border-radius(4px);
 		-webkit-appearance: none;
 		@include inline-block();
 		vertical-align: top;
