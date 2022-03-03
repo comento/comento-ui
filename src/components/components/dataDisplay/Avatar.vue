@@ -153,7 +153,7 @@ export default {
 		background-size: 100% 100%;
 	}
 	&.logo {
-		background: $green600;
+		background: $primary;
 	}
 	&--item {
 		display: flex;
@@ -163,9 +163,10 @@ export default {
 		left: 50%;
 	}
 	&--logo {
-		background-image: url('https://comento-asset.s3.ap-northeast-2.amazonaws.com/images/comento-ui/misc/symbol-comento-large-fill.svg');
+		background-image: url('https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/images/icon/icon-comento-typo-white-logo.svg');
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
+		background-position: center;
 
 		&.xsmall {
 			width: 12px;
