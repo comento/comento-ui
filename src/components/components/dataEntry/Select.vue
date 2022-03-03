@@ -11,7 +11,7 @@
 	>
 		<!-- select 영역 -->
 		<template v-slot:item>
-			<div class="c-select--box" :class="{ 'c-select--box-focused': open }" @click="handleOpen">
+			<div class="c-select--box" :class="[computedLined, computedActive]" @click="handleOpen">
 				<div class="c-select--item">
 					<!-- 라벨 보여주기 -->
 					<input
@@ -79,6 +79,7 @@ import EtcIcon from '@/components/elements/core/icon/EtcIcon';
 import globalMixin from '@/mixins/globalMixin';
 
 export const selectSizes = ['small', 'medium'];
+export const selectTypes = ['basic', 'underlined'];
 
 /**
  * @displayName c-select
@@ -88,6 +89,16 @@ export default {
 	mixins: [globalMixin],
 	inheritAttrs: false,
 	props: {
+		/**
+		 * 타입(basic, underlined)
+		 */
+		type: {
+			type: String,
+			default: 'basic',
+			validator(value) {
+				return selectTypes.indexOf(value) !== -1;
+			},
+		},
 		value: {
 			type: [String, Number],
 			default: '',
@@ -193,12 +204,18 @@ export default {
 		computedListItemTypography() {
 			const defaultListItemTypography = {
 				small: 'caption1',
-				medium: 'body1',
+				medium: 'body2',
 			};
 			return defaultListItemTypography[this.size];
 		},
 		computedDisabled() {
 			return { disabled: this.disabled };
+		},
+		computedLined() {
+			return this.type;
+		},
+		computedActive() {
+			return { active: this.open };
 		},
 	},
 	watch: {
@@ -278,16 +295,25 @@ export default {
 	}
 
 	&--box {
-		border: 1px solid $gray250;
-		@include border-radius(4px);
-		padding: 7px 16px;
-		cursor: pointer;
 		@include flexbox();
 		@include flex-direction(row);
 		@include justify-content(space-between);
+		cursor: pointer;
 		width: 100%;
-		&-focused {
-			border: 1px solid $gray400;
+		&.basic {
+			padding: 9px 16px;
+			@include border-radius(4px);
+			border: 1px solid $gray250;
+			&.active {
+				border: 1px solid $gray400;
+			}
+		}
+		&.underlined {
+			padding: 7px 8px;
+			border-bottom: 1px solid $gray250;
+			&.active {
+				border-bottom: 1px solid $gray400;
+			}
 		}
 	}
 
@@ -297,19 +323,14 @@ export default {
 
 		> div,
 		input {
-			@include body1();
-			color: $gray850;
 			width: 100%;
 			cursor: pointer;
 		}
 	}
 
 	&--input {
-		@include body1();
-		color: $gray850;
 		border: none;
 		padding: 0;
-		width: 100%;
 		&::placeholder {
 			color: $gray300;
 		}
@@ -328,19 +349,30 @@ export default {
 		@include flexbox();
 		@include justify-content(space-between);
 	}
-
 	// size
 	&.small {
-		.c-select {
-			&--box {
-				padding: 8px 12px;
+		.c-select--box {
+			input {
+				@include caption1();
+				color: $gray850;
 			}
-			&--item {
+			&.basic {
+				padding: 6.5px 12px;
+			}
+		}
+	}
+	&.medium {
+		.c-select--box {
+			&.basic {
 				input {
-					@include caption1();
-					&::placeholder {
-						color: $gray500;
-					}
+					@include body2();
+					color: $gray850;
+				}
+			}
+			&.underlined {
+				input {
+					@include body1();
+					color: $gray850;
 				}
 			}
 		}

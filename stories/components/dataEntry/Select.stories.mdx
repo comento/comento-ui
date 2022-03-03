@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Select, { selectSizes }  from '@/components/components/dataEntry/Select';
+import Select, { selectSizes, selectTypes }  from '@/components/components/dataEntry/Select';
 import Typography from '@/components/elements/core/typography/Typography';
 import { colors } from '@/utils/constants/color';
 
@@ -7,6 +7,13 @@ import { colors } from '@/utils/constants/color';
     title="Data Entry/Dropdown/Select"
     component={ Select }
     argTypes={{
+        type: {
+            description: "select type",
+            control: {
+              type: "select",
+              options: selectTypes,
+            },
+        },
         options: {
             description: "select 리스트",
             defaultValue: ['List1', 'List2', 'List3', 'List4', 'List5'],
@@ -60,6 +67,7 @@ export const Default = (args, { argTypes }) => ({
         <div>
             <Select
                 v-model="value"
+                :type="type"
                 :options="options"
                 :placeholder="placeholder"
                 :label="label"
@@ -84,6 +92,30 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
+
+### Type
+<Canvas>
+  <Story name="Type" height="150px">
+    {{
+      data: () => ({
+        select1: '',
+        select2: '',
+        options: [1, 2],
+      }),
+      template: `
+                <div>
+                    <div class="mb-10">
+                        <Select v-model="select1" :options="options" />
+                    </div>
+                    <div class="mb-10">
+                        <Select v-model="select2" :options="options" type="underlined" />
+                    </div>
+                </div>
+        `,
+      components: { Select },
+    }}
+  </Story>
+</Canvas>
 
 ### Size
 <Canvas>
