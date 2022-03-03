@@ -4,7 +4,7 @@
 		<div class="c-avatar--item">
 			<Icon v-if="isMenteeType" :name="computedIconName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
-			<Typography v-if="isTextType" :type="computedTypography" :font-weight="700" color="white">
+			<Typography v-if="isMentorType" :type="computedTypography" :font-weight="700" color="white">
 				{{ text || computedRandomText }}
 			</Typography>
 		</div>
@@ -17,7 +17,7 @@ import Icon from '@/components/elements/core/icon/Icon';
 import uniqueId from '@/utils/unique-id';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
-export const avatarTypes = ['text', 'mentee', 'logo', 'image'];
+export const avatarTypes = ['mentor', 'mentee', 'logo', 'image'];
 const avatarColors = ['#f5b3b3', '#f3c499', '#f0db80', '#b4d2a9', '#91cfd3', '#acc5ea', '#ceb9e2', '#b0aba4'];
 
 /**
@@ -68,8 +68,8 @@ export default {
 		};
 	},
 	computed: {
-		isTextType() {
-			return this.type === 'text';
+		isMentorType() {
+			return this.type === 'mentor';
 		},
 		isMenteeType() {
 			return this.type === 'mentee';
@@ -90,7 +90,7 @@ export default {
 			if (this.isImageType) {
 				return { 'background-image': `url(${this.src})` };
 			}
-			if (this.isTextType) {
+			if (this.isMentorType) {
 				return { background: this.computedRandomBackground };
 			}
 			return {};
