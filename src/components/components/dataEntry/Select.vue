@@ -178,7 +178,8 @@ export default {
 		},
 		computedIconColor() {
 			const defaultIconColors = {
-				small: 'gray700',
+				small: 'gray600',
+				medium: 'blue600',
 			};
 
 			return this.color || defaultIconColors[this.size];
