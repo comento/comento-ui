@@ -2,7 +2,7 @@
 	<div class="c-application c-avatar--container" :class="[computedSize]">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
 		<div class="c-avatar--item">
-			<Icon v-if="isMenteeType" :name="computedIconName" color="gray300" />
+			<Icon v-if="isMenteeType" :name="computedIconName" :color="computedColorName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
 			<Typography v-if="isMentorType" :type="computedTypography" :font-weight="700" color="white">
 				{{ text || computedRandomText }}
@@ -60,6 +60,13 @@ export default {
 		id: {
 			type: Number,
 			default: -1,
+		},
+		/**
+		 * mentee type일 때 색상
+		 */
+		color: {
+			type: String,
+			default: 'gray300',
 		},
 	},
 	data() {
@@ -125,6 +132,9 @@ export default {
 				large: '2XLarge',
 			};
 			return `IconProfile${iconBySize[this.size]}Fill`;
+		},
+		computedColorName() {
+			return this.color.toLowerCase();
 		},
 	},
 	components: {
