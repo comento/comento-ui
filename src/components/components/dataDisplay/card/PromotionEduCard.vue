@@ -18,7 +18,7 @@
 				<Typography
 					:type="isMobile ? 'body2' : 'headline6'"
 					color="gray900"
-					:font-weight="isMobile ? 700 : 400"
+					:font-weight="isMobile ? 600 : 400"
 				>
 					<slot name="title" />
 				</Typography>
@@ -26,7 +26,11 @@
 			<div class="c-promotion-edu-card--caption mt-12">
 				<template v-if="!$slots['alternativeCaption']">
 					<div class="c-promotion-edu-card--caption-side c-promotion-edu-card--caption-left">
-						<Icon name="IconStarMediumFill" color="yellow600" element="span" />
+						<Icon
+							:name="isMobile ? 'IconStarSmallFill' : 'IconStarMediumFill'"
+							color="yellow600"
+							element="span"
+						/>
 						<Typography
 							:type="isMobile ? 'caption2' : 'caption1'"
 							color="gray700"
@@ -50,7 +54,8 @@
 							{{ applicantCount }}
 						</Typography>
 						<Typography :type="isMobile ? 'caption2' : 'caption1'" color="gray700" :font-weight="400">
-							명이 수강했어요
+							<template v-if="isMobile"> 명 수강! </template>
+							<template v-else> 명이 수강했어요 </template>
 						</Typography>
 					</div>
 				</template>
@@ -85,12 +90,15 @@ export default {
 		},
 		scoreAverage: {
 			type: Number,
+			default: 0,
 		},
 		reviewCount: {
 			type: Number,
+			default: 0,
 		},
 		applicantCount: {
 			type: Number,
+			default: 0,
 		},
 	},
 	computed: {
