@@ -11,7 +11,7 @@
 	>
 		<!-- select 영역 -->
 		<template v-slot:item>
-			<div class="c-select--box" @click="handleOpen">
+			<div class="c-select--box" :class="{ 'c-select--box-focused': open }" @click="handleOpen">
 				<div class="c-select--item">
 					<!-- 라벨 보여주기 -->
 					<input
@@ -278,14 +278,17 @@ export default {
 	}
 
 	&--box {
-		border: 1px solid $input-border-color;
-		@include border-radius(2px);
+		border: 1px solid $gray250;
+		@include border-radius(4px);
 		padding: 7px 16px;
 		cursor: pointer;
 		@include flexbox();
 		@include flex-direction(row);
 		@include justify-content(space-between);
 		width: 100%;
+		&-focused {
+			border: 1px solid $gray400 !important;
+		}
 	}
 
 	&--item {
