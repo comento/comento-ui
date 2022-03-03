@@ -169,20 +169,20 @@ export default {
 		background-position: center;
 
 		&.xsmall {
-			width: 12px;
-			height: 12px;
-		}
-		&.small {
 			width: 24px;
 			height: 24px;
 		}
-		&.medium {
-			width: 28px;
-			height: 28px;
-		}
-		&.large {
+		&.small {
 			width: 40px;
 			height: 40px;
+		}
+		&.medium {
+			width: 48px;
+			height: 48px;
+		}
+		&.large {
+			width: 68px;
+			height: 68px;
 		}
 	}
 }
