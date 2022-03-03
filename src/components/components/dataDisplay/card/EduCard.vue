@@ -162,7 +162,7 @@ export default {
 		position: absolute;
 		z-index: 1;
 		top: 8px;
-		left: 10px;
+		left: 8px;
 	}
 
 	&--additional-button {
