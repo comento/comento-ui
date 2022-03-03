@@ -2,7 +2,7 @@
 	<div class="c-application c-avatar--container" :class="[computedSize]">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
 		<div class="c-avatar--item">
-			<Icon v-if="isProfileType" :name="computedIconName" />
+			<Icon v-if="isMenteeType" :name="computedIconName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
 			<Typography v-if="isTextType" :type="computedTypography" :font-weight="700" color="white">
 				{{ text || computedRandomText }}
@@ -17,7 +17,7 @@ import Icon from '@/components/elements/core/icon/Icon';
 import uniqueId from '@/utils/unique-id';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
-export const avatarTypes = ['text', 'profile', 'logo', 'image'];
+export const avatarTypes = ['text', 'mentee', 'logo', 'image'];
 const avatarColors = ['#f5b3b3', '#f3c499', '#f0db80', '#b4d2a9', '#91cfd3', '#acc5ea', '#ceb9e2', '#b0aba4'];
 
 /**
@@ -27,11 +27,11 @@ export default {
 	name: 'Avatar',
 	props: {
 		/**
-		 * 타입(text, profile, logo, image)
+		 * 타입(mentor, mentee, logo, image)
 		 */
 		type: {
 			type: String,
-			default: 'profile',
+			default: 'mentor',
 			validator(value) {
 				return avatarTypes.includes(value);
 			},
@@ -71,8 +71,8 @@ export default {
 		isTextType() {
 			return this.type === 'text';
 		},
-		isProfileType() {
-			return this.type === 'profile';
+		isMenteeType() {
+			return this.type === 'mentee';
 		},
 		isLogoType() {
 			return this.type === 'logo';
@@ -146,7 +146,7 @@ export default {
 	}
 
 	// 타입
-	&.profile {
+	&.mentee {
 		background: $gray100;
 	}
 	&.image {
