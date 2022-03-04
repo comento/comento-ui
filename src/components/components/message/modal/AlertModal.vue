@@ -38,7 +38,7 @@ export default {
 		},
 		buttonColor: {
 			type: String,
-			default: 'gray500',
+			default: 'gray600',
 		},
 		successMessage: {
 			type: String,

@@ -1,13 +1,14 @@
 <template>
 	<Modal
 		:show="show"
-		:show-close-button="showCloseButton"
+		:show-close-button="true"
+		max-width="343px"
+		width="100%"
 		:persistent="persistent"
-		:width="computedWidth"
-		:max-height="computedMaxHeight"
 		@close="close"
 	>
-		<div class="c-modal--wrapper" :class="computedClasses">
+		<div class="c-modal--wrapper">
+			<img :src="imageSrc" :alt="imageAlt" class="c-modal--image" />
 			<!-- title 영역 -->
 			<div class="c-modal--title-wrapper">
 				<Typography type="headline5" :align="align" color="gray900">
@@ -34,16 +35,12 @@
 
 <script>
 import Modal from '@/components/components/message/modal/Modal';
-import Typography from '@/components/elements/core/typography/Typography';
+import { aligns } from '@/components/components/message/modal/BasicModal';
 import Button, { buttonColors } from '@/components/components/general/button/Button';
+import Typography from '@/components/elements/core/typography/Typography';
 
-export const aligns = ['left', 'center', 'right'];
-
-/**
- * @displayName c-basic-modal
- */
 export default {
-	name: 'BasicModal',
+	name: 'ImageModal',
 	props: {
 		show: {
 			type: Boolean,
@@ -54,41 +51,21 @@ export default {
 		 */
 		align: {
 			type: String,
-			default: 'left',
+			default: 'center',
 			validator(value) {
 				return aligns.includes(value);
 			},
-		},
-		// 버튼 로딩
-		loading: {
-			type: Boolean,
-			default: false,
-		},
-		successCallback: {
-			type: Function,
-			default: () => {},
-		},
-		successMessage: {
-			type: String,
-			default: '확인',
-		},
-		showCloseButton: {
-			type: Boolean,
-			default: true,
-		},
-		showActionButton: {
-			type: Boolean,
-			default: false,
 		},
 		persistent: {
 			type: Boolean,
 			default: false,
 		},
-		full: {
+		showActionButton: {
 			type: Boolean,
-			default: false,
+			default: true,
 		},
-		scroll: {
+		// 버튼 로딩
+		loading: {
 			type: Boolean,
 			default: false,
 		},
@@ -99,22 +76,19 @@ export default {
 				return buttonColors.includes(value);
 			},
 		},
-	},
-	computed: {
-		computedClasses() {
-			return [this.computedScroll, this.computedWithButton];
+		successCallback: {
+			type: Function,
+			default: () => {},
 		},
-		computedScroll() {
-			return { scroll: this.scroll };
+		successMessage: {
+			type: String,
+			default: '확인',
 		},
-		computedWithButton() {
-			return { 'with-button': this.showActionButton };
+		imageSrc: {
+			type: String,
 		},
-		computedMaxHeight() {
-			return this.isMobile ? '86vh' : '640px';
-		},
-		computedWidth() {
-			return this.full || this.isMobile ? '100%' : 'auto';
+		imageAlt: {
+			type: String,
 		},
 	},
 	methods: {
@@ -124,9 +98,9 @@ export default {
 		},
 	},
 	components: {
-		Typography,
 		Modal,
 		Button,
+		Typography,
 	},
 };
 </script>
@@ -187,6 +161,9 @@ export default {
 	}
 	&--action-button-wrapper {
 		padding: 24px 32px 0 32px;
+	}
+	&--image {
+		padding: 0 32px;
 	}
 }
 </style>
