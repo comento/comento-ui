@@ -6,81 +6,106 @@ import EmptyBox, { Types } from '@/components/components/dataDisplay/EmptyBox';
 import Typography from '@/components/elements/core/typography/Typography';
 
 <Meta
-    title="Data Display/EmptyBox"
-    component={ EmptyBox }
-    argTypes={{
-        type: {
-            description: "빈화면 타입<br/>",
-            control: {
-                type: "select",
-                options: Types,
-            },
-        },
-    }}
+	title="Data Display/EmptyBox"
+	component={EmptyBox}
+	argTypes={{
+		type: {
+			description: '빈화면 타입<br/>',
+			control: {
+				type: 'select',
+				options: Types,
+			},
+		},
+		to: {
+			description: '링크 정보',
+			defaultValue: 'https://comento.kr',
+			control: { type: 'text' },
+		},
+		target: {
+			description: '새 창 띄우기',
+			defaultValue: '_self',
+			control: { type: 'select', options: ['_self', '_target'] },
+		},
+	}}
 />
 
 export const Default = (args, { argTypes }) => ({
-    props: Object.keys(argTypes),
-    components: { EmptyBox, NewGrid, NewRow, NewCol, Typography },
-    template:
-        `<NewGrid>
+	props: Object.keys(argTypes),
+	components: { EmptyBox, NewGrid, NewRow, NewCol, Typography },
+	template: `<NewGrid>
             <NewRow>
                 <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
-                    <EmptyBox :type="type" >
+                    <EmptyBox :type="type" :to="to" :target="target">
+                        <template v-slot:title>
+                            제출된 과제가 없습니다.
+                        </template>
                         <template v-slot:contents>
-                            제출된 과제가 없습니다.<br/>
-                            여기를 눌러 과제를 제출하세요.
+                            아래를 눌러 과제를 제출하세요.
+                        </template>
+                        <template v-slot:link>
+                            모집 중인 캠프 보기
                         </template>
                     </EmptyBox>
-                    <EmptyBox :type="type">
-                      <template v-slot:contents>
-                          <Typography color="gray700" type="body1" font-weight="bold" class="mb-2">제출된 과제가 없습니다.</Typography>
-                          <Typography type="caption1">
-                            <a style="color: #1e90ff;margin:0">여기</a>를 눌러 과제를 제출하세요.
-                          </Typography>
-                      </template>
+                    <EmptyBox :type="type" :to="to" :target="target">
+                        <template v-slot:title>
+                            제출된 과제가 없습니다.
+                        </template>
+                        <template v-slot:contents>
+                            아래를 눌러 과제를 제출하세요.
+                        </template>
+                        <template v-slot:link>
+                            모집 중인 캠프 보기
+                        </template>
                     </EmptyBox>
                 </NewCol>
             </NewRow>
         </NewGrid>`,
 });
 
+# EmptyBox
+
 **EmptyBox** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
-    {Default.bind({})}
+	{Default.bind({})}
 </Story>
 
 <ArgsTable story="Default" />
 
 ## Stories
+
 <Canvas>
-    <Story name="Empty" height="100px">
-        {{
-            components: { EmptyBox, Typography, NewGrid, NewRow, NewCol },
-            template:
-                `<NewGrid>
+	<Story name="Empty" height="100px">
+		{{
+			components: { EmptyBox, Typography, NewGrid, NewRow, NewCol },
+			template: `<NewGrid>
                     <NewRow>
                         <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
                             <EmptyBox type="simple" >
+                                <template v-slot:title>
+                                    제출된 과제가 없습니다.
+                                </template>
                                 <template v-slot:contents>
-                                    제출된 과제가 없습니다.<br/>
-                                    여기를 눌러 과제를 제출하세요.
+                                    아래를 눌러 과제를 제출하세요.
+                                </template>
+                                <template v-slot:link>
+                                    모집 중인 캠프 보기
                                 </template>
                             </EmptyBox>
                             <EmptyBox type="emphasized">
-                              <template v-slot:contents>
-                                  <Typography color="gray700" type="body1" font-weight="bold" class="mb-2">제출된 과제가 없습니다.</Typography>
-                                  <Typography type="caption1">
-                                    <a style="color: #1e90ff;margin:0">여기</a>를 눌러 과제를 제출하세요.
-                                  </Typography>
-                              </template>
+                                <template v-slot:title>
+                                    신청한 캠프가 없습니다.
+                                </template>
+                                <template v-slot:contents>
+                                    아래를 눌러 내게 필요한 직무부트캠프를 찾아보세요.
+                                </template>
+                                <template v-slot:link>
+                                    모집 중인 캠프 보기
+                                </template>
                             </EmptyBox>
                         </NewCol>
                     </NewRow>
                 </NewGrid>`,
-        }}
-    </Story>
+		}}
+	</Story>
 </Canvas>
-
-
