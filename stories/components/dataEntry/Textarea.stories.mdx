@@ -40,7 +40,7 @@ export const Default = (args, { argTypes }) => ({
     components: { Textarea },
     data() {
         return {
-            value: '',
+            valueData: this.value,
         }
     },
     template:
@@ -50,7 +50,7 @@ export const Default = (args, { argTypes }) => ({
                       :max-height="maxHeight"
                       :min-height="minHeight"
                       :read-only="readOnly"
-                      :value.sync="value"/>
+                      :value.sync="valueData"/>
         </div>`,
 });
 
