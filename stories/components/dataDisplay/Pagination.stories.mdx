@@ -1,0 +1,58 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Pagination from '@/components/components/dataDisplay/Pagination';
+
+<Meta
+    title="Data Display/Pagination"
+    component={ Pagination }
+    argTypes={{
+        page: {
+            description: "현재 페이지",
+            defaultValue: 1,
+            control: {
+                type: "number",
+            },
+        },
+        perPage: {
+          description: "페이지 당 출력 개수",
+          defaultValue: 10,
+          control: {
+            type: "number",
+          },
+        },
+        records: {
+          description: "총 출력 개수",
+          defaultValue: 100,
+          control: {
+            type: "number",
+          },
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { Pagination },
+    methods: {
+        paginationHandler() {
+          alert('pagination handler');
+        },
+    },
+    template:
+      `<div>
+          <Pagination :page="page" :per-page="perPage" :records="records" @paginate="paginationHandler" />
+      </div>`,
+});
+
+# Pagination
+
+**Pagination** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### All
