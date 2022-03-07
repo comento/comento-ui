@@ -74,6 +74,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		withHeader: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -111,8 +115,11 @@ export default {
 		computedTransparent() {
 			return { transparent: this.transparent };
 		},
+		computedWithHeader() {
+			return { 'with-header': this.withHeader };
+		},
 		classes() {
-			return [this.computedDirection, this.computedTransparent];
+			return [this.computedDirection, this.computedTransparent, this.computedWithHeader];
 		},
 		swiper() {
 			return this.$refs.mySwiper.$swiper;
@@ -255,6 +262,14 @@ export default {
 		background-color: $gray600;
 		left: 0;
 		bottom: -1px;
+	}
+}
+
+.with-header {
+	::v-deep {
+		.c-button {
+			height: 44px !important;
+		}
 	}
 }
 /*&--blur-left {*/
