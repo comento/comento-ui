@@ -244,7 +244,6 @@ export default {
 }
 .active {
 	&::v-deep .c-button {
-		font-weight: 700;
 		color: $gray800;
 	}
 	&:after {
