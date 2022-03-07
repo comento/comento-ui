@@ -6,6 +6,7 @@
 			computedColor,
 			computedFull,
 			computedType,
+			computedGhostTypeClass,
 			computedLoading,
 			computedFixed,
 			computedAbsolute,
@@ -36,7 +37,8 @@ import Loader from '@/components/components/other/Loader';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
-export const buttonTypes = ['fill', 'outlined', 'text'];
+export const ghostTypeButtonColors = ['primary', 'info', 'white'];
+export const buttonTypes = ['fill', 'outlined', 'ghost', 'text'];
 
 /**
  * @displayName c-button
@@ -114,6 +116,9 @@ export default {
 		computedType() {
 			return this.type;
 		},
+		computedGhostTypeClass() {
+			return this.type === 'ghost' ? 'outlined' : '';
+		},
 		computedFull() {
 			return { full: this.full };
 		},
@@ -174,6 +179,18 @@ $secondary-text-color: $secondary;
 $info-default-background-color: $gray100;
 $info-disabled-color: $gray200;
 $info-text-color: $info;
+
+@mixin ghost-style() {
+	&.ghost {
+		@content;
+	}
+}
+
+@mixin loading-style() {
+	.c-button--loading {
+		@content;
+	}
+}
 
 .c-button {
 	color: $white;
@@ -312,8 +329,23 @@ $info-text-color: $info;
 				fill: $primary-disabled-background-color !important;
 			}
 		}
-		.c-button--loading {
+		@include loading-style {
 			background-color: $white;
+		}
+		// type ghost
+		@include ghost-style {
+			background-color: transparent;
+			@include state-style {
+				background: rgba(42, 125, 225, 0.2);
+			}
+			&:disabled {
+				color: $blue600;
+				border-color: $blue600;
+				opacity: 0.2;
+			}
+			@include loading-style {
+				background-color: transparent;
+			}
 		}
 	}
 }
@@ -438,8 +470,21 @@ $info-text-color: $info;
 				fill: $info-disabled-color !important;
 			}
 		}
-		.c-button--loading {
+		@include loading-style {
 			background-color: $white;
+		}
+		@include ghost-style {
+			color: $gray850;
+			border-color: $gray850;
+			@include state-style {
+				background: rgba(32, 35, 37, 0.2);
+			}
+			&:disabled {
+				opacity: 0.2;
+			}
+			@include loading-style {
+				background-color: transparent;
+			}
 		}
 	}
 }
@@ -542,6 +587,20 @@ $info-text-color: $info;
 		}
 		.c-button--loading {
 			background-color: $white;
+		}
+	}
+}
+
+.white {
+	&.outlined {
+		background-color: transparent;
+		border: 1px solid $white;
+		color: $white;
+		@include state-style {
+			background: rgba(255, 255, 255, 0.2);
+		}
+		&:disabled {
+			opacity: 0.2;
 		}
 	}
 }
