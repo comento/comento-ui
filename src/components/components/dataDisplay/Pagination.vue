@@ -34,12 +34,12 @@ export default {
 	},
 	computed: {
 		computedOptions() {
-			return { template: CustomPagination };
+			return { ...this.options, template: CustomPagination };
 		},
 	},
 	methods: {
-		emitPaginate() {
-			this.$emit('paginate');
+		emitPaginate(pageNum) {
+			this.$emit('paginate', pageNum);
 		},
 	},
 	components: { pagination },
@@ -61,6 +61,8 @@ export default {
 					min-width: 25px;
 					height: 25px;
 					cursor: pointer;
+					text-decoration: none;
+					color: inherit;
 					@include body2();
 					line-height: 25px !important;
 				}

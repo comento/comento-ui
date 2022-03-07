@@ -31,15 +31,20 @@ import Pagination from '@/components/components/dataDisplay/Pagination';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
+    data() {
+      return {
+        pageData: this.page,
+      };
+    },
     components: { Pagination },
     methods: {
-        paginationHandler() {
-          alert('pagination handler');
+        paginationHandler(pageNum) {
+          this.pageData = pageNum;
         },
     },
     template:
       `<div>
-          <Pagination :page="page" :per-page="perPage" :records="records" @paginate="paginationHandler" />
+          <Pagination :page="pageData" :per-page="perPage" :records="records" @paginate="paginationHandler" />
       </div>`,
 });
 
