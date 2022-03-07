@@ -6,6 +6,8 @@ import TextField, { TextFieldTypes, TextFieldAligns } from '@/components/compone
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 import Loader from '@/components/components/other/Loader';
+import InputGroup from '@/components/components/dataEntry/input/InputGroup';
+import Button from '@/components/components/general/button/Button';
 
 <Meta
 	title="Data Entry/Input/TextField"
@@ -382,6 +384,52 @@ export const Default = (args, { argTypes }) => ({
                 </div>
             `,
 			components: { TextField },
+		}}
+	</Story>
+</Canvas>
+
+### With Button
+
+<Canvas>
+	<Story name="With Button" height="200px">
+		{{
+			template: `
+                <div style="width:300px">
+                    <InputGroup class="mb-20">
+                        <TextField
+                            type="text"
+                            placeholder="placeholder"
+                            outline
+                        />
+                        <Button>Button</Button>
+                    </InputGroup>
+                    <InputGroup class="mb-20">
+                        <TextField
+                            type="text"
+                            placeholder="placeholder"
+                        />
+                        <Button>Button</Button>
+                    </InputGroup>
+                    <InputGroup class="mb-20">
+                        <TextField
+                            type="text"
+                            placeholder="placeholder"
+                            outline
+                            value="코멘토 타이핑시스템"
+                        />
+                        <Button>Button</Button>
+                    </InputGroup>
+                    <InputGroup class="mb-20">
+                        <TextField
+                            type="text"
+                            placeholder="placeholder"
+                            value="코멘토 타이핑시스템"
+                        />
+                        <Button>Button</Button>
+                    </InputGroup>
+                </div>
+            `,
+			components: { TextField, InputGroup, Button },
 		}}
 	</Story>
 </Canvas>
