@@ -1,5 +1,5 @@
 <template>
-	<article class="c-application c-empty-box" :class="type === 'emphasized' && 'full'">
+	<article class="c-application c-empty-box" :class="type === 'emphasized' && full && 'full'">
 		<div v-if="type === 'emphasized'" class="c-empty-box--emphasized-container">
 			<Box :paddings="[40, 16, 40, 16]" backgroundColor="gray000">
 				<Typography type="body1" color="gray700" align="center" :font-weight="600">
@@ -90,6 +90,10 @@ export default {
 		external: {
 			type: Boolean,
 			default: false,
+		},
+		full: {
+			type: Boolean,
+			default: true,
 		},
 	},
 	components: {
