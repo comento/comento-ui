@@ -32,7 +32,7 @@ import StyleCol from '@/components/layout/StyleCol';
         },
         color: {
             description: "Chip 색상",
-            defaultValue: "secondary",
+            defaultValue: "info",
             control: {
                 type: "select",
                 options: ChipColors,
@@ -71,9 +71,9 @@ export const Basic = (args, { argTypes }) => ({
                     <Row>
                         <StyleCol :col-sm="12">
                             <ChipGroup size="small">
-                                <Chip type="fill" color="secondary" size="small">Chip</Chip>
-                                <Chip type="outline" color="secondary" size="small">Chip</Chip>
-                                <Chip type="fill" color="secondary" size="small">Chip</Chip>
+                                <Chip type="fill" color="info" size="small">Chip</Chip>
+                                <Chip type="outline" color="info" size="small">Chip</Chip>
+                                <Chip type="fill" color="info" size="small">Chip</Chip>
                             </ChipGroup>
                             <hr/>
                         </StyleCol>
@@ -97,10 +97,10 @@ export const Basic = (args, { argTypes }) => ({
                             <ChipGroup size="large" style="background:antiquewhite; padding :10px 0">
                                 <Row>
                                     <StyleCol :col-sm="6">
-                                        <Chip type="fill" color="secondary" size="large" full>Chip</Chip>
+                                        <Chip type="fill" color="info" size="large" full>Chip</Chip>
                                     </StyleCol>
                                     <StyleCol :col-sm="6">
-                                        <Chip type="outline" color="secondary" size="large" full>Chip</Chip>
+                                        <Chip type="outline" color="info" size="large" full>Chip</Chip>
                                     </StyleCol>
                                 </Row>
                             </ChipGroup>
