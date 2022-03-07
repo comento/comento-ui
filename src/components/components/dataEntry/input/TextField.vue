@@ -75,7 +75,7 @@ export default {
 			type: String,
 			default: null,
 		},
-		outlined: {
+		outline: {
 			type: Boolean,
 			default: false,
 		},
@@ -154,10 +154,10 @@ export default {
 			},
 		},
 		computedLined() {
-			if (this.outlined) {
-				return 'outlined';
+			if (this.outline) {
+				return 'outline';
 			} else {
-				return 'underlined';
+				return 'underline';
 			}
 		},
 		computedId() {
@@ -222,8 +222,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$outlined-padding: 16px;
-$underlined-padding: 4px;
+$outline-padding: 16px;
+$underline-padding: 4px;
 $disabled-background-color: $gray000;
 
 .c-text-field {
@@ -260,8 +260,8 @@ $disabled-background-color: $gray000;
 			position: relative;
 		}
 
-		&.outlined {
-			padding: 0 $outlined-padding;
+		&.outline {
+			padding: 0 $outline-padding;
 			border: 1px solid $input-border-color;
 			@include border-radius(2px);
 			&:focus,
@@ -294,11 +294,11 @@ $disabled-background-color: $gray000;
 			}
 
 			~ .c-text-field--append {
-				padding-right: $outlined-padding - 4px;
+				padding-right: $outline-padding - 4px;
 			}
 		}
-		&.underlined {
-			padding: 0 $underlined-padding;
+		&.underline {
+			padding: 0 $underline-padding;
 			border-bottom: 1px solid $input-border-color;
 			&:focus,
 			&.active {
@@ -329,7 +329,7 @@ $disabled-background-color: $gray000;
 			}
 
 			~ .c-text-field--append {
-				padding-right: $underlined-padding;
+				padding-right: $underline-padding;
 			}
 		}
 

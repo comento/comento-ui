@@ -23,7 +23,7 @@
 <script>
 import IconButton from '@/components/components/general/button/IconButton';
 
-export const textareaTypes = ['basic', 'outlined', 'reply'];
+export const textareaTypes = ['basic', 'outline', 'reply'];
 
 /**
  * @displayName c-textarea
@@ -37,7 +37,7 @@ export default {
 			default: '내용을 입력해주세요.',
 		},
 		/**
-		 * 타입(basic, outlined, reply)
+		 * 타입(basic, outline, reply)
 		 */
 		type: {
 			type: String,
@@ -133,7 +133,7 @@ export default {
 			background: $white;
 		}
 	}
-	&.outlined {
+	&.outline {
 		textarea {
 			background: $white;
 			border: 1px solid $input-border-color;
