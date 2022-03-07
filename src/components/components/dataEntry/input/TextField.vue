@@ -157,7 +157,7 @@ export default {
 			if (this.outline) {
 				return 'outline';
 			} else {
-				return 'underlined';
+				return 'underline';
 			}
 		},
 		computedId() {
@@ -223,7 +223,7 @@ export default {
 
 <style lang="scss" scoped>
 $outline-padding: 16px;
-$underlined-padding: 4px;
+$underline-padding: 4px;
 $disabled-background-color: $gray000;
 
 .c-text-field {
@@ -297,8 +297,8 @@ $disabled-background-color: $gray000;
 				padding-right: $outline-padding - 4px;
 			}
 		}
-		&.underlined {
-			padding: 0 $underlined-padding;
+		&.underline {
+			padding: 0 $underline-padding;
 			border-bottom: 1px solid $input-border-color;
 			&:focus,
 			&.active {
@@ -329,7 +329,7 @@ $disabled-background-color: $gray000;
 			}
 
 			~ .c-text-field--append {
-				padding-right: $underlined-padding;
+				padding-right: $underline-padding;
 			}
 		}
 
