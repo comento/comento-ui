@@ -182,6 +182,9 @@ $info-text-color: $info;
 
 @mixin ghost-style() {
 	&.ghost {
+		&:disabled {
+			background: none !important;
+		}
 		@content;
 	}
 }
@@ -602,6 +605,7 @@ $info-text-color: $info;
 		&:disabled {
 			opacity: 0.2;
 		}
+		@include ghost-style();
 	}
 }
 
