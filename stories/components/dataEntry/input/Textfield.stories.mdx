@@ -18,8 +18,8 @@ import Loader from '@/components/components/other/Loader';
             options: TextFieldTypes,
            },
         },
-        outlined: {
-            description: "텍스트필드 outlined (true) / underline(false)",
+        outline: {
+            description: "텍스트필드 outline (true) / underline(false)",
             defaultValue: false,
             control: { type: "boolean" },
         },
@@ -101,7 +101,7 @@ export const Default = (args, { argTypes }) => ({
     template:
         `<TextField
             :type="type"
-            :outlined="outlined"
+            :outline="outline"
             :placeholder="placeholder"
             :label="label"
             :active="active"
@@ -139,7 +139,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="error"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
@@ -147,7 +147,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="error"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         label="label"
                         placeholder="underlined + hint + label"
                         active
@@ -157,17 +157,17 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="error"
                         hint="내용을 입력해주세요."
-                        outlined
-                        placeholder="outlined + hint "
+                        outline
+                        placeholder="outline + hint "
                         class="mb-20"
                     />
                     <TextField
                         type="text"
                         color="error"
                         hint="내용을 입력해주세요."
-                        outlined
+                        outline
                         label="label"
-                        placeholder="outlined + hint + label"
+                        placeholder="outline + hint + label"
                         active
                         class="mb-20"
                     />
@@ -189,7 +189,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="secondary"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
@@ -197,7 +197,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="secondary"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         label="label"
                         placeholder="underlined + hint + label"
                         active
@@ -207,17 +207,17 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         hint="내용을 입력해주세요."
                         color="secondary"
-                        outlined
-                        placeholder="outlined + hint"
+                        outline
+                        placeholder="outline + hint"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="secondary"
-                        outlined
+                        outline
                         label="label"
-                        placeholder="outlined + hint + label"
+                        placeholder="outline + hint + label"
                         active
                         class="mb-20"
                     />
@@ -238,7 +238,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="success"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         placeholder="underlined + hint"
                         class="mb-20"
                     />
@@ -246,7 +246,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="success"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         label="label"
                         placeholder="underlined + hint + label"
                         active
@@ -256,17 +256,17 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         hint="내용을 입력해주세요."
                         color="success"
-                        outlined
-                        placeholder="outlined + hint"
+                        outline
+                        placeholder="outline + hint"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="success"
-                        outlined
+                        outline
                         label="label"
-                        placeholder="outlined + hint + label"
+                        placeholder="outline + hint + label"
                         active
                         class="mb-20"
                     />
@@ -287,7 +287,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="primary"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         placeholder="underlined + hint "
                         class="mb-20"
                     />
@@ -295,7 +295,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="primary"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         label="label"
                         placeholder="underlined + hint + label"
                         active
@@ -305,17 +305,17 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         hint="내용을 입력해주세요."
                         color="primary"
-                        outlined
-                        placeholder="outlined + hint"
+                        outline
+                        placeholder="outline + hint"
                         class="mb-20"
                     />
                     <TextField
                         type="text"
                         hint="내용을 입력해주세요."
                         color="primary"
-                        outlined
+                        outline
                         label="label"
-                        placeholder="outlined + hint + label"
+                        placeholder="outline + hint + label"
                         active
                         class="mb-20"
                     />
@@ -336,7 +336,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         color="primary"
                         hint="내용을 입력해주세요."
-                        :outlined="false"
+                        :outline="false"
                         placeholder="underlined + hint "
                         class="mb-20"
                         full
@@ -359,7 +359,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         :color="isError ? 'error' : 'secondary'"
                         :hint="isError ? '두 글자 이상 입력해 주세요.' : '실명을 입력하세요. 입력된 이름으로 수료증이 발급됩니다.'"
-                        outlined
+                        outline
                         placeholder="코멘티"
                         :active="isError"
                         :value.sync="name"
@@ -392,7 +392,7 @@ export const Default = (args, { argTypes }) => ({
                         <StyleCol :col-lg="4" col-gutters>
                             <TextField
                                 type="text"
-                                outlined
+                                outline
                                 label="대학"
                                 placeholder="학교명"
                                 hint="대학명을 입력해주세요."
@@ -409,7 +409,7 @@ export const Default = (args, { argTypes }) => ({
                         <StyleCol :col-lg="4" col-gutters>
                             <TextField
                                 type="text"
-                                outlined
+                                outline
                                 label="대학"
                                 placeholder="학교명"
                                 :value.sync="name"
@@ -425,7 +425,7 @@ export const Default = (args, { argTypes }) => ({
                         <StyleCol :col-lg="4" col-gutters>
                             <TextField
                                 type="text"
-                                outlined
+                                outline
                                 label="대학"
                                 placeholder="학교명"
                                 :value.sync="name"

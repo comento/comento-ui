@@ -20,7 +20,7 @@ export const Default = (args, { argTypes }) => ({
         `<Box>
              <InputGroup>
                  <TextField placeholder="쿠폰 코드를 입력하세요" full />
-                 <Button type="outlined" color="secondary">등록하기</Button>
+                 <Button type="outline" color="secondary">등록하기</Button>
              </InputGroup>
          </Box>`,
 });
@@ -46,14 +46,14 @@ export const Default = (args, { argTypes }) => ({
                             <InputGroup>
                                 <TextField
                                     type="text"
-                                    outlined
+                                    outline
                                     placeholder="닉네임"
                                     full
                                     :value.sync="name"
                                 />
                                 <Button
                                     color="primary"
-                                    type="outlined"
+                                    type="outline"
                                 >
                                     중복검사
                                 </Button>

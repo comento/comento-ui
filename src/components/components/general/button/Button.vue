@@ -38,7 +38,7 @@ import Loader from '@/components/components/other/Loader';
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
 export const ghostTypeButtonColors = ['primary', 'info', 'white'];
-export const buttonTypes = ['fill', 'outlined', 'ghost', 'text'];
+export const buttonTypes = ['fill', 'outline', 'ghost', 'text'];
 
 /**
  * @displayName c-button
@@ -72,7 +72,7 @@ export default {
 			},
 		},
 		/**
-		 * 타입(fill, outlined, text)
+		 * 타입(fill, outline, text)
 		 */
 		type: {
 			type: String,
@@ -117,7 +117,7 @@ export default {
 			return this.type;
 		},
 		computedGhostTypeClass() {
-			return this.type === 'ghost' ? 'outlined' : '';
+			return this.type === 'ghost' ? 'outline' : '';
 		},
 		computedFull() {
 			return { full: this.full };
@@ -314,7 +314,7 @@ $info-text-color: $info;
 			background: none;
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $primary-text-color;
 		color: $primary-text-color;
@@ -402,7 +402,7 @@ $info-text-color: $info;
 			}
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $success-text-color;
 		color: $success-text-color;
@@ -455,7 +455,7 @@ $info-text-color: $info;
 			}
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $gray500;
 		color: $info-text-color;
@@ -519,7 +519,7 @@ $info-text-color: $info;
 			}
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $error-text-color;
 		color: $error-text-color;
@@ -570,7 +570,7 @@ $info-text-color: $info;
 			}
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $secondary-background-color;
 		color: $secondary-background-color;
@@ -592,7 +592,7 @@ $info-text-color: $info;
 }
 
 .white {
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $white;
 		color: $white;
