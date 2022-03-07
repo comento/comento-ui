@@ -26,6 +26,11 @@ import Typography from '@/components/elements/core/typography/Typography';
 			defaultValue: '_self',
 			control: { type: 'select', options: ['_self', '_target'] },
 		},
+		external: {
+			description: '외부 링크 여부',
+			defaultValue: false,
+			control: { type: 'boolean' },
+		},
 	}}
 />
 
@@ -35,7 +40,7 @@ export const Default = (args, { argTypes }) => ({
 	template: `<NewGrid>
             <NewRow>
                 <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
-                    <EmptyBox :type="type" :to="to" :target="target">
+                    <EmptyBox :type="type" :to="to" :target="target" :external="external">
                         <template v-slot:title>
                             제출된 과제가 없습니다.
                         </template>
@@ -46,7 +51,7 @@ export const Default = (args, { argTypes }) => ({
                             모집 중인 캠프 보기
                         </template>
                     </EmptyBox>
-                    <EmptyBox :type="type" :to="to" :target="target">
+                    <EmptyBox :type="type" :to="to" :target="target" :external="external">
                         <template v-slot:title>
                             제출된 과제가 없습니다.
                         </template>
@@ -75,13 +80,13 @@ export const Default = (args, { argTypes }) => ({
 ## Stories
 
 <Canvas>
-	<Story name="Empty" height="100px">
+	<Story name="Simple" height="100px">
 		{{
 			components: { EmptyBox, Typography, NewGrid, NewRow, NewCol },
 			template: `<NewGrid>
                     <NewRow>
                         <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
-                            <EmptyBox type="simple" >
+                            <EmptyBox type="simple" target="_blank" external to="https://comento.kr">
                                 <template v-slot:title>
                                     제출된 과제가 없습니다.
                                 </template>
@@ -92,6 +97,20 @@ export const Default = (args, { argTypes }) => ({
                                     모집 중인 캠프 보기
                                 </template>
                             </EmptyBox>
+                            </NewCol>
+                    </NewRow>
+                </NewGrid>`,
+		}}
+	</Story>
+</Canvas>
+
+<Canvas>
+	<Story name="Emphasized" height="120px">
+		{{
+			components: { EmptyBox, Typography, NewGrid, NewRow, NewCol },
+			template: `<NewGrid>
+                    <NewRow>
+                        <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
                             <EmptyBox type="emphasized">
                                 <template v-slot:title>
                                     신청한 캠프가 없습니다.
