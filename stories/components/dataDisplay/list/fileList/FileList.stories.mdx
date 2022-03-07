@@ -1,0 +1,84 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import FileList from '@/components/components/dataDisplay/list/fileList/FileList';
+import FileSummary from '@/components/components/dataDisplay/list/fileList/FileSummary';
+import Divider from '@/components/elements/utility/Divider';
+
+<Meta
+  title="Data Display/List/FileList"
+  component={ FileList }
+  argTypes={{
+    files: {
+      description: "파일 리스트",
+      defaultValue: [
+        {
+          file: { name: "1.png"}, isLoading: false
+        },
+        {
+          file: { name: "2.png"}, isLoading: false
+        },
+        {
+          file: { name: "3.png"}, isLoading: false
+        },
+      ],
+      control: {
+        type: "array",
+      },
+    },
+    isRemovable: {
+      type: Boolean,
+      control: {
+        type: "boolean",
+      }
+    },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  data() {
+    return {
+      filesData: this.files,
+    };
+  },
+  methods: {
+    handleClickFileDownloadIcon(payload) {
+        this.filesData[payload.index].isLoading = true;
+        setInterval(() => {
+            this.filesData[payload.index].isLoading = false;
+        }, 3000);
+    },
+    handleClickFileItemContent(payload) {
+        this.filesData[payload.index].isLoading = true;
+        setInterval(() => {
+          this.filesData[payload.index].isLoading = false;
+        }, 3000);
+    },
+    handleClickFileTrashIcon(payload) {
+        this.filesData = this.filesData.filter((item, index) => index !== payload.index);
+    },
+  },
+  template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
+                 <FileSummary :full="full" :length="filesData.length"/>
+                 <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 8.5px;"/>
+                 <FileList :files="filesData"
+                    :is-removable="isRemovable"
+                    :full="full"
+                    @clickFileDownloadIcon="handleClickFileDownloadIcon"
+                    @clickFileItemContent="handleClickFileItemContent"
+                    @clickFileTrashIcon="handleClickFileTrashIcon"
+                 />
+             </div>`,
+   components: { FileList, Divider, FileSummary },
+});
+
+# FileList
+
+**FileList** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+
