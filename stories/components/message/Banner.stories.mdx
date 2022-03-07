@@ -1,56 +1,54 @@
-import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Banner from '@/components/components/message/Banner';
 import Button from '@/components/components/general/button/Button';
 import Typography from '@/components/elements/core/typography/Typography';
+import NewGrid from '@/components/layout/NewGrid';
+import NewRow from '@/components/layout/NewRow';
+import NewCol from '@/components/layout/NewCol';
 
 <Meta
-    title="Message/Banner"
-    component={ Banner }
-    argTypes={{
-        title: {
-            description: "Banner에 main 텍스트",
-            defaultValue: "Banner Title",
-            control: { type: "text" },
-        },
-        description: {
-            description: "Banner에 sub 텍스트",
-            defaultValue: "Banner description",
-            control: { type: "text" },
-        },
-        type: {
-            description: "banner 종류",
-            defaultValue: 'standard',
-            control: {
-                type: "select",
-                options: ["standard", "full"],
-            },
-        },
-    }}
+	title="Message/Banner"
+	component={Banner}
+	argTypes={{
+		type: {
+			description: 'banner 종류',
+			defaultValue: 'standard',
+			control: {
+				type: 'select',
+				options: ['standard', 'full'],
+			},
+		},
+		height: {
+			defaultValue: '280px',
+		},
+	}}
 />
 
 export const Default = (args, { argTypes }) => ({
-    props: Object.keys(argTypes),
-    components: { Button, Banner, Typography },
-    template: `
-        <div>
-            <Banner :type="type">
-                <template v-slot:image>
-                    <div style="background: lightgray; height: 250px;"></div>
+	props: Object.keys(argTypes),
+	components: { Button, Banner, Typography, NewGrid, NewRow, NewCol },
+	template: `<div>
+            <Banner :type="type" :blur="blur" :height="height">
+                <template v-slot:background>
+                    <div style="background-color: #f3f4f5;"></div>
                 </template>
-                <template v-slot:title>
-                    <Typography type="headline1" color="gray900" align="center">
-                        {{title}}
-                    </Typography>
-                </template>
-                <template v-slot:description>
-                    <Typography type="headline6" color="gray800" align="center">
-                        {{description}}
-                    </Typography>
-                </template>
-                <template v-slot:action>
+                <template v-slot>
+                    <NewGrid>
+                        <NewRow>
+                            <NewCol :col-sm="4" :col-lg="12">
+                                <Typography class="mt-80" type="headline1" color="gray800" align="left">
+                                    Title
+                                </Typography>
+                                <Typography type="headline6" color="gray800" align="left">
+                                    description
+                                </Typography>
+                                <Button class="mt-32 mb-40" full>CTA BTN</Button>
+                            </NewCol>
+                        </NewRow>
+                    </NewGrid>
                 </template>
             </Banner>
-        </div>`
+        </div>`,
 });
 
 # Banner
@@ -58,8 +56,42 @@ export const Default = (args, { argTypes }) => ({
 **Banner** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
-    {Default.bind({})}
+	{Default.bind({})}
 </Story>
 
 <ArgsTable story="Default" />
 
+## Stories
+
+### All
+
+<Canvas>
+	<Story name="All" height="100px">
+		{{
+			components: { Banner, NewGrid, NewCol, NewRow, Typography, Button },
+			template: `
+                <div>
+                    <Banner type="standard" blur height="280px">
+                <template v-slot:background>
+                    <img src="https://cdn.comento.kr/edu/title_VaZDZCpmRI.jpg?s=960x502" />
+                </template>
+                <template v-slot>
+                    <NewGrid>
+                        <NewRow>
+                            <NewCol :col-sm="4" :col-lg="12">
+                                <Typography class="mt-80" type="headline1" color="gray000" align="left">
+                                    Title
+                                </Typography>
+                                <Typography type="headline6" color="gray000" align="left">
+                                    description
+                                </Typography>
+                                <Button class="mt-32 mb-40" size="xlarge">이동하기</Button>
+                            </NewCol>
+                        </NewRow>
+                    </NewGrid>
+                </template>
+            </Banner>
+            `,
+		}}
+	</Story>
+</Canvas>
