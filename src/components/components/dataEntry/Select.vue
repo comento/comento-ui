@@ -79,7 +79,7 @@ import EtcIcon from '@/components/elements/core/icon/EtcIcon';
 import globalMixin from '@/mixins/globalMixin';
 
 export const selectSizes = ['small', 'medium'];
-export const selectTypes = ['basic', 'underlined'];
+export const selectTypes = ['basic', 'underline'];
 
 /**
  * @displayName c-select
@@ -90,13 +90,13 @@ export default {
 	inheritAttrs: false,
 	props: {
 		/**
-		 * 타입(basic, underlined)
+		 * 타입(basic, underline)
 		 */
 		type: {
 			type: String,
 			default: 'basic',
 			validator(value) {
-				return selectTypes.indexOf(value) !== -1;
+				return selectTypes.includes(value);
 			},
 		},
 		value: {
@@ -308,7 +308,7 @@ export default {
 				border: 1px solid $gray400;
 			}
 		}
-		&.underlined {
+		&.underline {
 			padding: 7px 8px;
 			border-bottom: 1px solid $gray250;
 			&.active {
@@ -369,7 +369,7 @@ export default {
 					color: $gray850;
 				}
 			}
-			&.underlined {
+			&.underline {
 				input {
 					@include body1();
 					color: $gray850;
