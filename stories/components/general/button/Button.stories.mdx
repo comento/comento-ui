@@ -2,7 +2,6 @@ import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Button, { buttonSizes, buttonColors, buttonTypes, ghostTypeButtonColors } from '@/components/components/general/button/Button';
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
-import Loader from '@/components/components/other/Loader';
 
 <Meta
   title="General/Button/Button"
@@ -91,7 +90,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <template v-for="(type, index) in filteredButtonTypes">
+                  <template v-for="(type, index) in buttonTypes">
                     <div class="flex">
                         <ButtonStateTitle class="mr-30">{{type}}</ButtonStateTitle>
                         <div class="flex-column mr-30">
@@ -152,11 +151,8 @@ export const Default = (args, { argTypes }) => ({
                 filteredButtonColors() {
                     return Object.assign(buttonColors, {}).filter(item => item !== 'light-primary')
                 },
-                filteredButtonTypes() {
-                    return Object.assign(buttonTypes, {}).filter(item => item !== 'icon')
-                },
             },
-            components: { Button, Typography, Loader,
+            components: { Button, Typography,
                 'ButtonStateTitle': {
                     template: `<Typography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></Typography>`,
                     components: {Typography},
