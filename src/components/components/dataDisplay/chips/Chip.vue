@@ -12,7 +12,7 @@
 <script>
 import paddingMixin from '@/mixins/paddingMixin';
 
-export const ChipColors = ['primary', 'gray', 'success'];
+export const ChipColors = ['primary', 'info', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
 
@@ -35,11 +35,11 @@ export default {
 			},
 		},
 		/**
-		 * 색상(gray, primary, success)
+		 * 색상(info, primary, success)
 		 */
 		color: {
 			type: String,
-			default: 'gray',
+			default: 'info',
 			validator(value) {
 				return ChipColors.indexOf(value) !== -1;
 			},
@@ -119,7 +119,7 @@ export default {
 	justify-content: center;
 	border-radius: 4px;
 	text-align: center;
-	&.gray {
+	&.info {
 		color: $gray700;
 		border: 1px solid $gray100;
 		background-color: $gray100;
