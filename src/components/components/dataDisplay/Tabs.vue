@@ -149,6 +149,12 @@ export default {
 		}
 	}
 }
+/* tabs 최소 높이 */
+::v-deep {
+	.c-button {
+		height: 30px !important;
+	}
+}
 
 // 투명 타입
 .transparent {
@@ -162,16 +168,21 @@ export default {
 		}
 		@include pc {
 			&:hover {
-				background-color: rgba(21, 22, 23, 0.1);
+				background-color: rgba(255, 255, 255, 0.2);
+				border-radius: 6px;
+				&::v-deep .c-button {
+					opacity: 1;
+				}
 			}
 		}
 	}
 	.active {
 		&::v-deep .c-button {
 			color: white;
+			opacity: 1;
 		}
 		&:after {
-			background-color: rgba(255, 255, 255, 0.8);
+			background-color: $white;
 		}
 	}
 }
@@ -261,7 +272,7 @@ export default {
 		height: 2px;
 		background-color: $gray600;
 		left: 0;
-		bottom: -1px;
+		bottom: 4px;
 	}
 }
 
