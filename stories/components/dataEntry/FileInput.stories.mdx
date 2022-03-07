@@ -65,8 +65,7 @@ export const Default = (args, { argTypes }) => ({
         alert('clickItemContent')
     }
   },
-  template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <div style="width: 100%">
+  template: `<div style="width: 100%; display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
                  <FileInput
                     :accept="accept"
                     :multiple="multiple"
@@ -80,7 +79,6 @@ export const Default = (args, { argTypes }) => ({
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
                     @clickFileItemContent="handleClickFileItemContent"
                  />
-                 </div>
               </div>`,
    components: { FileInput, FileList, Divider },
 });
