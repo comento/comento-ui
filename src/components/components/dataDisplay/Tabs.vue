@@ -223,6 +223,7 @@ export default {
 			@include align-items(center);
 			@include pc {
 				&:hover {
+					border-radius: 6px;
 					background-color: $gray100;
 				}
 			}
