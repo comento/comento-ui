@@ -64,7 +64,7 @@ export default {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				const isValid = buttonColors.includes(value);
+				const isValid = [...buttonColors, ...ghostTypeButtonColors].includes(value);
 				if (!isValid) {
 					console.error(`${value} is not a valid value of Button color`);
 				}

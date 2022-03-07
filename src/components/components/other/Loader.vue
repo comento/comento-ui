@@ -12,6 +12,7 @@ import IconSpinnerMedium from '@/assets/images/icon/medium/icon-spinner-medium.s
 import IconSpinnerLarge from '@/assets/images/icon/large/icon-spinner-large.svg?inline';
 import { colors } from '@/utils/constants/color';
 const {
+	gray200,
 	gray500,
 	gray800,
 	blue000,
@@ -31,7 +32,7 @@ const {
 	white,
 } = colors;
 
-import { buttonColors } from '@/components/components/general/button/Button';
+import { buttonColors, ghostTypeButtonColors } from '@/components/components/general/button/Button';
 
 export const LoaderSizes = ['small', 'medium', 'large'];
 
@@ -84,6 +85,14 @@ const colorMap = {
 		stroke: gray800,
 		fill: gray500,
 	},
+	white: {
+		stroke: gray200,
+		fill: gray500,
+	},
+	'white-reversed': {
+		stroke: gray500,
+		fill: gray200,
+	},
 };
 
 /**
@@ -109,7 +118,7 @@ export default {
 			type: String,
 			default: 'info',
 			validator(value) {
-				return buttonColors.includes(value);
+				return [...buttonColors, ...ghostTypeButtonColors].includes(value);
 			},
 		},
 		reversed: {
