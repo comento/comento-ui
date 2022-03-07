@@ -76,6 +76,8 @@ export const Default = (args, { argTypes }) => ({
                  />
                  <Divider type="dash" style="margin-top: 12.5px; margin-bottom: 8.5px;"/>
                  <FileList :files="files"
+                    :full="full"
+                    isRemovable
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
                     @clickFileItemContent="handleClickFileItemContent"
                  />
@@ -153,7 +155,7 @@ export const Default = (args, { argTypes }) => ({
                               @uploadFiles="handleCreateUploadFiles"
                             />
                             <Divider type="dash" style="margin-top: 12.5px; margin-bottom: 8.5px;"/>
-                            <FileList :files="createFiles" isEdit @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <FileList :files="createFiles" isRemovable @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">수정 시</Typography>
@@ -161,7 +163,7 @@ export const Default = (args, { argTypes }) => ({
                               @uploadFiles="handleEditUploadFiles"
                             />
                             <Divider type="dash" style="margin-top: 12.5px; margin-bottom: 8.5px;"/>
-                            <FileList :files="editFiles" isEdit @clickFileTrashIcon="handleEditClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <FileList :files="editFiles" isRemovable @clickFileTrashIcon="handleEditClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">완료 시</Typography>

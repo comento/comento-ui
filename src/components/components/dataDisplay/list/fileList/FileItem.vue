@@ -1,14 +1,14 @@
 <template>
 	<ListItem class="c-application c-file-item--container" @click="handleClickFileItem({ file, index })">
 		<div class="c-file-item--content" @click.stop="handleClickFileItemContent({ file, index })">
-			<template v-if="isEdit">
+			<template v-if="isRemovable">
 				<Loader v-if="isLoading" class="c-file-item--content-icon" size="small" />
 				<Icon v-else class="c-file-item--content-icon" name="IconFileMediumLine" color="gray700" />
 			</template>
 			<Typography type="caption1" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
 		</div>
 		<Icon
-			v-if="isEdit"
+			v-if="isRemovable"
 			name="IconTrashMediumLine"
 			color="gray500"
 			@click.stop="handleClickFileTrashIcon({ file, index })"
@@ -50,7 +50,7 @@ export default {
 		/**
 		 * 수정 or 다운로드
 		 */
-		isEdit: {
+		isRemovable: {
 			type: Boolean,
 			default: false,
 		},

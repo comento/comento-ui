@@ -24,7 +24,7 @@ import Divider from '@/components/elements/utility/Divider';
         type: "array",
       },
     },
-    isEdit: {
+    isRemovable: {
       type: Boolean,
       control: {
         type: "boolean",
@@ -57,18 +57,17 @@ export const Default = (args, { argTypes }) => ({
         this.filesData = this.filesData.filter((item, index) => index !== payload.index);
     },
   },
-  template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <div style="width: 100%">
-                 <FileSummary :length="filesData.length"/>
+  template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
+                 <FileSummary :full="full" :length="filesData.length"/>
                  <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 8.5px;"/>
                  <FileList :files="filesData"
-                    :is-edit="isEdit"
+                    :is-removable="isRemovable"
+                    :full="full"
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
                     @clickFileItemContent="handleClickFileItemContent"
                     @clickFileTrashIcon="handleClickFileTrashIcon"
                  />
-                 </div>
-              </div>`,
+             </div>`,
    components: { FileList, Divider, FileSummary },
 });
 

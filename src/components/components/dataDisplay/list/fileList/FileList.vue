@@ -1,12 +1,12 @@
 <template>
-	<List class="c-file-list--container" spacing>
+	<List class="c-file-list--container" :class="computedClass" spacing>
 		<FileItem
 			v-for="(item, index) in files"
 			:key="`file-${index}`"
 			:file="item.file"
 			:is-loading="item.isLoading"
 			:index="index"
-			:is-edit="isEdit"
+			:is-removable="isRemovable"
 			@clickFileDownloadIcon="handleClickFileDownloadIcon"
 			@clickFileItemContent="handleClickFileItemContent"
 			@clickFileItem="handleClickFileItem"
@@ -31,9 +31,18 @@ export default {
 				return null;
 			},
 		},
-		isEdit: {
+		isRemovable: {
 			type: Boolean,
 			default: false,
+		},
+		full: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		computedClass() {
+			return { full: this.full };
 		},
 	},
 	methods: {
@@ -54,4 +63,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.c-file-list--container {
+	&.full {
+		width: 100%;
+	}
+}
+</style>
