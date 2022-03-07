@@ -8,9 +8,26 @@
 				<Typography class="mt-4" type="body2" color="gray500" align="center">
 					<slot name="contents" />
 				</Typography>
-				<Button v-if="$slots['link']" class="c-empty-box--emphasized-button" color="light-primary" size="large">
-					<slot name="link" />
-				</Button>
+				<a v-if="external" :href="to">
+					<Button
+						v-if="$slots['link']"
+						class="c-empty-box--emphasized-button"
+						color="light-primary"
+						size="large"
+					>
+						<slot name="link" />
+					</Button>
+				</a>
+				<router-link v-else :to="to">
+					<Button
+						v-if="$slots['link']"
+						class="c-empty-box--emphasized-button"
+						color="light-primary"
+						size="large"
+					>
+						<slot name="link" />
+					</Button>
+				</router-link>
 			</Box>
 		</div>
 		<div v-if="type === 'simple'" class="c-empty-box--simple-container">
@@ -27,6 +44,7 @@
 				class="c-empty-box--link"
 				type="caption1"
 				align="center"
+				:external="external"
 			>
 				<slot name="link" />
 			</LinkButton>
@@ -69,6 +87,10 @@ export default {
 			type: String,
 			default: '_self',
 		},
+		external: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	components: {
 		Box,
@@ -92,6 +114,10 @@ export default {
 		&-button {
 			margin: 16px auto auto;
 		}
+	}
+
+	& a {
+		text-decoration: none;
 	}
 }
 </style>
