@@ -53,11 +53,11 @@ export default {
 		},
 		cancelButtonColor: {
 			type: String,
-			default: 'gray500',
+			default: 'gray600',
 		},
 		confirmButtonColor: {
 			type: String,
-			default: 'gray500',
+			default: 'gray600',
 		},
 		successCallback: {
 			type: Function,

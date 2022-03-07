@@ -4,7 +4,7 @@
 			<Icon name="IconFileMediumLine" color="gray500"></Icon>
 			<Typography type="body2" color="gray500"> 첨부파일 ({{ length }}개) </Typography>
 		</div>
-		<Button type="outlined" size="small" color="info" @click="$emit('clickAllFileDownloadButton')">
+		<Button type="outline" size="small" color="secondary" @click="$emit('clickAllFileDownloadButton')">
 			전체 다운로드
 		</Button>
 	</div>

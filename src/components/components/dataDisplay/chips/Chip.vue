@@ -14,7 +14,7 @@ import paddingMixin from '@/mixins/paddingMixin';
 
 export const ChipColors = ['primary', 'gray', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
-export const ChipTypes = ['fill', 'outlined', 'clickable-fill', 'clickable-outlined'];
+export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
 
 /**
  * 작은 정보를 전달하기 위해 사용
@@ -25,7 +25,7 @@ export default {
 	mixins: [paddingMixin],
 	props: {
 		/**
-		 * 타입(fill, outlined, clickable-fill, clickable-outlined)
+		 * 타입(fill, outline, clickable-fill, clickable-outline)
 		 */
 		type: {
 			type: String,
@@ -128,7 +128,7 @@ export default {
 			background-color: $gray200;
 		}
 
-		&.outlined {
+		&.outline {
 			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
@@ -141,7 +141,7 @@ export default {
 				background-color: transparent;
 			}
 		}
-		&.clickable-outlined {
+		&.clickable-outline {
 			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
@@ -164,7 +164,7 @@ export default {
 			background-color: $blue400;
 		}
 
-		&.outlined {
+		&.outline {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
@@ -177,7 +177,7 @@ export default {
 				background-color: transparent;
 			}
 		}
-		&.clickable-outlined {
+		&.clickable-outline {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
@@ -200,7 +200,7 @@ export default {
 			background-color: $green800;
 		}
 
-		&.outlined {
+		&.outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
@@ -209,7 +209,7 @@ export default {
 				background-color: transparent;
 			}
 		}
-		&.clickable-outlined {
+		&.clickable-outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
@@ -233,7 +233,7 @@ export default {
 			border-radius: 10px;
 			padding: 1.5px 6px;
 		}
-		&.clickable-outlined {
+		&.clickable-outline {
 			border-radius: 10px;
 			padding: 2px 3px;
 		}
@@ -247,7 +247,7 @@ export default {
 			border-radius: 12px;
 			padding: 5.5px 10px;
 		}
-		&.clickable-outlined {
+		&.clickable-outline {
 			border-radius: 12px;
 			padding: 4.5px 9px;
 		}
@@ -261,7 +261,7 @@ export default {
 			border-radius: 15px;
 			padding: 5px 14px;
 		}
-		&.clickable-outlined {
+		&.clickable-outline {
 			border-radius: 15px;
 			padding: 4px 13px;
 		}
@@ -274,7 +274,7 @@ export default {
 			border-radius: 19px;
 			padding: 5px 16px;
 		}
-		&.clickable-outlined {
+		&.clickable-outline {
 			border-radius: 19px;
 			padding: 4px 15px;
 		}
