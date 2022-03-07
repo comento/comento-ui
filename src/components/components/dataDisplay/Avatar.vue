@@ -2,9 +2,9 @@
 	<div class="c-application c-avatar--container" :class="[computedSize]">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
 		<div class="c-avatar--item">
-			<Icon v-if="isMenteeType" :name="computedIconName" :color="computedColorName" />
+			<Icon v-if="isProfileType" :name="computedIconName" :color="computedColorName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
-			<Typography v-if="isMentorType" :type="computedTypography" :font-weight="700" color="white">
+			<Typography v-if="isNicknameType" :type="computedTypography" :font-weight="700" color="white">
 				{{ text || computedRandomText }}
 			</Typography>
 		</div>
@@ -17,7 +17,7 @@ import Icon from '@/components/elements/core/icon/Icon';
 import uniqueId from '@/utils/unique-id';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
-export const avatarTypes = ['mentor', 'mentee', 'logo', 'image'];
+export const avatarTypes = ['nickname', 'profile', 'logo', 'image'];
 const avatarColors = ['#f5b3b3', '#f3c499', '#f0db80', '#b4d2a9', '#91cfd3', '#acc5ea', '#ceb9e2', '#b0aba4'];
 
 /**
@@ -27,11 +27,11 @@ export default {
 	name: 'Avatar',
 	props: {
 		/**
-		 * 타입(mentor, mentee, logo, image)
+		 * 타입(nickname, profile, logo, image)
 		 */
 		type: {
 			type: String,
-			default: 'mentor',
+			default: 'nickname',
 			validator(value) {
 				return avatarTypes.includes(value);
 			},
@@ -62,7 +62,7 @@ export default {
 			default: -1,
 		},
 		/**
-		 * mentee type일 때 색상
+		 * profile type일 때 색상
 		 */
 		color: {
 			type: String,
@@ -75,11 +75,11 @@ export default {
 		};
 	},
 	computed: {
-		isMentorType() {
-			return this.type === 'mentor';
+		isNicknameType() {
+			return this.type === 'nickname';
 		},
-		isMenteeType() {
-			return this.type === 'mentee';
+		isProfileType() {
+			return this.type === 'profile';
 		},
 		isLogoType() {
 			return this.type === 'logo';
@@ -97,7 +97,7 @@ export default {
 			if (this.isImageType) {
 				return { 'background-image': `url(${this.src})` };
 			}
-			if (this.isMentorType) {
+			if (this.isNicknameType) {
 				return { background: this.computedRandomBackground };
 			}
 			return {};
@@ -156,7 +156,7 @@ export default {
 	}
 
 	// 타입
-	&.mentee {
+	&.profile {
 		background: $gray100;
 	}
 	&.image {
