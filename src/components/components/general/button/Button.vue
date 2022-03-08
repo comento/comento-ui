@@ -23,14 +23,16 @@
 				<Loader :size="computedLoaderSize" :reversed="isFillType" :color="color" />
 			</div>
 		</template>
-		<div class="c-button--icon" :class="setIconSpacing('left')">
-			<slot name="left-icon" />
-		</div>
 		<Icon v-if="showIcon" :name="fabIconName" color="white" class="c-button--fab-icon" />
-		<slot v-else />
-		<div class="c-button--icon" :class="setIconSpacing('right')">
-			<slot name="right-icon" />
-		</div>
+		<template v-else>
+			<div class="c-button--icon" :class="setIconSpacing('left')">
+				<slot name="left-icon" />
+			</div>
+			<slot />
+			<div class="c-button--icon" :class="setIconSpacing('right')">
+				<slot name="right-icon" />
+			</div>
+		</template>
 	</button>
 </template>
 
