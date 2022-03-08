@@ -32,5 +32,3 @@ export default {
 	components: { Typography },
 };
 </script>
-
-<style lang="scss" scoped></style>
