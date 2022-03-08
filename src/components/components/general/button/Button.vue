@@ -11,6 +11,7 @@
 			computedFixed,
 			computedAbsolute,
 			computedShadow,
+			{ 'c-button--fab': isFabType },
 		]"
 		v-bind="$attrs"
 		:disabled="disabled"
@@ -22,23 +23,27 @@
 				<Loader :size="computedLoaderSize" :reversed="isFillType" :color="color" />
 			</div>
 		</template>
-		<div class="c-button--icon" :class="setIconSpacing('left')">
-			<slot name="left-icon" />
-		</div>
-		<slot />
-		<div class="c-button--icon" :class="setIconSpacing('right')">
-			<slot name="right-icon" />
-		</div>
+		<Icon v-if="showIcon" :name="fabIconName" color="white" class="c-button--fab-icon" />
+		<template v-else>
+			<div class="c-button--icon" :class="setIconSpacing('left')">
+				<slot name="left-icon" />
+			</div>
+			<slot />
+			<div class="c-button--icon" :class="setIconSpacing('right')">
+				<slot name="right-icon" />
+			</div>
+		</template>
 	</button>
 </template>
 
 <script>
 import Loader from '@/components/components/other/Loader';
+import Icon from '@/components/elements/core/icon/Icon';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
 export const ghostTypeButtonColors = ['primary', 'info', 'white'];
-export const buttonTypes = ['fill', 'outline', 'ghost', 'text'];
+export const buttonTypes = ['fill', 'outline', 'ghost', 'text', 'fab'];
 
 /**
  * @displayName c-button
@@ -105,9 +110,17 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		fabIconName: {
+			type: String,
+			default: 'IconWriting2XLargeLine',
+		},
 	},
 	computed: {
+		isFabType() {
+			return this.type === 'fab';
+		},
 		computedSize() {
+			if (this.isFabType) return;
 			return this.size;
 		},
 		computedColor() {
@@ -144,6 +157,9 @@ export default {
 		isFillType() {
 			return this.type === 'fill';
 		},
+		showIcon() {
+			return this.isFabType;
+		},
 	},
 	methods: {
 		setIconSpacing(position) {
@@ -151,7 +167,7 @@ export default {
 			return this.$slots[`${position}-icon`] && `m${oppositePosition}-${this.computedIconMargin}`;
 		},
 	},
-	components: { Loader },
+	components: { Icon, Loader },
 };
 </script>
 
@@ -282,6 +298,16 @@ $info-text-color: $info;
 
 		.c-button--loading {
 			background-color: $white;
+		}
+	}
+	&--fab {
+		cursor: pointer;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		// 아이콘 커서는 부모를 따름
+		&-icon {
+			cursor: inherit;
 		}
 	}
 }
