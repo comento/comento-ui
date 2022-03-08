@@ -72,7 +72,7 @@ export const Basic = (args, { argTypes }) => ({
             <template v-slot:user-information>
                 <UserInformation :type="userInformationType">
                     <template v-slot:avatar>
-                        <Avatar type="text" :text="name.substr(0, 1)" :size="avatarSize"/>
+                        <Avatar type="nickname" :text="name.substr(0, 1)" :size="avatarSize"/>
                     </template>
                     <template v-slot:name>
                         {{ name }}
@@ -121,7 +121,7 @@ export const Basic = (args, { argTypes }) => ({
                         <template v-slot:user-information>
                             <UserInformation type="normal">
                                 <template v-slot:avatar>
-                                    <Avatar type="text" :text="nickname.substr(0, 1)" size="small"/>
+                                    <Avatar type="nickname" :text="nickname.substr(0, 1)" size="small"/>
                                 </template>
                                 <template v-slot:name>
                                     {{ nickname }}
@@ -139,7 +139,7 @@ export const Basic = (args, { argTypes }) => ({
                         <template v-slot:user-information>
                             <UserInformation type="simple">
                                 <template v-slot:avatar>
-                                    <Avatar type="text" :text="nickname.substr(0, 1)" size="xsmall"/>
+                                    <Avatar type="nickname" :text="nickname.substr(0, 1)" size="xsmall"/>
                                 </template>
                                 <template v-slot:name>
                                     {{ nickname }}

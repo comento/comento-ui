@@ -33,7 +33,7 @@ storiesOf('Data Display/content/ProfileWithText', module).add('Index', () => ({
 				<NewCol :col-sm="12" :col-lg="5">
 					<ProfileWithText v-for="item in replies" :key="'reply-' + item.id">
 						<template v-slot:avatar>
-							<Avatar type="text" :text="item.belong.substr(0, 1)" size="small"/>
+							<Avatar type="nickname" :text="item.belong.substr(0, 1)" size="small"/>
 						</template>
 						<template v-slot:name>
 							{{ item.belong }}
