@@ -11,7 +11,7 @@
 			computedFixed,
 			computedAbsolute,
 			computedShadow,
-			{ 'c-button-fab': isFabType },
+			{ 'c-button--fab': isFabType },
 		]"
 		v-bind="$attrs"
 		:disabled="disabled"
@@ -26,7 +26,7 @@
 		<div class="c-button--icon" :class="setIconSpacing('left')">
 			<slot name="left-icon" />
 		</div>
-		<Icon v-if="showIcon" :name="fabIconName" color="white" class="c-button-fab-icon" />
+		<Icon v-if="showIcon" :name="fabIconName" color="white" class="c-button--fab-icon" />
 		<slot v-else />
 		<div class="c-button--icon" :class="setIconSpacing('right')">
 			<slot name="right-icon" />
@@ -301,7 +301,7 @@ $info-text-color: $info;
 			background-color: $white;
 		}
 	}
-	&-fab {
+	&--fab {
 		cursor: pointer;
 		width: 60px;
 		height: 60px;
