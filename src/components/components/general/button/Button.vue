@@ -108,9 +108,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		fab: {
-			type: Boolean,
-		},
 		fabIconName: {
 			type: String,
 			default: 'IconWriting2XLargeLine',
