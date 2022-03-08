@@ -22,7 +22,7 @@ import { colorKeys } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
 import uniqueId from '@/utils/unique-id';
 import customValidator from '@/utils/custom-validator';
-export const radioColors = ['primary', 'success', 'secondary', 'error'];
+export const radioColors = ['primary', 'success', 'info', 'error'];
 export const radioButtonSizes = ['small', 'medium'];
 
 /**
@@ -61,7 +61,7 @@ export default {
 			},
 		},
 		/**
-		 * 색상(primary, success, secondary, error)
+		 * 색상(primary, success, info, error)
 		 */
 		radioColor: {
 			type: String,
@@ -262,7 +262,7 @@ export default {
 			}
 		}
 	}
-	&.secondary {
+	&.info {
 		input[type='radio'] {
 			&:hover:not(:disabled),
 			&:focus:not(:disabled) {
