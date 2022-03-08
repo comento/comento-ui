@@ -177,7 +177,7 @@ export default {
 			return this.autocomplete ? 'on' : 'off';
 		},
 		computedError() {
-			return this.error ? 'error' : '';
+			return { error: this.error };
 		},
 		hintColor() {
 			if (this.error) {
