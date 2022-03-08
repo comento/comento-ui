@@ -45,7 +45,7 @@ export const Default = (args, { argTypes }) => ({
 	template: `<NewGrid>
             <NewRow>
                 <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
-                    <EmptyBox :type="type" :to="to" :target="target" :external="external">
+                    <EmptyBox :type="type" :to="to" :target="target" :external="external" :full="full">
                         <template v-slot:title>
                             제출된 과제가 없습니다.
                         </template>
