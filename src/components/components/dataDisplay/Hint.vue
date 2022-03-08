@@ -12,7 +12,7 @@ import customValidator from '@/utils/custom-validator.js';
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 
-export const color = ['primary', 'success', 'secondary', 'error', 'info'];
+export const color = ['primary', 'success', 'info', 'error'];
 
 /**
  * @displayName c-hint
@@ -21,11 +21,11 @@ export default {
 	name: 'Hint',
 	props: {
 		/**
-		 * 색상(primary, success, secondary, error)
+		 * 색상(primary, success, info, error)
 		 */
 		color: {
 			type: String,
-			default: 'secondary',
+			default: 'info',
 			validator(value) {
 				return customValidator(value, color.indexOf(value) !== -1, 'Hint', 'color');
 			},
@@ -33,14 +33,14 @@ export default {
 	},
 	computed: {
 		computedIconColor() {
-			if (this.color === 'secondary') {
+			if (this.color === 'info') {
 				return 'gray400';
 			} else {
 				return this.color;
 			}
 		},
 		computedTextColor() {
-			if (this.color === 'secondary') {
+			if (this.color === 'info') {
 				return 'gray600';
 			} else {
 				return this.color;
