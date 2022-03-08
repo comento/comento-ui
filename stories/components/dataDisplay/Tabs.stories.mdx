@@ -28,7 +28,13 @@ import Badge from '@/components/components/dataDisplay/Badge';
             control: {
                 type: "boolean",
             }
-        }
+        },
+        withHeader: {
+            description: "withHeader 타입",
+            control: {
+                type: "boolean",
+            }
+        },
     }}
 />
 
@@ -48,7 +54,7 @@ export const Default = (args, { argTypes }) => ({
     },
     template:
       `<div style="background: cadetblue">
-          <Tabs :type="type" :direction="direction" :tab-index="selectedNo" :transparent="transparent" @changeTabIndex="handleChangeTabIndex">
+          <Tabs :type="type" :direction="direction" :tab-index="selectedNo" :transparent="transparent" :with-header="withHeader" @changeTabIndex="handleChangeTabIndex">
               <template v-for="(item, index) in items" :slot="'item' + index">
                     <Button>
                       {{ item }}
