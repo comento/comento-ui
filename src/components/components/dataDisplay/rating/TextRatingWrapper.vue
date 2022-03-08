@@ -8,7 +8,7 @@
 import Typography from '@/components/elements/core/typography/Typography';
 
 export default {
-	name: 'TextRatingText',
+	name: 'TextRatingWrapper',
 	props: {
 		size: {
 			type: String,

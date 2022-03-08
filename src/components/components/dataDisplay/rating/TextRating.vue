@@ -1,16 +1,16 @@
 <template>
-	<TextRatingText :size="size" class="c-application c-text-rating">
+	<TextRatingWrapper :size="size" class="c-application c-text-rating">
 		<div :class="{ 'mr-4': $slots['text-right'] }">
 			<slot name="text-left" />
 		</div>
 		<div>
 			<slot name="text-right" />
 		</div>
-	</TextRatingText>
+	</TextRatingWrapper>
 </template>
 
 <script>
-import TextRatingText from '@/components/components/dataDisplay/rating/TextRatingText';
+import TextRatingWrapper from '@/components/components/dataDisplay/rating/TextRatingWrapper';
 export const TextRatingSizes = ['default', 'small'];
 
 /**
@@ -28,7 +28,7 @@ export default {
 		},
 	},
 	components: {
-		TextRatingText,
+		TextRatingWrapper,
 	},
 };
 </script>
