@@ -38,13 +38,13 @@ export const Default = (args, { argTypes }) => ({
     },
     components: { Pagination },
     methods: {
-        paginationHandler(pageNum) {
-          console.log('pagination to : ' + pageNum);
+        paginationHandler(page) {
+          this.pageData = page;
         },
     },
     template:
       `<div>
-          <Pagination :page.sync="pageData" :per-page="perPage" :records="records" @paginate="paginationHandler" />
+          <Pagination :page="pageData" :per-page="perPage" :records="records" @paginate="paginationHandler" />
       </div>`,
 });
 

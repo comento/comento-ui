@@ -1,11 +1,11 @@
 <template>
 	<div class="flex justify-center w-full">
 		<pagination
-			v-model="sync_page"
+			:value="page"
 			:records="records"
 			:per-page="perPage"
 			:options="computedOptions"
-			@paginate="emitPaginate"
+			@input="emitPaginate"
 		/>
 	</div>
 </template>
@@ -34,14 +34,6 @@ export default {
 		},
 	},
 	computed: {
-		sync_page: {
-			get() {
-				return this.page;
-			},
-			set(page) {
-				this.$emit('update:page', page);
-			},
-		},
 		computedOptions() {
 			return { chunk: 5, template: CustomPagination, ...this.options };
 		},
