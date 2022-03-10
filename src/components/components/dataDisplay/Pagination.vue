@@ -1,5 +1,11 @@
 <template>
-	<pagination :value="page" :records="records" :per-page="perPage" :options="computedOptions" @input="emitPaginate" />
+	<pagination
+		v-model="sync_page"
+		:records="records"
+		:per-page="perPage"
+		:options="computedOptions"
+		@paginate="emitPaginate"
+	/>
 </template>
 
 <script>
@@ -26,13 +32,21 @@ export default {
 		},
 	},
 	computed: {
+		sync_page: {
+			get() {
+				return this.page;
+			},
+			set(page) {
+				this.$emit('update:page', page);
+			},
+		},
 		computedOptions() {
 			return { chunk: 5, template: CustomPagination, ...this.options };
 		},
 	},
 	methods: {
-		emitPaginate(pageNum) {
-			this.$emit('paginate', pageNum);
+		emitPaginate(page) {
+			this.$emit('paginate', page);
 		},
 	},
 	components: { pagination },

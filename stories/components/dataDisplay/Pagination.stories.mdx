@@ -39,12 +39,12 @@ export const Default = (args, { argTypes }) => ({
     components: { Pagination },
     methods: {
         paginationHandler(pageNum) {
-          this.pageData = pageNum;
+          console.log('pagination to : ' + pageNum);
         },
     },
     template:
       `<div>
-          <Pagination :page="pageData" :per-page="perPage" :records="records" @paginate="paginationHandler" />
+          <Pagination :page.sync="pageData" :per-page="perPage" :records="records" @paginate="paginationHandler" />
       </div>`,
 });
 
