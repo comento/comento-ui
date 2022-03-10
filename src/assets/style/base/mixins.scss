@@ -319,3 +319,24 @@
     }
   }
 }
+
+@mixin margin-x($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin padding-y($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin flex-v-middle() {
+  @include flexbox();
+  @include align-items(center);
+}
+
+@mixin flex-column-v-middle() {
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(center);
+}
