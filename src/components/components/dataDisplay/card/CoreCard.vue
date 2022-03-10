@@ -119,7 +119,7 @@ export default {
 			}
 		}
 
-		.c-rating {
+		.c-icon-rating {
 			::v-deep.c-icon {
 				cursor: pointer;
 			}
