@@ -31,7 +31,7 @@ export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p',
 
 export const Aligns = ['left', 'center', 'right'];
 
-export const FontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal', 'bold', 'lighter', 'bolder'];
+export const FontWeights = [300, 400, 500, 600, 'normal', 'bold', 'lighter', 'bolder'];
 
 /**
  * @displayName c-typography
