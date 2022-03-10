@@ -33,6 +33,7 @@
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-pagination-2": "^3.0.91",
     "vue-svg-loader": "^0.16.0",
     "vue2-datepicker": "^3.8.2"
   },

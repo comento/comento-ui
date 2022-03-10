@@ -304,10 +304,13 @@ $info-text-color: $info;
 		cursor: pointer;
 		width: 60px;
 		height: 60px;
-		border-radius: 50%;
+		@include border-radius(50%);
 		// 아이콘 커서는 부모를 따름
 		&-icon {
 			cursor: inherit;
+		}
+		.c-button--loading {
+			@include border-radius(50%);
 		}
 	}
 }

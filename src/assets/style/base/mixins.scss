@@ -14,10 +14,12 @@
 @mixin display1 {
   @include trans-font-size(42px, 1.22);
   font-weight: $semi-bold;
+  letter-spacing: -0.02em;
 }
 @mixin headline1 {
   @include trans-font-size(32px, 1.26);
   font-weight: $semi-bold;
+  letter-spacing: -0.02em;
 }
 @mixin headline2 {
   @include trans-font-size(28px, 1.28);
