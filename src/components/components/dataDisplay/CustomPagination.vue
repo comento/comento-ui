@@ -83,7 +83,7 @@ export default {
 			line-height: 24px !important;
 			text-decoration: none;
 			color: $info;
-			font-weight: $thin;
+			font-weight: $regular;
 		}
 		&:hover {
 			background-color: $gray100;
@@ -91,7 +91,7 @@ export default {
 		&.active {
 			> a {
 				color: $primary;
-				font-weight: $bold;
+				font-weight: $semi-bold;
 			}
 		}
 	}
