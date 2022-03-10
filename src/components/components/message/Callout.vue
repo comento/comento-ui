@@ -217,7 +217,7 @@ export default {
 		word-break: keep-all;
 		white-space: normal;
 		&::v-deep strong {
-			@include f-normal();
+			@include f-regular();
 		}
 
 		@include pc {

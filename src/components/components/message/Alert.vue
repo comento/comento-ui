@@ -141,7 +141,7 @@ export default {
 		width: 100%;
 		word-break: keep-all;
 		&::v-deep strong {
-			@include f-normal();
+			@include f-regular();
 		}
 
 		@include pc {
