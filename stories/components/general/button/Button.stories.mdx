@@ -191,14 +191,16 @@ export const Default = (args, { argTypes }) => ({
                   <div style="display: flex">
                     <Button color="primary" type="fill" size="medium" loading>Fill Primary</Button>
                     <Button color="success" type="fill" size="medium" loading>Fill Success</Button>
-                    <Button color="error" type="fill" size="medium" loading>Fill Gray</Button>
-                    <Button color="secondary" type="fill" size="medium" loading>Fill Gray</Button>
+                    <Button color="error" type="fill" size="medium" loading>Fill Error</Button>
+                    <Button color="secondary" type="fill" size="medium" loading>Fill Secondary</Button>
+                    <Button color="info" type="fill" size="medium" loading>Fill Info</Button>
                   </div>
                   <div style="display: flex">
                     <Button color="primary" type="outline" size="medium" loading>Fill Primary</Button>
                     <Button color="success" type="outline" size="medium" loading>Fill Success</Button>
-                    <Button color="error" type="outline" size="medium" loading>Fill Gray</Button>
-                    <Button color="secondary" type="outline" size="medium" loading>Fill Gray</Button>
+                    <Button color="error" type="outline" size="medium" loading>Fill Error</Button>
+                    <Button color="secondary" type="outline" size="medium" loading>Fill Secondary</Button>
+                    <Button color="info" type="outline" size="medium" loading>Fill Info</Button>
                   </div>
                 </div>
         `,
@@ -230,13 +232,19 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="error" />
                         </template>
-                        Fill Gray
+                        Fill Error
                     </Button>
                     <Button color="secondary" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="secondary" />
                         </template>
-                        Fill Gray
+                        Fill Secondary
+                    </Button>
+                    <Button color="info" type="fill" size="medium" disabled>
+                      <template v-slot:left-icon>
+                        <Icon name="IconPlusMediumLine" color="secondary" />
+                      </template>
+                      Fill Info
                     </Button>
                   </div>
                   <div style="display: flex">
@@ -256,13 +264,19 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="error" />
                         </template>
-                        Fill Gray
+                        Fill Error
                     </Button>
                     <Button color="secondary" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="secondary" />
                         </template>
-                        Fill Gray
+                        Fill Secondary
+                    </Button>
+                    <Button color="info" type="outline" size="medium" disabled>
+                      <template v-slot:left-icon>
+                        <Icon name="IconPlusMediumLine" color="secondary" />
+                      </template>
+                      Fill Info
                     </Button>
                   </div>
                   <div style="display: flex">
@@ -282,13 +296,19 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="error" />
                         </template>
-                        Fill Gray
+                        Fill Error
                     </Button>
                     <Button color="secondary" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="secondary" />
                         </template>
-                        Fill Gray
+                        Fill Secondary
+                    </Button>
+                    <Button color="info" type="text" size="medium" disabled>
+                      <template v-slot:left-icon>
+                        <Icon name="IconPlusMediumLine" color="secondary" />
+                      </template>
+                      Fill Info
                     </Button>
                   </div>
                 </div>
