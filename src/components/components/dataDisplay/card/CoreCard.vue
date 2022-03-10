@@ -10,18 +10,8 @@
 				<Content type="title" v-html="title" />
 				<Content type="body" v-html="body" />
 				<RatingGroup>
-					<IconRating
-						icon-name="IconCommentMediumLine"
-						icon-color="primary"
-						:text="computedRepliesCount"
-						text-color="primary"
-					/>
-					<IconRating
-						icon-name="IconLikeMediumLine"
-						icon-color="red400"
-						:text="computedLikeCount"
-						text-color="red600"
-					/>
+					<IconRating icon-name="IconCommentMediumLine" color="primary" :text="computedRepliesCount" />
+					<IconRating icon-name="IconLikeMediumLine" color="error" :text="computedLikeCount" />
 				</RatingGroup>
 			</div>
 
