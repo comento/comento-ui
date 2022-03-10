@@ -10,13 +10,13 @@
 				<Content type="title" v-html="title" />
 				<Content type="body" v-html="body" />
 				<RatingGroup>
-					<Rating
+					<IconRating
 						icon-name="IconCommentMediumLine"
 						icon-color="primary"
 						:text="computedRepliesCount"
 						text-color="primary"
 					/>
-					<Rating
+					<IconRating
 						icon-name="IconLikeMediumLine"
 						icon-color="red400"
 						:text="computedLikeCount"
@@ -46,7 +46,7 @@ import Divider from '@/components/elements/utility/Divider';
 import NarrowButton from '@/components/components/general/button/NarrowButton';
 import Content from '@/components/components/dataDisplay/content/Content';
 import RatingGroup from '@/components/components/dataDisplay/rating/RatingGroup';
-import Rating from '@/components/components/dataDisplay/rating/Rating';
+import IconRating from '@/components/components/dataDisplay/rating/IconRating';
 import Typography from '@/components/elements/core/typography/Typography';
 
 /**
@@ -101,7 +101,7 @@ export default {
 		},
 	},
 	components: {
-		Rating,
+		IconRating,
 		RatingGroup,
 		NarrowButton,
 		Divider,
