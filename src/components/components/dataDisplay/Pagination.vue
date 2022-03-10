@@ -1,11 +1,13 @@
 <template>
-	<pagination
-		v-model="sync_page"
-		:records="records"
-		:per-page="perPage"
-		:options="computedOptions"
-		@paginate="emitPaginate"
-	/>
+	<div class="flex justify-center w-full">
+		<pagination
+			v-model="sync_page"
+			:records="records"
+			:per-page="perPage"
+			:options="computedOptions"
+			@paginate="emitPaginate"
+		/>
+	</div>
 </template>
 
 <script>
