@@ -13,66 +13,65 @@
 
 @mixin display1 {
   @include trans-font-size(42px, 1.22);
-  font-weight: $bold;
+  font-weight: $semi-bold;
+  letter-spacing: -0.02em;
 }
 @mixin headline1 {
   @include trans-font-size(32px, 1.26);
-  font-weight: $bold;
+  font-weight: $semi-bold;
+  letter-spacing: -0.02em;
 }
 @mixin headline2 {
   @include trans-font-size(28px, 1.28);
-  font-weight: $bold;
+  font-weight: $semi-bold;
 }
 @mixin headline3 {
   @include trans-font-size(26px, 1.28);
-  font-weight: $bold;
+  font-weight: $semi-bold;
 }
 @mixin headline4 {
   @include trans-font-size(24px, 1.28);
-  font-weight: $bold;
+  font-weight: $semi-bold;
 }
 @mixin headline5 {
   @include trans-font-size(22px, 1.26);
-  font-weight: $normal;
+  font-weight: $semi-bold;
 }
 @mixin headline6 {
   @include trans-font-size(18px, 1.38);
-  font-weight: $bold;
+  font-weight: $regular;
 }
 @mixin body1 {
   @include trans-font-size(16px, 1.54);
-  font-weight: $normal;
+  font-weight: $regular;
 }
 @mixin body2 {
   @include trans-font-size(14px, 1.4);
-  font-weight: $normal;
+  font-weight: $regular;
 }
 @mixin caption1 {
   @include trans-font-size(12px, 1.22);
-  font-weight: $normal;
+  font-weight: $regular;
 }
 @mixin caption2 {
   @include trans-font-size(10px, 1.26, floor);
-  font-weight: $normal;
-}
-@mixin f-thin {
-  font-weight: $thin;
+  font-weight: $regular;
 }
 
 @mixin f-light {
   font-weight: $light;
 }
 
-@mixin f-normal {
-  font-weight: $normal !important;
+@mixin f-regular {
+  font-weight: $regular !important;
 }
 
-@mixin f-medi {
-  font-weight: $medi;
+@mixin f-medium {
+  font-weight: $medium;
 }
 
 @mixin f-bold {
-  font-weight: $bold;
+  font-weight: $semi-bold;
 }
 @mixin clearfix {
   *zoom: 1;

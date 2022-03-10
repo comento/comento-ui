@@ -291,7 +291,7 @@ $info-text-color: $info;
 		width: 100%;
 	}
 	&.text {
-		font-weight: normal;
+		font-weight: $regular;
 		background: transparent;
 		border: none;
 		color: $gray500;
@@ -304,10 +304,13 @@ $info-text-color: $info;
 		cursor: pointer;
 		width: 60px;
 		height: 60px;
-		border-radius: 50%;
+		@include border-radius(50%);
 		// 아이콘 커서는 부모를 따름
 		&-icon {
 			cursor: inherit;
+		}
+		.c-button--loading {
+			@include border-radius(50%);
 		}
 	}
 }

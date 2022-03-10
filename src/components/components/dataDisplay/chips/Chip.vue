@@ -258,7 +258,7 @@ export default {
 		@include caption2();
 		height: 16px;
 		padding: 1.5px 4px;
-		font-weight: normal;
+		font-weight: $regular;
 		&.clickable-fill {
 			border-radius: 10px;
 			padding: 1.5px 6px;
@@ -272,7 +272,7 @@ export default {
 		@include caption1();
 		height: 24px;
 		padding: 4.5px 8px;
-		font-weight: normal;
+		font-weight: $regular;
 		&.clickable-fill {
 			border-radius: 12px;
 			padding: 5.5px 10px;
@@ -286,7 +286,7 @@ export default {
 		@include body2();
 		height: 30px;
 		padding: 5px 10px;
-		font-weight: normal;
+		font-weight: $regular;
 		&.clickable-fill {
 			border-radius: 15px;
 			padding: 5px 14px;
@@ -299,7 +299,7 @@ export default {
 	&.xlarge {
 		@include body1();
 		padding: 4.5px 12px;
-		font-weight: normal;
+		font-weight: $regular;
 		&.clickable-fill {
 			border-radius: 19px;
 			padding: 5px 16px;
