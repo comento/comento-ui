@@ -291,7 +291,7 @@ $info-text-color: $info;
 		width: 100%;
 	}
 	&.text {
-		font-weight: normal;
+		font-weight: $regular;
 		background: transparent;
 		border: none;
 		color: $gray500;

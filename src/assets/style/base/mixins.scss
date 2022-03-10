@@ -33,7 +33,7 @@
 }
 @mixin headline5 {
   @include trans-font-size(22px, 1.26);
-  font-weight: $normal;
+  font-weight: $regular;
 }
 @mixin headline6 {
   @include trans-font-size(18px, 1.38);
@@ -41,19 +41,19 @@
 }
 @mixin body1 {
   @include trans-font-size(16px, 1.54);
-  font-weight: $normal;
+  font-weight: $regular;
 }
 @mixin body2 {
   @include trans-font-size(14px, 1.4);
-  font-weight: $normal;
+  font-weight: $regular;
 }
 @mixin caption1 {
   @include trans-font-size(12px, 1.22);
-  font-weight: $normal;
+  font-weight: $regular;
 }
 @mixin caption2 {
   @include trans-font-size(10px, 1.26, floor);
-  font-weight: $normal;
+  font-weight: $regular;
 }
 
 @mixin f-light {
@@ -61,7 +61,7 @@
 }
 
 @mixin f-normal {
-  font-weight: $normal !important;
+  font-weight: $regular !important;
 }
 
 @mixin f-medi {
