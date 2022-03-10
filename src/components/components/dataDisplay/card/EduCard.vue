@@ -139,18 +139,12 @@ export default {
 	cursor: pointer;
 
 	&--image {
-		position: absolute;
-		left: 50%;
-		@include transform(translateX(-50%));
-		border: none;
-		max-width: none;
+		width: 100%;
 		height: 100%;
 		@include opacity(0.9);
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			position: relative;
-			@include flexbox();
-			border: none;
 			@include border-radius(4px);
 			overflow: hidden;
 			width: 100%;
@@ -193,23 +187,23 @@ export default {
 
 	@keyframes scale-up-center {
 		0% {
-			-webkit-transform: translateX(-50%) scale(1);
-			transform: translateX(-50%) scale(1);
+			-webkit-transform: scale(1);
+			transform: scale(1);
 		}
 		100% {
-			-webkit-transform: translateX(-50%) scale(1.07);
-			transform: translateX(-50%) scale(1.07);
+			-webkit-transform: scale(1.07);
+			transform: scale(1.07);
 		}
 	}
 
 	@keyframes scale-down-center {
 		0% {
-			-webkit-transform: translateX(-50%) scale(1.07);
-			transform: translateX(-50%) scale(1.07);
+			-webkit-transform: scale(1.07);
+			transform: scale(1.07);
 		}
 		100% {
-			-webkit-transform: translateX(-50%) scale(1);
-			transform: translateX(-50%) scale(1);
+			-webkit-transform: scale(1);
+			transform: scale(1);
 		}
 	}
 
