@@ -55,9 +55,6 @@
   @include trans-font-size(10px, 1.26, floor);
   font-weight: $normal;
 }
-@mixin f-thin {
-  font-weight: $thin;
-}
 
 @mixin f-light {
   font-weight: $light;
