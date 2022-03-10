@@ -11,6 +11,9 @@
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 
+/**
+ * @displayName c-icon-rating
+ */
 export default {
 	name: 'IconRating',
 	props: {
