@@ -85,9 +85,6 @@ export default {
 		category: {
 			type: String,
 		},
-		title: {
-			type: String,
-		},
 		scoreAverage: {
 			type: Number,
 			default: 0,
@@ -178,6 +175,7 @@ export default {
 			background-color: #46617f;
 			padding: 8px 12px 8px 10px;
 			border-radius: 0px 30px 30px 0;
+			min-width: 72px;
 		}
 	}
 
@@ -241,7 +239,6 @@ export default {
 		&--title {
 			margin-top: 16px;
 			height: 75px;
-			@include ellipsis(2);
 		}
 
 		&--subtitle {
@@ -249,6 +246,7 @@ export default {
 			&-category {
 				background-color: #46617f;
 				padding: 9px 14px 9px 16px;
+				min-width: 89px;
 			}
 		}
 
