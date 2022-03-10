@@ -8,9 +8,9 @@
 		</Box>
 		<div class="c-reply--append">
 			<Label type="dataDisplay" class="c-reply--date">
-				<c-typography type="caption2" color="gray400">{{ date }}</c-typography>
+				<Typography type="caption2" color="gray400">{{ date }}</Typography>
 			</Label>
-			<Button v-if="showReport" type="text" color="gray" size="small" @click="clickReportButton()"> 신고 </Button>
+			<Button v-if="showReport" type="text" color="info" size="small" @click="clickReportButton()"> 신고 </Button>
 		</div>
 	</div>
 </template>
