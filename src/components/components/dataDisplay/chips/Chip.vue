@@ -6,15 +6,24 @@
 		v-on="$listeners"
 	>
 		<slot />
+		<Icon
+			v-if="withCloseButton"
+			:name="computedCloseButtonIconName"
+			:color="computedCloseButtonColor"
+			class="ml-4 c-pointer"
+			@click.stop="handleClickCloseButton"
+		/>
 	</span>
 </template>
 
 <script>
 import paddingMixin from '@/mixins/paddingMixin';
+import Icon from '@/components/elements/core/icon/Icon';
 
 export const ChipColors = ['primary', 'info', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
+export const ChipSizesWithCloseButton = ['large', 'xlarge'];
 
 /**
  * 작은 정보를 전달하기 위해 사용
@@ -72,6 +81,9 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		withCloseButton: {
+			type: Boolean,
+		},
 	},
 	computed: {
 		computedType() {
@@ -107,7 +119,25 @@ export default {
 				clickable: this.clickable,
 			};
 		},
+		computedCloseButtonIconName() {
+			if (!ChipSizesWithCloseButton.includes(this.size)) return;
+			const closeButtonIconSize = {
+				xlarge: 'medium',
+				large: 'small',
+			}[this.size];
+			return `IconClose${closeButtonIconSize[0].toUpperCase() + closeButtonIconSize.slice(1)}Line`;
+		},
+		computedCloseButtonColor() {
+			if (this.color === 'success') return 'white';
+			return this.color;
+		},
 	},
+	methods: {
+		handleClickCloseButton() {
+			this.$emit('clickCloseButton');
+		},
+	},
+	components: { Icon },
 };
 </script>
 

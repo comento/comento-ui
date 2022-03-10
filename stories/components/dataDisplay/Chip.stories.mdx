@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Chip, { ChipColors, ChipSizes, ChipTypes } from '@/components/components/dataDisplay/chips/Chip';
+import Chip, { ChipColors, ChipSizes, ChipTypes, ChipSizesWithCloseButton } from '@/components/components/dataDisplay/chips/Chip';
 import Typography from "@/components/elements/core/typography/Typography";
 
 <Meta
@@ -92,6 +92,11 @@ export const Basic = (args, { argTypes }) => ({
                                         <template v-for="(size, index) in ChipSizes">
                                             <Chip :type="type" :color="color" :size="size" class="mr-8">Chip</Chip>
                                         </template>
+                                        <template v-if="type === 'fill'">
+                                          <template v-for="(size, index) in ChipSizesWithCloseButton">
+                                            <Chip :type="type" :color="color" :size="size" with-close-button class="mr-8" @clickCloseButton="handleClickChipClosebutton" @click="handleClick">Chip</Chip>
+                                          </template>
+                                        </template>
                                     </div>
                                 </div>
                             </template>
@@ -104,7 +109,16 @@ export const Basic = (args, { argTypes }) => ({
                     ChipColors,
                     ChipSizes,
                     ChipTypes,
+                    ChipSizesWithCloseButton,
                 }
+            },
+            methods: {
+                handleClickChipClosebutton() {
+                    alert('clickChipCloseButton')
+                },
+                handleClick() {
+                    console.info('handleclick')
+                },
             },
             components: { Chip,Typography },
         }}
