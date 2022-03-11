@@ -173,7 +173,7 @@ export default {
 		left: 50%;
 	}
 	&--logo {
-		background-image: url('https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/images/icon/icon-comento-typo-white-logo.svg');
+		background-image: url('https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/images/icon/icon-comento-typo-logo.svg');
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;
