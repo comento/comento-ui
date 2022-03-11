@@ -4,13 +4,13 @@
 			<slot name="user-information" />
 		</div>
 		<Box class="c-reply--box" :paddings="[12, 16, 12, 16]" background-color="gray100">
-			<Typography type="body2" v-html="nl2br(value)" />
+			<Typography type="body2" color="gray700" v-html="nl2br(value)" />
 		</Box>
 		<div class="c-reply--append">
-			<Label type="dataDisplay" class="c-reply--date" v-html="date" />
-			<Button v-if="showReport" type="text" color="secondary" size="small" @click="clickReportButton()">
-				신고
-			</Button>
+			<Label type="dataDisplay" class="c-reply--date">
+				<Typography type="caption2" color="gray400">{{ date }}</Typography>
+			</Label>
+			<Button v-if="showReport" type="text" color="info" size="small" @click="clickReportButton()"> 신고 </Button>
 		</div>
 	</div>
 </template>
@@ -59,19 +59,19 @@ export default {
 
 <style lang="scss" scoped>
 .c-reply {
-	&--user-information {
-		margin-bottom: 4px;
-	}
 	&--box {
-		border-radius: 20px;
+		margin-top: 4px;
+		@include border-radius(4px);
 	}
 	&--append {
 		@include flexbox();
 		@include flex-direction(row);
 		@include justify-content(space-between);
 		@include align-items(center);
-		padding: 0 8px 0 16px;
-		height: 24px;
+	}
+
+	&--date {
+		padding: 5.5px 8px;
 	}
 }
 </style>

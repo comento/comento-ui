@@ -29,9 +29,7 @@
 					{{ captionLeft }}
 				</Typography>
 				<Divider v-show="captionRight" vertical color="gray200" class="mx-8" />
-				<Typography :type="getTypography('caption')" element="span" color="gray400">
-					{{ captionRight }}
-				</Typography>
+				<Typography type="caption1" element="span" color="gray400"> {{ captionRight }}</Typography>
 				<slot name="additionalCaptions" />
 			</div>
 		</div>
@@ -141,25 +139,16 @@ export default {
 	cursor: pointer;
 
 	&--image {
-		position: absolute;
-		left: 50%;
-		border: none;
-		max-width: none;
+		width: 100%;
 		height: 100%;
-		@include transform(translateX(-50%));
 		@include opacity(0.9);
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			position: relative;
-			@include flexbox();
-			border: none;
-			@include border-radius(8px);
+			@include border-radius(4px);
 			overflow: hidden;
 			width: 100%;
 			height: var(--image-height);
-			@include pc {
-				@include border-radius(10px);
-			}
 		}
 	}
 
@@ -198,23 +187,23 @@ export default {
 
 	@keyframes scale-up-center {
 		0% {
-			-webkit-transform: translateX(-50%) scale(1);
-			transform: translateX(-50%) scale(1);
+			-webkit-transform: scale(1);
+			transform: scale(1);
 		}
 		100% {
-			-webkit-transform: translateX(-50%) scale(1.07);
-			transform: translateX(-50%) scale(1.07);
+			-webkit-transform: scale(1.07);
+			transform: scale(1.07);
 		}
 	}
 
 	@keyframes scale-down-center {
 		0% {
-			-webkit-transform: translateX(-50%) scale(1.07);
-			transform: translateX(-50%) scale(1.07);
+			-webkit-transform: scale(1.07);
+			transform: scale(1.07);
 		}
 		100% {
-			-webkit-transform: translateX(-50%) scale(1);
-			transform: translateX(-50%) scale(1);
+			-webkit-transform: scale(1);
+			transform: scale(1);
 		}
 	}
 

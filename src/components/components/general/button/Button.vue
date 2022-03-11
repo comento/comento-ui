@@ -6,10 +6,12 @@
 			computedColor,
 			computedFull,
 			computedType,
+			computedGhostTypeClass,
 			computedLoading,
 			computedFixed,
 			computedAbsolute,
 			computedShadow,
+			{ 'c-button--fab': isFabType },
 		]"
 		v-bind="$attrs"
 		:disabled="disabled"
@@ -21,22 +23,27 @@
 				<Loader :size="computedLoaderSize" :reversed="isFillType" :color="color" />
 			</div>
 		</template>
-		<div class="c-button--icon" :class="setIconSpacing('left')">
-			<slot name="left-icon" />
-		</div>
-		<slot />
-		<div class="c-button--icon" :class="setIconSpacing('right')">
-			<slot name="right-icon" />
-		</div>
+		<Icon v-if="showIcon" :name="fabIconName" color="white" class="c-button--fab-icon" />
+		<template v-else>
+			<div class="c-button--icon" :class="setIconSpacing('left')">
+				<slot name="left-icon" />
+			</div>
+			<slot />
+			<div class="c-button--icon" :class="setIconSpacing('right')">
+				<slot name="right-icon" />
+			</div>
+		</template>
 	</button>
 </template>
 
 <script>
 import Loader from '@/components/components/other/Loader';
+import Icon from '@/components/elements/core/icon/Icon';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
-export const buttonTypes = ['fill', 'outlined', 'text'];
+export const ghostTypeButtonColors = ['primary', 'info', 'white'];
+export const buttonTypes = ['fill', 'outline', 'ghost', 'text', 'fab'];
 
 /**
  * @displayName c-button
@@ -62,7 +69,7 @@ export default {
 			type: String,
 			default: 'primary',
 			validator(value) {
-				const isValid = buttonColors.includes(value);
+				const isValid = [...buttonColors, ...ghostTypeButtonColors].includes(value);
 				if (!isValid) {
 					console.error(`${value} is not a valid value of Button color`);
 				}
@@ -70,7 +77,7 @@ export default {
 			},
 		},
 		/**
-		 * 타입(fill, outlined, text)
+		 * 타입(fill, outline, text)
 		 */
 		type: {
 			type: String,
@@ -103,9 +110,17 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		fabIconName: {
+			type: String,
+			default: 'IconWriting2XLargeLine',
+		},
 	},
 	computed: {
+		isFabType() {
+			return this.type === 'fab';
+		},
 		computedSize() {
+			if (this.isFabType) return;
 			return this.size;
 		},
 		computedColor() {
@@ -113,6 +128,9 @@ export default {
 		},
 		computedType() {
 			return this.type;
+		},
+		computedGhostTypeClass() {
+			return this.type === 'ghost' ? 'outline' : '';
 		},
 		computedFull() {
 			return { full: this.full };
@@ -139,6 +157,9 @@ export default {
 		isFillType() {
 			return this.type === 'fill';
 		},
+		showIcon() {
+			return this.isFabType;
+		},
 	},
 	methods: {
 		setIconSpacing(position) {
@@ -146,7 +167,7 @@ export default {
 			return this.$slots[`${position}-icon`] && `m${oppositePosition}-${this.computedIconMargin}`;
 		},
 	},
-	components: { Loader },
+	components: { Icon, Loader },
 };
 </script>
 
@@ -174,6 +195,21 @@ $secondary-text-color: $secondary;
 $info-default-background-color: $gray100;
 $info-disabled-color: $gray200;
 $info-text-color: $info;
+
+@mixin ghost-style() {
+	&.ghost {
+		&:disabled {
+			background: none !important;
+		}
+		@content;
+	}
+}
+
+@mixin loading-style() {
+	.c-button--loading {
+		@content;
+	}
+}
 
 .c-button {
 	color: $white;
@@ -255,7 +291,7 @@ $info-text-color: $info;
 		width: 100%;
 	}
 	&.text {
-		font-weight: normal;
+		font-weight: $regular;
 		background: transparent;
 		border: none;
 		color: $gray500;
@@ -264,18 +300,25 @@ $info-text-color: $info;
 			background-color: $white;
 		}
 	}
+	&--fab {
+		cursor: pointer;
+		width: 60px;
+		height: 60px;
+		@include border-radius(50%);
+		// 아이콘 커서는 부모를 따름
+		&-icon {
+			cursor: inherit;
+		}
+		.c-button--loading {
+			@include border-radius(50%);
+		}
+	}
 }
 
 .primary {
 	background-color: $primary-background-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $primary-hover-background-color;
-	}
-	@include mobile {
-		@include remove-active-and-focus($primary-background-color);
 	}
 	&:disabled {
 		background-color: $primary-disabled-background-color;
@@ -292,14 +335,8 @@ $info-text-color: $info;
 
 	&.text {
 		color: $primary-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $primary-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			.c-button--icon::v-deep .c-icon {
@@ -309,18 +346,12 @@ $info-text-color: $info;
 			background: none;
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $primary-text-color;
 		color: $primary-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $primary-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $primary-disabled-background-color;
@@ -330,8 +361,23 @@ $info-text-color: $info;
 				fill: $primary-disabled-background-color !important;
 			}
 		}
-		.c-button--loading {
+		@include loading-style {
 			background-color: $white;
+		}
+		// type ghost
+		@include ghost-style {
+			background-color: transparent;
+			@include state-style {
+				background: rgba(42, 125, 225, 0.2);
+			}
+			&:disabled {
+				color: $blue600;
+				border-color: $blue600;
+				opacity: 0.2;
+			}
+			@include loading-style {
+				background-color: transparent;
+			}
 		}
 	}
 }
@@ -339,14 +385,8 @@ $info-text-color: $info;
 .light-primary {
 	background-color: $blue100;
 	color: $blue600;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $blue400;
-	}
-	@include mobile {
-		@include remove-active-and-focus($blue100);
 	}
 	&:disabled {
 		color: $blue100;
@@ -365,14 +405,8 @@ $info-text-color: $info;
 
 .success {
 	background-color: $success-background-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $success-hover-background-color;
-	}
-	@include mobile {
-		@include remove-active-and-focus($success-background-color);
 	}
 	&:disabled {
 		background-color: $success-disabled-background-color;
@@ -389,16 +423,9 @@ $info-text-color: $info;
 
 	&.text {
 		color: $success-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $success-disabled-background-color;
 		}
-		@include mobile {
-			@include remove-active-and-focus();
-		}
-
 		&:disabled {
 			color: $success-disabled-background-color;
 			background: none;
@@ -407,18 +434,12 @@ $info-text-color: $info;
 			}
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $success-text-color;
 		color: $success-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $success-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $success-disabled-background-color;
@@ -437,14 +458,8 @@ $info-text-color: $info;
 .info {
 	background-color: $info-default-background-color;
 	color: $info-text-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $gray250;
-	}
-	@include mobile {
-		@include remove-active-and-focus($info-default-background-color);
 	}
 	&:disabled {
 		background-color: $gray000;
@@ -461,14 +476,8 @@ $info-text-color: $info;
 	}
 	&.text {
 		color: $info-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $info-default-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $info-disabled-color;
@@ -478,18 +487,12 @@ $info-text-color: $info;
 			}
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $gray500;
 		color: $info-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $gray100;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $info-disabled-color;
@@ -499,22 +502,29 @@ $info-text-color: $info;
 				fill: $info-disabled-color !important;
 			}
 		}
-		.c-button--loading {
+		@include loading-style {
 			background-color: $white;
+		}
+		@include ghost-style {
+			color: $gray850;
+			border-color: $gray850;
+			@include state-style {
+				background: rgba(32, 35, 37, 0.2);
+			}
+			&:disabled {
+				opacity: 0.2;
+			}
+			@include loading-style {
+				background-color: transparent;
+			}
 		}
 	}
 }
 
 .error {
 	background-color: $error-background-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $error-hover-background-color;
-	}
-	@include mobile {
-		@include remove-active-and-focus($error-background-color);
 	}
 	&:disabled {
 		background-color: $error-disabled-background-color;
@@ -530,14 +540,8 @@ $info-text-color: $info;
 	}
 	&.text {
 		color: $error-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $red000;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $error-disabled-background-color;
@@ -547,18 +551,12 @@ $info-text-color: $info;
 			}
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $error-text-color;
 		color: $error-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $error-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $error-disabled-background-color;
@@ -576,14 +574,8 @@ $info-text-color: $info;
 
 .secondary {
 	background-color: $secondary-background-color;
-	&:hover,
-	&:focus,
-	&:active,
-	&.hover-test {
+	@include state-style {
 		background-color: $secondary-hover-background-color;
-	}
-	@include mobile {
-		@include remove-active-and-focus($secondary-background-color);
 	}
 	&:disabled {
 		background-color: $secondary-disabled-background-color;
@@ -599,14 +591,8 @@ $info-text-color: $info;
 	}
 	&.text {
 		color: $secondary-text-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $orange000;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $secondary-disabled-background-color;
@@ -616,18 +602,12 @@ $info-text-color: $info;
 			}
 		}
 	}
-	&.outlined {
+	&.outline {
 		background-color: transparent;
 		border: 1px solid $secondary-background-color;
 		color: $secondary-background-color;
-		&:hover,
-		&:focus,
-		&:active,
-		&.hover-test {
+		@include state-style {
 			background-color: $secondary-disabled-background-color;
-		}
-		@include mobile {
-			@include remove-active-and-focus();
 		}
 		&:disabled {
 			color: $secondary-disabled-background-color;
@@ -640,6 +620,21 @@ $info-text-color: $info;
 		.c-button--loading {
 			background-color: $white;
 		}
+	}
+}
+
+.white {
+	&.outline {
+		background-color: transparent;
+		border: 1px solid $white;
+		color: $white;
+		@include state-style {
+			background: rgba(255, 255, 255, 0.2);
+		}
+		&:disabled {
+			opacity: 0.2;
+		}
+		@include ghost-style();
 	}
 }
 

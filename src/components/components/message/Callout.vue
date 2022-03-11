@@ -3,13 +3,14 @@
 		<div
 			class="c-application c-callout--container"
 			:class="[computedSize, computedType, computedFull]"
+			:style="[computedPadding]"
 			v-bind="$attrs"
 			v-on="$listeners"
 		>
 			<div class="c-callout--wrapper">
 				<!-- 아이콘 -->
 				<slot v-if="$slots['icon']" name="icon" />
-				<Icon v-else :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+				<Icon v-else :name="iconName" :color="computedIconColor" />
 
 				<!-- 문구 -->
 				<Typography class="c-callout--message" color="gray700" :type="computedFontType">
@@ -20,6 +21,7 @@
 				<Icon
 					v-if="closable"
 					class="c-callout--close-button c-pointer"
+					color="gray300"
 					:name="computedCloseIconName"
 					@click.stop.capture="handleClose"
 				/>
@@ -31,8 +33,9 @@
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
+import paddingMixin from '@/mixins/paddingMixin';
 
-export const CalloutTypes = ['information', 'alert', 'success'];
+export const CalloutTypes = ['information', 'error', 'success', 'notice'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
 
 /**
@@ -40,9 +43,10 @@ export const CalloutSizes = ['xsmall', 'small', 'medium'];
  */
 export default {
 	name: 'Callout',
+	mixins: [paddingMixin],
 	props: {
 		/**
-		 * 타입(information, alert, success)
+		 * 타입(information, error, success, notice)
 		 */
 		type: {
 			type: String,
@@ -83,18 +87,24 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		paddings: {
+			type: Array,
+			default() {
+				return null;
+			},
+		},
 	},
 	computed: {
 		computedFull() {
 			return this.full && 'full';
 		},
 		computedIconColor() {
-			const iconColors = {
-				information: 'gray500',
-				alert: 'red600',
-				success: 'blue600',
-			};
-			return iconColors[this.type];
+			return {
+				information: 'gray600',
+				error: 'red600',
+				success: 'green600',
+				notice: 'blue600',
+			}[this.type];
 		},
 		computedSize() {
 			return this.size;
@@ -103,12 +113,11 @@ export default {
 			return this.type;
 		},
 		computedFontType() {
-			const mapSizeToFontType = {
+			return {
 				medium: 'body2',
 				small: 'caption1',
 				xsmall: 'caption2',
-			};
-			return mapSizeToFontType[this.size];
+			}[this.size];
 		},
 		computedCloseIconName() {
 			const iconSize = this.size === 'xsmall' ? 'Small' : 'Medium';
@@ -117,16 +126,25 @@ export default {
 		computedTransition() {
 			return this.closable ? 'callout-fade' : null;
 		},
+		computedPadding() {
+			return this.paddings ? { ...this.$_setPadding(this.paddings) } : null;
+		},
+		iconName() {
+			const name = {
+				information: 'Exclamation',
+				error: 'Exclamation',
+				notice: 'Megaphone',
+				success: 'Selected',
+			}[this.type];
+			const size = {
+				xsmall: 'Small',
+				small: 'Medium',
+				medium: 'Medium',
+			}[this.size];
+			return `Icon${name + size}Line`;
+		},
 	},
 	methods: {
-		mapIconNameFromSize(size) {
-			const iconSet = {
-				xsmall: 'IconExclamationSmallFill',
-				small: 'IconExclamationMediumLine',
-				medium: 'IconExclamationLargeLine',
-			};
-			return iconSet[size];
-		},
 		handleClose() {
 			this.$emit('closeCallout');
 		},
@@ -160,28 +178,31 @@ export default {
 
 		&.xsmall {
 			padding: 4px 8px;
-			border-radius: 4px;
-			@include callout-icon-margin-right(4px);
+			border-radius: 6px;
+			@include callout-icon-margin-right(5px);
 		}
 		&.small {
 			padding: 8px;
-			border-radius: 4px;
-			@include callout-icon-margin-right(6px);
+			border-radius: 6px;
+			@include callout-icon-margin-right(7px);
 		}
 		&.medium {
-			padding: 16px 16px 16px 16px;
-			border-radius: 6px;
-			@include callout-icon-margin-right(8px);
+			padding: 12px;
+			border-radius: 8px;
+			@include callout-icon-margin-right(7px);
 		}
 
 		// type
 		&.information {
 			background-color: $gray000;
 		}
-		&.alert {
+		&.error {
 			background-color: $red000;
 		}
 		&.success {
+			background-color: $green000;
+		}
+		&.notice {
 			background-color: $blue000;
 		}
 	}
@@ -196,7 +217,7 @@ export default {
 		word-break: keep-all;
 		white-space: normal;
 		&::v-deep strong {
-			@include f-normal();
+			@include f-regular();
 		}
 
 		@include pc {

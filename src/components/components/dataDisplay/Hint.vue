@@ -12,7 +12,7 @@ import customValidator from '@/utils/custom-validator.js';
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 
-export const color = ['primary', 'success', 'secondary', 'error'];
+export const color = ['primary', 'success', 'secondary', 'error', 'info'];
 
 /**
  * @displayName c-hint
@@ -41,7 +41,7 @@ export default {
 		},
 		computedTextColor() {
 			if (this.color === 'secondary') {
-				return 'gray700';
+				return 'gray600';
 			} else {
 				return this.color;
 			}

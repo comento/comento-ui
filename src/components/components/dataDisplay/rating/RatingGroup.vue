@@ -14,12 +14,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-rating {
-	&-group {
-		@include flexbox();
-		@include flex-direction(row);
-	}
+.c-rating-group {
+	@include flexbox();
+	@include flex-direction(row);
+}
 
+.c-icon-rating,
+.c-text-rating {
 	margin-right: 12px;
 	&:last-child {
 		margin-right: 0;

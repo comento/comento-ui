@@ -10,18 +10,8 @@
 				<Content type="title" v-html="title" />
 				<Content type="body" v-html="body" />
 				<RatingGroup>
-					<Rating
-						icon-name="IconCommentMediumLine"
-						icon-color="primary"
-						:text="computedRepliesCount"
-						text-color="primary"
-					/>
-					<Rating
-						icon-name="IconLikeMediumLine"
-						icon-color="red400"
-						:text="computedLikeCount"
-						text-color="red600"
-					/>
+					<IconRating icon-name="IconCommentMediumLine" color="primary" :text="computedRepliesCount" />
+					<IconRating icon-name="IconLikeMediumLine" color="error" :text="computedLikeCount" />
 				</RatingGroup>
 			</div>
 
@@ -46,7 +36,7 @@ import Divider from '@/components/elements/utility/Divider';
 import NarrowButton from '@/components/components/general/button/NarrowButton';
 import Content from '@/components/components/dataDisplay/content/Content';
 import RatingGroup from '@/components/components/dataDisplay/rating/RatingGroup';
-import Rating from '@/components/components/dataDisplay/rating/Rating';
+import IconRating from '@/components/components/dataDisplay/rating/IconRating';
 import Typography from '@/components/elements/core/typography/Typography';
 
 /**
@@ -101,7 +91,7 @@ export default {
 		},
 	},
 	components: {
-		Rating,
+		IconRating,
 		RatingGroup,
 		NarrowButton,
 		Divider,
@@ -129,7 +119,7 @@ export default {
 			}
 		}
 
-		.c-rating {
+		.c-icon-rating {
 			::v-deep.c-icon {
 				cursor: pointer;
 			}

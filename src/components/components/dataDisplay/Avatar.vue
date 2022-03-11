@@ -2,9 +2,9 @@
 	<div class="c-application c-avatar--container" :class="[computedSize]">
 		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
 		<div class="c-avatar--item">
-			<Icon v-if="isProfileType" :name="computedIconName" />
+			<Icon v-if="isProfileType" :name="computedIconName" :color="computedColorName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
-			<Typography v-if="isTextType" :type="computedTypography" :font-weight="700" color="white">
+			<Typography v-if="isNicknameType" :type="computedTypography" :font-weight="700" color="white">
 				{{ text || computedRandomText }}
 			</Typography>
 		</div>
@@ -17,7 +17,7 @@ import Icon from '@/components/elements/core/icon/Icon';
 import uniqueId from '@/utils/unique-id';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
-export const avatarTypes = ['text', 'profile', 'logo', 'image'];
+export const avatarTypes = ['nickname', 'profile', 'logo', 'image'];
 const avatarColors = ['#f5b3b3', '#f3c499', '#f0db80', '#b4d2a9', '#91cfd3', '#acc5ea', '#ceb9e2', '#b0aba4'];
 
 /**
@@ -27,11 +27,11 @@ export default {
 	name: 'Avatar',
 	props: {
 		/**
-		 * 타입(text, profile, logo, image)
+		 * 타입(nickname, profile, logo, image)
 		 */
 		type: {
 			type: String,
-			default: 'profile',
+			default: 'nickname',
 			validator(value) {
 				return avatarTypes.includes(value);
 			},
@@ -61,6 +61,13 @@ export default {
 			type: Number,
 			default: -1,
 		},
+		/**
+		 * profile type일 때 색상
+		 */
+		color: {
+			type: String,
+			default: 'gray300',
+		},
 	},
 	data() {
 		return {
@@ -68,8 +75,8 @@ export default {
 		};
 	},
 	computed: {
-		isTextType() {
-			return this.type === 'text';
+		isNicknameType() {
+			return this.type === 'nickname';
 		},
 		isProfileType() {
 			return this.type === 'profile';
@@ -90,7 +97,7 @@ export default {
 			if (this.isImageType) {
 				return { 'background-image': `url(${this.src})` };
 			}
-			if (this.isTextType) {
+			if (this.isNicknameType) {
 				return { background: this.computedRandomBackground };
 			}
 			return {};
@@ -119,12 +126,15 @@ export default {
 		},
 		computedIconName() {
 			const iconBySize = {
-				xsmall: 'Small',
+				xsmall: 'Medium',
 				small: 'Large',
 				medium: 'XLarge',
 				large: '2XLarge',
 			};
 			return `IconProfile${iconBySize[this.size]}Fill`;
+		},
+		computedColorName() {
+			return this.color.toLowerCase();
 		},
 	},
 	components: {
@@ -153,7 +163,7 @@ export default {
 		background-size: 100% 100%;
 	}
 	&.logo {
-		background: $green600;
+		background: $primary;
 	}
 	&--item {
 		display: flex;
@@ -163,25 +173,26 @@ export default {
 		left: 50%;
 	}
 	&--logo {
-		background-image: url('https://comento-asset.s3.ap-northeast-2.amazonaws.com/images/comento-ui/misc/symbol-comento-large-fill.svg');
+		background-image: url('https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/images/icon/icon-comento-typo-white-logo.svg');
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
+		background-position: center;
 
 		&.xsmall {
-			width: 12px;
-			height: 12px;
-		}
-		&.small {
 			width: 24px;
 			height: 24px;
 		}
-		&.medium {
-			width: 28px;
-			height: 28px;
-		}
-		&.large {
+		&.small {
 			width: 40px;
 			height: 40px;
+		}
+		&.medium {
+			width: 48px;
+			height: 48px;
+		}
+		&.large {
+			width: 68px;
+			height: 68px;
 		}
 	}
 }

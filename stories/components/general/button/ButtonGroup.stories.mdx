@@ -31,8 +31,8 @@ export const Default = (args, { argTypes }) => ({
   components: { ButtonGroup, Button },
   template:
     `<ButtonGroup :size="size" :vertical="vertical">
-      <Button type="outlined" :size="size">Button</Button>
-      <Button type="outlined" :size="size">Button</Button>
+      <Button type="outline" :size="size">Button</Button>
+      <Button type="outline" :size="size">Button</Button>
     </ButtonGroup>`,
 });
 
@@ -53,16 +53,16 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <ButtonGroup size="small">
-                        <Button type="outlined" size="small">Small</Button>
-                        <Button type="outlined" size="small">Small</Button>
+                        <Button type="outline" size="small">Small</Button>
+                        <Button type="outline" size="small">Small</Button>
                     </ButtonGroup>
                     <ButtonGroup size="medium" style="margin: 10px 0">
-                        <Button type="outlined" size="medium">Medium</Button>
-                        <Button type="outlined" size="medium">Medium</Button>
+                        <Button type="outline" size="medium">Medium</Button>
+                        <Button type="outline" size="medium">Medium</Button>
                     </ButtonGroup>
                     <ButtonGroup size="large">
-                        <Button type="outlined" size="large">Large</Button>
-                        <Button type="outlined" size="large">Large</Button>
+                        <Button type="outline" size="large">Large</Button>
+                        <Button type="outline" size="large">Large</Button>
                     </ButtonGroup>
                 </div>
         `,
@@ -79,13 +79,13 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <Typography color="gray800">Horizontal ButtonGroup</Typography>
                     <ButtonGroup size="small" style="margin-bottom: 10px">
-                        <Button size="small" type="text" color="secondary">
+                        <Button size="small" type="text" color="info">
                             <template v-slot:left-icon>
                                 <Icon name="IconPlusSmallLine" color="gray500" />
                             </template>
                             Button
                         </Button>
-                        <Button size="small" type="text" color="secondary">
+                        <Button size="small" type="text" color="info">
                             <template v-slot:left-icon>
                                 <Icon name="IconPlusSmallLine" color="gray500" />
                             </template>
@@ -94,8 +94,8 @@ export const Default = (args, { argTypes }) => ({
                     </ButtonGroup>
                     <Typography color="gray800">Vertical ButtonGroup</Typography>
                     <ButtonGroup size="small" vertical>
-                        <Button type="outlined" size="small">Button</Button>
-                        <Button type="outlined" size="small">Button</Button>
+                        <Button type="outline" size="small">Button</Button>
+                        <Button type="outline" size="small">Button</Button>
                     </ButtonGroup>
                 </div>
         `,

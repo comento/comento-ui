@@ -1,0 +1,65 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import IconRating from "@/components/components/dataDisplay/rating/IconRating";
+import { colorKeys } from '@/utils/constants/color';
+import { IconNames } from '@/components/elements/core/icon/Icon';
+
+<Meta
+	title="Data Display/Rating/IconRating"
+	component={ IconRating }
+	argTypes={{
+		color: {
+			description: '색상',
+			control: {
+				type: 'select',
+				options: colorKeys,
+			},
+		},
+		iconName: {
+			description: '아이콘 이름',
+			control: {
+                type: 'select',
+                options: IconNames,
+			},
+		},
+		text: {
+			description: '내용',
+            defaultValue: 3,
+			control: {
+				type: 'text',
+			},
+		},
+	}}
+/>
+
+export const Default = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+    template: `
+        <IconRating :color="color" :text="text" :icon-name="iconName"/>
+    `,
+    components: { IconRating },
+});
+
+# IconRating
+
+**IconRating** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+ {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+            <div style="display: flex; flex-direction: column">
+                <IconRating color="primary" text="6"/>
+                <IconRating color="error" icon-name="IconLikeMediumLine" text="6"/>
+            </div>
+    `,
+            components: { IconRating },
+        }}
+    </Story>
+</Canvas>

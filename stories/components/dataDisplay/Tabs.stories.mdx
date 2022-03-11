@@ -28,7 +28,13 @@ import Badge from '@/components/components/dataDisplay/Badge';
             control: {
                 type: "boolean",
             }
-        }
+        },
+        withHeader: {
+            description: "withHeader 타입",
+            control: {
+                type: "boolean",
+            }
+        },
     }}
 />
 
@@ -48,7 +54,7 @@ export const Default = (args, { argTypes }) => ({
     },
     template:
       `<div style="background: cadetblue">
-          <Tabs :type="type" :direction="direction" :tab-index="selectedNo" :transparent="transparent" @changeTabIndex="handleChangeTabIndex">
+          <Tabs :type="type" :direction="direction" :tab-index="selectedNo" :transparent="transparent" :with-header="withHeader" @changeTabIndex="handleChangeTabIndex">
               <template v-for="(item, index) in items" :slot="'item' + index">
                     <Button>
                       {{ item }}
@@ -80,6 +86,7 @@ export const Default = (args, { argTypes }) => ({
                     selectedNo2: 0,
                     selectedNo3: 0,
                     selectedNo4: 0,
+                    selectedNo5: 0,
                     length: 10,
                     items: ['캠프 일정', '새 댓글', '수료증'],
                 }
@@ -96,6 +103,9 @@ export const Default = (args, { argTypes }) => ({
                 },
                 handleChangeTabIndex4(index) {
                     this.selectedNo4 = index;
+                },
+                handleChangeTabIndex5(index) {
+                    this.selectedNo5 = index;
                 },
             },
             template: `
@@ -118,7 +128,16 @@ export const Default = (args, { argTypes }) => ({
                 </Tabs>
                 <Typography type="caption1">swiper type</Typography>
                 <br/>
-                <Tabs :tabIndex="selectedNo3" @changeTabIndex="handleChangeTabIndex3">
+                <Tabs :tabIndex="selectedNo3" with-header @changeTabIndex="handleChangeTabIndex3">
+                    <template v-for="(item, index) in this.length" :slot="'item' + index">
+                            <Button>
+                                Tab{{ item }}
+                            </Button>
+                    </template>
+                </Tabs>
+                <Typography type="caption1">with Header</Typography>
+                <br/>
+                <Tabs :tabIndex="selectedNo4" @changeTabIndex="handleChangeTabIndex4">
                    <template v-for="(item, index) in this.length" :slot="'item' + index">
                            <Button style="position: relative">
                                Tab{{ item }}
@@ -126,7 +145,7 @@ export const Default = (args, { argTypes }) => ({
                           <Badge type="inline" text="1" :offsetX="20" :offsetY="10"/>
                    </template>
                </Tabs>
-               <Tabs :tabIndex="selectedNo4" type="swiper" @changeTabIndex="handleChangeTabIndex4">
+               <Tabs :tabIndex="selectedNo5" type="swiper" @changeTabIndex="handleChangeTabIndex5">
                   <template v-for="(item, index) in this.length" :slot="'item' + index">
                           <Button style="position: relative">
                               Tab{{ item }}
@@ -168,6 +187,55 @@ export const Default = (args, { argTypes }) => ({
                             <template v-if="item === '새 댓글'">
                                 <Badge text="3" color="error" type="inline"/>
                             </template>
+                    </template>
+                </Tabs>
+            </div>
+            `,
+            components: { Tabs, Typography, Button, Chip, Badge },
+        }}
+    </Story>
+</Canvas>
+
+### Transparent
+<Canvas>
+    <Story name="Transparent" height="100px">
+        {{
+            data() {
+                return {
+                    selectedNo1: 0,
+                    selectedNo2: 0,
+                    items1: ['캠프 일정', '새 댓글', '수료증'],
+                    items2: ['캠프 일정', '새 댓글', '수료증'],
+                }
+            },
+            methods: {
+                handleChangeTabIndex1(index) {
+                    this.selectedNo1 = index;
+                },
+                handleChangeTabIndex2(index) {
+                    this.selectedNo2 = index;
+                },
+            },
+            template: `
+            <div style="background-color:#CF5310">
+                <Tabs :tabIndex="selectedNo1" transparent @changeTabIndex="handleChangeTabIndex1">
+                    <template v-for="(item, index) in items1" :slot="'item' + index">
+                        <Button>
+                            {{ item }}
+                        </Button>
+                        <template v-if="item === '새 댓글'">
+                            <Badge text="3" color="error" type="inline"/>
+                        </template>
+                    </template>
+                </Tabs>
+                <Tabs :tabIndex="selectedNo2" transparent with-header @changeTabIndex="handleChangeTabIndex2">
+                    <template v-for="(item, index) in items2" :slot="'item' + index">
+                        <Button>
+                            {{ item }}
+                        </Button>
+                    <template v-if="item === '새 댓글'">
+                    <Badge text="3" color="error" type="inline"/>
+                    </template>
                     </template>
                 </Tabs>
             </div>

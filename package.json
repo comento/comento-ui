@@ -11,9 +11,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "bundle": "vue-cli-service build --target lib --name comento-ui src/main.js",
-    "copy": "yarn copy-color && yarn copy-font",
+    "copy": "yarn copy-color && yarn copy-fonts && yarn copy-mixins",
     "copy-color": "cp -R src/assets/style/base/color.scss dist && cp -R src/utils/constants/color.js dist/color.js",
-    "copy-font": "cp -R src/assets/style/base/fonts.scss dist",
+    "copy-fonts": "cp -R src/assets/style/base/fonts.scss dist",
+    "copy-mixins": "cp -R src/assets/style/base/mixins.scss dist && cp -R src/assets/style/base/flexbox.scss dist && cp -R src/assets/style/base/functions.scss dist",
     "web-types": "vue-docgen-web-types",
     "build": "yarn bundle && yarn copy && yarn web-types",
     "lint": "vue-cli-service lint",
@@ -33,6 +34,7 @@
     "v-tooltip": "^2.0.3",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-pagination-2": "^3.0.91",
     "vue-svg-loader": "^0.16.0",
     "vue2-datepicker": "^3.8.2"
   },

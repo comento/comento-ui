@@ -30,7 +30,7 @@
 		>
 			<template v-slot:title>test</template>
 			<template v-slot:right-content>
-				<Button color="secondary" type="outlined" size="small">모두 읽음 표시</Button>
+				<Button color="info" type="outline" size="small">모두 읽음 표시</Button>
 			</template>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia

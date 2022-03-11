@@ -1,20 +1,29 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent, computedInteractive]"
+		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent, computedClickable]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
 		<slot />
+		<Icon
+			v-if="withCloseButton"
+			:name="computedCloseButtonIconName"
+			:color="computedCloseButtonColor"
+			class="ml-4 c-pointer"
+			@click.stop="handleClickCloseButton"
+		/>
 	</span>
 </template>
 
 <script>
 import paddingMixin from '@/mixins/paddingMixin';
+import Icon from '@/components/elements/core/icon/Icon';
 
-export const ChipColors = ['secondary', 'primary', 'success'];
+export const ChipColors = ['primary', 'info', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
-export const ChipTypes = ['fill', 'outlined', 'oval-fill', 'oval-outline'];
+export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
+export const ChipSizesWithCloseButton = ['large', 'xlarge'];
 
 /**
  * 작은 정보를 전달하기 위해 사용
@@ -25,7 +34,7 @@ export default {
 	mixins: [paddingMixin],
 	props: {
 		/**
-		 * 타입(fill, outlined, oval-fill, oval-outline)
+		 * 타입(fill, outline, clickable-fill, clickable-outline)
 		 */
 		type: {
 			type: String,
@@ -35,11 +44,11 @@ export default {
 			},
 		},
 		/**
-		 * 색상(secondary, primary, success)
+		 * 색상(info, primary, success)
 		 */
 		color: {
 			type: String,
-			default: 'secondary',
+			default: 'info',
 			validator(value) {
 				return ChipColors.indexOf(value) !== -1;
 			},
@@ -68,14 +77,17 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		interactive: {
+		clickable: {
 			type: Boolean,
 			default: false,
+		},
+		withCloseButton: {
+			type: Boolean,
 		},
 	},
 	computed: {
 		computedType() {
-			return `${this.type}`;
+			return `${this.type} ${this.type.includes('clickable') ? 'clickable' : ''}`;
 		},
 		computedColor() {
 			return `${this.color}`;
@@ -102,18 +114,34 @@ export default {
 				transparent: this.transparent,
 			};
 		},
-		computedInteractive() {
+		computedClickable() {
 			return {
-				interactive: this.interactive,
+				clickable: this.clickable,
 			};
 		},
+		computedCloseButtonIconName() {
+			if (!ChipSizesWithCloseButton.includes(this.size)) return;
+			const closeButtonIconSize = {
+				xlarge: 'medium',
+				large: 'small',
+			}[this.size];
+			return `IconClose${closeButtonIconSize[0].toUpperCase() + closeButtonIconSize.slice(1)}Line`;
+		},
+		computedCloseButtonColor() {
+			if (this.color === 'success') return 'white';
+			return this.color;
+		},
 	},
+	methods: {
+		handleClickCloseButton() {
+			this.$emit('clickCloseButton');
+		},
+	},
+	components: { Icon },
 };
 </script>
 
-<style scoped lang="scss">
-/*@import '@/assets/style/base/main';*/
-
+<style lang="scss" scoped>
 .c-chip {
 	position: relative;
 	display: inline-flex;
@@ -121,21 +149,21 @@ export default {
 	justify-content: center;
 	border-radius: 4px;
 	text-align: center;
-	&.secondary {
+	&.info {
 		color: $gray700;
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.interactive:hover {
+		&.clickable:hover {
 			background-color: $gray200;
 		}
 
-		&.outlined {
+		&.outline {
 			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.interactive:hover {
+			&.clickable:hover {
 				background-color: $gray100;
 			}
 
@@ -143,12 +171,12 @@ export default {
 				background-color: transparent;
 			}
 		}
-		&.oval-outline {
+		&.clickable-outline {
 			color: $gray700;
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.interactive:hover {
+			&.clickable:hover {
 				background-color: $gray100;
 			}
 
@@ -158,34 +186,34 @@ export default {
 		}
 	}
 	&.primary {
-		color: $white;
-		border: 1px solid $primary;
-		background-color: $primary;
+		color: $primary;
+		border: 1px solid $light-primary;
+		background-color: $light-primary;
 
-		&.interactive:hover {
-			background-color: $green800;
+		&.clickable:hover {
+			background-color: $blue400;
 		}
 
-		&.outlined {
+		&.outline {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.interactive:hover {
-				background-color: $green100;
+			&.clickable:hover {
+				background-color: $gray100;
 			}
 
 			&.transparent {
 				background-color: transparent;
 			}
 		}
-		&.oval-outline {
+		&.clickable-outline {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.interactive:hover {
-				background-color: $green100;
+			&.clickable:hover {
+				background-color: $gray100;
 			}
 
 			&.transparent {
@@ -198,30 +226,26 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.interactive:hover {
-			background-color: $blue800;
+		&.clickable:hover {
+			background-color: $green800;
 		}
 
-		&.outlined {
+		&.outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
-
-			&.interactive:hover {
-				background-color: $blue100;
-			}
 
 			&.transparent {
 				background-color: transparent;
 			}
 		}
-		&.oval-outline {
+		&.clickable-outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.interactive:hover {
-				background-color: $blue100;
+			&.clickable:hover {
+				background-color: $green100;
 			}
 
 			&.transparent {
@@ -233,13 +257,13 @@ export default {
 	&.small {
 		@include caption2();
 		height: 16px;
-		padding: 0 4px;
-		font-weight: normal;
-		&.oval-fill {
+		padding: 1.5px 4px;
+		font-weight: $regular;
+		&.clickable-fill {
 			border-radius: 10px;
-			padding: 3px 4px;
+			padding: 1.5px 6px;
 		}
-		&.oval-outline {
+		&.clickable-outline {
 			border-radius: 10px;
 			padding: 2px 3px;
 		}
@@ -247,13 +271,13 @@ export default {
 	&.medium {
 		@include caption1();
 		height: 24px;
-		padding: 5.5px 8px;
-		font-weight: normal;
-		&.oval-fill {
+		padding: 4.5px 8px;
+		font-weight: $regular;
+		&.clickable-fill {
 			border-radius: 12px;
 			padding: 5.5px 10px;
 		}
-		&.oval-outline {
+		&.clickable-outline {
 			border-radius: 12px;
 			padding: 4.5px 9px;
 		}
@@ -261,13 +285,13 @@ export default {
 	&.large {
 		@include body2();
 		height: 30px;
-		padding: 4.5px 10px;
-		font-weight: normal;
-		&.oval-fill {
+		padding: 5px 10px;
+		font-weight: $regular;
+		&.clickable-fill {
 			border-radius: 15px;
 			padding: 5px 14px;
 		}
-		&.oval-outline {
+		&.clickable-outline {
 			border-radius: 15px;
 			padding: 4px 13px;
 		}
@@ -275,23 +299,23 @@ export default {
 	&.xlarge {
 		@include body1();
 		padding: 4.5px 12px;
-		font-weight: normal;
-		&.oval-fill {
+		font-weight: $regular;
+		&.clickable-fill {
 			border-radius: 19px;
 			padding: 5px 16px;
 		}
-		&.oval-outline {
+		&.clickable-outline {
 			border-radius: 19px;
 			padding: 4px 15px;
 		}
 	}
-	&.oval-fill {
+	&.clickable-fill {
 		border: 0;
 	}
 	&.full {
 		width: 100%;
 	}
-	&.interactive:hover {
+	&.clickable:hover {
 		cursor: pointer;
 	}
 }

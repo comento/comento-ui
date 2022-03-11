@@ -255,6 +255,7 @@ export default {
 				this.slidesPerView === 'auto';
 			return {
 				loop: this.loop,
+				init: false,
 				navigation: {
 					nextEl: swiperButtonNextSelector,
 					prevEl: swiperButtonPrevSelector,
@@ -301,6 +302,12 @@ export default {
 				`swiper-button-background-circle swiper-button-background-circle-${this.controlsColor}`
 			);
 		},
+	},
+	mounted() {
+		// swiper 요소가 모두 파싱 되고 init 되도록
+		this.$nextTick(() => {
+			this.$refs.mySwiper.$swiper.init();
+		});
 	},
 	methods: {
 		handleSwiperAutoplay(type) {

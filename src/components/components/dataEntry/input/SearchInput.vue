@@ -182,7 +182,7 @@ export default {
 			@include background-opacity(white, 0.06);
 			@include placeholder {
 				@include color-opacity($gray200, 0.6);
-				font-weight: normal;
+				font-weight: $regular;
 			}
 		}
 	}
@@ -196,7 +196,7 @@ export default {
 	}
 
 	.search_input {
-		@include border-radius(2px);
+		@include border-radius(4px);
 		-webkit-appearance: none;
 		@include inline-block();
 		vertical-align: top;
@@ -210,7 +210,7 @@ export default {
 
 		@include placeholder {
 			@include color-opacity($gray400, 0.6);
-			font-weight: normal;
+			font-weight: $regular;
 		}
 
 		&-lg {
