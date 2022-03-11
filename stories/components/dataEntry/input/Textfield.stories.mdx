@@ -166,7 +166,7 @@ export const Default = (args, { argTypes }) => ({
                     <TextField
                         type="text"
                         outline
-                        placeholder="readonly"
+                        value="readonly"
                         readonly
                         class="mb-20"
                     />
@@ -227,7 +227,7 @@ export const Default = (args, { argTypes }) => ({
                         type="text"
                         label="label"
                         outline
-                        placeholder="readonly"
+                        value="readonly"
                         readonly
                         class="mb-20"
                     />
@@ -279,7 +279,7 @@ export const Default = (args, { argTypes }) => ({
                     />
                     <TextField
                         type="text"
-                        placeholder="readonly"
+                        value="readonly"
                         readonly
                         class="mb-20"
                     />
@@ -509,8 +509,8 @@ export const Default = (args, { argTypes }) => ({
                                 :value.sync="name"
                             >
                                 <template v-slot:append>
-                                    <Typography type="caption2" color="gray700" class="mr-2">제휴 확인 중</Typography>
-                                    <Loader size="small" color="secondary" style="margin-right: -2px" />
+                                    <Typography type="caption2" color="info" class="mr-2">제휴 확인 중</Typography>
+                                    <Loader size="small" color="info" style="margin-right: -2px" />
                                 </template>
                             </TextField>
                         </StyleCol>
@@ -525,8 +525,8 @@ export const Default = (args, { argTypes }) => ({
                                 :value.sync="name"
                             >
                                 <template v-slot:append>
-                                    <Typography type="caption2" color="gray800" class="mr-2">미제휴기관</Typography>
-                                    <Icon name="IconExclamationSmallFill" color="gray500" />
+                                    <Typography type="caption2" color="info" class="mr-2">미제휴기관</Typography>
+                                    <Icon name="IconExclamationSmallFill" color="info" />
                                 </template>
                             </TextField>
                         </StyleCol>
@@ -542,7 +542,7 @@ export const Default = (args, { argTypes }) => ({
                             >
                                 <template v-slot:append>
                                     <Typography type="caption2" color="primary" class="mr-2">제휴기관</Typography>
-                                    <Icon name="IconExclamationSmallFill" color="primary" />
+                                    <Icon name="IconCheckRoundSmallFill" color="primary" />
                                 </template>
                             </TextField>
                         </StyleCol>
