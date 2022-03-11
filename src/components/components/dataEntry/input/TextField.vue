@@ -188,7 +188,7 @@ export default {
 				return 'primary';
 			}
 
-			return 'info';
+			return 'gray400';
 		},
 	},
 	mounted() {
