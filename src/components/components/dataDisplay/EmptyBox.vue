@@ -31,10 +31,10 @@
 			</Box>
 		</div>
 		<div v-if="type === 'simple'" class="c-empty-box--simple-container">
-			<Typography type="caption1" color="gray600" align="center" font-weight="bold">
+			<Typography type="caption1" color="gray600" align="center" font-weight="semi-bold">
 				<slot name="title" />
 			</Typography>
-			<Typography type="caption1" color="gray600" align="center" font-weight="bold">
+			<Typography type="caption1" color="gray600" align="center" font-weight="semi-bold">
 				<slot name="contents" />
 			</Typography>
 			<LinkButton

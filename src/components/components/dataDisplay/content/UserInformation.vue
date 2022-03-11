@@ -6,7 +6,7 @@
 		<div class="information-wrapper">
 			<div class="name-company-wrapper">
 				<div class="name-icon-wrapper">
-					<Typography :type="computedNameTypography" color="gray850" font-weight="bold" class="name">
+					<Typography :type="computedNameTypography" color="gray850" font-weight="semi-bold" class="name">
 						<slot name="name" />
 					</Typography>
 					<div ref="icon" class="icon-wrapper">

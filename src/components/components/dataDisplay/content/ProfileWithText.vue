@@ -5,7 +5,7 @@
 		</div>
 		<div class="name-text-container">
 			<div class="name-wrapper">
-				<Typography type="body2" color="gray850" font-weight="bold" class="text-truncate">
+				<Typography type="body2" color="gray850" font-weight="semi-bold" class="text-truncate">
 					<slot name="name" />
 				</Typography>
 				<slot name="icon" />
