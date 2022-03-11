@@ -29,7 +29,9 @@
 					{{ captionLeft }}
 				</Typography>
 				<Divider v-show="captionRight" vertical color="gray200" class="mx-8" />
-				<Typography type="caption1" element="span" color="gray400"> {{ captionRight }}</Typography>
+				<Typography :type="getTypography('caption')" element="span" color="gray400">
+					{{ captionRight }}
+				</Typography>
 				<slot name="additionalCaptions" />
 			</div>
 		</div>
@@ -141,6 +143,7 @@ export default {
 	&--image {
 		width: 100%;
 		height: 100%;
+		@include transform(translateX(-50%));
 		@include opacity(0.9);
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
@@ -149,6 +152,9 @@ export default {
 			overflow: hidden;
 			width: 100%;
 			height: var(--image-height);
+			@include pc {
+				@include border-radius(10px);
+			}
 		}
 	}
 
