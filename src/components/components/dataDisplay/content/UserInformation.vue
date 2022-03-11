@@ -130,8 +130,11 @@ export default {
 		position: relative;
 		@include flexbox();
 		@include flex-direction(row);
+		@include align-items(center);
 	}
 	.icon-wrapper {
+		@include flexbox();
+		@include align-items(center);
 		padding-left: 2px;
 	}
 	.other-wrapper {
