@@ -152,6 +152,8 @@ export default {
 };
 </script>
 
+<!-- 스타일은 datePicker.scss -->
+<!-- 스타일 커스텀은 datePicker.init.scss -->
 <style lang="scss" scoped>
 .c-date-picker {
 	.full {
