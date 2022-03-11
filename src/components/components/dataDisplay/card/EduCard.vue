@@ -141,11 +141,10 @@ export default {
 	&--image {
 		width: 100%;
 		height: 100%;
-		@include opacity(0.9);
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			position: relative;
-			@include border-radius(4px);
+			@include border-radius(10px);
 			overflow: hidden;
 			width: 100%;
 			height: var(--image-height);
@@ -156,7 +155,7 @@ export default {
 		position: absolute;
 		z-index: 1;
 		top: 8px;
-		left: 10px;
+		left: 8px;
 	}
 
 	&--additional-button {
@@ -183,6 +182,11 @@ export default {
 
 	&--caption {
 		@include flexbox();
+		@include align-items(center);
+	}
+
+	.c-divider {
+		height: 10px;
 	}
 
 	@keyframes scale-up-center {

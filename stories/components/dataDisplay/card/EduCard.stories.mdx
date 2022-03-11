@@ -109,16 +109,16 @@ import Swiper from '@/components/components/dataDisplay/Swiper';
 			},
 		},
 		emphasized: {
-		    description: "강조하는 카드 여부",
-		    control: {
-		        type: "boolean",
-		    },
+			description: '강조하는 카드 여부',
+			control: {
+				type: 'boolean',
+			},
 		},
 		withSwiper: {
-		    description: "swiper에서 사용 여부",
-		    control: {
-		        type: "boolean",
-		    },
+			description: 'swiper에서 사용 여부',
+			control: {
+				type: 'boolean',
+			},
 		},
 	}}
 />
@@ -139,6 +139,7 @@ export const Default = (args, { argTypes }) => ({
                         :image-height="imageHeight"
                         :additional-subtitle="additionalSubtitle"
                         :background-color="backgroundColor"
+                        :emphasized="emphasized"
                     >
                        <template v-slot:title>Title</template>
                     </EduCard>
@@ -153,6 +154,7 @@ export const Default = (args, { argTypes }) => ({
                         :image-height="imageHeight"
                         :additional-subtitle="additionalSubtitle"
                         :background-color="backgroundColor"
+                        :emphasized="emphasized"
                     >
                        <template v-slot:title>Title</template>
                     </EduCard>
@@ -167,6 +169,7 @@ export const Default = (args, { argTypes }) => ({
                         :image-height="imageHeight"
                         :additional-subtitle="additionalSubtitle"
                         :background-color="backgroundColor"
+                        :emphasized="emphasized"
                     >
                        <template v-slot:title>Title</template>
                     </EduCard>
@@ -187,6 +190,7 @@ export const Default = (args, { argTypes }) => ({
 ## Stories
 
 ### All
+
 <Canvas>
 	<Story name="All">
 		{{
@@ -292,6 +296,7 @@ export const Default = (args, { argTypes }) => ({
 </Canvas>
 
 ### With Swiper
+
 <Canvas>
 	<Story name="WithSwiper">
 		{{
