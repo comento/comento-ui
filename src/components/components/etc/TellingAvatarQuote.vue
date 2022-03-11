@@ -5,7 +5,7 @@
 				v-if="$slots['title']"
 				type="headline6"
 				color="gray900"
-				font-weight="bold"
+				font-weight="semi-bold"
 				class="telling-title"
 			>
 				<slot name="title" />

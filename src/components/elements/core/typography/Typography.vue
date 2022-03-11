@@ -31,7 +31,7 @@ export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p',
 
 export const Aligns = ['left', 'center', 'right'];
 
-export const FontWeights = [300, 400, 500, 600, 'normal', 'bold', 'lighter', 'bolder'];
+export const FontWeights = [300, 400, 500, 600, 'light', 'regular', 'medium', 'semi-bold'];
 
 /**
  * @displayName c-typography
@@ -72,7 +72,7 @@ export default {
 			default: null,
 		},
 		/**
-		 * 굵기(100~900, normal, bold, lighter, bolder)
+		 * 굵기(300~600, light, regular, medium, semi-bold)
 		 */
 		fontWeight: {
 			type: [Number, String],
@@ -160,7 +160,6 @@ p {
 .c_body2 {
 	@include body2();
 }
-
 .c_caption1 {
 	@include caption1();
 }
