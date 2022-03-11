@@ -54,7 +54,7 @@
   font-weight: $regular;
 }
 @mixin caption2 {
-  @include trans-font-size(10px, 1.26, floor);
+  @include trans-font-size(10px, 1.26);
   font-weight: $regular;
 }
 
