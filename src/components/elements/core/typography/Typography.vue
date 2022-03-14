@@ -113,7 +113,7 @@ export default {
 			};
 		},
 		computedClass() {
-			return this.type ? `c_${this.type}` : null;
+			return this.type ? `c-${this.type}` : null;
 		},
 	},
 };
@@ -133,37 +133,37 @@ p {
 	word-wrap: break-word;
 }
 
-.c_display1 {
+.c-display1 {
 	@include display1();
 }
-.c_headline1 {
+.c-headline1 {
 	@include headline1();
 }
-.c_headline2 {
+.c-headline2 {
 	@include headline2();
 }
-.c_headline3 {
+.c-headline3 {
 	@include headline3();
 }
-.c_headline4 {
+.c-headline4 {
 	@include headline4();
 }
-.c_headline5 {
+.c-headline5 {
 	@include headline5();
 }
-.c_headline6 {
+.c-headline6 {
 	@include headline6();
 }
-.c_body1 {
+.c-body1 {
 	@include body1();
 }
-.c_body2 {
+.c-body2 {
 	@include body2();
 }
-.c_caption1 {
+.c-caption1 {
 	@include caption1();
 }
-.c_caption2 {
+.c-caption2 {
 	@include caption2();
 }
 </style>
