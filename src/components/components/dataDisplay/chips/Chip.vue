@@ -267,13 +267,9 @@ export default {
 		height: 16px;
 		padding: 1.5px 4px;
 		font-weight: $regular;
-		&.clickable-fill {
+		.clickable {
 			border-radius: 10px;
 			padding: 1.5px 6px;
-		}
-		&.clickable-outline {
-			border-radius: 10px;
-			padding: 2px 3px;
 		}
 	}
 	&.medium {
@@ -281,13 +277,10 @@ export default {
 		height: 24px;
 		padding: 4.5px 8px;
 		font-weight: $regular;
-		&.clickable-fill {
+		@include border-radius(6px);
+		&.clickable {
 			border-radius: 12px;
-			padding: 5.5px 10px;
-		}
-		&.clickable-outline {
-			border-radius: 12px;
-			padding: 4.5px 9px;
+			padding: 4.5px 10px;
 		}
 	}
 	&.large {
@@ -295,13 +288,10 @@ export default {
 		height: 30px;
 		padding: 5px 10px;
 		font-weight: $regular;
-		&.clickable-fill {
+		@include border-radius(8px);
+		.clickable {
 			border-radius: 15px;
-			padding: 5px 14px;
-		}
-		&.clickable-outline {
-			border-radius: 15px;
-			padding: 4px 13px;
+			padding: 5px 12px;
 		}
 		&.c-chip--with-close-button {
 			padding-right: 6px !important;
@@ -311,13 +301,10 @@ export default {
 		@include body1();
 		padding: 4.5px 12px;
 		font-weight: $regular;
-		&.clickable-fill {
+		@include border-radius(10px);
+		.clickable {
 			border-radius: 19px;
-			padding: 5px 16px;
-		}
-		&.clickable-outline {
-			border-radius: 19px;
-			padding: 4px 15px;
+			padding: 4.5px 14px;
 		}
 		&.c-chip--with-close-button {
 			padding-right: 8px !important;
