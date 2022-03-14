@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import FileList from '@/components/components/dataDisplay/list/fileList/FileList';
+import FileInput from "@/components/components/dataEntry/input/FileInput";
 import FileSummary from '@/components/components/dataDisplay/list/fileList/FileSummary';
 import Divider from '@/components/elements/utility/Divider';
 
@@ -56,9 +57,14 @@ export const Default = (args, { argTypes }) => ({
     handleClickFileTrashIcon(payload) {
         this.filesData = this.filesData.filter((item, index) => index !== payload.index);
     },
+    handleUploadFiles(files) {
+      const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
+      this.filesData = [...this.filesData, ...filesWithLoading];
+    },
   },
   template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
-                 <FileSummary :full="full" :length="filesData.length"/>
+                 <FileInput v-if="isRemovable" @uploadFiles="handleUploadFiles"/>
+                 <FileSummary v-else :full="full" :length="filesData.length" />
                  <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 8.5px;"/>
                  <FileList :files="filesData"
                     :is-removable="isRemovable"
@@ -68,7 +74,7 @@ export const Default = (args, { argTypes }) => ({
                     @clickFileTrashIcon="handleClickFileTrashIcon"
                  />
              </div>`,
-   components: { FileList, Divider, FileSummary },
+   components: { FileList, Divider, FileSummary, FileInput },
 });
 
 # FileList
