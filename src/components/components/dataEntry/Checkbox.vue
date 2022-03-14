@@ -180,6 +180,7 @@ export default {
 				display: inline-block;
 				margin-right: 8px;
 				box-sizing: border-box;
+				margin-top: 2px;
 				&:hover {
 					border-color: $primary;
 					background-color: $blue100;
@@ -193,7 +194,7 @@ export default {
 			& + label:before {
 				width: 18px;
 				height: 18px;
-				margin-top: 2px;
+				margin-top: 1px;
 				margin-right: 6px;
 				background-size: 12px;
 			}
@@ -213,9 +214,6 @@ export default {
 	&.xsmall {
 		input[type='checkbox'] {
 			& + label {
-				> div {
-					margin-top: 2px;
-				}
 				&:before {
 					margin-top: 0;
 					margin-right: 4px;
