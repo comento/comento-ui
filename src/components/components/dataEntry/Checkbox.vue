@@ -175,7 +175,7 @@ export default {
 				background-color: $gray000;
 				background-position: center center;
 				border: 1px solid $input-border-color;
-				border-radius: 4px;
+				@include border-radius(4px);
 				display: inline-block;
 				margin-right: 8px;
 				box-sizing: border-box;
