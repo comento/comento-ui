@@ -215,7 +215,7 @@ $info-text-color: $info;
 	color: $white;
 	background-color: $primary;
 	border: none;
-	@include border-radius(4px);
+	@include border-radius(6px);
 	@include flexbox();
 	@include align-items(center);
 	@include justify-content(center);
@@ -271,6 +271,7 @@ $info-text-color: $info;
 		min-width: 76px;
 		@include body1;
 		font-weight: bold;
+		@include border-radius(8px);
 		.loading {
 			padding: 0 14.5px;
 			line-height: 90%;
@@ -282,6 +283,7 @@ $info-text-color: $info;
 		min-width: 130px;
 		@include headline6;
 		font-weight: bold;
+		@include border-radius(8px);
 		.loading {
 			padding: 0 9.5px;
 			line-height: 90%;

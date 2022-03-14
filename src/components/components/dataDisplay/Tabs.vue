@@ -169,7 +169,7 @@ export default {
 		@include pc {
 			&:hover {
 				background-color: rgba(255, 255, 255, 0.2);
-				border-radius: 6px;
+				@include border-radius(6px);
 				&::v-deep .c-button {
 					opacity: 1;
 				}
@@ -241,7 +241,7 @@ export default {
 			@include align-items(center);
 			@include pc {
 				&:hover {
-					border-radius: 6px;
+					@include border-radius(6px);
 					background-color: $gray100;
 				}
 			}
