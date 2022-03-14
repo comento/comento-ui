@@ -3,11 +3,9 @@
 		<div :class="{ 'mr-4': $slots['text-right'] }">
 			<slot name="text-left" />
 		</div>
-		<div>
-			<Typography color="gray850">
-				<slot name="text-right" />
-			</Typography>
-		</div>
+		<Typography color="gray850">
+			<slot name="text-right" />
+		</Typography>
 	</TextRatingWrapper>
 </template>
 
