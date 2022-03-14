@@ -126,7 +126,7 @@ export default {
 	padding: 14px 16px;
 	text-align: center;
 	z-index: 9999;
-	@include border-radius(4px);
+	@include border-radius(8px);
 	@include shadow4();
 	display: table; // width: fit-content 대체
 	max-width: 90%;
