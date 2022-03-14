@@ -215,7 +215,7 @@ export default {
 			&:hover:not(:disabled),
 			&:focus:not(:disabled) {
 				& + label:before {
-					background-color: $green000;
+					background-color: $blue000;
 					border-color: $primary;
 				}
 			}
@@ -241,7 +241,7 @@ export default {
 			&:hover:not(:disabled),
 			&:focus:not(:disabled) {
 				& + label:before {
-					background-color: $blue000;
+					background-color: $green000;
 					border-color: $success;
 				}
 			}
@@ -262,7 +262,7 @@ export default {
 			}
 		}
 	}
-	&.secondary {
+	&.info {
 		input[type='radio'] {
 			&:hover:not(:disabled),
 			&:focus:not(:disabled) {
