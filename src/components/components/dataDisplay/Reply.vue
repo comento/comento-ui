@@ -8,7 +8,7 @@
 		</Box>
 		<div class="c-reply--append">
 			<Label type="dataDisplay" class="c-reply--date">
-				<Typography type="caption2" color="gray400">{{ date }}</Typography>
+				<Typography type="caption1" color="gray400">{{ date }}</Typography>
 			</Label>
 			<Button v-if="showReport" type="text" color="info" size="small" @click="clickReportButton()"> 신고 </Button>
 		</div>

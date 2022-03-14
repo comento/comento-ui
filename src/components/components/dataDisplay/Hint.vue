@@ -11,8 +11,7 @@
 import customValidator from '@/utils/custom-validator.js';
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
-
-export const color = ['primary', 'success', 'secondary', 'error', 'info'];
+import { colorKeys } from '@/utils/constants/color';
 
 /**
  * @displayName c-hint
@@ -21,30 +20,23 @@ export default {
 	name: 'Hint',
 	props: {
 		/**
-		 * 색상(primary, success, secondary, error)
+		 * 색상
 		 */
 		color: {
 			type: String,
-			default: 'secondary',
+			default: 'info',
 			validator(value) {
-				return customValidator(value, color.indexOf(value) !== -1, 'Hint', 'color');
+				const isValid = colorKeys.indexOf(value) !== -1;
+				return customValidator(value, isValid, 'Hint', 'color');
 			},
 		},
 	},
 	computed: {
 		computedIconColor() {
-			if (this.color === 'secondary') {
-				return 'gray400';
-			} else {
-				return this.color;
-			}
+			return this.color;
 		},
 		computedTextColor() {
-			if (this.color === 'secondary') {
-				return 'gray600';
-			} else {
-				return this.color;
-			}
+			return this.color;
 		},
 		hasSlot() {
 			return this.$slots.default && this.$slots.default[0].text !== '';
@@ -62,6 +54,7 @@ export default {
 	margin-top: 4px;
 	@include flexbox();
 	@include flex-direction(row);
+	@include align-items(center);
 
 	.c-icon {
 		margin-right: 2px;

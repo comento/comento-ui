@@ -1,15 +1,31 @@
 <template>
-	<div class="c-application c-banner" :class="[computedType]" :style="computedHeight">
+	<div class="c-application c-banner" :class="[type]" :style="computedStyleVariables">
 		<div class="c-banner--background" :class="[computedBlur]">
 			<slot name="background" />
 		</div>
 		<div class="c-banner--content">
-			<slot />
+			<Typography v-if="title" class="c-banner--title" :type="computedTitleType" font-weight="semi-bold">
+				{{ title }}
+			</Typography>
+			<Typography
+				v-if="description"
+				class="c-banner--description"
+				:type="computedDescriptionType"
+				:font-weight="computedDescriptionWeight"
+			>
+				{{ description }}
+			</Typography>
+			<div v-if="isButtonVisible" class="c-banner--buttons">
+				<slot name="button" />
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import windowMixin from '@/mixins/windowMixin';
+import Typography from '@/components/elements/core/typography/Typography';
+
 export const bannerTypes = ['full', 'standard'];
 
 /**
@@ -17,6 +33,7 @@ export const bannerTypes = ['full', 'standard'];
  */
 export default {
 	name: 'Banner',
+	mixins: [windowMixin],
 	props: {
 		/**
 		 * 타입(full, standard)
@@ -32,27 +49,50 @@ export default {
 				return isValid;
 			},
 		},
-		blur: {
-			type: Boolean,
-			default: false,
-		},
-		height: {
+		title: {
 			type: String,
+		},
+		description: {
+			type: String,
+		},
+		alignItems: {
+			type: String,
+			default: 'center',
 		},
 	},
 	computed: {
-		computedType() {
-			return this.type;
-		},
 		computedBlur() {
 			return this.blur ? 'blur' : '';
 		},
-		computedHeight() {
+		computedStyleVariables() {
 			return {
-				'--height': this.height,
+				'--align-items': this.alignItems,
 			};
 		},
+		computedTitleType() {
+			if (this.type === 'full') {
+				return this.isMobile ? 'headline1' : 'display1';
+			}
+			return this.isMobile ? 'headline2' : 'headline1';
+		},
+		computedDescriptionType() {
+			if (this.type === 'full') {
+				return this.isMobile ? 'headline6' : 'headline5';
+			}
+			return this.isMobile ? 'body1' : 'headline6';
+		},
+		computedDescriptionWeight() {
+			if (this.type === 'full' && this.isMobile) {
+				return 'light';
+			}
+
+			return 'regular';
+		},
+		isButtonVisible() {
+			return this.$slots['button'] && !this.isMobile;
+		},
 	},
+	components: { Typography },
 };
 </script>
 
@@ -60,22 +100,30 @@ export default {
 .c-banner {
 	position: relative;
 	display: grid;
-	height: var(--height);
+	height: 464px;
+	overflow: hidden;
 
 	&.standard {
+		height: 187px;
 		max-width: 1108px;
-		overflow: hidden;
 		@include border-radius(20px);
 	}
 
 	&--content,
 	&--background {
 		grid-area: 1/-1;
+		height: 100%;
+	}
+
+	&--content {
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include align-items(var(--align-items));
+		z-index: 1;
 	}
 
 	&--background {
-		height: 100%;
-
 		& > * {
 			width: 100%;
 			max-height: 100%;
@@ -98,6 +146,22 @@ export default {
 				background: rgba(0, 0, 0, 0.25);
 				backdrop-filter: blur(30px);
 			}
+		}
+	}
+
+	&--description {
+		margin-top: 8px;
+	}
+
+	&--buttons {
+		margin-top: 32px;
+	}
+
+	@include pc {
+		height: 382px;
+
+		&.standard {
+			height: 189px;
 		}
 	}
 }

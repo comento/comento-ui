@@ -54,7 +54,7 @@
   font-weight: $regular;
 }
 @mixin caption2 {
-  @include trans-font-size(10px, 1.26, floor);
+  @include trans-font-size(10px, 1.26);
   font-weight: $regular;
 }
 
@@ -70,7 +70,7 @@
   font-weight: $medium;
 }
 
-@mixin f-bold {
+@mixin f-semi-bold {
   font-weight: $semi-bold;
 }
 @mixin clearfix {

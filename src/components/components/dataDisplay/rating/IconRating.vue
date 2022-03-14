@@ -26,7 +26,7 @@ export default {
 			default: 'IconCommentMediumLine',
 		},
 		text: {
-			type: String,
+			type: [String, Number],
 			required: true,
 		},
 	},

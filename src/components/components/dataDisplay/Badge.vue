@@ -6,7 +6,7 @@
 		<!-- badge -->
 		<div v-if="text" class="c-badge--wrapper">
 			<div class="c-badge" :style="[computedStyle]" :class="[computedSize, computedPosition]">
-				<Typography type="caption2" color="white" :font-weight="700" class="c-badge--text">
+				<Typography type="caption2" color="white" font-weight="semi-bold" class="c-badge--text">
 					{{ text }}
 				</Typography>
 			</div>
