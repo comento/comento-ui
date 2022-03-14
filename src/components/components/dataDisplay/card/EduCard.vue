@@ -4,8 +4,8 @@
 			<div v-if="$slots['chip']" class="c-edu-card--chip-container">
 				<slot name="chip" />
 			</div>
-			<div v-if="$slots['additionalButton']" class="c-edu-card--additional-button">
-				<slot name="additionalButton" />
+			<div v-if="$slots['additional-button']" class="c-edu-card--additional-button">
+				<slot name="additional-button" />
 			</div>
 			<img class="c-edu-card--image" :src="backgroundImage" alt />
 		</div>
@@ -30,7 +30,7 @@
 				</Typography>
 				<Divider v-show="captionRight" vertical color="gray200" class="mx-8" />
 				<Typography type="caption1" element="span" color="gray400"> {{ captionRight }}</Typography>
-				<slot name="additionalCaptions" />
+				<slot name="additional-captions" />
 			</div>
 		</div>
 	</article>
