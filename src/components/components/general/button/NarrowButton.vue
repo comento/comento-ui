@@ -76,7 +76,7 @@ export default {
 .c-narrow-button {
 	cursor: pointer;
 	border: 0;
-	border-radius: 4px;
+	@include border-radius(4px);
 	background: transparent;
 	@include flexbox();
 	@include align-items(center);
@@ -105,11 +105,13 @@ export default {
 		height: 28px;
 		padding: 4px;
 		@include body2();
+		@include border-radius(6px);
 	}
 	&.large {
 		height: 32px;
 		padding: 4px 6px;
 		@include body1();
+		@include border-radius(6px);
 	}
 
 	&--icon {
