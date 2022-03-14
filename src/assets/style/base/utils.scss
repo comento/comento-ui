@@ -97,20 +97,18 @@
   min-height: 100vh;
 }
 
+// font-weight
 .f-light {
-  font-weight: $light;
+  font-weight: $light !important;
 }
-
 .f-regular {
-  font-weight: $regular;
+  font-weight: $regular !important;
 }
-
 .f-medium {
-  font-weight: $medium;
+  font-weight: $medium !important;
 }
-
 .f-semi-bold {
-  font-weight: $semi-bold;
+  font-weight: $semi-bold !important;
 }
 
 .not-scroll {

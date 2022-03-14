@@ -105,15 +105,20 @@ export default {
 			if (!this.color) return 'inherit';
 			return colors[this.color] ? colors[this.color] : this.color;
 		},
+		isNumberFontWeight() {
+			return Number.isInteger(this.fontWeight);
+		},
 		computedStyle() {
-			return {
-				color: this.computedColor,
-				'text-align': this.align,
-				'font-weight': this.fontWeight,
-			};
+			return [
+				{
+					color: this.computedColor,
+					textAlign: this.align,
+				},
+				this.isNumberFontWeight && { fontWeight: this.fontWeight },
+			];
 		},
 		computedClass() {
-			return this.type ? `c-${this.type}` : null;
+			return [this.type && `c-${this.type}`, !this.isNumberFontWeight && `f-${this.fontWeight}`];
 		},
 	},
 };
