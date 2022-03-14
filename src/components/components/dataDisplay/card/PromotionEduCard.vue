@@ -1,8 +1,8 @@
 <template>
 	<article class="c-application c-promotion-edu-card" v-bind="$attrs" :style="computedStyle" v-on="$listeners">
 		<div class="c-promotion-edu-card--image-container">
-			<div v-if="$slots['additionalButton']" class="c-promotion-edu-card--additional-button">
-				<slot name="additionalButton" />
+			<div v-if="$slots['additional-button']" class="c-promotion-edu-card--additional-button">
+				<slot name="additional-button" />
 			</div>
 			<img class="c-promotion-edu-card--image" :src="backgroundImage" alt />
 		</div>
@@ -24,7 +24,7 @@
 				</Typography>
 			</div>
 			<div class="c-promotion-edu-card--caption mt-12">
-				<template v-if="!$slots['alternativeCaption']">
+				<template v-if="!$slots['alternative-caption']">
 					<div class="c-promotion-edu-card--caption-side c-promotion-edu-card--caption-left">
 						<Icon
 							:name="isMobile ? 'IconStarSmallFill' : 'IconStarMediumFill'"
@@ -59,7 +59,7 @@
 						</Typography>
 					</div>
 				</template>
-				<slot v-else name="alternativeCaption" />
+				<slot v-else name="alternative-caption" />
 			</div>
 		</div>
 	</article>
