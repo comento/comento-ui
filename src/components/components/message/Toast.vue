@@ -10,7 +10,7 @@
 				<slot name="icon" />
 			</div>
 			<Icon v-else-if="icon" class="c-toast--icon" :name="icon" :color="toastItemColor" />
-			<Typography class="c-toast--message" element="p" type="body2" :color="toastItemColor" :font-weight="400">
+			<Typography class="c-toast--message" element="p" type="body2" :color="toastItemColor" :font-weight="500">
 				{{ message }}
 			</Typography>
 			<div v-if="$slots['button']" class="c-toast--button">
