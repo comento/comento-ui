@@ -148,17 +148,6 @@ export const Default = (args, { argTypes }) => ({
                     <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
-            <div style="margin-bottom: 10px">
-                <div>
-                    <Callout size="medium">
-                        <template v-slot:icon>
-                            <Icon name="IconVideoLargeFill" color="gray850" />
-                        </template>
-                        1주차 세션 종료 후,<br />
-                        복습을 위한 VOD가 제공됩니다.
-                    </Callout>
-                </div>
-            </div>
         </div>
             `,
       components: { Callout, Icon },
