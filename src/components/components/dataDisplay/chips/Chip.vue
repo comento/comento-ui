@@ -155,7 +155,7 @@ export default {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 4px;
+	@include border-radius(4px);
 	text-align: center;
 	&.info {
 		color: $gray700;
@@ -268,7 +268,7 @@ export default {
 		padding: 1.5px 4px;
 		font-weight: $regular;
 		.clickable {
-			border-radius: 10px;
+			@include border-radius(12px);
 			padding: 1.5px 6px;
 		}
 	}
@@ -279,7 +279,7 @@ export default {
 		font-weight: $regular;
 		@include border-radius(6px);
 		&.clickable {
-			border-radius: 12px;
+			@include border-radius(12px);
 			padding: 4.5px 10px;
 		}
 	}
@@ -288,9 +288,9 @@ export default {
 		height: 30px;
 		padding: 5px 10px;
 		font-weight: $regular;
-		@include border-radius(8px);
+		@include border-radius(6px);
 		.clickable {
-			border-radius: 15px;
+			@include border-radius(15px);
 			padding: 5px 12px;
 		}
 		&.c-chip--with-close-button {
@@ -301,9 +301,9 @@ export default {
 		@include body1();
 		padding: 4.5px 12px;
 		font-weight: $regular;
-		@include border-radius(10px);
+		@include border-radius(8px);
 		.clickable {
-			border-radius: 19px;
+			@include border-radius(19px);
 			padding: 4.5px 14px;
 		}
 		&.c-chip--with-close-button {
