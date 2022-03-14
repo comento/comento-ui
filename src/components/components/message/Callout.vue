@@ -131,8 +131,8 @@ export default {
 		},
 		iconName() {
 			const name = {
-				information: 'Exclamation',
-				error: 'Exclamation',
+				information: 'Information',
+				error: 'Information',
 				notice: 'Megaphone',
 				success: 'Selected',
 			}[this.type];
