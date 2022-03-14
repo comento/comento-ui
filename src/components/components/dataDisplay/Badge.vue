@@ -153,10 +153,7 @@ export default {
 	&.medium {
 		height: 16px;
 		min-width: 16px;
-		padding: 0 5px;
-		.c-badge--text {
-			line-height: 10px;
-		}
+		padding: 1.5px 5px;
 	}
 	&.small {
 		height: 12px;
@@ -167,7 +164,7 @@ export default {
 		.c-badge--text {
 			//chrome은 최소 font-size 10px
 			-webkit-transform: scale(0.8);
-			line-height: 8px;
+			line-height: 10px;
 		}
 	}
 
