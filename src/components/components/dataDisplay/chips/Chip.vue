@@ -48,7 +48,7 @@ export default {
 			type: String,
 			default: 'fill',
 			validator(value) {
-				return ChipTypes.indexOf(value) !== -1;
+				return ChipTypes.includes(value);
 			},
 		},
 		/**
@@ -58,7 +58,7 @@ export default {
 			type: String,
 			default: 'info',
 			validator(value) {
-				return ChipColors.indexOf(value) !== -1;
+				return ChipColors.includes(value);
 			},
 		},
 		/**
@@ -68,7 +68,7 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return ChipSizes.indexOf(value) !== -1;
+				return ChipSizes.includes(value);
 			},
 		},
 		full: {
