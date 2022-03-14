@@ -4,7 +4,7 @@
 		<div class="c-avatar--item">
 			<Icon v-if="isProfileType" :name="computedIconName" :color="computedColorName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
-			<Typography v-if="isNicknameType" :type="computedTypography" :font-weight="700" color="white">
+			<Typography v-if="isNicknameType" :type="computedTypography" font-weight="semi-bold" color="white">
 				{{ text || computedRandomText }}
 			</Typography>
 		</div>
