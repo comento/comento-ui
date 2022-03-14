@@ -2,7 +2,7 @@
 	<transition :name="computedTransition">
 		<div
 			class="c-application c-callout--container"
-			:class="[computedSize, computedType, computedFull]"
+			:class="[computedSize, computedType, computedFull, { 'c-callout--closable': closable }]"
 			:style="[computedPadding]"
 			v-bind="$attrs"
 			v-on="$listeners"
@@ -156,7 +156,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @mixin callout-icon-margin-right($margin-right) {
 	::v-deep svg:first-child {
 		overflow: inherit; //overflow: hidden 때문에 margin을 주면 아이콘이 짤려서 추가함
@@ -226,6 +226,9 @@ export default {
 	}
 	&--close-button {
 		margin-left: 4px;
+	}
+	&--closable {
+		padding-right: 6px !important;
 	}
 }
 
