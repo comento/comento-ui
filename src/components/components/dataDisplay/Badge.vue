@@ -151,8 +151,8 @@ export default {
 	@include align-items(center);
 	@include justify-content(center);
 	&.medium {
-		height: 16px;
-		min-width: 16px;
+		height: 17px;
+		min-width: 17px;
 		padding: 1.5px 5px;
 	}
 	&.small {
