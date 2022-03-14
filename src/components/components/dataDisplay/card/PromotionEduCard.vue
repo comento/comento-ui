@@ -139,7 +139,7 @@ export default {
 	padding: 0 10px 10px;
 	overflow: hidden;
 	background-color: rgba(70, 97, 127, 0.04);
-	@include border-radius(8px);
+	@include border-radius(10px);
 	width: var(--card-width);
 	max-width: 152px;
 	cursor: pointer;
@@ -190,7 +190,7 @@ export default {
 			color: white;
 			background-color: var(--dominant-color);
 			padding: 0 12px 0 10px;
-			border-radius: 0px 30px 30px 0;
+			border-radius: 0 30px 30px 0;
 			min-width: 54px;
 		}
 	}
