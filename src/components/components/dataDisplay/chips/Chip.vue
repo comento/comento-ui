@@ -1,7 +1,15 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent, computedClickable]"
+		:class="[
+			computedType,
+			computedColor,
+			computedSize,
+			computedFull,
+			computedTransparent,
+			computedClickable,
+			{ 'c-chip--with-close-button': withCloseButton },
+		]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
@@ -295,6 +303,9 @@ export default {
 			border-radius: 15px;
 			padding: 4px 13px;
 		}
+		&.c-chip--with-close-button {
+			padding-right: 6px !important;
+		}
 	}
 	&.xlarge {
 		@include body1();
@@ -307,6 +318,9 @@ export default {
 		&.clickable-outline {
 			border-radius: 19px;
 			padding: 4px 15px;
+		}
+		&.c-chip--with-close-button {
+			padding-right: 8px !important;
 		}
 	}
 	&.clickable-fill {
