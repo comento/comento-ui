@@ -47,7 +47,7 @@ export default {
 $list-item-padding-x: 4px;
 
 .c-list-item {
-	padding: 8px $list-item-padding-x;
+	padding: 6px $list-item-padding-x;
 	@include flexbox();
 	@include align-items(center);
 	@include border-radius(6px);
