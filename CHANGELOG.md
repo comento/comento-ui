@@ -1,3 +1,32 @@
+# [1.0.0-alpha.4](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-03-14)
+
+
+### Bug Fixes
+
+* 스토리에서 컬러 잘못들어간 오류 수정 ([#787](https://github.com/comento/comento-ui/issues/787)) ([0bb5267](https://github.com/comento/comento-ui/commit/0bb526793eec1978324d0d3aef2847d3497791f6))
+* Banner QA 반영 ([#776](https://github.com/comento/comento-ui/issues/776)) ([cd0e3ac](https://github.com/comento/comento-ui/commit/cd0e3ac5c016e5cbadde26187ec959bfef55851c))
+* caption2 line-height 오류 수정 ([#768](https://github.com/comento/comento-ui/issues/768)) ([bdafba0](https://github.com/comento/comento-ui/commit/bdafba054c184e3d1fb1c3d2fdd209695082e1e2))
+* TextField QA 반영 ([#770](https://github.com/comento/comento-ui/issues/770)) ([319d616](https://github.com/comento/comento-ui/commit/319d6160e9156ac5b5b4cc85dd0b8497d88230dd))
+
+
+### Features
+
+* DatePicker new 컬러 반영 ([#786](https://github.com/comento/comento-ui/issues/786)) ([b915dcf](https://github.com/comento/comento-ui/commit/b915dcf4eeb378d9ac2d7a5e0101fe53dbc4f8fa))
+* eduCard, PromotionEduCard slot name 컨벤션에 맞게 변경 ([#790](https://github.com/comento/comento-ui/issues/790)) ([7588790](https://github.com/comento/comento-ui/commit/75887900d731d0744407b7aab04b03c67e83edaa))
+* flexbox 믹스인에 !important 추가 ([#794](https://github.com/comento/comento-ui/issues/794)) ([75591ed](https://github.com/comento/comento-ui/commit/75591ed9f71de8aa43850bd3f669552554051e7b))
+* Hint컴포넌트에서 color prop 기본값 변경 ([#788](https://github.com/comento/comento-ui/issues/788)) ([c5db501](https://github.com/comento/comento-ui/commit/c5db50144812dba813745c676fd175d0dc687d21))
+* IconAnswerXLargeLine 추가 ([#779](https://github.com/comento/comento-ui/issues/779)) ([0375fd7](https://github.com/comento/comento-ui/commit/0375fd7ad6690c388b04815acd684359eb9a3258))
+* IconRating컴포넌트 text prop Number type 추가 ([#784](https://github.com/comento/comento-ui/issues/784)) ([76a2731](https://github.com/comento/comento-ui/commit/76a27318312f3207814664df030bcf6894394557))
+* info color 변경 ([#774](https://github.com/comento/comento-ui/issues/774)) ([9bd7090](https://github.com/comento/comento-ui/commit/9bd7090e0eef4dfc0d73dfe3ca9b7d6df7c072dd))
+* logo type background image 변경 ([#771](https://github.com/comento/comento-ui/issues/771)) ([bc7774f](https://github.com/comento/comento-ui/commit/bc7774f30a74efacf870439ed59942b86261343e))
+* logo type background image 변경 ([#789](https://github.com/comento/comento-ui/issues/789)) ([81a979f](https://github.com/comento/comento-ui/commit/81a979f88276e77a69d698df68080fd99b4c0eef))
+* RadioButton new 컬러 반영 ([#785](https://github.com/comento/comento-ui/issues/785)) ([5e3e8a4](https://github.com/comento/comento-ui/commit/5e3e8a4888e14f0d44907656999e6eef4744649b))
+* Reply QA 반영 ([#773](https://github.com/comento/comento-ui/issues/773)) ([cebc8a3](https://github.com/comento/comento-ui/commit/cebc8a36a93d345a3f1fcdc8a3931f6870b428e0))
+* Typography font-weight 변경 ([#781](https://github.com/comento/comento-ui/issues/781)) ([3e388dd](https://github.com/comento/comento-ui/commit/3e388dd7d7a80711b280b5d24ff8aa1806bcae99))
+* Typography font-weight props 변경 ([#769](https://github.com/comento/comento-ui/issues/769)) ([1eb7c61](https://github.com/comento/comento-ui/commit/1eb7c6159384ecc95308fa3dd2f266253113025b))
+
+
+
 # [1.0.0-alpha.3](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.0.0-alpha.3) (2022-03-11)
 
 
