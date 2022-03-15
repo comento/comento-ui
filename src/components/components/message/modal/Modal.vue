@@ -77,7 +77,7 @@ export default {
 	max-width: 90%;
 	margin: 0 auto;
 	background-color: $white;
-	border-radius: 10px;
+	@include border-radius(10px);
 	position: absolute;
 	top: 50%;
 	left: 50%;

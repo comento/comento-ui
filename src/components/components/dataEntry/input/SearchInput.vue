@@ -203,7 +203,7 @@ export default {
 		@include transition(all 0.2s ease);
 		border: 0;
 		@include background-opacity($gray000, 0.6);
-		padding: 8px 48px 8px 14px;
+		padding: 10px 48px 10px 14px;
 		@include body2();
 		width: 226px;
 		color: $gray800;

@@ -85,7 +85,7 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <LinkButton>이동하지 않는 링크 버튼</LinkButton>
                     <LinkButton to="#" color="blue400" type="body2">맨위로 이동하기</LinkButton>
-                    <LinkButton to="https://comento.kr" type="headline5">코멘토로 이동하기</LinkButton>
+                    <LinkButton to="https://comento.kr" color="blue600" type="headline5">코멘토로 이동하기</LinkButton>
                 </div>
         `,
             components: { LinkButton },
@@ -99,6 +99,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
+                    <LinkButton >default</LinkButton>
                     <LinkButton color="blue400">blue400</LinkButton>
                     <LinkButton color="blue600">blue600</LinkButton>
                 </div>

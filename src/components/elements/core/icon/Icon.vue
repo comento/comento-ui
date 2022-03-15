@@ -16,6 +16,8 @@ import IconQuestionMarkSmallLine from '@/assets/images/icon/small/icon-questionM
 import IconQuestionMarkSmallFill from '@/assets/images/icon/small/icon-questionMark-small-fill.svg?inline';
 import IconExclamationSmallLine from '@/assets/images/icon/small/icon-exclamation-small-line.svg?inline';
 import IconExclamationSmallFill from '@/assets/images/icon/small/icon-exclamation-small-fill.svg?inline';
+import IconInformationSmallLine from '@/assets/images/icon/small/icon-information-small-line.svg?inline';
+import IconInformationSmallFill from '@/assets/images/icon/small/icon-information-small-fill.svg?inline';
 import IconSettingSmallFill from '@/assets/images/icon/small/icon-setting-small-fill.svg?inline';
 import IconMegaphoneSmallLine from '@/assets/images/icon/small/icon-megaphone-small-line.svg?inline';
 import IconStarSmallLine from '@/assets/images/icon/small/icon-star-small-line.svg?inline';
@@ -197,6 +199,8 @@ export const IconNames = [
 	'IconQuestionMarkSmallFill',
 	'IconExclamationSmallLine',
 	'IconExclamationSmallFill',
+	'IconInformationSmallLine',
+	'IconInformationSmallFill',
 	'IconSettingSmallFill',
 	'IconMegaphoneSmallLine',
 	'IconStarSmallLine',
@@ -393,6 +397,8 @@ export default {
 		IconQuestionMarkSmallFill,
 		IconExclamationSmallLine,
 		IconExclamationSmallFill,
+		IconInformationSmallLine,
+		IconInformationSmallFill,
 		IconSettingSmallFill,
 		IconMegaphoneSmallLine,
 		IconStarSmallLine,

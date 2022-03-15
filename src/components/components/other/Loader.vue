@@ -79,11 +79,11 @@ const colorMap = {
 		fill: white,
 	},
 	info: {
-		stroke: gray200,
-		fill: gray500,
+		stroke: gray400,
+		fill: gray800,
 	},
 	'info-reversed': {
-		stroke: gray400,
+		stroke: gray500,
 		fill: gray800,
 	},
 	white: {

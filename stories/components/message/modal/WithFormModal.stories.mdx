@@ -160,8 +160,9 @@ export const Default = (args, { argTypes }) => ({
                             <InputGroup class="mb-12">
                                 <span style="width: 100%" class="mr-4">
                                     <TextField
-                                        placeholder="쿠폰코드를 입력하세요"
+                                        placeholder="쿠폰 코드를 입력하세요"
                                         full
+                                        outline
                                     />
                                 </span>
                                 <Button type="outline" color="primary" @click="handleSubmitModal">등록하기</Button>
@@ -170,7 +171,8 @@ export const Default = (args, { argTypes }) => ({
                                 <span class="mr-4">
                                     <TextField
                                         full
-                                        placeholder="쿠폰코드를 입력하세요"
+                                        placeholder="쿠폰 코드를 입력하세요"
+                                        outline
                                     />
                                 </span>
                                 <Button type="outline" color="info" @click="handleSubmitModal">등록하기</Button>

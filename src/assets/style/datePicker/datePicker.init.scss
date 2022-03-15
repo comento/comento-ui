@@ -24,5 +24,11 @@
 
   &-datepicker-main {
     border-radius: 2px;
+    .today {
+      color: $primary;
+      &:hover {
+        color: $primary;
+      }
+    }
   }
 }

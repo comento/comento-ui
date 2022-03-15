@@ -25,7 +25,7 @@
 <script>
 import Typography, { TypographyTypes } from '@/components/elements/core/typography/Typography';
 
-export const linkButtonColors = ['blue600', 'blue400'];
+export const linkButtonColors = ['default', 'blue600', 'blue400'];
 export const linkButtonTargets = ['_blank', '_self', '_parent', '_top'];
 
 /**
@@ -60,7 +60,7 @@ export default {
 		 */
 		color: {
 			type: String,
-			default: 'blue600',
+			default: 'default',
 			validator(value) {
 				return linkButtonColors.indexOf(value) !== -1;
 			},
@@ -94,10 +94,25 @@ export default {
 	a {
 		text-decoration: none;
 		cursor: pointer;
-
 		&:hover,
 		&:focus {
 			text-decoration: underline;
+		}
+	}
+
+	&.default a {
+		::v-deep.c-typography {
+			color: #006beb;
+		}
+		&:hover,
+		&:focus {
+			text-decoration-color: #006beb;
+		}
+	}
+
+	&.blue600 a {
+		&:hover,
+		&:focus {
 			text-decoration-color: $blue600;
 		}
 	}
