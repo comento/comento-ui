@@ -300,9 +300,6 @@ export default {
 		&.c-chip--with-close-button {
 			padding-right: 8px !important;
 		}
-		&.c-chip--with-close-button {
-			padding-right: 6px !important;
-		}
 	}
 	&.xlarge {
 		@include body1();
@@ -315,9 +312,6 @@ export default {
 		}
 		&.c-chip--with-close-button {
 			padding-right: 10px !important;
-		}
-		&.c-chip--with-close-button {
-			padding-right: 8px !important;
 		}
 	}
 	&.clickable-fill {
