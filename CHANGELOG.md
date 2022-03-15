@@ -1,3 +1,33 @@
+# [1.0.0-alpha.5](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-03-15)
+
+
+### Bug Fixes
+
+* 위아래 여백 안맞는 이슈 해결 ([#782](https://github.com/comento/comento-ui/issues/782)) ([14f6682](https://github.com/comento/comento-ui/commit/14f668260111d1ac22bc45faf246f1ea2489798d))
+* circle 그림자 추가 & 스와이퍼 속도 낮춤 반영 ([#801](https://github.com/comento/comento-ui/issues/801)) ([eeb1636](https://github.com/comento/comento-ui/commit/eeb16364b4f25346b5e4f445a0c48382d4d4202c))
+* font-weight가 없을 때 f-null로 클래스 주입되는 오류 수정 ([#805](https://github.com/comento/comento-ui/issues/805)) ([bafeac0](https://github.com/comento/comento-ui/commit/bafeac0600ee335f3a8855168d5bd352a2d0065f))
+* narrowButton QA 오류 반영 ([#796](https://github.com/comento/comento-ui/issues/796)) ([f02da03](https://github.com/comento/comento-ui/commit/f02da039c9e5ed3d550fdc429ddcba4644992ca3))
+
+
+### Features
+
+* 글자색 기본값 넣기 ([#775](https://github.com/comento/comento-ui/issues/775)) ([38fe0b1](https://github.com/comento/comento-ui/commit/38fe0b17fbb5eade69cb5c3e81b4c02c65f89468))
+* 모달 변경 (withFormModal, permissionModal) ([#798](https://github.com/comento/comento-ui/issues/798)) ([7fd6f21](https://github.com/comento/comento-ui/commit/7fd6f213a44d6c0040214f01b12a6868ec8ebce4))
+* 스토리에서 chip 변경 ([#799](https://github.com/comento/comento-ui/issues/799)) ([19ac490](https://github.com/comento/comento-ui/commit/19ac4906778dc4469fc6778ed70c77823a792bd6))
+* Banner story에서 Button 제거 ([#793](https://github.com/comento/comento-ui/issues/793)) ([342efc1](https://github.com/comento/comento-ui/commit/342efc16b7e49456ffd4fe996060432d41eb5585))
+* border-radius 변경 ([#780](https://github.com/comento/comento-ui/issues/780)) ([91c62b2](https://github.com/comento/comento-ui/commit/91c62b2837a3a6329a18bb45791e6a96cc8f9f28)), closes [#781](https://github.com/comento/comento-ui/issues/781) [#787](https://github.com/comento/comento-ui/issues/787) [#784](https://github.com/comento/comento-ui/issues/784) [#786](https://github.com/comento/comento-ui/issues/786) [#785](https://github.com/comento/comento-ui/issues/785) [#788](https://github.com/comento/comento-ui/issues/788) [#790](https://github.com/comento/comento-ui/issues/790) [#779](https://github.com/comento/comento-ui/issues/779) [#789](https://github.com/comento/comento-ui/issues/789)
+* border-radius 변경 ([#800](https://github.com/comento/comento-ui/issues/800)) ([2498330](https://github.com/comento/comento-ui/commit/24983302751a996533d60261b25a8e61ff62b5fb))
+* checkbox 체크 아이콘 변경 ([#797](https://github.com/comento/comento-ui/issues/797)) ([583864c](https://github.com/comento/comento-ui/commit/583864c57c0bcacf6d0a8d4995ed88153352a494))
+* datePicker today font color 변경 ([#772](https://github.com/comento/comento-ui/issues/772)) ([ecd6ac6](https://github.com/comento/comento-ui/commit/ecd6ac6f5c628cb5a21345806406b78a7f091b54))
+* EduCard QA ([#777](https://github.com/comento/comento-ui/issues/777)) ([c0fcd04](https://github.com/comento/comento-ui/commit/c0fcd04187da3ab099cfb5a3543432c26c463a4f))
+* icon 추가 (information-small line, fill) ([#792](https://github.com/comento/comento-ui/issues/792)) ([ee8b55b](https://github.com/comento/comento-ui/commit/ee8b55bee40738c46c17bbc8af76104862badf99))
+* pagination컴포넌트에 displayName 주석 추가 ([#806](https://github.com/comento/comento-ui/issues/806)) ([0715bc9](https://github.com/comento/comento-ui/commit/0715bc903f783b866f3df760b1105bab54865442))
+* PromotionEduCard QA ([#778](https://github.com/comento/comento-ui/issues/778)) ([2c02ef2](https://github.com/comento/comento-ui/commit/2c02ef264392d925b11318990b1a1a343cb01f03))
+* ratingButton 추가 ([#804](https://github.com/comento/comento-ui/issues/804)) ([3d787fe](https://github.com/comento/comento-ui/commit/3d787fe8bf0d69e675967ebf0565880b96f835cb))
+* searchInput padding 변경 ([#807](https://github.com/comento/comento-ui/issues/807)) ([0de0d89](https://github.com/comento/comento-ui/commit/0de0d896ca4f2bd2c4ff4989d6e2b54157724d80))
+
+
+
 # [1.0.0-alpha.4](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-03-14)
 
 
