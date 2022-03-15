@@ -1,7 +1,15 @@
 <template>
 	<span
 		class="c-application c-chip"
-		:class="[computedType, computedColor, computedSize, computedFull, computedTransparent, computedClickable]"
+		:class="[
+			computedType,
+			computedColor,
+			computedSize,
+			computedFull,
+			computedTransparent,
+			computedClickable,
+			{ 'c-chip--with-close-button': withCloseButton },
+		]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
@@ -23,7 +31,7 @@ import Icon from '@/components/elements/core/icon/Icon';
 export const ChipColors = ['primary', 'info', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
-export const ChipSizesWithCloseButton = ['large', 'xlarge'];
+export const ChipSizesWithCloseButton = ['medium', 'large', 'xlarge'];
 
 /**
  * 작은 정보를 전달하기 위해 사용
@@ -40,7 +48,7 @@ export default {
 			type: String,
 			default: 'fill',
 			validator(value) {
-				return ChipTypes.indexOf(value) !== -1;
+				return ChipTypes.includes(value);
 			},
 		},
 		/**
@@ -50,7 +58,7 @@ export default {
 			type: String,
 			default: 'info',
 			validator(value) {
-				return ChipColors.indexOf(value) !== -1;
+				return ChipColors.includes(value);
 			},
 		},
 		/**
@@ -60,7 +68,7 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return ChipSizes.indexOf(value) !== -1;
+				return ChipSizes.includes(value);
 			},
 		},
 		full: {
@@ -122,8 +130,9 @@ export default {
 		computedCloseButtonIconName() {
 			if (!ChipSizesWithCloseButton.includes(this.size)) return;
 			const closeButtonIconSize = {
-				xlarge: 'medium',
+				medium: 'small',
 				large: 'small',
+				xlarge: 'medium',
 			}[this.size];
 			return `IconClose${closeButtonIconSize[0].toUpperCase() + closeButtonIconSize.slice(1)}Line`;
 		},
@@ -147,7 +156,7 @@ export default {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 4px;
+	@include border-radius(4px);
 	text-align: center;
 	&.info {
 		color: $gray700;
@@ -259,13 +268,9 @@ export default {
 		height: 16px;
 		padding: 1.5px 4px;
 		font-weight: $regular;
-		&.clickable-fill {
-			border-radius: 10px;
+		.clickable {
+			@include border-radius(12px);
 			padding: 1.5px 6px;
-		}
-		&.clickable-outline {
-			border-radius: 10px;
-			padding: 2px 3px;
 		}
 	}
 	&.medium {
@@ -273,13 +278,13 @@ export default {
 		height: 24px;
 		padding: 4.5px 8px;
 		font-weight: $regular;
-		&.clickable-fill {
-			border-radius: 12px;
-			padding: 5.5px 10px;
+		@include border-radius(6px);
+		&.clickable {
+			@include border-radius(12px);
+			padding: 4.5px 10px;
 		}
-		&.clickable-outline {
-			border-radius: 12px;
-			padding: 4.5px 9px;
+		&.c-chip--with-close-button {
+			padding-right: 6px !important;
 		}
 	}
 	&.large {
@@ -287,26 +292,26 @@ export default {
 		height: 30px;
 		padding: 5px 10px;
 		font-weight: $regular;
-		&.clickable-fill {
-			border-radius: 15px;
-			padding: 5px 14px;
+		@include border-radius(6px);
+		.clickable {
+			@include border-radius(15px);
+			padding: 5px 12px;
 		}
-		&.clickable-outline {
-			border-radius: 15px;
-			padding: 4px 13px;
+		&.c-chip--with-close-button {
+			padding-right: 8px !important;
 		}
 	}
 	&.xlarge {
 		@include body1();
 		padding: 4.5px 12px;
 		font-weight: $regular;
-		&.clickable-fill {
-			border-radius: 19px;
-			padding: 5px 16px;
+		@include border-radius(8px);
+		.clickable {
+			@include border-radius(19px);
+			padding: 4.5px 14px;
 		}
-		&.clickable-outline {
-			border-radius: 19px;
-			padding: 4px 15px;
+		&.c-chip--with-close-button {
+			padding-right: 10px !important;
 		}
 	}
 	&.clickable-fill {
