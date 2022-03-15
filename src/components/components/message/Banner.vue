@@ -3,7 +3,7 @@
 		<div class="c-banner--background" :class="[computedBlur]">
 			<slot name="background" />
 		</div>
-		<div class="c-banner--content">
+		<div class="c-banner--content" :class="[computedAlignItems]">
 			<Typography v-if="title" class="c-banner--title" :type="computedTitleType" font-weight="semi-bold">
 				{{ title }}
 			</Typography>
@@ -91,12 +91,15 @@ export default {
 		isButtonVisible() {
 			return this.$slots['button'] && !this.isMobile;
 		},
+		computedAlignItems() {
+			return `c-banner--${this.alignItems}`;
+		},
 	},
 	components: { Typography },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .c-banner {
 	position: relative;
 	display: grid;
@@ -155,6 +158,13 @@ export default {
 
 	&--buttons {
 		margin-top: 32px;
+	}
+
+	&--flex-start {
+		padding-left: 406px;
+	}
+	&--flex-end {
+		padding-right: 406px;
 	}
 
 	@include pc {
