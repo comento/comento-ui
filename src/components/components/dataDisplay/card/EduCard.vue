@@ -141,6 +141,8 @@ export default {
 	&--image {
 		width: 100%;
 		height: 100%;
+		object-fit: cover;
+		object-position: left;
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			position: relative;
