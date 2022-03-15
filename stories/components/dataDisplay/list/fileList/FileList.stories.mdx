@@ -63,6 +63,7 @@ export const Default = (args, { argTypes }) => ({
     },
   },
   template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
+                <div :style="full ? 'width: 100%' : ''">
                  <FileInput v-if="isRemovable" @uploadFiles="handleUploadFiles"/>
                  <FileSummary v-else :full="full" :length="filesData.length" />
                  <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 8.5px;"/>
@@ -73,6 +74,7 @@ export const Default = (args, { argTypes }) => ({
                     @clickFileItemContent="handleClickFileItemContent"
                     @clickFileTrashIcon="handleClickFileTrashIcon"
                  />
+                </div>
              </div>`,
    components: { FileList, Divider, FileSummary, FileInput },
 });
