@@ -121,7 +121,7 @@ export const Default = (args, { argTypes }) => ({
                             <ButtonStateTitle>loading</ButtonStateTitle>
                             <div :style="getGhostTypeBackgroundColor(type)">
                                 <template v-for="(color, index) in getFilterButtonColors(type)">
-                                    <Button :color="color" :type="type" class="mb-16" loading></Button>
+                                    <Button :color="color" :type="type" class="mb-16" loading style="color: transparent;">Button</Button>
                                 </template>
                             </div>
                         </div>
@@ -323,6 +323,7 @@ export const Default = (args, { argTypes }) => ({
     <Story name="WithIcon" height="100px">
         {{
             template: `
+            <div>
                 <div style="display: flex">
                     <Button color="primary" type="fill" size="small">
                         <template v-slot:left-icon>
@@ -338,7 +339,7 @@ export const Default = (args, { argTypes }) => ({
                     </Button>
                     <Button color="primary" type="fill" size="large">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusLargeLine" color="white" />
+                            <Icon name="IconPlusMediumLine" color="white" />
                         </template>
                         Large
                     </Button>
@@ -349,6 +350,33 @@ export const Default = (args, { argTypes }) => ({
                         XLarge
                     </Button>
                 </div>
+                <div style="display: flex; margin-top:20px">
+                    <Button color="primary" type="fill" size="small">
+                        <template v-slot:left-icon>
+                            <Icon name="IconExclamationSmallFill" color="white" />
+                        </template>
+                        Small
+                    </Button>
+                    <Button color="primary" type="fill" size="medium">
+                        <template v-slot:left-icon>
+                            <Icon name="IconExclamationMediumFill" color="white" />
+                        </template>
+                        Medium
+                    </Button>
+                    <Button color="primary" type="fill" size="large">
+                        <template v-slot:left-icon>
+                            <Icon name="IconExclamationMediumFill" color="white" />
+                        </template>
+                        Large
+                    </Button>
+                    <Button color="primary" type="fill" size="xlarge">
+                        <template v-slot:left-icon>
+                            <Icon name="IconExclamationLargeFill" color="white" />
+                        </template>
+                        XLarge
+                    </Button>
+                </div>
+            </div>
         `,
             components: { Button, Icon },
         }}

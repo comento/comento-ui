@@ -155,7 +155,7 @@ export default {
 			return isXLarge ? 4 : 2;
 		},
 		isFillType() {
-			return this.type === 'fill';
+			return this.type === 'fill' || this.type === 'fab';
 		},
 		showIcon() {
 			return this.isFabType;
@@ -249,6 +249,7 @@ $info-text-color: $info;
 		padding: 0 8px;
 		min-width: 36px;
 		@include caption2;
+		@include border-radius(6px);
 		.loading {
 			padding: 0 9.5px;
 			line-height: 90%;
@@ -257,9 +258,10 @@ $info-text-color: $info;
 	&.medium {
 		height: 36px;
 		padding: 0 12px;
-		min-width: 50px;
+		min-width: 49px;
 		@include body2;
-		font-weight: bold;
+		@include border-radius(6px);
+		font-weight: 600;
 		.loading {
 			padding: 0 28.5px;
 			line-height: 90%;
@@ -268,10 +270,10 @@ $info-text-color: $info;
 	&.large {
 		height: 48px;
 		padding: 0 14px;
-		min-width: 76px;
+		min-width: 56px;
+		@include border-radius(8px);
 		@include body1;
 		font-weight: bold;
-		@include border-radius(8px);
 		.loading {
 			padding: 0 14.5px;
 			line-height: 90%;
@@ -280,10 +282,10 @@ $info-text-color: $info;
 	&.xlarge {
 		height: 60px;
 		padding: 0 26px;
-		min-width: 130px;
+		min-width: 84px;
+		@include border-radius(8px);
 		@include headline6;
 		font-weight: bold;
-		@include border-radius(8px);
 		.loading {
 			padding: 0 9.5px;
 			line-height: 90%;
@@ -543,7 +545,7 @@ $info-text-color: $info;
 	&.text {
 		color: $error-text-color;
 		@include state-style {
-			background-color: $red000;
+			background-color: $red100;
 		}
 		&:disabled {
 			color: $error-disabled-background-color;
@@ -594,7 +596,7 @@ $info-text-color: $info;
 	&.text {
 		color: $secondary-text-color;
 		@include state-style {
-			background-color: $orange000;
+			background-color: $orange100;
 		}
 		&:disabled {
 			color: $secondary-disabled-background-color;
