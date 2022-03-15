@@ -4,7 +4,7 @@
 		<div class="c-avatar--item">
 			<Icon v-if="isProfileType" :name="computedIconName" :color="computedColorName" />
 			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
-			<Typography v-if="isNicknameType" :type="computedTypography" :font-weight="700" color="white">
+			<Typography v-if="isNicknameType" :type="computedTypography" font-weight="semi-bold" color="white">
 				{{ text || computedRandomText }}
 			</Typography>
 		</div>
@@ -173,7 +173,7 @@ export default {
 		left: 50%;
 	}
 	&--logo {
-		background-image: url('https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/images/icon/icon-comento-typo-white-logo.svg');
+		background-image: url('https://comento-s3-bucket.s3.ap-northeast-2.amazonaws.com/images/icon/icon-comento-typo-logo.svg');
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;

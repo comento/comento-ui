@@ -178,17 +178,17 @@ export default {
 
 		&.xsmall {
 			padding: 4px 8px;
-			border-radius: 6px;
+			@include border-radius(6px);
 			@include callout-icon-margin-right(5px);
 		}
 		&.small {
 			padding: 8px;
-			border-radius: 6px;
+			@include border-radius(6px);
 			@include callout-icon-margin-right(7px);
 		}
 		&.medium {
 			padding: 12px;
-			border-radius: 8px;
+			@include border-radius(8px);
 			@include callout-icon-margin-right(7px);
 		}
 

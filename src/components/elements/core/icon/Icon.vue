@@ -140,6 +140,7 @@ import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.s
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
 import IconProfileXLargeFill from '@/assets/images/icon/xlarge/icon-profile-xlarge-fill.svg?inline';
+import IconAnswerXLargeLine from '@/assets/images/icon/xlarge/icon-answer-xlarge-line.svg?inline';
 import IconVodXLargeLine from '@/assets/images/icon/xlarge/icon-vod-xlarge-line.svg?inline';
 import IconEssayXLargeLine from '@/assets/images/icon/xlarge/icon-essay-xlarge-line.svg?inline';
 import IconAnalyticsXLargeLine from '@/assets/images/icon/xlarge/icon-analytics-xlarge-line.svg?inline';
@@ -320,6 +321,7 @@ export const IconNames = [
 	// XLarge
 	'IconProfileXLargeLine',
 	'IconProfileXLargeFill',
+	'IconAnswerXLargeLine',
 	'IconVodXLargeLine',
 	'IconEssayXLargeLine',
 	'IconAnalyticsXLargeLine',
@@ -515,6 +517,7 @@ export default {
 		// x-large
 		IconProfileXLargeLine,
 		IconProfileXLargeFill,
+		IconAnswerXLargeLine,
 		IconVodXLargeLine,
 		IconEssayXLargeLine,
 		IconAnalyticsXLargeLine,
