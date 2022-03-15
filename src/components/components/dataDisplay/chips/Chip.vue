@@ -31,7 +31,7 @@ import Icon from '@/components/elements/core/icon/Icon';
 export const ChipColors = ['primary', 'info', 'success'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
-export const ChipSizesWithCloseButton = ['large', 'xlarge'];
+export const ChipSizesWithCloseButton = ['medium', 'large', 'xlarge'];
 
 /**
  * 작은 정보를 전달하기 위해 사용
@@ -130,8 +130,9 @@ export default {
 		computedCloseButtonIconName() {
 			if (!ChipSizesWithCloseButton.includes(this.size)) return;
 			const closeButtonIconSize = {
-				xlarge: 'medium',
+				medium: 'small',
 				large: 'small',
+				xlarge: 'medium',
 			}[this.size];
 			return `IconClose${closeButtonIconSize[0].toUpperCase() + closeButtonIconSize.slice(1)}Line`;
 		},
@@ -282,6 +283,9 @@ export default {
 			@include border-radius(12px);
 			padding: 4.5px 10px;
 		}
+		&.c-chip--with-close-button {
+			padding-right: 6px !important;
+		}
 	}
 	&.large {
 		@include body2();
@@ -294,7 +298,7 @@ export default {
 			padding: 5px 12px;
 		}
 		&.c-chip--with-close-button {
-			padding-right: 6px !important;
+			padding-right: 8px !important;
 		}
 	}
 	&.xlarge {
@@ -307,7 +311,7 @@ export default {
 			padding: 4.5px 14px;
 		}
 		&.c-chip--with-close-button {
-			padding-right: 8px !important;
+			padding-right: 10px !important;
 		}
 	}
 	&.clickable-fill {
