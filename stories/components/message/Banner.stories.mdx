@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Banner from '@/components/components/message/Banner';
+import Button from "@/components/components/general/button/Button";
 import Typography from '@/components/elements/core/typography/Typography';
 import NewGrid from '@/components/layout/NewGrid';
 import NewRow from '@/components/layout/NewRow';
@@ -41,11 +42,14 @@ import NewCol from '@/components/layout/NewCol';
 
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Banner, Typography, NewGrid, NewRow, NewCol },
+	components: { Banner, Button, Typography, NewGrid, NewRow, NewCol },
 	template: `<div>
             <Banner :type="type" :blur="blur" :title="title" :description="description" :align-items="alignItems">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
+                </template>
+                <template v-slot:button v-if="type === 'full'">
+                    <Button size="xlarge">CTA BTN</Button>
                 </template>
             </Banner>
         </div>`,
@@ -68,7 +72,7 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
 	<Story name="All" height="500px">
 		{{
-			components: { Banner, NewGrid, NewCol, NewRow, Typography },
+			components: { Banner, Button, NewGrid, NewCol, NewRow, Typography },
 			template: `<div>
                 <Banner type="standard" title="Title" description="Description" blur>
                 <template v-slot:background>
@@ -78,6 +82,9 @@ export const Default = (args, { argTypes }) => ({
             <Banner class="mt-40" type="full" title="Title" description="Description" blur>
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
+                </template>
+                <template v-slot:button>
+                    <Button size="xlarge">CTA BTN</Button>
                 </template>
             </Banner>
             </div>`,
