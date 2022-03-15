@@ -30,6 +30,7 @@
 							:name="isMobile ? 'IconStarSmallFill' : 'IconStarMediumFill'"
 							color="yellow600"
 							element="span"
+							class="mr-2"
 						/>
 						<Typography
 							:type="isMobile ? 'caption2' : 'caption1'"
@@ -70,7 +71,6 @@ import Typography from '@/components/elements/core/typography/Typography';
 import Divider from '@/components/elements/utility/Divider';
 import windowMixin from '@/mixins/windowMixin';
 import Icon from '@/components/elements/core/icon/Icon';
-import { colorKeys, colors } from '@/utils/constants/color';
 
 /**
  * 직무부트캠프 프로모션용 카드
@@ -99,8 +99,7 @@ export default {
 			default: 0,
 		},
 		dominantColor: {
-			type: String,
-			default: '#46617f',
+			type: Object,
 		},
 	},
 	computed: {
@@ -119,11 +118,7 @@ export default {
 			return this.isMobile ? '144px' : '136px';
 		},
 		computedDominantColor() {
-			if (colorKeys.includes(this.dominantColor)) {
-				return colors[this.dominantColor];
-			}
-
-			return this.dominantColor;
+			return `${this.dominantColor.red}, ${this.dominantColor.green}, ${this.dominantColor.blue}`;
 		},
 	},
 	components: {
@@ -135,10 +130,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$backgroundColorAlpha: 0.04;
+
 .c-promotion-edu-card {
 	padding: 0 10px 10px;
 	overflow: hidden;
-	background-color: rgba(70, 97, 127, 0.04);
+	background-color: rgba(var(--dominant-color), $backgroundColorAlpha);
 	@include border-radius(10px);
 	width: var(--card-width);
 	max-width: 152px;
@@ -188,7 +185,7 @@ export default {
 			height: 28px;
 
 			color: white;
-			background-color: var(--dominant-color);
+			background-color: rgb(var(--dominant-color));
 			padding: 0 12px 0 10px;
 			border-radius: 0px 30px 30px 0;
 			min-width: 54px;

@@ -67,10 +67,7 @@ import Chip from '@/components/components/dataDisplay/chips/Chip';
 		},
 		dominantColor: {
 			description: '카테고리 색깔',
-			defaultValue: '#46617f',
-			control: {
-				type: 'color',
-			},
+			defaultValue: { red: 0, green: 0, blue: 0 },
 		},
 		title: {
 			description: '카드 타이틀',
@@ -182,6 +179,7 @@ export const Default = (args, { argTypes }) => ({
                                 :score-average="4.4"
                                 :review-count="50"
                                 :applicant-count="72"
+								:dominant-color="{ red: 43, green: 86, blue: 108 }"
                             >
                                 <template v-slot:title>Title</template>
                                 <template v-slot:alternative-caption>대체 캡션 사용</template>
@@ -194,6 +192,7 @@ export const Default = (args, { argTypes }) => ({
                                 :score-average="4.4"
                                 :review-count="50"
                                 :applicant-count="72"
+								:dominant-color="{ red: 69, green: 112, blue: 84 }"
                             >
                                 <template v-slot:title>Title</template>
                             </PromotionEduCard>
@@ -205,6 +204,7 @@ export const Default = (args, { argTypes }) => ({
                                 :score-average="5"
                                 :review-count="50"
                                 :applicant-count="72"
+								:dominant-color="{ red: 114, green: 96, blue: 55 }"
                             >
                                 <template v-slot:title>Title</template>
                             </PromotionEduCard>
