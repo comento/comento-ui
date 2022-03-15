@@ -7,7 +7,7 @@
 		v-on="$listeners"
 		@click="$event.target.blur()"
 	>
-		<Loader v-if="loading" size="small" :color="computedColor" />
+		<Loader v-if="loading" size="small" :color="color" />
 		<template v-else>
 			<Icon :name="iconName" :color="computedColor" class="mr-4" />
 			<Typography type="body2" :color="computedColor">{{ text }}</Typography>
