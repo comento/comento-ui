@@ -30,6 +30,7 @@
 							:name="isMobile ? 'IconStarSmallFill' : 'IconStarMediumFill'"
 							color="yellow600"
 							element="span"
+							class="mr-2"
 						/>
 						<Typography
 							:type="isMobile ? 'caption2' : 'caption1'"
@@ -97,12 +98,16 @@ export default {
 			type: Number,
 			default: 0,
 		},
+		dominantColor: {
+			type: Object,
+		},
 	},
 	computed: {
 		computedStyle() {
 			return {
 				'--card-width': this.width,
 				'--image-height': this.computedImageHeight,
+				'--dominant-color': this.computedDominantColor,
 			};
 		},
 		computedImageHeight() {
@@ -111,6 +116,9 @@ export default {
 			}
 
 			return this.isMobile ? '144px' : '136px';
+		},
+		computedDominantColor() {
+			return `${this.dominantColor.red}, ${this.dominantColor.green}, ${this.dominantColor.blue}`;
 		},
 	},
 	components: {
@@ -122,11 +130,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$backgroundColorAlpha: 0.04;
+
 .c-promotion-edu-card {
 	padding: 0 10px 10px;
 	overflow: hidden;
-	background-color: rgba(70, 97, 127, 0.04);
-	@include border-radius(8px);
+	background-color: rgba(var(--dominant-color), $backgroundColorAlpha);
+	@include border-radius(10px);
 	width: var(--card-width);
 	max-width: 152px;
 	cursor: pointer;
@@ -170,12 +180,15 @@ export default {
 		margin-left: -10px;
 		z-index: 1;
 		&-category {
-			display: inline-block;
+			@include inline-flex();
+			@include align-items(center);
+			height: 28px;
+
 			color: white;
-			background-color: #46617f;
-			padding: 8px 12px 8px 10px;
+			background-color: rgb(var(--dominant-color));
+			padding: 0 12px 0 10px;
 			border-radius: 0px 30px 30px 0;
-			min-width: 72px;
+			min-width: 54px;
 		}
 	}
 
@@ -190,7 +203,7 @@ export default {
 	}
 
 	&--divider {
-		@include align-self(stretch);
+		height: 10px !important;
 	}
 
 	@keyframes scale-up-center {
@@ -244,9 +257,9 @@ export default {
 		&--subtitle {
 			margin-left: -16px;
 			&-category {
-				background-color: #46617f;
-				padding: 9px 14px 9px 16px;
-				min-width: 89px;
+				height: 38px;
+				padding: 0 14px 0 16px;
+				min-width: 74px;
 			}
 		}
 
