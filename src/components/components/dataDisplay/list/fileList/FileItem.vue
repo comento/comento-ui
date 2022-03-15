@@ -5,7 +5,7 @@
 				<Loader v-if="isLoading" class="c-file-item--content-icon" size="small" />
 				<Icon v-else class="c-file-item--content-icon" name="IconFileMediumLine" color="gray700" />
 			</template>
-			<Typography type="caption1" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
+			<Typography type="body2" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
 		</div>
 		<Icon
 			v-if="isRemovable"
