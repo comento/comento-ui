@@ -118,7 +118,10 @@ export default {
 			];
 		},
 		computedClass() {
-			return [this.type && `c-${this.type}`, !this.isNumberFontWeight && `f-${this.fontWeight}`];
+			return [this.type && `c-${this.type}`, this.fontWeightClass];
+		},
+		fontWeightClass() {
+			return this.fontWeight && !this.isNumberFontWeight ? `f-${this.fontWeight}` : '';
 		},
 	},
 };
