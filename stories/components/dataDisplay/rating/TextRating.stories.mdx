@@ -52,15 +52,17 @@ export const Default = (args, { argTypes }) => ({
                         댓글
                     </template>
                     <template v-slot:text-right>
-                        <strong>3</strong>
+                        <Typography color="gray850" :font-weight="500">
+                            3
+                        </Typography>
                     </template>
                     </TextRating>
                     <TextRating size="small">
                         <template v-slot:text-left>
-                        총
+                            총
                         </template>
                     <template v-slot:text-right>
-                        <Typography color="gray700" element="span">204</Typography>건
+                        <Typography color="gray700" element="span" :font-weight="500">204</Typography>건
                     </template>
                 </TextRating>
             </div>
