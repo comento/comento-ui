@@ -29,7 +29,9 @@
 					{{ captionLeft }}
 				</Typography>
 				<Divider v-show="captionRight" vertical color="gray200" class="mx-8" />
-				<Typography type="caption1" element="span" color="gray400"> {{ captionRight }}</Typography>
+				<Typography :type="getTypography('caption')" element="span" color="gray400">
+					{{ captionRight }}
+				</Typography>
 				<slot name="additional-captions" />
 			</div>
 		</div>
@@ -92,15 +94,20 @@ export default {
 	computed: {
 		computedStyle() {
 			return {
-				'--card-width': this.width,
+				'--card-width': this.computedWidth,
 				'--image-height': this.computedImageHeight,
 				'--background-color': this.backgroundColor,
 				'--title-height': this.computedTitleHeight,
+				'--border-radius': this.computedBorderRadius,
 			};
+		},
+		computedWidth() {
+			return this.isMobileWithSwiper ? '152px' : this.width;
 		},
 		computedImageHeight() {
 			if (this.imageHeight) return this.imageHeight;
 			if (this.emphasized) return this.isMobile ? '180px' : '300px';
+			if (this.isMobileWithSwiper) return '100px';
 
 			return this.isMobile ? '144px' : '136px';
 		},
@@ -115,6 +122,9 @@ export default {
 				title: ['body1', 'body2'],
 				caption: ['caption1', 'caption2'],
 			};
+		},
+		computedBorderRadius() {
+			return this.isMobileWithSwiper ? '8px' : '10px';
 		},
 	},
 	methods: {
@@ -136,6 +146,7 @@ export default {
 	@include border-radius(4px);
 	width: var(--card-width);
 	max-width: 343px;
+	min-width: 152px;
 	cursor: pointer;
 
 	&--image {
@@ -146,7 +157,7 @@ export default {
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			position: relative;
-			@include border-radius(10px);
+			@include border-radius(var(--border-radius));
 			overflow: hidden;
 			width: 100%;
 			height: var(--image-height);
