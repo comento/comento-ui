@@ -20,11 +20,11 @@ export default {
 	name: 'Hint',
 	props: {
 		/**
-		 * 색상(primary, success, secondary, error)
+		 * 색상
 		 */
 		color: {
 			type: String,
-			default: 'secondary',
+			default: 'info',
 			validator(value) {
 				const isValid = colorKeys.indexOf(value) !== -1;
 				return customValidator(value, isValid, 'Hint', 'color');

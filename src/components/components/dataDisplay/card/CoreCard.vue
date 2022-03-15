@@ -108,7 +108,7 @@ export default {
 	cursor: pointer;
 
 	.c-box {
-		@include border-radius(4px);
+		@include border-radius(10px);
 	}
 
 	&--content-wrapper {

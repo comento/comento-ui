@@ -13,6 +13,7 @@ import IconSpinnerLarge from '@/assets/images/icon/large/icon-spinner-large.svg?
 import { colors } from '@/utils/constants/color';
 const {
 	gray200,
+	gray400,
 	gray500,
 	gray800,
 	blue000,
@@ -78,12 +79,12 @@ const colorMap = {
 		fill: white,
 	},
 	info: {
-		stroke: gray500,
-		fill: gray800,
+		stroke: gray200,
+		fill: gray500,
 	},
 	'info-reversed': {
-		stroke: gray800,
-		fill: gray500,
+		stroke: gray400,
+		fill: gray800,
 	},
 	white: {
 		stroke: gray200,
