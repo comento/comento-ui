@@ -10,7 +10,7 @@
 				<slot name="icon" />
 			</div>
 			<Icon v-else-if="icon" class="c-toast--icon" :name="icon" :color="toastItemColor" />
-			<Typography class="c-toast--message" element="p" type="body2" :color="toastItemColor" :font-weight="400">
+			<Typography class="c-toast--message" element="p" type="body2" :color="toastItemColor" :font-weight="500">
 				{{ message }}
 			</Typography>
 			<div v-if="$slots['button']" class="c-toast--button">
@@ -126,7 +126,7 @@ export default {
 	padding: 14px 16px;
 	text-align: center;
 	z-index: 9999;
-	@include border-radius(4px);
+	@include border-radius(8px);
 	@include shadow4();
 	display: table; // width: fit-content 대체
 	max-width: 90%;
