@@ -155,7 +155,7 @@ export default {
 			return isXLarge ? 4 : 2;
 		},
 		isFillType() {
-			return this.type === 'fill';
+			return this.type === 'fill' || this.type === 'fab';
 		},
 		showIcon() {
 			return this.isFabType;
