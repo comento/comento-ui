@@ -39,12 +39,12 @@ export const LoaderSizes = ['small', 'medium', 'large'];
 
 const colorMap = {
 	primary: {
-		stroke: blue100,
-		fill: blue600,
+		stroke: blue600,
+		fill: blue100,
 	},
 	'primary-reversed': {
-		stroke: blue800,
-		fill: white,
+		stroke: white,
+		fill: blue800,
 	},
 	'light-primary': {
 		stroke: blue400,
@@ -55,44 +55,44 @@ const colorMap = {
 		fill: blue400,
 	},
 	success: {
-		stroke: green100,
-		fill: green600,
+		stroke: green600,
+		fill: green100,
 	},
 	'success-reversed': {
-		stroke: green800,
-		fill: white,
+		stroke: white,
+		fill: green800,
 	},
 	error: {
-		stroke: red100,
-		fill: red600,
+		stroke: red600,
+		fill: red100,
 	},
 	'error-reversed': {
-		stroke: red800,
-		fill: white,
+		stroke: white,
+		fill: red800,
 	},
 	secondary: {
-		stroke: orange100,
-		fill: orange600,
+		stroke: orange600,
+		fill: orange100,
 	},
 	'secondary-reversed': {
-		stroke: orange800,
-		fill: white,
+		stroke: white,
+		fill: orange800,
 	},
 	info: {
-		stroke: gray200,
-		fill: gray500,
+		stroke: gray800,
+		fill: gray400,
 	},
 	'info-reversed': {
-		stroke: gray400,
-		fill: gray800,
-	},
-	white: {
-		stroke: gray200,
+		stroke: gray800,
 		fill: gray500,
 	},
-	'white-reversed': {
+	white: {
 		stroke: gray500,
 		fill: gray200,
+	},
+	'white-reversed': {
+		stroke: gray200,
+		fill: gray500,
 	},
 };
 

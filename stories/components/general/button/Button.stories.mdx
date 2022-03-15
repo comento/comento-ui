@@ -121,7 +121,7 @@ export const Default = (args, { argTypes }) => ({
                             <ButtonStateTitle>loading</ButtonStateTitle>
                             <div :style="getGhostTypeBackgroundColor(type)">
                                 <template v-for="(color, index) in getFilterButtonColors(type)">
-                                    <Button :color="color" :type="type" class="mb-16" loading></Button>
+                                    <Button :color="color" :type="type" class="mb-16" loading style="color: transparent;">Button</Button>
                                 </template>
                             </div>
                         </div>
