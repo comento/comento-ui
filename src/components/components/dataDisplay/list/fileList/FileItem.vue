@@ -81,7 +81,6 @@ export default {
 .c-file {
 	&-item {
 		&--content {
-			width: 100%;
 			height: 20px;
 			cursor: pointer;
 			@include flexbox();
