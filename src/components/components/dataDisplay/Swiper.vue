@@ -203,7 +203,7 @@ export default {
 		},
 		autoplayDelay: {
 			type: Number,
-			default: 6000,
+			default: 5000,
 		},
 		loop: {
 			type: Boolean,
@@ -392,6 +392,7 @@ $swiper-control-circle-radius: 16px;
 	border-radius: 50%;
 	padding: calc((#{$swiper-control-circle-radius} * 2 - #{$swiper-control-size}) / 2);
 	margin-top: calc(-1 * #{$swiper-control-circle-radius} / 2);
+	@include shadow1();
 	&-light {
 		background-color: rgba(0, 0, 0, 0.4) !important;
 		&.swiper-button-disabled {
