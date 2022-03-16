@@ -1,11 +1,13 @@
 <template>
 	<div class="c-application c-checkbox" :class="computedClasses">
+		<!-- @click="$event.target.blur()"은 click 이후에 focus가 유지되는 현상 방지 -->
 		<input
 			:id="computedId"
 			v-model="sync_value"
 			type="checkbox"
 			:disabled="disabled"
 			v-bind="$attrs"
+			@click="$event.target.blur()"
 			v-on="$listeners"
 		/>
 		<label :class="{ disabled }" :for="computedId">
