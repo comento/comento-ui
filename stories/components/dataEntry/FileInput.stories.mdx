@@ -74,7 +74,7 @@ export const Default = (args, { argTypes }) => ({
                     :disabled="disabled"
                     @uploadFiles="handleUploadFiles"
                  />
-                 <Divider type="dash" style="margin-top: 12.5px; margin-bottom: 8.5px;"/>
+                 <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
                  <FileList :files="files"
                     :full="full"
                     isRemovable
@@ -154,7 +154,7 @@ export const Default = (args, { argTypes }) => ({
                             <FileInput full
                               @uploadFiles="handleCreateUploadFiles"
                             />
-                            <Divider type="dash" style="margin-top: 12.5px; margin-bottom: 8.5px;"/>
+                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
                             <FileList :files="createFiles" isRemovable @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
@@ -162,13 +162,13 @@ export const Default = (args, { argTypes }) => ({
                             <FileInput full
                               @uploadFiles="handleEditUploadFiles"
                             />
-                            <Divider type="dash" style="margin-top: 12.5px; margin-bottom: 8.5px;"/>
+                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
                             <FileList :files="editFiles" isRemovable @clickFileTrashIcon="handleEditClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">완료 시</Typography>
                             <FileSummary :length="mockFiles.length" @clickAllFileDownloadButton="handleClickAllFileDownloadButton"/>
-                            <Divider type="dash" style="margin-top: 12.5px; margin-bottom: 8.5px;"/>
+                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
                             <FileList :files="mockFiles" @clickFileDownloadIcon="handleClickMockFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                       </div>`,
