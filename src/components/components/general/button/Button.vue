@@ -221,6 +221,7 @@ $info-text-color: $info;
 	@include justify-content(center);
 	position: relative;
 	cursor: pointer;
+	overflow: hidden;
 
 	&:disabled {
 		cursor: not-allowed !important;
