@@ -1,3 +1,27 @@
+# [1.0.0-alpha.6](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-03-16)
+
+
+### Bug Fixes
+
+* [@click](https://github.com/click)="$event.target.blur()"은 click 이후에 focus가 유지되는 현상 방지 ([#823](https://github.com/comento/comento-ui/issues/823)) ([d16458c](https://github.com/comento/comento-ui/commit/d16458cc7ca1c8ae9eafb67e50918243da8bc359))
+* 모바일에서 이름 나오는 오류 수정 ([#810](https://github.com/comento/comento-ui/issues/810)) ([ff82b2c](https://github.com/comento/comento-ui/commit/ff82b2ce1d3fa8a5a1610e48b5b5b8a2ff9cecb8))
+* 색상변경 반영 ([#825](https://github.com/comento/comento-ui/issues/825)) ([af243c6](https://github.com/comento/comento-ui/commit/af243c61a0327131b0d629e9fc841d5b479dbcd3))
+* 스와이터 5000 -> 3000변경 ([#816](https://github.com/comento/comento-ui/issues/816)) ([4a02a59](https://github.com/comento/comento-ui/commit/4a02a5971869c81f0e746afbff0b4bc3ffda8324))
+* button ([#820](https://github.com/comento/comento-ui/issues/820)) ([00a0eff](https://github.com/comento/comento-ui/commit/00a0effaa9ea29786200fb41bad9bf4b01a2be5c))
+* font-weight 수정 ([#821](https://github.com/comento/comento-ui/issues/821)) ([1873cf8](https://github.com/comento/comento-ui/commit/1873cf80fa9ee6405322551fc663776b65f5a10e))
+* title font-weight 수정 ([#815](https://github.com/comento/comento-ui/issues/815)) ([7901deb](https://github.com/comento/comento-ui/commit/7901deb0a57b9345fafe15baf17197aefc4b8d0a))
+
+
+### Features
+
+* 텍스트 없을 때 버튼에 disabled 추가 ([#817](https://github.com/comento/comento-ui/issues/817)) ([0c02dbe](https://github.com/comento/comento-ui/commit/0c02dbe11421254dcdc73663c79d8623790ff085))
+* closeIcon color gray500으로 변경 ([#824](https://github.com/comento/comento-ui/issues/824)) ([053b1f1](https://github.com/comento/comento-ui/commit/053b1f14f8ce6d889fb0b68b156f559e539220f8))
+* iconButton type props 추가 ([#811](https://github.com/comento/comento-ui/issues/811)) ([ccf335e](https://github.com/comento/comento-ui/commit/ccf335ed6bb4dec69461f8c609f0192d058ec83a))
+* iconButton컴포넌트에 rotate prop 추가 ([#812](https://github.com/comento/comento-ui/issues/812)) ([e1ecfea](https://github.com/comento/comento-ui/commit/e1ecfeaf347fd40ca7ec0cf3954b332013970a17))
+* underline, outline 클래스가 프로덕트단에서 겹치므로 클래스명 변경 ([#814](https://github.com/comento/comento-ui/issues/814)) ([1a25383](https://github.com/comento/comento-ui/commit/1a253838eaba4580eefeb3dd73845130b47b6586))
+
+
+
 # [1.0.0-alpha.5](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-03-15)
 
 
