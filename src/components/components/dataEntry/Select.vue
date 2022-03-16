@@ -44,7 +44,7 @@
 				<template v-for="(option, index) in options">
 					<ListItem
 						:key="`c-select--option-${index}`"
-						size="small"
+						size="large"
 						class="c-select--list-item"
 						@click="handleEmitInputEvent(option)"
 					>
@@ -58,7 +58,7 @@
 							class="c-pointer"
 						/>
 					</ListItem>
-					<Divider :key="index" />
+					<Divider :key="index" class="my-6" />
 				</template>
 			</List>
 		</template>
@@ -300,19 +300,21 @@ export default {
 		@include justify-content(space-between);
 		cursor: pointer;
 		width: 100%;
-		&.basic {
-			padding: 9px 16px;
-			@include border-radius(4px);
-			border: 1px solid $gray250;
-			&.active {
-				border: 1px solid $gray400;
+		&.c-select {
+			&--basic {
+				padding: 9px 16px;
+				@include border-radius(4px);
+				border: 1px solid $gray250;
+				&.active {
+					border: 1px solid $gray400;
+				}
 			}
-		}
-		&.c-select--underline {
-			padding: 7px 8px;
-			border-bottom: 1px solid $gray250;
-			&.active {
-				border-bottom: 1px solid $gray400;
+			&--underline {
+				padding: 7px 8px;
+				border-bottom: 1px solid $gray250;
+				&.active {
+					border-bottom: 1px solid $gray400;
+				}
 			}
 		}
 	}
@@ -363,16 +365,18 @@ export default {
 	}
 	&.medium {
 		.c-select--box {
-			&.basic {
-				input {
-					@include body2();
-					color: $gray850;
+			&.c-select {
+				&--basic {
+					input {
+						@include body2();
+						color: $gray850;
+					}
 				}
-			}
-			&.c-select--underline {
-				input {
-					@include body1();
-					color: $gray850;
+				&--underline {
+					input {
+						@include body1();
+						color: $gray850;
+					}
 				}
 			}
 		}
