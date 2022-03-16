@@ -48,7 +48,8 @@ export const Default = (args, { argTypes }) => ({
             this.filesData[payload.index].isLoading = false;
         }, 3000);
     },
-    handleClickFileItemContent(payload) {
+      handleClickFileItem(payload) {
+        if(this.isRemovable) return this.handleClickFileTrashIcon(payload);
         this.filesData[payload.index].isLoading = true;
         setInterval(() => {
           this.filesData[payload.index].isLoading = false;
@@ -63,6 +64,7 @@ export const Default = (args, { argTypes }) => ({
     },
   },
   template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
+                <div :style="full ? 'width: 100%' : ''">
                  <FileInput v-if="isRemovable" @uploadFiles="handleUploadFiles"/>
                  <FileSummary v-else :full="full" :length="filesData.length" />
                  <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 8.5px;"/>
@@ -70,9 +72,11 @@ export const Default = (args, { argTypes }) => ({
                     :is-removable="isRemovable"
                     :full="full"
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
-                    @clickFileItemContent="handleClickFileItemContent"
+                    @clickFileItem="handleClickFileItem"
+                    @clickFileItemContent="handleClickFileItem"
                     @clickFileTrashIcon="handleClickFileTrashIcon"
                  />
+                </div>
              </div>`,
    components: { FileList, Divider, FileSummary, FileInput },
 });

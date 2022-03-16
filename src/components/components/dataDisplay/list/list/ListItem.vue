@@ -50,6 +50,7 @@ $list-item-padding-x: 4px;
 	padding: 6px $list-item-padding-x;
 	@include flexbox();
 	@include align-items(center);
+	@include justify-content(space-between);
 	@include border-radius(6px);
 	&:hover {
 		background: $gray100;
