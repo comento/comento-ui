@@ -56,6 +56,12 @@ import Typography from "@/components/elements/core/typography/Typography";
             defaultValue: false,
             control: { type: "boolean" },
         },
+        withCloseButton: {
+            description: "close button이 있는지"
+        },
+        clickable: {
+            description: "click 가능한 chip인지"
+        },
     }}
 />
 
@@ -63,7 +69,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Chip },
     template:
-        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent">{{text}}</Chip>`,
+        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent" :with-close-button="withCloseButton" :clickable="clickable">{{text}}</Chip>`,
 });
 
 # Chip
