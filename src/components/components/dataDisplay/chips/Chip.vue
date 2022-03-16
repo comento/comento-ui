@@ -268,7 +268,7 @@ export default {
 		height: 16px;
 		padding: 1.5px 4px;
 		font-weight: $regular;
-		.clickable {
+		&.clickable {
 			@include border-radius(12px);
 			padding: 1.5px 6px;
 		}
@@ -293,7 +293,7 @@ export default {
 		padding: 5px 10px;
 		font-weight: $regular;
 		@include border-radius(6px);
-		.clickable {
+		&.clickable {
 			@include border-radius(15px);
 			padding: 5px 12px;
 		}
@@ -306,7 +306,7 @@ export default {
 		padding: 4.5px 12px;
 		font-weight: $regular;
 		@include border-radius(8px);
-		.clickable {
+		&.clickable {
 			@include border-radius(19px);
 			padding: 4.5px 14px;
 		}
