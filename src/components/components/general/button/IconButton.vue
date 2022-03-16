@@ -8,7 +8,7 @@
 		v-on="$listeners"
 		@click="$event.target.blur()"
 	>
-		<Icon :name="iconName" :color="computedColor" />
+		<Icon :name="iconName" :color="computedColor" :rotate="rotate" />
 	</button>
 </template>
 
@@ -53,6 +53,10 @@ export default {
 		transparent: {
 			type: Boolean,
 			default: false,
+		},
+		rotate: {
+			type: Number,
+			default: 0,
 		},
 		type: {
 			type: String,

@@ -39,6 +39,12 @@ import { IconNames } from "@/components/elements/core/icon/Icon";
                 type: "boolean",
             },
         },
+        rotate: {
+            description: "아이콘의 회전 각도",
+            control: {
+                type: "number",
+            },
+        },
         type: {
             description: "버튼 타입",
             control: {
@@ -59,6 +65,7 @@ export const Default = (args, { argTypes }) => ({
             :color="color"
             :disabled="disabled"
             :transparent="transparent"
+            :rotate="rotate"
             :type="type"
         />`,
 });
