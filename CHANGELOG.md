@@ -1,3 +1,19 @@
+# [1.0.0-alpha.7](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-03-16)
+
+
+### Bug Fixes
+
+* select컴포넌트 스타일 깨지는 오류 수정 ([1227093](https://github.com/comento/comento-ui/commit/1227093f29b318cf9476715af969274aea6d1f41))
+* swiper-pagination-outside margin 값 수정 ([f6808ec](https://github.com/comento/comento-ui/commit/f6808ec85ef39e4aeaf71be3b34a0ba226a64b93))
+
+
+### Features
+
+* 스타일 수정 ([4f4b9c4](https://github.com/comento/comento-ui/commit/4f4b9c45c5cbe4562263dbebd2482010da5036ea))
+* ratingButton 컴포넌트 등록코드 추가 ([#828](https://github.com/comento/comento-ui/issues/828)) ([f56a3dc](https://github.com/comento/comento-ui/commit/f56a3dccead9d9bd86dc2978ee72ccd7c369e341))
+
+
+
 # [1.0.0-alpha.6](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-03-16)
 
 
