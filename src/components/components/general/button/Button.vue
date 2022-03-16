@@ -273,7 +273,7 @@ $info-text-color: $info;
 		min-width: 56px;
 		@include border-radius(8px);
 		@include body1;
-		font-weight: bold;
+		font-weight: 600;
 		.loading {
 			padding: 0 14.5px;
 			line-height: 90%;
@@ -285,7 +285,7 @@ $info-text-color: $info;
 		min-width: 84px;
 		@include border-radius(8px);
 		@include headline6;
-		font-weight: bold;
+		font-weight: 400;
 		.loading {
 			padding: 0 9.5px;
 			line-height: 90%;
