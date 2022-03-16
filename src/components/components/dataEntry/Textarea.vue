@@ -15,6 +15,7 @@
 			class="c-textarea--reply-icon"
 			iconName="IconSendLargeFill"
 			:color="replyIconColor"
+			:disabled="!sync_value"
 			@click="onSubmitReply"
 		/>
 	</div>
@@ -86,7 +87,7 @@ export default {
 			},
 		},
 		replyIconColor() {
-			if (this.value) {
+			if (this.sync_value) {
 				return 'blue600';
 			} else {
 				return 'gray200';
