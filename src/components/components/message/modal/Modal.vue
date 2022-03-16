@@ -3,7 +3,7 @@
 		<Overlay :show="show" :z-index="9998" :persistent="persistent" @close="close">
 			<div class="c-modal" :style="[computedStyle]" @click.stop>
 				<div v-if="showCloseButton" class="c-modal--close-button" @click="close">
-					<Icon name="IconCloseXLargeLine" color="gray400" class="c-pointer" />
+					<Icon name="IconCloseXLargeLine" color="gray500" class="c-pointer" />
 				</div>
 				<slot />
 			</div>
