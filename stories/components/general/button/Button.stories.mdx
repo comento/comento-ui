@@ -169,7 +169,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <div style="display: flex">
+                  <div style="display: flex; justify-content: space-between;">
                     <Button size="small">Small</Button>
                     <Button size="medium">Medium</Button>
                     <Button size="large">Large</Button>
@@ -324,7 +324,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
             <div>
-                <div style="display: flex">
+                <div style="display: flex; justify-content: space-between;">
                     <Button color="primary" type="fill" size="small">
                         <template v-slot:left-icon>
                             <Icon name="IconPlusSmallLine" color="white" />
@@ -350,7 +350,7 @@ export const Default = (args, { argTypes }) => ({
                         XLarge
                     </Button>
                 </div>
-                <div style="display: flex; margin-top:20px">
+                <div style="display: flex; justify-content: space-between; margin-top:20px">
                     <Button color="primary" type="fill" size="small">
                         <template v-slot:left-icon>
                             <Icon name="IconExclamationSmallFill" color="white" />

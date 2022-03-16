@@ -179,17 +179,17 @@ export default {
 		&.xsmall {
 			padding: 4px 8px;
 			@include border-radius(6px);
-			@include callout-icon-margin-right(5px);
+			@include callout-icon-margin-right(4px);
 		}
 		&.small {
 			padding: 8px;
 			@include border-radius(6px);
-			@include callout-icon-margin-right(7px);
+			@include callout-icon-margin-right(6px);
 		}
 		&.medium {
 			padding: 12px;
 			@include border-radius(8px);
-			@include callout-icon-margin-right(7px);
+			@include callout-icon-margin-right(6px);
 		}
 
 		// type
@@ -213,7 +213,6 @@ export default {
 		align-items: center;
 	}
 	&--message {
-		width: 100%;
 		word-break: keep-all;
 		white-space: normal;
 		&::v-deep strong {
@@ -221,14 +220,10 @@ export default {
 		}
 
 		@include pc {
-			width: 100%;
 		}
 	}
 	&--close-button {
 		margin-left: 4px;
-	}
-	&--closable {
-		padding-right: 6px !important;
 	}
 }
 
