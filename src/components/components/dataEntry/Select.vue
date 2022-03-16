@@ -212,7 +212,7 @@ export default {
 			return { disabled: this.disabled };
 		},
 		computedLined() {
-			return this.type;
+			return `c-select--${this.type}`;
 		},
 		computedActive() {
 			return { active: this.open };
@@ -308,7 +308,7 @@ export default {
 				border: 1px solid $gray400;
 			}
 		}
-		&.underline {
+		&.c-select--underline {
 			padding: 7px 8px;
 			border-bottom: 1px solid $gray250;
 			&.active {
@@ -369,7 +369,7 @@ export default {
 					color: $gray850;
 				}
 			}
-			&.underline {
+			&.c-select--underline {
 				input {
 					@include body1();
 					color: $gray850;
