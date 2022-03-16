@@ -48,7 +48,7 @@ export const Default = (args, { argTypes }) => ({
             this.filesData[payload.index].isLoading = false;
         }, 3000);
     },
-    handleClickFileItemContent(payload) {
+      handleClickFileItem(payload) {
         if(this.isRemovable) return this.handleClickFileTrashIcon(payload);
         this.filesData[payload.index].isLoading = true;
         setInterval(() => {
@@ -72,7 +72,8 @@ export const Default = (args, { argTypes }) => ({
                     :is-removable="isRemovable"
                     :full="full"
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
-                    @clickFileItemContent="handleClickFileItemContent"
+                    @clickFileItem="handleClickFileItem"
+                    @clickFileItemContent="handleClickFileItem"
                     @clickFileTrashIcon="handleClickFileTrashIcon"
                  />
                 </div>
