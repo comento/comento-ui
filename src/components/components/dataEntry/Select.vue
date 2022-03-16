@@ -44,7 +44,7 @@
 				<template v-for="(option, index) in options">
 					<ListItem
 						:key="`c-select--option-${index}`"
-						size="small"
+						size="large"
 						class="c-select--list-item"
 						@click="handleEmitInputEvent(option)"
 					>
@@ -58,7 +58,7 @@
 							class="c-pointer"
 						/>
 					</ListItem>
-					<Divider :key="index" />
+					<Divider :key="index" class="my-6" />
 				</template>
 			</List>
 		</template>
