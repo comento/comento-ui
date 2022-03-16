@@ -145,9 +145,9 @@ export default {
 		},
 		computedLined() {
 			if (this.outline) {
-				return 'outline';
+				return 'c-text-field--outline';
 			} else {
-				return 'underline';
+				return 'c-text-field--underline';
 			}
 		},
 		computedId() {
@@ -262,7 +262,7 @@ $disabled-background-color: $gray000;
 			position: relative;
 		}
 
-		&.outline {
+		&.c-text-field--outline {
 			padding: 0 $outline-padding;
 			border: 1px solid $input-border-color;
 			@include border-radius(4px);
@@ -275,7 +275,7 @@ $disabled-background-color: $gray000;
 				padding-right: $outline-padding - 4px;
 			}
 		}
-		&.underline {
+		&.c-text-field--underline {
 			padding: 0 $underline-padding;
 			border-bottom: 1px solid $input-border-color;
 			&:focus,
@@ -295,8 +295,8 @@ $disabled-background-color: $gray000;
 			}
 		}
 
-		&.outline.error,
-		&.underline.error {
+		&.c-text-field--outline.error,
+		&.c-text-field--underline.error {
 			color: $error;
 			border-color: $error;
 

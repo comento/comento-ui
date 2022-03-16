@@ -20,7 +20,7 @@
 				</Typography>
 			</div>
 			<div class="c-edu-card--title mt-4">
-				<Typography :type="getTypography('title')" color="gray900" :font-weight="400">
+				<Typography :type="getTypography('title')" color="gray900" :font-weight="500">
 					<slot name="title" />
 				</Typography>
 			</div>
@@ -153,7 +153,7 @@ export default {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: left;
+		object-position: center;
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			position: relative;

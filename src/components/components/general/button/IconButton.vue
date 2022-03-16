@@ -1,5 +1,6 @@
 <template>
 	<button
+		:type="type"
 		class="c-application c-icon-button"
 		:class="computedClasses"
 		v-bind="$attrs"
@@ -7,14 +8,16 @@
 		v-on="$listeners"
 		@click="$event.target.blur()"
 	>
-		<Icon :name="iconName" :color="computedColor" />
+		<Icon :name="iconName" :color="computedColor" :rotate="rotate" />
 	</button>
 </template>
 
 <script>
 import { colorKeys } from '@/utils/constants/color';
 import Icon from '@/components/elements/core/icon/Icon';
+
 export const IconButtonSizes = ['small', 'medium', 'large'];
+export const IconButtonTypes = ['button', 'submit', 'reset'];
 
 /**
  * @displayName c-icon-button
@@ -50,6 +53,17 @@ export default {
 		transparent: {
 			type: Boolean,
 			default: false,
+		},
+		rotate: {
+			type: Number,
+			default: 0,
+		},
+		type: {
+			type: String,
+			default: 'button',
+			validator(value) {
+				return IconButtonTypes.includes(value);
+			},
 		},
 	},
 	computed: {

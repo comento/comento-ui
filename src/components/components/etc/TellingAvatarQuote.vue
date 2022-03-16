@@ -16,7 +16,7 @@
 		</div>
 		<div class="avatar-wrapper">
 			<Avatar type="image" :src="avatarImage" :size="!isMobile ? 'large' : 'small'" />
-			<Typography v-show="!isMobile" type="caption1" color="gray500" class="avatar-name-wrapper">
+			<Typography v-if="!isMobile" type="caption1" color="gray500" class="avatar-name-wrapper">
 				<div>{{ avatarName }}</div>
 				<slot v-if="$slots['icon']" name="icon" />
 			</Typography>
