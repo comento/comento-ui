@@ -52,7 +52,7 @@ export const Default = (args, { argTypes }) => ({
             <template v-slot:list>
                 <List v-if="showSearchDropdown" spacing>
                     <template v-for="(item, index) in listItems">
-                        <ListItem :key="'list-item-' + index" @click="clickDropdownItem(item)">
+                        <ListItem :key="'list-item-' + index" size="large" @click="clickDropdownItem(item)">
                             {{ item }}
                         </ListItem>
                         <Divider :key="'divider-' + index" />
@@ -114,7 +114,7 @@ export const Default = (args, { argTypes }) => ({
                                 <List spacing>
                                     <template v-for="(item, index) in listItems">
                                         <ListItem
-                                            size="small"
+                                            size="large"
                                             :key="'list-item-' + index"
                                             @click="clickSearchInputDropdownItem(item)"
                                         >
@@ -140,7 +140,7 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:list>
                             <List v-if="showInputDropdown" spacing>
                                 <template v-for="(item, index) in listItems">
-                                    <ListItem :key="'list-item-' + index" @click="clickInputDropdownItem(item)">
+                                    <ListItem :key="'list-item-' + index" size="large" @click="clickInputDropdownItem(item)">
                                         {{ item }}
                                     </ListItem>
                                     <Divider :key="'divider-' + index" />
