@@ -116,6 +116,10 @@ export default {
 		overflow-y: auto;
 		box-sizing: border-box;
 		z-index: 8;
+
+		::v-deep.c-divider {
+			margin: 6px 0;
+		}
 	}
 
 	&--label {
