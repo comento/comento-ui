@@ -28,7 +28,7 @@
 import paddingMixin from '@/mixins/paddingMixin';
 import Icon from '@/components/elements/core/icon/Icon';
 
-export const ChipColors = ['primary', 'info', 'success'];
+export const ChipColors = ['primary', 'info', 'success', 'secondary', 'error'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
 export const ChipSizesWithCloseButton = ['medium', 'large', 'xlarge'];
@@ -137,7 +137,8 @@ export default {
 			return `IconClose${closeButtonIconSize[0].toUpperCase() + closeButtonIconSize.slice(1)}Line`;
 		},
 		computedCloseButtonColor() {
-			if (this.color === 'success') return 'white';
+			const whiteColorTypes = ['success', 'secondary', 'error'];
+			if (whiteColorTypes.includes(this.color)) return 'white';
 			return this.color;
 		},
 	},
@@ -255,6 +256,72 @@ export default {
 
 			&.clickable:hover {
 				background-color: $green100;
+			}
+
+			&.transparent {
+				background-color: transparent;
+			}
+		}
+	}
+	&.secondary {
+		color: $white;
+		border: 1px solid $secondary;
+		background-color: $secondary;
+
+		&.clickable:hover {
+			background-color: $orange800;
+		}
+
+		&.outline {
+			color: $secondary;
+			border: 1px solid $secondary;
+			background-color: $white;
+
+			&.transparent {
+				background-color: transparent;
+			}
+		}
+
+		&.clickable-outline {
+			color: $secondary;
+			border: 1px solid $secondary;
+			background-color: $white;
+
+			&.clickable:hover {
+				background-color: $orange100;
+			}
+
+			&.transparent {
+				background-color: transparent;
+			}
+		}
+	}
+	&.error {
+		color: $white;
+		border: 1px solid $error;
+		background-color: $error;
+
+		&.clickable:hover {
+			background-color: $red800;
+		}
+
+		&.outline {
+			color: $error;
+			border: 1px solid $error;
+			background-color: $white;
+
+			&.transparent {
+				background-color: transparent;
+			}
+		}
+
+		&.clickable-outline {
+			color: $error;
+			border: 1px solid $error;
+			background-color: $white;
+
+			&.clickable:hover {
+				background-color: $red100;
 			}
 
 			&.transparent {
