@@ -176,9 +176,6 @@ export default {
 			&.clickable:hover {
 				background-color: $gray100;
 			}
-
-			&.transparent {
-				background-color: transparent;
 			}
 		}
 		&.clickable-outline {
@@ -189,9 +186,6 @@ export default {
 			&.clickable:hover {
 				background-color: $gray100;
 			}
-
-			&.transparent {
-				background-color: transparent;
 			}
 		}
 	}
@@ -212,9 +206,6 @@ export default {
 			&.clickable:hover {
 				background-color: $gray100;
 			}
-
-			&.transparent {
-				background-color: transparent;
 			}
 		}
 		&.clickable-outline {
@@ -225,9 +216,6 @@ export default {
 			&.clickable:hover {
 				background-color: $gray100;
 			}
-
-			&.transparent {
-				background-color: transparent;
 			}
 		}
 	}
@@ -244,10 +232,6 @@ export default {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
-
-			&.transparent {
-				background-color: transparent;
-			}
 		}
 		&.clickable-outline {
 			color: $success;
@@ -256,10 +240,6 @@ export default {
 
 			&.clickable:hover {
 				background-color: $green100;
-			}
-
-			&.transparent {
-				background-color: transparent;
 			}
 		}
 	}
@@ -276,10 +256,6 @@ export default {
 			color: $secondary;
 			border: 1px solid $secondary;
 			background-color: $white;
-
-			&.transparent {
-				background-color: transparent;
-			}
 		}
 
 		&.clickable-outline {
@@ -290,9 +266,6 @@ export default {
 			&.clickable:hover {
 				background-color: $orange100;
 			}
-
-			&.transparent {
-				background-color: transparent;
 			}
 		}
 	}
@@ -309,10 +282,6 @@ export default {
 			color: $error;
 			border: 1px solid $error;
 			background-color: $white;
-
-			&.transparent {
-				background-color: transparent;
-			}
 		}
 
 		&.clickable-outline {
@@ -323,11 +292,11 @@ export default {
 			&.clickable:hover {
 				background-color: $red100;
 			}
-
-			&.transparent {
-				background-color: transparent;
 			}
 		}
+	}
+	&.transparent {
+		background-color: transparent;
 	}
 	/*사이즈*/
 	&.small {
