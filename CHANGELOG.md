@@ -1,3 +1,22 @@
+# [1.0.0-alpha.8](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-03-17)
+
+
+### Bug Fixes
+
+* EduCard max-width 삭제 ([#832](https://github.com/comento/comento-ui/issues/832)) ([6edc776](https://github.com/comento/comento-ui/commit/6edc776f6d1be69f14240e9d3f9151851d70238d))
+
+
+### Features
+
+* Chip color 추가 (secondary, error) ([#834](https://github.com/comento/comento-ui/issues/834)) ([a68adc6](https://github.com/comento/comento-ui/commit/a68adc69385ea311dc378015a7cba02502822b27))
+* Chip, NarrowButton에 state-style 적용 ([#831](https://github.com/comento/comento-ui/issues/831)) ([2233000](https://github.com/comento/comento-ui/commit/2233000da45eb7210d2bf5b91bdfea0f01dda920))
+* Dropdown 리스트 스타일 변경 ([#833](https://github.com/comento/comento-ui/issues/833)) ([b54ac1f](https://github.com/comento/comento-ui/commit/b54ac1f9a81017cee9e3b805fc9782c0275815e4))
+* LinkButton 스타일 state-style로 변경 ([#835](https://github.com/comento/comento-ui/issues/835)) ([c9c559b](https://github.com/comento/comento-ui/commit/c9c559bc28908d1c08e9fd9911072651971b3d89))
+* strong font-weight 변경 ([0d297b9](https://github.com/comento/comento-ui/commit/0d297b9c77ddb1057168a339645487d5c3b3166b))
+* swiper hover style ([d216d68](https://github.com/comento/comento-ui/commit/d216d68f8013bf1136c8a7f3354193be358c115f))
+
+
+
 # [1.0.0-alpha.7](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-03-16)
 
 
