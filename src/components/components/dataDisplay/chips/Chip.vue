@@ -28,7 +28,7 @@
 import paddingMixin from '@/mixins/paddingMixin';
 import Icon from '@/components/elements/core/icon/Icon';
 
-export const ChipColors = ['primary', 'info', 'success'];
+export const ChipColors = ['primary', 'info', 'success', 'secondary', 'error'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
 export const ChipSizesWithCloseButton = ['medium', 'large', 'xlarge'];
@@ -137,7 +137,8 @@ export default {
 			return `IconClose${closeButtonIconSize[0].toUpperCase() + closeButtonIconSize.slice(1)}Line`;
 		},
 		computedCloseButtonColor() {
-			if (this.color === 'success') return 'white';
+			const whiteColorTypes = ['success', 'secondary', 'error'];
+			if (whiteColorTypes.includes(this.color)) return 'white';
 			return this.color;
 		},
 	},
@@ -163,8 +164,10 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.clickable:hover {
-			background-color: $gray200;
+		&.clickable {
+			@include state-style {
+				background-color: $gray200;
+			}
 		}
 
 		&.outline {
@@ -172,12 +175,10 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
-			}
-
-			&.transparent {
-				background-color: transparent;
+			&.clickable {
+				@include state-style {
+					background-color: $gray100;
+				}
 			}
 		}
 		&.clickable-outline {
@@ -185,12 +186,10 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
-			}
-
-			&.transparent {
-				background-color: transparent;
+			&.clickable {
+				@include state-style {
+					background-color: $gray100;
+				}
 			}
 		}
 	}
@@ -199,8 +198,10 @@ export default {
 		border: 1px solid $light-primary;
 		background-color: $light-primary;
 
-		&.clickable:hover {
-			background-color: $blue400;
+		&.clickable {
+			@include state-style {
+				background-color: $blue400;
+			}
 		}
 
 		&.outline {
@@ -208,12 +209,10 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
-			}
-
-			&.transparent {
-				background-color: transparent;
+			&.clickable {
+				@include state-style {
+					background-color: $gray100;
+				}
 			}
 		}
 		&.clickable-outline {
@@ -221,12 +220,10 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
-			}
-
-			&.transparent {
-				background-color: transparent;
+			&.clickable {
+				@include state-style {
+					background-color: $gray100;
+				}
 			}
 		}
 	}
@@ -235,32 +232,89 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.clickable:hover {
-			background-color: $green800;
+		&.clickable {
+			@include state-style {
+				background-color: $green800;
+			}
 		}
 
 		&.outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
-
-			&.transparent {
-				background-color: transparent;
-			}
 		}
 		&.clickable-outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $green100;
-			}
-
-			&.transparent {
-				background-color: transparent;
+			&.clickable {
+				@include state-style {
+					background-color: $green100;
+				}
 			}
 		}
+	}
+	&.secondary {
+		color: $white;
+		border: 1px solid $secondary;
+		background-color: $secondary;
+
+		&.clickable {
+			@include state-style {
+				background-color: $orange800;
+			}
+		}
+
+		&.outline {
+			color: $secondary;
+			border: 1px solid $secondary;
+			background-color: $white;
+		}
+
+		&.clickable-outline {
+			color: $secondary;
+			border: 1px solid $secondary;
+			background-color: $white;
+
+			&.clickable {
+				@include state-style {
+					background-color: $orange100;
+				}
+			}
+		}
+	}
+	&.error {
+		color: $white;
+		border: 1px solid $error;
+		background-color: $error;
+
+		&.clickable {
+			@include state-style {
+				background-color: $red800;
+			}
+		}
+
+		&.outline {
+			color: $error;
+			border: 1px solid $error;
+			background-color: $white;
+		}
+
+		&.clickable-outline {
+			color: $error;
+			border: 1px solid $error;
+			background-color: $white;
+
+			&.clickable {
+				@include state-style {
+					background-color: $red100;
+				}
+			}
+		}
+	}
+	&.transparent {
+		background-color: transparent;
 	}
 	/*사이즈*/
 	&.small {

@@ -94,8 +94,7 @@ export default {
 	a {
 		text-decoration: none;
 		cursor: pointer;
-		&:hover,
-		&:focus {
+		@include state-style {
 			text-decoration: underline;
 		}
 	}
@@ -104,22 +103,19 @@ export default {
 		::v-deep.c-typography {
 			color: #006beb;
 		}
-		&:hover,
-		&:focus {
+		@include state-style {
 			text-decoration-color: #006beb;
 		}
 	}
 
 	&.blue600 a {
-		&:hover,
-		&:focus {
+		@include state-style {
 			text-decoration-color: $blue600;
 		}
 	}
 
 	&.blue400 a {
-		&:hover,
-		&:focus {
+		@include state-style {
 			text-decoration-color: $blue400;
 		}
 	}

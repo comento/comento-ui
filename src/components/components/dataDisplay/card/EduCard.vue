@@ -145,7 +145,6 @@ export default {
 	background-color: var(--background-color);
 	@include border-radius(4px);
 	width: var(--card-width);
-	max-width: 343px;
 	min-width: 152px;
 	cursor: pointer;
 
@@ -228,8 +227,6 @@ export default {
 	}
 
 	@include pc {
-		max-width: 259px;
-
 		&:hover {
 			& .c-edu-card--image {
 				animation: scale-up-center 0.2s ease-in both;
