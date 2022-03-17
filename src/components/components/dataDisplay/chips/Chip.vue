@@ -163,8 +163,10 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.clickable:hover {
-			background-color: $gray200;
+		&.clickable {
+			@include state-style() {
+				background-color: $gray200;
+			}
 		}
 
 		&.outline {
@@ -172,8 +174,10 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
+			&.clickable {
+				@include state-style() {
+					background-color: $gray100;
+				}
 			}
 
 			&.transparent {
@@ -185,8 +189,10 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
+			&.clickable {
+				@include state-style() {
+					background-color: $gray100;
+				}
 			}
 
 			&.transparent {
@@ -199,8 +205,10 @@ export default {
 		border: 1px solid $light-primary;
 		background-color: $light-primary;
 
-		&.clickable:hover {
-			background-color: $blue400;
+		&.clickable {
+			@include state-style() {
+				background-color: $blue400;
+			}
 		}
 
 		&.outline {
@@ -208,8 +216,10 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
+			&.clickable {
+				@include state-style() {
+					background-color: $gray100;
+				}
 			}
 
 			&.transparent {
@@ -221,8 +231,10 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
+			&.clickable {
+				@include state-style() {
+					background-color: $gray100;
+				}
 			}
 
 			&.transparent {
@@ -235,8 +247,10 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.clickable:hover {
-			background-color: $green800;
+		&.clickable {
+			@include state-style() {
+				background-color: $green800;
+			}
 		}
 
 		&.outline {
@@ -253,8 +267,10 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $green100;
+			&.clickable {
+				@include state-style() {
+					background-color: $green100;
+				}
 			}
 
 			&.transparent {
