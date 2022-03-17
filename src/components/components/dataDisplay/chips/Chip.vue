@@ -164,8 +164,10 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.clickable:hover {
-			background-color: $gray200;
+		&.clickable {
+			@include state-style {
+				background-color: $gray200;
+			}
 		}
 
 		&.outline {
@@ -173,9 +175,10 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
-			}
+			&.clickable {
+				@include state-style {
+					background-color: $gray100;
+				}
 			}
 		}
 		&.clickable-outline {
@@ -183,9 +186,10 @@ export default {
 			border: 1px solid $gray400;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
-			}
+			&.clickable {
+				@include state-style {
+					background-color: $gray100;
+				}
 			}
 		}
 	}
@@ -194,8 +198,10 @@ export default {
 		border: 1px solid $light-primary;
 		background-color: $light-primary;
 
-		&.clickable:hover {
-			background-color: $blue400;
+		&.clickable {
+			@include state-style {
+				background-color: $blue400;
+			}
 		}
 
 		&.outline {
@@ -203,9 +209,10 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
-			}
+			&.clickable {
+				@include state-style {
+					background-color: $gray100;
+				}
 			}
 		}
 		&.clickable-outline {
@@ -213,9 +220,10 @@ export default {
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $gray100;
-			}
+			&.clickable {
+				@include state-style {
+					background-color: $gray100;
+				}
 			}
 		}
 	}
@@ -224,8 +232,10 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.clickable:hover {
-			background-color: $green800;
+		&.clickable {
+			@include state-style {
+				background-color: $green800;
+			}
 		}
 
 		&.outline {
@@ -238,8 +248,10 @@ export default {
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $green100;
+			&.clickable {
+				@include state-style {
+					background-color: $green100;
+				}
 			}
 		}
 	}
@@ -248,8 +260,10 @@ export default {
 		border: 1px solid $secondary;
 		background-color: $secondary;
 
-		&.clickable:hover {
-			background-color: $orange800;
+		&.clickable {
+			@include state-style {
+				background-color: $orange800;
+			}
 		}
 
 		&.outline {
@@ -263,9 +277,10 @@ export default {
 			border: 1px solid $secondary;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $orange100;
-			}
+			&.clickable {
+				@include state-style {
+					background-color: $orange100;
+				}
 			}
 		}
 	}
@@ -274,8 +289,10 @@ export default {
 		border: 1px solid $error;
 		background-color: $error;
 
-		&.clickable:hover {
-			background-color: $red800;
+		&.clickable {
+			@include state-style {
+				background-color: $red800;
+			}
 		}
 
 		&.outline {
@@ -289,9 +306,10 @@ export default {
 			border: 1px solid $error;
 			background-color: $white;
 
-			&.clickable:hover {
-				background-color: $red100;
-			}
+			&.clickable {
+				@include state-style {
+					background-color: $red100;
+				}
 			}
 		}
 	}
