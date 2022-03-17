@@ -26,7 +26,7 @@
 				name="IconArrowLargeLine"
 				:rotate="-90"
 				class="swiper-button swiper-button-prev"
-				:class="[computedControlsPosition, computedControlsCircle]"
+				:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 				:color="computedControlsColor"
 			/>
 			<Icon
@@ -36,7 +36,7 @@
 				name="IconArrowLargeLine"
 				:rotate="90"
 				class="swiper-button swiper-button-next"
-				:class="[computedControlsPosition, computedControlsCircle]"
+				:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 				:color="computedControlsColor"
 			/>
 			<div
@@ -53,7 +53,7 @@
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button swiper-button-outside swiper-button-prev-outside"
-			:class="[computedControlsPosition, computedControlsCircle]"
+			:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 			:color="computedControlsColor"
 		/>
 		<Icon
@@ -62,7 +62,7 @@
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button swiper-button-outside swiper-button-next-outside"
-			:class="[computedControlsPosition, computedControlsCircle]"
+			:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 			:color="computedControlsColor"
 		/>
 		<Icon
@@ -71,7 +71,7 @@
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button-top swiper-button-prev-top"
-			:class="[computedControlsPosition, computedControlsCircle]"
+			:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 			:color="computedControlsColor"
 		/>
 		<Icon
@@ -80,7 +80,7 @@
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button-top swiper-button-next-top"
-			:class="[computedControlsPosition, computedControlsCircle]"
+			:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 			:color="computedControlsColor"
 		/>
 		<div
@@ -380,6 +380,7 @@ $swiper-control-circle-radius: 16px;
 	cursor: pointer;
 	top: 50%;
 }
+
 /* 원형 컨트롤의 disabled 기존 스타일을 초기화 */
 :not(.swiper-button-background-circle) {
 	&.swiper-button-disabled {
@@ -454,6 +455,35 @@ $swiper-control-circle-radius: 16px;
 .swiper-button-next-top {
 	right: 0;
 }
+:not(.swiper-button-disabled) {
+	.swiper-button,
+	.swiper-button-top {
+		@include border-radius(8px);
+		&:hover {
+			background: rgba(255, 255, 255, 0.05) !important;
+		}
+		&.dark {
+			&:hover {
+				background: rgba(32, 35, 37, 0.05) !important;
+				&.swiper-button-disabled {
+					background: transparent !important;
+				}
+			}
+		}
+		&-background-circle {
+			@include border-radius(50%);
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.6) !important;
+			}
+			&.dark {
+				&:hover {
+					background-color: rgba(255, 255, 255, 1) !important;
+				}
+			}
+		}
+	}
+}
+
 ::v-deep .swiper-pagination-outside {
 	text-align: center;
 	margin-top: 12px !important;

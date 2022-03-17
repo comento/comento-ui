@@ -6,6 +6,7 @@
 		v-bind="$attrs"
 		type="button"
 		v-on="$listeners"
+		@click="$event.target.blur()"
 	>
 		<div class="c-narrow-button--icon" :class="setIconSpacing('left')">
 			<slot name="left-icon" />
@@ -82,15 +83,13 @@ export default {
 	@include align-items(center);
 	@include justify-content(center);
 
-	&:hover,
-	&.hover-test {
+	@include state-style() {
 		background-color: $gray100;
 	}
 
 	// transparent
 	&.transparent {
-		&:hover,
-		&.hover-test {
+		@include state-style() {
 			background-color: $button-transparent-hover-background-color;
 		}
 	}
