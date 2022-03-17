@@ -164,7 +164,7 @@ export default {
 		background-color: $gray100;
 
 		&.clickable {
-			@include state-style() {
+			@include state-style {
 				background-color: $gray200;
 			}
 		}
@@ -175,7 +175,7 @@ export default {
 			background-color: $white;
 
 			&.clickable {
-				@include state-style() {
+				@include state-style {
 					background-color: $gray100;
 				}
 			}
@@ -190,7 +190,7 @@ export default {
 			background-color: $white;
 
 			&.clickable {
-				@include state-style() {
+				@include state-style {
 					background-color: $gray100;
 				}
 			}
@@ -206,7 +206,7 @@ export default {
 		background-color: $light-primary;
 
 		&.clickable {
-			@include state-style() {
+			@include state-style {
 				background-color: $blue400;
 			}
 		}
@@ -217,7 +217,7 @@ export default {
 			background-color: $white;
 
 			&.clickable {
-				@include state-style() {
+				@include state-style {
 					background-color: $gray100;
 				}
 			}
@@ -232,7 +232,7 @@ export default {
 			background-color: $white;
 
 			&.clickable {
-				@include state-style() {
+				@include state-style {
 					background-color: $gray100;
 				}
 			}
@@ -248,7 +248,7 @@ export default {
 		background-color: $success;
 
 		&.clickable {
-			@include state-style() {
+			@include state-style {
 				background-color: $green800;
 			}
 		}
@@ -268,7 +268,7 @@ export default {
 			background-color: $white;
 
 			&.clickable {
-				@include state-style() {
+				@include state-style {
 					background-color: $green100;
 				}
 			}
