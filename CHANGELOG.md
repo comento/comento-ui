@@ -1,3 +1,12 @@
+# [1.0.0-alpha.10](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2022-03-18)
+
+
+### Bug Fixes
+
+* 오타 수정 ([514bac4](https://github.com/comento/comento-ui/commit/514bac47d9d69f8a98566fdee78d5a722e7f02fd))
+
+
+
 # [1.0.0-alpha.9](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2022-03-18)
 
 
