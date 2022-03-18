@@ -250,6 +250,15 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
+                <div>
+                    <Callout v-if="showXSmallCallout" size="xsmall" full closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout v-if="showSmallCallout" size="small" full closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout v-if="showMediumCallout" size="medium" full closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
             </div>
             `,
         components: { Callout },
