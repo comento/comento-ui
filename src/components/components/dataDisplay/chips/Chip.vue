@@ -322,7 +322,7 @@ export default {
 		height: 16px;
 		padding: 1.5px 4px;
 		font-weight: $regular;
-		lihe-height: 16px;
+		line-height: 16px;
 		&.clickable {
 			@include border-radius(12px);
 			padding: 1.5px 6px;
