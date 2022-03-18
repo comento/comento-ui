@@ -1,3 +1,12 @@
+# [1.0.0-alpha.9](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2022-03-18)
+
+
+### Features
+
+* Chip small에 line-height 16px 추가 ([#838](https://github.com/comento/comento-ui/issues/838)) ([3e9d37d](https://github.com/comento/comento-ui/commit/3e9d37dbad736e70d2581b9dd77972a748514b87))
+
+
+
 # [1.0.0-alpha.8](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-03-17)
 
 
