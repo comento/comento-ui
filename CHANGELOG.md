@@ -1,3 +1,12 @@
+# [1.0.0-alpha.11](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2022-03-18)
+
+
+### Bug Fixes
+
+* full, closable일 때 아이콘이 오른쪽 끝으로 안가는 이슈 해결 ([#841](https://github.com/comento/comento-ui/issues/841)) ([254ca9c](https://github.com/comento/comento-ui/commit/254ca9ccf38407a2e97acbfba292a38bf3255926))
+
+
+
 # [1.0.0-alpha.10](https://github.com/comento/comento-ui/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2022-03-18)
 
 
