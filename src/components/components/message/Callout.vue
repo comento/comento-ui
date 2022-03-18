@@ -8,14 +8,16 @@
 			v-on="$listeners"
 		>
 			<div class="c-callout--wrapper">
-				<!-- 아이콘 -->
-				<slot v-if="$slots['icon']" name="icon" />
-				<Icon v-else :name="iconName" :color="computedIconColor" />
+				<div class="flex align-center">
+					<!-- 아이콘 -->
+					<slot v-if="$slots['icon']" name="icon" />
+					<Icon v-else :name="iconName" :color="computedIconColor" />
 
-				<!-- 문구 -->
-				<Typography class="c-callout--message" color="gray700" :type="computedFontType">
-					<slot />
-				</Typography>
+					<!-- 문구 -->
+					<Typography class="c-callout--message" color="gray700" :type="computedFontType">
+						<slot />
+					</Typography>
+				</div>
 
 				<!-- 닫기 -->
 				<Icon
@@ -169,8 +171,12 @@ export default {
 	&--container {
 		display: inline-flex;
 		align-items: center;
+		// full을 다음과 같은 방식으로 구현
 		&.full {
 			width: 100%;
+			> .c-callout--wrapper {
+				@include justify-content(space-between);
+			}
 		}
 		svg:first-child {
 			flex-shrink: 0;
