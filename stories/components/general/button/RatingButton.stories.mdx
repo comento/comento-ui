@@ -1,0 +1,102 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Typography from '@/components/elements/core/typography/Typography';
+import RatingButton, { RATING_BUTTON_COLORS } from "@/components/components/general/button/RatingButton";
+import { IconNames } from "@/components/elements/core/icon/Icon";
+
+<Meta
+    title="General/Button/RatingButton"
+    component={ RatingButton }
+    argTypes={{
+        iconName: {
+            description: "아이콘 이름",
+            control: {
+                type: "select",
+                options: IconNames,
+            },
+        },
+        color: {
+            description: "색상",
+            control: {
+                type: "select",
+                options: RATING_BUTTON_COLORS,
+            },
+        },
+        text: {
+            description: "버튼 내용",
+            defaultValue: 'button 0',
+            control: {
+                type: "text",
+            },
+        },
+        loading: {
+            description: "로딩 여부",
+            control: {
+                type: "boolean",
+            }
+        },
+        disabled: {
+            description: "비활성화 여부",
+            control: {
+                type: "boolean",
+            }
+        }
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    components: { RatingButton },
+    template: `
+        <RatingButton :icon-name="iconName" :color="color" :text="text" :loading="loading" :disabled="disabled" />
+    `,
+});
+
+# RatingButton
+
+**RatingButton** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+                <div>
+                    <div v-for="item in RATING_BUTTON_COLORS" :key="item" class="flex">
+                        <RatingButton
+                          :color="item"
+                          text="button 0"
+                        />
+                        <RatingButton
+                          :color="item"
+                          text="button 0"
+                          class="hover-test"
+                        />
+                        <RatingButton
+                          :color="item"
+                          loading
+                          text="button 0"
+                        />
+                        <RatingButton
+                          :color="item"
+                          disabled
+                          text="button 0"
+                        />
+                    </div>
+                </div>
+            `,
+            data() {
+                return {
+                    RATING_BUTTON_COLORS,
+                };
+            },
+            components: { RatingButton },
+        }}
+    </Story>
+</Canvas>

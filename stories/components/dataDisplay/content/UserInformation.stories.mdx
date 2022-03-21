@@ -54,13 +54,13 @@ export const Basic = (args, { argTypes }) => ({
     template: `
         <UserInformation :type="type">
             <template v-slot:avatar>
-                <Avatar type="text" :text="name.substr(0, 1)" :size="avatarSize"/>
+                <Avatar type="nickname" :text="name.substr(0, 1)" :size="avatarSize"/>
             </template>
             <template v-slot:name>
                 {{ name }}
             </template>
             <template v-slot:icon>
-                <Icon name="IconCheckSmallFill" color="primary"/>
+                <Icon name="IconCheckRoundSmallFill" color="primary"/>
             </template>
             <template v-slot:company>
                 {{ company }}
@@ -71,7 +71,7 @@ export const Basic = (args, { argTypes }) => ({
                     <Chip
                         v-for="(item, index) in matchedItems"
                         :key="'chip' + index"
-                        type="outlined"
+                        type="outline"
                         color="primary"
                         size="small"
                     >
@@ -128,13 +128,13 @@ export const Basic = (args, { argTypes }) => ({
                     <template v-for="({ name, company, matchedItems, size, type }, index) in sampleItems">
                         <UserInformation :type="type" :key="'user-information' + index">
                             <template v-slot:avatar>
-                                <Avatar type="text" :text="name.substr(0, 1)" :size="size"/>
+                                <Avatar type="nickname" :text="name.substr(0, 1)" :size="size"/>
                             </template>
                             <template v-slot:name>
                                 {{ name }}
                             </template>
                             <template v-slot:icon>
-                                <Icon name="IconCheckSmallFill" color="primary"/>
+                                <Icon name="IconCheckRoundSmallFill" color="primary"/>
                             </template>
                             <template v-slot:company>
                                 {{ company }}
@@ -145,7 +145,7 @@ export const Basic = (args, { argTypes }) => ({
                                     <Chip
                                         v-for="(item, index) in matchedItems"
                                         :key="'chip' + index"
-                                        type="outlined"
+                                        type="outline"
                                         color="primary"
                                         size="small"
                                     >

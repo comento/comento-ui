@@ -7,7 +7,6 @@ import SearchInput from '@/components/components/dataEntry/input/SearchInput';
 import TextField from '@/components/components/dataEntry/input/TextField';
 import Label from '@/components/components/dataDisplay/Label';
 import clickOutside from '@/directives/click-outside';
-import { colorKeys } from '@/utils/constants/color';
 
 <Meta
     title="Data Entry/Dropdown/Dropdown"
@@ -17,13 +16,6 @@ import { colorKeys } from '@/utils/constants/color';
             description: "리스트 최대 높이",
             defaultValue: "130px",
             control: { type: "text" },
-        },
-        iconColor: {
-            description: "아이콘 색상",
-            control: {
-                type: "select",
-                options: colorKeys,
-            },
         },
     }}
 />
@@ -55,13 +47,12 @@ export const Default = (args, { argTypes }) => ({
                     :showSearchDropdown.sync="showSearchDropdown"
                     :value.sync="value"
                     :style="computedSearchInputMaxWidth"
-                    :icon-color="iconColor"
                 />
             </template>
             <template v-slot:list>
                 <List v-if="showSearchDropdown" spacing>
                     <template v-for="(item, index) in listItems">
-                        <ListItem :key="'list-item-' + index" @click="clickDropdownItem(item)">
+                        <ListItem :key="'list-item-' + index" size="large" @click="clickDropdownItem(item)">
                             {{ item }}
                         </ListItem>
                         <Divider :key="'divider-' + index" />
@@ -123,7 +114,7 @@ export const Default = (args, { argTypes }) => ({
                                 <List spacing>
                                     <template v-for="(item, index) in listItems">
                                         <ListItem
-                                            size="small"
+                                            size="large"
                                             :key="'list-item-' + index"
                                             @click="clickSearchInputDropdownItem(item)"
                                         >
@@ -140,7 +131,7 @@ export const Default = (args, { argTypes }) => ({
                             <TextField
                                 v-click-outside="closeList"
                                 :value.sync="inputValue"
-                                outlined
+                                outline
                                 full
                                 @click="showInputDropdown = !showInputDropdown"
                                 style="width: 230px"
@@ -149,7 +140,7 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:list>
                             <List v-if="showInputDropdown" spacing>
                                 <template v-for="(item, index) in listItems">
-                                    <ListItem :key="'list-item-' + index" @click="clickInputDropdownItem(item)">
+                                    <ListItem :key="'list-item-' + index" size="large" @click="clickInputDropdownItem(item)">
                                         {{ item }}
                                     </ListItem>
                                     <Divider :key="'divider-' + index" />

@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Button, { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/Button';
+import Button, { buttonSizes, buttonColors, buttonTypes, ghostTypeButtonColors } from '@/components/components/general/button/Button';
+import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 
 <Meta
@@ -89,27 +90,74 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <div style="display: flex">
-                    <Button color="primary">Fill Primary</Button>
-                    <Button color="success">Fill Success</Button>
-                    <Button color="error">Fill Error</Button>
-                    <Button color="secondary">Fill Gray</Button>
-                  </div>
-                  <div style="display: flex">
-                    <Button color="primary" type="outlined">Outlined Primary</Button>
-                    <Button color="success" type="outlined">Outlined Success</Button>
-                    <Button color="error" type="outlined">Outlined Error</Button>
-                    <Button color="secondary" type="outlined">Outlined Gray</Button>
-                  </div>
-                  <div style="display: flex">
-                    <Button color="primary" type="text">Text Primary</Button>
-                    <Button color="success" type="text">Text Success</Button>
-                    <Button color="error" type="text">Text Error</Button>
-                    <Button color="secondary" type="text">Text Gray</Button>
-                  </div>
+                  <template v-for="(type, index) in buttonTypes">
+                    <div class="flex">
+                        <ButtonStateTitle class="mr-30">{{type}}</ButtonStateTitle>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>default</ButtonStateTitle>
+                            <div :style="getGhostTypeBackgroundColor(type)">
+                                <template v-for="(color, index) in getFilterButtonColors(type)">
+                                    <Button :color="color" :type="type" class="mb-16">Button</Button>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>hover</ButtonStateTitle>
+                            <div :style="getGhostTypeBackgroundColor(type)">
+                                <template v-for="(color, index) in getFilterButtonColors(type)">
+                                    <Button :color="color" :type="type" class="mb-16 hover-test">Button</Button>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>disabled</ButtonStateTitle>
+                            <div :style="getGhostTypeBackgroundColor(type)">
+                                <template v-for="(color, index) in getFilterButtonColors(type)">
+                                    <Button :color="color" :type="type" disabled class="mb-16">Button</Button>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="flex-column mr-30">
+                            <ButtonStateTitle>loading</ButtonStateTitle>
+                            <div :style="getGhostTypeBackgroundColor(type)">
+                                <template v-for="(color, index) in getFilterButtonColors(type)">
+                                    <Button :color="color" :type="type" class="mb-16" loading style="color: transparent;">Button</Button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                  </template>
                 </div>
-        `,
-            components: { Button },
+            `,
+            data() {
+                return {
+                    buttonColors,
+                    buttonTypes,
+                }
+            },
+            methods: {
+                getFilterButtonColors(type) {
+                    if (type==='ghost') {
+                        return ghostTypeButtonColors;
+                    }
+                    return type === 'fill' ? this.buttonColors : this.filteredButtonColors
+                },
+                getGhostTypeBackgroundColor(type) {
+                    return type === 'ghost' ? 'backgroundColor: #EE7E41' : ''
+                },
+            },
+            computed: {
+                // light-primary는 fill type에서만 쓰임
+                filteredButtonColors() {
+                    return Object.assign(buttonColors, {}).filter(item => item !== 'light-primary')
+                },
+            },
+            components: { Button, Typography,
+                'ButtonStateTitle': {
+                    template: `<Typography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></Typography>`,
+                    components: {Typography},
+                },
+            },
         }}
     </Story>
 </Canvas>
@@ -121,7 +169,7 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <div style="display: flex">
+                  <div style="display: flex; justify-content: space-between;">
                     <Button size="small">Small</Button>
                     <Button size="medium">Medium</Button>
                     <Button size="large">Large</Button>
@@ -143,14 +191,16 @@ export const Default = (args, { argTypes }) => ({
                   <div style="display: flex">
                     <Button color="primary" type="fill" size="medium" loading>Fill Primary</Button>
                     <Button color="success" type="fill" size="medium" loading>Fill Success</Button>
-                    <Button color="error" type="fill" size="medium" loading>Fill Gray</Button>
-                    <Button color="secondary" type="fill" size="medium" loading>Fill Gray</Button>
+                    <Button color="error" type="fill" size="medium" loading>Fill Error</Button>
+                    <Button color="secondary" type="fill" size="medium" loading>Fill Secondary</Button>
+                    <Button color="info" type="fill" size="medium" loading>Fill Info</Button>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="outlined" size="medium" loading>Fill Primary</Button>
-                    <Button color="success" type="outlined" size="medium" loading>Fill Success</Button>
-                    <Button color="error" type="outlined" size="medium" loading>Fill Gray</Button>
-                    <Button color="secondary" type="outlined" size="medium" loading>Fill Gray</Button>
+                    <Button color="primary" type="outline" size="medium" loading>Fill Primary</Button>
+                    <Button color="success" type="outline" size="medium" loading>Fill Success</Button>
+                    <Button color="error" type="outline" size="medium" loading>Fill Error</Button>
+                    <Button color="secondary" type="outline" size="medium" loading>Fill Secondary</Button>
+                    <Button color="info" type="outline" size="medium" loading>Fill Info</Button>
                   </div>
                 </div>
         `,
@@ -182,39 +232,51 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="error" />
                         </template>
-                        Fill Gray
+                        Fill Error
                     </Button>
                     <Button color="secondary" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="secondary" />
                         </template>
-                        Fill Gray
+                        Fill Secondary
+                    </Button>
+                    <Button color="info" type="fill" size="medium" disabled>
+                      <template v-slot:left-icon>
+                        <Icon name="IconPlusMediumLine" color="secondary" />
+                      </template>
+                      Fill Info
                     </Button>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="outlined" size="medium" disabled>
+                    <Button color="primary" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="primary" />
                         </template>
                         Fill Primary
                     </Button>
-                    <Button color="success" type="outlined" size="medium" disabled>
+                    <Button color="success" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="success" />
                         </template>
                         Fill Success
                     </Button>
-                    <Button color="error" type="outlined" size="medium" disabled>
+                    <Button color="error" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="error" />
                         </template>
-                        Fill Gray
+                        Fill Error
                     </Button>
-                    <Button color="secondary" type="outlined" size="medium" disabled>
+                    <Button color="secondary" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="secondary" />
                         </template>
-                        Fill Gray
+                        Fill Secondary
+                    </Button>
+                    <Button color="info" type="outline" size="medium" disabled>
+                      <template v-slot:left-icon>
+                        <Icon name="IconPlusMediumLine" color="secondary" />
+                      </template>
+                      Fill Info
                     </Button>
                   </div>
                   <div style="display: flex">
@@ -234,13 +296,19 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="error" />
                         </template>
-                        Fill Gray
+                        Fill Error
                     </Button>
                     <Button color="secondary" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusMediumLine" color="secondary" />
                         </template>
-                        Fill Gray
+                        Fill Secondary
+                    </Button>
+                    <Button color="info" type="text" size="medium" disabled>
+                      <template v-slot:left-icon>
+                        <Icon name="IconPlusMediumLine" color="secondary" />
+                      </template>
+                      Fill Info
                     </Button>
                   </div>
                 </div>
@@ -255,7 +323,8 @@ export const Default = (args, { argTypes }) => ({
     <Story name="WithIcon" height="100px">
         {{
             template: `
-                <div style="display: flex">
+            <div>
+                <div style="display: flex; justify-content: space-between;">
                     <Button color="primary" type="fill" size="small">
                         <template v-slot:left-icon>
                             <Icon name="IconPlusSmallLine" color="white" />
@@ -270,7 +339,7 @@ export const Default = (args, { argTypes }) => ({
                     </Button>
                     <Button color="primary" type="fill" size="large">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusLargeLine" color="white" />
+                            <Icon name="IconPlusMediumLine" color="white" />
                         </template>
                         Large
                     </Button>
@@ -281,6 +350,33 @@ export const Default = (args, { argTypes }) => ({
                         XLarge
                     </Button>
                 </div>
+                <div style="display: flex; justify-content: space-between; margin-top:20px">
+                    <Button color="primary" type="fill" size="small">
+                        <template v-slot:left-icon>
+                            <Icon name="IconExclamationSmallFill" color="white" />
+                        </template>
+                        Small
+                    </Button>
+                    <Button color="primary" type="fill" size="medium">
+                        <template v-slot:left-icon>
+                            <Icon name="IconExclamationMediumFill" color="white" />
+                        </template>
+                        Medium
+                    </Button>
+                    <Button color="primary" type="fill" size="large">
+                        <template v-slot:left-icon>
+                            <Icon name="IconExclamationMediumFill" color="white" />
+                        </template>
+                        Large
+                    </Button>
+                    <Button color="primary" type="fill" size="xlarge">
+                        <template v-slot:left-icon>
+                            <Icon name="IconExclamationLargeFill" color="white" />
+                        </template>
+                        XLarge
+                    </Button>
+                </div>
+            </div>
         `,
             components: { Button, Icon },
         }}

@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Logo from '@/components/elements/core/logo/Logo';
+import { colors } from '@/utils/constants/color';
 
 <Meta
   title="Core/Logo"
@@ -7,10 +8,10 @@ import Logo from '@/components/elements/core/logo/Logo';
   argTypes={{
     name: {
       description: "로고 아이콘 이름",
-      defaultValue: "LogoComentoHorizontal",
+      defaultValue: "LogoComentoTypoType",
       control: {
         type: "select",
-        options: ["LogoComentoHorizontal"],
+        options: ["LogoComentoTypoType"],
       },
     },
     url: {
@@ -20,12 +21,12 @@ import Logo from '@/components/elements/core/logo/Logo';
     },
     width: {
       description: "로고 너비",
-      defaultValue: "140",
+      defaultValue: "105",
       control: { type: "text" },
     },
     height: {
       description: "로고 높이",
-      defaultValue: "24",
+      defaultValue: "18",
       control: { type: "text" },
     },
     color: {
@@ -36,7 +37,8 @@ import Logo from '@/components/elements/core/logo/Logo';
         },
       },
       control: {
-        type: "text",
+        type: "select",
+        options: colors,
       },
     },
   }}

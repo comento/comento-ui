@@ -39,6 +39,18 @@ import Icon from '@/components/elements/core/icon/Icon';
         type: "boolean"
       },
     },
+    paddings: {
+      description: "패딩",
+      table: {
+        type: {
+          summary: "Array",
+        },
+      },
+      control: {
+        type: "array",
+      },
+      defaultValue: null,
+    },
   }}
 />
 
@@ -55,6 +67,7 @@ export const Default = (args, { argTypes }) => ({
             v-if="showCallout"
             :type="type" :size="size"
             :full="full"
+            :paddings="paddings"
             :closable="closable"
             @closeCallout="showCallout = false"
         >
@@ -93,10 +106,13 @@ export const Default = (args, { argTypes }) => ({
                     <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout type='alert'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout type='error'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
                     <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout type='notice'>문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
             <div style="margin-bottom: 10px">
@@ -132,17 +148,6 @@ export const Default = (args, { argTypes }) => ({
                     <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
-            <div style="margin-bottom: 10px">
-                <div>
-                    <Callout size="medium">
-                        <template v-slot:icon>
-                            <Icon name="IconVideoLargeFill" color="gray850" />
-                        </template>
-                        1주차 세션 종료 후,<br />
-                        복습을 위한 VOD가 제공됩니다.
-                    </Callout>
-                </div>
-            </div>
         </div>
             `,
       components: { Callout, Icon },
@@ -161,10 +166,13 @@ export const Default = (args, { argTypes }) => ({
                     <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout type='alert'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout type='error'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
                     <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout type='notice'>문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
             `,
@@ -242,46 +250,18 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <Callout v-if="showMediumCallout" size="medium" closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
                 </div>
+                <div>
+                    <Callout v-if="showXSmallCallout" size="xsmall" full closable @closeCallout="showXSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout v-if="showSmallCallout" size="small" full closable @closeCallout="showSmallCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
+                <div>
+                    <Callout v-if="showMediumCallout" size="medium" full closable @closeCallout="showMediumCallout = false">문구가 들어가는 자리입니다.</Callout>
+                </div>
             </div>
             `,
         components: { Callout },
-    }}
-    </Story>
-</Canvas>
-
-### Icon
-<Canvas>
-    <Story name="Icon" height="100px">
-    {{
-        data() {
-            return {
-                showXSmallCallout: true,
-                showSmallCallout: true,
-                showMediumCallout: true,
-            }
-        },
-        template: `
-            <div>
-                <div>
-                    <Callout size="small" type="success">
-                        <template v-slot:icon>
-                            <Icon name="IconCheckRoundMediumLine" />
-                        </template>
-                        문구가 들어가는 자리입니다.
-                    </Callout>
-                </div>
-                <div>
-                    <Callout size="medium">
-                        <template v-slot:icon>
-                            <Icon name="IconVideoLargeFill" color="gray850" />
-                        </template>
-                        1주차 세션 종료 후,<br />
-                        복습을 위한 VOD가 제공됩니다.
-                    </Callout>
-                </div>
-            </div>
-            `,
-        components: { Callout, Icon },
     }}
     </Story>
 </Canvas>

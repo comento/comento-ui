@@ -7,60 +7,92 @@
 
 <script>
 // spinner
-import IconSpinnerSmall from '@/assets/images/icon/icon-spinner-small.svg?inline';
-import IconSpinnerMedium from '@/assets/images/icon/icon-spinner-medium.svg?inline';
-import IconSpinnerLarge from '@/assets/images/icon/icon-spinner-large.svg?inline';
+import IconSpinnerSmall from '@/assets/images/icon/small/icon-spinner-small.svg?inline';
+import IconSpinnerMedium from '@/assets/images/icon/medium/icon-spinner-medium.svg?inline';
+import IconSpinnerLarge from '@/assets/images/icon/large/icon-spinner-large.svg?inline';
 import { colors } from '@/utils/constants/color';
 const {
 	gray200,
+	gray400,
 	gray500,
-	green100,
-	green600,
-	green800,
+	gray800,
+	blue000,
 	blue100,
+	blue400,
 	blue600,
 	blue800,
 	red100,
 	red600,
 	red800,
+	orange100,
+	orange600,
+	orange800,
+	green100,
+	green600,
+	green800,
 	white,
 } = colors;
 
+import { buttonColors, ghostTypeButtonColors } from '@/components/components/general/button/Button';
+
 export const LoaderSizes = ['small', 'medium', 'large'];
-export const LoaderColors = ['secondary', 'primary', 'success', 'error'];
 
 const colorMap = {
-	secondary: {
-		stroke: gray200,
-		fill: gray500,
-	},
-	secondaryReversed: {
-		stroke: gray200,
-		fill: gray500,
-	},
 	primary: {
-		stroke: green100,
-		fill: green600,
-	},
-	primaryReversed: {
-		stroke: green800,
-		fill: white,
-	},
-	success: {
 		stroke: blue100,
 		fill: blue600,
 	},
-	successReversed: {
+	'primary-reversed': {
 		stroke: blue800,
+		fill: white,
+	},
+	'light-primary': {
+		stroke: blue400,
+		fill: blue000,
+	},
+	'light-primary-reversed': {
+		stroke: blue000,
+		fill: blue400,
+	},
+	success: {
+		stroke: green100,
+		fill: green600,
+	},
+	'success-reversed': {
+		stroke: green800,
 		fill: white,
 	},
 	error: {
 		stroke: red100,
 		fill: red600,
 	},
-	errorReversed: {
+	'error-reversed': {
 		stroke: red800,
 		fill: white,
+	},
+	secondary: {
+		stroke: orange100,
+		fill: orange600,
+	},
+	'secondary-reversed': {
+		stroke: orange800,
+		fill: white,
+	},
+	info: {
+		stroke: gray400,
+		fill: gray800,
+	},
+	'info-reversed': {
+		stroke: gray500,
+		fill: gray800,
+	},
+	white: {
+		stroke: gray200,
+		fill: gray500,
+	},
+	'white-reversed': {
+		stroke: gray500,
+		fill: gray200,
 	},
 };
 
@@ -77,25 +109,22 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return LoaderSizes.indexOf(value) !== -1;
+				return LoaderSizes.includes(value);
 			},
 		},
 		/**
-		 * 색상(secondary, primary, success, error)
+		 * 색상(primary, light-primary, success, error, secondary, info)
 		 */
 		color: {
 			type: String,
-			default: 'secondary',
+			default: 'info',
 			validator(value) {
-				return LoaderColors.indexOf(value) !== -1;
+				return [...buttonColors, ...ghostTypeButtonColors].includes(value);
 			},
 		},
 		reversed: {
 			type: Boolean,
 			default: false,
-			validator(value) {
-				return typeof value === 'boolean';
-			},
 		},
 	},
 	computed: {
@@ -105,7 +134,7 @@ export default {
 		},
 	},
 	mounted() {
-		const colorMapKey = this.reversed ? `${this.color}Reversed` : this.color;
+		const colorMapKey = this.reversed ? `${this.color}-reversed` : this.color;
 		this.$refs['icon'].querySelectorAll('.circle')[0].setAttribute('stroke', colorMap[colorMapKey]['stroke']);
 		this.$refs['icon'].querySelectorAll('.quarter')[0].setAttribute('fill', colorMap[colorMapKey]['fill']);
 	},

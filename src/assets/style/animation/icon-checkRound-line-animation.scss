@@ -11,13 +11,13 @@ $curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
 .success-circle {
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
-  stroke: #00c854;
+  stroke: #2A7DE1;
   fill: none;
   animation: stroke .3s $curve forwards;
 }
 
 .success-checkmark {
-  stroke: #00C854;
+  stroke: #2A7DE1;
   transform-origin: 50% 50%;
   stroke-dasharray: 146;
   stroke-dashoffset: 146;

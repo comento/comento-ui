@@ -1,0 +1,218 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import PromotionEduCard from '@/components/components/dataDisplay/card/PromotionEduCard';
+import Grid from '@/components/layout/Grid';
+import Row from '@/components/layout/Row';
+import StyleCol from '@/components/layout/StyleCol';
+import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
+import Chip from '@/components/components/dataDisplay/chips/Chip';
+
+<Meta
+	title="Data Display/Card/PromotionEduCard"
+	component={PromotionEduCard}
+	argTypes={{
+		backgroundImage: {
+			description: '카드 배경<br/>`String`',
+			defaultValue: 'https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		category: {
+			description: '캠프 카테고리<br/>`String`',
+			defaultValue: 'category',
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'text',
+			},
+		},
+		scoreAverage: {
+			description: '평점<br/>`Number`',
+			defaultValue: 4.8,
+			control: {
+				type: 'number',
+			},
+		},
+		reviewCount: {
+			description: '리뷰 수<br/>`Number`',
+			defaultValue: 34,
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'number',
+			},
+		},
+		applicantCount: {
+			description: '수강생 수<br/>`Number`',
+			defaultValue: 50,
+			table: {
+				type: {
+					summary: null,
+				},
+			},
+			control: {
+				type: 'number',
+			},
+		},
+		dominantColor: {
+			description: '카테고리 색깔',
+			defaultValue: { red: 0, green: 0, blue: 0 },
+		},
+		title: {
+			description: '카드 타이틀',
+			defaultValue: null,
+			table: {
+				type: {
+					category: 'slots',
+					summary: 'Component',
+				},
+			},
+		},
+		additionalButton: {
+			description: '우상단 추가 버튼',
+			defaultValue: null,
+			table: {
+				type: {
+					category: 'slots',
+					summary: 'Component',
+				},
+			},
+		},
+		alternativeCaption: {
+			description: '대체 캡션',
+			defaultValue: null,
+			table: {
+				type: {
+					category: 'slots',
+					summary: 'Component',
+				},
+			},
+		},
+	}}
+/>
+
+export const Default = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { Grid, Row, StyleCol, PromotionEduCard },
+	template: `
+        <Grid>
+            <Row>
+                <StyleCol :col-lg="4">
+                    <PromotionEduCard
+                        :background-image="backgroundImage"
+                        :category="category"
+                        :score-average="scoreAverage"
+                        :review-count="reviewCount"
+                        :applicant-count="applicantCount"
+						:dominant-color="dominantColor"
+                    >
+                       <template v-slot:title>Title</template>
+                    </PromotionEduCard>
+                </StyleCol>
+                <StyleCol :col-lg="4">
+                    <PromotionEduCard
+                        :background-image="backgroundImage"
+                        :category="category"
+                        :score-average="scoreAverage"
+                        :review-count="reviewCount"
+                        :applicant-count="applicantCount"
+						:dominant-color="dominantColor"
+                    >
+                       <template v-slot:title>Title</template>
+                    </PromotionEduCard>
+                </StyleCol>
+                <StyleCol :col-lg="4">
+                    <PromotionEduCard
+                        :background-image="backgroundImage"
+                        :category="category"
+                        :score-average="scoreAverage"
+                        :review-count="reviewCount"
+                        :applicant-count="applicantCount"
+						:dominant-color="dominantColor"
+                    >
+                       <template v-slot:title>Title</template>
+                    </PromotionEduCard>
+                </StyleCol>
+            </Row>
+        </Grid>
+        `,
+});
+
+# PromotionEduCard
+
+**PromotionEduCard** 컴포넌트의 문서입니다.
+
+<Story name="Default">{Default.bind({})}</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### All
+
+<Canvas>
+	<Story name="All">
+		{{
+			data() {
+				return {
+					exampleBackgroundImage: 'https://cdn.comento.kr/edu/title_OUZVTI7e2c.jpg',
+				};
+			},
+			template: `
+                <Grid>
+                    <Row>
+                        <StyleCol :col-lg="4">
+                            <PromotionEduCard
+                                :background-image="exampleBackgroundImage"
+                                category="category"
+                                :score-average="4.4"
+                                :review-count="50"
+                                :applicant-count="72"
+								:dominant-color="{ red: 43, green: 86, blue: 108 }"
+                            >
+                                <template v-slot:title>Title</template>
+                                <template v-slot:alternative-caption>대체 캡션 사용</template>
+                            </PromotionEduCard>
+                        </StyleCol>
+                        <StyleCol :col-lg="4">
+                            <PromotionEduCard
+                                :background-image="exampleBackgroundImage"
+                                category="category"
+                                :score-average="4.4"
+                                :review-count="50"
+                                :applicant-count="72"
+								:dominant-color="{ red: 69, green: 112, blue: 84 }"
+                            >
+                                <template v-slot:title>Title</template>
+                            </PromotionEduCard>
+                        </StyleCol>
+                        <StyleCol :col-lg="4">
+                            <PromotionEduCard
+                                :background-image="exampleBackgroundImage"
+                                category="category"
+                                :score-average="5"
+                                :review-count="50"
+                                :applicant-count="72"
+								:dominant-color="{ red: 114, green: 96, blue: 55 }"
+                            >
+                                <template v-slot:title>Title</template>
+                            </PromotionEduCard>
+                        </StyleCol>
+                    </Row>
+                </Grid>
+            `,
+			components: { Grid, Row, StyleCol, PromotionEduCard, ChipGroup, Chip },
+		}}
+	</Story>
+</Canvas>

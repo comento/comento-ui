@@ -87,11 +87,12 @@ export default {
 <style lang="scss" scoped>
 .c-file {
 	&-input {
-		width: 100%;
 		&:hover {
 			background-color: $gray100;
 		}
-
+		&.full {
+			width: 100%;
+		}
 		&.disabled {
 			label {
 				cursor: not-allowed;
