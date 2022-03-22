@@ -34,12 +34,12 @@ import Divider from '@/components/elements/utility/Divider';
           type: "text"
       }
     },
-      disabled: {
-        type: Boolean,
-        control: {
-          type: "boolean",
-        }
+    disabled: {
+      type: Boolean,
+      control: {
+        type: "boolean",
       }
+    },
   }}
 />
 
@@ -65,8 +65,7 @@ export const Default = (args, { argTypes }) => ({
         alert('clickItemContent')
     }
   },
-  template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                <div style="width: 100%">
+  template: `<div style="width: 100%; display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
                  <FileInput
                     :accept="accept"
                     :multiple="multiple"
@@ -75,9 +74,13 @@ export const Default = (args, { argTypes }) => ({
                     :disabled="disabled"
                     @uploadFiles="handleUploadFiles"
                  />
-                 <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
-                 <FileList :files="files" @clickFileDownloadIcon="handleClickFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
-                 </div>
+                 <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
+                 <FileList :files="files"
+                    :full="full"
+                    isRemovable
+                    @clickFileDownloadIcon="handleClickFileDownloadIcon"
+                    @clickFileItemContent="handleClickFileItemContent"
+                 />
               </div>`,
    components: { FileInput, FileList, Divider },
 });
@@ -151,21 +154,21 @@ export const Default = (args, { argTypes }) => ({
                             <FileInput full
                               @uploadFiles="handleCreateUploadFiles"
                             />
-                            <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
-                            <FileList :files="createFiles" isEdit @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
+                            <FileList :files="createFiles" isRemovable @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">수정 시</Typography>
                             <FileInput full
                               @uploadFiles="handleEditUploadFiles"
                             />
-                            <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
-                            <FileList :files="editFiles" isEdit @clickFileTrashIcon="handleEditClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
+                            <FileList :files="editFiles" isRemovable @clickFileTrashIcon="handleEditClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">완료 시</Typography>
                             <FileSummary :length="mockFiles.length" @clickAllFileDownloadButton="handleClickAllFileDownloadButton"/>
-                            <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 12.5px;"/>
+                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
                             <FileList :files="mockFiles" @clickFileDownloadIcon="handleClickMockFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                       </div>`,

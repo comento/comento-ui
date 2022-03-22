@@ -74,6 +74,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		withHeader: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -111,8 +115,11 @@ export default {
 		computedTransparent() {
 			return { transparent: this.transparent };
 		},
+		computedWithHeader() {
+			return { 'with-header': this.withHeader };
+		},
 		classes() {
-			return [this.computedDirection, this.computedTransparent];
+			return [this.computedDirection, this.computedTransparent, this.computedWithHeader];
 		},
 		swiper() {
 			return this.$refs.mySwiper.$swiper;
@@ -142,6 +149,12 @@ export default {
 		}
 	}
 }
+/* tabs 최소 높이 */
+::v-deep {
+	.c-button {
+		height: 30px !important;
+	}
+}
 
 // 투명 타입
 .transparent {
@@ -151,21 +164,25 @@ export default {
 	.c-tabs--menu-button {
 		&::v-deep .c-button {
 			color: white;
-			opacity: 0.7;
+			opacity: 0.6;
 		}
 		@include pc {
 			&:hover {
-				background-color: rgba(21, 22, 23, 0.1);
+				background-color: rgba(255, 255, 255, 0.2);
+				@include border-radius(6px);
+				&::v-deep .c-button {
+					opacity: 1;
+				}
 			}
 		}
 	}
 	.active {
 		&::v-deep .c-button {
 			color: white;
-			opacity: 0.8;
+			opacity: 1;
 		}
 		&:after {
-			background-color: rgba(255, 255, 255, 0.8);
+			background-color: $white;
 		}
 	}
 }
@@ -224,6 +241,7 @@ export default {
 			@include align-items(center);
 			@include pc {
 				&:hover {
+					@include border-radius(6px);
 					background-color: $gray100;
 				}
 			}
@@ -244,8 +262,8 @@ export default {
 }
 .active {
 	&::v-deep .c-button {
-		font-weight: 700;
-		color: $gray800;
+		color: $gray900;
+		font-weight: $medium;
 	}
 	&:after {
 		content: '';
@@ -253,9 +271,17 @@ export default {
 		position: absolute;
 		width: 100%;
 		height: 2px;
-		background-color: $gray600;
+		background-color: $gray700;
 		left: 0;
 		bottom: -1px;
+	}
+}
+
+.with-header {
+	::v-deep {
+		.c-tabs--menu-button .c-button {
+			height: 44px !important;
+		}
 	}
 }
 /*&--blur-left {*/

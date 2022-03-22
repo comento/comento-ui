@@ -34,8 +34,8 @@ export default {
 	}
 
 	&.spacing {
-		> .c-list-item:not(:last-child) {
-			margin: 6px 0;
+		> .c-list-item + .c-list-item {
+			margin-top: 12px;
 		}
 	}
 }

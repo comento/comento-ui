@@ -31,7 +31,7 @@ export const Elements = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'span', 'div', 'p',
 
 export const Aligns = ['left', 'center', 'right'];
 
-export const FontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900, 'normal', 'bold', 'lighter', 'bolder'];
+export const FontWeights = [300, 400, 500, 600, 'light', 'regular', 'medium', 'semi-bold'];
 
 /**
  * @displayName c-typography
@@ -72,7 +72,7 @@ export default {
 			default: null,
 		},
 		/**
-		 * 굵기(100~900, normal, bold, lighter, bolder)
+		 * 굵기(300~600, light, regular, medium, semi-bold)
 		 */
 		fontWeight: {
 			type: [Number, String],
@@ -105,15 +105,23 @@ export default {
 			if (!this.color) return 'inherit';
 			return colors[this.color] ? colors[this.color] : this.color;
 		},
+		isNumberFontWeight() {
+			return Number.isInteger(this.fontWeight);
+		},
 		computedStyle() {
-			return {
-				color: this.computedColor,
-				'text-align': this.align,
-				'font-weight': this.fontWeight,
-			};
+			return [
+				{
+					color: this.computedColor,
+					textAlign: this.align,
+				},
+				this.isNumberFontWeight && { fontWeight: this.fontWeight },
+			];
 		},
 		computedClass() {
-			return this.type ? `c_${this.type}` : null;
+			return [this.type && `c-${this.type}`, this.fontWeightClass];
+		},
+		fontWeightClass() {
+			return this.fontWeight && !this.isNumberFontWeight ? `f-${this.fontWeight}` : '';
 		},
 	},
 };
@@ -133,58 +141,37 @@ p {
 	word-wrap: break-word;
 }
 
-@mixin trans-font-size($size, $line, $math: round) {
-	font-size: $size;
-	@if $math == 'round' {
-		line-height: round($size * $line);
-	} @else if $math == 'floor' {
-		line-height: floor($size * $line);
-	}
+.c-display1 {
+	@include display1();
 }
-
-.c_display1 {
-	@include trans-font-size(42px, 1.2);
-	font-weight: bold;
+.c-headline1 {
+	@include headline1();
 }
-.c_headline1 {
-	@include trans-font-size(32px, 1.25);
-	font-weight: bold;
+.c-headline2 {
+	@include headline2();
 }
-.c_headline2 {
-	@include trans-font-size(28px, 1.3);
-	font-weight: bold;
+.c-headline3 {
+	@include headline3();
 }
-.c_headline3 {
-	@include trans-font-size(26px, 1.3);
-	font-weight: bold;
+.c-headline4 {
+	@include headline4();
 }
-.c_headline4 {
-	@include trans-font-size(24px, 1.25);
-	font-weight: bold;
+.c-headline5 {
+	@include headline5();
 }
-.c_headline5 {
-	@include trans-font-size(22px, 1.3);
-	font-weight: normal;
+.c-headline6 {
+	@include headline6();
 }
-.c_headline6 {
-	@include trans-font-size(18px, 1.35);
-	font-weight: bold;
+.c-body1 {
+	@include body1();
 }
-.c_body1 {
-	@include trans-font-size(16px, 1.5);
-	font-weight: normal;
+.c-body2 {
+	@include body2();
 }
-.c_body2 {
-	@include trans-font-size(14px, 1.45);
-	font-weight: normal;
+.c-caption1 {
+	@include caption1();
 }
-
-.c_caption1 {
-	@include trans-font-size(12px, 1.15);
-	font-weight: 300;
-}
-.c_caption2 {
-	@include trans-font-size(10px, 1.15, floor);
-	font-weight: 300;
+.c-caption2 {
+	@include caption2();
 }
 </style>

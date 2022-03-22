@@ -32,7 +32,7 @@ import uniqueId from '@/utils/unique-id';
 import Hint from '@/components/components/dataDisplay/Hint';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
-export const colors = ['primary', 'success', 'secondary', 'error'];
+export const colors = ['primary', 'success', 'info', 'error'];
 
 /**
  * @displayName c-date-picker
@@ -73,11 +73,11 @@ export default {
 			default: false,
 		},
 		/**
-		 * 색상(primary, success, secondary, error)
+		 * 색상(primary, success, info, error)
 		 */
 		color: {
 			type: String,
-			default: 'secondary',
+			default: 'info',
 			validator(value) {
 				return customValidator(value, colors.indexOf(value) !== -1, 'DatePicker', 'color');
 			},
@@ -152,6 +152,8 @@ export default {
 };
 </script>
 
+<!-- 스타일은 datePicker.scss -->
+<!-- 스타일 커스텀은 datePicker.init.scss -->
 <style lang="scss" scoped>
 .c-date-picker {
 	.full {
@@ -178,10 +180,10 @@ export default {
 			}
 		}
 	}
-	&.secondary {
+	&.info {
 		&::v-deep .c-input {
 			&:focus {
-				border-color: $secondary;
+				border-color: $info;
 			}
 		}
 	}

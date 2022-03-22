@@ -11,7 +11,7 @@ storiesOf('Data Display/list/alarmList/AlarmListItem', module).add('Default', ()
 		<NewGrid fluid>
 		<NewRow>
 			<NewCol :col-lg="3" :col-sm="12">
-				<AlarmListItem class="alarm-not-confirm">
+				<AlarmListItem class="alarm-unread">
 					<template v-slot:icon>
 						<img :src="'https://cdn.comento.kr/images/icon/alarm/icon-alarm-won.svg'" />
 					</template>

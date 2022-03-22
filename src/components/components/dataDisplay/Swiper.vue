@@ -26,9 +26,9 @@
 				name="IconArrowLargeLine"
 				:rotate="-90"
 				class="swiper-button swiper-button-prev"
-				:class="[computedControlsPosition, computedControlsCircle]"
+				:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 				:color="computedControlsColor"
-			></Icon>
+			/>
 			<Icon
 				v-if="showInsideControl"
 				:id="`swiper-button-next-${_uid}`"
@@ -36,16 +36,16 @@
 				name="IconArrowLargeLine"
 				:rotate="90"
 				class="swiper-button swiper-button-next"
-				:class="[computedControlsPosition, computedControlsCircle]"
+				:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 				:color="computedControlsColor"
-			></Icon>
+			/>
 			<div
 				v-if="showInsideIndicator"
 				:id="`swiper-pagination-${_uid}`"
 				slot="pagination"
 				class="swiper-pagination"
 				:class="computedIndicatorColorClass"
-			></div>
+			/>
 		</base-swiper>
 		<Icon
 			v-if="showOutsideControl"
@@ -53,43 +53,43 @@
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button swiper-button-outside swiper-button-prev-outside"
-			:class="[computedControlsPosition, computedControlsCircle]"
+			:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showOutsideControl"
 			:id="`swiper-button-next-outside-${_uid}`"
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button swiper-button-outside swiper-button-next-outside"
-			:class="[computedControlsPosition, computedControlsCircle]"
+			:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showTopControl"
 			:id="`swiper-button-prev-top-${_uid}`"
 			name="IconArrowLargeLine"
 			:rotate="-90"
 			class="swiper-button-top swiper-button-prev-top"
-			:class="[computedControlsPosition, computedControlsCircle]"
+			:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<Icon
 			v-if="showTopControl"
 			:id="`swiper-button-next-top-${_uid}`"
 			name="IconArrowLargeLine"
 			:rotate="90"
 			class="swiper-button-top swiper-button-next-top"
-			:class="[computedControlsPosition, computedControlsCircle]"
+			:class="[computedControlsPosition, computedControlsCircle, controlsColor]"
 			:color="computedControlsColor"
-		></Icon>
+		/>
 		<div
 			v-if="showOutsideIndicator"
 			:id="`swiper-pagination-outside-${_uid}`"
 			slot="pagination"
 			class="swiper-pagination-outside"
 			:class="computedIndicatorColorClass"
-		></div>
+		/>
 	</div>
 </template>
 
@@ -203,7 +203,7 @@ export default {
 		},
 		autoplayDelay: {
 			type: Number,
-			default: 6000,
+			default: 3000,
 		},
 		loop: {
 			type: Boolean,
@@ -255,6 +255,7 @@ export default {
 				this.slidesPerView === 'auto';
 			return {
 				loop: this.loop,
+				init: false,
 				navigation: {
 					nextEl: swiperButtonNextSelector,
 					prevEl: swiperButtonPrevSelector,
@@ -283,10 +284,10 @@ export default {
 		computedControlsColor() {
 			const colorMap = {
 				light: 'white',
-				dark: 'gray800',
+				dark: 'gray850',
 			};
 			if (this.controlsCircle && this.controlsColor === 'dark') {
-				return 'gray500';
+				return 'gray850';
 			} else {
 				return colorMap[this.controlsColor];
 			}
@@ -301,6 +302,12 @@ export default {
 				`swiper-button-background-circle swiper-button-background-circle-${this.controlsColor}`
 			);
 		},
+	},
+	mounted() {
+		// swiper 요소가 모두 파싱 되고 init 되도록
+		this.$nextTick(() => {
+			this.$refs.mySwiper.$swiper.init();
+		});
 	},
 	methods: {
 		handleSwiperAutoplay(type) {
@@ -339,45 +346,59 @@ $swiper-control-circle-radius: 16px;
 		align-items: center;
 	}
 }
+// pagination (클래스를 직접 주입할 수 없으므로, 그 상위에 주입)
 ::v-deep .swiper-pagination-bullet {
-	width: 20px;
-	height: 3px;
-	border-radius: 0;
+	width: 10px;
+	height: 10px;
+	border: 1px solid white;
+	border-radius: 50%;
+	background: transparent !important;
+	opacity: 0.4 !important;
+	&.swiper-pagination-bullet-active {
+		opacity: 1 !important;
+	}
 }
-/* 클래스를 직접 주입할 수 없으므로, 그 상위에 주입 */
 ::v-deep .swiper-indicator-dark {
 	.swiper-pagination-bullet {
-		background-color: $gray800;
+		border-color: $gray850;
+		&.swiper-pagination-bullet-active {
+			background-color: $gray850 !important;
+		}
 	}
 }
 ::v-deep .swiper-indicator-light {
 	.swiper-pagination-bullet {
-		background-color: $white;
+		&.swiper-pagination-bullet-active {
+			background-color: $white !important;
+		}
 	}
 }
+
 .swiper-button-outside {
 	position: absolute;
 	z-index: 10;
 	cursor: pointer;
 	top: 50%;
 }
+
 /* 원형 컨트롤의 disabled 기존 스타일을 초기화 */
 :not(.swiper-button-background-circle) {
 	&.swiper-button-disabled {
-		opacity: 1;
-		fill: $gray300 !important;
+		opacity: 0.3;
 		cursor: not-allowed !important;
+		pointer-events: visible;
 	}
 }
 .swiper-button-background-circle {
 	border-radius: 50%;
 	padding: calc((#{$swiper-control-circle-radius} * 2 - #{$swiper-control-size}) / 2);
 	margin-top: calc(-1 * #{$swiper-control-circle-radius} / 2);
+	@include shadow1();
 	&-light {
-		background-color: rgba(0, 0, 0, 0.3) !important;
+		background-color: rgba(0, 0, 0, 0.4) !important;
 		&.swiper-button-disabled {
-			background-color: rgba(0, 0, 0, 0.3) !important;
-			opacity: 0.1;
+			background-color: rgba(0, 0, 0, 0.4) !important;
+			opacity: 0.3;
 			cursor: not-allowed !important;
 		}
 	}
@@ -393,6 +414,7 @@ $swiper-control-circle-radius: 16px;
 .swiper-button {
 	width: auto;
 	height: auto;
+	filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.1));
 	margin-top: calc(-1 * #{$swiper-control-size} / 2) !important;
 	&.swiper-button-background-circle {
 		margin-top: calc(-1 * #{$swiper-control-circle-radius}) !important;
@@ -433,9 +455,38 @@ $swiper-control-circle-radius: 16px;
 .swiper-button-next-top {
 	right: 0;
 }
+:not(.swiper-button-disabled) {
+	.swiper-button,
+	.swiper-button-top {
+		@include border-radius(8px);
+		&:hover {
+			background: rgba(255, 255, 255, 0.05) !important;
+		}
+		&.dark {
+			&:hover {
+				background: rgba(32, 35, 37, 0.05) !important;
+				&.swiper-button-disabled {
+					background: transparent !important;
+				}
+			}
+		}
+		&-background-circle {
+			@include border-radius(50%);
+			&:hover {
+				background-color: rgba(0, 0, 0, 0.6) !important;
+			}
+			&.dark {
+				&:hover {
+					background-color: rgba(255, 255, 255, 1) !important;
+				}
+			}
+		}
+	}
+}
+
 ::v-deep .swiper-pagination-outside {
 	text-align: center;
-	margin-top: 3px !important;
+	margin-top: 12px !important;
 	.swiper-pagination-bullet {
 		&:not(:last-child) {
 			margin-right: 6px;

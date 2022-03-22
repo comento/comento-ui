@@ -1,11 +1,12 @@
 <template>
 	<button
 		class="c-application c-narrow-button"
-		:class="size"
+		:class="computedClasses"
 		:style="[computedColor]"
 		v-bind="$attrs"
 		type="button"
 		v-on="$listeners"
+		@click="$event.target.blur()"
 	>
 		<div class="c-narrow-button--icon" :class="setIconSpacing('left')">
 			<slot name="left-icon" />
@@ -43,6 +44,10 @@ export default {
 				return narrowButtonSizes.indexOf(value) !== -1;
 			},
 		},
+		transparent: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		mappedColor() {
@@ -54,6 +59,9 @@ export default {
 		computedIconMargin() {
 			const isMoreThanLarge = this.size.indexOf('large') !== -1;
 			return isMoreThanLarge ? '4px' : '2px';
+		},
+		computedClasses() {
+			return [this.size, { transparent: this.transparent }];
 		},
 	},
 	methods: {
@@ -69,14 +77,21 @@ export default {
 .c-narrow-button {
 	cursor: pointer;
 	border: 0;
-	border-radius: 4px;
+	@include border-radius(4px);
 	background: transparent;
 	@include flexbox();
 	@include align-items(center);
 	@include justify-content(center);
 
-	&:hover {
+	@include state-style() {
 		background-color: $gray100;
+	}
+
+	// transparent
+	&.transparent {
+		@include state-style() {
+			background-color: $button-transparent-hover-background-color;
+		}
 	}
 
 	// 사이즈
@@ -89,11 +104,13 @@ export default {
 		height: 28px;
 		padding: 4px;
 		@include body2();
+		@include border-radius(6px);
 	}
 	&.large {
 		height: 32px;
 		padding: 4px 6px;
 		@include body1();
+		@include border-radius(6px);
 	}
 
 	&--icon {

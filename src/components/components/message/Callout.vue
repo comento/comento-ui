@@ -2,24 +2,28 @@
 	<transition :name="computedTransition">
 		<div
 			class="c-application c-callout--container"
-			:class="[computedSize, computedType, computedFull]"
+			:class="[computedSize, computedType, computedFull, { 'c-callout--closable': closable }]"
+			:style="[computedPadding]"
 			v-bind="$attrs"
 			v-on="$listeners"
 		>
 			<div class="c-callout--wrapper">
-				<!-- 아이콘 -->
-				<slot v-if="$slots['icon']" name="icon" />
-				<Icon v-else :name="mapIconNameFromSize(size)" :color="computedIconColor" />
+				<div class="flex align-center">
+					<!-- 아이콘 -->
+					<slot v-if="$slots['icon']" name="icon" />
+					<Icon v-else :name="iconName" :color="computedIconColor" />
 
-				<!-- 문구 -->
-				<Typography class="c-callout--message" color="gray700" :type="computedFontType">
-					<slot />
-				</Typography>
+					<!-- 문구 -->
+					<Typography class="c-callout--message" color="gray700" :type="computedFontType">
+						<slot />
+					</Typography>
+				</div>
 
 				<!-- 닫기 -->
 				<Icon
 					v-if="closable"
 					class="c-callout--close-button c-pointer"
+					color="gray300"
 					:name="computedCloseIconName"
 					@click.stop.capture="handleClose"
 				/>
@@ -31,8 +35,9 @@
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
+import paddingMixin from '@/mixins/paddingMixin';
 
-export const CalloutTypes = ['information', 'alert', 'success'];
+export const CalloutTypes = ['information', 'error', 'success', 'notice'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
 
 /**
@@ -40,9 +45,10 @@ export const CalloutSizes = ['xsmall', 'small', 'medium'];
  */
 export default {
 	name: 'Callout',
+	mixins: [paddingMixin],
 	props: {
 		/**
-		 * 타입(information, alert, success)
+		 * 타입(information, error, success, notice)
 		 */
 		type: {
 			type: String,
@@ -83,18 +89,24 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		paddings: {
+			type: Array,
+			default() {
+				return null;
+			},
+		},
 	},
 	computed: {
 		computedFull() {
 			return this.full && 'full';
 		},
 		computedIconColor() {
-			const iconColors = {
-				information: 'gray500',
-				alert: 'red600',
-				success: 'blue600',
-			};
-			return iconColors[this.type];
+			return {
+				information: 'gray600',
+				error: 'red600',
+				success: 'green600',
+				notice: 'blue600',
+			}[this.type];
 		},
 		computedSize() {
 			return this.size;
@@ -103,12 +115,11 @@ export default {
 			return this.type;
 		},
 		computedFontType() {
-			const mapSizeToFontType = {
+			return {
 				medium: 'body2',
 				small: 'caption1',
 				xsmall: 'caption2',
-			};
-			return mapSizeToFontType[this.size];
+			}[this.size];
 		},
 		computedCloseIconName() {
 			const iconSize = this.size === 'xsmall' ? 'Small' : 'Medium';
@@ -117,16 +128,25 @@ export default {
 		computedTransition() {
 			return this.closable ? 'callout-fade' : null;
 		},
+		computedPadding() {
+			return this.paddings ? { ...this.$_setPadding(this.paddings) } : null;
+		},
+		iconName() {
+			const name = {
+				information: 'Information',
+				error: 'Exclamation',
+				notice: 'Megaphone',
+				success: 'Selected',
+			}[this.type];
+			const size = {
+				xsmall: 'Small',
+				small: 'Medium',
+				medium: 'Medium',
+			}[this.size];
+			return `Icon${name + size}Line`;
+		},
 	},
 	methods: {
-		mapIconNameFromSize(size) {
-			const iconSet = {
-				xsmall: 'IconExclamationSmallFill',
-				small: 'IconExclamationMediumLine',
-				medium: 'IconExclamationLargeLine',
-			};
-			return iconSet[size];
-		},
 		handleClose() {
 			this.$emit('closeCallout');
 		},
@@ -138,7 +158,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @mixin callout-icon-margin-right($margin-right) {
 	::v-deep svg:first-child {
 		overflow: inherit; //overflow: hidden 때문에 margin을 주면 아이콘이 짤려서 추가함
@@ -151,8 +171,12 @@ export default {
 	&--container {
 		display: inline-flex;
 		align-items: center;
+		// full을 다음과 같은 방식으로 구현
 		&.full {
 			width: 100%;
+			> .c-callout--wrapper {
+				@include justify-content(space-between);
+			}
 		}
 		svg:first-child {
 			flex-shrink: 0;
@@ -160,28 +184,31 @@ export default {
 
 		&.xsmall {
 			padding: 4px 8px;
-			border-radius: 4px;
+			@include border-radius(6px);
 			@include callout-icon-margin-right(4px);
 		}
 		&.small {
 			padding: 8px;
-			border-radius: 4px;
+			@include border-radius(6px);
 			@include callout-icon-margin-right(6px);
 		}
 		&.medium {
-			padding: 16px 16px 16px 16px;
-			border-radius: 6px;
-			@include callout-icon-margin-right(8px);
+			padding: 12px;
+			@include border-radius(8px);
+			@include callout-icon-margin-right(6px);
 		}
 
 		// type
 		&.information {
 			background-color: $gray000;
 		}
-		&.alert {
+		&.error {
 			background-color: $red000;
 		}
 		&.success {
+			background-color: $green000;
+		}
+		&.notice {
 			background-color: $blue000;
 		}
 	}
@@ -192,15 +219,13 @@ export default {
 		align-items: center;
 	}
 	&--message {
-		width: 100%;
 		word-break: keep-all;
 		white-space: normal;
 		&::v-deep strong {
-			@include f-normal();
+			@include f-regular();
 		}
 
 		@include pc {
-			width: 100%;
 		}
 	}
 	&--close-button {

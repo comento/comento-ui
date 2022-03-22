@@ -6,7 +6,7 @@
 		<!-- badge -->
 		<div v-if="text" class="c-badge--wrapper">
 			<div class="c-badge" :style="[computedStyle]" :class="[computedSize, computedPosition]">
-				<Typography type="caption2" color="white" :font-weight="700" class="c-badge--text">
+				<Typography type="caption2" color="white" font-weight="semi-bold" class="c-badge--text">
 					{{ text }}
 				</Typography>
 			</div>
@@ -17,8 +17,9 @@
 <script>
 import { colors } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
+import globalMixin from '@/mixins/globalMixin';
 
-export const badgeColors = ['primary', 'error'];
+export const badgeColors = ['primary', 'secondary'];
 export const badgeSizes = ['medium', 'small'];
 export const badgeTypes = ['inline', 'absolute'];
 
@@ -27,9 +28,10 @@ export const badgeTypes = ['inline', 'absolute'];
  */
 export default {
 	name: 'Badge',
+	mixins: [globalMixin],
 	props: {
 		/**
-		 * 색상(primary, error)
+		 * 색상(primary, secondary)
 		 */
 		color: {
 			type: String,
@@ -149,25 +151,32 @@ export default {
 	@include align-items(center);
 	@include justify-content(center);
 	&.medium {
-		height: 16px;
-		padding: 0 5px;
-		.c-badge--text {
-			line-height: 10px;
-		}
+		height: 17px;
+		min-width: 17px;
+		padding: 1.5px 5px;
 	}
 	&.small {
-		height: 14px;
-		padding: 0 4px;
+		height: 12px;
+		min-width: 12px;
+		//font scale 때문에 padding 4가 아닌 2
+		padding: 0 2px;
 		font-size: 10px;
 		.c-badge--text {
-			line-height: 8px;
+			//chrome은 최소 font-size 10px
+			-webkit-transform: scale(0.8);
+			line-height: 10px;
 		}
 	}
 
 	&--container {
 		&.inline {
-			.c-badge--wrapper {
-				position: static;
+			@include flexbox();
+			@include align-items(center);
+			.c-badge {
+				@include flexbox();
+				&--wrapper {
+					position: inherit;
+				}
 			}
 		}
 		&.absolute {

@@ -32,7 +32,7 @@ import StyleCol from '@/components/layout/StyleCol';
         },
         color: {
             description: "Chip 색상",
-            defaultValue: "secondary",
+            defaultValue: "info",
             control: {
                 type: "select",
                 options: ChipColors,
@@ -71,16 +71,16 @@ export const Basic = (args, { argTypes }) => ({
                     <Row>
                         <StyleCol :col-sm="12">
                             <ChipGroup size="small">
-                                <Chip type="fill" color="secondary" size="small">Chip</Chip>
-                                <Chip type="outlined" color="secondary" size="small">Chip</Chip>
-                                <Chip type="fill" color="secondary" size="small">Chip</Chip>
+                                <Chip type="fill" color="info" size="small">Chip</Chip>
+                                <Chip type="outline" color="info" size="small">Chip</Chip>
+                                <Chip type="fill" color="info" size="small">Chip</Chip>
                             </ChipGroup>
                             <hr/>
                         </StyleCol>
                         <StyleCol :col-sm="12">
                              <ChipGroup size="medium">
                                 <Chip type="fill" color="primary" size="medium">Chip</Chip>
-                                <Chip type="outlined" color="primary" size="medium">Chip</Chip>
+                                <Chip type="outline" color="primary" size="medium">Chip</Chip>
                                 <Chip type="fill" color="primary" size="medium">Chip</Chip>
                              </ChipGroup>
                              <hr/>
@@ -88,7 +88,7 @@ export const Basic = (args, { argTypes }) => ({
                          <StyleCol :col-sm="12">
                              <ChipGroup size="large">
                                 <Chip type="fill" color="success" size="large">Chip</Chip>
-                                <Chip type="outlined" color="success" size="large">Chip</Chip>
+                                <Chip type="outline" color="success" size="large">Chip</Chip>
                                 <Chip type="fill" color="success" size="large">Chip</Chip>
                              </ChipGroup>
                              <hr/>
@@ -97,10 +97,10 @@ export const Basic = (args, { argTypes }) => ({
                             <ChipGroup size="large" style="background:antiquewhite; padding :10px 0">
                                 <Row>
                                     <StyleCol :col-sm="6">
-                                        <Chip type="fill" color="secondary" size="large" full>Chip</Chip>
+                                        <Chip type="fill" color="info" size="large" full>Chip</Chip>
                                     </StyleCol>
                                     <StyleCol :col-sm="6">
-                                        <Chip type="outlined" color="secondary" size="large" full>Chip</Chip>
+                                        <Chip type="outline" color="info" size="large" full>Chip</Chip>
                                     </StyleCol>
                                 </Row>
                             </ChipGroup>
@@ -113,7 +113,7 @@ export const Basic = (args, { argTypes }) => ({
                                         <Chip type="fill" color="primary" size="medium" full>Chip</Chip>
                                     </StyleCol>
                                     <StyleCol :col-sm="2">
-                                        <Chip type="outlined" color="primary" size="medium" full>Chip</Chip>
+                                        <Chip type="outline" color="primary" size="medium" full>Chip</Chip>
                                     </StyleCol>
                                     <StyleCol :col-sm="2">
                                         <Chip type="fill" color="primary" size="medium" full>Chip</Chip>
@@ -129,7 +129,7 @@ export const Basic = (args, { argTypes }) => ({
                                         <Chip type="fill" color="success" size="small" full>Chip</Chip>
                                     </StyleCol>
                                     <StyleCol :col-sm="1">
-                                        <Chip type="outlined" color="success" size="small" full>Chip</Chip>
+                                        <Chip type="outline" color="success" size="small" full>Chip</Chip>
                                     </StyleCol>
                                 </Row>
                             </ChipGroup>

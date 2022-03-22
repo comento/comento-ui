@@ -2,79 +2,76 @@
 @import "flexbox";
 @import "functions";
 
+@mixin trans-font-size($size, $line, $math: round) {
+  font-size: $size;
+  @if $math == 'round' {
+    line-height: round($size * $line);
+  } @else if $math == 'floor' {
+    line-height: floor($size * $line);
+  }
+}
+
 @mixin display1 {
-  font-size: 48px;
-  line-height: 120%;
-  font-weight: $bold;
+  @include trans-font-size(42px, 1.22);
+  font-weight: $semi-bold;
+  letter-spacing: -0.02em;
 }
 @mixin headline1 {
-  font-size: 32px;
-  line-height: 130%;
-  font-weight: $bold;
+  @include trans-font-size(32px, 1.26);
+  font-weight: $semi-bold;
+  letter-spacing: -0.02em;
 }
 @mixin headline2 {
-  font-size: 28px;
-  line-height: 130%;
-  font-weight: $bold;
+  @include trans-font-size(28px, 1.28);
+  font-weight: $semi-bold;
 }
 @mixin headline3 {
-  font-size: 26px;
-  line-height: 130%;
-  font-weight: $bold;
+  @include trans-font-size(26px, 1.28);
+  font-weight: $semi-bold;
 }
 @mixin headline4 {
-  font-size: 24px;
-  line-height: 125%;
-  font-weight: $bold;
+  @include trans-font-size(24px, 1.28);
+  font-weight: $semi-bold;
 }
 @mixin headline5 {
-  font-size: 22px;
-  line-height: 135%;
-  font-weight: $normal;
+  @include trans-font-size(22px, 1.26);
+  font-weight: $semi-bold;
 }
 @mixin headline6 {
-  font-size: 18px;
-  line-height: 135%;
-  font-weight: $bold;
+  @include trans-font-size(18px, 1.38);
+  font-weight: $regular;
 }
 @mixin body1 {
-  font-size: 16px;
-  line-height: 150%;
-  font-weight: $normal;
+  @include trans-font-size(16px, 1.54);
+  font-weight: $regular;
 }
 @mixin body2 {
-  font-size: 14px;
-  line-height: 150%;
-  font-weight: $normal;
+  @include trans-font-size(14px, 1.4);
+  font-weight: $regular;
 }
 @mixin caption1 {
-  font-size: 12px;
-  line-height: 110%;
-  font-weight: $light;
+  @include trans-font-size(12px, 1.22);
+  font-weight: $regular;
 }
 @mixin caption2 {
-  font-size: 10px;
-  line-height: 100%;
-  font-weight: $light;
-}
-@mixin f-thin {
-  font-weight: $thin;
+  @include trans-font-size(10px, 1.26);
+  font-weight: $regular;
 }
 
 @mixin f-light {
   font-weight: $light;
 }
 
-@mixin f-normal {
-  font-weight: $normal !important;
+@mixin f-regular {
+  font-weight: $regular !important;
 }
 
-@mixin f-medi {
-  font-weight: $medi;
+@mixin f-medium {
+  font-weight: $medium;
 }
 
-@mixin f-bold {
-  font-weight: $bold;
+@mixin f-semi-bold {
+  font-weight: $semi-bold;
 }
 @mixin clearfix {
   *zoom: 1;
@@ -254,6 +251,18 @@
   }
 }
 
+@mixin state-style() {
+  &:hover, &.hover-test {
+    @content
+  }
+
+  @include mobile {
+    &:focus,&:active {
+      @content
+    }
+  }
+}
+
 @mixin spacing {
   // 간격 조절
   $sides: ("b": "bottom", "t": "top", "l": "left", "r": "right", "": "all",  "x": "x", "y": "y");
@@ -310,4 +319,25 @@
       }
     }
   }
+}
+
+@mixin margin-x($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin padding-y($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin flex-v-middle() {
+  @include flexbox();
+  @include align-items(center);
+}
+
+@mixin flex-column-v-middle() {
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(center);
 }

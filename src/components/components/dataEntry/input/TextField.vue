@@ -13,9 +13,9 @@
 				:align="align"
 				:readonly="readonly"
 				:disabled="disabled"
-				:color="color"
 				:style="[computedAlign]"
-				:class="[computedLined, computedColor, computedActive]"
+				:class="[computedLined, computedActive, computedError]"
+				:error="error"
 				v-bind="$attrs"
 				:autocomplete="computedAutocomplete"
 				@input="handleTyping"
@@ -28,7 +28,7 @@
 				<slot name="append" />
 			</div>
 		</div>
-		<Hint v-if="computedShowHint" :color="color">
+		<Hint v-if="computedShowHint" :color="hintColor">
 			{{ hint }}
 		</Hint>
 	</div>
@@ -40,7 +40,6 @@ import uniqueId from '@/utils/unique-id';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const TextFieldAligns = ['left', 'center', 'right'];
-export const TextFieldColor = ['primary', 'success', 'secondary', 'error'];
 
 /**
  * @displayName c-text-field
@@ -75,7 +74,7 @@ export default {
 			type: String,
 			default: null,
 		},
-		outlined: {
+		outline: {
 			type: Boolean,
 			default: false,
 		},
@@ -105,19 +104,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		/**
-		 * 색상(primary, success, secondary, error)
-		 */
-		color: {
-			type: String,
-			default: 'secondary',
-			validator(value) {
-				const isValid = TextFieldColor.indexOf(value) !== -1;
-				if (isValid) {
-					return isValid;
-				}
-			},
-		},
 		hint: {
 			type: String,
 			default: '',
@@ -137,6 +123,10 @@ export default {
 		id: {
 			type: String,
 		},
+		error: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -154,10 +144,10 @@ export default {
 			},
 		},
 		computedLined() {
-			if (this.outlined) {
-				return 'outlined';
+			if (this.outline) {
+				return 'c-text-field--outline';
 			} else {
-				return 'underlined';
+				return 'c-text-field--underline';
 			}
 		},
 		computedId() {
@@ -180,14 +170,25 @@ export default {
 				textAlign: this.align,
 			};
 		},
-		computedColor() {
-			return this.color;
-		},
 		computedActive() {
 			return { active: this.active };
 		},
 		computedAutocomplete() {
 			return this.autocomplete ? 'on' : 'off';
+		},
+		computedError() {
+			return { error: this.error };
+		},
+		hintColor() {
+			if (this.error) {
+				return 'error';
+			}
+
+			if (this.outline && this.label && (this.isFocused || this.active)) {
+				return 'primary';
+			}
+
+			return 'gray400';
 		},
 	},
 	mounted() {
@@ -222,8 +223,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$outlined-padding: 16px;
-$underlined-padding: 4px;
+$outline-padding: 16px;
+$underline-padding: 4px;
 $disabled-background-color: $gray000;
 
 .c-text-field {
@@ -245,6 +246,7 @@ $disabled-background-color: $gray000;
 		&:disabled {
 			cursor: not-allowed !important;
 			background: $disabled-background-color;
+			border-color: $gray250;
 
 			&:active {
 				pointer-events: none;
@@ -260,76 +262,29 @@ $disabled-background-color: $gray000;
 			position: relative;
 		}
 
-		&.outlined {
-			padding: 0 $outlined-padding;
+		&.c-text-field--outline {
+			padding: 0 $outline-padding;
 			border: 1px solid $input-border-color;
-			@include border-radius(2px);
+			@include border-radius(4px);
 			&:focus,
 			&.active {
-				border-color: $secondary;
-			}
-			&.error {
-				&:focus,
-				&.active {
-					border-color: $error;
-				}
-			}
-			&.primary {
-				&:focus,
-				&.active {
-					border-color: $primary;
-				}
-			}
-			&.success {
-				&:focus,
-				&.active {
-					border-color: $success;
-				}
-			}
-			&.secondary {
-				&:focus,
-				&.active {
-					border-color: $secondary;
-				}
+				border-color: $gray400;
 			}
 
 			~ .c-text-field--append {
-				padding-right: $outlined-padding - 4px;
+				padding-right: $outline-padding - 4px;
 			}
 		}
-		&.underlined {
-			padding: 0 $underlined-padding;
+		&.c-text-field--underline {
+			padding: 0 $underline-padding;
 			border-bottom: 1px solid $input-border-color;
 			&:focus,
 			&.active {
-				border-color: $secondary;
-			}
-			&.error {
-				&:focus,
-				&.active {
-					border-color: $error;
-				}
-			}
-			&.primary {
-				&:focus,
-				&.active {
-					border-color: $primary;
-				}
-			}
-			&.success {
-				&:focus,
-				&.active {
-					border-color: $success;
-				}
-			}
-			&.secondary {
-				&:focus {
-					border-color: $secondary;
-				}
+				border-color: $info;
 			}
 
 			~ .c-text-field--append {
-				padding-right: $underlined-padding;
+				padding-right: $underline-padding;
 			}
 		}
 
@@ -339,61 +294,45 @@ $disabled-background-color: $gray000;
 				border-color: $input-border-color;
 			}
 		}
+
+		&.c-text-field--outline.error,
+		&.c-text-field--underline.error {
+			color: $error;
+			border-color: $error;
+
+			&::placeholder {
+				color: $error;
+			}
+		}
 	}
 	&.label {
 		.c-text-field--input-wrapper {
 			.c-text-field--input {
-				&:focus,
-				&.active {
-					+ .c-text-field--label {
-						opacity: 1;
-					}
-				}
-				&.error {
-					&:focus,
-					&.active {
-						border-color: $error;
-						+ .c-text-field--label {
-							color: $error;
-						}
-					}
-				}
-				&.primary {
+				&.outline {
 					&:focus,
 					&.active {
 						border-color: $primary;
 						+ .c-text-field--label {
+							opacity: 1;
 							color: $primary;
 						}
 					}
-				}
-				&.success {
-					&:focus,
-					&.active {
-						border-color: $success;
+					&[readonly],
+					&[readonly='readonly'] {
+						&:focus,
+						&.active {
+							border-color: $input-border-color;
+						}
 						+ .c-text-field--label {
-							color: $success;
+							opacity: 0;
 						}
 					}
-				}
-				&.secondary {
-					&:focus,
-					&.active {
-						border-color: $secondary;
-						+ .c-text-field--label {
-							color: $secondary;
-						}
-					}
-				}
 
-				&[readonly],
-				&[readonly='readonly'] {
-					&:focus,
-					&.active {
-						border-color: $input-border-color;
-					}
-					+ .c-text-field--label {
-						opacity: 0;
+					&.error {
+						border-color: $error;
+						+ .c-text-field--label {
+							color: $error;
+						}
 					}
 				}
 			}
