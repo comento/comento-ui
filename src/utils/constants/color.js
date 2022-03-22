@@ -1,52 +1,68 @@
 /* eslint-disable */
 
-//Gray
+// Gray
 export const black = '#000000';
-export const gray900 = '#151617';
-export const gray850 = '#21282F';
-export const gray800 = '#495057';
-export const gray700 = '#6F767D';
-export const gray600 = '#838990';
-export const gray500 = '#979CA2';
-export const gray400 = '#BEC2C6';
-export const gray300 = '#D2D5D8';
-export const gray250 = '#DEE0E3';
-export const gray200 = '#E8EAED';
-export const gray100 = '#F4F5F7';
-export const gray000 = '#FAFBFC';
+export const gray900 = '#040505';
+export const gray850 = '#202325';
+export const gray800 = '#3C4144';
+export const gray700 = '#595F63';
+export const gray600 = '#767D82';
+export const gray500 = '#949BA0';
+export const gray400 = '#ADB3B8';
+export const gray300 = '#CFD4D7';
+export const gray250 = '#E1E4E6';
+export const gray200 = '#EAECEE';
+export const gray100 = '#F3F4F5';
+export const gray000 = '#FCFCFC';
 export const white = '#FFFFFF';
 
-//Green
-export const green800 = '#00B334';
-export const green600 = '#00C854';
-export const green400 = '#5CE596';
-export const green100 = '#DEFAEB';
-export const green000 = '#F7FCF9';
-
-//Red
-export const red800 = '#CC2727';
-export const red600 = '#FA5252';
-export const red400 = '#FF8888';
-export const red100 = '#FFDFDF';
-export const red000 = '#FFF7F7';
-
-//Blue
-export const blue800 = '#0074CC';
-export const blue600 = '#1E90FF';
-export const blue400 = '#7EC1FF';
-export const blue100 = '#D6EBFF';
-export const blue000 = '#F2FAFF';
-
-//Yellow
-export const yellow600 = '#FFDD33';
-export const yellow400 = '#FFEE7A';
-export const yellow100 = '#FFFACC';
-
 // Primary
-export const primary = green600;
-export const success = blue600;
+// Blue
+export const blue800 = '#1B5192';
+export const blue600 = '#2A7DE1';
+export const blue400 = '#6EA7EB';
+export const blue100 = '#D4E5F9';
+export const blue000 = '#F7FAFE';
+
+// Success
+// Green
+export const green800 = '#038542';
+export const green600 = '#04CD66';
+export const green400 = '#54DD97';
+export const green100 = '#CDF5E0';
+export const green000 = '#F5FDF9';
+
+// Error
+// Red
+export const red800 = '#971818';
+export const red600 = '#E92525';
+export const red400 = '#F06B6B';
+export const red100 = '#FBD3D3';
+export const red000 = '#FEF6F6';
+
+// Secondary
+// Orange
+export const orange800 = '#CF5310';
+export const orange600 = '#EE7E41';
+export const orange400 = '#F3A77E';
+export const orange100 = '#FCE5D9';
+export const orange000 = '#FEFAF7';
+
+// Secondary
+// Yellow
+export const yellow600 = '#FFD700';
+export const yellow400 = '#FFE452';
+export const yellow100 = '#FFF7CC';
+export const yellow000 = '#FFFDF5';
+
+export const primary = blue600;
+export const lightPrimary = blue100;
+export const success = green600;
 export const error = red600;
-export const secondary = gray600;
+export const info = gray600;
+export const secondary = orange600;
+export const yellow = yellow600;
+export const link = blue600;
 
 export const colors = {
     black: black,
@@ -63,6 +79,11 @@ export const colors = {
     gray100: gray100,
     gray000: gray000,
     white: white,
+    blue800: blue800,
+    blue600: blue600,
+    blue400: blue400,
+    blue100: blue100,
+    blue000: blue000,
     green800: green800,
     green600: green600,
     green400: green400,
@@ -73,18 +94,23 @@ export const colors = {
     red400: red400,
     red100: red100,
     red000: red000,
-    blue800: blue800,
-    blue600: blue600,
-    blue400: blue400,
-    blue100: blue100,
-    blue000: blue000,
+    orange800: orange800,
+    orange600: orange600,
+    orange400: orange400,
+    orange100: orange100,
+    orange000: orange000,
     yellow600: yellow600,
     yellow400: yellow400,
     yellow100: yellow100,
+    yellow000: yellow000,
     primary: primary,
+    lightPrimary: lightPrimary,
     success: success,
     error: error,
+    info: info,
     secondary: secondary,
+    yellow: yellow,
+    link: link
 };
 
 export const colorKeys = [...Object.keys(colors)];

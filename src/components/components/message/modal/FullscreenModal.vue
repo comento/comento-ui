@@ -15,7 +15,7 @@
 						v-if="closeType === 'icon'"
 						name="IconCloseLargeLine"
 						:rotate="-90"
-						color="gray800"
+						color="gray500"
 						class="c-pointer"
 					/>
 					<NarrowButton v-else size="medium">

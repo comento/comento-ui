@@ -1,0 +1,73 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import TextRating, {TextRatingSizes} from "@/components/components/dataDisplay/rating/TextRating";
+import Typography from "@/components/elements/core/typography/Typography";
+
+<Meta
+    title="Data Display/Rating/TextRating"
+    component={ TextRating }
+    argTypes={{
+        size: {
+            description: '사이즈',
+            control: {
+                type: 'select',
+                options: TextRatingSizes
+            }
+        },
+    }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
+    template: `
+        <TextRating :size="size">
+            <template v-slot:text-left>
+                댓글
+            </template>
+            <template v-slot:text-right>
+              <strong>3</strong>
+            </template>
+        </TextRating>
+    `,
+    components: { TextRating },
+});
+
+# TextRating
+
+**TextRating** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+### All
+<Canvas>
+    <Story name="All" height="100px">
+        {{
+            template: `
+            <div style="display: flex; flex-direction: column">
+                <TextRating size="default">
+                    <template v-slot:text-left>
+                        댓글
+                    </template>
+                    <template v-slot:text-right>
+                        <Typography color="gray850" :font-weight="500">
+                            3
+                        </Typography>
+                    </template>
+                    </TextRating>
+                    <TextRating size="small">
+                        <template v-slot:text-left>
+                            총
+                        </template>
+                    <template v-slot:text-right>
+                        <Typography color="gray700" element="span" :font-weight="500">204</Typography>건
+                    </template>
+                </TextRating>
+            </div>
+    `,
+            components: { TextRating, Typography },
+        }}
+    </Story>
+</Canvas>

@@ -160,20 +160,22 @@ export const Default = (args, { argTypes }) => ({
                             <InputGroup class="mb-12">
                                 <span style="width: 100%" class="mr-4">
                                     <TextField
-                                        placeholder="쿠폰코드를 입력하세요"
+                                        placeholder="쿠폰 코드를 입력하세요"
                                         full
+                                        outline
                                     />
                                 </span>
-                                <Button type="outlined" color="primary" @click="handleSubmitModal">등록하기</Button>
+                                <Button type="outline" color="primary" @click="handleSubmitModal">등록하기</Button>
                             </InputGroup>
                             <InputGroup>
                                 <span class="mr-4">
                                     <TextField
                                         full
-                                        placeholder="쿠폰코드를 입력하세요"
+                                        placeholder="쿠폰 코드를 입력하세요"
+                                        outline
                                     />
                                 </span>
-                                <Button type="outlined" color="secondary" @click="handleSubmitModal">등록하기</Button>
+                                <Button type="outline" color="info" @click="handleSubmitModal">등록하기</Button>
                             </InputGroup>
                         </template>
                     </WithFormModal>
@@ -269,7 +271,7 @@ export const Default = (args, { argTypes }) => ({
                                 제출을 원한다면 아래 문구를 작성하세요.
                             </Typography>
                             <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-between">
-                                <TextField :value.sync="checkValue" full outlined placeholder="제출합니다" align="center" class="mr-4" />
+                                <TextField :value.sync="checkValue" full outline placeholder="제출합니다" align="center" class="mr-4" />
                             </div>
                         </template>
                     </WithFormModal>

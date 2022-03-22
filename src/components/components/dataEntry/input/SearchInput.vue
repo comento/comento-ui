@@ -24,21 +24,22 @@
 			<div @click="resetKeyword()">
 				<Icon
 					v-if="isTyping && sync_value.length > 0"
-					name="IconCloseMediumFill"
+					name="IconCloseRoundMediumFill"
 					size="medium"
-					color="gray300"
+					:color="transparent ? 'gray200' : 'gray300'"
 					class="icon_reset"
 					role="button"
 					tabindex="2"
 				/>
 			</div>
 			<div @click="handleSearch()">
-				<Icon
+				<IconButton
 					role="button"
 					tabindex="1"
-					name="IconSearchLargeLine"
-					size="large"
+					icon-name="IconSearchLargeLine"
+					size="medium"
 					:color="computedIconColor"
+					:transparent="transparent"
 					class="icon_search"
 				/>
 			</div>
@@ -48,6 +49,7 @@
 
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
+import IconButton from '@/components/components/general/button/IconButton';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
 
@@ -135,6 +137,7 @@ export default {
 	},
 	components: {
 		Icon,
+		IconButton,
 	},
 	directives: {
 		clickOutside,
@@ -150,6 +153,40 @@ export default {
 	@include align-items(center);
 	position: relative;
 
+	// focus, typing
+	&:focus-within,
+	&.active {
+		.search_input {
+			background: $gray100;
+			padding-right: 70px !important;
+		}
+		.search_input_icon_wrapper .icon_search {
+			opacity: 1;
+		}
+
+		// transparent(focus, typing)
+		&.transparent {
+			.search_input {
+				@include background-opacity(white, 0.12);
+				color: $gray100;
+			}
+			.search_input_icon_wrapper .icon_reset {
+				opacity: 0.6;
+			}
+		}
+	}
+
+	// transparent
+	&.transparent {
+		.search_input {
+			@include background-opacity(white, 0.06);
+			@include placeholder {
+				@include color-opacity($gray200, 0.6);
+				font-weight: $regular;
+			}
+		}
+	}
+
 	&.full {
 		width: 100%;
 		label,
@@ -158,42 +195,22 @@ export default {
 		}
 	}
 
-	&.transparent {
-		&.active .search_input,
-		.search_input {
-			@include background-opacity(white, 0.06);
-			color: $gray100;
-		}
-	}
-
-	&.active {
-		.search_input {
-			background: $gray000;
-			padding-right: 70px !important;
-		}
-	}
-
 	.search_input {
-		@include border-radius(2px);
+		@include border-radius(4px);
 		-webkit-appearance: none;
 		@include inline-block();
 		vertical-align: top;
 		@include transition(all 0.2s ease);
 		border: 0;
 		@include background-opacity($gray000, 0.6);
-		padding: 8px 48px 8px 12px;
+		padding: 10px 48px 10px 14px;
 		@include body2();
 		width: 226px;
 		color: $gray800;
 
 		@include placeholder {
 			@include color-opacity($gray400, 0.6);
-			font-weight: normal;
-		}
-
-		&:focus,
-		&:active {
-			padding-right: 68px;
+			font-weight: $regular;
 		}
 
 		&-lg {
@@ -223,6 +240,7 @@ export default {
 			margin: 0 12px 0 4px;
 			display: block;
 			z-index: 2;
+			opacity: 0.8;
 		}
 	}
 }

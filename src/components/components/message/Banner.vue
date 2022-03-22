@@ -1,23 +1,31 @@
 <template>
-	<div class="c-application c-banner" :class="[computedType]">
-		<div class="c-banner--image">
-			<slot name="image" />
+	<div class="c-application c-banner" :class="[type]" :style="computedStyleVariables">
+		<div class="c-banner--background" :class="[computedBlur]">
+			<slot name="background" />
 		</div>
-		<div class="c-banner--container">
-			<div class="c-banner--container-title">
-				<slot name="title" />
-			</div>
-			<div class="c-banner--container-description">
-				<slot name="description" />
-			</div>
-			<div class="c-banner--container-action">
-				<slot name="action" />
+		<div class="c-banner--content" :class="[computedAlignItems]">
+			<Typography v-if="title" class="c-banner--title" :type="computedTitleType" font-weight="semi-bold">
+				{{ title }}
+			</Typography>
+			<Typography
+				v-if="description"
+				class="c-banner--description"
+				:type="computedDescriptionType"
+				:font-weight="computedDescriptionWeight"
+			>
+				{{ description }}
+			</Typography>
+			<div v-if="isButtonVisible" class="c-banner--buttons">
+				<slot name="button" />
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import windowMixin from '@/mixins/windowMixin';
+import Typography from '@/components/elements/core/typography/Typography';
+
 export const bannerTypes = ['full', 'standard'];
 
 /**
@@ -25,13 +33,14 @@ export const bannerTypes = ['full', 'standard'];
  */
 export default {
 	name: 'Banner',
+	mixins: [windowMixin],
 	props: {
 		/**
 		 * 타입(full, standard)
 		 */
 		type: {
 			type: String,
-			default: 'standard',
+			default: 'full',
 			validator(value) {
 				const isValid = bannerTypes.indexOf(value) !== -1;
 				if (!isValid) {
@@ -40,41 +49,130 @@ export default {
 				return isValid;
 			},
 		},
-	},
-	computed: {
-		computedType() {
-			return this.type;
+		title: {
+			type: String,
+		},
+		description: {
+			type: String,
+		},
+		alignItems: {
+			type: String,
+			default: 'center',
 		},
 	},
+	computed: {
+		computedBlur() {
+			return this.blur ? 'blur' : '';
+		},
+		computedStyleVariables() {
+			return {
+				'--align-items': this.alignItems,
+			};
+		},
+		computedTitleType() {
+			if (this.type === 'full') {
+				return this.isMobile ? 'headline1' : 'display1';
+			}
+			return this.isMobile ? 'headline2' : 'headline1';
+		},
+		computedDescriptionType() {
+			if (this.type === 'full') {
+				return this.isMobile ? 'headline6' : 'headline5';
+			}
+			return this.isMobile ? 'body1' : 'headline6';
+		},
+		computedDescriptionWeight() {
+			if (this.type === 'full' && this.isMobile) {
+				return 'light';
+			}
+
+			return 'regular';
+		},
+		isButtonVisible() {
+			return this.$slots['button'] && !this.isMobile;
+		},
+		computedAlignItems() {
+			return `c-banner--${this.alignItems}`;
+		},
+	},
+	components: { Typography },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .c-banner {
 	position: relative;
-	&.full {
-		max-width: 1920px;
-		width: 100%;
-	}
+	display: grid;
+	height: 464px;
+	overflow: hidden;
+
 	&.standard {
+		height: 187px;
 		max-width: 1108px;
-		width: 100%;
 		@include border-radius(20px);
-		overflow: hidden;
 	}
-	&--container {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		@include transform(translate(-50%, -50%));
-		&-description {
-			margin-top: 8px;
+
+	&--content,
+	&--background {
+		grid-area: 1/-1;
+		height: 100%;
+	}
+
+	&--content {
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include align-items(var(--align-items));
+		z-index: 1;
+	}
+
+	&--background {
+		& > * {
+			width: 100%;
+			max-height: 100%;
+			height: var(--height);
+			object-fit: cover;
+		}
+
+		&.blur {
+			position: relative;
+			backdrop-filter: blur(0);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.25);
+				backdrop-filter: blur(30px);
+			}
 		}
 	}
-	&--image {
-		display: block;
-		vertical-align: top;
-		width: 100%;
+
+	&--description {
+		margin-top: 8px;
+	}
+
+	&--buttons {
+		margin-top: 32px;
+	}
+
+	&--flex-start {
+		padding-left: 406px;
+	}
+	&--flex-end {
+		padding-right: 406px;
+	}
+
+	@include pc {
+		height: 382px;
+
+		&.standard {
+			height: 189px;
+		}
 	}
 }
 </style>

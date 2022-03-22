@@ -47,20 +47,23 @@ export default {
 $list-item-padding-x: 4px;
 
 .c-list-item {
-	padding: 8px $list-item-padding-x;
+	padding: 6px $list-item-padding-x;
 	@include flexbox();
 	@include align-items(center);
+	@include justify-content(space-between);
+	@include border-radius(6px);
 	&:hover {
 		background: $gray100;
-		border-radius: 8px;
 	}
 
 	&.small {
 		padding: 6px $list-item-padding-x;
+		@include border-radius(6px);
 	}
 
 	&.large {
 		padding: 12px $list-item-padding-x;
+		@include border-radius(8px);
 	}
 }
 </style>

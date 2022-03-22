@@ -1,10 +1,16 @@
 <template>
-	<div class="c-application c-file--summary">
+	<div class="c-application c-file--summary" :class="computedClass">
 		<div class="c-file--summary-info-wrapper">
-			<Icon name="IconFileMediumLineLight"></Icon>
+			<Icon name="IconFileMediumLine" color="gray500"></Icon>
 			<Typography type="body2" color="gray500"> 첨부파일 ({{ length }}개) </Typography>
 		</div>
-		<Button type="outlined" size="small" color="secondary" @click="$emit('clickAllFileDownloadButton')">
+		<Button
+			type="outline"
+			size="small"
+			color="info"
+			class="c-file--summary-download-button"
+			@click="$emit('clickAllFileDownloadButton')"
+		>
 			전체 다운로드
 		</Button>
 	</div>
@@ -25,6 +31,15 @@ export default {
 			type: Number,
 			default: 0,
 		},
+		full: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		computedClass() {
+			return { full: this.full };
+		},
 	},
 	components: {
 		Button,
@@ -40,6 +55,9 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		&.full {
+			width: 100%;
+		}
 		&-info {
 			&-wrapper {
 				display: flex;
@@ -48,6 +66,9 @@ export default {
 					margin-right: 2px;
 				}
 			}
+		}
+		&-download-button {
+			@include border-radius(6px);
 		}
 	}
 }

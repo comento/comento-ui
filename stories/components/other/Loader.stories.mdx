@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Loader, { LoaderColors, LoaderSizes } from '@/components/components/other/Loader';
+import Loader, { LoaderSizes } from '@/components/components/other/Loader';
+import { buttonColors } from '@/components/components/general/button/Button';
 import Typography from '@/components/elements/core/typography/Typography';
 
 <Meta
@@ -27,7 +28,7 @@ import Typography from '@/components/elements/core/typography/Typography';
         },
         control: {
           type: "select",
-          options: LoaderColors,
+          options: buttonColors,
         },
       },
       reversed: {
@@ -72,30 +73,27 @@ export const Default = (args, { argTypes }) => ({
                     <div>
                         <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="small"></Loader>
-                            <Loader size="small" color="success"></Loader>
-                            <Loader size="small" color="primary"></Loader>
-                            <Loader size="small" color="error"></Loader>
+                            <template v-for="(item, index) in buttonColors">
+                                <Loader size="small" :color="item"></Loader>
+                            </template>
                         </div>
                     </div>
                     <!--medium-->
                     <div>
                         <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader></Loader>
-                            <Loader color="success"></Loader>
-                            <Loader color="primary"></Loader>
-                            <Loader color="error"></Loader>
+                            <template v-for="(item, index) in buttonColors">
+                               <Loader size="medium" :color="item"></Loader>
+                            </template>
                         </div>
                     </div>
                     <!--large-->
                     <div>
                         <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="large"></Loader>
-                            <Loader size="large" color="success"></Loader>
-                            <Loader size="large" color="primary"></Loader>
-                            <Loader size="large" color="error"></Loader>
+                            <template v-for="(item, index) in buttonColors">
+                                <Loader size="large" :color="item"></Loader>
+                            </template>
                         </div>
                     </div>
                 </div>
@@ -104,36 +102,38 @@ export const Default = (args, { argTypes }) => ({
                     <div>
                         <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="small" reversed></Loader>
-                            <Loader size="small" color="success" reversed></Loader>
-                            <Loader size="small" color="primary" reversed></Loader>
-                            <Loader size="small" color="error" reversed></Loader>
+                            <template v-for="(item, index) in buttonColors">
+                                <Loader size="small" :color="item" reversed></Loader>
+                            </template>
                         </div>
                     </div>
                     <!--medium-->
                     <div>
                         <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader reversed></Loader>
-                            <Loader color="success" reversed></Loader>
-                            <Loader color="primary" reversed></Loader>
-                            <Loader color="error" reversed></Loader>
+                            <template v-for="(item, index) in buttonColors">
+                                <Loader size="medium" :color="item" reversed></Loader>
+                            </template>
                         </div>
                     </div>
                     <!--large-->
                     <div>
                         <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="large" reversed></Loader>
-                            <Loader size="large" color="success" reversed></Loader>
-                            <Loader size="large" color="primary" reversed></Loader>
-                            <Loader size="large" color="error" reversed></Loader>
+                            <template v-for="(item, index) in buttonColors">
+                                <Loader size="large" :color="item" reversed></Loader>
+                            </template>
                         </div>
                     </div>
                 </div>
             </div>
             `,
-             components: { Loader, Typography },
+            data() {
+                return {
+                    buttonColors
+                }
+            },
+            components: { Loader, Typography },
         }}
     </Story>
 </Canvas>
@@ -143,19 +143,18 @@ export const Default = (args, { argTypes }) => ({
     <Story name="Sizes" height="100px">
         {{
             template: `
-            <div>
-                <div>
-                    <div>
-                        <div style="display: flex; flex-wrap: wrap;">
-                            <Loader size="small"></Loader>
-                            <Loader></Loader>
-                            <Loader size="large"></Loader>
-                        </div>
-                    </div>
+                <div style="display: flex; flex-wrap: wrap;">
+                    <template v-for="item in LoaderSizes">
+                        <Loader :size="item" />
+                    </template>
                 </div>
-            </div>
             `,
-             components: { Loader },
+            data() {
+                return {
+                    LoaderSizes,
+                };
+            },
+            components: { Loader },
         }}
     </Story>
 </Canvas>
@@ -165,20 +164,18 @@ export const Default = (args, { argTypes }) => ({
     <Story name="Colors" height="100px">
         {{
             template: `
-            <div>
-                <div>
-                    <div>
-                        <div style="display: flex; flex-wrap: wrap;">
-                            <Loader></Loader>
-                            <Loader color="primary"></Loader>
-                            <Loader color="success"></Loader>
-                            <Loader color="error"></Loader>
-                        </div>
-                    </div>
+                <div style="display: flex; flex-wrap: wrap;">
+                    <template v-for="(item, index) in buttonColors">
+                       <Loader :color="item" />
+                    </template>
                 </div>
-            </div>
             `,
-             components: { Loader },
+            data() {
+                return {
+                    buttonColors,
+                };
+            },
+            components: { Loader },
         }}
     </Story>
 </Canvas>
@@ -188,20 +185,18 @@ export const Default = (args, { argTypes }) => ({
     <Story name="Reversed" height="100px">
         {{
             template: `
-            <div>
-                <div>
-                    <div>
-                        <div style="display: flex; flex-wrap: wrap;">
-                            <Loader reversed></Loader>
-                            <Loader color="primary" reversed></Loader>
-                            <Loader color="success" reversed></Loader>
-                            <Loader color="error" reversed></Loader>
-                        </div>
-                    </div>
+                <div style="display: flex; flex-wrap: wrap;">
+                    <template v-for="(item, index) in buttonColors">
+                       <Loader :color="item" reversed />
+                    </template>
                 </div>
-            </div>
             `,
-             components: { Loader },
+            data() {
+                return {
+                    buttonColors,
+                };
+            },
+            components: { Loader },
         }}
     </Story>
 </Canvas>

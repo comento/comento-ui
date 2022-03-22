@@ -7,7 +7,7 @@
 			<Typography type="body2" color="gray850" class="c-alarm-list-item--message mb-8">
 				<slot name="message" />
 			</Typography>
-			<Typography v-if="$slots['date']" type="caption1" color="gray500">
+			<Typography v-if="$slots['date']" type="caption1" color="gray400">
 				<slot name="date" />
 			</Typography>
 		</div>
@@ -34,8 +34,8 @@ export default {
 	@include flex-direction(row);
 	background-color: white;
 
-	&.alarm-not-confirm {
-		background-color: rgba(222, 250, 235, 0.4);
+	&.alarm-unread {
+		background-color: $blue000;
 	}
 	&.alarm-edu {
 		background-color: $blue000;

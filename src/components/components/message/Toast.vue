@@ -10,7 +10,7 @@
 				<slot name="icon" />
 			</div>
 			<Icon v-else-if="icon" class="c-toast--icon" :name="icon" :color="toastItemColor" />
-			<Typography class="c-toast--message" element="p" type="body2" :color="toastItemColor">
+			<Typography class="c-toast--message" element="p" type="body2" :color="toastItemColor" :font-weight="500">
 				{{ message }}
 			</Typography>
 			<div v-if="$slots['button']" class="c-toast--button">
@@ -25,7 +25,7 @@ import Typography from '@/components/elements/core/typography/Typography';
 import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
 import customValidator from '@/utils/custom-validator';
 
-export const toastTypes = ['basic', 'error', 'success'];
+export const toastTypes = ['basic', 'error', 'success', 'security'];
 export const toastPositions = ['top', 'bottom'];
 
 /**
@@ -45,13 +45,12 @@ export default {
 		},
 		type: {
 			/**
-			 * 타입(basic, error, success)
+			 * 타입(basic, error, success, security)
 			 */
 			type: String,
 			default: 'basic',
 			validator(value) {
-				const isValid = toastTypes.indexOf(value) !== -1;
-				return customValidator(value, isValid, 'Toast', 'type');
+				return customValidator(value, toastTypes.includes(value), 'Toast', 'type');
 			},
 		},
 		timeout: {
@@ -122,11 +121,12 @@ export default {
 	position: fixed;
 	bottom: 16px;
 	left: 50%;
+	color: $white;
 	@include transform(translate(-50%));
 	padding: 14px 16px;
 	text-align: center;
 	z-index: 9999;
-	@include border-radius(4px);
+	@include border-radius(8px);
 	@include shadow4();
 	display: table; // width: fit-content 대체
 	max-width: 90%;
@@ -152,15 +152,15 @@ export default {
 
 	&.basic {
 		background: $gray850;
-		color: $white;
 	}
 	&.error {
-		background: $red600;
-		color: $white;
+		background: $error;
 	}
 	&.success {
-		background: $blue600;
-		color: $white;
+		background: $success;
+	}
+	&.security {
+		background: $primary;
 	}
 
 	@include pc {

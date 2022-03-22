@@ -1,5 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Chip, { ChipColors, ChipSizes } from '@/components/components/dataDisplay/chips/Chip';
+import Chip, { ChipColors, ChipSizes, ChipTypes, ChipSizesWithCloseButton } from '@/components/components/dataDisplay/chips/Chip';
+import Typography from "@/components/elements/core/typography/Typography";
 
 <Meta
     title="Data Display/Chip/Chip"
@@ -23,12 +24,11 @@ import Chip, { ChipColors, ChipSizes } from '@/components/components/dataDisplay
             defaultValue: "fill",
             control: {
                 type: "select",
-                options: ["fill" ,"outlined" ,"oval-fill","oval-outline"],
+                options: ChipTypes,
             },
         },
         color: {
             description: "Chip 색상",
-            defaultValue: "secondary",
             control: {
                 type: "select",
                 options: ChipColors,
@@ -56,6 +56,12 @@ import Chip, { ChipColors, ChipSizes } from '@/components/components/dataDisplay
             defaultValue: false,
             control: { type: "boolean" },
         },
+        withCloseButton: {
+            description: "close button이 있는지"
+        },
+        clickable: {
+            description: "click 가능한 chip인지"
+        },
     }}
 />
 
@@ -63,7 +69,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Chip },
     template:
-        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent">{{text}}</Chip>`,
+        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent" :with-close-button="withCloseButton" :clickable="clickable">{{text}}</Chip>`,
 });
 
 # Chip
@@ -84,68 +90,43 @@ export const Basic = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                 <Chip type="fill" color="secondary" size="small">Chip</Chip>
-                 <Chip type="fill" color="secondary" size="medium" class="ml-4">Chip</Chip>
-                 <Chip type="fill" color="secondary" size="large" class="ml-4">Chip</Chip>
-                 <Chip type="fill" color="secondary" size="xlarge" class="ml-4">Chip</Chip>
-                 <hr>
-                 <Chip type="outlined" color="secondary" size="small">Chip</Chip>
-                  <Chip type="outlined" color="secondary" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="outlined" color="secondary" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="outlined" color="secondary" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="oval-fill" color="secondary" size="small">Chip</Chip>
-                  <Chip type="oval-fill" color="secondary" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="oval-fill" color="secondary" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="oval-fill" color="secondary" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="oval-outline" color="secondary" size="small">Chip</Chip>
-                  <Chip type="oval-outline" color="secondary" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="oval-outline" color="secondary" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="oval-outline" color="secondary" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="fill" color="primary" size="small">Chip</Chip>
-                  <Chip type="fill" color="primary" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="fill" color="primary" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="fill" color="primary" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="outlined" color="primary" size="small">Chip</Chip>
-                  <Chip type="outlined" color="primary" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="outlined" color="primary" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="outlined" color="primary" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="oval-fill" color="primary" size="small">Chip</Chip>
-                  <Chip type="oval-fill" color="primary" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="oval-fill" color="primary" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="oval-fill" color="primary" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="oval-outline" color="primary" size="small">Chip</Chip>
-                  <Chip type="oval-outline" color="primary" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="oval-outline" color="primary" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="oval-outline" color="primary" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="fill" color="success" size="small">Chip</Chip>
-                  <Chip type="fill" color="success" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="fill" color="success" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="fill" color="success" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="outlined" color="success" size="small">Chip</Chip>
-                  <Chip type="outlined" color="success" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="outlined" color="success" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="outlined" color="success" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="oval-fill" color="success" size="small">Chip</Chip>
-                  <Chip type="oval-fill" color="success" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="oval-fill" color="success" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="oval-fill" color="success" size="xlarge" class="ml-4">Chip</Chip>
-                  <hr>
-                  <Chip type="oval-outline" color="success" size="small">Chip</Chip>
-                  <Chip type="oval-outline" color="success" size="medium" class="ml-4">Chip</Chip>
-                  <Chip type="oval-outline" color="success" size="large" class="ml-4">Chip</Chip>
-                  <Chip type="oval-outline" color="success" size="xlarge" class="ml-4">Chip</Chip>
+                    <template v-for="(type, index) in ChipTypes">
+                        <div class="mb-28">
+                            <template v-for="(color, index) in ChipColors">
+                                <div class="flex">
+                                    <div class="flex-row mr-30 mb-8">
+                                        <template v-for="(size, index) in ChipSizes">
+                                            <Chip :type="type" :color="color" :size="size" class="mr-8">Chip</Chip>
+                                        </template>
+                                        <template v-if="type === 'fill'">
+                                          <template v-for="(size, index) in ChipSizesWithCloseButton">
+                                            <Chip :type="type" :color="color" :size="size" with-close-button class="mr-8" @clickCloseButton="handleClickChipClosebutton" @click="handleClick">Chip</Chip>
+                                          </template>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
                 </div>
-        `,
-            components: { Chip },
+            `,
+            data() {
+                return {
+                    ChipColors,
+                    ChipSizes,
+                    ChipTypes,
+                    ChipSizesWithCloseButton,
+                }
+            },
+            methods: {
+                handleClickChipClosebutton() {
+                    alert('clickChipCloseButton')
+                },
+                handleClick() {
+                    console.info('handleclick')
+                },
+            },
+            components: { Chip,Typography },
         }}
     </Story>
 </Canvas>

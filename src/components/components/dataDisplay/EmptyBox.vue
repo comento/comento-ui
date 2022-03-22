@@ -1,14 +1,53 @@
 <template>
-	<article class="c-application c-empty-box">
+	<article class="c-application c-empty-box" :class="full && 'full'">
 		<div v-if="type === 'emphasized'" class="c-empty-box--emphasized-container">
-			<Box :paddings="[20, 24, 20, 16]" backgroundColor="gray000">
-				<slot name="contents" />
+			<Box :paddings="[40, 16, 40, 16]" backgroundColor="gray000">
+				<Typography type="body1" color="gray700" align="center" :font-weight="600">
+					<slot name="title" />
+				</Typography>
+				<Typography class="mt-4" type="body2" color="gray500" align="center">
+					<slot name="contents" />
+				</Typography>
+				<a v-if="external" :href="to">
+					<Button
+						v-if="$slots['link']"
+						class="c-empty-box--emphasized-button"
+						color="light-primary"
+						size="large"
+					>
+						<slot name="link" />
+					</Button>
+				</a>
+				<router-link v-else :to="to">
+					<Button
+						v-if="$slots['link']"
+						class="c-empty-box--emphasized-button"
+						color="light-primary"
+						size="large"
+					>
+						<slot name="link" />
+					</Button>
+				</router-link>
 			</Box>
 		</div>
 		<div v-if="type === 'simple'" class="c-empty-box--simple-container">
-			<Typography type="caption1">
+			<Typography type="caption1" color="gray600" align="center" font-weight="semi-bold">
+				<slot name="title" />
+			</Typography>
+			<Typography type="caption1" color="gray600" align="center" font-weight="semi-bold">
 				<slot name="contents" />
 			</Typography>
+			<LinkButton
+				v-if="$slots['link']"
+				:to="to"
+				:target="target"
+				class="c-empty-box--link"
+				type="caption1"
+				align="center"
+				:external="external"
+			>
+				<slot name="link" />
+			</LinkButton>
 		</div>
 	</article>
 </template>
@@ -16,6 +55,8 @@
 <script>
 import Box from '@/components/components/general/Box';
 import Typography from '@/components/elements/core/typography/Typography';
+import LinkButton from '@/components/components/general/button/LinkButton';
+import Button from '@/components/components/general/button/Button';
 
 export const Types = ['simple', 'emphasized'];
 
@@ -39,10 +80,27 @@ export default {
 				return isValid;
 			},
 		},
+		to: {
+			type: String,
+		},
+		target: {
+			type: String,
+			default: '_self',
+		},
+		external: {
+			type: Boolean,
+			default: false,
+		},
+		full: {
+			type: Boolean,
+			default: true,
+		},
 	},
 	components: {
 		Box,
 		Typography,
+		LinkButton,
+		Button,
 	},
 };
 </script>
@@ -50,5 +108,24 @@ export default {
 <style lang="scss" scoped>
 .c-empty-box {
 	display: block;
+
+	&.full {
+		width: 100%;
+	}
+
+	&--link {
+		margin-top: 14px;
+	}
+
+	&--emphasized {
+		padding: 40px 16px;
+		&-button {
+			margin: 16px auto auto;
+		}
+	}
+
+	& a {
+		text-decoration: none;
+	}
 }
 </style>
