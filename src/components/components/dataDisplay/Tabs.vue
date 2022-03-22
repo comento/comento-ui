@@ -279,7 +279,7 @@ export default {
 
 .with-header {
 	::v-deep {
-		.c-button {
+		.c-tabs--menu-button .c-button {
 			height: 44px !important;
 		}
 	}
