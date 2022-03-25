@@ -138,6 +138,7 @@ import IconVideoLargeLine from '@/assets/images/icon/large/icon-video-large-line
 import IconVideoLargeFill from '@/assets/images/icon/large/icon-video-large-fill.svg?inline';
 import IconStarLargeLine from '@/assets/images/icon/large/icon-star-large-line.svg?inline';
 import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.svg?inline';
+import IconThreeDotLargeFill from '@/assets/images/icon/large/icon-threeDot-large-fill.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -321,6 +322,7 @@ export const IconNames = [
 	'IconVideoLargeFill',
 	'IconStarLargeLine',
 	'IconStarLargeFill',
+	'IconThreeDotLargeFill',
 
 	// XLarge
 	'IconProfileXLargeLine',
@@ -519,6 +521,7 @@ export default {
 		IconVideoLargeFill,
 		IconStarLargeLine,
 		IconStarLargeFill,
+		IconThreeDotLargeFill,
 
 		// x-large
 		IconProfileXLargeLine,
