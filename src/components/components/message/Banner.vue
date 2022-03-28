@@ -4,6 +4,15 @@
 			<slot name="background" />
 		</div>
 		<div class="c-banner--content" :class="[computedAlignItems]">
+			<!-- slot-based -->
+			<div v-if="$slots.title" class="c-banner--title">
+				<slot name="title" />
+			</div>
+			<div v-if="$slots.description" class="c-banner--description">
+				<slot name="description" />
+			</div>
+
+			<!-- prop-based -->
 			<Typography v-if="title" class="c-banner--title" :type="computedTitleType" font-weight="semi-bold">
 				{{ title }}
 			</Typography>
@@ -61,9 +70,6 @@ export default {
 		},
 	},
 	computed: {
-		computedBlur() {
-			return this.blur ? 'blur' : '';
-		},
 		computedStyleVariables() {
 			return {
 				'--align-items': this.alignItems,
@@ -133,23 +139,6 @@ export default {
 			height: var(--height);
 			object-fit: cover;
 		}
-
-		&.blur {
-			position: relative;
-			backdrop-filter: blur(0);
-
-			&::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				width: 100%;
-				height: 100%;
-				background: rgba(0, 0, 0, 0.25);
-				backdrop-filter: blur(30px);
-			}
-		}
 	}
 
 	&--description {
@@ -160,15 +149,8 @@ export default {
 		margin-top: 32px;
 	}
 
-	&--flex-start {
-		padding-left: 406px;
-	}
-	&--flex-end {
-		padding-right: 406px;
-	}
-
 	@include pc {
-		height: 382px;
+		height: 390px;
 
 		&.standard {
 			height: 189px;
