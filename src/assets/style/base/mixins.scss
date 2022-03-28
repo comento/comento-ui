@@ -44,6 +44,7 @@
 @mixin body1 {
   @include trans-font-size(16px, 1.54);
   font-weight: $regular;
+  letter-spacing: 0.02em;
 }
 @mixin body2 {
   @include trans-font-size(14px, 1.4);
