@@ -1,11 +1,12 @@
 <template>
 	<transition :name="computedTransition">
 		<div class="c-application c-alert" :class="classes">
-			<Grid>
-				<Row class="c-alert--row">
-					<StyleCol :col-lg="12" class="c-alert--col">
+			<NewGrid>
+				<NewRow class="c-alert--row">
+					<NewCol :col-lg="12" class="c-alert--col">
 						<div class="c-alert--wrapper">
 							<div class="c-alert--content">
+								<slot name="icon" />
 								<Icon name="IconSecurityLargeFill" :color="computedIconColor" class="c-alert--icon" />
 								<Typography class="c-alert--message" color="gray800" type="body2">
 									<slot />
@@ -20,17 +21,17 @@
 								@click.stop.capture="handleClose"
 							/>
 						</div>
-					</StyleCol>
-				</Row>
-			</Grid>
+					</NewCol>
+				</NewRow>
+			</NewGrid>
 		</div>
 	</transition>
 </template>
 
 <script>
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
+import NewGrid from '@/components/layout/NewGrid';
+import NewRow from '@/components/layout/NewRow';
+import NewCol from '@/components/layout/NewCol';
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 
@@ -77,7 +78,7 @@ export default {
 			this.$emit('close');
 		},
 	},
-	components: { Grid, Row, StyleCol, Icon, Typography },
+	components: { NewGrid, NewRow, NewCol, Icon, Typography },
 };
 </script>
 
