@@ -100,6 +100,7 @@ export default {
 ::v-deep .c-drawer {
 	@include border-radius(16px 16px 0 0);
 	@include shadow1();
+	min-height: fit-content;
 }
 .c-bottom-drawer {
 	padding-bottom: 20px;
