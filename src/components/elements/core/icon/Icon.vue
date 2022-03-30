@@ -83,6 +83,9 @@ import IconStarMediumLine from '@/assets/images/icon/medium/icon-star-medium-lin
 import IconStarMediumFill from '@/assets/images/icon/medium/icon-star-medium-fill.svg?inline';
 import IconThreeDotMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
 import IconFileMediumLine from '@/assets/images/icon/medium/icon-file-medium-line.svg?inline';
+import IconBlockMediumLine from '@/assets/images/icon/medium/icon-block-medium-line.svg?inline';
+import IconSirenMediumLine from '@/assets/images/icon/medium/icon-siren-medium-line.svg?inline';
+import IconWritingMediumLine from '@/assets/images/icon/medium/icon-writing-medium-line.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -267,6 +270,9 @@ export const IconNames = [
 	'IconStarMediumFill',
 	'IconThreeDotMediumFill',
 	'IconFileMediumLine',
+	'IconBlockMediumLine',
+	'IconSirenMediumLine',
+	'IconWritingMediumLine',
 
 	// large
 	'IconProfileLargeLine',
@@ -466,6 +472,9 @@ export default {
 		IconStarMediumLine,
 		IconStarMediumFill,
 		IconFileMediumLine,
+		IconBlockMediumLine,
+		IconSirenMediumLine,
+		IconWritingMediumLine,
 
 		// large
 		IconProfileLargeLine,
