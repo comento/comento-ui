@@ -252,14 +252,12 @@
 }
 
 @mixin state-style() {
-  @include mobile {
-    &:active,&.hover-test {
-      @content
-    }  
+  &.hover-test,&:active {
+    @content
   }
 
   @include pc {
-    &:hover,&:active,&.hover-test {
+    &:hover {
       @content
     }
   }
