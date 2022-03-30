@@ -3,8 +3,7 @@
 		:mask-closable="true"
 		:z-index="1002"
 		align="down"
-		:closeable="true"
-		:show-close-button="true"
+		:closeable="showCloseButton"
 		:max-height="computedMaxHeight"
 		@close="$emit('close')"
 	>
@@ -53,6 +52,10 @@ export default {
 		showActionButton: {
 			type: Boolean,
 			default: false,
+		},
+		showCloseButton: {
+			type: Boolean,
+			default: true,
 		},
 		// 버튼 로딩
 		loading: {
