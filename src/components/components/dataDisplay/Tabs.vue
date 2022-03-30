@@ -5,7 +5,7 @@
 		v-if="type === 'swiper'"
 		ref="mySwiper"
 		class="c-application c-tabs--menu-container swiper"
-		:class="computedTransparent"
+		:class="[computedTransparent, computedWithHeader]"
 		:options="swiperOptions"
 	>
 		<swiper-slide

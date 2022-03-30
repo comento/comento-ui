@@ -273,6 +273,7 @@ $disabled-background-color: $gray000;
 
 			~ .c-text-field--append {
 				padding-right: $outline-padding - 4px;
+				@include border-radius(4px);
 			}
 		}
 		&.c-text-field--underline {

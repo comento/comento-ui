@@ -3,8 +3,7 @@
 		:mask-closable="true"
 		:z-index="1002"
 		align="down"
-		:closeable="true"
-		:show-close-button="true"
+		:closeable="showCloseButton"
 		:max-height="computedMaxHeight"
 		@close="$emit('close')"
 	>
@@ -54,6 +53,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		showCloseButton: {
+			type: Boolean,
+			default: false,
+		},
 		// 버튼 로딩
 		loading: {
 			type: Boolean,
@@ -97,6 +100,7 @@ export default {
 ::v-deep .c-drawer {
 	@include border-radius(16px 16px 0 0);
 	@include shadow1();
+	min-height: fit-content;
 }
 .c-bottom-drawer {
 	padding-bottom: 20px;
