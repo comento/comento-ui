@@ -55,7 +55,7 @@ export default {
 		},
 		showCloseButton: {
 			type: Boolean,
-			default: true,
+			default: false,
 		},
 		// 버튼 로딩
 		loading: {
