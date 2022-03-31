@@ -84,6 +84,7 @@ import IconStarMediumFill from '@/assets/images/icon/medium/icon-star-medium-fil
 import IconThreeDotMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
 import IconFileMediumLine from '@/assets/images/icon/medium/icon-file-medium-line.svg?inline';
 import IconBlockMediumLine from '@/assets/images/icon/medium/icon-block-medium-line.svg?inline';
+import IconUnblockMediumLine from '@/assets/images/icon/medium/icon-unblock-medium-line.svg?inline';
 import IconSirenMediumLine from '@/assets/images/icon/medium/icon-siren-medium-line.svg?inline';
 import IconWritingMediumLine from '@/assets/images/icon/medium/icon-writing-medium-line.svg?inline';
 
@@ -271,6 +272,7 @@ export const IconNames = [
 	'IconThreeDotMediumFill',
 	'IconFileMediumLine',
 	'IconBlockMediumLine',
+	'IconUnblockMediumLine',
 	'IconSirenMediumLine',
 	'IconWritingMediumLine',
 
@@ -473,6 +475,7 @@ export default {
 		IconStarMediumFill,
 		IconFileMediumLine,
 		IconBlockMediumLine,
+		IconUnblockMediumLine,
 		IconSirenMediumLine,
 		IconWritingMediumLine,
 
