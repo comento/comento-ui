@@ -4,7 +4,7 @@
 			<slot name="user-information" />
 		</div>
 		<Box class="c-reply--box" :paddings="[12, 16, 12, 16]" background-color="gray100">
-			<Typography type="body2" color="gray700" v-html="nl2br(value)" />
+			<Typography type="body2" :color="fontColor" v-html="nl2br(value)" />
 		</Box>
 		<div class="c-reply--append">
 			<Label type="dataDisplay" class="c-reply--date">
@@ -33,6 +33,10 @@ export default {
 		},
 		date: {
 			type: String,
+		},
+		fontColor: {
+			type: String,
+			default: 'gray700',
 		},
 		/**
 		 * 신고 버튼 보여주기

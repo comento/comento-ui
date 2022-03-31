@@ -13,6 +13,10 @@ import Icon from '@/components/elements/core/icon/Icon';
 			defaultValue: '댓글 내용이 표시됩니다.',
 			control: { type: 'text' },
 		},
+    fontColor: {
+      description: '댓글 색상',
+      control: { type: 'text' },
+    },
 		date: {
 			description: '날짜',
 			defaultValue: '21.09.02',
@@ -65,7 +69,7 @@ export const Basic = (args, { argTypes }) => ({
 		},
 	},
 	template: `
-        <Reply :value="value" :date="date" :show-report="showReport" @clickReportButton="openReportModal">
+        <Reply :value="value" :date="date" :font-color="fontColor" :show-report="showReport" @clickReportButton="openReportModal">
             <template v-slot:user-information>
                 <UserInformation :type="userInformationType">
                     <template v-slot:avatar>
