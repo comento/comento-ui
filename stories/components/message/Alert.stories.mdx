@@ -83,12 +83,17 @@ export const Default = (args, { argTypes }) => ({
                     <Alert style="position: absolute; top: 400px" type="image" />
                     <Alert style="position: absolute; top: 500px" type="notice">
                       <template v-slot:icon>
-                        <Icon name="IconLikeMediumFill" color="primary" />
+                        <Icon :name="customIconName" color="primary" />
                       </template>
                       [커스텀 예시] 코멘토 유저분들 사랑합니다~! 건강하고 행복하세요~~
                     </Alert>
                 </div>
             `,
+            computed: {
+                customIconName() {
+                    return this.isMobile ? 'IconStarMediumFill' : 'IconStarLargeFill';
+                }
+            },
             components: { Alert, Icon },
         }}
     </Story>
