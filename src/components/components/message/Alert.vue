@@ -21,10 +21,11 @@
 							</div>
 
 							<!-- 닫기 -->
-							<Icon
+							<IconButton
 								v-if="closable"
 								class="c-alert--close-button"
-								:name="closeIconName"
+								:size="iconSize.toLowerCase()"
+								:icon-name="closeIconName"
 								:color="closeButtonColor"
 								@click.stop.capture="handleClose"
 							/>
@@ -43,6 +44,7 @@ import NewCol from '@/components/layout/NewCol';
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 import { colors } from '@/utils/constants/color';
+import IconButton from '@/components/components/general/button/IconButton';
 
 export const AlertTypes = ['information', 'notice', 'success', 'error', 'image'];
 
@@ -105,16 +107,22 @@ export default {
 			}
 			return { backgroundColor: colors[this.iconTypeMap[this.type].backgroundColor] };
 		},
+		iconSize() {
+			return this.isMobile ? 'Medium' : 'Large';
+		},
 		closeIconName() {
 			return this.isMobile ? 'IconCloseMediumLine' : 'IconCloseLargeLine';
 		},
 		iconTypeMap() {
-			const iconSize = this.isMobile ? 'Medium' : 'Large';
 			return {
-				information: { backgroundColor: 'gray000', color: 'gray600', icon: `IconInformation${iconSize}Line` },
-				notice: { backgroundColor: 'blue000', color: 'primary', icon: `IconMegaphone${iconSize}Line` },
-				success: { backgroundColor: 'green000', color: 'success', icon: `IconCheckRound${iconSize}Line` },
-				error: { backgroundColor: 'red000', color: 'error', icon: `IconExclamation${iconSize}Line` },
+				information: {
+					backgroundColor: 'gray000',
+					color: 'gray600',
+					icon: `IconInformation${this.iconSize}Line`,
+				},
+				notice: { backgroundColor: 'blue000', color: 'primary', icon: `IconMegaphone${this.iconSize}Line` },
+				success: { backgroundColor: 'green000', color: 'success', icon: `IconCheckRound${this.iconSize}Line` },
+				error: { backgroundColor: 'red000', color: 'error', icon: `IconExclamation${this.iconSize}Line` },
 			};
 		},
 	},
@@ -123,7 +131,7 @@ export default {
 			this.$emit('close');
 		},
 	},
-	components: { NewGrid, NewRow, NewCol, Icon, Typography },
+	components: { IconButton, NewGrid, NewRow, NewCol, Icon, Typography },
 };
 </script>
 
@@ -137,7 +145,7 @@ export default {
 	align-items: center;
 	width: 100%;
 	height: $alert-height-mobile;
-	padding: 12px 14px 12px 16px;
+	padding: 12px 16px;
 
 	@include pc {
 		height: $alert-height;
