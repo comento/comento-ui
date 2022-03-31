@@ -205,11 +205,13 @@ export default {
 		width: 100%;
 		margin-left: 6px;
 		word-break: break-all;
+		@include ellipsis(2);
 
 		@include pc {
 			width: 100%;
 			margin-left: 4px;
 			word-break: keep-all;
+			@include ellipsis(1);
 		}
 
 		&::v-deep strong {
