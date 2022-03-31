@@ -45,7 +45,7 @@ import IconFilterMediumLine from '@/assets/images/icon/medium/icon-filter-medium
 import IconBookmarkMediumLine from '@/assets/images/icon/medium/icon-bookmark-medium-line.svg?inline';
 import IconBookmarkMediumFill from '@/assets/images/icon/medium/icon-bookmark-medium-fill.svg?inline';
 import IconCheckMediumLine from '@/assets/images/icon/medium/icon-check-medium-line.svg?inline';
-import IconSelectedMediumLine from '@/assets/images/icon/medium/icon-selected-medium-line.svg?inline';
+import IconCheckRoundMediumLine from '@/assets/images/icon/medium/icon-checkRound-medium-line.svg?inline';
 import IconCheckRoundMediumFill from '@/assets/images/icon/medium/icon-checkRound-medium-fill.svg?inline';
 import IconQuestionMarkMediumLine from '@/assets/images/icon/medium/icon-questionMark-medium-line.svg?inline';
 import IconQuestionMarkMediumFill from '@/assets/images/icon/medium/icon-questionMark-medium-fill.svg?inline';
@@ -232,7 +232,7 @@ export const IconNames = [
 	'IconBookmarkMediumLine',
 	'IconBookmarkMediumFill',
 	'IconCheckMediumLine',
-	'IconSelectedMediumLine',
+	'IconCheckRoundMediumLine',
 	'IconCheckRoundMediumFill',
 	'IconQuestionMarkMediumLine',
 	'IconQuestionMarkMediumFill',
@@ -435,7 +435,7 @@ export default {
 		IconBookmarkMediumFill,
 		IconThreeDotMediumFill,
 		IconCheckMediumLine,
-		IconSelectedMediumLine,
+		IconCheckRoundMediumLine,
 		IconCheckRoundMediumFill,
 		IconQuestionMarkMediumLine,
 		IconQuestionMarkMediumFill,
