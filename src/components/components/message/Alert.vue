@@ -6,10 +6,10 @@
 					<NewCol :col-lg="12" class="c-alert--col">
 						<div class="c-alert--wrapper">
 							<div class="c-alert--content">
-								<template v-if="type !== 'image'">
+								<div v-if="type !== 'image'" class="c-alert--icon">
 									<slot v-if="$slots['icon']" name="icon" />
 									<Icon v-else :name="iconForType.name" :color="iconForType.color" />
-								</template>
+								</div>
 								<Typography
 									class="c-alert--message"
 									color="gray700"
@@ -201,21 +201,29 @@ export default {
 		@include align-items(center);
 		@include mobile {
 			@include align-items(flex-start);
-			&::v-deep .c-icon {
-				margin-top: 2px;
-			}
+		}
+	}
+
+	&--icon {
+		@include flexbox();
+		@include align-items(center);
+		margin-right: 6px;
+		@include mobile {
+			@include align-items(flex-start);
+			margin-top: 2px;
+		}
+		@include pc {
+			margin-right: 4px;
 		}
 	}
 
 	&--message {
 		width: 100%;
-		margin-left: 6px;
 		word-break: break-all;
 		@include ellipsis(2);
 
 		@include pc {
 			width: 100%;
-			margin-left: 4px;
 			word-break: keep-all;
 			@include ellipsis(1);
 		}
