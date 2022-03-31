@@ -10,7 +10,12 @@
 									<slot v-if="$slots['icon']" name="icon" />
 									<Icon v-else :name="iconForType.name" :color="iconForType.color" />
 								</template>
-								<Typography class="c-alert--message" color="gray800" type="body2">
+								<Typography
+									class="c-alert--message"
+									color="gray700"
+									:type="isMobile ? 'body2' : 'body1'"
+									:font-weight="500"
+								>
 									<slot />
 								</Typography>
 							</div>
@@ -108,21 +113,22 @@ export default {
 			return { backgroundColor: colors[backgroundColorMap[this.type]] };
 		},
 		iconForType() {
+			const iconSize = this.isMobile ? 'Medium' : 'Large';
 			return {
 				information: {
-					name: 'IconInformationMediumLine',
+					name: `IconInformation${iconSize}Line`,
 					color: 'gray600',
 				},
 				notice: {
-					name: 'IconMegaphoneMediumLine',
+					name: `IconMegaphone${iconSize}Line`,
 					color: 'primary',
 				},
 				success: {
-					name: 'IconSelectedMediumLine',
+					name: `IconCheckRound${iconSize}Line`,
 					color: 'success',
 				},
 				error: {
-					name: 'IconExclamationMediumLine',
+					name: `IconExclamation${iconSize}Line`,
 					color: 'error',
 				},
 			}[this.type];
