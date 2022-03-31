@@ -8,7 +8,7 @@
 							<div class="c-alert--content">
 								<div v-if="type !== 'image'" class="c-alert--icon">
 									<slot v-if="$slots['icon']" name="icon" />
-									<Icon v-else :name="iconForType.name" :color="iconForType.color" />
+									<Icon v-else :name="iconTypeMap[type].icon" :color="iconTypeMap[type].color" />
 								</div>
 								<Typography
 									class="c-alert--message"
@@ -103,38 +103,19 @@ export default {
 					backgroundSize: '100% 100%',
 				};
 			}
-
-			const backgroundColorMap = {
-				information: 'gray000',
-				notice: 'blue000',
-				success: 'green000',
-				error: 'red000',
-			};
-			return { backgroundColor: colors[backgroundColorMap[this.type]] };
-		},
-		iconForType() {
-			const iconSize = this.isMobile ? 'Medium' : 'Large';
-			return {
-				information: {
-					name: `IconInformation${iconSize}Line`,
-					color: 'gray600',
-				},
-				notice: {
-					name: `IconMegaphone${iconSize}Line`,
-					color: 'primary',
-				},
-				success: {
-					name: `IconCheckRound${iconSize}Line`,
-					color: 'success',
-				},
-				error: {
-					name: `IconExclamation${iconSize}Line`,
-					color: 'error',
-				},
-			}[this.type];
+			return { backgroundColor: colors[this.iconTypeMap[this.type].backgroundColor] };
 		},
 		closeIconName() {
 			return this.isMobile ? 'IconCloseMediumLine' : 'IconCloseLargeLine';
+		},
+		iconTypeMap() {
+			const iconSize = this.isMobile ? 'Medium' : 'Large';
+			return {
+				information: { backgroundColor: 'gray000', color: 'gray600', icon: `IconInformation${iconSize}Line` },
+				notice: { backgroundColor: 'blue000', color: 'primary', icon: `IconMegaphone${iconSize}Line` },
+				success: { backgroundColor: 'green000', color: 'success', icon: `IconCheckRound${iconSize}Line` },
+				error: { backgroundColor: 'red000', color: 'error', icon: `IconExclamation${iconSize}Line` },
+			};
 		},
 	},
 	methods: {
