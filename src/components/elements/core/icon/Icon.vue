@@ -45,7 +45,7 @@ import IconFilterMediumLine from '@/assets/images/icon/medium/icon-filter-medium
 import IconBookmarkMediumLine from '@/assets/images/icon/medium/icon-bookmark-medium-line.svg?inline';
 import IconBookmarkMediumFill from '@/assets/images/icon/medium/icon-bookmark-medium-fill.svg?inline';
 import IconCheckMediumLine from '@/assets/images/icon/medium/icon-check-medium-line.svg?inline';
-import IconSelectedMediumLine from '@/assets/images/icon/medium/icon-selected-medium-line.svg?inline';
+import IconCheckRoundMediumLine from '@/assets/images/icon/medium/icon-checkRound-medium-line.svg?inline';
 import IconCheckRoundMediumFill from '@/assets/images/icon/medium/icon-checkRound-medium-fill.svg?inline';
 import IconQuestionMarkMediumLine from '@/assets/images/icon/medium/icon-questionMark-medium-line.svg?inline';
 import IconQuestionMarkMediumFill from '@/assets/images/icon/medium/icon-questionMark-medium-fill.svg?inline';
@@ -84,6 +84,7 @@ import IconStarMediumFill from '@/assets/images/icon/medium/icon-star-medium-fil
 import IconThreeDotMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
 import IconFileMediumLine from '@/assets/images/icon/medium/icon-file-medium-line.svg?inline';
 import IconBlockMediumLine from '@/assets/images/icon/medium/icon-block-medium-line.svg?inline';
+import IconUnblockMediumLine from '@/assets/images/icon/medium/icon-unblock-medium-line.svg?inline';
 import IconSirenMediumLine from '@/assets/images/icon/medium/icon-siren-medium-line.svg?inline';
 import IconWritingMediumLine from '@/assets/images/icon/medium/icon-writing-medium-line.svg?inline';
 
@@ -232,7 +233,7 @@ export const IconNames = [
 	'IconBookmarkMediumLine',
 	'IconBookmarkMediumFill',
 	'IconCheckMediumLine',
-	'IconSelectedMediumLine',
+	'IconCheckRoundMediumLine',
 	'IconCheckRoundMediumFill',
 	'IconQuestionMarkMediumLine',
 	'IconQuestionMarkMediumFill',
@@ -271,6 +272,7 @@ export const IconNames = [
 	'IconThreeDotMediumFill',
 	'IconFileMediumLine',
 	'IconBlockMediumLine',
+	'IconUnblockMediumLine',
 	'IconSirenMediumLine',
 	'IconWritingMediumLine',
 
@@ -435,7 +437,7 @@ export default {
 		IconBookmarkMediumFill,
 		IconThreeDotMediumFill,
 		IconCheckMediumLine,
-		IconSelectedMediumLine,
+		IconCheckRoundMediumLine,
 		IconCheckRoundMediumFill,
 		IconQuestionMarkMediumLine,
 		IconQuestionMarkMediumFill,
@@ -473,6 +475,7 @@ export default {
 		IconStarMediumFill,
 		IconFileMediumLine,
 		IconBlockMediumLine,
+		IconUnblockMediumLine,
 		IconSirenMediumLine,
 		IconWritingMediumLine,
 

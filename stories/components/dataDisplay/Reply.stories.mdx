@@ -3,6 +3,7 @@ import Reply from '@/components/components/dataDisplay/Reply';
 import UserInformation from '@/components/components/dataDisplay/content/UserInformation';
 import Avatar from '@/components/components/dataDisplay/Avatar';
 import Icon from '@/components/elements/core/icon/Icon';
+import { colorKeys } from "@/utils/constants/color";
 
 <Meta
 	title="Data Display/Reply"
@@ -12,6 +13,13 @@ import Icon from '@/components/elements/core/icon/Icon';
 			description: '댓글 내용',
 			defaultValue: '댓글 내용이 표시됩니다.',
 			control: { type: 'text' },
+		},
+		fontColor: {
+			description: '댓글 색상',
+      control: {
+        type: 'select',
+        options: colorKeys,
+      },
 		},
 		date: {
 			description: '날짜',
@@ -65,7 +73,7 @@ export const Basic = (args, { argTypes }) => ({
 		},
 	},
 	template: `
-        <Reply :value="value" :date="date" :show-report="showReport" @clickReportButton="openReportModal">
+        <Reply :value="value" :date="date" :font-color="fontColor" :show-report="showReport" @clickReportButton="openReportModal">
             <template v-slot:user-information>
                 <UserInformation :type="userInformationType">
                     <template v-slot:avatar>
