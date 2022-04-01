@@ -1,3 +1,24 @@
+## [1.0.2](https://github.com/comento/comento-ui/compare/v1.0.1...v1.0.2) (2022-04-01)
+
+
+### Bug Fixes
+
+* 에디터 하이퍼링크 색상 변경 ([#849](https://github.com/comento/comento-ui/issues/849)) ([bdb3559](https://github.com/comento/comento-ui/commit/bdb355997858987e3a0b051e3e82624625c6412b))
+* 에디터에서 글자크기 label 스타일 오류 수정 ([#851](https://github.com/comento/comento-ui/issues/851)) ([eacaa39](https://github.com/comento/comento-ui/commit/eacaa390da4ce0a82fa5fcdf4f528e4a608105d8))
+* state-style 모바일, PC 모두 변경 ([#856](https://github.com/comento/comento-ui/issues/856)) ([e331cca](https://github.com/comento/comento-ui/commit/e331ccad3c1aca04b0955efdee2639c318862692))
+* Tabs에서 swiper일 때도 withHeader 추가 ([#850](https://github.com/comento/comento-ui/issues/850)) ([b631556](https://github.com/comento/comento-ui/commit/b631556f7a7ab98aa52e39895a68aa8d8fdbfb28))
+* TextField outline일 때 append border-radius 추가 ([#848](https://github.com/comento/comento-ui/issues/848)) ([7c7f17c](https://github.com/comento/comento-ui/commit/7c7f17c3ebe04ff55ed6ef963aed0b43d9837a26))
+
+
+### Features
+
+* Alert 컴포넌트 변경 ([#857](https://github.com/comento/comento-ui/issues/857)) ([542852a](https://github.com/comento/comento-ui/commit/542852ad36df30186c941d6e3eb3602bbaa8bf37))
+* Banner slot 추가 및 height 수정 ([#853](https://github.com/comento/comento-ui/issues/853)) ([43d58cd](https://github.com/comento/comento-ui/commit/43d58cd9467d49e2c91015202bd2db9cb0d5b8ee))
+* body1 letter-spacing 변경 ([#854](https://github.com/comento/comento-ui/issues/854)) ([87ad847](https://github.com/comento/comento-ui/commit/87ad8479bf927fc21f627aa5ec64d3c153521d84))
+* IconThreeDotLargeFill 추가 ([#852](https://github.com/comento/comento-ui/issues/852)) ([4011f17](https://github.com/comento/comento-ui/commit/4011f178d1de6d001f087e96f945e9851184940e))
+
+
+
 ## [1.0.1](https://github.com/comento/comento-ui/compare/v1.0.0...v1.0.1) (2022-03-30)
 
 
