@@ -119,7 +119,6 @@ export default {
 	position: relative;
 	display: grid;
 	height: 464px;
-	overflow: hidden;
 
 	&.standard {
 		height: 187px;
