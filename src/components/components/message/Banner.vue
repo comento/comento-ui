@@ -164,6 +164,7 @@ export default {
 	&--buttons {
 		margin-top: 32px;
 		margin-bottom: 20px;
+		width: 100%;
 	}
 
 	@include pc {
@@ -171,6 +172,10 @@ export default {
 
 		&.standard {
 			height: 189px;
+		}
+
+		&--buttons {
+			width: inherit;
 		}
 	}
 }
