@@ -74,12 +74,17 @@ export const Default = (args, { argTypes }) => ({
 		{{
 			components: { Banner, Button, NewGrid, NewCol, NewRow, Typography },
 			template: `<div>
-                <Banner type="standard" title="Title" description="Description" blur>
+                <Banner type="standard" title="Title" description="Description">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
             </Banner>
-            <Banner class="mt-40" type="full" title="Title" description="Description" blur>
+						<Banner class="mt-40" type="full" title="Title" description="Description">
+                <template v-slot:background>
+                    <div style="background-color: #f3f4f5; height: 100%;"></div>
+                </template>
+            </Banner>
+            <Banner class="mt-40" type="full" title="Title" description="Description">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
