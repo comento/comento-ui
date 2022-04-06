@@ -49,7 +49,7 @@ export const Default = (args, { argTypes }) => ({
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
                 <template v-slot:button v-if="type === 'full'">
-                    <Button size="xlarge">CTA BTN</Button>
+                    <Button size="xlarge" full>CTA BTN</Button>
                 </template>
             </Banner>
         </div>`,
@@ -74,17 +74,22 @@ export const Default = (args, { argTypes }) => ({
 		{{
 			components: { Banner, Button, NewGrid, NewCol, NewRow, Typography },
 			template: `<div>
-                <Banner type="standard" title="Title" description="Description" blur>
+                <Banner type="standard" title="Title" description="Description">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
             </Banner>
-            <Banner class="mt-40" type="full" title="Title" description="Description" blur>
+						<Banner class="mt-40" type="full" title="Title" description="Description">
+                <template v-slot:background>
+                    <div style="background-color: #f3f4f5; height: 100%;"></div>
+                </template>
+            </Banner>
+            <Banner class="mt-40" type="full" title="Title" description="Description">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
                 <template v-slot:button>
-                    <Button size="xlarge">CTA BTN</Button>
+                    <Button size="xlarge" full>CTA BTN</Button>
                 </template>
             </Banner>
             </div>`,
