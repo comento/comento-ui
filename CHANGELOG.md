@@ -1,3 +1,17 @@
+## [1.0.3](https://github.com/comento/comento-ui/compare/v1.0.2...v1.0.3) (2022-04-06)
+
+
+### Bug Fixes
+
+* 아이콘 이름 오류 수정 ([#862](https://github.com/comento/comento-ui/issues/862)) ([46fcbde](https://github.com/comento/comento-ui/commit/46fcbde129342468f7977935d6e081417812ed31))
+
+
+### Features
+
+* Banner 모바일 버튼 추가 ([#863](https://github.com/comento/comento-ui/issues/863)) ([8e8dd26](https://github.com/comento/comento-ui/commit/8e8dd2676294172995a123902ee20c56dc1ec167))
+
+
+
 ## [1.0.2](https://github.com/comento/comento-ui/compare/v1.0.1...v1.0.2) (2022-04-01)
 
 
