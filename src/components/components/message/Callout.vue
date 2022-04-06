@@ -136,7 +136,7 @@ export default {
 				information: 'Information',
 				error: 'Exclamation',
 				notice: 'Megaphone',
-				success: 'Selected',
+				success: 'CheckRound',
 			}[this.type];
 			const size = {
 				xsmall: 'Small',
