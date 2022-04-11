@@ -5,29 +5,25 @@
 		</div>
 		<div class="c-banner--content" :class="[computedAlignItems]">
 			<!-- slot-based -->
-			<div v-if="$slots.title || $slots.description" class="c-banner--wrapper">
-				<div v-if="$slots.title" class="c-banner--title">
-					<slot name="title" />
-				</div>
-				<div v-if="$slots.description" class="c-banner--description">
-					<slot name="description" />
-				</div>
+			<div v-if="$slots.title" class="c-banner--title">
+				<slot name="title" />
+			</div>
+			<div v-if="$slots.description" class="c-banner--description">
+				<slot name="description" />
 			</div>
 
 			<!-- prop-based -->
-			<div v-else class="c-banner--wrapper">
-				<Typography v-if="title" class="c-banner--title" :type="computedTitleType" font-weight="semi-bold">
-					{{ title }}
-				</Typography>
-				<Typography
-					v-if="description"
-					class="c-banner--description"
-					:type="computedDescriptionType"
-					:font-weight="computedDescriptionWeight"
-				>
-					{{ description }}
-				</Typography>
-			</div>
+			<Typography v-if="title" class="c-banner--title" :type="computedTitleType" font-weight="semi-bold">
+				{{ title }}
+			</Typography>
+			<Typography
+				v-if="description"
+				class="c-banner--description"
+				:type="computedDescriptionType"
+				:font-weight="computedDescriptionWeight"
+			>
+				{{ description }}
+			</Typography>
 			<div v-if="isButtonVisible" class="c-banner--buttons">
 				<slot name="button" />
 			</div>
@@ -77,8 +73,6 @@ export default {
 		computedStyleVariables() {
 			return {
 				'--align-items': this.alignItems,
-				'--justify-content': this.isMobileWithButton ? 'space-between' : 'center',
-				'--wrapper-margin': this.isMobileWithButton ? '48px' : '0px',
 			};
 		},
 		computedTitleType() {
@@ -101,13 +95,10 @@ export default {
 			return 'regular';
 		},
 		isButtonVisible() {
-			return this.$slots['button'];
+			return this.$slots['button'] && !this.isMobile;
 		},
 		computedAlignItems() {
 			return `c-banner--${this.alignItems}`;
-		},
-		isMobileWithButton() {
-			return this.isButtonVisible && this.isMobile;
 		},
 	},
 	components: { Typography },
@@ -119,6 +110,7 @@ export default {
 	position: relative;
 	display: grid;
 	height: 464px;
+	overflow: hidden;
 
 	&.standard {
 		height: 187px;
@@ -135,16 +127,9 @@ export default {
 	&--content {
 		@include flexbox();
 		@include flex-direction(column);
+		@include justify-content(center);
 		@include align-items(var(--align-items));
-		@include justify-content(var(--justify-content));
 		z-index: 1;
-	}
-
-	&--wrapper {
-		@include flexbox();
-		@include flex-direction(column);
-		@include align-items(var(--align-items));
-		margin-top: var(--wrapper-margin);
 	}
 
 	&--background {
@@ -161,7 +146,6 @@ export default {
 	}
 
 	&--buttons {
-		margin-top: 32px;
 		margin-bottom: 20px;
 		width: 100%;
 	}
@@ -175,6 +159,8 @@ export default {
 
 		&--buttons {
 			width: inherit;
+			margin-top: 32px;
+			margin-bottom: 0px;
 		}
 	}
 }
