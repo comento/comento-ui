@@ -1,3 +1,13 @@
+## [1.0.4](https://github.com/comento/comento-ui/compare/v1.0.3...v1.0.4) (2022-04-11)
+
+
+### Bug Fixes
+
+* 모바일 여백이 PC에 적용된 오류 수정 ([#865](https://github.com/comento/comento-ui/issues/865)) ([90ab969](https://github.com/comento/comento-ui/commit/90ab969a0b47ee033a63b7e36aed2fe5a8e542fc))
+* window에서 pretendard 폰트 적용 안 되는 오류 수정 ([#866](https://github.com/comento/comento-ui/issues/866)) ([7645444](https://github.com/comento/comento-ui/commit/7645444a55663a0c41ce65304db8acd9a9f058ce))
+
+
+
 ## [1.0.3](https://github.com/comento/comento-ui/compare/v1.0.2...v1.0.3) (2022-04-06)
 
 
