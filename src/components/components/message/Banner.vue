@@ -161,7 +161,6 @@ export default {
 	}
 
 	&--buttons {
-		margin-top: 32px;
 		margin-bottom: 20px;
 		width: 100%;
 	}
@@ -175,6 +174,8 @@ export default {
 
 		&--buttons {
 			width: inherit;
+			margin-top: 32px;
+			margin-bottom: 0px;
 		}
 	}
 }
