@@ -143,7 +143,7 @@ export default {
 			type: String,
 			default: null,
 			validator(value) {
-				const isValid = colorKeys.indexOf(value) !== -1;
+				const isValid = colorKeys.includes(value);
 				return customValidator(value, isValid, 'Select', 'color');
 			},
 		},
@@ -161,7 +161,7 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return selectSizes.indexOf(value) !== -1;
+				return selectSizes.includes(value);
 			},
 		},
 		disabled: {
