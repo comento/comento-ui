@@ -1,3 +1,17 @@
+## [1.0.5](https://github.com/comento/comento-ui/compare/v1.0.4...v1.0.5) (2022-04-13)
+
+
+### Features
+
+* EmptyBox background 제거 ([#869](https://github.com/comento/comento-ui/issues/869)) ([dbffe40](https://github.com/comento/comento-ui/commit/dbffe4082c19976899a57aeebbaa9fb7e5ec44dd))
+
+
+### Reverts
+
+* Revert "fix: 모바일 여백이 PC에 적용된 오류 수정" (#870) ([a5b24c4](https://github.com/comento/comento-ui/commit/a5b24c417bf72d8788473581ef07fb4b0ca5a94f)), closes [#870](https://github.com/comento/comento-ui/issues/870) [#865](https://github.com/comento/comento-ui/issues/865)
+
+
+
 ## [1.0.4](https://github.com/comento/comento-ui/compare/v1.0.3...v1.0.4) (2022-04-11)
 
 
