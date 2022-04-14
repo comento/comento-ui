@@ -1,28 +1,32 @@
 <template>
-	<div class="c-application c-textarea" :class="[computedType]">
-		<textarea
-			ref="textarea"
-			v-model="sync_value"
-			:style="[computedStyles]"
-			:placeholder="placeholder"
-			:readonly="readOnly"
-			v-on="$listeners"
-			@input="onInput"
-		/>
-		<!-- v-bind="$attrs" -->
-		<IconButton
-			v-if="type === 'reply' && !readOnly"
-			class="c-textarea--reply-icon"
-			iconName="IconSendLargeFill"
-			:color="replyIconColor"
-			:disabled="!sync_value"
-			@click="onSubmitReply"
-		/>
+	<div class="c-application c-textarea" :class="classes">
+		<div class="flex">
+			<textarea
+				ref="textarea"
+				v-model="sync_value"
+				:style="[computedStyles]"
+				:placeholder="placeholder"
+				:readonly="readOnly"
+				v-on="$listeners"
+				@input="onInput"
+			/>
+			<!-- v-bind="$attrs" -->
+			<IconButton
+				v-if="type === 'reply' && !readOnly"
+				class="c-textarea--reply-icon"
+				iconName="IconSendLargeFill"
+				:color="replyIconColor"
+				:disabled="!sync_value"
+				@click="onSubmitReply"
+			/>
+		</div>
+		<Hint color="error">{{ hintMessage }}</Hint>
 	</div>
 </template>
 
 <script>
 import IconButton from '@/components/components/general/button/IconButton';
+import Hint from '@/components/components/dataDisplay/Hint';
 
 export const textareaTypes = ['basic', 'outline', 'reply'];
 
@@ -66,10 +70,24 @@ export default {
 		value: {
 			type: String,
 		},
+		error: {
+			type: Boolean,
+		},
+		hintMessage: {
+			type: String,
+			default: '메시지는 선택사항입니다',
+		},
 	},
 	computed: {
+		classes() {
+			return [this.computedType, this.computedError];
+		},
 		computedType() {
 			return `${this.type}`;
+		},
+		computedError() {
+			if (this.error) return 'c-textarea--error';
+			return null;
 		},
 		computedStyles() {
 			return {
@@ -104,14 +122,13 @@ export default {
 			this.value && this.$emit('submit');
 		},
 	},
-	components: { IconButton },
+	components: { Hint, IconButton },
 };
 </script>
 
 <style lang="scss" scoped>
 /* 공통 */
 .c-textarea {
-	@include flexbox();
 	position: relative;
 	textarea {
 		padding: 16px;
@@ -141,6 +158,11 @@ export default {
 			@include border-radius(4px);
 			&:focus {
 				border-color: $input-hover-border-color;
+			}
+		}
+		&.c-textarea--error {
+			textarea {
+				border: 1px solid $red600;
 			}
 		}
 	}
