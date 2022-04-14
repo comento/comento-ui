@@ -63,3 +63,21 @@ export const Default = (args, { argTypes }) => ({
 </Story>
 
 <ArgsTable story="Default" />
+
+### Error
+
+<Canvas>
+    <Story name="Align" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <Textarea
+                        type="outline"
+                        error
+                    />
+                </div>
+            `,
+            components: { Textarea },
+        }}
+    </Story>
+</Canvas>
