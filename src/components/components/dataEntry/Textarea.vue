@@ -20,7 +20,7 @@
 				@click="onSubmitReply"
 			/>
 		</div>
-		<Hint color="error">{{ hintMessage }}</Hint>
+		<Hint v-if="isShowHint" color="error">{{ hintMessage }}</Hint>
 	</div>
 </template>
 
@@ -110,6 +110,9 @@ export default {
 			} else {
 				return 'gray200';
 			}
+		},
+		isShowHint() {
+			return this.type === 'outline' && this.error;
 		},
 	},
 	methods: {
