@@ -166,6 +166,9 @@ export default {
 		&.c-textarea--error {
 			textarea {
 				border: 1px solid $red600;
+				&::placeholder {
+					color: $red100;
+				}
 			}
 		}
 	}
