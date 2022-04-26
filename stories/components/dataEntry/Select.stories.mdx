@@ -53,7 +53,15 @@ import { colors } from '@/utils/constants/color';
         },
         disabled: {
             description: "비활성화 여부",
-        }
+        },
+        error: {
+            description: '에러 여부',
+            control: { type: 'boolean' },
+        },
+        hintMessage: {
+            description: "에러 메시지",
+            control: { type: "text" },
+        },
     }}
 />
 
@@ -77,6 +85,8 @@ export const Default = (args, { argTypes }) => ({
                 :full="full"
                 :size="size"
                 :disabled="disabled"
+                :error="error"
+                :hintMessage="hintMessage"
             />
         </div>
     `,
@@ -179,6 +189,24 @@ export const Default = (args, { argTypes }) => ({
                 </div>
         `,
             components: { Select, Typography },
+        }}
+    </Story>
+</Canvas>
+
+### Error
+<Canvas>
+    <Story name="Error" height="300px">
+        {{
+            data: () => ({
+                select: 'item1',
+                options: ['item1', 'item2'],
+            }),
+            template: `
+                <div>
+                    <Select v-model="select" :options="options" label="Label" :vertical="false" error/>
+                </div>
+        `,
+            components: { Select },
         }}
     </Story>
 </Canvas>

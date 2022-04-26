@@ -4,7 +4,12 @@
 			<slot name="user-information" />
 		</div>
 		<Box class="c-reply--box" :paddings="[12, 16, 12, 16]" background-color="gray100">
-			<Typography type="body2" :color="fontColor" v-html="nl2br(value)" />
+			<Typography
+				v-linkify:options="{ className: 'linkified' }"
+				type="body2"
+				:color="fontColor"
+				v-html="nl2br(value)"
+			/>
 		</Box>
 		<div class="c-reply--append">
 			<Label type="dataDisplay" class="c-reply--date">
@@ -16,6 +21,7 @@
 </template>
 
 <script>
+import linkify from 'vue-linkify';
 import Box from '@/components/components/general/Box';
 import Typography from '@/components/elements/core/typography/Typography';
 import Button from '@/components/components/general/button/Button';
@@ -57,6 +63,9 @@ export default {
 		Typography,
 		Box,
 		Label,
+	},
+	directives: {
+		linkify,
 	},
 };
 </script>

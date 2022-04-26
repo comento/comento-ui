@@ -11,7 +11,7 @@
 	>
 		<!-- select 영역 -->
 		<template v-slot:item>
-			<div class="c-select--box" :class="[computedLined, computedActive]" @click="handleOpen">
+			<div class="c-select--box" :class="[computedLined, computedActive, computedError]" @click="handleOpen">
 				<div class="c-select--item">
 					<!-- 라벨 보여주기 -->
 					<input
@@ -36,6 +36,9 @@
 					<EtcIcon :name="computedIconName" :color="computedIconColor" :rotate="computedIconRotate" />
 				</div>
 			</div>
+			<Hint v-if="error" color="error">
+				{{ hintMessage }}
+			</Hint>
 		</template>
 
 		<!-- list 영역 -->
@@ -77,6 +80,7 @@ import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
 import EtcIcon from '@/components/elements/core/icon/EtcIcon';
 import globalMixin from '@/mixins/globalMixin';
+import Hint from '@/components/components/dataDisplay/Hint';
 
 export const selectSizes = ['small', 'medium'];
 export const selectTypes = ['basic', 'underline'];
@@ -143,7 +147,7 @@ export default {
 			type: String,
 			default: null,
 			validator(value) {
-				const isValid = colorKeys.indexOf(value) !== -1;
+				const isValid = colorKeys.includes(value);
 				return customValidator(value, isValid, 'Select', 'color');
 			},
 		},
@@ -161,12 +165,19 @@ export default {
 			type: String,
 			default: 'medium',
 			validator(value) {
-				return selectSizes.indexOf(value) !== -1;
+				return selectSizes.includes(value);
 			},
 		},
 		disabled: {
 			type: Boolean,
 			default: false,
+		},
+		error: {
+			type: Boolean,
+		},
+		hintMessage: {
+			type: String,
+			default: '메시지는 선택사항입니다',
 		},
 	},
 	data() {
@@ -193,6 +204,7 @@ export default {
 				medium: 'blue600',
 			};
 
+			if (this.error) return 'red600';
 			return this.color || defaultIconColors[this.size];
 		},
 		hasObjectOptions() {
@@ -213,6 +225,9 @@ export default {
 		},
 		computedLined() {
 			return `c-select--${this.type}`;
+		},
+		computedError() {
+			return this.error ? `c-select--error` : '';
 		},
 		computedActive() {
 			return { active: this.open };
@@ -266,6 +281,7 @@ export default {
 		},
 	},
 	components: {
+		Hint,
 		EtcIcon,
 		Icon,
 		Divider,
@@ -314,6 +330,15 @@ export default {
 				border-bottom: 1px solid $gray250;
 				&.active {
 					border-bottom: 1px solid $gray400;
+				}
+			}
+			&--error {
+				border: 1px solid $red600;
+				&.active {
+					border: 1px solid $red600;
+				}
+				.c-select--input::placeholder {
+					color: $red100;
 				}
 			}
 		}
