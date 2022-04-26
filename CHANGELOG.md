@@ -1,3 +1,14 @@
+## [1.0.6](https://github.com/comento/comento-ui/compare/v1.0.5...v1.0.6) (2022-04-26)
+
+
+### Features
+
+* chip box-sizing 변경 ([#873](https://github.com/comento/comento-ui/issues/873)) ([8d10c90](https://github.com/comento/comento-ui/commit/8d10c90fbedea8a0bd23bbda01b4d67df26a7ee6))
+* EmptyBox 버튼 클릭 이벤트 추가 ([#871](https://github.com/comento/comento-ui/issues/871)) ([f3ea026](https://github.com/comento/comento-ui/commit/f3ea026edde3216ef8caee7d9bf7ca371dfbea29))
+* Reply, Content, Typography에 하이퍼링크 적용 ([#877](https://github.com/comento/comento-ui/issues/877)) ([c24acd4](https://github.com/comento/comento-ui/commit/c24acd4ea35d0d06064337a14fe9eb1746400b0b))
+
+
+
 ## [1.0.5](https://github.com/comento/comento-ui/compare/v1.0.4...v1.0.5) (2022-04-13)
 
 
