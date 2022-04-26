@@ -1,6 +1,7 @@
 <template>
 	<component
 		:is="element"
+		v-linkify:options="{ className: 'linkified' }"
 		class="c-application c-typography"
 		:class="computedClass"
 		:style="computedStyle"
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import linkify from 'vue-linkify';
 import { colors } from '@/utils/constants/color';
 
 export const TypographyTypes = [
@@ -123,6 +125,9 @@ export default {
 		fontWeightClass() {
 			return this.fontWeight && !this.isNumberFontWeight ? `f-${this.fontWeight}` : '';
 		},
+	},
+	directives: {
+		linkify,
 	},
 };
 </script>

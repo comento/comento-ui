@@ -159,6 +159,7 @@ export default {
 	justify-content: center;
 	@include border-radius(4px);
 	text-align: center;
+	box-sizing: border-box;
 	&.info {
 		color: $gray700;
 		border: 1px solid $gray100;

@@ -17,6 +17,16 @@
   color: $success !important;
 }
 
+// 하이퍼링크
+.linkified {
+  color: $link;
+  text-decoration: none;
+  &:hover {
+    color: $link;
+    text-decoration: underline;
+  }
+}
+
 .highlight {
   &-text {
     background-color: #fffcc0;

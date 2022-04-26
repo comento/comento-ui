@@ -14,6 +14,7 @@
 						class="c-empty-box--emphasized-button"
 						color="light-primary"
 						size="large"
+						@click="onClickButton"
 					>
 						<slot name="link" />
 					</Button>
@@ -24,6 +25,7 @@
 						class="c-empty-box--emphasized-button"
 						color="light-primary"
 						size="large"
+						@click="onClickButton"
 					>
 						<slot name="link" />
 					</Button>
@@ -45,6 +47,7 @@
 				type="caption1"
 				align="center"
 				:external="external"
+				@click="onClickButton"
 			>
 				<slot name="link" />
 			</LinkButton>
@@ -94,6 +97,11 @@ export default {
 		full: {
 			type: Boolean,
 			default: true,
+		},
+	},
+	methods: {
+		onClickButton() {
+			this.$emit('click-button');
 		},
 	},
 	components: {

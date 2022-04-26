@@ -1,5 +1,6 @@
 <template>
 	<Typography
+		v-linkify:options="{ className: 'linkified' }"
 		:type="contentItems[type].type"
 		:element="contentItems[type].element"
 		:color="computedColor"
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import linkify from 'vue-linkify';
 import Typography from '@/components/elements/core/typography/Typography';
 import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
@@ -60,6 +62,9 @@ export default {
 		},
 	},
 	components: { Typography },
+	directives: {
+		linkify,
+	},
 };
 </script>
 
