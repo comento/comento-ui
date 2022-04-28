@@ -1,3 +1,12 @@
+## [1.0.7](https://github.com/comento/comento-ui/compare/v1.0.6...v1.0.7) (2022-04-28)
+
+
+### Features
+
+* Typography에서 linkify 제거 ([#879](https://github.com/comento/comento-ui/issues/879)) ([23f9948](https://github.com/comento/comento-ui/commit/23f9948d9aec51baeea1d358964ceb9effb0f3e9))
+
+
+
 ## [1.0.6](https://github.com/comento/comento-ui/compare/v1.0.5...v1.0.6) (2022-04-26)
 
 
