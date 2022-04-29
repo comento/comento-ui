@@ -342,3 +342,23 @@
   @include flex-direction(column);
   @include align-items(center);
 }
+
+@mixin landscape-mobile {
+  @media only screen and (max-width: $screen-md) { @content }
+}
+
+@mixin landscape-pc {
+  @media only screen and (min-width: $screen-md) { @content }
+}
+
+@mixin image-rendering($value) {
+  @if $value == crisp-edges {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  } @else {
+    image-rendering: $value;
+  }
+}
+
