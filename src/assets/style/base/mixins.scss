@@ -342,3 +342,12 @@
   @include flex-direction(column);
   @include align-items(center);
 }
+
+@mixin landscape-mobile {
+  @media only screen and (max-width: $screen-md) { @content }
+}
+
+@mixin landscape-pc {
+  @media only screen and (min-width: $screen-md) { @content }
+}
+
