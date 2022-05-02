@@ -302,7 +302,7 @@ $disabled-background-color: $gray000;
 			border-color: $error;
 
 			&::placeholder {
-				color: $error;
+				color: $red100;
 			}
 		}
 	}
