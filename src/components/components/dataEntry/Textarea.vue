@@ -14,7 +14,7 @@
 			<IconButton
 				v-if="type === 'reply' && !readOnly"
 				class="c-textarea--reply-icon"
-				iconName="IconSendLargeFill"
+				icon-name="IconSendLargeFill"
 				:color="replyIconColor"
 				:disabled="!sync_value"
 				@click="onSubmitReply"
