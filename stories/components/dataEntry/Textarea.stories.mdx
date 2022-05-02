@@ -37,6 +37,10 @@ import Textarea, { textareaTypes } from '@/components/components/dataEntry/Texta
                 type: "boolean",
             },
         },
+        hintMessage: {
+            description: "에러 힌트 메시지",
+            control: { type: "text" },
+        },
     }}
 />
 
@@ -57,6 +61,7 @@ export const Default = (args, { argTypes }) => ({
                       :min-height="minHeight"
                       :read-only="readOnly"
                       :error="error"
+                      :hint-message="hintMessage"
                       :value.sync="valueData"/>
         </div>`,
 });
