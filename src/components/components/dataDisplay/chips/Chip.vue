@@ -315,7 +315,7 @@ export default {
 		}
 	}
 	&.transparent {
-		background-color: transparent;
+		background-color: transparent !important;
 	}
 	/*사이즈*/
 	&.small {
