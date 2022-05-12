@@ -16,7 +16,7 @@
     "copy-fonts": "cp -R src/assets/style/base/fonts.scss dist",
     "copy-mixins": "cp -R src/assets/style/base/mixins.scss dist && cp -R src/assets/style/base/flexbox.scss dist && cp -R src/assets/style/base/functions.scss dist",
     "web-types": "vue-docgen-web-types",
-    "build": "yarn bundle && yarn copy && yarn web-types",
+    "build": "yarn bundle && yarn copy && yarn web-types && yarn make-prop-tags",
     "lint": "vue-cli-service lint",
     "release": "shipjs prepare",
     "storybook": "start-storybook -p 6006 -c .storybook",
@@ -25,7 +25,8 @@
     "deploy-storybook": "storybook-to-ghpages",
     "test": "jest",
     "test:watchAll": "jest --watchAll",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "make-prop-tags": "vue-int --input src/components --output dist --recursive"
   },
   "dependencies": {
     "@storybook/storybook-deployer": "^2.8.7",
@@ -72,6 +73,7 @@
     "sass-loader": "^10.0.2",
     "shipjs": "0.21.1",
     "vue-docgen-web-types": "^0.1.7",
+    "vue-intellisense": "^1.0.1",
     "vue-jest": "^3.0.7",
     "vue-styleguidist": "^4.41.2",
     "vue-template-compiler": "^2.6.11"
