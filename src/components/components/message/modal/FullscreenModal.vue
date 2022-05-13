@@ -19,9 +19,9 @@
 						class="c-pointer"
 					/>
 				</div>
-				<div class="c-fullscreen-modal--header-title">
+				<Typography type="body1" :font-weight="500" class="c-fullscreen-modal--header-title">
 					<slot name="title" />
-				</div>
+				</Typography>
 				<div class="c-fullscreen-modal--header-action">
 					<slot name="action" />
 				</div>
@@ -38,6 +38,7 @@
 import Modal from '@/components/components/message/modal/Modal';
 import Icon from '@/components/elements/core/icon/Icon';
 import Divider from '@/components/elements/utility/Divider';
+import Typography from '@/components/elements/core/typography/Typography';
 
 export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
 export const fullscreenCloseType = ['icon', 'none'];
@@ -97,7 +98,7 @@ export default {
 			}, 300);
 		},
 	},
-	components: { Modal, Icon, Divider },
+	components: { Modal, Icon, Divider, Typography },
 };
 </script>
 
