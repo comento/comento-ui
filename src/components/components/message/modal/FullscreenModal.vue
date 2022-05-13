@@ -47,7 +47,7 @@ export default {
 		 */
 		direction: {
 			type: String,
-			default: 'top',
+			default: 'left',
 			validator(value) {
 				return fullscreenDirection.indexOf(value) !== -1;
 			},
