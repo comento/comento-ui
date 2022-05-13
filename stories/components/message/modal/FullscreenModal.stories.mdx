@@ -33,11 +33,6 @@ import Icon from '@/components/elements/core/icon/Icon';
             defaultValue: "title",
             control: { type: "text" },
         },
-        closeText: {
-            description: "closeType button타입에 들어가는 문구",
-            defaultValue: "접기",
-            control: { type: "text" },
-        },
     }}
 />
 
@@ -50,11 +45,8 @@ export const Default = (args, { argTypes }) => ({
             <FullscreenModal
                 :show.sync="show"
                 :direction="direction"
-                :closeType="closeType"
+                :close-type="closeType"
             >
-                <template v-slot:close>
-                    {{closeText}}
-                </template>
                 <template v-slot:title>
                   {{title}}
                 </template>
@@ -93,12 +85,8 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        direction="left"
-                        closeType="button"
+                        direction="bottom"
                     >
-                        <template v-slot:close>
-                            접기
-                        </template>
                         <template v-slot:content>
                             <div style="padding:16px">
                                 - Title없이 Close이벤트만 할 수 있는 경우의 fullscreenModal입니다.<br />
@@ -129,12 +117,9 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        direction="right"
-                        closeType="icon"
+                        direction="left"
+                        close-type="icon"
                     >
-                        <template v-slot:close>
-                            접기
-                        </template>
                         <template v-slot:title>
                           Title이 있는 경우
                         </template>
@@ -170,7 +155,7 @@ export const Default = (args, { argTypes }) => ({
                     <FullscreenModal
                         :show.sync="show"
                         direction="top"
-                        closeType="none"
+                        close-type="none"
                     >
                         <template v-slot:title>
                             title

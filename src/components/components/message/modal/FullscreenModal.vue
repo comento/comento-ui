@@ -18,9 +18,6 @@
 						color="gray500"
 						class="c-pointer"
 					/>
-					<NarrowButton v-else size="medium">
-						<slot name="close" />
-					</NarrowButton>
 				</div>
 				<div class="c-fullscreen-modal--header-title">
 					<slot name="title" />
@@ -39,12 +36,11 @@
 
 <script>
 import Modal from '@/components/components/message/modal/Modal';
-import NarrowButton from '@/components/components/general/button/NarrowButton';
 import Icon from '@/components/elements/core/icon/Icon';
 import Divider from '@/components/elements/utility/Divider';
 
 export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
-export const fullscreenCloseType = ['icon', 'button', 'none'];
+export const fullscreenCloseType = ['icon', 'none'];
 
 /**
  * @displayName c-fullscreen-modal
@@ -70,7 +66,7 @@ export default {
 			},
 		},
 		/**
-		 *  닫기버튼영역 타입(icon, button, none)
+		 *  닫기버튼영역 타입(icon, none)
 		 */
 		closeType: {
 			type: String,
@@ -101,7 +97,7 @@ export default {
 			}, 300);
 		},
 	},
-	components: { Modal, Icon, Divider, NarrowButton },
+	components: { Modal, Icon, Divider },
 };
 </script>
 
@@ -166,10 +162,6 @@ export default {
 				top: 0;
 				bottom: 0;
 				margin: auto;
-			}
-			&::v-deep .c-narrow-button {
-				display: inline-block;
-				vertical-align: baseline;
 			}
 		}
 		&-title {
