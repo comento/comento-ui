@@ -3,6 +3,7 @@ import FullscreenModal, {fullscreenDirection} from '@/components/components/mess
 import Button, { buttonColors } from '@/components/components/general/button/Button';
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
 import Icon from '@/components/elements/core/icon/Icon';
+import Typography from "@/components/elements/core/typography/Typography";
 
 <Meta
     title="Message/Modal/FullscreenModal"
@@ -110,7 +111,6 @@ export const Default = (args, { argTypes }) => ({
                         :show.sync="show"
                         direction="left"
                         close-type="icon"
-                        show-action-button
                     >
                         <template v-slot:title>
                           Title이 있는 경우
@@ -146,7 +146,7 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        direction="top"
+                        direction="left"
                         close-type="none"
                     >
                         <template v-slot:title>
@@ -157,7 +157,7 @@ export const Default = (args, { argTypes }) => ({
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
-                                - Close 부분을 감추고, Action 이벤트를 추가 할 수 있는 fullscreenModal 입니다.<br />
+                                - Action 이벤트를 추가 할 수 있는 fullscreenModal 입니다.<br />
                                 - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
                                 - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
@@ -227,6 +227,9 @@ export const Default = (args, { argTypes }) => ({
                     <FullscreenModal
                         :show.sync="show"
                         direction="left"
+                        show-action-button
+                        color="light-primary"
+                        :success-callback="() => { show = false; }"
                     >
                         <template v-slot:title>
                             Title이 있는 경우
@@ -235,12 +238,21 @@ export const Default = (args, { argTypes }) => ({
                             <Button size="small" type="outline" @click="onClick">초기화</Button>
                         </template>
                         <template v-slot:content>
-                            <div style="padding:16px">
-                                - Close 부분을 감추고, Action 이벤트를 추가 할 수 있는 fullscreenModal 입니다.<br />
-                                - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
-                                - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
-                                - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
-                            </div>
+                            <Typography type="display1" style="padding:16px">
+                                동해 물과 백두산이 마르고 닳도록<br />
+                                하느님이 보우하사 우리나라 만세<br />
+                                무궁화 삼천리 화려강산<br />
+                                대한 사람 대한으로 길이 보전하세<br />
+                                <br/>
+                                남산 위에 저 소나무 철갑을 두른 듯<br />
+                                바람 서리 불변함은 우리 기상일세<br />
+                                <br/>
+                                가을 하늘 공활한데 높고 구름 없이<br />
+                                밝은 달은 우리 가슴 일편단심일세<br />
+                                <br/>
+                                이 기상과 이 맘으로 충성을 다하여<br />
+                                괴로우나 즐거우나 나라 사랑하세
+                            </Typography>
                         </template>
                     </FullscreenModal>
                 </div>
@@ -251,7 +263,7 @@ export const Default = (args, { argTypes }) => ({
                 },
             },
             components: {
-                FullscreenModal, Button
+                FullscreenModal, Button, Typography
             }
         }}
     </Story>

@@ -1,6 +1,6 @@
 <template>
 	<Modal
-		ref="fullscreen"
+		ref="fullscreenModal"
 		class="c-fullscreen-modal"
 		:show="show"
 		:show-close-button="false"
@@ -8,7 +8,11 @@
 		width="100%"
 		@close="close"
 	>
-		<div v-if="$slots['title'] || $slots['close'] || $slots['action']" class="c-fullscreen-modal--header">
+		<div
+			v-if="$slots['title'] || $slots['close'] || $slots['action']"
+			ref="header"
+			class="c-fullscreen-modal--header"
+		>
 			<div class="c-fullscreen-modal--header-container">
 				<Icon name="IconBackwardLargeLine" color="gray800" class="mr-4" @click.native="close()" />
 				<Typography type="body1" :font-weight="500" align="left">
@@ -20,7 +24,7 @@
 			</div>
 			<Divider />
 		</div>
-		<div class="c-fullscreen-modal--content">
+		<div ref="content" class="c-fullscreen-modal--content">
 			<slot name="content" />
 		</div>
 		<div v-if="showActionButton" ref="actionButton" class="c-fullscreen-modal--action-button">
@@ -98,6 +102,11 @@ export default {
 			},
 		},
 	},
+	data() {
+		return {
+			scroll: false,
+		};
+	},
 	computed: {
 		computedDirection() {
 			return this.direction;
@@ -109,23 +118,38 @@ export default {
 			return { scroll: this.scroll };
 		},
 		classes() {
-			return [this.computedDirection, this.computedWithActionButton];
+			return [this.computedDirection, this.computedWithActionButton, this.computedScroll];
 		},
 	},
 	updated() {
 		if (this.show) {
+			this.setScroll();
 			setTimeout(() => {
-				this.$refs.fullscreen.$el.classList.add('active');
+				this.$refs.fullscreenModal.$el.classList.add('active');
 			});
 		}
 	},
 	methods: {
 		close() {
-			this.$refs.fullscreen.$el.classList.remove('active');
+			this.$refs.fullscreenModal.$el.classList.remove('active');
 			setTimeout(() => {
 				this.$emit('update:show', false);
 				this.$emit('close');
 			}, 300);
+		},
+		setScroll() {
+			this.$nextTick(() => {
+				if (this.$slots['content']) {
+					const $contentHeight = this.$refs.content.firstChild.clientHeight;
+					const $fullscreenModalHeight = this.$refs.fullscreenModal.$el.clientHeight;
+					const $headerHeight = this.$refs.header?.clientHeight;
+					const $actionButtonHeight = this.$refs.actionButton?.clientHeight;
+
+					if ($contentHeight > $fullscreenModalHeight - ($headerHeight + $actionButtonHeight)) {
+						this.scroll = true;
+					}
+				}
+			});
 		},
 	},
 	components: {
