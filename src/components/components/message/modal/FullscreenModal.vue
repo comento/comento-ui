@@ -4,7 +4,7 @@
 		class="c-fullscreen-modal"
 		:show="show"
 		:show-close-button="false"
-		:class="[computedDirection]"
+		:class="classes"
 		width="100%"
 		@close="close"
 	>
@@ -23,6 +23,18 @@
 		<div class="c-fullscreen-modal--content">
 			<slot name="content" />
 		</div>
+		<div v-if="showActionButton" ref="actionButton" class="c-fullscreen-modal--action-button">
+			<Button
+				size="large"
+				:disabled="disabled"
+				:loading="loading"
+				:color="buttonColor"
+				full
+				@click="successCallback"
+			>
+				{{ successMessage }}
+			</Button>
+		</div>
 	</Modal>
 </template>
 
@@ -31,6 +43,7 @@ import Modal from '@/components/components/message/modal/Modal';
 import Icon from '@/components/elements/core/icon/Icon';
 import Divider from '@/components/elements/utility/Divider';
 import Typography from '@/components/elements/core/typography/Typography';
+import Button, { buttonColors } from '@/components/components/general/button/Button';
 
 export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
 
@@ -57,10 +70,46 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		showActionButton: {
+			type: Boolean,
+			default: false,
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
+		loading: {
+			type: Boolean,
+			default: false,
+		},
+		successCallback: {
+			type: Function,
+			default: () => {},
+		},
+		successMessage: {
+			type: String,
+			default: '확인',
+		},
+		buttonColor: {
+			type: String,
+			default: 'primary',
+			validator(value) {
+				return buttonColors.includes(value);
+			},
+		},
 	},
 	computed: {
 		computedDirection() {
 			return this.direction;
+		},
+		computedWithActionButton() {
+			return { 'with-action-button': this.showActionButton };
+		},
+		computedScroll() {
+			return { scroll: this.scroll };
+		},
+		classes() {
+			return [this.computedDirection, this.computedWithActionButton];
 		},
 	},
 	updated() {
@@ -79,7 +128,13 @@ export default {
 			}, 300);
 		},
 	},
-	components: { Modal, Icon, Divider, Typography },
+	components: {
+		Modal,
+		Icon,
+		Divider,
+		Typography,
+		Button,
+	},
 };
 </script>
 
@@ -120,6 +175,7 @@ export default {
 			@include transform(translateX(0));
 		}
 	}
+
 	&--header {
 		position: fixed;
 		top: 0;
@@ -145,6 +201,8 @@ export default {
 		}
 		+ .c-fullscreen-modal--content {
 			margin-top: 49px;
+			overflow-y: auto;
+			height: calc(100vh - 49px);
 		}
 	}
 
@@ -160,6 +218,41 @@ export default {
 					top: 12px;
 					right: 12px;
 				}
+			}
+		}
+	}
+
+	&--action-button {
+		padding: 20px 32px 24px 32px;
+	}
+
+	&.scroll {
+		.c-fullscreen-modal--content {
+			overflow-y: scroll;
+			padding-bottom: 4px;
+
+			&:after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 30px;
+				left: 0;
+				bottom: calc(40px - 16px);
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0.6) 40%,
+					rgba(255, 255, 255, 1) 90%
+				);
+			}
+		}
+	}
+
+	&.with-action-button {
+		.c-fullscreen-modal--content {
+			max-height: calc(100vh - (49px + 92px));
+			&:after {
+				bottom: 92px;
 			}
 		}
 	}

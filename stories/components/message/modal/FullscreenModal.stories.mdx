@@ -1,6 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import FullscreenModal, {fullscreenDirection} from '@/components/components/message/modal/FullscreenModal';
-import Button from '@/components/components/general/button/Button';
+import Button, { buttonColors } from '@/components/components/general/button/Button';
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
 import Icon from '@/components/elements/core/icon/Icon';
 
@@ -26,6 +26,32 @@ import Icon from '@/components/elements/core/icon/Icon';
             defaultValue: "title",
             control: { type: "text" },
         },
+        loading: {
+            description: "버튼 로딩",
+            control: {
+                type: "boolean",
+            },
+        },
+        successMessage: {
+            description: "버튼명",
+            defaultValue: "확인",
+            control: {
+                type: "text",
+            },
+        },
+        showActionButton: {
+            description: "버튼 보이기",
+            control: {
+                type: "boolean",
+            },
+        },
+        buttonColor: {
+            description: "action 버튼 색상",
+            control: {
+                type: "select",
+                options: buttonColors,
+            },
+        },
     }}
 />
 
@@ -38,6 +64,11 @@ export const Default = (args, { argTypes }) => ({
             <FullscreenModal
                 :show.sync="show"
                 :direction="direction"
+                :show-action-button="showActionButton"
+                :disabled="disabled"
+                :loading="loading"
+                :success-callback="successCallback"
+                :success-message="successMessage"
             >
                 <template v-slot:title>
                   {{title}}
@@ -79,6 +110,7 @@ export const Default = (args, { argTypes }) => ({
                         :show.sync="show"
                         direction="left"
                         close-type="icon"
+                        show-action-button
                     >
                         <template v-slot:title>
                           Title이 있는 경우
