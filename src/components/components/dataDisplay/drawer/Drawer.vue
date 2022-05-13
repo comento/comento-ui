@@ -1,9 +1,9 @@
 <template>
 	<div class="c-application c-drawer">
 		<transition name="fade" mode="out-in">
-			<div v-if="$slots.default" :style="indexCls()" :class="{ mask }" @click="onMask" />
+			<div v-if="$slots.default" :style="indexClass()" :class="{ mask }" @click="onMask" />
 		</transition>
-		<transition :enter-active-class="directionInCls" :leave-active-class="directionOutCls">
+		<transition :enter-active-class="directionInClass" :leave-active-class="directionOutClass">
 			<div
 				v-if="$slots.default"
 				:class="{ closeable, [direction.toLowerCase()]: true }"
@@ -75,13 +75,13 @@ export default {
 		},
 	},
 	computed: {
-		directionInCls() {
+		directionInClass() {
 			return `animated bounceIn${this.direction.toLowerCase()}`;
 		},
-		directionOutCls() {
+		directionOutClass() {
 			return `animated bounceOut${this.direction.toLowerCase()}`;
 		},
-		directionCloseCls() {
+		directionCloseClass() {
 			return `close-${this.direction.toLowerCase()}`;
 		},
 		computedIndex() {
@@ -100,7 +100,7 @@ export default {
 		styles() {
 			return {
 				...this.$_setPadding(this.computedPaddings),
-				...this.indexCls(),
+				...this.indexClass(),
 				...this.computedMaxHeight,
 			};
 		},
@@ -114,7 +114,7 @@ export default {
 				this.close();
 			}
 		},
-		indexCls(offset = 0) {
+		indexClass(offset = 0) {
 			return {
 				zIndex: this.computedIndex + offset,
 			};
