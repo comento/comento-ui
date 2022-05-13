@@ -3,10 +3,10 @@
 		<transition name="fade" mode="out-in">
 			<div v-if="$slots.default" :style="indexCls()" :class="{ mask }" @click="onMask" />
 		</transition>
-		<transition :enter-active-class="alignInCls" :leave-active-class="alignOutCls">
+		<transition :enter-active-class="directionInCls" :leave-active-class="directionOutCls">
 			<div
 				v-if="$slots.default"
-				:class="{ closeable, [align.toLowerCase()]: true }"
+				:class="{ closeable, [direction.toLowerCase()]: true }"
 				class="c-drawer"
 				:style="styles"
 			>
@@ -27,7 +27,7 @@ export default {
 	name: 'Drawer',
 	mixins: [paddingMixin, scrollMixin],
 	props: {
-		align: {
+		direction: {
 			type: String,
 			default: 'right',
 			validator(value) {
@@ -75,14 +75,14 @@ export default {
 		},
 	},
 	computed: {
-		alignInCls() {
-			return `animated bounceIn${this.align.toLowerCase()}`;
+		directionInCls() {
+			return `animated bounceIn${this.direction.toLowerCase()}`;
 		},
-		alignOutCls() {
-			return `animated bounceOut${this.align.toLowerCase()}`;
+		directionOutCls() {
+			return `animated bounceOut${this.direction.toLowerCase()}`;
 		},
-		alignCloseCls() {
-			return `close-${this.align.toLowerCase()}`;
+		directionCloseCls() {
+			return `close-${this.direction.toLowerCase()}`;
 		},
 		computedIndex() {
 			return this.zIndex;

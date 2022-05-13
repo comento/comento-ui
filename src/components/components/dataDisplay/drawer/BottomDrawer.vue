@@ -2,7 +2,7 @@
 	<Drawer
 		:mask-closable="true"
 		:z-index="1002"
-		align="down"
+		direction="down"
 		:closeable="showCloseButton"
 		:max-height="computedMaxHeight"
 		@close="$emit('close')"

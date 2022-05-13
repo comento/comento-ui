@@ -4,7 +4,7 @@
 		class="c-fullscreen-modal"
 		:show="show"
 		:show-close-button="false"
-		:class="[computedAlign]"
+		:class="[computedDirection]"
 		width="100%"
 		@close="close"
 	>
@@ -43,8 +43,8 @@ import NarrowButton from '@/components/components/general/button/NarrowButton';
 import Icon from '@/components/elements/core/icon/Icon';
 import Divider from '@/components/elements/utility/Divider';
 
-export const fullScreenAlign = ['left', 'right', 'top', 'bottom', 'none'];
-export const fullScreenCloseType = ['icon', 'button', 'none'];
+export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
+export const fullscreenCloseType = ['icon', 'button', 'none'];
 
 /**
  * @displayName c-fullscreen-modal
@@ -53,13 +53,13 @@ export default {
 	name: 'FullscreenModal',
 	props: {
 		/**
-		 * 정렬(left, right, top, bottom, none)
+		 * 방향(left, right, top, bottom, none)
 		 */
-		align: {
+		direction: {
 			type: String,
 			default: 'top',
 			validator(value) {
-				return fullScreenAlign.indexOf(value) !== -1;
+				return fullscreenDirection.indexOf(value) !== -1;
 			},
 		},
 		show: {
@@ -76,13 +76,13 @@ export default {
 			type: String,
 			default: 'icon',
 			validator(value) {
-				return fullScreenCloseType.indexOf(value) !== -1;
+				return fullscreenCloseType.indexOf(value) !== -1;
 			},
 		},
 	},
 	computed: {
-		computedAlign() {
-			return this.align;
+		computedDirection() {
+			return this.direction;
 		},
 	},
 	updated() {

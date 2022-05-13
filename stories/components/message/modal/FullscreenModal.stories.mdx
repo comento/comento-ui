@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FullscreenModal, {fullScreenAlign, fullScreenCloseType} from '@/components/components/message/modal/FullscreenModal';
+import FullscreenModal, {fullscreenDirection, fullscreenCloseType} from '@/components/components/message/modal/FullscreenModal';
 import Button from '@/components/components/general/button/Button';
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
 import Icon from '@/components/elements/core/icon/Icon';
@@ -14,18 +14,18 @@ import Icon from '@/components/elements/core/icon/Icon';
                 type: "boolean",
             },
         },
-        align: {
+        direction: {
             description: "모달 interaction 시작방향",
             control: {
                 type: "select",
-                options: fullScreenAlign,
+                options: fullscreenDirection,
             },
         },
         closeType: {
             description: "모달 interaction 시작방향",
             control: {
                 type: "select",
-                options: fullScreenCloseType,
+                options: fullscreenCloseType,
             },
         },
         title: {
@@ -49,7 +49,7 @@ export const Default = (args, { argTypes }) => ({
             <Button @click="show = true">Open</Button>
             <FullscreenModal
                 :show.sync="show"
-                :align="align"
+                :direction="direction"
                 :closeType="closeType"
             >
                 <template v-slot:close>
@@ -93,7 +93,7 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="left"
+                        direction="left"
                         closeType="button"
                     >
                         <template v-slot:close>
@@ -129,7 +129,7 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="right"
+                        direction="right"
                         closeType="icon"
                     >
                         <template v-slot:close>
@@ -169,7 +169,7 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="top"
+                        direction="top"
                         closeType="none"
                     >
                         <template v-slot:title>
@@ -208,7 +208,7 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="none"
+                        direction="none"
                     >
                         <template v-slot:content>
                             <div class="pa-16 flex">
@@ -224,7 +224,7 @@ export const Default = (args, { argTypes }) => ({
                             <div style="padding:25px">
                                 content영역만 있을 경우 보여지는 fullcreenModal 입니다.<br>
                                 content영역만 있는 경우, 페이지처럼 보이도록 의도할 수 있으니, <br>
-                                align값을 none으로 설정하면 됩니다. <br>
+                                direction값을 none으로 설정하면 됩니다. <br>
                             </div>
                         </template>
                     </FullscreenModal>
@@ -249,7 +249,7 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="bottom"
+                        direction="bottom"
                         closeType="icon"
                     >
                         <template v-slot:title>
