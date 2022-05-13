@@ -140,12 +140,12 @@ export default {
 		setScroll() {
 			this.$nextTick(() => {
 				if (this.$slots['content']) {
-					const $contentHeight = this.$refs.content.firstChild.clientHeight;
-					const $fullscreenModalHeight = this.$refs.fullscreenModal.$el.clientHeight;
-					const $headerHeight = this.$refs.header?.clientHeight;
-					const $actionButtonHeight = this.$refs.actionButton?.clientHeight;
+					const contentHeight = this.$refs.content.firstChild.clientHeight;
+					const fullscreenModalHeight = this.$refs.fullscreenModal.$el.clientHeight;
+					const headerHeight = this.$refs.header?.clientHeight;
+					const actionButtonHeight = this.$refs.actionButton?.clientHeight;
 
-					if ($contentHeight > $fullscreenModalHeight - ($headerHeight + $actionButtonHeight)) {
+					if (contentHeight > fullscreenModalHeight - (headerHeight + actionButtonHeight)) {
 						this.scroll = true;
 					}
 				}
