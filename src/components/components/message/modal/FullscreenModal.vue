@@ -10,14 +10,8 @@
 	>
 		<div v-if="$slots['title'] || $slots['close'] || $slots['action']" class="c-fullscreen-modal--header">
 			<div class="c-fullscreen-modal--header-container">
-				<div v-if="closeType !== 'none'" class="c-fullscreen-modal--header-close" @click="close()">
-					<Icon
-						v-if="closeType === 'icon'"
-						name="IconCloseLargeLine"
-						:rotate="-90"
-						color="gray500"
-						class="c-pointer"
-					/>
+				<div class="c-fullscreen-modal--header-close" @click="close()">
+					<Icon name="IconBackwardLargeLine" color="gray800" class="c-pointer" />
 				</div>
 				<Typography type="body1" :font-weight="500" class="c-fullscreen-modal--header-title">
 					<slot name="title" />
@@ -41,7 +35,6 @@ import Divider from '@/components/elements/utility/Divider';
 import Typography from '@/components/elements/core/typography/Typography';
 
 export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
-export const fullscreenCloseType = ['icon', 'none'];
 
 /**
  * @displayName c-fullscreen-modal
@@ -64,16 +57,6 @@ export default {
 			default: false,
 			validator(value) {
 				return typeof value === 'boolean';
-			},
-		},
-		/**
-		 *  닫기버튼영역 타입(icon, none)
-		 */
-		closeType: {
-			type: String,
-			default: 'icon',
-			validator(value) {
-				return fullscreenCloseType.indexOf(value) !== -1;
 			},
 		},
 	},

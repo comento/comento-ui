@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FullscreenModal, {fullscreenDirection, fullscreenCloseType} from '@/components/components/message/modal/FullscreenModal';
+import FullscreenModal, {fullscreenDirection} from '@/components/components/message/modal/FullscreenModal';
 import Button from '@/components/components/general/button/Button';
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
 import Icon from '@/components/elements/core/icon/Icon';
@@ -21,13 +21,6 @@ import Icon from '@/components/elements/core/icon/Icon';
                 options: fullscreenDirection,
             },
         },
-        closeType: {
-            description: "모달 interaction 시작방향",
-            control: {
-                type: "select",
-                options: fullscreenCloseType,
-            },
-        },
         title: {
             description: "모달 title",
             defaultValue: "title",
@@ -45,7 +38,6 @@ export const Default = (args, { argTypes }) => ({
             <FullscreenModal
                 :show.sync="show"
                 :direction="direction"
-                :close-type="closeType"
             >
                 <template v-slot:title>
                   {{title}}
@@ -73,38 +65,6 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
-### Slot-Close
-<Canvas>
-    <Story name="Slot-Close" height="100px">
-        {{
-            data: () => ({
-                show: false,
-            }),
-            template: `
-                <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
-                        :show.sync="show"
-                        direction="bottom"
-                    >
-                        <template v-slot:content>
-                            <div style="padding:16px">
-                                - Title없이 Close이벤트만 할 수 있는 경우의 fullscreenModal입니다.<br />
-                                - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
-                                - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
-                                - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
-                            </div>
-                        </template>
-                    </FullscreenModal>
-                </div>
-            `,
-            components: {
-                FullscreenModal, Button
-            }
-        }}
-    </Story>
-</Canvas>
-
 ### Slot-Title
 <Canvas>
     <Story name="Slot-Title" height="100px">
