@@ -10,10 +10,8 @@
 	>
 		<div v-if="$slots['title'] || $slots['close'] || $slots['action']" class="c-fullscreen-modal--header">
 			<div class="c-fullscreen-modal--header-container">
-				<div class="c-fullscreen-modal--header-close" @click="close()">
-					<Icon name="IconBackwardLargeLine" color="gray800" class="c-pointer" />
-				</div>
-				<Typography type="body1" :font-weight="500" class="c-fullscreen-modal--header-title">
+				<Icon name="IconBackwardLargeLine" color="gray800" class="mr-4" @click.native="close()" />
+				<Typography type="body1" :font-weight="500" align="left">
 					<slot name="title" />
 				</Typography>
 				<div class="c-fullscreen-modal--header-action">
@@ -129,33 +127,15 @@ export default {
 		width: 100%;
 
 		&-container {
+			@include flexbox();
+			@include flex-direction(row);
+			@include align-items(center);
 			padding: 0 16px;
 			position: relative;
 			line-height: 48px;
 			height: 48px;
 		}
-		&-close {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 16px;
-			margin: auto;
-			z-index: 1;
-			&::v-deep .c-icon {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				margin: auto;
-			}
-		}
-		&-title {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			text-align: center;
-			z-index: 0;
-		}
+
 		&-action {
 			position: absolute;
 			top: 50%;

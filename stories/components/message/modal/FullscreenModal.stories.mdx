@@ -121,7 +121,7 @@ export const Default = (args, { argTypes }) => ({
                             title
                         </template>
                         <template v-slot:action>
-                            <Button size="small" type="outline"  @click="show = false">초기화</Button>
+                            <Button size="small" type="outline"  @click="show = false">닫기</Button>
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
@@ -157,7 +157,7 @@ export const Default = (args, { argTypes }) => ({
                     >
                         <template v-slot:content>
                             <div class="pa-16 flex">
-                                <div class="mr-8" @click="show = false" style="float:left; margin-top:4px">
+                                <div class="mr-8" @click="show = false" style="margin: 4px 0 0 4px; display: flex; align-items: center;">
                                     <Icon name="IconArrowLargeLine" :rotate="-90"></Icon>
                                 </div>
                                 <SearchInput
@@ -194,14 +194,13 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        direction="bottom"
-                        closeType="icon"
+                        direction="left"
                     >
                         <template v-slot:title>
-                            title
+                            Title이 있는 경우
                         </template>
                         <template v-slot:action>
-                            <Button size="small" type="outline" >초기화</Button>
+                            <Button size="small" type="outline" @click="onClick">초기화</Button>
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
@@ -214,6 +213,11 @@ export const Default = (args, { argTypes }) => ({
                     </FullscreenModal>
                 </div>
             `,
+            methods: {
+                onClick() {
+                    alert('click!');
+                },
+            },
             components: {
                 FullscreenModal, Button
             }
