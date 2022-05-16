@@ -1,3 +1,21 @@
+# [1.1.0](https://github.com/comento/comento-ui/compare/v1.0.9...v1.1.0) (2022-05-16)
+
+
+### Bug Fixes
+
+* Chip transparent 우선순위 변경 ([#887](https://github.com/comento/comento-ui/issues/887)) ([a9e139c](https://github.com/comento/comento-ui/commit/a9e139cd2e299e08ad1e36fd7b42e97ffe73df0e))
+* medium ListItem 상하 패딩 수정 ([#886](https://github.com/comento/comento-ui/issues/886)) ([c28a8ff](https://github.com/comento/comento-ui/commit/c28a8ff4b32141008fc76729ab6b732f519bf86b))
+* 본문이 길어질 경우 아이콘이 축소 되는 이슈 해결 ([#885](https://github.com/comento/comento-ui/issues/885)) ([880861c](https://github.com/comento/comento-ui/commit/880861c8001c1401010c582ee32f55cd076cb4f0))
+
+
+### Features
+
+* AlarmList에서 Divider 제거 ([#888](https://github.com/comento/comento-ui/issues/888)) ([b593ad2](https://github.com/comento/comento-ui/commit/b593ad29d2f17e20591658e89f61f3e94c4247e7))
+* FullscreenModal 변경 ([#890](https://github.com/comento/comento-ui/issues/890)) ([57b34aa](https://github.com/comento/comento-ui/commit/57b34aa163305f9b8221db0cdc9925f97734a8f3))
+* props 이름 변경(align -> direction) ([#889](https://github.com/comento/comento-ui/issues/889)) ([e3f9ab7](https://github.com/comento/comento-ui/commit/e3f9ab7793a6c3735310e7f05ae02ecdd3d9c7bf))
+
+
+
 ## [1.0.9](https://github.com/comento/comento-ui/compare/v1.0.8...v1.0.9) (2022-04-29)
 
 
