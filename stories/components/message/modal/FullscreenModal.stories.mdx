@@ -4,6 +4,7 @@ import Button, { buttonColors } from '@/components/components/general/button/But
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from "@/components/elements/core/typography/Typography";
+import Divider from "@/components/elements/utility/Divider";
 
 <Meta
     title="Message/Modal/FullscreenModal"
@@ -181,14 +182,11 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <Button @click="show = true">Open</Button>
-                    <FullscreenModal
-                        :show.sync="show"
-                        direction="none"
-                    >
+                    <FullscreenModal :show.sync="show">
                         <template v-slot:content>
-                            <div class="pa-16 flex">
-                                <div class="mr-8" @click="show = false" style="margin: 4px 0 0 4px; display: flex; align-items: center;">
-                                    <Icon name="IconArrowLargeLine" :rotate="-90"></Icon>
+                            <div class="py-6 px-16 flex">
+                                <div class="mr-4" @click="show = false" style="display: flex; align-items: center;">
+                                    <Icon name="IconBackwardLargeLine" color="gray800" />
                                 </div>
                                 <SearchInput
                                     ref="searchModalInput"
@@ -196,17 +194,17 @@ export const Default = (args, { argTypes }) => ({
                                     full
                                 ></SearchInput>
                             </div>
+                            <Divider color="gray200" />
                             <div style="padding:25px">
-                                content영역만 있을 경우 보여지는 fullcreenModal 입니다.<br>
-                                content영역만 있는 경우, 페이지처럼 보이도록 의도할 수 있으니, <br>
-                                direction값을 none으로 설정하면 됩니다. <br>
+                                content영역만 있을 경우 보여지는 fullcreenModal입니다.<br>
+                                content영역만 있는 경우, 페이지처럼 보이도록 의도할 수 있습니다.
                             </div>
                         </template>
                     </FullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button, SearchInput, Icon
+                FullscreenModal, Button, SearchInput, Icon, Divider
             }
         }}
     </Story>

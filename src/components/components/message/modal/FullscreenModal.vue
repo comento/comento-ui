@@ -2,7 +2,7 @@
 	<Modal
 		ref="fullscreenModal"
 		class="c-fullscreen-modal"
-		:show="show"
+		:show="showFullscreenModal"
 		:show-close-button="false"
 		:class="classes"
 		width="100%"
@@ -29,7 +29,7 @@
 		</div>
 		<div v-if="showActionButton" ref="actionButton" class="c-fullscreen-modal--action-button">
 			<Button
-				size="large"
+				size="xlarge"
 				:disabled="disabled"
 				:loading="loading"
 				:color="buttonColor"
@@ -105,6 +105,7 @@ export default {
 	data() {
 		return {
 			scroll: false,
+			showFullscreenModal: false,
 		};
 	},
 	computed: {
@@ -121,18 +122,24 @@ export default {
 			return [this.computedDirection, this.computedWithActionButton, this.computedScroll];
 		},
 	},
-	updated() {
-		if (this.show) {
-			this.setScroll();
-			setTimeout(() => {
-				this.$refs.fullscreenModal.$el.classList.add('active');
-			});
-		}
+	watch: {
+		show(show) {
+			if (show) {
+				this.showFullscreenModal = true;
+				this.setScroll();
+				setTimeout(() => {
+					this.$refs.fullscreenModal.$el.classList.add('active');
+				});
+			} else {
+				this.close();
+			}
+		},
 	},
 	methods: {
 		close() {
 			this.$refs.fullscreenModal.$el.classList.remove('active');
 			setTimeout(() => {
+				this.showFullscreenModal = false;
 				this.$emit('update:show', false);
 				this.$emit('close');
 			}, 300);
@@ -247,7 +254,7 @@ export default {
 	}
 
 	&--action-button {
-		padding: 20px 32px 24px 32px;
+		padding: 20px 16px 24px 16px;
 	}
 
 	&.scroll {
