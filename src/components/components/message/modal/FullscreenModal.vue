@@ -1,50 +1,55 @@
 <template>
 	<Modal
-		ref="fullscreen"
+		ref="fullscreenModal"
 		class="c-fullscreen-modal"
 		:show="show"
 		:show-close-button="false"
-		:class="[computedAlign]"
+		:class="classes"
 		width="100%"
 		@close="close"
 	>
-		<div v-if="$slots['title'] || $slots['close'] || $slots['action']" class="c-fullscreen-modal--header">
+		<div
+			v-if="$slots['title'] || $slots['close'] || $slots['action']"
+			ref="header"
+			class="c-fullscreen-modal--header"
+		>
 			<div class="c-fullscreen-modal--header-container">
-				<div v-if="closeType !== 'none'" class="c-fullscreen-modal--header-close" @click="close()">
-					<Icon
-						v-if="closeType === 'icon'"
-						name="IconCloseLargeLine"
-						:rotate="-90"
-						color="gray500"
-						class="c-pointer"
-					/>
-					<NarrowButton v-else size="medium">
-						<slot name="close" />
-					</NarrowButton>
-				</div>
-				<div class="c-fullscreen-modal--header-title">
+				<Icon name="IconBackwardLargeLine" color="gray800" class="mr-4" @click.native="close()" />
+				<Typography type="body1" :font-weight="500" align="left">
 					<slot name="title" />
-				</div>
+				</Typography>
 				<div class="c-fullscreen-modal--header-action">
 					<slot name="action" />
 				</div>
 			</div>
 			<Divider />
 		</div>
-		<div class="c-fullscreen-modal--content">
+		<div ref="content" class="c-fullscreen-modal--content">
 			<slot name="content" />
+		</div>
+		<div v-if="showActionButton" ref="actionButton" class="c-fullscreen-modal--action-button">
+			<Button
+				size="large"
+				:disabled="disabled"
+				:loading="loading"
+				:color="buttonColor"
+				full
+				@click="successCallback"
+			>
+				{{ successMessage }}
+			</Button>
 		</div>
 	</Modal>
 </template>
 
 <script>
 import Modal from '@/components/components/message/modal/Modal';
-import NarrowButton from '@/components/components/general/button/NarrowButton';
 import Icon from '@/components/elements/core/icon/Icon';
 import Divider from '@/components/elements/utility/Divider';
+import Typography from '@/components/elements/core/typography/Typography';
+import Button, { buttonColors } from '@/components/components/general/button/Button';
 
-export const fullScreenAlign = ['left', 'right', 'top', 'bottom', 'none'];
-export const fullScreenCloseType = ['icon', 'button', 'none'];
+export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
 
 /**
  * @displayName c-fullscreen-modal
@@ -53,13 +58,13 @@ export default {
 	name: 'FullscreenModal',
 	props: {
 		/**
-		 * 정렬(left, right, top, bottom, none)
+		 * 방향(left, right, top, bottom, none)
 		 */
-		align: {
+		direction: {
 			type: String,
-			default: 'top',
+			default: 'left',
 			validator(value) {
-				return fullScreenAlign.indexOf(value) !== -1;
+				return fullscreenDirection.indexOf(value) !== -1;
 			},
 		},
 		show: {
@@ -69,39 +74,91 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
-		/**
-		 *  닫기버튼영역 타입(icon, button, none)
-		 */
-		closeType: {
+		showActionButton: {
+			type: Boolean,
+			default: false,
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
+		loading: {
+			type: Boolean,
+			default: false,
+		},
+		successCallback: {
+			type: Function,
+			default: () => {},
+		},
+		successMessage: {
 			type: String,
-			default: 'icon',
+			default: '확인',
+		},
+		buttonColor: {
+			type: String,
+			default: 'primary',
 			validator(value) {
-				return fullScreenCloseType.indexOf(value) !== -1;
+				return buttonColors.includes(value);
 			},
 		},
 	},
+	data() {
+		return {
+			scroll: false,
+		};
+	},
 	computed: {
-		computedAlign() {
-			return this.align;
+		computedDirection() {
+			return this.direction;
+		},
+		computedWithActionButton() {
+			return { 'with-action-button': this.showActionButton };
+		},
+		computedScroll() {
+			return { scroll: this.scroll };
+		},
+		classes() {
+			return [this.computedDirection, this.computedWithActionButton, this.computedScroll];
 		},
 	},
 	updated() {
 		if (this.show) {
+			this.setScroll();
 			setTimeout(() => {
-				this.$refs.fullscreen.$el.classList.add('active');
+				this.$refs.fullscreenModal.$el.classList.add('active');
 			});
 		}
 	},
 	methods: {
 		close() {
-			this.$refs.fullscreen.$el.classList.remove('active');
+			this.$refs.fullscreenModal.$el.classList.remove('active');
 			setTimeout(() => {
 				this.$emit('update:show', false);
 				this.$emit('close');
 			}, 300);
 		},
+		setScroll() {
+			this.$nextTick(() => {
+				if (this.$slots['content']) {
+					const contentHeight = this.$refs.content.firstChild.clientHeight;
+					const fullscreenModalHeight = this.$refs.fullscreenModal.$el.clientHeight;
+					const headerHeight = this.$refs.header?.clientHeight;
+					const actionButtonHeight = this.$refs.actionButton?.clientHeight;
+
+					if (contentHeight > fullscreenModalHeight - (headerHeight + actionButtonHeight)) {
+						this.scroll = true;
+					}
+				}
+			});
+		},
 	},
-	components: { Modal, Icon, Divider, NarrowButton },
+	components: {
+		Modal,
+		Icon,
+		Divider,
+		Typography,
+		Button,
+	},
 };
 </script>
 
@@ -142,6 +199,7 @@ export default {
 			@include transform(translateX(0));
 		}
 	}
+
 	&--header {
 		position: fixed;
 		top: 0;
@@ -149,37 +207,15 @@ export default {
 		width: 100%;
 
 		&-container {
+			@include flexbox();
+			@include flex-direction(row);
+			@include align-items(center);
 			padding: 0 16px;
 			position: relative;
 			line-height: 48px;
 			height: 48px;
 		}
-		&-close {
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 16px;
-			margin: auto;
-			z-index: 1;
-			&::v-deep .c-icon {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				margin: auto;
-			}
-			&::v-deep .c-narrow-button {
-				display: inline-block;
-				vertical-align: baseline;
-			}
-		}
-		&-title {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			text-align: center;
-			z-index: 0;
-		}
+
 		&-action {
 			position: absolute;
 			top: 50%;
@@ -189,6 +225,8 @@ export default {
 		}
 		+ .c-fullscreen-modal--content {
 			margin-top: 49px;
+			overflow-y: auto;
+			height: calc(100vh - 49px);
 		}
 	}
 
@@ -204,6 +242,41 @@ export default {
 					top: 12px;
 					right: 12px;
 				}
+			}
+		}
+	}
+
+	&--action-button {
+		padding: 20px 32px 24px 32px;
+	}
+
+	&.scroll {
+		.c-fullscreen-modal--content {
+			overflow-y: scroll;
+			padding-bottom: 4px;
+
+			&:after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 30px;
+				left: 0;
+				bottom: calc(40px - 16px);
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(255, 255, 255, 0.6) 40%,
+					rgba(255, 255, 255, 1) 90%
+				);
+			}
+		}
+	}
+
+	&.with-action-button {
+		.c-fullscreen-modal--content {
+			max-height: calc(100vh - (49px + 92px));
+			&:after {
+				bottom: 92px;
 			}
 		}
 	}

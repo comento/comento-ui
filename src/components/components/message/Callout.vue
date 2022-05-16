@@ -17,16 +17,15 @@
 					<Typography class="c-callout--message" color="gray700" :type="computedFontType">
 						<slot />
 					</Typography>
+					<!-- 닫기 -->
+					<Icon
+						v-if="closable"
+						class="c-callout--close-button c-pointer"
+						color="gray300"
+						:name="computedCloseIconName"
+						@click.stop.capture="handleClose"
+					/>
 				</div>
-
-				<!-- 닫기 -->
-				<Icon
-					v-if="closable"
-					class="c-callout--close-button c-pointer"
-					color="gray300"
-					:name="computedCloseIconName"
-					@click.stop.capture="handleClose"
-				/>
 			</div>
 		</div>
 	</transition>
@@ -230,6 +229,7 @@ export default {
 	}
 	&--close-button {
 		margin-left: 4px;
+		flex-shrink: 0;
 	}
 }
 

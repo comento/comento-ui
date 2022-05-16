@@ -5,10 +5,9 @@ import NewCol from '@/components/layout/NewCol';
 import AlarmList from '@/components/components/dataDisplay/list/alarmList/AlarmList';
 import AlarmListItem from '@/components/components/dataDisplay/list/alarmList/AlarmListItem';
 import Typography from '@/components/elements/core/typography/Typography';
-import Divider from '@/components/elements/utility/Divider';
 
 storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => ({
-	components: { NewGrid, NewRow, NewCol, AlarmList, AlarmListItem, Typography, Divider },
+	components: { NewGrid, NewRow, NewCol, AlarmList, AlarmListItem, Typography },
 	data() {
 		return {
 			alarms: [
@@ -36,20 +35,21 @@ storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => 
 			<NewRow>
 				<NewCol :col-lg="3" :col-sm="12">
 					<AlarmList>
-						<template v-for="({icon, message, date, confirm_style}, index) in alarms">
-							<AlarmListItem :key="'alarm-list-item-' + index" :class="confirm_style">
-								<template v-slot:icon>
-									<img :src="'https://cdn.comento.kr/images/icon/alarm/icon-alarm-' + icon + '.svg'" />
-								</template>
-								<template v-slot:message>
-									{{ message }}
-								</template>
-								<template v-slot:date>
-									{{ date }}
-								</template>
-							</AlarmListItem>
-							<Divider :key="'alarm-divider-' + index"/>
-						</template>
+						<AlarmListItem
+							v-for="({icon, message, date, confirm_style}, index) in alarms" 
+							:key="'alarm-list-item-' + index" 
+							:class="confirm_style"
+						>
+							<template v-slot:icon>
+								<img :src="'https://cdn.comento.kr/images/icon/alarm/icon-alarm-' + icon + '.svg'" />
+							</template>
+							<template v-slot:message>
+								{{ message }}
+							</template>
+							<template v-slot:date>
+								{{ date }}
+							</template>
+						</AlarmListItem>
 					</AlarmList>
 				</NewCol>
 			</NewRow>

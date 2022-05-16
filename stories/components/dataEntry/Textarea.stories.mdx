@@ -31,6 +31,16 @@ import Textarea, { textareaTypes } from '@/components/components/dataEntry/Texta
                 type: "boolean",
             },
         },
+        error: {
+            description: "에러 타입인지(outline type일 때만 가능)",
+            control: {
+                type: "boolean",
+            },
+        },
+        hintMessage: {
+            description: "에러 힌트 메시지",
+            control: { type: "text" },
+        },
     }}
 />
 
@@ -50,6 +60,8 @@ export const Default = (args, { argTypes }) => ({
                       :max-height="maxHeight"
                       :min-height="minHeight"
                       :read-only="readOnly"
+                      :error="error"
+                      :hint-message="hintMessage"
                       :value.sync="valueData"/>
         </div>`,
 });
@@ -63,3 +75,21 @@ export const Default = (args, { argTypes }) => ({
 </Story>
 
 <ArgsTable story="Default" />
+
+### Error
+
+<Canvas>
+    <Story name="Align" height="200px">
+        {{
+            template: `
+                <div style="width:300px">
+                    <Textarea
+                        type="outline"
+                        error
+                    />
+                </div>
+            `,
+            components: { Textarea },
+        }}
+    </Story>
+</Canvas>
