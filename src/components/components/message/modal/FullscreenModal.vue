@@ -29,7 +29,7 @@
 		</div>
 		<div v-if="showActionButton" ref="actionButton" class="c-fullscreen-modal--action-button">
 			<Button
-				size="large"
+				size="xlarge"
 				:disabled="disabled"
 				:loading="loading"
 				:color="buttonColor"
@@ -254,7 +254,7 @@ export default {
 	}
 
 	&--action-button {
-		padding: 20px 32px 24px 32px;
+		padding: 20px 16px 24px 16px;
 	}
 
 	&.scroll {
