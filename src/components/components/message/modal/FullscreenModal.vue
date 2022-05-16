@@ -5,6 +5,7 @@
 		:show="show"
 		:show-close-button="false"
 		:class="classes"
+		:class="[computedDirection]"
 		width="100%"
 		@close="close"
 	>

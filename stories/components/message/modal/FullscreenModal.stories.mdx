@@ -1,6 +1,7 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FullscreenModal, {fullscreenDirection} from '@/components/components/message/modal/FullscreenModal';
+import FullscreenModal, { fullscreenDirection } from '@/components/components/message/modal/FullscreenModal';
 import Button, { buttonColors } from '@/components/components/general/button/Button';
+import Button from '@/components/components/general/button/Button';
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from "@/components/elements/core/typography/Typography";
@@ -110,7 +111,7 @@ export const Default = (args, { argTypes }) => ({
                     <FullscreenModal
                         :show.sync="show"
                         direction="left"
-                        close-type="icon"
+                        direction="right"
                     >
                         <template v-slot:title>
                           Title이 있는 경우
@@ -147,7 +148,7 @@ export const Default = (args, { argTypes }) => ({
                     <FullscreenModal
                         :show.sync="show"
                         direction="left"
-                        close-type="none"
+                        direction="top"
                     >
                         <template v-slot:title>
                             title
