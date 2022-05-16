@@ -11,6 +11,7 @@
 			v-if="isRemovable"
 			name="IconTrashMediumLine"
 			color="gray500"
+			style="flex-shrink: 0"
 			@click.stop="handleClickFileTrashIcon({ file, index })"
 		/>
 		<template v-else>
@@ -88,6 +89,7 @@ export default {
 			overflow: hidden;
 			&-icon {
 				cursor: pointer;
+				flex-shrink: 0;
 				margin-right: 4px;
 			}
 		}

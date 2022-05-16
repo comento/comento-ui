@@ -1,12 +1,12 @@
 <template>
 	<div class="c-application c-drawer">
 		<transition name="fade" mode="out-in">
-			<div v-if="$slots.default" :style="indexCls()" :class="{ mask }" @click="onMask" />
+			<div v-if="$slots.default" :style="indexClass()" :class="{ mask }" @click="onMask" />
 		</transition>
-		<transition :enter-active-class="alignInCls" :leave-active-class="alignOutCls">
+		<transition :enter-active-class="directionInClass" :leave-active-class="directionOutClass">
 			<div
 				v-if="$slots.default"
-				:class="{ closeable, [align.toLowerCase()]: true }"
+				:class="{ closeable, [direction.toLowerCase()]: true }"
 				class="c-drawer"
 				:style="styles"
 			>
@@ -27,7 +27,7 @@ export default {
 	name: 'Drawer',
 	mixins: [paddingMixin, scrollMixin],
 	props: {
-		align: {
+		direction: {
 			type: String,
 			default: 'right',
 			validator(value) {
@@ -75,14 +75,14 @@ export default {
 		},
 	},
 	computed: {
-		alignInCls() {
-			return `animated bounceIn${this.align.toLowerCase()}`;
+		directionInClass() {
+			return `animated bounceIn${this.direction.toLowerCase()}`;
 		},
-		alignOutCls() {
-			return `animated bounceOut${this.align.toLowerCase()}`;
+		directionOutClass() {
+			return `animated bounceOut${this.direction.toLowerCase()}`;
 		},
-		alignCloseCls() {
-			return `close-${this.align.toLowerCase()}`;
+		directionCloseClass() {
+			return `close-${this.direction.toLowerCase()}`;
 		},
 		computedIndex() {
 			return this.zIndex;
@@ -100,7 +100,7 @@ export default {
 		styles() {
 			return {
 				...this.$_setPadding(this.computedPaddings),
-				...this.indexCls(),
+				...this.indexClass(),
 				...this.computedMaxHeight,
 			};
 		},
@@ -114,7 +114,7 @@ export default {
 				this.close();
 			}
 		},
-		indexCls(offset = 0) {
+		indexClass(offset = 0) {
 			return {
 				zIndex: this.computedIndex + offset,
 			};

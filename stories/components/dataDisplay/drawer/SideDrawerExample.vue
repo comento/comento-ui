@@ -4,12 +4,12 @@
 			<NewCol>
 				<div class="flex flex-row">
 					<div class="mr-20">
-						<input id="left" v-model="align" type="radio" value="left" />
+						<input id="left" v-model="direction" type="radio" value="left" />
 						<label for="left">left</label>
 					</div>
 
 					<div>
-						<input id="right" v-model="align" type="radio" value="right" />
+						<input id="right" v-model="direction" type="radio" value="right" />
 						<label for="right">right</label>
 					</div>
 				</div>
@@ -23,7 +23,7 @@
 		<SideDrawer
 			:mask-closable="true"
 			:z-index="1002"
-			:align="align"
+			:direction="direction"
 			:closeable="false"
 			:show-drawer="open"
 			@close="toggle"
@@ -79,11 +79,11 @@ export default {
 		return {
 			open: false,
 			innerOpen: false,
-			align: 'left',
+			direction: 'left',
 		};
 	},
 	watch: {
-		align() {
+		direction() {
 			this.open = false;
 		},
 	},
