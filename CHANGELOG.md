@@ -1,3 +1,13 @@
+## [1.1.1](https://github.com/comento/comento-ui/compare/v1.1.0...v1.1.1) (2022-05-16)
+
+
+### Bug Fixes
+
+* FullscreenModal 버튼 디자인 수정 ([#895](https://github.com/comento/comento-ui/issues/895)) ([18f0235](https://github.com/comento/comento-ui/commit/18f02352f53503209a49f6248b0823f9c37ac9a1))
+* FullscreenModal 인터랙션, 스토리 개선 ([#896](https://github.com/comento/comento-ui/issues/896)) ([dd591c1](https://github.com/comento/comento-ui/commit/dd591c1b5efa85e9f285020528e592d1fd70d6ad))
+
+
+
 # [1.1.0](https://github.com/comento/comento-ui/compare/v1.0.9...v1.1.0) (2022-05-16)
 
 
