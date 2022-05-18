@@ -170,6 +170,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$action-button-height: 104;
+
 .c-fullscreen-modal {
 	@include transition(0.3s ease-in);
 	position: fixed;
@@ -281,9 +283,9 @@ export default {
 
 	&.with-action-button {
 		.c-fullscreen-modal--content {
-			max-height: calc(100vh - (49px + 92px));
+			max-height: calc(100vh - (49px + #{$action-button-height}px));
 			&:after {
-				bottom: 92px;
+				bottom: calc(#{$action-button-height}px - 1px);
 			}
 		}
 	}
