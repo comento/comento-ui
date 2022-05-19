@@ -10,6 +10,7 @@
 import IconSpinnerSmall from '@/assets/images/icon/small/icon-spinner-small.svg?inline';
 import IconSpinnerMedium from '@/assets/images/icon/medium/icon-spinner-medium.svg?inline';
 import IconSpinnerLarge from '@/assets/images/icon/large/icon-spinner-large.svg?inline';
+import IconSpinnerXLarge from '@/assets/images/icon/xlarge/icon-spinner-xlarge.svg?inline';
 import { colors } from '@/utils/constants/color';
 const {
 	gray200,
@@ -35,7 +36,7 @@ const {
 
 import { buttonColors, ghostTypeButtonColors } from '@/components/components/general/button/Button';
 
-export const LoaderSizes = ['small', 'medium', 'large'];
+export const LoaderSizes = ['small', 'medium', 'large', 'xlarge'];
 
 const colorMap = {
 	primary: {
@@ -103,7 +104,7 @@ export default {
 	name: 'Loader',
 	props: {
 		/**
-		 * 크기(small, medium, large)
+		 * 크기(small, medium, large, xlarge)
 		 */
 		size: {
 			type: String,
@@ -128,9 +129,16 @@ export default {
 		},
 	},
 	computed: {
+		capitalizedSize() {
+			switch (this.size) {
+				case 'xlarge':
+					return this.size.substr(0, 2).toUpperCase() + this.size.slice(2);
+				default:
+					return this.size.charAt(0).toUpperCase() + this.size.slice(1);
+			}
+		},
 		computedName() {
-			const capitalizedSize = this.size.charAt(0).toUpperCase() + this.size.slice(1);
-			return `IconSpinner${capitalizedSize}`;
+			return `IconSpinner${this.capitalizedSize}`;
 		},
 	},
 	mounted() {
@@ -142,6 +150,7 @@ export default {
 		IconSpinnerSmall,
 		IconSpinnerMedium,
 		IconSpinnerLarge,
+		IconSpinnerXLarge,
 	},
 };
 </script>

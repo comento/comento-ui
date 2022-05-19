@@ -1,0 +1,6 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="circle" d="M28.5 18C28.5 23.799 23.799 28.5 18 28.5C12.201 28.5 7.5 23.799 7.5 18C7.5 12.201 12.201 7.5 18 7.5C23.799 7.5 28.5 12.201 28.5 18Z" stroke="#EAECEE" stroke-width="3"/>
+<path class="quarter" d="M18 27C22.9706 27 27 22.9706 27 18H30C30 24.6274 24.6274 30 18 30V27Z" fill="#767D82">
+    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/>
+</path>
+</svg>
