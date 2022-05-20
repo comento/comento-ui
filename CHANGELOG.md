@@ -1,3 +1,20 @@
+## [1.1.2](https://github.com/comento/comento-ui/compare/v1.1.1...v1.1.2) (2022-05-20)
+
+
+### Bug Fixes
+
+* callout close버튼 위치 조정 ([#898](https://github.com/comento/comento-ui/issues/898)) ([4608a72](https://github.com/comento/comento-ui/commit/4608a7292fe1848dc1f62fe49cdd0a8128ffa753))
+* FullscreenModal actionButton 여백 수정 ([#899](https://github.com/comento/comento-ui/issues/899)) ([4ec3b9d](https://github.com/comento/comento-ui/commit/4ec3b9dcc3309c7bd47c0f7edd014a7734098104))
+
+
+### Features
+
+* FileList spacing 제거 ([#900](https://github.com/comento/comento-ui/issues/900)) ([26b74cb](https://github.com/comento/comento-ui/commit/26b74cb3d337c24cee48fc55b02fc8a280f6bef4))
+* IconVodProductLargeLine 추가 ([#902](https://github.com/comento/comento-ui/issues/902)) ([d3cdaa6](https://github.com/comento/comento-ui/commit/d3cdaa61e2730e86ad6ac6da9413872ba69b9fb6))
+* Loader xlarge size 추가 ([#901](https://github.com/comento/comento-ui/issues/901)) ([f12bf53](https://github.com/comento/comento-ui/commit/f12bf53a40695ed8381e24956f4380245757c2ce))
+
+
+
 ## [1.1.1](https://github.com/comento/comento-ui/compare/v1.1.0...v1.1.1) (2022-05-16)
 
 
