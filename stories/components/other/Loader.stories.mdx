@@ -71,7 +71,7 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <!--small-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
+                        <Typography type="body1" style="margin-bottom: 10px">small</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
                                 <Loader size="small" :color="item"></Loader>
@@ -80,7 +80,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--medium-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <Typography type="body1" style="margin-bottom: 10px">medium</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
                                <Loader size="medium" :color="item"></Loader>
@@ -89,18 +89,27 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
+                        <Typography type="body1" style="margin-bottom: 10px">large</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
                                 <Loader size="large" :color="item"></Loader>
                             </template>
                         </div>
                     </div>
+                    <!--xlarge-->
+                    <div>
+                      <Typography type="body1" style="margin-bottom: 10px">xlarge</Typography>
+                      <div style="display: flex; flex-wrap: wrap;">
+                        <template v-for="(item, index) in buttonColors">
+                          <Loader size="xlarge" :color="item"></Loader>
+                        </template>
+                      </div>
+                    </div>
                 </div>
                 <div>
                     <!--small-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Small</Typography>
+                        <Typography type="body1" style="margin-bottom: 10px">small</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
                                 <Loader size="small" :color="item" reversed></Loader>
@@ -109,7 +118,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--medium-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Medium</Typography>
+                        <Typography type="body1" style="margin-bottom: 10px">medium</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
                                 <Loader size="medium" :color="item" reversed></Loader>
@@ -118,12 +127,21 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                     <!--large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">Large</Typography>
+                        <Typography type="body1" style="margin-bottom: 10px">large</Typography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
                                 <Loader size="large" :color="item" reversed></Loader>
                             </template>
                         </div>
+                    </div>
+                    <!--xlarge-->
+                    <div>
+                        <Typography type="body1" style="margin-bottom: 10px">xlarge</Typography>
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <template v-for="(item, index) in buttonColors">
+                                <Loader size="xlarge" :color="item" reversed></Loader>
+                            </template>
+                      </div>
                     </div>
                 </div>
             </div>
