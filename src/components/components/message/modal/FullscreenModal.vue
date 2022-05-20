@@ -170,6 +170,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$header-height: 49px;
+$action-button-height: 104px;
+
 .c-fullscreen-modal {
 	@include transition(0.3s ease-in);
 	position: fixed;
@@ -231,9 +234,9 @@ export default {
 			z-index: 1;
 		}
 		+ .c-fullscreen-modal--content {
-			margin-top: 49px;
+			margin-top: $header-height;
 			overflow-y: auto;
-			height: calc(100vh - 49px);
+			height: calc(100vh - #{$header-height});
 		}
 	}
 
@@ -281,9 +284,9 @@ export default {
 
 	&.with-action-button {
 		.c-fullscreen-modal--content {
-			max-height: calc(100vh - (49px + 92px));
+			max-height: calc(100vh - (#{$header-height} + #{$action-button-height}));
 			&:after {
-				bottom: 92px;
+				bottom: calc(#{$action-button-height} - 1px);
 			}
 		}
 	}
