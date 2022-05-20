@@ -1,5 +1,5 @@
 <template>
-	<List class="c-file-list--container" :class="computedClass" spacing>
+	<List class="c-file-list--container" :class="computedClass">
 		<FileItem
 			v-for="(item, index) in files"
 			:key="`file-${index}`"
