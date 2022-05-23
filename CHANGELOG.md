@@ -1,3 +1,12 @@
+## [1.1.3](https://github.com/comento/comento-ui/compare/v1.1.2...v1.1.3) (2022-05-23)
+
+
+### Features
+
+* IconVodMediumLine 추가 ([#904](https://github.com/comento/comento-ui/issues/904)) ([122a571](https://github.com/comento/comento-ui/commit/122a571220957a35fcb7ee33c5f03cbc44f78df5))
+
+
+
 ## [1.1.2](https://github.com/comento/comento-ui/compare/v1.1.1...v1.1.2) (2022-05-20)
 
 
