@@ -1,8 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FullscreenModal, {fullScreenAlign, fullScreenCloseType} from '@/components/components/message/modal/FullscreenModal';
-import Button from '@/components/components/general/button/Button';
+import FullscreenModal, { fullscreenDirection } from '@/components/components/message/modal/FullscreenModal';
+import Button, { buttonColors } from '@/components/components/general/button/Button';
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
 import Icon from '@/components/elements/core/icon/Icon';
+import Typography from "@/components/elements/core/typography/Typography";
+import Divider from "@/components/elements/utility/Divider";
 
 <Meta
     title="Message/Modal/FullscreenModal"
@@ -14,18 +16,11 @@ import Icon from '@/components/elements/core/icon/Icon';
                 type: "boolean",
             },
         },
-        align: {
+        direction: {
             description: "모달 interaction 시작방향",
             control: {
                 type: "select",
-                options: fullScreenAlign,
-            },
-        },
-        closeType: {
-            description: "모달 interaction 시작방향",
-            control: {
-                type: "select",
-                options: fullScreenCloseType,
+                options: fullscreenDirection,
             },
         },
         title: {
@@ -33,10 +28,31 @@ import Icon from '@/components/elements/core/icon/Icon';
             defaultValue: "title",
             control: { type: "text" },
         },
-        closeText: {
-            description: "closeType button타입에 들어가는 문구",
-            defaultValue: "접기",
-            control: { type: "text" },
+        loading: {
+            description: "버튼 로딩",
+            control: {
+                type: "boolean",
+            },
+        },
+        successMessage: {
+            description: "버튼명",
+            defaultValue: "확인",
+            control: {
+                type: "text",
+            },
+        },
+        showActionButton: {
+            description: "버튼 보이기",
+            control: {
+                type: "boolean",
+            },
+        },
+        buttonColor: {
+            description: "action 버튼 색상",
+            control: {
+                type: "select",
+                options: buttonColors,
+            },
         },
     }}
 />
@@ -49,12 +65,13 @@ export const Default = (args, { argTypes }) => ({
             <Button @click="show = true">Open</Button>
             <FullscreenModal
                 :show.sync="show"
-                :align="align"
-                :closeType="closeType"
+                :direction="direction"
+                :show-action-button="showActionButton"
+                :disabled="disabled"
+                :loading="loading"
+                :success-callback="successCallback"
+                :success-message="successMessage"
             >
-                <template v-slot:close>
-                    {{closeText}}
-                </template>
                 <template v-slot:title>
                   {{title}}
                 </template>
@@ -81,42 +98,6 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
-### Slot-Close
-<Canvas>
-    <Story name="Slot-Close" height="100px">
-        {{
-            data: () => ({
-                show: false,
-            }),
-            template: `
-                <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
-                        :show.sync="show"
-                        align="left"
-                        closeType="button"
-                    >
-                        <template v-slot:close>
-                            접기
-                        </template>
-                        <template v-slot:content>
-                            <div style="padding:16px">
-                                - Title없이 Close이벤트만 할 수 있는 경우의 fullscreenModal입니다.<br />
-                                - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
-                                - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
-                                - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
-                            </div>
-                        </template>
-                    </FullscreenModal>
-                </div>
-            `,
-            components: {
-                FullscreenModal, Button
-            }
-        }}
-    </Story>
-</Canvas>
-
 ### Slot-Title
 <Canvas>
     <Story name="Slot-Title" height="100px">
@@ -129,18 +110,14 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="right"
-                        closeType="icon"
+                        direction="left"
                     >
-                        <template v-slot:close>
-                            접기
-                        </template>
                         <template v-slot:title>
                           Title이 있는 경우
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
-                                - Title과 Close이벤트를 추가한 fullscreenModal입니다.<br />
+                                - fullscreenModal입니다.<br />
                                 - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
                                 - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
@@ -169,18 +146,17 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="top"
-                        closeType="none"
+                        direction="left"
                     >
                         <template v-slot:title>
                             title
                         </template>
                         <template v-slot:action>
-                            <Button size="small" type="outline"  @click="show = false">초기화</Button>
+                            <Button size="small" type="outline"  @click="show = false">닫기</Button>
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
-                                - Close 부분을 감추고, Action 이벤트를 추가 할 수 있는 fullscreenModal 입니다.<br />
+                                - Action 이벤트를 추가 할 수 있는 fullscreenModal 입니다.<br />
                                 - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
                                 - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
@@ -206,14 +182,11 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <Button @click="show = true">Open</Button>
-                    <FullscreenModal
-                        :show.sync="show"
-                        align="none"
-                    >
+                    <FullscreenModal :show.sync="show">
                         <template v-slot:content>
-                            <div class="pa-16 flex">
-                                <div class="mr-8" @click="show = false" style="float:left; margin-top:4px">
-                                    <Icon name="IconArrowLargeLine" :rotate="-90"></Icon>
+                            <div class="py-6 px-16 flex">
+                                <div class="mr-4" @click="show = false" style="display: flex; align-items: center;">
+                                    <Icon name="IconBackwardLargeLine" color="gray800" />
                                 </div>
                                 <SearchInput
                                     ref="searchModalInput"
@@ -221,17 +194,17 @@ export const Default = (args, { argTypes }) => ({
                                     full
                                 ></SearchInput>
                             </div>
+                            <Divider color="gray200" />
                             <div style="padding:25px">
-                                content영역만 있을 경우 보여지는 fullcreenModal 입니다.<br>
-                                content영역만 있는 경우, 페이지처럼 보이도록 의도할 수 있으니, <br>
-                                align값을 none으로 설정하면 됩니다. <br>
+                                content영역만 있을 경우 보여지는 fullcreenModal입니다.<br>
+                                content영역만 있는 경우, 페이지처럼 보이도록 의도할 수 있습니다.
                             </div>
                         </template>
                     </FullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button, SearchInput, Icon
+                FullscreenModal, Button, SearchInput, Icon, Divider
             }
         }}
     </Story>
@@ -249,28 +222,44 @@ export const Default = (args, { argTypes }) => ({
                     <Button @click="show = true">Open</Button>
                     <FullscreenModal
                         :show.sync="show"
-                        align="bottom"
-                        closeType="icon"
+                        direction="left"
+                        show-action-button
+                        button-color="light-primary"
+                        :success-callback="() => { show = false; }"
                     >
                         <template v-slot:title>
-                            title
+                            Title이 있는 경우
                         </template>
                         <template v-slot:action>
-                            <Button size="small" type="outline" >초기화</Button>
+                            <Button size="small" type="outline" @click="onClick">초기화</Button>
                         </template>
                         <template v-slot:content>
-                            <div style="padding:16px">
-                                - Close 부분을 감추고, Action 이벤트를 추가 할 수 있는 fullscreenModal 입니다.<br />
-                                - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
-                                - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
-                                - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
-                            </div>
+                            <Typography type="display1" style="padding:16px">
+                                동해 물과 백두산이 마르고 닳도록<br />
+                                하느님이 보우하사 우리나라 만세<br />
+                                무궁화 삼천리 화려강산<br />
+                                대한 사람 대한으로 길이 보전하세<br />
+                                <br/>
+                                남산 위에 저 소나무 철갑을 두른 듯<br />
+                                바람 서리 불변함은 우리 기상일세<br />
+                                <br/>
+                                가을 하늘 공활한데 높고 구름 없이<br />
+                                밝은 달은 우리 가슴 일편단심일세<br />
+                                <br/>
+                                이 기상과 이 맘으로 충성을 다하여<br />
+                                괴로우나 즐거우나 나라 사랑하세
+                            </Typography>
                         </template>
                     </FullscreenModal>
                 </div>
             `,
+            methods: {
+                onClick() {
+                    alert('click!');
+                },
+            },
             components: {
-                FullscreenModal, Button
+                FullscreenModal, Button, Typography
             }
         }}
     </Story>

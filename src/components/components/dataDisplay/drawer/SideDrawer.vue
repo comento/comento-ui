@@ -3,7 +3,7 @@
 		:mask-closable="true"
 		:z-index="1002"
 		max-height="100vh"
-		:align="align"
+		:direction="direction"
 		:closeable="false"
 		@close="$emit('close')"
 	>
@@ -35,9 +35,9 @@ export default {
 	mixins: [scrollMixin],
 	props: {
 		/**
-		 * 위치(left, right)
+		 * 방향(left, right)
 		 */
-		align: {
+		direction: {
 			type: String,
 			default: 'right',
 			validator(value) {

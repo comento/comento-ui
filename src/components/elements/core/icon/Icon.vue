@@ -88,6 +88,7 @@ import IconBlockMediumLine from '@/assets/images/icon/medium/icon-block-medium-l
 import IconUnblockMediumLine from '@/assets/images/icon/medium/icon-unblock-medium-line.svg?inline';
 import IconSirenMediumLine from '@/assets/images/icon/medium/icon-siren-medium-line.svg?inline';
 import IconWritingMediumLine from '@/assets/images/icon/medium/icon-writing-medium-line.svg?inline';
+import IconVodMediumLine from '@/assets/images/icon/medium/icon-vod-medium-line.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -144,6 +145,7 @@ import IconVideoLargeFill from '@/assets/images/icon/large/icon-video-large-fill
 import IconStarLargeLine from '@/assets/images/icon/large/icon-star-large-line.svg?inline';
 import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.svg?inline';
 import IconThreeDotLargeFill from '@/assets/images/icon/large/icon-threeDot-large-fill.svg?inline';
+import IconVodProductLargeLine from '@/assets/images/icon/large/icon-vod-product-large-line.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -277,6 +279,7 @@ export const IconNames = [
 	'IconUnblockMediumLine',
 	'IconSirenMediumLine',
 	'IconWritingMediumLine',
+	'IconVodMediumLine',
 
 	// large
 	'IconProfileLargeLine',
@@ -333,6 +336,7 @@ export const IconNames = [
 	'IconStarLargeLine',
 	'IconStarLargeFill',
 	'IconThreeDotLargeFill',
+	'IconVodProductLargeLine',
 
 	// XLarge
 	'IconProfileXLargeLine',
@@ -481,6 +485,7 @@ export default {
 		IconUnblockMediumLine,
 		IconSirenMediumLine,
 		IconWritingMediumLine,
+		IconVodMediumLine,
 
 		// large
 		IconProfileLargeLine,
@@ -537,6 +542,7 @@ export default {
 		IconStarLargeLine,
 		IconStarLargeFill,
 		IconThreeDotLargeFill,
+		IconVodProductLargeLine,
 
 		// x-large
 		IconProfileXLargeLine,

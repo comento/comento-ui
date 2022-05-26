@@ -8,7 +8,7 @@
 			v-on="$listeners"
 		>
 			<div class="c-callout--wrapper">
-				<div class="flex align-center">
+				<div class="flex align-center w-full">
 					<!-- 아이콘 -->
 					<slot v-if="$slots['icon']" name="icon" />
 					<Icon v-else :name="iconName" :color="computedIconColor" />
@@ -228,7 +228,7 @@ export default {
 		}
 	}
 	&--close-button {
-		margin-left: 4px;
+		margin-left: auto;
 		flex-shrink: 0;
 	}
 }
