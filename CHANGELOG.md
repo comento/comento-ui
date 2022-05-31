@@ -1,3 +1,7 @@
+## [1.1.4-alpha.2](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.1.4-alpha.2) (2022-05-26)
+
+
+
 ## [1.1.4-alpha.1](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.1.4-alpha.1) (2022-05-26)
 
 
