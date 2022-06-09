@@ -378,12 +378,12 @@ export default {
 	}
 	// size
 	&.small {
-		.c-select--box {
-			input {
+		& .c-select--box {
+			& input {
 				@include caption1();
 				color: $gray850;
 			}
-			&.basic {
+			&.c-select--basic {
 				padding: 6.5px 12px;
 			}
 		}
