@@ -1,3 +1,13 @@
+## [1.1.4](https://github.com/comento/comento-ui/compare/v1.1.3...v1.1.4) (2022-06-09)
+
+
+### Bug Fixes
+
+* package.json 버전 변경 ([6649e24](https://github.com/comento/comento-ui/commit/6649e24f943586e9a61f653896893b7eb597c25b))
+* Select small 사이즈 제대로 적용 안된 문제 수정 ([#909](https://github.com/comento/comento-ui/issues/909)) ([bc86052](https://github.com/comento/comento-ui/commit/bc860525c941008eb1d01b57d6ccfc30fe30c706))
+
+
+
 ## [1.1.3](https://github.com/comento/comento-ui/compare/v1.1.2...v1.1.3) (2022-05-23)
 
 
