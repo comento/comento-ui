@@ -146,7 +146,7 @@ export default {
 		resize: none;
 		&::placeholder {
 			color: $gray300;
-			@include body2;
+			@include body1;
 		}
 	}
 	&.basic {

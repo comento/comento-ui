@@ -4,31 +4,44 @@ $web-font-family:
   'Helvetica Neue', Helvetica, Arial,
   'Trebuchet MS',
   sans-serif;
+$root: 'https://cdn.comento.kr/fonts/pretendard/';
 
 @font-face {
   font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+  src: url($root + 'Pretendard-Light.subset.woff2') format('woff2'),
+       url($root + 'Pretendard-Light.subset.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  src: url($root + 'Pretendard-Regular.subset.woff2') format('woff2'),
+       url($root + 'Pretendard-Regular.subset.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+  src: url($root + 'Pretendard-Medium.subset.woff2') format('woff2'),
+       url($root + 'Pretendard-Medium.subset.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+  src: url($root + 'Pretendard-SemiBold.subset.woff2') format('woff2'),
+       url($root + 'Pretendard-SemiBold.subset.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
