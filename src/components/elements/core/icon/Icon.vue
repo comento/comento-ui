@@ -179,6 +179,8 @@ import IconCheckRound2XLargeLine from '@/assets/images/icon/2xlarge/icon-checkRo
 import IconCheckRound2XLargeFill from '@/assets/images/icon/2xlarge/icon-checkRound-2xlarge-fill.svg?inline';
 import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?inline';
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
+import IconSupport2XLargeLine from '@/assets/images/icon/2xlarge/icon-support-2xlarge-line.svg?inline';
+import IconPlus2XLargeLine from '@/assets/images/icon/2xlarge/icon-plus-2xlarge-line.svg?inline';
 
 // 4x-large
 import IconJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-job-4xlarge-line.svg?inline';
@@ -188,6 +190,7 @@ import IconCollege4XLargeLine from '@/assets/images/icon/4xlarge/icon-college-4x
 import IconAnswer4XLargeLine from '@/assets/images/icon/4xlarge/icon-answer-4xlarge-line.svg?inline';
 import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarge-line.svg?inline';
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
+import IconStar4XLargeLine from '@/assets/images/icon/4xlarge/icon-star-4xlarge-line.svg?inline';
 
 import customValidator from '@/utils/custom-validator';
 
@@ -370,6 +373,8 @@ export const IconNames = [
 	'IconCheckRound2XLargeFill',
 	'IconWriting2XLargeLine',
 	'IconPhoto2XLargeLine',
+	'IconSupport2XLargeLine',
+	'IconPlus2XLargeLine',
 
 	//4x-large
 	'IconJob4XLargeLine',
@@ -379,6 +384,7 @@ export const IconNames = [
 	'IconAnswer4XLargeLine',
 	'IconBoard4XLargeLine',
 	'IconStar4XLargeFill',
+	'IconStar4XLargeLine',
 ];
 
 /**
@@ -576,6 +582,8 @@ export default {
 		IconCheckRound2XLargeFill,
 		IconWriting2XLargeLine,
 		IconPhoto2XLargeLine,
+		IconSupport2XLargeLine,
+		IconPlus2XLargeLine,
 
 		// 4x-large
 		IconJob4XLargeLine,
@@ -585,6 +593,7 @@ export default {
 		IconAnswer4XLargeLine,
 		IconBoard4XLargeLine,
 		IconStar4XLargeFill,
+		IconStar4XLargeLine,
 	},
 };
 </script>

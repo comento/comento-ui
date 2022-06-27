@@ -115,6 +115,7 @@ export default {
 
 	&--icon {
 		@include flexbox();
+		@include align-items(center);
 	}
 }
 </style>
