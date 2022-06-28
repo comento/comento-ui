@@ -36,6 +36,8 @@ import IconQuestionMediumLine from '@/assets/images/icon/medium/icon-question-me
 import IconEssayMediumLine from '@/assets/images/icon/medium/icon-essay-medium-line.svg?inline';
 import IconInterviewMediumLine from '@/assets/images/icon/medium/icon-interview-medium-line.svg?inline';
 import IconCommentMediumLine from '@/assets/images/icon/medium/icon-comment-medium-line.svg?inline';
+import IconResumeMediumLine from '@/assets/images/icon/medium/icon-resume-medium-line.svg?inline';
+import IconAnalyticsMediumLine from '@/assets/images/icon/medium/icon-analytics-medium-line.svg?inline';
 import IconArrowMediumLine from '@/assets/images/icon/medium/icon-arrow-medium-line.svg?inline';
 import IconTextArrowMediumLine from '@/assets/images/icon/medium/icon-textArrow-medium-line.svg?inline';
 import IconRevertMediumLine from '@/assets/images/icon/medium/icon-revert-medium-line.svg?inline';
@@ -230,6 +232,8 @@ export const IconNames = [
 	'IconEssayMediumLine',
 	'IconInterviewMediumLine',
 	'IconCommentMediumLine',
+	'IconResumeMediumLine',
+	'IconAnalyticsMediumLine',
 	'IconArrowMediumLine',
 	'IconTextArrowMediumLine',
 	'IconRevertMediumLine',
@@ -439,6 +443,8 @@ export default {
 		IconEssayMediumLine,
 		IconInterviewMediumLine,
 		IconCommentMediumLine,
+		IconResumeMediumLine,
+		IconAnalyticsMediumLine,
 		IconArrowMediumLine,
 		IconTextArrowMediumLine,
 		IconRevertMediumLine,
