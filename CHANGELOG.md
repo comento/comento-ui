@@ -1,3 +1,12 @@
+## [1.1.6](https://github.com/comento/comento-ui/compare/v1.1.5...v1.1.6) (2022-06-28)
+
+
+### Features
+
+* 아이콘 2개 추가 ([#918](https://github.com/comento/comento-ui/issues/918)) ([0aa888d](https://github.com/comento/comento-ui/commit/0aa888d25d409e24898e19fc0964ac0dae07b66c))
+
+
+
 ## [1.1.5](https://github.com/comento/comento-ui/compare/v1.1.4...v1.1.5) (2022-06-27)
 
 
