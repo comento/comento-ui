@@ -1,3 +1,20 @@
+## [1.1.7](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.1.7) (2022-06-29)
+
+
+### Bug Fixes
+
+* NarrowButton icon 수평 맞추기 ([#912](https://github.com/comento/comento-ui/issues/912)) ([2999d09](https://github.com/comento/comento-ui/commit/2999d0905a570a280b9641305bf18ab6c6d89ad1))
+* Textarea placeholder 폰트 크기 수정 ([#916](https://github.com/comento/comento-ui/issues/916)) ([ec057a3](https://github.com/comento/comento-ui/commit/ec057a3e7a7f90d925fd817f95f4600171ea3fe0))
+
+
+### Features
+
+* 아이콘 2개 추가 ([#918](https://github.com/comento/comento-ui/issues/918)) ([0aa888d](https://github.com/comento/comento-ui/commit/0aa888d25d409e24898e19fc0964ac0dae07b66c))
+* 아이콘 3개 추가 ([#914](https://github.com/comento/comento-ui/issues/914)) ([1b684fa](https://github.com/comento/comento-ui/commit/1b684fa84b2ba7c63b58f7a18be10745adfe94d6))
+* IconMuteXLargeLine, IconVolumeXLargeLine 추가 ([#920](https://github.com/comento/comento-ui/issues/920)) ([2fcdf8a](https://github.com/comento/comento-ui/commit/2fcdf8a5c12186e1b4388b1d34a3e5b770cc00cd))
+
+
+
 ## [1.1.4-alpha.2](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.1.4-alpha.2) (2022-05-26)
 
 
