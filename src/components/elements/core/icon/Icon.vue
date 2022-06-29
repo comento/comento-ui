@@ -168,6 +168,8 @@ import IconStarXLargeFill from '@/assets/images/icon/xlarge/icon-star-xlarge-fil
 import IconBookmarkXLargeFill from '@/assets/images/icon/xlarge/icon-bookMark-xlarge-fill.svg?inline';
 import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookMark-xlarge-line.svg?inline';
 import IconDownloadXLargeLine from '@/assets/images/icon/xlarge/icon-download-xlarge-line.svg?inline';
+import IconMuteXLargeLine from '@/assets/images/icon/xlarge/icon-mute-xlarge-line.svg?inline';
+import IconVolumeXLargeLine from '@/assets/images/icon/xlarge/icon-volume-xlarge-line.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
@@ -364,6 +366,8 @@ export const IconNames = [
 	'IconBookmarkXLargeFill',
 	'IconBookmarkXLargeLine',
 	'IconDownloadXLargeLine',
+	'IconMuteXLargeLine',
+	'IconVolumeXLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',
@@ -575,6 +579,8 @@ export default {
 		IconBookmarkXLargeFill,
 		IconBookmarkXLargeLine,
 		IconDownloadXLargeLine,
+		IconMuteXLargeLine,
+		IconVolumeXLargeLine,
 
 		// 2x-large
 		IconProfile2XLargeFill,
