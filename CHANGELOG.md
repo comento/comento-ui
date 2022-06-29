@@ -1,3 +1,12 @@
+## [1.1.7](https://github.com/comento/comento-ui/compare/v1.1.6...v1.1.7) (2022-06-29)
+
+
+### Features
+
+* IconMuteXLargeLine, IconVolumeXLargeLine 추가 ([#920](https://github.com/comento/comento-ui/issues/920)) ([2fcdf8a](https://github.com/comento/comento-ui/commit/2fcdf8a5c12186e1b4388b1d34a3e5b770cc00cd))
+
+
+
 ## [1.1.6](https://github.com/comento/comento-ui/compare/v1.1.5...v1.1.6) (2022-06-28)
 
 
