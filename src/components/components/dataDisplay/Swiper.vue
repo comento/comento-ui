@@ -100,7 +100,7 @@ import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesom
 
 export const SwiperControlsColors = ['light', 'dark'];
 export const SwiperControlPositions = ['inside', 'outside', 'top'];
-export const SwiperIndicatorColors = ['light', 'dark'];
+export const SwiperIndicatorColors = ['light', 'dark', 'gray'];
 export const SwiperIndicatorPositions = ['inside', 'outside'];
 
 /**
@@ -172,7 +172,7 @@ export default {
 			},
 		},
 		/**
-		 * 인디케이터 색상(light, dark)
+		 * 인디케이터 색상(light, dark, gray)
 		 */
 		indicatorColor: {
 			type: String,
@@ -358,6 +358,14 @@ $swiper-control-circle-radius: 16px;
 		opacity: 1 !important;
 	}
 }
+
+::v-deep .swiper-indicator-light {
+	.swiper-pagination-bullet {
+		&.swiper-pagination-bullet-active {
+			background-color: $white !important;
+		}
+	}
+}
 ::v-deep .swiper-indicator-dark {
 	.swiper-pagination-bullet {
 		border-color: $gray850;
@@ -366,10 +374,13 @@ $swiper-control-circle-radius: 16px;
 		}
 	}
 }
-::v-deep .swiper-indicator-light {
+::v-deep .swiper-indicator-gray {
 	.swiper-pagination-bullet {
+		border-color: $gray300;
+		background-color: $gray300 !important;
 		&.swiper-pagination-bullet-active {
-			background-color: $white !important;
+			border-color: $gray500;
+			background-color: $gray500 !important;
 		}
 	}
 }
