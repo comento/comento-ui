@@ -135,8 +135,9 @@ $backgroundColorAlpha: 0.04;
 .c-promotion-edu-card {
 	padding: 0 10px 10px;
 	overflow: hidden;
-	background-color: rgba(var(--dominant-color), $backgroundColorAlpha);
 	@include border-radius(10px);
+	isolation: isolate;
+	background-color: rgba(var(--dominant-color), $backgroundColorAlpha);
 	width: var(--card-width);
 	max-width: 152px;
 	cursor: pointer;
