@@ -148,13 +148,14 @@ $backgroundColorAlpha: 0.04;
 		@include opacity(0.9);
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
+			position: relative;
+			overflow: hidden;
+			@include border-radius(114px);
+			isolation: isolate;
 			margin: -28px 0 -27px;
 			width: 250px;
 			height: 134px;
-			position: relative;
 			border: none;
-			@include border-radius(114px);
-			overflow: hidden;
 		}
 	}
 
