@@ -251,10 +251,15 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
                     </Swiper>
-                   <Swiper indicator-color="dark" with-indicator>
+                   <Swiper indicator-color="dark" with-indicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
+                    </Swiper>
+                    <Swiper indicator-color="gray" with-indicator>
+                      <template v-for="(item, index) in itemLength" :slot="'item' + index">
+                        <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
+                      </template>
                     </Swiper>
                 </div>`,
             components: { Swiper, SwiperItemExample },
