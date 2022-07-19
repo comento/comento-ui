@@ -156,6 +156,7 @@ export default {
 		animation: scale-down-center 0.2s ease-in both;
 		&-container {
 			position: relative;
+			isolation: isolate;
 			@include border-radius(var(--border-radius));
 			overflow: hidden;
 			width: 100%;
