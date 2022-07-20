@@ -18,6 +18,7 @@
 				:error="error"
 				v-bind="$attrs"
 				:autocomplete="computedAutocomplete"
+				:maxlength="maxLength"
 				@input="handleTyping"
 				v-on="$listeners"
 				@focus="onFocus"
@@ -126,6 +127,9 @@ export default {
 		error: {
 			type: Boolean,
 			default: false,
+		},
+		maxLength: {
+			type: Number,
 		},
 	},
 	data() {
