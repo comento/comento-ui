@@ -1,3 +1,19 @@
+## [1.1.9](https://github.com/comento/comento-ui/compare/v1.1.8...v1.1.9) (2022-07-25)
+
+
+### Bug Fixes
+
+* cors 오류로 font root 수정 ([#924](https://github.com/comento/comento-ui/issues/924)) ([8658798](https://github.com/comento/comento-ui/commit/8658798611055cd80988b53679940138792fc814))
+* 사파리 transform 관련 버그 수정 ([#925](https://github.com/comento/comento-ui/issues/925)) ([db83529](https://github.com/comento/comento-ui/commit/db835294ee8c81340aa49ec64f558328f7c75e50))
+
+
+### Features
+
+* Box component에 listeners, attrs 추가 ([#929](https://github.com/comento/comento-ui/issues/929)) ([3362728](https://github.com/comento/comento-ui/commit/336272833b0df3c6df6826c713bbf706f3b957dd))
+* indicator color gray 추가 ([#923](https://github.com/comento/comento-ui/issues/923)) ([4fcc92d](https://github.com/comento/comento-ui/commit/4fcc92da7139ba42a32d4a9ad0f7d5d08592840a))
+
+
+
 ## [1.1.8](https://github.com/comento/comento-ui/compare/v1.1.7...v1.1.8) (2022-07-19)
 
 
