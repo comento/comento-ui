@@ -28,6 +28,8 @@ import IconLikeSmallLine from '@/assets/images/icon/small/icon-like-small-line.s
 import IconLikeSmallFill from '@/assets/images/icon/small/icon-like-small-fill.svg?inline';
 import IconThreeDotSmallFill from '@/assets/images/icon/small/icon-threeDot-small-fill.svg?inline';
 import IconWritingSmallLine from '@/assets/images/icon/small/icon-writing-small-line.svg?inline';
+import IconBookmarkSmallLine from '@/assets/images/icon/small/icon-bookmark-small-line.svg?inline';
+import IconBookmarkSmallFill from '@/assets/images/icon/small/icon-bookmark-small-fill.svg?inline';
 
 // medium
 import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
@@ -226,6 +228,8 @@ export const IconNames = [
 	'IconLikeSmallFill',
 	'IconThreeDotSmallFill',
 	'IconWritingSmallLine',
+	'IconBookmarkSmallLine',
+	'IconBookmarkSmallFill',
 
 	// medium
 	'IconProfileMediumLine',
@@ -439,6 +443,8 @@ export default {
 		IconLikeSmallFill,
 		IconThreeDotSmallFill,
 		IconWritingSmallLine,
+		IconBookmarkSmallLine,
+		IconBookmarkSmallFill,
 
 		// medium
 		IconProfileMediumLine,
