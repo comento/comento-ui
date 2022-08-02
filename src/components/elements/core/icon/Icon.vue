@@ -194,7 +194,8 @@ import IconChangeJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-changeJo
 import IconSupervisor4XLargeLine from '@/assets/images/icon/4xlarge/icon-supervisor-4xlarge-line.svg?inline';
 import IconCollege4XLargeLine from '@/assets/images/icon/4xlarge/icon-college-4xlarge-line.svg?inline';
 import IconAnswer4XLargeLine from '@/assets/images/icon/4xlarge/icon-answer-4xlarge-line.svg?inline';
-import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarge-line.svg?inline';
+import IconCheckRound4XLargeLine from '@/assets/images/icon/4xlarge/icon-checkRound-4xlarge-line.svg?inline';
+import IconCheckRound4XLargeFill from '@/assets/images/icon/4xlarge/icon-checkRound-4xlarge-fill.svg?inline';
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
 import IconStar4XLargeLine from '@/assets/images/icon/4xlarge/icon-star-4xlarge-line.svg?inline';
 
@@ -395,6 +396,8 @@ export const IconNames = [
 	'IconCollege4XLargeLine',
 	'IconAnswer4XLargeLine',
 	'IconBoard4XLargeLine',
+	'IconCheckRound4XLargeLine',
+	'IconCheckRound4XLargeFill',
 	'IconStar4XLargeFill',
 	'IconStar4XLargeLine',
 ];
@@ -609,7 +612,8 @@ export default {
 		IconSupervisor4XLargeLine,
 		IconCollege4XLargeLine,
 		IconAnswer4XLargeLine,
-		IconBoard4XLargeLine,
+		IconCheckRound4XLargeLine,
+		IconCheckRound4XLargeFill,
 		IconStar4XLargeFill,
 		IconStar4XLargeLine,
 	},
