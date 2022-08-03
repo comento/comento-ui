@@ -28,6 +28,8 @@ import IconLikeSmallLine from '@/assets/images/icon/small/icon-like-small-line.s
 import IconLikeSmallFill from '@/assets/images/icon/small/icon-like-small-fill.svg?inline';
 import IconThreeDotSmallFill from '@/assets/images/icon/small/icon-threeDot-small-fill.svg?inline';
 import IconWritingSmallLine from '@/assets/images/icon/small/icon-writing-small-line.svg?inline';
+import IconBookmarkSmallLine from '@/assets/images/icon/small/icon-bookmark-small-line.svg?inline';
+import IconBookmarkSmallFill from '@/assets/images/icon/small/icon-bookmark-small-fill.svg?inline';
 
 // medium
 import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
@@ -192,7 +194,8 @@ import IconChangeJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-changeJo
 import IconSupervisor4XLargeLine from '@/assets/images/icon/4xlarge/icon-supervisor-4xlarge-line.svg?inline';
 import IconCollege4XLargeLine from '@/assets/images/icon/4xlarge/icon-college-4xlarge-line.svg?inline';
 import IconAnswer4XLargeLine from '@/assets/images/icon/4xlarge/icon-answer-4xlarge-line.svg?inline';
-import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarge-line.svg?inline';
+import IconCheckRound4XLargeLine from '@/assets/images/icon/4xlarge/icon-checkRound-4xlarge-line.svg?inline';
+import IconCheckRound4XLargeFill from '@/assets/images/icon/4xlarge/icon-checkRound-4xlarge-fill.svg?inline';
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
 import IconStar4XLargeLine from '@/assets/images/icon/4xlarge/icon-star-4xlarge-line.svg?inline';
 
@@ -226,6 +229,8 @@ export const IconNames = [
 	'IconLikeSmallFill',
 	'IconThreeDotSmallFill',
 	'IconWritingSmallLine',
+	'IconBookmarkSmallLine',
+	'IconBookmarkSmallFill',
 
 	// medium
 	'IconProfileMediumLine',
@@ -391,6 +396,8 @@ export const IconNames = [
 	'IconCollege4XLargeLine',
 	'IconAnswer4XLargeLine',
 	'IconBoard4XLargeLine',
+	'IconCheckRound4XLargeLine',
+	'IconCheckRound4XLargeFill',
 	'IconStar4XLargeFill',
 	'IconStar4XLargeLine',
 ];
@@ -439,6 +446,8 @@ export default {
 		IconLikeSmallFill,
 		IconThreeDotSmallFill,
 		IconWritingSmallLine,
+		IconBookmarkSmallLine,
+		IconBookmarkSmallFill,
 
 		// medium
 		IconProfileMediumLine,
@@ -603,7 +612,8 @@ export default {
 		IconSupervisor4XLargeLine,
 		IconCollege4XLargeLine,
 		IconAnswer4XLargeLine,
-		IconBoard4XLargeLine,
+		IconCheckRound4XLargeLine,
+		IconCheckRound4XLargeFill,
 		IconStar4XLargeFill,
 		IconStar4XLargeLine,
 	},
