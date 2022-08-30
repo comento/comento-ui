@@ -188,6 +188,7 @@ import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2x
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
 import IconSupport2XLargeLine from '@/assets/images/icon/2xlarge/icon-support-2xlarge-line.svg?inline';
 import IconPlus2XLargeLine from '@/assets/images/icon/2xlarge/icon-plus-2xlarge-line.svg?inline';
+import IconBag2XLargeLine from '@/assets/images/icon/2xlarge/icon-bag-2xlarge-line.svg?inline';
 
 // 4x-large
 import IconJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-job-4xlarge-line.svg?inline';
@@ -390,6 +391,7 @@ export const IconNames = [
 	'IconPhoto2XLargeLine',
 	'IconSupport2XLargeLine',
 	'IconPlus2XLargeLine',
+	'IconBag2XLargeLine',
 
 	//4x-large
 	'IconJob4XLargeLine',
@@ -608,6 +610,7 @@ export default {
 		IconPhoto2XLargeLine,
 		IconSupport2XLargeLine,
 		IconPlus2XLargeLine,
+		IconBag2XLargeLine,
 
 		// 4x-large
 		IconJob4XLargeLine,
