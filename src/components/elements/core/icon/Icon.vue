@@ -93,6 +93,7 @@ import IconUnblockMediumLine from '@/assets/images/icon/medium/icon-unblock-medi
 import IconSirenMediumLine from '@/assets/images/icon/medium/icon-siren-medium-line.svg?inline';
 import IconWritingMediumLine from '@/assets/images/icon/medium/icon-writing-medium-line.svg?inline';
 import IconVodMediumLine from '@/assets/images/icon/medium/icon-vod-medium-line.svg?inline';
+import IconDateMediumLine from '@/assets/images/icon/medium/icon-date-medium-line.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -294,6 +295,7 @@ export const IconNames = [
 	'IconSirenMediumLine',
 	'IconWritingMediumLine',
 	'IconVodMediumLine',
+	'IconDateMediumLine',
 
 	// large
 	'IconProfileLargeLine',
@@ -511,6 +513,7 @@ export default {
 		IconSirenMediumLine,
 		IconWritingMediumLine,
 		IconVodMediumLine,
+		IconDateMediumLine,
 
 		// large
 		IconProfileLargeLine,
