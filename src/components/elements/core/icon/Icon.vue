@@ -93,6 +93,7 @@ import IconUnblockMediumLine from '@/assets/images/icon/medium/icon-unblock-medi
 import IconSirenMediumLine from '@/assets/images/icon/medium/icon-siren-medium-line.svg?inline';
 import IconWritingMediumLine from '@/assets/images/icon/medium/icon-writing-medium-line.svg?inline';
 import IconVodMediumLine from '@/assets/images/icon/medium/icon-vod-medium-line.svg?inline';
+import IconDateMediumLine from '@/assets/images/icon/medium/icon-date-medium-line.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -187,6 +188,7 @@ import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2x
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
 import IconSupport2XLargeLine from '@/assets/images/icon/2xlarge/icon-support-2xlarge-line.svg?inline';
 import IconPlus2XLargeLine from '@/assets/images/icon/2xlarge/icon-plus-2xlarge-line.svg?inline';
+import IconBag2XLargeLine from '@/assets/images/icon/2xlarge/icon-bag-2xlarge-line.svg?inline';
 
 // 4x-large
 import IconJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-job-4xlarge-line.svg?inline';
@@ -294,6 +296,7 @@ export const IconNames = [
 	'IconSirenMediumLine',
 	'IconWritingMediumLine',
 	'IconVodMediumLine',
+	'IconDateMediumLine',
 
 	// large
 	'IconProfileLargeLine',
@@ -388,6 +391,7 @@ export const IconNames = [
 	'IconPhoto2XLargeLine',
 	'IconSupport2XLargeLine',
 	'IconPlus2XLargeLine',
+	'IconBag2XLargeLine',
 
 	//4x-large
 	'IconJob4XLargeLine',
@@ -511,6 +515,7 @@ export default {
 		IconSirenMediumLine,
 		IconWritingMediumLine,
 		IconVodMediumLine,
+		IconDateMediumLine,
 
 		// large
 		IconProfileLargeLine,
@@ -605,6 +610,7 @@ export default {
 		IconPhoto2XLargeLine,
 		IconSupport2XLargeLine,
 		IconPlus2XLargeLine,
+		IconBag2XLargeLine,
 
 		// 4x-large
 		IconJob4XLargeLine,
