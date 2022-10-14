@@ -215,7 +215,7 @@ export default {
 		},
 		computedListItemTypography() {
 			const defaultListItemTypography = {
-				small: 'caption1',
+				small: 'body2',
 				medium: 'body2',
 			};
 			return defaultListItemTypography[this.size];
