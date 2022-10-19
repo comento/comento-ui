@@ -30,45 +30,9 @@ import 'comento-ui/dist/comento-ui.css';
 Vue.use(ComentoUI);
 ```
 
-## Example
-```vue
-<template>
-    <c-button>버튼</c-button>
-</template>
-```
-
 ## Docs
 
-[comento-ui storybook](https://5f7bfe109cb1f900229bac7e-gtlrddgxbb.chromatic.com/?path=/story/button--button-fill)
-
-## Docs provided
-
-- Colors
-
-- `<c-button>`
-
-## Docs in the works
-
-- `<c-avatar>`
-- `<c-badge>`
-- `<c-chip>`
-- `<c-list>`
-- `<c-list-item>`
-- `<c-tab>`
-- `<c-grid>`
-- `<c-row>`
-- `<c-style-col>`
-- `<c-callout>`
-- `<c-modal>`
-- `<c-popover>`
-- `<c-tooltip>`
-- `<c-dropdown>`
-- `<c-input>`
-- `<c-search-input>`
-- `<c-icon>`
-- `<c-logo>`
-- `<c-typography>`
-- `<c-divider>`
+[comento-ui storybook](https://comento.github.io/comento-ui/)
 
 ## License
 

@@ -30,6 +30,7 @@ import IconThreeDotSmallFill from '@/assets/images/icon/small/icon-threeDot-smal
 import IconWritingSmallLine from '@/assets/images/icon/small/icon-writing-small-line.svg?inline';
 import IconBookmarkSmallLine from '@/assets/images/icon/small/icon-bookmark-small-line.svg?inline';
 import IconBookmarkSmallFill from '@/assets/images/icon/small/icon-bookmark-small-fill.svg?inline';
+import IconLoadingSmallFill from '@/assets/images/icon/small/icon-loading-small-fill.svg?inline';
 
 // medium
 import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
@@ -200,6 +201,7 @@ import IconCheckRound4XLargeLine from '@/assets/images/icon/4xlarge/icon-checkRo
 import IconCheckRound4XLargeFill from '@/assets/images/icon/4xlarge/icon-checkRound-4xlarge-fill.svg?inline';
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
 import IconStar4XLargeLine from '@/assets/images/icon/4xlarge/icon-star-4xlarge-line.svg?inline';
+import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarge-line.svg?inline';
 
 import customValidator from '@/utils/custom-validator';
 
@@ -233,6 +235,7 @@ export const IconNames = [
 	'IconWritingSmallLine',
 	'IconBookmarkSmallLine',
 	'IconBookmarkSmallFill',
+	'IconLoadingSmallFill',
 
 	// medium
 	'IconProfileMediumLine',
@@ -452,6 +455,7 @@ export default {
 		IconWritingSmallLine,
 		IconBookmarkSmallLine,
 		IconBookmarkSmallFill,
+		IconLoadingSmallFill,
 
 		// medium
 		IconProfileMediumLine,
@@ -622,6 +626,7 @@ export default {
 		IconCheckRound4XLargeFill,
 		IconStar4XLargeFill,
 		IconStar4XLargeLine,
+		IconBoard4XLargeLine,
 	},
 };
 </script>
