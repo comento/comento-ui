@@ -62,7 +62,7 @@ export const error = red600;
 export const info = gray600;
 export const secondary = orange600;
 export const yellow = yellow600;
-export const link = blue600;
+export const link = '#006BEB';
 
 export const colors = {
     black: black,
