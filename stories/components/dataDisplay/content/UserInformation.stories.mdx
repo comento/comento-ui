@@ -176,7 +176,9 @@ export const Basic = (args, { argTypes }) => ({
                   <Avatar type="profile" size="xsmall"/>
                 </template>
                 <template v-slot:name>
-                  질문자
+                  <UserInformationName :type="type">
+                    질문자
+                  </UserInformationName>
                 </template>
               </UserInformation>
               <Divider class="my-8" />
@@ -185,7 +187,9 @@ export const Basic = (args, { argTypes }) => ({
                   <Avatar type="profile" size="small"/>
                 </template>
                 <template v-slot:name>
-                  질문자
+                  <UserInformationName :type="type">
+                    질문자
+                  </UserInformationName>
                 </template>
               </UserInformation>
               <Divider class="my-8" />
@@ -194,7 +198,9 @@ export const Basic = (args, { argTypes }) => ({
                   <Avatar type="profile" size="medium"/>
                 </template>
                 <template v-slot:name>
-                  질문자
+                  <UserInformationName :type="type">
+                    질문자
+                  </UserInformationName>
                 </template>
               </UserInformation>
               </div>
