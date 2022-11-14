@@ -44,7 +44,7 @@ export default {
 	},
 	computed: {
 		computedOtherWrapperStyle() {
-			return this.type === 'full' ? 'margin-top: 4px' : null;
+			return this.type === 'full' ? { marginTop: '4px' } : null;
 		},
 	},
 };
