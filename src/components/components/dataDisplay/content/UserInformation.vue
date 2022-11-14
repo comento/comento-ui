@@ -56,7 +56,6 @@ export default {
 	@include flex-direction(row);
 	@include align-items(center);
 	overflow: hidden;
-	padding: 2px 0;
 	.name {
 		&-wrapper {
 			margin-right: 4px;
@@ -70,6 +69,7 @@ export default {
 		}
 	}
 	&.full {
+		padding: 2px 0 16px 0;
 		.name-company-wrapper {
 			@include flexbox();
 			@include flex-direction(row);
@@ -84,12 +84,19 @@ export default {
 		}
 	}
 	&.normal {
+		padding: 2px 0 8px 0;
 		.information-wrapper {
 			min-height: 33px;
 		}
 	}
+	&.simple {
+		padding: 2px 0;
+	}
 	.information-wrapper {
 		overflow: hidden;
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
 	}
 	.avatar-wrapper {
 		margin-right: 6px;
