@@ -1,5 +1,11 @@
 <template>
-	<Typography v-bind="[$attrs]" class="user-information-name" :class="[computedEllipsisClass]">
+	<Typography
+		v-bind="[$attrs]"
+		class="user-information-name"
+		:class="[computedEllipsisClass]"
+		:type="computedType"
+		:font-weight="600"
+	>
 		<slot />
 	</Typography>
 </template>
