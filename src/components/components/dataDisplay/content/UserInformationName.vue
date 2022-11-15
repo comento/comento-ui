@@ -1,7 +1,7 @@
 <template>
 	<Typography
 		v-bind="[$attrs]"
-		class="user-information-name"
+		class="user-information-name ellipsis"
 		:class="[computedEllipsisClass]"
 		:type="computedType"
 		:font-weight="600"
