@@ -82,15 +82,24 @@ export default {
 		.information-wrapper {
 			min-height: 44px;
 		}
+		.avatar-wrapper {
+			margin-right: 8px;
+		}
 	}
 	&.normal {
 		padding: 2px 0 8px 0;
 		.information-wrapper {
 			min-height: 33px;
 		}
+		.avatar-wrapper {
+			margin-right: 8px;
+		}
 	}
 	&.simple {
 		padding: 2px 0;
+		.avatar-wrapper {
+			margin-right: 6px;
+		}
 	}
 	.information-wrapper {
 		overflow: hidden;
@@ -99,7 +108,6 @@ export default {
 		@include justify-content(center);
 	}
 	.avatar-wrapper {
-		margin-right: 6px;
 		@include flexbox();
 	}
 	.name-icon-wrapper {
