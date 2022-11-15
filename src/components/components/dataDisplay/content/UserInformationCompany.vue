@@ -1,8 +1,10 @@
 <template>
-	<Typography :type="computedType" color="gray500" class="user-information-company">
-		<slot />
+	<div class="user-information-company">
+		<Typography :type="computedType" color="gray500" class="ellipsis">
+			<slot />
+		</Typography>
 		<Icon name="IconCheckRoundSmallFill" color="primary" class="ml-2" />
-	</Typography>
+	</div>
 </template>
 
 <script>
@@ -36,8 +38,16 @@ export default {
 .user-information-company {
 	@include flexbox();
 	@include align-items(center);
-	&.ellipsis {
+}
+.ellipsis {
+	@include mobile {
 		@include ellipsis(1);
+		&.c-body2 {
+			max-width: 120px;
+		}
+		&.c-caption1 {
+			max-width: 104px;
+		}
 	}
 }
 </style>
