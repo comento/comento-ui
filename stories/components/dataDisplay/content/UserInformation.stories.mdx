@@ -1,5 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import UserInformation, { userInformationTypes } from '@/components/components/dataDisplay/content/UserInformation';
+import UserInformationName from "@/components/components/dataDisplay/content/UserInformationName";
+import UserInformationCaption from "@/components/components/dataDisplay/content/UserInformationCaption";
+import UserInformationChipGroup from "@/components/components/dataDisplay/content/UserInformationChipGroup";
+import UserInformationCompany from "@/components/components/dataDisplay/content/UserInformationCompany";
 import Content from '@/components/components/dataDisplay/content/Content';
 import Icon from '@/components/elements/core/icon/Icon';
 import Avatar from '@/components/components/dataDisplay/Avatar';
@@ -35,7 +39,7 @@ import Divider from '@/components/elements/utility/Divider';
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { UserInformation, Content, Avatar, Icon, ChipGroup, Chip },
+    components: { UserInformation, Content, Avatar, Icon, ChipGroup, Chip, UserInformationName, UserInformationCompany, UserInformationCaption, UserInformationChipGroup },
     data() {
         return {
             matchedItems: ['회사', '산업', '직무', '학교'],
@@ -56,31 +60,36 @@ export const Basic = (args, { argTypes }) => ({
             <template v-slot:avatar>
                 <Avatar type="nickname" :text="name.substr(0, 1)" :size="avatarSize"/>
             </template>
-            <template v-slot:name>
+        <template v-slot:name>
+            <UserInformationName :type="type">
                 {{ name }}
-            </template>
-            <template v-slot:icon>
-                <Icon name="IconCheckRoundSmallFill" color="primary"/>
-            </template>
-            <template v-slot:company>
+            </UserInformationName>
+        </template>
+        <template v-slot:user-info>
+            <UserInformationCompany :type="type">
                 {{ company }}
-            </template>
-            <template v-slot:other>
-                코부사장 ∙ 채택률 90% ∙
-                <ChipGroup size="small">
-                    <Chip
-                        v-for="(item, index) in matchedItems"
-                        :key="'chip' + index"
-                        type="outline"
-                        color="primary"
-                        size="small"
-                    >
-                        {{ item }}
-                    </Chip>
-                </ChipGroup>
-                일치
-            </template>
-        </UserInformation>`,
+            </UserInformationCompany>
+        </template>
+        <template v-slot:other>
+          <UserInformationCaption v-if="type !== 'full'">2022.00.00</UserInformationCaption>
+          <template v-else>
+            <UserInformationCaption >코부사장 ∙ 채택률 90% ∙
+            <UserInformationChipGroup size="small">
+            <Chip
+              v-for="(item, index) in matchedItems"
+              :key="'chip' + index"
+              type="outline"
+              color="primary"
+              size="small"
+              >
+                {{ item }}
+            </Chip>
+            </UserInformationChipGroup>
+              일치
+            </UserInformationCaption>
+          </template>
+        </template>
+      </UserInformation>`,
 });
 
 # UserInformation
@@ -124,68 +133,79 @@ export const Basic = (args, { argTypes }) => ({
                 };
             },
             template: `
-                <div>
-                    <template v-for="({ name, company, matchedItems, size, type }, index) in sampleItems">
-                        <UserInformation :type="type" :key="'user-information' + index">
-                            <template v-slot:avatar>
-                                <Avatar type="nickname" :text="name.substr(0, 1)" :size="size"/>
-                            </template>
-                            <template v-slot:name>
-                                {{ name }}
-                            </template>
-                            <template v-slot:icon>
-                                <Icon name="IconCheckRoundSmallFill" color="primary"/>
-                            </template>
-                            <template v-slot:company>
-                                {{ company }}
-                            </template>
-                            <template v-slot:other>
-                                코부사장 ∙ 채택률 90% ∙
-                                <ChipGroup size="small">
-                                    <Chip
-                                        v-for="(item, index) in matchedItems"
-                                        :key="'chip' + index"
-                                        type="outline"
-                                        color="primary"
-                                        size="small"
-                                    >
-                                        {{ item }}
-                                    </Chip>
-                                </ChipGroup>
-                                일치
-                            </template>
-                        </UserInformation>
-                        <Divider :key="'divider' + index" class="my-8" />
+              <div>
+              <template v-for="({ name, company, matchedItems, size, type }, index) in sampleItems">
+                <UserInformation :type="type" :key="'user-information' + index">
+                  <template v-slot:avatar>
+                    <Avatar type="nickname" :text="name.substr(0, 1)" :size="size"/>
+                  </template>
+                  <template v-slot:name>
+                    <UserInformationName :type="type">
+                      {{ name }}
+                    </UserInformationName>
+                  </template>
+                  <template v-slot:user-info>
+                    <UserInformationCompany :type="type">
+                      {{  company }}
+                    </UserInformationCompany>
+                  </template>
+                  <template v-slot:other>
+                    <UserInformationCaption v-if="type !== 'full'">2022.00.00</UserInformationCaption>
+                    <template v-else>
+                      <UserInformationCaption >코부사장 ∙ 채택률 90% ∙
+                        <UserInformationChipGroup size="small">
+                          <Chip
+                              v-for="(item, index) in matchedItems"
+                              :key="'chip' + index"
+                              type="outline"
+                              color="primary"
+                              size="small"
+                          >
+                            {{ item }}
+                          </Chip>
+                        </UserInformationChipGroup>
+                        일치
+                      </UserInformationCaption>
                     </template>
-                    <UserInformation type="simple">
-                        <template v-slot:avatar>
-                            <Avatar type="profile" size="xsmall"/>
-                        </template>
-                        <template v-slot:name>
-                            질문자
-                        </template>
-                    </UserInformation>
-                    <Divider class="my-8" />
-                    <UserInformation type="normal">
-                        <template v-slot:avatar>
-                            <Avatar type="profile" size="small"/>
-                        </template>
-                        <template v-slot:name>
-                            질문자
-                        </template>
-                    </UserInformation>
-                    <Divider class="my-8" />
-                    <UserInformation type="full">
-                        <template v-slot:avatar>
-                            <Avatar type="profile" size="medium"/>
-                        </template>
-                        <template v-slot:name>
-                            질문자
-                        </template>
-                    </UserInformation>
-                </div>
+                  </template>
+                </UserInformation>
+                <Divider :key="'divider' + index" class="my-8" />
+              </template>
+              <UserInformation type="simple">
+                <template v-slot:avatar>
+                  <Avatar type="profile" size="xsmall"/>
+                </template>
+                <template v-slot:name>
+                  <UserInformationName>
+                    질문자
+                  </UserInformationName>
+                </template>
+              </UserInformation>
+              <Divider class="my-8" />
+              <UserInformation type="normal">
+                <template v-slot:avatar>
+                  <Avatar type="profile" size="small"/>
+                </template>
+                <template v-slot:name>
+                  <UserInformationName>
+                    질문자
+                  </UserInformationName>
+                </template>
+              </UserInformation>
+              <Divider class="my-8" />
+              <UserInformation type="full">
+                <template v-slot:avatar>
+                  <Avatar type="profile" size="medium"/>
+                </template>
+                <template v-slot:name>
+                  <UserInformationName>
+                    질문자
+                  </UserInformationName>
+                </template>
+              </UserInformation>
+              </div>
             `,
-            components: { UserInformation, Icon, ChipGroup, Chip, Avatar, Divider },
+            components: { UserInformation, Icon, ChipGroup, Chip, Avatar, Divider, UserInformationName, UserInformationCaption, UserInformationChipGroup, UserInformationCompany },
         }}
     </Story>
 </Canvas>
