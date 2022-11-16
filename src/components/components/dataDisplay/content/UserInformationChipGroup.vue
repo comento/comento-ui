@@ -5,7 +5,11 @@
 </template>
 
 <script>
+/**
+ * @displayName c-user-information-chip-group
+ */
 import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
+
 export default {
 	name: 'UserInformationChipGroup',
 	props: {

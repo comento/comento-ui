@@ -8,6 +8,9 @@
 </template>
 
 <script>
+/**
+ * @displayName c-user-information-company
+ */
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 
