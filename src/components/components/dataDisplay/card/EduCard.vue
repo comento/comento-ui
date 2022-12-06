@@ -7,7 +7,7 @@
 			<div v-if="$slots['additional-button']" class="c-edu-card--additional-button">
 				<slot name="additional-button" />
 			</div>
-			<img class="c-edu-card--image" :src="backgroundImage" alt />
+			<img class="c-edu-card--image" :src="backgroundImage" alt :loading="imageLoading" />
 		</div>
 		<div class="c-edu-card--info-container">
 			<div class="c-edu-card--subtitle">
@@ -89,6 +89,10 @@ export default {
 		withSwiper: {
 			type: Boolean,
 			default: false,
+		},
+		imageLoading: {
+			type: String,
+			default: 'eager',
 		},
 	},
 	computed: {
