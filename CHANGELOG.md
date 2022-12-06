@@ -1,3 +1,22 @@
+## [1.1.15](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.1.15) (2022-12-06)
+
+
+### Bug Fixes
+
+* 스토리에서 아이콘 순서 변경 ([#939](https://github.com/comento/comento-ui/issues/939)) ([132802f](https://github.com/comento/comento-ui/commit/132802f482563e02a834f09391d63016b51aec55))
+* link 색상 변경 ([#942](https://github.com/comento/comento-ui/issues/942)) ([0f54514](https://github.com/comento/comento-ui/commit/0f54514f1c3881dcf92c8ec6bc8808cd01e42a4a))
+* small일 때 리스트 폰트 크기 변경 ([#940](https://github.com/comento/comento-ui/issues/940)) ([2321609](https://github.com/comento/comento-ui/commit/23216094d8ff0dd9bbe95694917172d214a46352))
+
+
+### Features
+
+* add listeners to icon rating ([#947](https://github.com/comento/comento-ui/issues/947)) ([3deac4d](https://github.com/comento/comento-ui/commit/3deac4de0acd0d87fd0b6d009af86c243bdc84f8))
+* EduCard img에 로딩 속성 추가 ([#950](https://github.com/comento/comento-ui/issues/950)) ([8993ec4](https://github.com/comento/comento-ui/commit/8993ec46a273506a2c216b10944be1376078b8ea))
+* loading icon 추가 ([#941](https://github.com/comento/comento-ui/issues/941)) ([388cdff](https://github.com/comento/comento-ui/commit/388cdff17379f9389eb14491338c2a3aca961609))
+* UserInformation component 변경 ([#948](https://github.com/comento/comento-ui/issues/948)) ([c0a3426](https://github.com/comento/comento-ui/commit/c0a3426240839feec886c55b3dc24bb482f0729b))
+
+
+
 ## [1.1.10](https://github.com/comento/comento-ui/compare/v1.1.9...v1.1.10) (2022-08-16)
 
 
