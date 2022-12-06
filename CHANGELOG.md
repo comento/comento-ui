@@ -1,3 +1,12 @@
+## [1.1.15](https://github.com/comento/comento-ui/compare/v1.1.14...v1.1.15) (2022-12-06)
+
+
+### Features
+
+* EduCard img에 로딩 속성 추가 ([#950](https://github.com/comento/comento-ui/issues/950)) ([#951](https://github.com/comento/comento-ui/issues/951)) ([275f835](https://github.com/comento/comento-ui/commit/275f83501b87a4042b9d94f8216f56b6b8659380))
+
+
+
 ## [1.1.14](https://github.com/comento/comento-ui/compare/v1.1.13...v1.1.14) (2022-11-16)
 
 
