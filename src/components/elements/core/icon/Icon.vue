@@ -1,6 +1,9 @@
 <script>
 import BaseIcon from '@/components/elements/core/icon/BaseIcon';
 
+// xsmall
+import IconExportXSmallLine from '@/assets/images/icon/xsmall/icon-export-xsmall-line.svg?inline';
+
 // small
 import IconProfileSmallLine from '@/assets/images/icon/small/icon-profile-small-line.svg?inline';
 import IconProfileSmallFill from '@/assets/images/icon/small/icon-profile-small-fill.svg?inline';
@@ -206,6 +209,9 @@ import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarg
 import customValidator from '@/utils/custom-validator';
 
 export const IconNames = [
+	// xsmall
+	'IconExportXSmallLine',
+
 	// small
 	'IconProfileSmallLine',
 	'IconProfileSmallFill',
@@ -426,6 +432,9 @@ export default {
 		},
 	},
 	components: {
+		// xsmall
+		IconExportXSmallLine,
+
 		// small
 		IconProfileSmallLine,
 		IconProfileSmallFill,
