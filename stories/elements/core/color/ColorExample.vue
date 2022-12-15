@@ -30,6 +30,7 @@ export default {
 				'gray250',
 				'gray200',
 				'gray100',
+				'gray050',
 				'gray000',
 				'white',
 				'green100',
