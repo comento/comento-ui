@@ -98,6 +98,10 @@ import IconVodSmallLine from '@/assets/images/icon/small/icon-vod-small-line.svg
 import IconDateSmallLine from '@/assets/images/icon/small/icon-date-small-line.svg?inline';
 
 // medium
+import IconLikeMediumLine from '@/assets/images/icon/medium/icon-like-medium-line.svg?inline';
+import IconLikeMediumFill from '@/assets/images/icon/medium/icon-like-medium-fill.svg?inline';
+import IconArrowUpRoundMediumLine from '@/assets/images/icon/medium/icon-arrowUpRound-medium-line.svg?inline';
+import IconArrowUpRoundMediumFill from '@/assets/images/icon/medium/icon-arrowUpRound-medium-fill.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -306,6 +310,10 @@ export const IconNames = [
 	'IconDateSmallLine',
 
 	// medium
+	'IconLikeMediumLine',
+	'IconLikeMediumFill',
+	'IconArrowUpRoundMediumLine',
+	'IconArrowUpRoundMediumFill',
 
 	// large
 	'IconProfileLargeLine',
@@ -529,6 +537,10 @@ export default {
 		IconDateSmallLine,
 
 		// medium
+		IconLikeMediumLine,
+		IconLikeMediumFill,
+		IconArrowUpRoundMediumLine,
+		IconArrowUpRoundMediumFill,
 
 		// large
 		IconProfileLargeLine,
