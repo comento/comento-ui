@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-file--summary" :class="computedClass">
 		<div class="c-file--summary-info-wrapper">
-			<Icon name="IconFileMediumLine" color="gray500"></Icon>
+			<Icon name="IconFileSmallLine" color="gray500"></Icon>
 			<Typography type="body2" color="gray500"> 첨부파일 ({{ length }}개) </Typography>
 		</div>
 		<Button

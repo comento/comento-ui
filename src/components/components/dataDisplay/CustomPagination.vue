@@ -12,12 +12,7 @@
 				</li>
 
 				<li :class="props.theme.prev" class="pagination--button" @click="props.setPrevPage">
-					<Icon
-						class="pagination--icon"
-						:class="computedPrevClass"
-						name="IconArrowMediumLine"
-						:rotate="270"
-					/>
+					<Icon class="pagination--icon" :class="computedPrevClass" name="IconArrowSmallLine" :rotate="270" />
 				</li>
 
 				<li
@@ -31,7 +26,7 @@
 				</li>
 
 				<li :class="props.theme.next" class="pagination--button" @click="props.setNextPage">
-					<Icon class="pagination--icon" :class="computedNextClass" name="IconArrowMediumLine" :rotate="90" />
+					<Icon class="pagination--icon" :class="computedNextClass" name="IconArrowSmallLine" :rotate="90" />
 				</li>
 
 				<li

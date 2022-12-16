@@ -34,70 +34,70 @@ import IconLoadingXSmallFill from '@/assets/images/icon/xsmall/icon-loading-xsma
 import IconExportXSmallLine from '@/assets/images/icon/xsmall/icon-export-xsmall-line.svg?inline';
 
 // small
+import IconProfileSmallLine from '@/assets/images/icon/small/icon-profile-small-line.svg?inline';
+import IconProfileSmallFill from '@/assets/images/icon/small/icon-profile-small-fill.svg?inline';
+import IconQuestionSmallLine from '@/assets/images/icon/small/icon-question-small-line.svg?inline';
+import IconEssaySmallLine from '@/assets/images/icon/small/icon-essay-small-line.svg?inline';
+import IconInterviewSmallLine from '@/assets/images/icon/small/icon-interview-small-line.svg?inline';
+import IconCommentSmallLine from '@/assets/images/icon/small/icon-comment-small-line.svg?inline';
+import IconResumeSmallLine from '@/assets/images/icon/small/icon-resume-small-line.svg?inline';
+import IconAnalyticsSmallLine from '@/assets/images/icon/small/icon-analytics-small-line.svg?inline';
+import IconArrowSmallLine from '@/assets/images/icon/small/icon-arrow-small-line.svg?inline';
+import IconTextArrowSmallLine from '@/assets/images/icon/small/icon-textArrow-small-line.svg?inline';
+import IconRevertSmallLine from '@/assets/images/icon/small/icon-revert-small-line.svg?inline';
+import IconPlusSmallLine from '@/assets/images/icon/small/icon-plus-small-line.svg?inline';
+import IconMinusSmallLine from '@/assets/images/icon/small/icon-minus-small-line.svg?inline';
+import IconCloseSmallLine from '@/assets/images/icon/small/icon-close-small-line.svg?inline';
+import IconFilterSmallLine from '@/assets/images/icon/small/icon-filter-small-line.svg?inline';
+import IconBookmarkSmallLine from '@/assets/images/icon/small/icon-bookmark-small-line.svg?inline';
+import IconBookmarkSmallFill from '@/assets/images/icon/small/icon-bookmark-small-fill.svg?inline';
+import IconCheckSmallLine from '@/assets/images/icon/small/icon-check-small-line.svg?inline';
+import IconCheckRoundSmallLine from '@/assets/images/icon/small/icon-checkRound-small-line.svg?inline';
+import IconCheckRoundSmallFill from '@/assets/images/icon/small/icon-checkRound-small-fill.svg?inline';
+import IconQuestionMarkSmallLine from '@/assets/images/icon/small/icon-questionMark-small-line.svg?inline';
+import IconQuestionMarkSmallFill from '@/assets/images/icon/small/icon-questionMark-small-fill.svg?inline';
+import IconExclamationSmallLine from '@/assets/images/icon/small/icon-exclamation-small-line.svg?inline';
+import IconExclamationSmallFill from '@/assets/images/icon/small/icon-exclamation-small-fill.svg?inline';
+import IconInformationSmallLine from '@/assets/images/icon/small/icon-information-small-line.svg?inline';
+import IconInformationSmallFill from '@/assets/images/icon/small/icon-information-small-fill.svg?inline';
+import IconCloseRoundSmallLine from '@/assets/images/icon/small/icon-closeRound-small-line.svg?inline';
+import IconCloseRoundSmallFill from '@/assets/images/icon/small/icon-closeRound-small-fill.svg?inline';
+import IconPlusRoundSmallLine from '@/assets/images/icon/small/icon-plusRound-small-line.svg?inline';
+import IconArrowRoundSmallLine from '@/assets/images/icon/small/icon-arrowRound-small-line.svg?inline';
+import IconLockSmallLine from '@/assets/images/icon/small/icon-lock-small-line.svg?inline';
+import IconLockSmallFill from '@/assets/images/icon/small/icon-lock-small-fill.svg?inline';
+import IconImportSmallLine from '@/assets/images/icon/small/icon-import-small-line.svg?inline';
+import IconLinkSmallLine from '@/assets/images/icon/small/icon-link-small-line.svg?inline';
+import IconDownloadSmallLine from '@/assets/images/icon/small/icon-download-small-line.svg?inline';
+import IconTrashSmallLine from '@/assets/images/icon/small/icon-trash-small-line.svg?inline';
+import IconLikeSmallLine from '@/assets/images/icon/small/icon-like-small-line.svg?inline';
+import IconLikeSmallFill from '@/assets/images/icon/small/icon-like-small-fill.svg?inline';
+import IconBrowseSmallLine from '@/assets/images/icon/small/icon-browse-small-line.svg?inline';
+import IconBrowseSmallFill from '@/assets/images/icon/small/icon-browse-small-fill.svg?inline';
+import IconExportSmallLine from '@/assets/images/icon/small/icon-export-small-line.svg?inline';
+import IconVideoSmallLine from '@/assets/images/icon/small/icon-video-small-line.svg?inline';
+import IconVideoSmallFill from '@/assets/images/icon/small/icon-video-small-fill.svg?inline';
+import IconClockSmallLine from '@/assets/images/icon/small/icon-clock-small-line.svg?inline';
+import IconClockSmallFill from '@/assets/images/icon/small/icon-clock-small-fill.svg?inline';
+import IconPriceSmallLine from '@/assets/images/icon/small/icon-price-small-line.svg?inline';
+import IconDiscountSmallLine from '@/assets/images/icon/small/icon-discount-small-line.svg?inline';
+import IconLocationSmallLine from '@/assets/images/icon/small/icon-location-small-line.svg?inline';
+import IconLocationSmallFill from '@/assets/images/icon/small/icon-location-small-fill.svg?inline';
+import IconSupportSmallLine from '@/assets/images/icon/small/icon-support-small-line.svg?inline';
+import IconCouponSmallLine from '@/assets/images/icon/small/icon-coupon-small-line.svg?inline';
+import IconMegaphoneSmallLine from '@/assets/images/icon/small/icon-megaphone-small-line.svg?inline';
+import IconStarSmallLine from '@/assets/images/icon/small/icon-star-small-line.svg?inline';
+import IconStarSmallFill from '@/assets/images/icon/small/icon-star-small-fill.svg?inline';
+import IconThreeDotSmallFill from '@/assets/images/icon/small/icon-threeDot-small-fill.svg?inline';
+import IconFileSmallLine from '@/assets/images/icon/small/icon-file-small-line.svg?inline';
+import IconBlockSmallLine from '@/assets/images/icon/small/icon-block-small-line.svg?inline';
+import IconUnblockSmallLine from '@/assets/images/icon/small/icon-unblock-small-line.svg?inline';
+import IconSirenSmallLine from '@/assets/images/icon/small/icon-siren-small-line.svg?inline';
+import IconWritingSmallLine from '@/assets/images/icon/small/icon-writing-small-line.svg?inline';
+import IconVodSmallLine from '@/assets/images/icon/small/icon-vod-small-line.svg?inline';
+import IconDateSmallLine from '@/assets/images/icon/small/icon-date-small-line.svg?inline';
 
 // medium
-import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
-import IconProfileMediumFill from '@/assets/images/icon/medium/icon-profile-medium-fill.svg?inline';
-import IconQuestionMediumLine from '@/assets/images/icon/medium/icon-question-medium-line.svg?inline';
-import IconEssayMediumLine from '@/assets/images/icon/medium/icon-essay-medium-line.svg?inline';
-import IconInterviewMediumLine from '@/assets/images/icon/medium/icon-interview-medium-line.svg?inline';
-import IconCommentMediumLine from '@/assets/images/icon/medium/icon-comment-medium-line.svg?inline';
-import IconResumeMediumLine from '@/assets/images/icon/medium/icon-resume-medium-line.svg?inline';
-import IconAnalyticsMediumLine from '@/assets/images/icon/medium/icon-analytics-medium-line.svg?inline';
-import IconArrowMediumLine from '@/assets/images/icon/medium/icon-arrow-medium-line.svg?inline';
-import IconTextArrowMediumLine from '@/assets/images/icon/medium/icon-textArrow-medium-line.svg?inline';
-import IconRevertMediumLine from '@/assets/images/icon/medium/icon-revert-medium-line.svg?inline';
-import IconPlusMediumLine from '@/assets/images/icon/medium/icon-plus-medium-line.svg?inline';
-import IconMinusMediumLine from '@/assets/images/icon/medium/icon-minus-medium-line.svg?inline';
-import IconCloseMediumLine from '@/assets/images/icon/medium/icon-close-medium-line.svg?inline';
-import IconFilterMediumLine from '@/assets/images/icon/medium/icon-filter-medium-line.svg?inline';
-import IconBookmarkMediumLine from '@/assets/images/icon/medium/icon-bookmark-medium-line.svg?inline';
-import IconBookmarkMediumFill from '@/assets/images/icon/medium/icon-bookmark-medium-fill.svg?inline';
-import IconCheckMediumLine from '@/assets/images/icon/medium/icon-check-medium-line.svg?inline';
-import IconCheckRoundMediumLine from '@/assets/images/icon/medium/icon-checkRound-medium-line.svg?inline';
-import IconCheckRoundMediumFill from '@/assets/images/icon/medium/icon-checkRound-medium-fill.svg?inline';
-import IconQuestionMarkMediumLine from '@/assets/images/icon/medium/icon-questionMark-medium-line.svg?inline';
-import IconQuestionMarkMediumFill from '@/assets/images/icon/medium/icon-questionMark-medium-fill.svg?inline';
-import IconExclamationMediumLine from '@/assets/images/icon/medium/icon-exclamation-medium-line.svg?inline';
-import IconExclamationMediumFill from '@/assets/images/icon/medium/icon-exclamation-medium-fill.svg?inline';
-import IconInformationMediumLine from '@/assets/images/icon/medium/icon-information-medium-line.svg?inline';
-import IconInformationMediumFill from '@/assets/images/icon/medium/icon-information-medium-fill.svg?inline';
-import IconCloseRoundMediumLine from '@/assets/images/icon/medium/icon-closeRound-medium-line.svg?inline';
-import IconCloseRoundMediumFill from '@/assets/images/icon/medium/icon-closeRound-medium-fill.svg?inline';
-import IconPlusRoundMediumLine from '@/assets/images/icon/medium/icon-plusRound-medium-line.svg?inline';
-import IconArrowRoundMediumLine from '@/assets/images/icon/medium/icon-arrowRound-medium-line.svg?inline';
-import IconLockMediumLine from '@/assets/images/icon/medium/icon-lock-medium-line.svg?inline';
-import IconLockMediumFill from '@/assets/images/icon/medium/icon-lock-medium-fill.svg?inline';
-import IconImportMediumLine from '@/assets/images/icon/medium/icon-import-medium-line.svg?inline';
-import IconLinkMediumLine from '@/assets/images/icon/medium/icon-link-medium-line.svg?inline';
-import IconDownloadMediumLine from '@/assets/images/icon/medium/icon-download-medium-line.svg?inline';
-import IconTrashMediumLine from '@/assets/images/icon/medium/icon-trash-medium-line.svg?inline';
-import IconLikeMediumLine from '@/assets/images/icon/medium/icon-like-medium-line.svg?inline';
-import IconLikeMediumFill from '@/assets/images/icon/medium/icon-like-medium-fill.svg?inline';
-import IconBrowseMediumLine from '@/assets/images/icon/medium/icon-browse-medium-line.svg?inline';
-import IconBrowseMediumFill from '@/assets/images/icon/medium/icon-browse-medium-fill.svg?inline';
-import IconExportMediumLine from '@/assets/images/icon/medium/icon-export-medium-line.svg?inline';
-import IconVideoMediumLine from '@/assets/images/icon/medium/icon-video-medium-line.svg?inline';
-import IconVideoMediumFill from '@/assets/images/icon/medium/icon-video-medium-fill.svg?inline';
-import IconClockMediumLine from '@/assets/images/icon/medium/icon-clock-medium-line.svg?inline';
-import IconClockMediumFill from '@/assets/images/icon/medium/icon-clock-medium-fill.svg?inline';
-import IconPriceMediumLine from '@/assets/images/icon/medium/icon-price-medium-line.svg?inline';
-import IconDiscountMediumLine from '@/assets/images/icon/medium/icon-discount-medium-line.svg?inline';
-import IconLocationMediumLine from '@/assets/images/icon/medium/icon-location-medium-line.svg?inline';
-import IconLocationMediumFill from '@/assets/images/icon/medium/icon-location-medium-fill.svg?inline';
-import IconSupportMediumLine from '@/assets/images/icon/medium/icon-support-medium-line.svg?inline';
-import IconCouponMediumLine from '@/assets/images/icon/medium/icon-coupon-medium-line.svg?inline';
-import IconMegaphoneMediumLine from '@/assets/images/icon/medium/icon-megaphone-medium-line.svg?inline';
-import IconStarMediumLine from '@/assets/images/icon/medium/icon-star-medium-line.svg?inline';
-import IconStarMediumFill from '@/assets/images/icon/medium/icon-star-medium-fill.svg?inline';
-import IconThreeDotMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
-import IconFileMediumLine from '@/assets/images/icon/medium/icon-file-medium-line.svg?inline';
-import IconBlockMediumLine from '@/assets/images/icon/medium/icon-block-medium-line.svg?inline';
-import IconUnblockMediumLine from '@/assets/images/icon/medium/icon-unblock-medium-line.svg?inline';
-import IconSirenMediumLine from '@/assets/images/icon/medium/icon-siren-medium-line.svg?inline';
-import IconWritingMediumLine from '@/assets/images/icon/medium/icon-writing-medium-line.svg?inline';
-import IconVodMediumLine from '@/assets/images/icon/medium/icon-vod-medium-line.svg?inline';
-import IconDateMediumLine from '@/assets/images/icon/medium/icon-date-medium-line.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -242,70 +242,70 @@ export const IconNames = [
 	'IconExportXSmallLine',
 
 	// small
+	'IconProfileSmallLine',
+	'IconProfileSmallFill',
+	'IconQuestionSmallLine',
+	'IconEssaySmallLine',
+	'IconInterviewSmallLine',
+	'IconCommentSmallLine',
+	'IconResumeSmallLine',
+	'IconAnalyticsSmallLine',
+	'IconArrowSmallLine',
+	'IconTextArrowSmallLine',
+	'IconRevertSmallLine',
+	'IconPlusSmallLine',
+	'IconMinusSmallLine',
+	'IconCloseSmallLine',
+	'IconFilterSmallLine',
+	'IconBookmarkSmallLine',
+	'IconBookmarkSmallFill',
+	'IconCheckSmallLine',
+	'IconCheckRoundSmallLine',
+	'IconCheckRoundSmallFill',
+	'IconQuestionMarkSmallLine',
+	'IconQuestionMarkSmallFill',
+	'IconExclamationSmallLine',
+	'IconExclamationSmallFill',
+	'IconInformationSmallLine',
+	'IconInformationSmallFill',
+	'IconCloseRoundSmallLine',
+	'IconCloseRoundSmallFill',
+	'IconPlusRoundSmallLine',
+	'IconArrowRoundSmallLine',
+	'IconLockSmallLine',
+	'IconLockSmallFill',
+	'IconImportSmallLine',
+	'IconLinkSmallLine',
+	'IconDownloadSmallLine',
+	'IconTrashSmallLine',
+	'IconLikeSmallLine',
+	'IconLikeSmallFill',
+	'IconBrowseSmallLine',
+	'IconBrowseSmallFill',
+	'IconExportSmallLine',
+	'IconVideoSmallLine',
+	'IconVideoSmallFill',
+	'IconClockSmallLine',
+	'IconClockSmallFill',
+	'IconPriceSmallLine',
+	'IconDiscountSmallLine',
+	'IconLocationSmallLine',
+	'IconLocationSmallFill',
+	'IconSupportSmallLine',
+	'IconCouponSmallLine',
+	'IconMegaphoneSmallLine',
+	'IconStarSmallLine',
+	'IconStarSmallFill',
+	'IconThreeDotSmallFill',
+	'IconFileSmallLine',
+	'IconBlockSmallLine',
+	'IconUnblockSmallLine',
+	'IconSirenSmallLine',
+	'IconWritingSmallLine',
+	'IconVodSmallLine',
+	'IconDateSmallLine',
 
 	// medium
-	'IconProfileMediumLine',
-	'IconProfileMediumFill',
-	'IconQuestionMediumLine',
-	'IconEssayMediumLine',
-	'IconInterviewMediumLine',
-	'IconCommentMediumLine',
-	'IconResumeMediumLine',
-	'IconAnalyticsMediumLine',
-	'IconArrowMediumLine',
-	'IconTextArrowMediumLine',
-	'IconRevertMediumLine',
-	'IconPlusMediumLine',
-	'IconMinusMediumLine',
-	'IconCloseMediumLine',
-	'IconFilterMediumLine',
-	'IconBookmarkMediumLine',
-	'IconBookmarkMediumFill',
-	'IconCheckMediumLine',
-	'IconCheckRoundMediumLine',
-	'IconCheckRoundMediumFill',
-	'IconQuestionMarkMediumLine',
-	'IconQuestionMarkMediumFill',
-	'IconExclamationMediumLine',
-	'IconExclamationMediumFill',
-	'IconInformationMediumLine',
-	'IconInformationMediumFill',
-	'IconCloseRoundMediumLine',
-	'IconCloseRoundMediumFill',
-	'IconPlusRoundMediumLine',
-	'IconArrowRoundMediumLine',
-	'IconLockMediumLine',
-	'IconLockMediumFill',
-	'IconImportMediumLine',
-	'IconLinkMediumLine',
-	'IconDownloadMediumLine',
-	'IconTrashMediumLine',
-	'IconLikeMediumLine',
-	'IconLikeMediumFill',
-	'IconBrowseMediumLine',
-	'IconBrowseMediumFill',
-	'IconExportMediumLine',
-	'IconVideoMediumLine',
-	'IconVideoMediumFill',
-	'IconClockMediumLine',
-	'IconClockMediumFill',
-	'IconPriceMediumLine',
-	'IconDiscountMediumLine',
-	'IconLocationMediumLine',
-	'IconLocationMediumFill',
-	'IconSupportMediumLine',
-	'IconCouponMediumLine',
-	'IconMegaphoneMediumLine',
-	'IconStarMediumLine',
-	'IconStarMediumFill',
-	'IconThreeDotMediumFill',
-	'IconFileMediumLine',
-	'IconBlockMediumLine',
-	'IconUnblockMediumLine',
-	'IconSirenMediumLine',
-	'IconWritingMediumLine',
-	'IconVodMediumLine',
-	'IconDateMediumLine',
 
 	// large
 	'IconProfileLargeLine',
@@ -465,70 +465,70 @@ export default {
 		IconExportXSmallLine,
 
 		// small
+		IconProfileSmallLine,
+		IconProfileSmallFill,
+		IconQuestionSmallLine,
+		IconEssaySmallLine,
+		IconInterviewSmallLine,
+		IconCommentSmallLine,
+		IconResumeSmallLine,
+		IconAnalyticsSmallLine,
+		IconArrowSmallLine,
+		IconTextArrowSmallLine,
+		IconRevertSmallLine,
+		IconPlusSmallLine,
+		IconMinusSmallLine,
+		IconCloseSmallLine,
+		IconFilterSmallLine,
+		IconBookmarkSmallLine,
+		IconBookmarkSmallFill,
+		IconThreeDotSmallFill,
+		IconCheckSmallLine,
+		IconCheckRoundSmallLine,
+		IconCheckRoundSmallFill,
+		IconQuestionMarkSmallLine,
+		IconQuestionMarkSmallFill,
+		IconExclamationSmallLine,
+		IconExclamationSmallFill,
+		IconInformationSmallLine,
+		IconInformationSmallFill,
+		IconCloseRoundSmallLine,
+		IconCloseRoundSmallFill,
+		IconPlusRoundSmallLine,
+		IconArrowRoundSmallLine,
+		IconLockSmallLine,
+		IconLockSmallFill,
+		IconImportSmallLine,
+		IconLinkSmallLine,
+		IconDownloadSmallLine,
+		IconTrashSmallLine,
+		IconLikeSmallLine,
+		IconLikeSmallFill,
+		IconBrowseSmallLine,
+		IconBrowseSmallFill,
+		IconExportSmallLine,
+		IconVideoSmallLine,
+		IconVideoSmallFill,
+		IconClockSmallLine,
+		IconClockSmallFill,
+		IconPriceSmallLine,
+		IconDiscountSmallLine,
+		IconLocationSmallLine,
+		IconLocationSmallFill,
+		IconSupportSmallLine,
+		IconCouponSmallLine,
+		IconMegaphoneSmallLine,
+		IconStarSmallLine,
+		IconStarSmallFill,
+		IconFileSmallLine,
+		IconBlockSmallLine,
+		IconUnblockSmallLine,
+		IconSirenSmallLine,
+		IconWritingSmallLine,
+		IconVodSmallLine,
+		IconDateSmallLine,
 
 		// medium
-		IconProfileMediumLine,
-		IconProfileMediumFill,
-		IconQuestionMediumLine,
-		IconEssayMediumLine,
-		IconInterviewMediumLine,
-		IconCommentMediumLine,
-		IconResumeMediumLine,
-		IconAnalyticsMediumLine,
-		IconArrowMediumLine,
-		IconTextArrowMediumLine,
-		IconRevertMediumLine,
-		IconPlusMediumLine,
-		IconMinusMediumLine,
-		IconCloseMediumLine,
-		IconFilterMediumLine,
-		IconBookmarkMediumLine,
-		IconBookmarkMediumFill,
-		IconThreeDotMediumFill,
-		IconCheckMediumLine,
-		IconCheckRoundMediumLine,
-		IconCheckRoundMediumFill,
-		IconQuestionMarkMediumLine,
-		IconQuestionMarkMediumFill,
-		IconExclamationMediumLine,
-		IconExclamationMediumFill,
-		IconInformationMediumLine,
-		IconInformationMediumFill,
-		IconCloseRoundMediumLine,
-		IconCloseRoundMediumFill,
-		IconPlusRoundMediumLine,
-		IconArrowRoundMediumLine,
-		IconLockMediumLine,
-		IconLockMediumFill,
-		IconImportMediumLine,
-		IconLinkMediumLine,
-		IconDownloadMediumLine,
-		IconTrashMediumLine,
-		IconLikeMediumLine,
-		IconLikeMediumFill,
-		IconBrowseMediumLine,
-		IconBrowseMediumFill,
-		IconExportMediumLine,
-		IconVideoMediumLine,
-		IconVideoMediumFill,
-		IconClockMediumLine,
-		IconClockMediumFill,
-		IconPriceMediumLine,
-		IconDiscountMediumLine,
-		IconLocationMediumLine,
-		IconLocationMediumFill,
-		IconSupportMediumLine,
-		IconCouponMediumLine,
-		IconMegaphoneMediumLine,
-		IconStarMediumLine,
-		IconStarMediumFill,
-		IconFileMediumLine,
-		IconBlockMediumLine,
-		IconUnblockMediumLine,
-		IconSirenMediumLine,
-		IconWritingMediumLine,
-		IconVodMediumLine,
-		IconDateMediumLine,
 
 		// large
 		IconProfileLargeLine,

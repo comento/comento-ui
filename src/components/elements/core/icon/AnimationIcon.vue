@@ -1,10 +1,10 @@
 <script>
-import IconCheckRoundMediumLineAnimation from '@/assets/images/icon/animation/icon-checkRound-medium-line-animation.svg?inline';
-import IconThreeDotMediumFillAnimation from '@/assets/images/icon/animation/icon-threeDot-medium-fill-animation.svg?inline';
+import IconCheckRoundSmallLineAnimation from '@/assets/images/icon/animation/icon-checkRound-small-line-animation.svg?inline';
+import IconThreeDotSmallFillAnimation from '@/assets/images/icon/animation/icon-threeDot-small-fill-animation.svg?inline';
 import BaseIcon from '@/components/elements/core/icon/BaseIcon';
 import customValidator from '@/utils/custom-validator';
 
-export const AnimationIconNames = ['IconCheckRoundMediumLineAnimation', 'IconThreeDotMediumFillAnimation'];
+export const AnimationIconNames = ['IconCheckRoundSmallLineAnimation', 'IconThreeDotSmallFillAnimation'];
 
 /**
  * @displayName c-animation-icon
@@ -23,8 +23,8 @@ export default {
 		},
 	},
 	components: {
-		IconCheckRoundMediumLineAnimation,
-		IconThreeDotMediumFillAnimation,
+		IconCheckRoundSmallLineAnimation,
+		IconThreeDotSmallFillAnimation,
 	},
 };
 </script>
