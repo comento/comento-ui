@@ -1,3 +1,20 @@
+## [1.1.17](https://github.com/comento/comento-ui/compare/v1.1.16...v1.1.17) (2022-12-19)
+
+
+### Bug Fixes
+
+* 닫기 버튼 아이콘 색상 변경 ([#959](https://github.com/comento/comento-ui/issues/959)) ([25fea2c](https://github.com/comento/comento-ui/commit/25fea2c0a6952fedeb4ea1aec2263d662f636a1c))
+
+
+### Features
+
+* 아이콘 크기 변경, 신규 아이콘 추가 ([#958](https://github.com/comento/comento-ui/issues/958)) ([aa4ca5d](https://github.com/comento/comento-ui/commit/aa4ca5d6eec6ac0aaaecea765b6e92373892c505))
+* EduCard img에 로딩 속성 추가 ([#950](https://github.com/comento/comento-ui/issues/950)) ([8993ec4](https://github.com/comento/comento-ui/commit/8993ec46a273506a2c216b10944be1376078b8ea))
+* gray050 컬러 추가 ([#954](https://github.com/comento/comento-ui/issues/954)) ([e89b707](https://github.com/comento/comento-ui/commit/e89b7079f300afed744dfbf2ae4a6fcf03393239))
+* xsmall export 아이콘 추가 ([#955](https://github.com/comento/comento-ui/issues/955)) ([feafc4a](https://github.com/comento/comento-ui/commit/feafc4a08326ab5527223a799ea7895970608fad))
+
+
+
 ## [1.1.16](https://github.com/comento/comento-ui/compare/v1.1.15...v1.1.16) (2022-12-15)
 
 
