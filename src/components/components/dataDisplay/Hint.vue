@@ -1,6 +1,6 @@
 <template>
 	<div v-if="hasSlot" class="c-hint">
-		<Icon name="IconExclamationSmallFill" :color="computedIconColor" />
+		<Icon name="IconExclamationXSmallFill" :color="computedIconColor" />
 		<Typography type="caption2" :color="computedTextColor" element="p" align="left">
 			<slot />
 		</Typography>

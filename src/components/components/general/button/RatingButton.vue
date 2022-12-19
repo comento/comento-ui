@@ -30,7 +30,7 @@ export default {
 	props: {
 		iconName: {
 			type: String,
-			default: 'IconCommentMediumLine',
+			default: 'IconCommentSmallLine',
 		},
 		text: {
 			type: [Number, String],

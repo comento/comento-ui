@@ -111,7 +111,7 @@ export default {
 			return this.isMobile ? 'Medium' : 'Large';
 		},
 		closeIconName() {
-			return this.isMobile ? 'IconCloseMediumLine' : 'IconCloseLargeLine';
+			return this.isMobile ? 'IconCloseSmallLine' : 'IconCloseLargeLine';
 		},
 		iconTypeMap() {
 			return {
