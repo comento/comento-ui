@@ -23,7 +23,7 @@ export default {
 		},
 		iconName: {
 			type: String,
-			default: 'IconCommentMediumLine',
+			default: 'IconCommentSmallLine',
 		},
 		text: {
 			type: [String, Number],

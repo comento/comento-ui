@@ -3,13 +3,13 @@
 		<div class="c-file-item--content" @click.stop="handleClickFileItemContent({ file, index })">
 			<template v-if="isRemovable">
 				<Loader v-if="isLoading" class="c-file-item--content-icon" size="small" />
-				<Icon v-else class="c-file-item--content-icon" name="IconFileMediumLine" color="gray700" />
+				<Icon v-else class="c-file-item--content-icon" name="IconFileSmallLine" color="gray700" />
 			</template>
 			<Typography type="body2" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
 		</div>
 		<Icon
 			v-if="isRemovable"
-			name="IconTrashMediumLine"
+			name="IconTrashSmallLine"
 			color="gray500"
 			style="flex-shrink: 0"
 			@click.stop="handleClickFileTrashIcon({ file, index })"
@@ -18,7 +18,7 @@
 			<Loader v-if="isLoading" size="small" />
 			<Icon
 				v-else
-				name="IconDownloadMediumLine"
+				name="IconDownloadSmallLine"
 				color="gray500"
 				@click.stop="handleClickFileDownloadIcon({ file, index })"
 			/>
