@@ -11,7 +11,7 @@
 				:style="styles"
 			>
 				<div v-if="closeable" class="c-drawer--close-button" @click.stop="close">
-					<Icon class="c-pointer" name="IconCloseLargeLine" color="gray800" />
+					<Icon class="c-pointer" name="IconCloseLargeLine" color="gray400" />
 				</div>
 				<slot />
 			</div>
