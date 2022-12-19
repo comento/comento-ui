@@ -14,8 +14,8 @@ storiesOf('Data Display/Rating/RatingGroup', module).add('Index', () => ({
 		<NewRow>
 			<NewCol :col-sm="12" :col-lg="8">
 				<RatingGroup>
-					<IconRating icon-name="IconCommentMediumLine" color="primary" text="6" />
-					<IconRating icon-name="IconLikeMediumLine" color="error" text="6" />
+					<IconRating icon-name="IconCommentSmallLine" color="primary" text="6" />
+					<IconRating icon-name="IconLikeSmallLine" color="error" text="6" />
 				</RatingGroup>
 			</NewCol>
 		</NewRow>
