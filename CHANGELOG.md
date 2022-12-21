@@ -1,3 +1,12 @@
+## [1.1.18](https://github.com/comento/comento-ui/compare/v1.1.17...v1.1.18) (2022-12-21)
+
+
+### Bug Fixes
+
+* 오류 수정(아이콘 크기, 스토리북) ([#961](https://github.com/comento/comento-ui/issues/961)) ([f22ab1a](https://github.com/comento/comento-ui/commit/f22ab1a725bd20234e597597028141acfa78fe43))
+
+
+
 ## [1.1.17](https://github.com/comento/comento-ui/compare/v1.1.16...v1.1.17) (2022-12-19)
 
 
