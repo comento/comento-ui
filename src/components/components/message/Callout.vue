@@ -121,7 +121,7 @@ export default {
 			}[this.size];
 		},
 		computedCloseIconName() {
-			const iconSize = this.size === 'xsmall' ? 'Small' : 'Medium';
+			const iconSize = this.size === 'xsmall' ? 'XSmall' : 'Small';
 			return `IconClose${iconSize}Line`;
 		},
 		computedTransition() {
@@ -138,9 +138,9 @@ export default {
 				success: 'CheckRound',
 			}[this.type];
 			const size = {
-				xsmall: 'Small',
-				small: 'Medium',
-				medium: 'Medium',
+				xsmall: 'XSmall',
+				small: 'Small',
+				medium: 'Small',
 			}[this.size];
 			return `Icon${name + size}Line`;
 		},

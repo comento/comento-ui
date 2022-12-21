@@ -27,7 +27,7 @@
 				<template v-if="!$slots['alternative-caption']">
 					<div class="c-promotion-edu-card--caption-side c-promotion-edu-card--caption-left">
 						<Icon
-							:name="isMobile ? 'IconStarSmallFill' : 'IconStarMediumFill'"
+							:name="isMobile ? 'IconStarXSmallFill' : 'IconStarSmallFill'"
 							color="yellow600"
 							element="span"
 							class="mr-2"
