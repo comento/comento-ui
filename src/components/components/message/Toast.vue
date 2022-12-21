@@ -170,7 +170,7 @@ $topbar-height: 52px;
 	}
 
 	&.position-top {
-		top: calc($topbar-height + 16px);
+		top: $topbar-height + 16px;
 		bottom: auto;
 
 		@include pc {
