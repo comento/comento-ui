@@ -117,8 +117,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$topbar-height: 52px;
-
 .c-toast {
 	position: fixed;
 	bottom: 16px;
