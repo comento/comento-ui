@@ -126,7 +126,7 @@ export default {
 		},
 		computedIconName() {
 			const iconBySize = {
-				xsmall: 'Medium',
+				xsmall: 'Small',
 				small: 'Large',
 				medium: 'XLarge',
 				large: '2XLarge',

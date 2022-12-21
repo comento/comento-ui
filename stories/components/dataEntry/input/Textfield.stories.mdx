@@ -506,7 +506,7 @@ export const Default = (args, { argTypes }) => ({
                                 label="대학"
                                 placeholder="학교명"
                                 hint="대학명을 입력해주세요."
-                                :value.sync="name"
+                                :value.sync="univ1"
                             >
                                 <template v-slot:append>
                                     <Typography type="caption2" color="info" class="mr-2">제휴 확인 중</Typography>
@@ -522,7 +522,7 @@ export const Default = (args, { argTypes }) => ({
                                 outline
                                 label="대학"
                                 placeholder="학교명"
-                                :value.sync="name"
+                                :value.sync="univ2"
                             >
                                 <template v-slot:append>
                                     <Typography type="caption2" color="info" class="mr-2">미제휴기관</Typography>
@@ -538,7 +538,7 @@ export const Default = (args, { argTypes }) => ({
                                 outline
                                 label="대학"
                                 placeholder="학교명"
-                                :value.sync="name"
+                                :value.sync="univ3"
                             >
                                 <template v-slot:append>
                                     <Typography type="caption2" color="primary" class="mr-2">제휴기관</Typography>
@@ -552,7 +552,7 @@ export const Default = (args, { argTypes }) => ({
                             <TextField
                                 type="text"
                                 placeholder="인증번호"
-                                :value.sync="name"
+                                :value.sync="authNo"
                                 full
                             >
                                 <template v-slot:append>
@@ -563,6 +563,14 @@ export const Default = (args, { argTypes }) => ({
                     </Row>
                 </Grid>
             `,
+            data() {
+                return {
+                    univ1: '',
+                    univ2: '',
+                    univ3: '',
+                    authNo: '',
+                };
+            },
 			components: { Grid, Row, StyleCol, TextField, Typography, Loader, Icon },
 		}}
 	</Story>

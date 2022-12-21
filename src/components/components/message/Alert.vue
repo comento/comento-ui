@@ -108,7 +108,7 @@ export default {
 			return { backgroundColor: colors[this.iconTypeMap[this.type].backgroundColor] };
 		},
 		iconSize() {
-			return this.isMobile ? 'Medium' : 'Large';
+			return this.isMobile ? 'Small' : 'Large';
 		},
 		closeIconName() {
 			return this.isMobile ? 'IconCloseSmallLine' : 'IconCloseLargeLine';

@@ -1,6 +1,6 @@
 <template>
 	<div class="c-application c-banner" :class="[type]" :style="computedStyleVariables">
-		<div class="c-banner--background" :class="[computedBlur]">
+		<div class="c-banner--background">
 			<slot name="background" />
 		</div>
 		<div class="c-banner--content" :class="[computedAlignItems]">

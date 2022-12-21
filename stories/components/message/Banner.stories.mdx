@@ -44,7 +44,7 @@ export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	components: { Banner, Button, Typography, NewGrid, NewRow, NewCol },
 	template: `<div>
-            <Banner :type="type" :blur="blur" :title="title" :description="description" :align-items="alignItems">
+            <Banner :type="type" :title="title" :description="description" :align-items="alignItems">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
