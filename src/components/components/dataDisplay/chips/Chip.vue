@@ -130,11 +130,11 @@ export default {
 		computedCloseButtonIconName() {
 			if (!ChipSizesWithCloseButton.includes(this.size)) return;
 			const closeButtonIconSize = {
-				medium: 'small',
-				large: 'small',
-				xlarge: 'medium',
+				medium: 'XSmall',
+				large: 'XSmall',
+				xlarge: 'Small',
 			}[this.size];
-			return `IconClose${closeButtonIconSize[0].toUpperCase() + closeButtonIconSize.slice(1)}Line`;
+			return `IconClose${closeButtonIconSize[0] + closeButtonIconSize.slice(1)}Line`;
 		},
 		computedCloseButtonColor() {
 			const whiteColorTypes = ['success', 'secondary', 'error'];
