@@ -168,7 +168,7 @@ export default {
 	}
 
 	&.position-top {
-		top: 32px;
+		top: $topbar-height + 16px;
 		bottom: auto;
 
 		@include pc {
