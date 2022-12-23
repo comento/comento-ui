@@ -1,3 +1,12 @@
+## [1.1.19](https://github.com/comento/comento-ui/compare/v1.1.17...v1.1.18) (2022-12-23)
+
+
+### Bug Fixes
+
+* 앱 기준 topbar 위치 수정 ([#963](https://github.com/comento/comento-ui/issues/963)) ([9f86542](https://github.com/comento/comento-ui/pull/963/commits/9f8654268f972d39a2f9bf720d6089776eb378d2))
+* 앱 기준 topbar 위치 수정 ([#963](https://github.com/comento/comento-ui/issues/963)) ([9f86542](https://github.com/comento/comento-ui/pull/963/commits/9f8654268f972d39a2f9bf720d6089776eb378d2))
+
+
 ## [1.1.18](https://github.com/comento/comento-ui/compare/v1.1.17...v1.1.18) (2022-12-21)
 
 
