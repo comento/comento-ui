@@ -69,20 +69,20 @@
     }
   }
 
-  //&[x-placement^='left'] {
-  //  margin-right: 5px;
-  //
-  //  .tooltip-arrow {
-  //    border-width: 5px 0 5px 5px;
-  //    border-top-color: transparent !important;
-  //    border-right-color: transparent !important;
-  //    border-bottom-color: transparent !important;
-  //    right: -5px;
-  //    top: calc(50% - 5px);
-  //    margin-left: 0;
-  //    margin-right: 0;
-  //  }
-  //}
+  &[x-placement^='left'] {
+    margin-right: 5px;
+
+    .c-popover--arrow, .c-tooltip--arrow {
+      border-width: 5px 0 5px 5px;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      right: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 
   &[aria-hidden='true'] {
     visibility: hidden;
