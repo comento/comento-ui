@@ -8,6 +8,9 @@ export const placements = [
 	'right-top',
 	'right',
 	'right-bottom',
+	'left-top',
+	'left',
+	'left-bottom',
 ];
 export const placementMap = {
 	top: 'top',
@@ -19,4 +22,7 @@ export const placementMap = {
 	right: 'right',
 	'right-top': 'right-start',
 	'right-bottom': 'right-end',
+	left: 'left',
+	'left-top': 'left-start',
+	'left-bottom': 'left-end',
 };
