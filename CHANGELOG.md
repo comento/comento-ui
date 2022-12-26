@@ -1,3 +1,13 @@
+## [1.1.20](https://github.com/comento/comento-ui/compare/v1.1.19...v1.1.20) (2022-12-26)
+
+
+### Features
+
+* font에 cdn 주소 추가 ([#964](https://github.com/comento/comento-ui/issues/964)) ([e43b45d](https://github.com/comento/comento-ui/commit/e43b45d96c395f65b894f1ff5a5b7c613f1f68f7))
+* Tooltip left 방향 추가 ([#968](https://github.com/comento/comento-ui/issues/968)) ([88aee02](https://github.com/comento/comento-ui/commit/88aee024a0eec8ff1aba1a04ffb58a260388a6ef))
+
+
+
 ## [1.1.19](https://github.com/comento/comento-ui/compare/v1.1.17...v1.1.18) (2022-12-23)
 
 
