@@ -33,7 +33,7 @@ export default {
 	inheritAttrs: false,
 	props: {
 		/**
-		 * 위치(top, top-right, top-left, bottom, bottom-right, bottom-left, right-top, right, right-bottom)
+		 * 위치(top, top-right, top-left, bottom, bottom-right, bottom-left, right-top, right, right-bottom, left-top, left, left-bottom)
 		 */
 		placement: {
 			type: String,
