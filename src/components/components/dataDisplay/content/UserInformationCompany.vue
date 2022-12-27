@@ -3,7 +3,7 @@
 		<Typography :type="computedType" color="gray500" class="ellipsis">
 			<slot />
 		</Typography>
-		<Icon name="IconCheckRoundSmallFill" color="primary" class="ml-2" />
+		<Icon name="IconCheckRoundXSmallFill" color="primary" class="ml-2" />
 	</div>
 </template>
 

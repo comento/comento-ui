@@ -39,7 +39,7 @@ storiesOf('Data Display/content/ProfileWithText', module).add('Index', () => ({
 							{{ item.belong }}
 						</template>
 						<template v-slot:icon>
-							<Icon name="IconCheckRoundSmallFill" color="primary"/>
+							<Icon name="IconCheckRoundXSmallFill" color="primary"/>
 						</template>
 						<template v-slot:text>
 							<Typography element="p" type="body2" color="gray800" class="text-truncate">
