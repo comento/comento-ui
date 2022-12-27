@@ -1,3 +1,12 @@
+## [1.1.21](https://github.com/comento/comento-ui/compare/v1.1.20...v1.1.21) (2022-12-27)
+
+
+### Bug Fixes
+
+* 유저프로필에 들어가는 아이콘 사이즈 변경 small -> xsmall ([#970](https://github.com/comento/comento-ui/issues/970)) ([#971](https://github.com/comento/comento-ui/issues/971)) ([#972](https://github.com/comento/comento-ui/issues/972)) ([e064e01](https://github.com/comento/comento-ui/commit/e064e01d713066fa45225d9b72e0c79caafaccde))
+
+
+
 ## [1.1.20](https://github.com/comento/comento-ui/compare/v1.1.19...v1.1.20) (2022-12-26)
 
 
