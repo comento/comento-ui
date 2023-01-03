@@ -285,7 +285,7 @@ $info-text-color: $info;
 		padding: 0 26px;
 		min-width: 84px;
 		@include border-radius(8px);
-		@include headline6;
+		@include headline7;
 		font-weight: 400;
 		.loading {
 			padding: 0 9.5px;

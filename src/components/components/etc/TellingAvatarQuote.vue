@@ -3,7 +3,7 @@
 		<div class="telling-wrapper">
 			<Typography
 				v-if="$slots['title']"
-				type="headline6"
+				type="headline7"
 				color="gray900"
 				font-weight="semi-bold"
 				class="telling-title"

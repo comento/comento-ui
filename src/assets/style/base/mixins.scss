@@ -41,6 +41,10 @@
   @include trans-font-size(18px, 1.38);
   font-weight: $regular;
 }
+@mixin headline7 {
+  @include trans-font-size(18px, 1.38);
+  font-weight: $regular;
+}
 @mixin body1 {
   @include trans-font-size(16px, 1.54);
   font-weight: $regular;
