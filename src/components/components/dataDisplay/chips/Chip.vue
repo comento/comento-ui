@@ -212,7 +212,7 @@ export default {
 
 			&.clickable {
 				@include state-style {
-					background-color: $gray100;
+					background-color: $blue100;
 				}
 			}
 		}
@@ -223,7 +223,7 @@ export default {
 
 			&.clickable {
 				@include state-style {
-					background-color: $gray100;
+					background-color: $blue100;
 				}
 			}
 		}
