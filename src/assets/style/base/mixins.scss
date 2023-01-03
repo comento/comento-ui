@@ -38,8 +38,8 @@
   font-weight: $semi-bold;
 }
 @mixin headline6 {
-  @include trans-font-size(18px, 1.38);
-  font-weight: $regular;
+  @include trans-font-size(20px, 1.26);
+  font-weight: $semi-bold;
 }
 @mixin headline7 {
   @include trans-font-size(18px, 1.38);
