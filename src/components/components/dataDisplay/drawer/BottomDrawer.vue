@@ -9,7 +9,7 @@
 	>
 		<div v-if="showDrawer" class="c-bottom-drawer" :class="computedClass">
 			<div class="c-bottom-drawer--title-wrapper">
-				<Typography type="headline6" font-weight="semi-bold">
+				<Typography type="headline7" font-weight="semi-bold">
 					<slot name="title" />
 				</Typography>
 			</div>

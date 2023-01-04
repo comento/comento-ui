@@ -2,60 +2,65 @@
 @import "flexbox";
 @import "functions";
 
-@mixin trans-font-size($size, $line, $math: round) {
+@mixin trans-font-size($size, $line-height, $math: round) {
+  $line-height-percent: $line-height / 100;
   font-size: $size;
   @if $math == 'round' {
-    line-height: round($size * $line);
+    line-height: round($size * $line-height-percent);
   } @else if $math == 'floor' {
-    line-height: floor($size * $line);
+    line-height: floor($size * $line-height-percent);
   }
 }
 
 @mixin display1 {
-  @include trans-font-size(42px, 1.22);
+  @include trans-font-size(42px, 122);
   font-weight: $semi-bold;
   letter-spacing: -0.02em;
 }
 @mixin headline1 {
-  @include trans-font-size(32px, 1.26);
+  @include trans-font-size(32px, 126);
   font-weight: $semi-bold;
   letter-spacing: -0.02em;
 }
 @mixin headline2 {
-  @include trans-font-size(28px, 1.28);
+  @include trans-font-size(28px, 128);
   font-weight: $semi-bold;
 }
 @mixin headline3 {
-  @include trans-font-size(26px, 1.28);
+  @include trans-font-size(26px, 128);
   font-weight: $semi-bold;
 }
 @mixin headline4 {
-  @include trans-font-size(24px, 1.28);
+  @include trans-font-size(24px, 128);
   font-weight: $semi-bold;
 }
 @mixin headline5 {
-  @include trans-font-size(22px, 1.26);
+  @include trans-font-size(22px, 126);
   font-weight: $semi-bold;
 }
 @mixin headline6 {
-  @include trans-font-size(18px, 1.38);
+  @include trans-font-size(20px, 126);
+  font-weight: $semi-bold;
+}
+@mixin headline7 {
+  @include trans-font-size(18px, 138);
   font-weight: $regular;
 }
 @mixin body1 {
-  @include trans-font-size(16px, 1.54);
+  @include trans-font-size(16px, 154);
   font-weight: $regular;
   letter-spacing: 0.02em;
 }
 @mixin body2 {
-  @include trans-font-size(14px, 1.4);
+  @include trans-font-size(14px, 140);
   font-weight: $regular;
 }
 @mixin caption1 {
-  @include trans-font-size(12px, 1.22);
+  @include trans-font-size(12px, 122);
   font-weight: $regular;
 }
 @mixin caption2 {
-  @include trans-font-size(10px, 1.26);
+  @include trans-font-size(10px, 126);
   font-weight: $regular;
 }
 

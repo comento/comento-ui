@@ -21,6 +21,7 @@ export const TypographyTypes = [
 	'headline4',
 	'headline5',
 	'headline6',
+	'headline7',
 	'body1',
 	'body2',
 	'caption1',
@@ -161,6 +162,9 @@ p {
 }
 .c-headline6 {
 	@include headline6();
+}
+.c-headline7 {
+	@include headline7();
 }
 .c-body1 {
 	@include body1();
