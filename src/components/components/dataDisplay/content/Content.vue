@@ -50,7 +50,7 @@ export default {
 		return {
 			contentItems: {
 				overline: { type: 'caption1', element: 'p', color: 'gray400' },
-				title: { type: 'headline6', element: 'h2', color: 'gray900' },
+				title: { type: 'headline7', element: 'h2', color: 'gray900' },
 				body: { type: 'body1', element: 'p', color: 'gray850' },
 				caption: { type: 'body2', element: 'p', color: 'gray300' },
 			},

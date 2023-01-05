@@ -212,7 +212,7 @@ export default {
 
 			&.clickable {
 				@include state-style {
-					background-color: $gray100;
+					background-color: $blue100;
 				}
 			}
 		}
@@ -223,7 +223,7 @@ export default {
 
 			&.clickable {
 				@include state-style {
-					background-color: $gray100;
+					background-color: $blue100;
 				}
 			}
 		}
@@ -286,13 +286,20 @@ export default {
 		}
 	}
 	&.error {
-		color: $white;
-		border: 1px solid $error;
-		background-color: $error;
+		color: $error;
+		border: 1px solid $red100;
+		background-color: $red100;
 
 		&.clickable {
 			@include state-style {
-				background-color: $red800;
+				color: $red800;
+				background-color: $red400;
+			}
+		}
+		&.clickable-outline {
+			@include state-style {
+				color: $red600;
+				background-color: $red100;
 			}
 		}
 
