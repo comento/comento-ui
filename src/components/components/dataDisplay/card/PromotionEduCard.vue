@@ -16,7 +16,7 @@
 			</div>
 			<div class="c-promotion-edu-card--title">
 				<Typography
-					:type="isMobile ? 'body2' : 'headline6'"
+					:type="isMobile ? 'body2' : 'headline7'"
 					color="gray900"
 					:font-weight="isMobile ? 600 : 400"
 				>

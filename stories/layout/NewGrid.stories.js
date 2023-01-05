@@ -13,75 +13,75 @@ storiesOf('Layout/NewGrid', module)
 		<NewGrid>
 			<NewRow>
 				<NewCol :col-sm="4" :col-lg="12" class="mb-40" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</Typography>
 				</NewCol>
 			</NewRow>
 			<NewRow>
 				<NewCol :col-sm="3" :col-lg="9" class="mb-40">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan" >col-9</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan" >col-9</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" class="mb-40">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 			</NewRow>
 			<NewRow>
 				<NewCol :col-sm="1" :col-lg="3" class="mb-40" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 			</NewRow>
 			<NewRow>
 				<NewCol :col-sm="1" :col-lg="3" class="mb-40">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" :offset-lg="3">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 			</NewRow>
 			<NewRow>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" :offset-lg="1">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 			</NewRow>
 		</NewGrid>
@@ -95,75 +95,75 @@ storiesOf('Layout/NewGrid', module)
 		<NewGrid fluid>
 			<NewRow>
 				<NewCol :col-sm="4" :col-lg="12" class="mb-40" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</Typography>
 				</NewCol>
 			</NewRow>
 			<NewRow>
 				<NewCol :col-sm="3" :col-lg="9" class="mb-40">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan" >col-9</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan" >col-9</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" class="mb-40">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 			</NewRow>
 			<NewRow>
 				<NewCol :col-sm="1" :col-lg="3" class="mb-40" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 			</NewRow>
 			<NewRow>
 				<NewCol :col-sm="1" :col-lg="3" class="mb-40">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" :offset-lg="3">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 			</NewRow>
 			<NewRow>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" :offset-lg="1">
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline6" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
+					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
 			</NewRow>
 		</NewGrid>

@@ -89,9 +89,9 @@ export default {
 		},
 		computedDescriptionType() {
 			if (this.type === 'full') {
-				return this.isMobile ? 'headline6' : 'headline5';
+				return this.isMobile ? 'headline7' : 'headline5';
 			}
-			return this.isMobile ? 'body1' : 'headline6';
+			return this.isMobile ? 'body1' : 'headline7';
 		},
 		computedDescriptionWeight() {
 			if (this.type === 'full' && this.isMobile) {
