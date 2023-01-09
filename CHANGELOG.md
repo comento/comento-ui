@@ -1,3 +1,20 @@
+## [1.1.22](https://github.com/comento/comento-ui/compare/v1.1.21...v1.1.22) (2023-01-09)
+
+
+### Bug Fixes
+
+* 유저프로필에 들어가는 아이콘 사이즈 변경 small -> xsmall ([#970](https://github.com/comento/comento-ui/issues/970)) ([8fb2d94](https://github.com/comento/comento-ui/commit/8fb2d943007cecf827e9da65dc99eb966ad35938))
+* 유저프로필에 들어가는 아이콘 사이즈 변경 small -> xsmall ([#970](https://github.com/comento/comento-ui/issues/970)) ([#971](https://github.com/comento/comento-ui/issues/971)) ([dfd2297](https://github.com/comento/comento-ui/commit/dfd229739d16cce147c9ec7dc53f400680ad630f))
+
+
+### Features
+
+* chip error type 추가 ([#974](https://github.com/comento/comento-ui/issues/974)) ([8138794](https://github.com/comento/comento-ui/commit/81387948e4cf45bb07d931f25ca29e35969e432a))
+* chip primary hover 컬러 변경 ([#975](https://github.com/comento/comento-ui/issues/975)) ([af6194e](https://github.com/comento/comento-ui/commit/af6194eb10258ae6a46614839c703a855070fd93))
+* textarea attrs 전달 ([#977](https://github.com/comento/comento-ui/issues/977)) ([5ea56a6](https://github.com/comento/comento-ui/commit/5ea56a6f04039f49d5529a32e1e2f24560b90d5f))
+
+
+
 ## [1.1.21](https://github.com/comento/comento-ui/compare/v1.1.20...v1.1.21) (2022-12-27)
 
 
