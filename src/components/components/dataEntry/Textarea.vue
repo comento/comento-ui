@@ -7,6 +7,7 @@
 				:style="[computedStyles]"
 				:placeholder="placeholder"
 				:readonly="readOnly"
+				v-bind="$attrs"
 				v-on="$listeners"
 				@input="onInput"
 			/>
