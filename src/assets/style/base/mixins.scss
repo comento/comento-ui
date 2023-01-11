@@ -2,12 +2,13 @@
 @import "flexbox";
 @import "functions";
 
-@mixin trans-font-size($size, $line-height, $math: round) {
-  font-size: $size;
+@mixin trans-font-size($font-size, $line-height, $math: round) {
+  $line-height-percent: $line-height * 0.01;
+  font-size: $font-size;
   @if $math == 'round' {
-    line-height: round($size * $line-height / 100);
+    line-height: round($font-size * $line-height-percent);
   } @else if $math == 'floor' {
-    line-height: floor($size * $line-height / 100);
+    line-height: floor($font-size * $line-height-percent);
   }
 }
 

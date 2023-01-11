@@ -104,16 +104,16 @@ export default {
 .c-new-col {
 	position: relative;
 	width: 100%;
-	padding-right: $grid-gutter-width-mobile / 2;
-	padding-left: $grid-gutter-width-mobile / 2;
+	padding-right: calc($grid-gutter-width-mobile / 2);
+	padding-left: calc($grid-gutter-width-mobile / 2);
 	box-sizing: border-box;
 	&.no-gutters {
 		padding-left: 0;
 		padding-right: 0;
 	}
 	@include pc {
-		padding-right: $grid-gutter-width-pc / 2;
-		padding-left: $grid-gutter-width-pc / 2;
+		padding-right: calc($grid-gutter-width-pc / 2);
+		padding-left: calc($grid-gutter-width-pc / 2);
 	}
 }
 @mixin create-columns-classes() {
