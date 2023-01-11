@@ -3,7 +3,7 @@
 @import "functions";
 
 @mixin trans-font-size($size, $line-height, $math: round) {
-  $line-height-percent: $line-height / 100;
+  $line-height-percent: calc($line-height / 100);
   font-size: $size;
   @if $math == 'round' {
     line-height: round($size * $line-height-percent);
