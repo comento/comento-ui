@@ -3,12 +3,11 @@
 @import "functions";
 
 @mixin trans-font-size($size, $line-height, $math: round) {
-  $line-height-percent: $line-height / 100;
   font-size: $size;
   @if $math == 'round' {
-    line-height: round($size * $line-height-percent);
+    line-height: round($size * $line-height / 100);
   } @else if $math == 'floor' {
-    line-height: floor($size * $line-height-percent);
+    line-height: floor($size * $line-height / 100);
   }
 }
 
