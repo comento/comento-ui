@@ -1,4 +1,6 @@
 
+@use "sass:math";
+
 $screen-xs:       480px;
 $screen-sm:       768px;
 $screen-md:       992px;
@@ -16,8 +18,8 @@ $grid-columns-mobile:            4;
 
 $container-width-pc: $container-max-width-pc - 2 * $grid-outer-padding;
 $container-width-mobile: $container-max-width-mobile - 2 * $grid-outer-padding;
-$grid-column-width-pc: ($container-width-pc - $grid-gutter-width-pc * ($grid-columns-pc - 1) ) / $grid-columns-pc;
-$grid-column-width-mobile: ($container-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) ) / $grid-columns-mobile;
+$grid-column-width-pc: math.div($container-width-pc - $grid-gutter-width-pc * ($grid-columns-pc - 1) , $grid-columns-pc);
+$grid-column-width-mobile: math.div($container-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) , $grid-columns-mobile);
 $container-sm:            (1140px + $grid-gutter-width-pc);
 
 //
