@@ -1,3 +1,12 @@
+## [1.1.23](https://github.com/comento/comento-ui/compare/v1.1.22...v1.1.23) (2023-01-12)
+
+
+### Bug Fixes
+
+* sass 오류 수정 ([#980](https://github.com/comento/comento-ui/issues/980)) ([e8ae32c](https://github.com/comento/comento-ui/commit/e8ae32cb7713f9fcd39dba2a2475faacd3a59f0e))
+
+
+
 ## [1.1.22](https://github.com/comento/comento-ui/compare/v1.1.21...v1.1.22) (2023-01-09)
 
 
