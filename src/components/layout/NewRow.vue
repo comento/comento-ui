@@ -29,15 +29,15 @@ export default {
 .c-new-row {
 	display: flex;
 	flex-wrap: wrap;
-	margin-right: $grid-gutter-width-mobile * (-1) / 2;
-	margin-left: $grid-gutter-width-mobile * (-1) / 2;
+	margin-right: calc($grid-gutter-width-mobile * (-1) / 2);
+	margin-left: calc($grid-gutter-width-mobile * (-1) / 2);
 	&.no-gutters {
 		margin-right: 0;
 		margin-left: 0;
 	}
 	@include pc {
-		margin-right: $grid-gutter-width-pc * (-1) / 2;
-		margin-left: $grid-gutter-width-pc * (-1) / 2;
+		margin-right: calc($grid-gutter-width-pc * (-1) / 2);
+		margin-left: calc($grid-gutter-width-pc * (-1) / 2);
 	}
 }
 </style>
