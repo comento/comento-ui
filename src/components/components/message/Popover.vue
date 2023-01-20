@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import { placements, placementMap } from '@/utils/constants/tooltip';
 
 /**

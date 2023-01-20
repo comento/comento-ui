@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import Button from '@/components/components/general/button/Button';
+import Button from '@/components/components/general/button/Button.vue';
 import SideDrawer from '@/components/components/dataDisplay/drawer/SideDrawer';
 import NewGrid from '@/components/layout/NewGrid';
 import NewRow from '@/components/layout/NewRow';

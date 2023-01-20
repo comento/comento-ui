@@ -1,10 +1,10 @@
-import Content from './Content';
-import ProfileWithText from './ProfileWithText';
-import UserInformation from './UserInformation';
-import UserInformationName from './UserInformationName';
-import UserInformationCaption from './UserInformationCaption';
-import UserInformationChipGroup from './UserInformationChipGroup';
-import UserInformationCompany from './UserInformationCompany';
+import Content from './Content.vue';
+import ProfileWithText from './ProfileWithText.vue';
+import UserInformation from './UserInformation.vue';
+import UserInformationName from './UserInformationName.vue';
+import UserInformationCaption from './UserInformationCaption.vue';
+import UserInformationChipGroup from './UserInformationChipGroup.vue';
+import UserInformationCompany from './UserInformationCompany.vue';
 
 export {
 	Content,

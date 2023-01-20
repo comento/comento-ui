@@ -14,7 +14,7 @@
 <script>
 import AnimationIcon from '@/components/elements/core/icon/AnimationIcon';
 import EtcIcon from '@/components/elements/core/icon/EtcIcon';
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 import Tooltip from '@/components/components/message/Tooltip';
 import copyToClipboard from '@/utils/copy-to-clipboard';
 

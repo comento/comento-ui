@@ -1,13 +1,13 @@
-import Avatar from './Avatar';
-import Badge from './Badge';
-import EmptyBox from './EmptyBox';
-import Hint from './Hint';
-import Label from './Label';
-import Pagination from './Pagination';
-import Reply from './Reply';
-import Swiper from './Swiper';
-import Table from './Table';
-import Tabs from './Tabs';
+import Avatar from './Avatar.vue';
+import Badge from './Badge.vue';
+import EmptyBox from './EmptyBox.vue';
+import Hint from './Hint.vue';
+import Label from './Label.vue';
+import Pagination from './Pagination.vue';
+import Reply from './Reply.vue';
+import Swiper from './Swiper.vue';
+import Table from './Table.vue';
+import Tabs from './Tabs.vue';
 
 export { Avatar, Badge, EmptyBox, Hint, Label, Pagination, Reply, Swiper, Table, Tabs };
 export * from './card';

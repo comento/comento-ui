@@ -29,7 +29,7 @@ import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ko';
 import customValidator from '@/utils/custom-validator.js';
 import uniqueId from '@/utils/unique-id';
-import Hint from '@/components/components/dataDisplay/Hint';
+import Hint from '@/components/components/dataDisplay/Hint.vue';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
 export const colors = ['primary', 'success', 'info', 'error'];

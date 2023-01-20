@@ -1,4 +1,4 @@
-import Box from './Box';
+import Box from './Box.vue';
 
 export { Box };
 export * from './button';

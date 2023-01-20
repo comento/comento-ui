@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 export default {
 	name: 'TextRatingWrapper',

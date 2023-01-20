@@ -37,7 +37,7 @@
 
 <script>
 import windowMixin from '@/mixins/windowMixin';
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 export const bannerTypes = ['full', 'standard'];
 

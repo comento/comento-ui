@@ -13,7 +13,7 @@
 
 <script>
 import linkify from 'vue-linkify';
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
 

@@ -1,5 +1,5 @@
-import AnimationIcon from './AnimationIcon';
-import EtcIcon from './EtcIcon';
-import Icon from './Icon';
+import AnimationIcon from './AnimationIcon.vue';
+import EtcIcon from './EtcIcon.vue';
+import Icon from './Icon.vue';
 
 export { AnimationIcon, EtcIcon, Icon };

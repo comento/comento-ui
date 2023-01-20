@@ -1,5 +1,5 @@
-import RatingGroup from './RatingGroup';
-import IconRating from './IconRating';
-import TextRating from './TextRating';
+import RatingGroup from './RatingGroup.vue';
+import IconRating from './IconRating.vue';
+import TextRating from './TextRating.vue';
 
 export { RatingGroup, IconRating, TextRating };

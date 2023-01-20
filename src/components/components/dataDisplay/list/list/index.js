@@ -1,4 +1,4 @@
-import List from './List';
-import ListItem from './ListItem';
+import List from './List.vue';
+import ListItem from './ListItem.vue';
 
 export { List, ListItem };

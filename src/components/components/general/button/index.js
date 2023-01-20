@@ -1,9 +1,9 @@
-import Button from './Button';
-import ButtonGroup from './ButtonGroup';
-import FileButton from './FileButton';
-import IconButton from './IconButton';
-import LinkButton from './LinkButton';
-import NarrowButton from './NarrowButton';
-import RatingButton from './RatingButton';
+import Button from './Button.vue';
+import ButtonGroup from './ButtonGroup.vue';
+import FileButton from './FileButton.vue';
+import IconButton from './IconButton.vue';
+import LinkButton from './LinkButton.vue';
+import NarrowButton from './NarrowButton.vue';
+import RatingButton from './RatingButton.vue';
 
 export { Button, ButtonGroup, FileButton, IconButton, LinkButton, NarrowButton, RatingButton };
