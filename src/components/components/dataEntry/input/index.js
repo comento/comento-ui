@@ -1,6 +1,4 @@
-import FileInput from './FileInput.vue';
-import InputGroup from './InputGroup.vue';
-import SearchInput from './SearchInput.vue';
-import TextField from './TextField.vue';
-
-export { FileInput, InputGroup, SearchInput, TextField };
+export { default as CFileInput } from './FileInput.vue';
+export { default as CInputGroup } from './InputGroup.vue';
+export { default as CSearchInput } from './SearchInput.vue';
+export { default as CTextField } from './TextField.vue';

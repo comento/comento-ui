@@ -1,4 +1,2 @@
-import AlarmList from './AlarmList.vue';
-import AlarmListItem from './AlarmListItem.vue';
-
-export { AlarmList, AlarmListItem };
+export { default as CAlarmList } from './AlarmList.vue';
+export { default as CAlarmListItem } from './AlarmListItem.vue';

@@ -1,4 +1,2 @@
-import BottomDrawer from './BottomDrawer.vue';
-import SideDrawer from './SideDrawer.vue';
-
-export { BottomDrawer, SideDrawer };
+export { default as CBottomDrawer } from './BottomDrawer.vue';
+export { default as CSideDrawer } from './SideDrawer.vue';

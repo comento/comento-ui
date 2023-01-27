@@ -1,4 +1,2 @@
-import List from './List.vue';
-import ListItem from './ListItem.vue';
-
-export { List, ListItem };
+export { default as CList } from './List.vue';
+export { default as CListItem } from './ListItem.vue';

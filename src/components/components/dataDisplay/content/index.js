@@ -1,17 +1,7 @@
-import Content from './Content.vue';
-import ProfileWithText from './ProfileWithText.vue';
-import UserInformation from './UserInformation.vue';
-import UserInformationName from './UserInformationName.vue';
-import UserInformationCaption from './UserInformationCaption.vue';
-import UserInformationChipGroup from './UserInformationChipGroup.vue';
-import UserInformationCompany from './UserInformationCompany.vue';
-
-export {
-	Content,
-	ProfileWithText,
-	UserInformation,
-	UserInformationName,
-	UserInformationCaption,
-	UserInformationChipGroup,
-	UserInformationCompany,
-};
+export { default as CContent } from './Content.vue';
+export { default as CProfileWithText } from './ProfileWithText.vue';
+export { default as CUserInformation } from './UserInformation.vue';
+export { default as CUserInformationName } from './UserInformationName.vue';
+export { default as CUserInformationCaption } from './UserInformationCaption.vue';
+export { default as CUserInformationChipGroup } from './UserInformationChipGroup.vue';
+export { default as CUserInformationCompany } from './UserInformationCompany.vue';

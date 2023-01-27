@@ -1,5 +1,3 @@
-import RatingGroup from './RatingGroup.vue';
-import IconRating from './IconRating.vue';
-import TextRating from './TextRating.vue';
-
-export { RatingGroup, IconRating, TextRating };
+export { default as CRatingGroup } from './RatingGroup.vue';
+export { default as CIconRating } from './IconRating.vue';
+export { default as CTextRating } from './TextRating.vue';
