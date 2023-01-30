@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { VPopover } from 'v-tooltip';
 import Typography from '@/components/elements/core/typography/Typography.vue';
 import { placements, placementMap } from '@/utils/constants/tooltip';
 
@@ -84,6 +85,6 @@ export default {
 			};
 		},
 	},
-	components: { Typography },
+	components: { Typography, VPopover },
 };
 </script>
