@@ -11,6 +11,7 @@ module.exports = {
 		'plugin:vue/essential',
 		'plugin:import/errors',
 		'plugin:import/warnings',
+		'plugin:storybook/recommended',
 	],
 	globals: {
 		Atomics: 'readonly',
@@ -34,8 +35,10 @@ module.exports = {
 			},
 		],
 		'import/extensions': 0,
-		'import/no-unresolved': 'off', // Allow unresolved imports
-		'generator-star-spacing': 'off', // Allow async-await
+		'import/no-unresolved': 'off',
+		// Allow unresolved imports
+		'generator-star-spacing': 'off',
+		// Allow async-await
 		'no-console': 'off',
 		'no-plusplus': 'off',
 		'no-undef': 'off',
@@ -45,7 +48,8 @@ module.exports = {
 		'import/no-extraneous-dependencies': 0,
 		'no-useless-escape': 0,
 		'consistent-return': 'off',
-		'require-await': 'error', // No async function without await
+		'require-await': 'error',
+		// No async function without await
 		'no-var': 'error',
 		'object-shorthand': 1,
 		'vue/html-indent': [
