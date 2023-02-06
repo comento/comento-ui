@@ -87,7 +87,8 @@ export default {
 		},
 		computedStyle() {
 			if (this.isMobile) {
-				return { '--triggered-top': '52px', position: 'fixed' };
+				const triggerTop = this.isSearch ? '64px' : '52px';
+				return { '--triggered-top': triggerTop, position: 'fixed' };
 			}
 			return {
 				'--triggered-top': this.isAppear ? '24px' : '69px',
@@ -119,6 +120,13 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 		background-color: $gray050;
 		::v-deep .c-tabs--menu-container {
 			background-color: $gray050;
+		}
+		@include mobile {
+			background-color: $white;
+			border-top: 1px solid $gray200;
+			::v-deep .c-tabs--menu-container {
+				background-color: $white;
+			}
 		}
 	}
 	&:not(.transparent) {

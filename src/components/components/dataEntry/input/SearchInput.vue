@@ -20,29 +20,27 @@
 				@keypress.enter="handleSearch()"
 			/>
 		</label>
-		<div class="search_input_icon_wrapper">
-			<div @click="resetKeyword()">
-				<Icon
-					v-if="isTyping && sync_value.length > 0"
-					name="IconCloseRoundMediumFill"
-					size="medium"
-					:color="transparent ? 'gray200' : 'gray300'"
-					class="icon_reset"
-					role="button"
-					tabindex="2"
-				/>
-			</div>
-			<div @click="handleSearch()">
-				<IconButton
-					role="button"
-					tabindex="1"
-					icon-name="IconSearchLargeLine"
-					size="medium"
-					:color="computedIconColor"
-					:transparent="transparent"
-					class="icon_search"
-				/>
-			</div>
+		<div class="search_input_icon_wrapper" @click="resetKeyword()">
+			<Icon
+				v-if="isTyping && sync_value.length > 0"
+				name="IconCloseRoundSmallFill"
+				size="medium"
+				:color="transparent ? 'gray200' : 'gray300'"
+				class="icon_reset"
+				role="button"
+				tabindex="2"
+			/>
+		</div>
+		<div class="search_input_icon_wrapper left" @click="handleSearch()">
+			<IconButton
+				role="button"
+				tabindex="1"
+				icon-name="IconSearchLargeLine"
+				size="medium"
+				:color="computedIconColor"
+				:transparent="transparent"
+				class="icon_search"
+			/>
 		</div>
 	</div>
 </template>
@@ -156,10 +154,6 @@ export default {
 	// focus, typing
 	&:focus-within,
 	&.active {
-		.search_input {
-			background: $gray100;
-			padding-right: 70px !important;
-		}
 		.search_input_icon_wrapper .icon_search {
 			opacity: 1;
 		}
@@ -202,8 +196,8 @@ export default {
 		vertical-align: top;
 		@include transition(all 0.2s ease);
 		border: 0;
-		@include background-opacity($gray000, 0.6);
-		padding: 10px 48px 10px 14px;
+		background-color: $gray100;
+		padding: 10px 36px 10px 36px;
 		@include body2();
 		width: 226px;
 		color: $gray800;
@@ -220,12 +214,18 @@ export default {
 	.search_input_icon_wrapper {
 		position: absolute;
 		z-index: 1;
-		right: 0;
+		right: 14px;
 		top: 50%;
 		transform: translateY(-50%);
 		@include flexbox();
 		@include flex-direction(row);
 		@include align-items(center);
+
+		&.left {
+			left: 0 !important;
+			z-index: 1;
+			width: max-content;
+		}
 
 		.icon_reset {
 			cursor: pointer;
@@ -237,7 +237,7 @@ export default {
 		.icon_search {
 			cursor: pointer;
 			position: relative;
-			margin: 0 12px 0 4px;
+			margin-left: 4px;
 			display: block;
 			z-index: 2;
 			opacity: 0.8;
