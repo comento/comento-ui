@@ -96,6 +96,7 @@ import IconSirenSmallLine from '@/assets/images/icon/small/icon-siren-small-line
 import IconWritingSmallLine from '@/assets/images/icon/small/icon-writing-small-line.svg?inline';
 import IconVodSmallLine from '@/assets/images/icon/small/icon-vod-small-line.svg?inline';
 import IconDateSmallLine from '@/assets/images/icon/small/icon-date-small-line.svg?inline';
+import IconSearchSmallLine from '@/assets/images/icon/small/icon-search-small-line.svg?inline';
 
 // medium
 import IconLikeMediumLine from '@/assets/images/icon/medium/icon-like-medium-line.svg?inline';
@@ -308,6 +309,7 @@ export const IconNames = [
 	'IconWritingSmallLine',
 	'IconVodSmallLine',
 	'IconDateSmallLine',
+	'IconSearchSmallLine',
 
 	// medium
 	'IconLikeMediumLine',
@@ -535,6 +537,7 @@ export default {
 		IconWritingSmallLine,
 		IconVodSmallLine,
 		IconDateSmallLine,
+		IconSearchSmallLine,
 
 		// medium
 		IconLikeMediumLine,
