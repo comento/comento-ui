@@ -140,6 +140,14 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 		.c-tabs--menu-container {
 			background: transparent;
 			border-bottom: none;
+
+			::v-deep .c-tabs--menu-button {
+				&:hover {
+					& .c-button {
+						color: $white;
+					}
+				}
+			}
 		}
 
 		::v-deep {

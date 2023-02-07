@@ -1,12 +1,18 @@
 <template>
-	<div class="flex align-items-center">
-		<Logo name="LogoComentoTypoType" width="101px" height="16px" @click="clickLogo" />
+	<div class="c-header">
+		<Logo
+			:color="isTransparent ? 'white' : 'primary'"
+			name="LogoComentoTypoType"
+			width="101px"
+			height="16px"
+			@click="clickLogo"
+		/>
 		<ul class="ml-26 flex">
 			<li
 				v-for="(menu, index) in items"
 				:key="`menu-${index}`"
-				class="menu"
-				:class="{ active: activatedMenu === menu.name, hovered: hoveredMenu === menu.name }"
+				class="c-header-menu"
+				:class="getHeaderNavClass(menu.name)"
 				@mouseenter="onMouseEntered(menu.name)"
 			>
 				<!--    nuxt 유무에 따라 핸들링          -->
@@ -39,8 +45,19 @@ export default {
 			type: Array,
 			default: () => [],
 		},
+		isTransparent: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	methods: {
+		getHeaderNavClass(name) {
+			return {
+				active: this.activatedMenu === name,
+				hovered: this.hoveredMenu === name,
+				transparent: this.isTransparent,
+			};
+		},
 		onMouseEntered(name) {
 			this.$emit('update-nav', name);
 		},
@@ -53,21 +70,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.menu {
-	@include body2();
-	color: $gray700;
+.c-header {
+	@include flexbox();
+	@include align-items(center);
 
-	&.active {
-		color: $blue600 !important;
-		font-weight: 600;
-	}
-	&.hovered {
-		color: $blue800;
-		font-weight: 600;
-	}
+	&-menu {
+		list-style: none;
+		color: $gray700;
+		@include body2();
 
-	&:not(:first-child) {
-		margin-left: 24px;
+		&.active {
+			color: $blue600 !important;
+			font-weight: 600;
+
+			&.transparent {
+				color: $white !important;
+			}
+		}
+		&.hovered {
+			color: $blue800;
+			font-weight: 600;
+			&.transparent {
+				color: $white !important;
+			}
+		}
+
+		&:not(:first-child) {
+			margin-left: 24px;
+		}
 	}
 }
 </style>
