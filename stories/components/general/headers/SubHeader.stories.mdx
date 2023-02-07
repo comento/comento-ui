@@ -1,21 +1,16 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
 
 import SubHeader from '@/components/components/general/headers/SubHeader';
-import NewRow from '@/components/layout/NewRow';
-import NewGrid from '@/components/layout/NewGrid';
-import NewCol from '@/components/layout/NewCol';
-import Tabs from '@/components/components/dataDisplay/Tabs';
-import Button from '@/components/components/general/button/Button';
 
 <Meta
   title="General/Headers/SubHeader"
   component={SubHeader}
   argTypes={{
     activatedMenu: {
-    description: "선택 된 Header 메뉴",
-    defaultValue: "커뮤니티",
-    control: {type: 'text'},
-    table: {
+      description: "선택 된 Header 메뉴",
+      defaultValue: "커뮤니티",
+      control: {type: 'text'},
+      table: {
         type: {
           summary: "string",
         }
@@ -51,27 +46,27 @@ import Button from '@/components/components/general/button/Button';
       description: "서브헤더 목록",
       defaultValue: [
         {
-          url: "/vod",
+          url: "#",
           name: "홈",
           active: false,
         },
         {
-          url: "/edu/list",
+          url: "#",
           name: "직무부트캠프",
           active: true,
         },
         {
-          url: "/class/pt",
+          url: "#",
           name: "실무PT",
           active: false,
         },
         {
-          url: "/edu/path/list",
+          url: "#",
           name: "진로부트캠프",
           active: false,
         },
         {
-          url: "/vod",
+          url: "#",
           name: "VOD",
           active: false,
         },
@@ -96,6 +91,7 @@ import Button from '@/components/components/general/button/Button';
       table: {
         summary: {
           type: "Boolean",
+          default: true,
         }
       },
     },
@@ -112,47 +108,27 @@ import Button from '@/components/components/general/button/Button';
 
 export const Default = (args, {argTypes}) => ({
   props: Object.keys(argTypes),
-  components: {SubHeader, NewGrid, NewRow, NewCol, Tabs, Button},
+  components: {SubHeader},
   template:
-  `<nav
-      id="subHeader"
-      class="sub-header"
-      :class="{ search: isSearch, transparent: isTransparent }"
-      :style="computedStyle"
-    >
-    <NewGrid>
-      <NewRow>
-        <NewCol>
-          <Tabs
-            ref="subHeader"
-            :tab-index="tabIndex"
-            with-header
-            :type="isMobile ? 'swiper' : 'basic'"
-            @changeTabIndex="changeTabs"
-          >
-            <template v-for="(menu, index) in items" :slot="'item' + index">
-              <!--    nuxt 유무에 따라 핸들링          -->
-              <nuxt-link v-if="isNuxt" :key="menu.url" :to="menu.url" :data-cy="menu.name">
-                <Button :key="index" class="sub-header-menu" :class="{ active: tabIndex === index }">
-                  {{ menu.name }}
-                </Button>
-              </nuxt-link>
-              <a v-else :key="menu.url" :href="menu.url" :data-cy="menu.name">
-                <Button :key="index" class="sub-header-menu" :class="{ active: tabIndex === index }">
-                  {{ menu.name }}
-                </Button>
-              </a>
-            </template>
-          </Tabs>
-        </NewCol>
-      </NewRow>
-    </NewGrid>
-    </nav>`,
+    `<div style="padding: 12px 32px">
+    <div style="position: relative">
+    <div style="height: 69px; background-color: #EE7E41">Header</div>
+    <SubHeader :activated-menu="activatedMenu"
+           :is-appear="isAppear"
+           :is-scroll-top="isScrollTop"
+           :is-search="isSearch"
+           :is-transparent="isTransparent"
+           :is-nuxt="isNuxt"
+           :items="items"
+                   :style="{'--triggered-top': '0 !important'}"
+/>
+</div>
+    </div>`,
 });
 
 # SubHeader
 
-**SubHeader** 컴포넌터의 문서입니다.
+**SubHeader** 컴포넌의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
