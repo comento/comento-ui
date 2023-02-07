@@ -1,3 +1,37 @@
+## [1.1.10-alpha](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.1.10-alpha) (2023-02-07)
+
+
+### Bug Fixes
+
+* link 색상 변경 ([#942](https://github.com/comento/comento-ui/issues/942)) ([0f54514](https://github.com/comento/comento-ui/commit/0f54514f1c3881dcf92c8ec6bc8808cd01e42a4a))
+* sass 오류 수정 ([#980](https://github.com/comento/comento-ui/issues/980)) ([e8ae32c](https://github.com/comento/comento-ui/commit/e8ae32cb7713f9fcd39dba2a2475faacd3a59f0e))
+* small일 때 리스트 폰트 크기 변경 ([#940](https://github.com/comento/comento-ui/issues/940)) ([2321609](https://github.com/comento/comento-ui/commit/23216094d8ff0dd9bbe95694917172d214a46352))
+* 닫기 버튼 아이콘 색상 변경 ([#959](https://github.com/comento/comento-ui/issues/959)) ([25fea2c](https://github.com/comento/comento-ui/commit/25fea2c0a6952fedeb4ea1aec2263d662f636a1c))
+* 스토리에서 아이콘 순서 변경 ([#939](https://github.com/comento/comento-ui/issues/939)) ([132802f](https://github.com/comento/comento-ui/commit/132802f482563e02a834f09391d63016b51aec55))
+* 오류 수정(아이콘 크기, 스토리북) ([#961](https://github.com/comento/comento-ui/issues/961)) ([f22ab1a](https://github.com/comento/comento-ui/commit/f22ab1a725bd20234e597597028141acfa78fe43))
+* 유저프로필에 들어가는 아이콘 사이즈 변경 small -> xsmall ([#970](https://github.com/comento/comento-ui/issues/970)) ([8fb2d94](https://github.com/comento/comento-ui/commit/8fb2d943007cecf827e9da65dc99eb966ad35938))
+
+
+### Features
+
+* add listeners to icon rating ([#947](https://github.com/comento/comento-ui/issues/947)) ([3deac4d](https://github.com/comento/comento-ui/commit/3deac4de0acd0d87fd0b6d009af86c243bdc84f8))
+* chip error type 추가 ([#974](https://github.com/comento/comento-ui/issues/974)) ([8138794](https://github.com/comento/comento-ui/commit/81387948e4cf45bb07d931f25ca29e35969e432a))
+* chip primary hover 컬러 변경 ([#975](https://github.com/comento/comento-ui/issues/975)) ([af6194e](https://github.com/comento/comento-ui/commit/af6194eb10258ae6a46614839c703a855070fd93))
+* EduCard img에 로딩 속성 추가 ([#950](https://github.com/comento/comento-ui/issues/950)) ([8993ec4](https://github.com/comento/comento-ui/commit/8993ec46a273506a2c216b10944be1376078b8ea))
+* font에 cdn 주소 추가 ([#964](https://github.com/comento/comento-ui/issues/964)) ([e43b45d](https://github.com/comento/comento-ui/commit/e43b45d96c395f65b894f1ff5a5b7c613f1f68f7))
+* gray050 컬러 추가 ([#954](https://github.com/comento/comento-ui/issues/954)) ([e89b707](https://github.com/comento/comento-ui/commit/e89b7079f300afed744dfbf2ae4a6fcf03393239))
+* header 관련 신규 컴포넌트 추가 ([9ec7722](https://github.com/comento/comento-ui/commit/9ec7722b182adb8bd2f66286df26825df8da83f6))
+* loading icon 추가 ([#941](https://github.com/comento/comento-ui/issues/941)) ([388cdff](https://github.com/comento/comento-ui/commit/388cdff17379f9389eb14491338c2a3aca961609))
+* sub header 컴포넌트 추가 ([67ec252](https://github.com/comento/comento-ui/commit/67ec2526bffa0d85dba64b462ef967e009b6a59a))
+* textarea attrs 전달 ([#977](https://github.com/comento/comento-ui/issues/977)) ([5ea56a6](https://github.com/comento/comento-ui/commit/5ea56a6f04039f49d5529a32e1e2f24560b90d5f))
+* Tooltip left 방향 추가 ([#968](https://github.com/comento/comento-ui/issues/968)) ([88aee02](https://github.com/comento/comento-ui/commit/88aee024a0eec8ff1aba1a04ffb58a260388a6ef))
+* UserInformation component 변경 ([#948](https://github.com/comento/comento-ui/issues/948)) ([c0a3426](https://github.com/comento/comento-ui/commit/c0a3426240839feec886c55b3dc24bb482f0729b))
+* xsmall export 아이콘 추가 ([#955](https://github.com/comento/comento-ui/issues/955)) ([feafc4a](https://github.com/comento/comento-ui/commit/feafc4a08326ab5527223a799ea7895970608fad))
+* 아이콘 추가 ([05387b3](https://github.com/comento/comento-ui/commit/05387b33c0c3e77fdad1560a86747a8a0bc21e30))
+* 아이콘 크기 변경, 신규 아이콘 추가 ([#958](https://github.com/comento/comento-ui/issues/958)) ([aa4ca5d](https://github.com/comento/comento-ui/commit/aa4ca5d6eec6ac0aaaecea765b6e92373892c505))
+
+
+
 ## [1.1.10](https://github.com/comento/comento-ui/compare/v1.1.9...v1.1.10) (2022-08-16)
 
 
