@@ -30,6 +30,11 @@ import NewGrid from '@/components/layout/NewGrid';
 import NewRow from '@/components/layout/NewRow';
 import NewCol from '@/components/layout/NewCol';
 import Logo from '@/components/elements/core/logo/Logo';
+
+/**
+ * @displayName c-top-bar
+ */
+
 export default {
 	name: 'TopBar',
 	props: {

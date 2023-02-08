@@ -13,6 +13,10 @@ import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
 
+/**
+ * @displayName c-recent-search-item
+ */
+
 export default {
 	name: 'RecentSearchItem',
 	props: {

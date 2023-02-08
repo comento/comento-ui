@@ -43,6 +43,10 @@ import NewRow from '@/components/layout/NewRow';
 import Button from '@/components/components/general/button/Button';
 import windowMixin from '@/mixins/windowMixin';
 
+/**
+ * @displayName c-sub-header
+ */
+
 export default {
 	name: 'SubHeader',
 	mixins: [windowMixin],

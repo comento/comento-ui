@@ -38,6 +38,11 @@ import NewRow from '@/components/layout/NewRow';
 import NewCol from '@/components/layout/NewCol';
 import Icon from '@/components/elements/core/icon/Icon';
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
+
+/**
+ * @displayName c-search-top-bar
+ */
+
 export default {
 	name: 'SearchTopBar',
 	props: {

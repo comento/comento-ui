@@ -26,6 +26,10 @@
 <script>
 import Logo from '@/components/elements/core/logo/Logo';
 
+/**
+ * @displayName c-header
+ */
+
 export default {
 	name: 'Header',
 	props: {

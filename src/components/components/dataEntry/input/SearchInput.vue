@@ -54,6 +54,7 @@ import uniqueId from '@/utils/unique-id';
 /**
  * @displayName c-search-input
  */
+
 export default {
 	name: 'SearchInput',
 	inheritAttrs: false,
