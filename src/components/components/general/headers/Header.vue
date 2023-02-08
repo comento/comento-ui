@@ -12,8 +12,8 @@
 				v-for="(menu, index) in items"
 				:key="`menu-${index}`"
 				class="c-header-menu"
-				:class="getHeaderNavClass(menu.name)"
-				@mouseenter="onMouseEntered(menu.name)"
+				:class="getHeaderNavClass(index)"
+				@mouseenter="onMouseEntered(index)"
 			>
 				<!--    nuxt 유무에 따라 핸들링          -->
 				<nuxt-link v-if="nuxt" v-bind="$attrs" :to="menu.path" v-on="$listeners">{{ menu.name }}</nuxt-link>
@@ -30,12 +30,12 @@ export default {
 	name: 'Header',
 	props: {
 		activatedMenu: {
-			type: String,
-			default: '',
+			type: Number,
+			default: -1,
 		},
 		hoveredMenu: {
-			type: String,
-			default: '',
+			type: Number,
+			default: -1,
 		},
 		nuxt: {
 			type: Boolean,
@@ -58,8 +58,8 @@ export default {
 				transparent: this.isTransparent,
 			};
 		},
-		onMouseEntered(name) {
-			this.$emit('update-nav', name);
+		onMouseEntered(index) {
+			this.$emit('update-nav', index);
 		},
 		clickLogo() {
 			this.$emit('click-logo');
@@ -77,6 +77,7 @@ export default {
 	&-menu {
 		list-style: none;
 		color: $gray700;
+		cursor: pointer;
 		@include body2();
 
 		&.active {
