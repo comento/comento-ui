@@ -48,12 +48,12 @@ export default {
 	mixins: [windowMixin],
 	props: {
 		activatedMenu: {
-			type: String,
-			default: '커뮤니티',
+			type: Number,
+			default: -1,
 		},
 		hoveredMenu: {
-			type: String,
-			default: '',
+			type: Number,
+			default: -1,
 		},
 		// 헤더가 숨어있다가 나오는지 여부
 		isAppear: {
@@ -140,6 +140,14 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 		.c-tabs--menu-container {
 			background: transparent;
 			border-bottom: none;
+
+			::v-deep .c-tabs--menu-button {
+				&:hover {
+					& .c-button {
+						color: $white;
+					}
+				}
+			}
 		}
 
 		::v-deep {
