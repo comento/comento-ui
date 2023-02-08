@@ -1,3 +1,13 @@
+## [1.1.24-alpha.4](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.3...v1.1.24-alpha.4) (2023-02-08)
+
+
+### Features
+
+* active, hover number 기반으로 변경 ([a342723](https://github.com/comento/comento-ui/commit/a34272343af194dfed396e373dc2467ea9212e00))
+* transparent 관련 핸들링 ([1b4e765](https://github.com/comento/comento-ui/commit/1b4e765a7e0e072bbc1d0984fcf74a978cebb591))
+
+
+
 ## [1.1.24-alpha.3](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.1.24-alpha.3) (2023-02-07)
 
 
