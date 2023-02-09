@@ -13,10 +13,6 @@ module.exports = {
   "core": {
     "builder": "@storybook/builder-vite"
   },
-  "features": {
-    "storyStoreV7": true,
-    "previewMdx2": true,
-  },
   viteFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
