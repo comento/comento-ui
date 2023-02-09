@@ -1,3 +1,12 @@
+## [1.1.24-alpha.5](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.4...v1.1.24-alpha.5) (2023-02-09)
+
+
+### Features
+
+* 추가 된 컴포넌트 display name 추가 ([bd79a2b](https://github.com/comento/comento-ui/commit/bd79a2b45af896b9ccc7b9a87b2801033e42dd8e))
+
+
+
 ## [1.1.24-alpha.4](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.3...v1.1.24-alpha.4) (2023-02-08)
 
 
