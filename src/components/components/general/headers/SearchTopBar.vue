@@ -21,8 +21,8 @@
 							:show-search-dropdown.sync="sync_showSearchDropdown"
 							:transparent="isTransparent"
 							data-cy="searchInput"
-							@search="$_search"
-							@autocomplete="$_autocomplete"
+							@search="search"
+							@autocomplete="autocomplete"
 						>
 						</SearchInput>
 					</div>
@@ -50,11 +50,11 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		searchKeyword: {
+		keyword: {
 			type: String,
 			default: '',
 		},
-		searchPlaceholder: {
+		placeholder: {
 			type: String,
 			default: '',
 		},
@@ -82,10 +82,10 @@ export default {
 		},
 	},
 	methods: {
-		$_search() {
+		search() {
 			this.$emit('search');
 		},
-		$_autocomplete() {
+		autocomplete() {
 			this.$emit('autocomplete', this.sync_searchKeyword);
 		},
 	},
@@ -110,6 +110,7 @@ export default {
 
 	&-icon {
 		&-wrapper {
+			@include flexbox();
 		}
 	}
 }
