@@ -21,8 +21,8 @@
 							:show-search-dropdown.sync="sync_showSearchDropdown"
 							:transparent="isTransparent"
 							data-cy="searchInput"
-							@search="$_search"
-							@autocomplete="$_autocomplete"
+							@search="search"
+							@autocomplete="autocomplete"
 						>
 						</SearchInput>
 					</div>
@@ -38,6 +38,11 @@ import NewRow from '@/components/layout/NewRow';
 import NewCol from '@/components/layout/NewCol';
 import Icon from '@/components/elements/core/icon/Icon';
 import SearchInput from '@/components/components/dataEntry/input/SearchInput';
+
+/**
+ * @displayName c-search-top-bar
+ */
+
 export default {
 	name: 'SearchTopBar',
 	props: {
@@ -45,11 +50,11 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		searchKeyword: {
+		keyword: {
 			type: String,
 			default: '',
 		},
-		searchPlaceholder: {
+		placeholder: {
 			type: String,
 			default: '',
 		},
@@ -77,10 +82,10 @@ export default {
 		},
 	},
 	methods: {
-		$_search() {
+		search() {
 			this.$emit('search');
 		},
-		$_autocomplete() {
+		autocomplete() {
 			this.$emit('autocomplete', this.sync_searchKeyword);
 		},
 	},
@@ -105,6 +110,7 @@ export default {
 
 	&-icon {
 		&-wrapper {
+			@include flexbox();
 		}
 	}
 }

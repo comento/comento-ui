@@ -15,7 +15,6 @@
 				:class="getHeaderNavClass(index)"
 				@mouseenter="onMouseEntered(index)"
 			>
-				<!--    nuxt 유무에 따라 핸들링          -->
 				<nuxt-link v-if="nuxt" v-bind="$attrs" :to="menu.path" v-on="$listeners">{{ menu.name }}</nuxt-link>
 				<router-link v-else v-bind="$attrs" :to="menu.path" v-on="$listeners">{{ menu.name }}</router-link>
 			</li>
@@ -25,6 +24,10 @@
 
 <script>
 import Logo from '@/components/elements/core/logo/Logo';
+
+/**
+ * @displayName c-header
+ */
 
 export default {
 	name: 'Header',

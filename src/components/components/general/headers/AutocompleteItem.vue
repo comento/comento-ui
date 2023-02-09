@@ -9,6 +9,11 @@
 import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
+
+/**
+ * @displayName c-autocomplete-item
+ */
+
 export default {
 	name: 'AutocompleteItem',
 	props: {
