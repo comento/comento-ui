@@ -1,3 +1,17 @@
+## [1.1.24-alpha.6](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.5...v1.1.24-alpha.6) (2023-02-10)
+
+
+### Bug Fixes
+
+* Label 스타일 변경 ([#992](https://github.com/comento/comento-ui/issues/992)) ([107832a](https://github.com/comento/comento-ui/commit/107832afe472eed35585c09fe65f1e3fc148e4b2))
+
+
+### Features
+
+* 피드백 반영 ([aaf6d7a](https://github.com/comento/comento-ui/commit/aaf6d7a4b6dfe7a222b23e803851c87888e8e8b2))
+
+
+
 ## [1.1.24-alpha.5](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.4...v1.1.24-alpha.5) (2023-02-09)
 
 
