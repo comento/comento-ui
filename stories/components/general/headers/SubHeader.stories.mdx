@@ -6,26 +6,6 @@ import SubHeader from '@/components/components/general/headers/SubHeader';
   title="General/Headers/SubHeader"
   component={SubHeader}
   argTypes={{
-    activatedMenu: {
-      description: "선택 된 Header 메뉴",
-      defaultValue: "커뮤니티",
-      control: {type: 'text'},
-      table: {
-        type: {
-          summary: "string",
-        }
-      }
-    },
-    hoveredMenu: {
-      description: "마우스가 올라가 있는 메뉴",
-      defaultValue: "",
-      control: {type: "text"},
-      table: {
-        type: {
-          summary: "string",
-        }
-      }
-    },
     isAppear: {
       description: "Header 뒤에 있다가 아래로 나타나는 플래그",
       table: {
@@ -113,7 +93,7 @@ export const Default = (args, {argTypes}) => ({
     `<div style="padding: 12px 32px">
     <div style="position: relative">
     <div style="height: 69px; background-color: #EE7E41">Header</div>
-    <SubHeader :activated-menu="activatedMenu"
+    <SubHeader
            :is-appear="isAppear"
            :is-scroll-top="isScrollTop"
            :is-search="isSearch"

@@ -5,7 +5,7 @@
 		:class="{ search: isSearch, transparent: isTransparent }"
 		:style="computedStyle"
 	>
-		<NewGrid>
+		<NewGrid :fluid="isMobile">
 			<NewRow>
 				<NewCol>
 					<Tabs
@@ -13,6 +13,7 @@
 						:tab-index="tabIndex"
 						with-header
 						:type="isMobile ? 'swiper' : 'basic'"
+						:style="tabsPadding"
 						@changeTabIndex="changeTabs"
 					>
 						<template v-for="(menu, index) in items" :slot="'item' + index">
@@ -51,14 +52,6 @@ export default {
 	name: 'SubHeader',
 	mixins: [windowMixin],
 	props: {
-		activatedMenu: {
-			type: Number,
-			default: -1,
-		},
-		hoveredMenu: {
-			type: Number,
-			default: -1,
-		},
 		// 헤더가 숨어있다가 나오는지 여부
 		isAppear: {
 			type: Boolean,
@@ -78,7 +71,7 @@ export default {
 		},
 		isNuxt: {
 			type: Boolean,
-			default: true,
+			default: false,
 		},
 		isTransparent: {
 			type: Boolean,
@@ -88,6 +81,12 @@ export default {
 	computed: {
 		tabIndex() {
 			return this.items.findIndex(item => item.active);
+		},
+		tabsPadding() {
+			if (this.isMobile) {
+				return { padding: '0 12px' };
+			}
+			return {};
 		},
 		computedStyle() {
 			if (this.isMobile) {
@@ -116,7 +115,6 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	width: 100%;
 	top: var(--triggered-top);
 	left: 0;
-	z-index: 99;
 	background-color: $white;
 	transition: top 0.1s ease-in-out;
 
@@ -124,6 +122,9 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 		background-color: $gray050;
 		::v-deep .c-tabs--menu-container {
 			background-color: $gray050;
+			@include pc {
+				border: none !important;
+			}
 		}
 		@include mobile {
 			background-color: $white;

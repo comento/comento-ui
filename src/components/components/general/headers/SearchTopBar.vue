@@ -17,7 +17,7 @@
 							ref="searchInput"
 							full
 							:value.sync="sync_searchKeyword"
-							:placeholder="searchPlaceholder"
+							:placeholder="placeholder"
 							:show-search-dropdown.sync="sync_showSearchDropdown"
 							:transparent="isTransparent"
 							data-cy="searchInput"
@@ -74,7 +74,7 @@ export default {
 		},
 		sync_searchKeyword: {
 			get() {
-				return this.searchKeyword;
+				return this.keyword;
 			},
 			set(value) {
 				return this.$emit('update:searchKeyword', value);
