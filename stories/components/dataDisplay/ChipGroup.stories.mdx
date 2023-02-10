@@ -87,9 +87,7 @@ export const Basic = (args, { argTypes }) => ({
                          </StyleCol>
                          <StyleCol :col-sm="12">
                              <ChipGroup size="large">
-                                <Chip type="fill" color="success" size="large">Chip</Chip>
-                                <Chip type="outline" color="success" size="large">Chip</Chip>
-                                <Chip type="fill" color="success" size="large">Chip</Chip>
+                                <Chip v-for="item in 30" :key="item" :type="item % 2 === 0 ? 'fill' : 'outline'" color="success" size="large">Chip</Chip>
                              </ChipGroup>
                              <hr/>
                          </StyleCol>

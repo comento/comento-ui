@@ -40,13 +40,16 @@ $margin-xlarge: 10px;
 
 .c-chip-group {
 	@include clearfix();
+	overflow-y: hidden;
 	&::v-deep .c-chip {
 		float: left;
 	}
 	/*사이즈*/
 	&.small {
+		margin-bottom: -#{$margin-small};
 		&::v-deep .c-chip {
 			margin-right: $margin-small;
+			margin-bottom: $margin-small;
 			&:last-child {
 				margin-right: 0;
 			}
@@ -58,8 +61,10 @@ $margin-xlarge: 10px;
 		}
 	}
 	&.medium {
+		margin-bottom: -#{$margin-medium};
 		&::v-deep .c-chip {
 			margin-right: $margin-medium;
+			margin-bottom: $margin-medium;
 			&:last-child {
 				margin-right: 0;
 			}
@@ -71,8 +76,10 @@ $margin-xlarge: 10px;
 		}
 	}
 	&.large {
+		margin-bottom: -#{$margin-large};
 		&::v-deep .c-chip {
 			margin-right: $margin-large;
+			margin-bottom: $margin-large;
 			&:last-child {
 				margin-right: 0;
 			}
@@ -85,8 +92,10 @@ $margin-xlarge: 10px;
 	}
 
 	&.xlarge {
+		margin-bottom: -#{$margin-xlarge};
 		&::v-deep .c-chip {
 			margin-right: $margin-xlarge;
+			margin-bottom: $margin-xlarge;
 			&:last-child {
 				margin-right: 0;
 			}
