@@ -1,5 +1,5 @@
 <template>
-	<div class="top-bar" :class="{ transparent: isTransparent }">
+	<div class="c-top-bar" :class="{ transparent: isTransparent }">
 		<NewGrid>
 			<NewRow>
 				<NewCol :col-sm="12">
@@ -8,14 +8,14 @@
 						<div class="preload-image-container">
 							<Logo
 								name="LogoComentoTypoType"
-								color="logo"
+								:color="isTransparent ? 'white' : 'primary'"
 								width="105"
 								height="18"
 								@click="$emit('click-logo')"
 							/>
 						</div>
 
-						<div class="top-bar-content">
+						<div class="c-top-bar-content">
 							<slot name="actions" />
 						</div>
 					</div>
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.top-bar {
+.c-top-bar {
 	width: 100%;
 	height: 64px;
 	position: fixed;
