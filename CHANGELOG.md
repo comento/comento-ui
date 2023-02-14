@@ -1,3 +1,12 @@
+## [1.1.24-alpha.9](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.8...v1.1.24-alpha.9) (2023-02-14)
+
+
+### Features
+
+* select 투명버전 추가 ([fbdaf07](https://github.com/comento/comento-ui/commit/fbdaf078e9d8bf427a3e9857794f720a15f3ab11))
+
+
+
 ## [1.1.24-alpha.8](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.7...v1.1.24-alpha.8) (2023-02-14)
 
 
