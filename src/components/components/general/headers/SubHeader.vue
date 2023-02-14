@@ -1,7 +1,7 @@
 <template>
 	<nav
 		id="subHeader"
-		class="sub-header"
+		class="c-sub-header"
 		:class="{ search: isSearch, transparent: isTransparent }"
 		:style="computedStyle"
 	>
@@ -19,12 +19,12 @@
 						<template v-for="(menu, index) in items" :slot="'item' + index">
 							<!--    nuxt 유무에 따라 핸들링          -->
 							<nuxt-link v-if="isNuxt" :key="menu.url" :to="menu.url" :data-cy="menu.name">
-								<Button :key="index" class="sub-header-menu" :class="{ active: tabIndex === index }">
+								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
 									{{ menu.name }}
 								</Button>
 							</nuxt-link>
 							<a v-else :key="menu.url" :href="menu.url" :data-cy="menu.name">
-								<Button :key="index" class="sub-header-menu" :class="{ active: tabIndex === index }">
+								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
 									{{ menu.name }}
 								</Button>
 							</a>
@@ -90,8 +90,7 @@ export default {
 		},
 		computedStyle() {
 			if (this.isMobile) {
-				const triggerTop = this.isSearch ? '64px' : '52px';
-				return { '--triggered-top': triggerTop, position: 'fixed' };
+				return { '--triggered-top': '64px', position: 'fixed' };
 			}
 			return {
 				'--triggered-top': this.isAppear ? '69px' : '24px',
@@ -111,7 +110,7 @@ export default {
 <style lang="scss" scoped>
 $active-bar-transparent: white;
 $hover-background-transparent: rgba(21, 22, 23, 0.1);
-.sub-header {
+.c-sub-header {
 	width: 100%;
 	top: var(--triggered-top);
 	left: 0;
@@ -119,9 +118,10 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	transition: top 0.1s ease-in-out;
 	z-index: 1;
 	::v-deep .c-tabs--menu-container {
-		border-top: 1px solid $gray200;
+		border-bottom: 1px solid $gray100;
 		@include pc {
-			border: none !important;
+			// sub header 높이를 맞추기 위한 border
+			border-bottom: 1px solid transparent;
 		}
 	}
 
@@ -130,13 +130,14 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 		::v-deep .c-tabs--menu-container {
 			background-color: $gray050;
 			@include pc {
-				border: none !important;
+				// sub header 높이를 맞추기 위한 border
+				border: 1px solid transparent;
 			}
 		}
 		@include mobile {
 			background-color: $white;
-			border-top: 1px solid $gray200;
 			::v-deep .c-tabs--menu-container {
+				border-bottom: 1px solid $white;
 				background-color: $white;
 			}
 		}
