@@ -94,7 +94,7 @@ export default {
 				return { '--triggered-top': triggerTop, position: 'fixed' };
 			}
 			return {
-				'--triggered-top': this.isAppear ? '24px' : '69px',
+				'--triggered-top': this.isAppear ? '69px' : '24px',
 				position: this.isScrollTop ? 'relative' : 'fixed',
 			};
 		},
