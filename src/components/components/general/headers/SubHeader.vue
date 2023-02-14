@@ -13,7 +13,7 @@
 						:tab-index="tabIndex"
 						with-header
 						:type="isMobile ? 'swiper' : 'basic'"
-						:style="tabsPadding"
+						:style="tabStyle"
 						@changeTabIndex="changeTabs"
 					>
 						<template v-for="(menu, index) in items" :slot="'item' + index">
@@ -82,11 +82,12 @@ export default {
 		tabIndex() {
 			return this.items.findIndex(item => item.active);
 		},
-		tabsPadding() {
+		tabStyle() {
+			const tabContentStyle = { height: '44px' };
 			if (this.isMobile) {
-				return { padding: '0 12px' };
+				return { ...tabContentStyle, padding: '0 12px' };
 			}
-			return {};
+			return tabContentStyle;
 		},
 		computedStyle() {
 			if (this.isMobile) {
@@ -117,6 +118,7 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	left: 0;
 	background-color: $white;
 	transition: top 0.1s ease-in-out;
+	z-index: 1;
 
 	&.search {
 		background-color: $gray050;
