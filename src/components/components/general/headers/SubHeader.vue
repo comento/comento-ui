@@ -83,11 +83,10 @@ export default {
 			return this.items.findIndex(item => item.active);
 		},
 		tabStyle() {
-			const tabContentStyle = { height: '44px' };
 			if (this.isMobile) {
-				return { ...tabContentStyle, padding: '0 12px' };
+				return { padding: '0 12px' };
 			}
-			return tabContentStyle;
+			return {};
 		},
 		computedStyle() {
 			if (this.isMobile) {
@@ -119,6 +118,12 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	background-color: $white;
 	transition: top 0.1s ease-in-out;
 	z-index: 1;
+	::v-deep .c-tabs--menu-container {
+		border-top: 1px solid $gray200;
+		@include pc {
+			border: none !important;
+		}
+	}
 
 	&.search {
 		background-color: $gray050;
