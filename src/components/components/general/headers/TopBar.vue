@@ -50,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 .top-bar {
 	width: 100%;
-	height: 52px;
+	height: 64px;
 	position: fixed;
 	top: 0;
 	left: 0;
