@@ -1,3 +1,17 @@
+## [1.1.24-alpha.8](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.7...v1.1.24-alpha.8) (2023-02-14)
+
+
+### Bug Fixes
+
+* 값 오류 수정 ([a75b46f](https://github.com/comento/comento-ui/commit/a75b46fb48f960e5f6c492148e9b9f958bf16e77))
+
+
+### Features
+
+* sub-header 하단 border 제거 ([3c0fd4c](https://github.com/comento/comento-ui/commit/3c0fd4c21c09c53f6b2bcd893b6434f3a4a80e51))
+
+
+
 ## [1.1.24-alpha.7](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.6...v1.1.24-alpha.7) (2023-02-14)
 
 
