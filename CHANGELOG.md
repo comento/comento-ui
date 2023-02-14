@@ -1,3 +1,12 @@
+## [1.1.24-alpha.7](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.6...v1.1.24-alpha.7) (2023-02-14)
+
+
+### Features
+
+* topbar, subheader height 변경 ([1b3c302](https://github.com/comento/comento-ui/commit/1b3c302038d8bec2ffb985d35031d632d1698815))
+
+
+
 ## [1.1.24-alpha.6](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.5...v1.1.24-alpha.6) (2023-02-10)
 
 
