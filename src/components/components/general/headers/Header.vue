@@ -82,6 +82,7 @@ export default {
 		color: $gray700;
 		cursor: pointer;
 		@include body2();
+		padding: 24px 0;
 
 		&.active {
 			color: $blue600 !important;

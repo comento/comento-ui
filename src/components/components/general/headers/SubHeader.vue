@@ -95,6 +95,7 @@ export default {
 			return {
 				'--triggered-top': this.isAppear ? '69px' : '24px',
 				position: this.isScrollTop ? 'relative' : 'fixed',
+				opacity: this.isAppear ? 1 : 0,
 			};
 		},
 	},
@@ -115,7 +116,7 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	top: var(--triggered-top);
 	left: 0;
 	background-color: $white;
-	transition: top 0.1s ease-in-out;
+	transition: top 0.1s linear, opacity 0.1s ease-in;
 	z-index: 1;
 	::v-deep .c-tabs--menu-container {
 		border-bottom: 1px solid $gray100;
