@@ -18,12 +18,12 @@
 					>
 						<template v-for="(menu, index) in items" :slot="'item' + index">
 							<!--    nuxt 유무에 따라 핸들링          -->
-							<nuxt-link v-if="isNuxt" :key="menu.url" :to="menu.url" :data-cy="menu.name">
+							<nuxt-link v-if="isNuxt" :key="menu.path" :to="menu.path" :data-cy="menu.name">
 								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
 									{{ menu.name }}
 								</Button>
 							</nuxt-link>
-							<a v-else :key="menu.url" :href="menu.url" :data-cy="menu.name">
+							<a v-else :key="menu.path" :href="menu.path" :data-cy="menu.name">
 								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
 									{{ menu.name }}
 								</Button>
