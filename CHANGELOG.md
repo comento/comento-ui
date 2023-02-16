@@ -1,3 +1,12 @@
+## [1.1.24-alpha.10](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.9...v1.1.24-alpha.10) (2023-02-16)
+
+
+### Features
+
+* 헤더 투명 대비 opacity 추가 ([b0646e3](https://github.com/comento/comento-ui/commit/b0646e36a030f6bd928815b4f6746ba2cd6bfbc0))
+
+
+
 ## [1.1.24-alpha.9](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.8...v1.1.24-alpha.9) (2023-02-14)
 
 
