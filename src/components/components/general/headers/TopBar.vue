@@ -4,7 +4,7 @@
 			<NewRow>
 				<NewCol :col-sm="12">
 					<!-- 공통 -->
-					<div class="flex flex-row justify-content-between align-items-center py-12">
+					<div class="c-top-bar-container">
 						<div class="preload-image-container">
 							<Logo
 								name="LogoComentoTypoType"
@@ -56,6 +56,13 @@ export default {
 	left: 0;
 	background-color: $white;
 	z-index: 100;
+
+	&-container {
+		height: 64px;
+		@include flexbox();
+		@include justify-content(space-between);
+		@include align-items(center);
+	}
 
 	&.transparent {
 		background-color: transparent;

@@ -1,0 +1,44 @@
+import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
+import TopBar from '@/components/components/general/headers/TopBar';
+import IconButton from '@/components/components/general/button/IconButton';
+
+<Meta
+  title="General/Headers/TopBar"
+  component={TopBar}
+  argTypes={{
+    isTransparent: {
+      description: '투명 헤더 사용 여부',
+      table: {
+        type: {
+          summary: 'Boolean',
+        }
+      }
+    },
+  }}
+/>
+
+export const Default = (args, {argTypes}) => ({
+  props: Object.keys(argTypes),
+  components: {TopBar, IconButton},
+  template: `
+    <div style="width: 375px; position: relative">
+      <TopBar :is-transparent="isTransparent" >
+        <template v-slot:actions>
+          <IconButton icon-name="IconSearchLargeLine" size="medium" color="info" />
+          <IconButton icon-name="IconBookmarkLargeLine" size="medium" color="info" />
+          <IconButton icon-name="IconAlarmLargeLine" size="medium" color="info" />
+        </template>
+      </TopBar>
+    </div>`,
+});
+
+
+# TopBar
+
+**TopBar** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
