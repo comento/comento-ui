@@ -90,7 +90,7 @@ export default {
 		},
 		computedStyle() {
 			if (this.isMobile) {
-				return { '--triggered-top': '64px', position: 'fixed' };
+				return { '--triggered-top': '52px', position: 'fixed' };
 			}
 			return {
 				'--triggered-top': this.isAppear ? '69px' : '24px',

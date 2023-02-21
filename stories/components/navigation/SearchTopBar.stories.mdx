@@ -1,0 +1,58 @@
+import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
+import SearchTopBar from '@/components/components/navigation/SearchTopBar';
+
+<Meta
+  title="Navigation/SearchTopBar"
+  component={SearchTopBar}
+  argTypes={{
+    isTransparent: {
+      description: "투명 헤더 사용 여부",
+      table: {
+        type: {
+          summary: "Boolean",
+        },
+      },
+    },
+    keyword: {
+      description: "검색어",
+      defaultValue: "",
+      control: { type: "string" }
+    },
+    placeholder: {
+      description: "placeholder",
+      defaultValue: "검색어를 입력 해주세요.",
+      control: { type: "string" }
+    },
+    showDropdown: {
+      description: "하단 드롭다운 flag",
+      table: {
+        type: {
+          summary: "Boolean",
+        },
+      },
+    },
+  }}
+/>
+
+export const Default = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { SearchTopBar },
+  template: `
+    <div style='width: 100%; display: flex; justify-content: center'>
+    <div style='width: 375px'>
+      <SearchTopBar :is-transparent='isTransparent' :keyword='keyword' :placeholder='placeholder'
+              :show-dropdown='showDropdown' style="position: relative"  />
+    </div>
+    </div>
+  `
+});
+
+# SearchTopBar
+
+**SearchTopBar** 컴포넌트의 문서입니다
+
+<Story name="Default" height="100px">
+	{Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />

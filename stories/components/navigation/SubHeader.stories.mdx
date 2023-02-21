@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
 
-import SubHeader from '@/components/components/general/headers/SubHeader';
+import SubHeader from '@/components/components/navigation/SubHeader';
 
 <Meta
-  title="General/Headers/SubHeader"
+  title="Navigation/SubHeader"
   component={SubHeader}
   argTypes={{
     isAppear: {
@@ -100,7 +100,7 @@ export const Default = (args, {argTypes}) => ({
            :is-transparent="isTransparent"
            :is-nuxt="isNuxt"
            :items="items"
-                   :style="{'--triggered-top': '0 !important'}"
+           :style="{'--triggered-top': '0 !important'}"
 />
 </div>
     </div>`,
@@ -108,7 +108,7 @@ export const Default = (args, {argTypes}) => ({
 
 # SubHeader
 
-**SubHeader** 컴포넌의 문서입니다.
+**SubHeader** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}

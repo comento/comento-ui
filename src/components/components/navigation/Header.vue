@@ -16,7 +16,7 @@
 				@mouseenter="onMouseEntered(index)"
 			>
 				<nuxt-link v-if="nuxt" v-bind="$attrs" :to="menu.path" v-on="$listeners">{{ menu.name }}</nuxt-link>
-				<router-link v-else v-bind="$attrs" :to="menu.path" v-on="$listeners">{{ menu.name }}</router-link>
+				<a v-else v-bind="$attrs" :href="menu.path" v-on="$listeners">{{ menu.name }}</a>
 			</li>
 		</ul>
 	</div>
