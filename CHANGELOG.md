@@ -1,3 +1,19 @@
+## [1.1.24-alpha.12](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.11...v1.1.24-alpha.12) (2023-02-21)
+
+
+### Bug Fixes
+
+* header router-link -> a tag 변경 ([80fde5d](https://github.com/comento/comento-ui/commit/80fde5de3d11be6dc98ba79ed5b85eafc8cf1d96))
+
+
+### Features
+
+* search input 변경 ([5ce207a](https://github.com/comento/comento-ui/commit/5ce207ae66fea26a7449b631389f274e863e8ef1))
+* search top bar 업데이트 ([346baf3](https://github.com/comento/comento-ui/commit/346baf3f439e64c119555e8650ef2dd8182001b5))
+* top bar 변경사항 저장 ([db22b23](https://github.com/comento/comento-ui/commit/db22b23f3c125bf3649b2f0c71e6d009561319d5))
+
+
+
 ## [1.1.24-alpha.11](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.10...v1.1.24-alpha.11) (2023-02-17)
 
 
