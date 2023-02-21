@@ -50,7 +50,6 @@ export default {
 <style lang="scss" scoped>
 .c-top-bar {
 	width: 100%;
-	height: 64px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -58,7 +57,7 @@ export default {
 	z-index: 100;
 
 	&-container {
-		height: 64px;
+		height: 52px;
 		@include flexbox();
 		@include justify-content(space-between);
 		@include align-items(center);
