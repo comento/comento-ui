@@ -8,11 +8,11 @@
 						<div v-if="type === 'detail'" class="c-top-bar-backward">
 							<Icon
 								name="IconBackwardLargeLine"
-								color="gray800"
+								:color="isTransparent ? 'white' : 'gray800'"
 								class="mr-4 c-pointer"
 								@click="$emit('click-backward')"
 							/>
-							<Typography type="body1" :font-weight="500" color="gray900">
+							<Typography type="body1" :font-weight="500" :color="isTransparent ? 'white' : 'gray900'">
 								{{ title }}
 							</Typography>
 						</div>

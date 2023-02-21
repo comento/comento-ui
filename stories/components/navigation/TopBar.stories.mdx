@@ -36,7 +36,7 @@ export const Default = (args, {argTypes}) => ({
   components: {TopBar, IconButton},
   template: `
     <div style="width: 100%; display: flex; justify-content: center">
-      <div style="width: 375px">
+      <div style="width: 375px" :style="{backgroundColor : isTransparent ? 'black' : 'white' }">
         <TopBar :is-transparent="isTransparent" :type="type" :title="title" style="position: relative" >
           <template v-slot:actions>
             <IconButton icon-name="IconSearchLargeLine" size="medium" color="info" />
