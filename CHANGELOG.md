@@ -1,3 +1,13 @@
+## [1.1.24-alpha.14](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.13...v1.1.24-alpha.14) (2023-02-21)
+
+
+### Features
+
+* top bar isTransparent 적용 ([e5a0463](https://github.com/comento/comento-ui/commit/e5a04637beb92b5b2d0dd8d4ee53475cca6a9d87))
+* top bar 변경 ([ebdf6ff](https://github.com/comento/comento-ui/commit/ebdf6ff7ef6565af84322d7eaa60895ae6ee4444))
+
+
+
 ## [1.1.24-alpha.13](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.12...v1.1.24-alpha.13) (2023-02-21)
 
 
