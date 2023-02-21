@@ -1,3 +1,7 @@
+## [1.1.24-alpha.13](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.12...v1.1.24-alpha.13) (2023-02-21)
+
+
+
 ## [1.1.24-alpha.12](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.11...v1.1.24-alpha.12) (2023-02-21)
 
 
