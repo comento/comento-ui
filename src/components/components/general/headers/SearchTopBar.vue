@@ -1,10 +1,10 @@
 <template>
-	<div class="search-top-bar" :class="{ transparent: isTransparent }">
-		<NewGrid class="py-12">
+	<div class="c-search-top-bar" :class="{ transparent: isTransparent }">
+		<NewGrid class="py-10">
 			<NewRow>
 				<NewCol :col-sm="12">
-					<div class="flex flex-row justify-content-between align-items-center">
-						<div class="search-top-bar-icon-wrapper">
+					<div class="c-search-top-bar-container">
+						<div class="c-search-top-bar-icon-wrapper">
 							<Icon
 								name="IconBackwardLargeLine"
 								size="large"
@@ -94,15 +94,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.search-top-bar {
+.c-search-top-bar {
 	width: 100%;
-	height: 64px;
+	height: 52px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: $white;
-	//padding: 12px 16px;
 	z-index: 100;
+
+	&-container {
+		@include flexbox();
+		@include justify-content(space-between);
+		@include align-items(center);
+	}
 
 	&.transparent {
 		background-color: transparent;
@@ -111,27 +116,6 @@ export default {
 	&-icon {
 		&-wrapper {
 			@include flexbox();
-		}
-	}
-}
-
-.search {
-	width: 300px;
-	height: 40px;
-	background-color: $gray100;
-	border-radius: 4px;
-	display: flex;
-	align-items: center;
-
-	& input {
-		border: none;
-		background-color: transparent;
-		padding: 0;
-		@include body2();
-		color: $gray850;
-
-		&::placeholder {
-			color: $gray400;
 		}
 	}
 }
