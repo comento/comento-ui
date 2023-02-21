@@ -21,15 +21,17 @@ export const Default = (args, {argTypes}) => ({
   props: Object.keys(argTypes),
   components: {TopBar, IconButton},
   template: `
-    <div style="width: 375px; position: relative">
-      <TopBar :is-transparent="isTransparent" >
-        <template v-slot:actions>
-          <IconButton icon-name="IconSearchLargeLine" size="medium" color="info" />
-          <IconButton icon-name="IconBookmarkLargeLine" size="medium" color="info" />
-          <IconButton icon-name="IconAlarmLargeLine" size="medium" color="info" />
-        </template>
-      </TopBar>
-    </div>`,
+    <div style="width: 100%; display: flex; justify-content: center">
+      <div style="width: 375px">
+        <TopBar :is-transparent="isTransparent" style="position: relative" >
+          <template v-slot:actions>
+            <IconButton icon-name="IconSearchLargeLine" size="medium" color="info" />
+            <IconButton icon-name="IconBookmarkLargeLine" size="medium" color="info" />
+            <IconButton icon-name="IconAlarmLargeLine" size="medium" color="info" />
+          </template>
+        </TopBar>
+  </div>
+</div>`,
 });
 
 
