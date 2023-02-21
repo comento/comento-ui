@@ -32,10 +32,10 @@
 			/>
 		</div>
 		<div class="search_input_icon_wrapper left" @click="handleSearch()">
-			<IconButton
+			<Icon
 				role="button"
 				tabindex="1"
-				icon-name="IconSearchLargeLine"
+				:name="isMobile ? 'IconSearchSmallLine' : 'IconSearchLargeLine'"
 				size="medium"
 				:color="computedIconColor"
 				:transparent="transparent"
@@ -47,7 +47,6 @@
 
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
-import IconButton from '@/components/components/general/button/IconButton';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
 
@@ -136,7 +135,6 @@ export default {
 	},
 	components: {
 		Icon,
-		IconButton,
 	},
 	directives: {
 		clickOutside,
@@ -198,10 +196,13 @@ export default {
 		@include transition(all 0.2s ease);
 		border: 0;
 		background-color: $gray100;
-		padding: 10px 36px 10px 36px;
+		padding: 10px 36px 10px 58px;
 		@include body2();
-		width: 226px;
+		width: 300px;
 		color: $gray800;
+		@include mobile {
+			padding: 6px 30px 6px 50px;
+		}
 
 		@include placeholder {
 			@include color-opacity($gray400, 0.6);
@@ -221,9 +222,12 @@ export default {
 		@include flexbox();
 		@include flex-direction(row);
 		@include align-items(center);
+		@include mobile {
+			right: 12px;
+		}
 
 		&.left {
-			left: 0 !important;
+			left: 0px !important;
 			z-index: 1;
 			width: max-content;
 		}
@@ -234,14 +238,20 @@ export default {
 			margin: 0 4px 0 8px;
 			display: block;
 			z-index: 2;
+			@include mobile {
+				margin: 0;
+			}
 		}
 		.icon_search {
 			cursor: pointer;
 			position: relative;
-			margin-left: 4px;
+			margin-left: 14px;
 			display: block;
 			z-index: 2;
 			opacity: 0.8;
+			@include mobile {
+				margin-left: 14px;
+			}
 		}
 	}
 }
