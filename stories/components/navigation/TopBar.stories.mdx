@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
-import TopBar from '@/components/components/navigation/TopBar';
+import TopBar,{ headerTypes } from '@/components/components/navigation/TopBar';
 import IconButton from '@/components/components/general/button/IconButton';
 
 <Meta
@@ -14,6 +14,20 @@ import IconButton from '@/components/components/general/button/IconButton';
         }
       }
     },
+    type: {
+      description: '일반 혹은 로고 버전',
+      control: {
+        type: 'select',
+        options: headerTypes,
+      }
+    },
+	  title: {
+		  description: '해당 페이지 타이틀',
+		  defaultValue: '뒤로가기',
+		  control: {
+			  type: 'text',
+		  }
+	  }
   }}
 />
 
@@ -22,8 +36,8 @@ export const Default = (args, {argTypes}) => ({
   components: {TopBar, IconButton},
   template: `
     <div style="width: 100%; display: flex; justify-content: center">
-      <div style="width: 375px">
-        <TopBar :is-transparent="isTransparent" style="position: relative" >
+      <div style="width: 375px" :style="{backgroundColor : isTransparent ? 'black' : 'white' }">
+        <TopBar :is-transparent="isTransparent" :type="type" :title="title" style="position: relative" >
           <template v-slot:actions>
             <IconButton icon-name="IconSearchLargeLine" size="medium" color="info" />
             <IconButton icon-name="IconBookmarkLargeLine" size="medium" color="info" />
