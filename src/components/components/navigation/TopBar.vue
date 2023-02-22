@@ -5,7 +5,20 @@
 				<NewCol :col-sm="12">
 					<!-- 공통 -->
 					<div class="c-top-bar-container">
-						<div v-if="type === 'detail'" class="c-top-bar-backward">
+						<div v-if="type === 'logo'" class="c-top-bar-logo-type">
+							<Logo
+								name="LogoComentoTypoType"
+								:color="isTransparent ? 'white' : 'primary'"
+								width="105"
+								height="18"
+								@click="$emit('click-logo')"
+							/>
+							<Divider class="mx-6" style="height: 16px" vertical />
+							<Typography type="body2" :font-weight="500" :color="isTransparent ? 'white' : 'gray500'">
+								{{ title }}
+							</Typography>
+						</div>
+						<div v-else-if="type === 'detail'" class="c-top-bar-backward">
 							<Icon
 								name="IconBackwardLargeLine"
 								:color="isTransparent ? 'white' : 'gray800'"
@@ -43,7 +56,8 @@ import NewCol from '@/components/layout/NewCol';
 import Logo from '@/components/elements/core/logo/Logo';
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
-export const headerTypes = ['default', 'detail'];
+import { Divider } from '@/components';
+export const headerTypes = ['default', 'detail', 'logo'];
 
 /**
  * @displayName c-top-bar
@@ -65,7 +79,7 @@ export default {
 			default: '',
 		},
 	},
-	components: { NewCol, NewRow, NewGrid, Logo, Icon, Typography },
+	components: { NewCol, NewRow, NewGrid, Logo, Icon, Typography, Divider },
 };
 </script>
 
@@ -93,6 +107,12 @@ export default {
 		@include flexbox();
 		@include justify-content(center);
 		@include align-items(flex-start);
+	}
+
+	&-logo-type {
+		@include flexbox();
+		@include justify-content(center);
+		@include align-items(center);
 	}
 
 	&-content {
