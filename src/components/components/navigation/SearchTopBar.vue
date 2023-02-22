@@ -23,6 +23,7 @@
 							data-cy="searchInput"
 							@search="search"
 							@autocomplete="autocomplete"
+							@click="clickSearchInput"
 						>
 						</SearchInput>
 					</div>
@@ -87,6 +88,9 @@ export default {
 		},
 		autocomplete() {
 			this.$emit('autocomplete', this.sync_keyword);
+		},
+		clickSearchInput() {
+			this.$emit('click-search-input');
 		},
 	},
 	components: { SearchInput, NewCol, NewRow, NewGrid, Icon },
