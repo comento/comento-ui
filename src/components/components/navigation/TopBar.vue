@@ -92,7 +92,7 @@ export default {
 	&-backward {
 		@include flexbox();
 		@include justify-content(center);
-		@include align-items(center);
+		@include align-items(flex-start);
 	}
 
 	&-content {
