@@ -199,20 +199,31 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	}
 }
 
+::v-deep .swiper-slide {
+	&.active {
+		&::after {
+			background-color: $blue600;
+		}
+	}
+}
+
 ::v-deep .c-tabs--menu-button {
+	> a {
+		text-decoration: none;
+	}
 	&:hover {
 		background-color: transparent !important;
 		& .c-button {
 			color: $blue800;
 		}
 	}
-
-	&.active .c-button {
-		@include body2();
-		font-weight: 500;
-		color: $blue600;
+	.c-button {
+		&.active {
+			@include body2();
+			font-weight: 500 !important;
+			color: $blue600 !important;
+		}
 	}
-
 	&.active::after {
 		background-color: $blue600;
 	}
