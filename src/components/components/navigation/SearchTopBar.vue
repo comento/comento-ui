@@ -16,9 +16,9 @@
 						<SearchInput
 							ref="searchInput"
 							full
-							:value.sync="sync_searchKeyword"
+							:value.sync="sync_keyword"
 							:placeholder="placeholder"
-							:show-search-dropdown.sync="sync_showSearchDropdown"
+							:show-search-dropdown.sync="sync_showDropdown"
 							:transparent="isTransparent"
 							data-cy="searchInput"
 							@search="search"
@@ -64,7 +64,7 @@ export default {
 		},
 	},
 	computed: {
-		sync_showSearchDropdown: {
+		sync_showDropdown: {
 			get() {
 				return this.showDropdown;
 			},
@@ -72,12 +72,12 @@ export default {
 				return this.$emit('update:showDropdown', value);
 			},
 		},
-		sync_searchKeyword: {
+		sync_keyword: {
 			get() {
 				return this.keyword;
 			},
 			set(value) {
-				return this.$emit('update:searchKeyword', value);
+				return this.$emit('update:keyword', value);
 			},
 		},
 	},
@@ -86,7 +86,7 @@ export default {
 			this.$emit('search');
 		},
 		autocomplete() {
-			this.$emit('autocomplete', this.sync_searchKeyword);
+			this.$emit('autocomplete', this.sync_keyword);
 		},
 	},
 	components: { SearchInput, NewCol, NewRow, NewGrid, Icon },
