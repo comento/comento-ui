@@ -18,7 +18,7 @@
 								{{ title }}
 							</Typography>
 						</div>
-						<div v-else-if="type === 'detail'" class="c-top-bar-backward">
+						<div v-else-if="type === 'backward'" class="c-top-bar-backward">
 							<Icon
 								name="IconBackwardLargeLine"
 								:color="isTransparent ? 'white' : 'gray800'"
@@ -57,7 +57,7 @@ import Logo from '@/components/elements/core/logo/Logo';
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 import { Divider } from '@/components';
-export const headerTypes = ['default', 'detail', 'logo'];
+export const headerTypes = ['default', 'backward', 'logo'];
 
 /**
  * @displayName c-top-bar
