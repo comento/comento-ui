@@ -1,3 +1,12 @@
+## [1.1.24-alpha.16](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.15...v1.1.24-alpha.16) (2023-02-22)
+
+
+### Features
+
+* SearchTopBar에서 SearchInput 클릭이벤트 추가 ([28328ea](https://github.com/comento/comento-ui/commit/28328ea114f58e50abff313aba918effe30dd116))
+
+
+
 ## [1.1.24-alpha.15](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.14...v1.1.24-alpha.15) (2023-02-22)
 
 
