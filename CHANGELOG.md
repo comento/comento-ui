@@ -1,3 +1,18 @@
+## [1.1.24-alpha.15](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.14...v1.1.24-alpha.15) (2023-02-22)
+
+
+### Bug Fixes
+
+* 변수명 오류 수정 ([6e98696](https://github.com/comento/comento-ui/commit/6e986965ba0e6fc3d6c30d030ec6e96cffe62060))
+
+
+### Features
+
+* logo type 추가 ([8c8f6c7](https://github.com/comento/comento-ui/commit/8c8f6c7197e9a104db52ed9ad5779098f9ca07a5))
+* sub header update ([a2d6fa2](https://github.com/comento/comento-ui/commit/a2d6fa2ee740e61b7b9c189061f61f6d800810bc))
+
+
+
 ## [1.1.24-alpha.14](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.13...v1.1.24-alpha.14) (2023-02-21)
 
 
