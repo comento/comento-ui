@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/comento/comento-ui/compare/v1.1.23...v1.2.0) (2023-02-22)
+
+
+### Bug Fixes
+
+* 아이콘 이름 오류 수정 ([#998](https://github.com/comento/comento-ui/issues/998)) ([eafea7b](https://github.com/comento/comento-ui/commit/eafea7bc5b7f72643694bc397780f5bed12aa5fc))
+
+
+### Features
+
+* 아이콘 5개 추가 ([#1005](https://github.com/comento/comento-ui/issues/1005)) ([8958a52](https://github.com/comento/comento-ui/commit/8958a520a155d5e8f1f231b05db73681eb232bfd))
+
+
+
 ## [1.1.23](https://github.com/comento/comento-ui/compare/v1.1.22...v1.1.23) (2023-01-12)
 
 
