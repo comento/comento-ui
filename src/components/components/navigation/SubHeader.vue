@@ -2,18 +2,17 @@
 	<nav
 		id="subHeader"
 		class="c-sub-header"
-		:class="{ search: isSearch, transparent: isTransparent }"
-		:style="computedStyle"
+		:class="{ search: isSearch, transparent: isTransparent, appear: isAppear, 'scroll-top': isScrollTop }"
 	>
 		<NewGrid :fluid="isMobile">
 			<NewRow>
 				<NewCol>
 					<Tabs
 						ref="subHeader"
+						class="c-sub-header-tabs"
 						:tab-index="tabIndex"
 						with-header
 						:type="isMobile ? 'swiper' : 'basic'"
-						:style="tabStyle"
 						@changeTabIndex="changeTabs"
 					>
 						<template v-for="(menu, index) in items" :slot="'item' + index">
@@ -82,22 +81,6 @@ export default {
 		tabIndex() {
 			return this.items.findIndex(item => item.active);
 		},
-		tabStyle() {
-			if (this.isMobile) {
-				return { padding: '0 12px' };
-			}
-			return {};
-		},
-		computedStyle() {
-			if (this.isMobile) {
-				return { '--triggered-top': '52px', position: 'fixed' };
-			}
-			return {
-				'--triggered-top': this.isAppear ? '69px' : '24px',
-				position: this.isScrollTop ? 'relative' : 'fixed',
-				opacity: this.isAppear ? 1 : 0,
-			};
-		},
 	},
 	methods: {
 		changeTabs(tabs) {
@@ -113,16 +96,38 @@ $active-bar-transparent: white;
 $hover-background-transparent: rgba(21, 22, 23, 0.1);
 .c-sub-header {
 	width: 100%;
-	top: var(--triggered-top);
+	top: 24px;
 	left: 0;
 	background-color: $white;
 	transition: top 0.1s linear, opacity 0.1s ease-in;
 	z-index: 1;
+	position: fixed;
 	::v-deep .c-tabs--menu-container {
 		border-bottom: 1px solid $gray100;
 		@include pc {
 			// sub header 높이를 맞추기 위한 border
 			border-bottom: 1px solid transparent;
+		}
+	}
+	@include mobile {
+		top: 52px;
+	}
+
+	&.appear {
+		top: 69px;
+		@include mobile {
+			top: 52px;
+		}
+	}
+
+	&.scroll-top {
+		position: relative;
+	}
+
+	&-tabs {
+		overflow: visible;
+		@include mobile {
+			padding: 0 12px;
 		}
 	}
 
@@ -138,7 +143,7 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 		@include mobile {
 			background-color: $white;
 			::v-deep .c-tabs--menu-container {
-				border-bottom: 1px solid $white;
+				border-bottom: 1px solid $gray100;
 				background-color: $white;
 			}
 		}
