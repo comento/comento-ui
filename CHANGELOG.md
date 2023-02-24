@@ -1,3 +1,12 @@
+## [1.1.24-alpha.17](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.16...v1.1.24-alpha.17) (2023-02-24)
+
+
+### Features
+
+* sub header 변경 ([f89bfd3](https://github.com/comento/comento-ui/commit/f89bfd324f2de38abf0f600d02f6cc9aff007b3a))
+
+
+
 ## [1.1.24-alpha.16](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.15...v1.1.24-alpha.16) (2023-02-22)
 
 
