@@ -1,3 +1,12 @@
+## [1.1.24-alpha.18](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.17...v1.1.24-alpha.18) (2023-02-24)
+
+
+### Features
+
+* popover typography 제거 ([80b4ca6](https://github.com/comento/comento-ui/commit/80b4ca68b9a23b0b81ca1bd3b7948189d9761398))
+
+
+
 ## [1.1.24-alpha.17](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.16...v1.1.24-alpha.17) (2023-02-24)
 
 
