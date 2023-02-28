@@ -4,7 +4,7 @@
 		class="c-sub-header"
 		:class="{ search: isSearch, transparent: isTransparent, appear: isAppear, 'scroll-top': isScrollTop }"
 	>
-		<NewGrid :fluid="isMobile">
+		<NewGrid :fluid="isMobileView">
 			<NewRow>
 				<NewCol>
 					<Tabs
@@ -12,7 +12,7 @@
 						class="c-sub-header-tabs"
 						:tab-index="tabIndex"
 						with-header
-						:type="isMobile ? 'swiper' : 'basic'"
+						:type="isMobileView ? 'swiper' : 'basic'"
 						@changeTabIndex="changeTabs"
 					>
 						<template v-for="(menu, index) in items" :slot="'item' + index">
@@ -76,6 +76,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		isMobileView: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		tabIndex() {
@@ -95,7 +99,7 @@ export default {
 $active-bar-transparent: white;
 $hover-background-transparent: rgba(21, 22, 23, 0.1);
 .c-sub-header {
-	width: 100%;
+	width: 100vw;
 	top: 24px;
 	left: 0;
 	background-color: $white;
