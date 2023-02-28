@@ -1,3 +1,12 @@
+## [1.1.24-alpha.19](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.18...v1.1.24-alpha.19) (2023-02-28)
+
+
+### Features
+
+* 하이라이트 스타일 변경 ([#1013](https://github.com/comento/comento-ui/issues/1013)) ([9cedd8d](https://github.com/comento/comento-ui/commit/9cedd8d46e16d197a7f72233e142c597651d706b))
+
+
+
 ## [1.1.24-alpha.18](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.17...v1.1.24-alpha.18) (2023-02-24)
 
 
