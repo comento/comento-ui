@@ -37,8 +37,8 @@
 </template>
 
 <script>
-import Loader from '@/components/components/other/Loader';
-import Icon from '@/components/elements/core/icon/Icon';
+import Loader from '@/components/components/other/Loader.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];

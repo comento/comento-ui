@@ -26,7 +26,7 @@
 
 <script>
 import paddingMixin from '@/mixins/paddingMixin';
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 
 export const ChipColors = ['primary', 'info', 'success', 'secondary', 'error'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];

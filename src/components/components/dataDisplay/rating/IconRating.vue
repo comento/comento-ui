@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Icon from '@/components/elements/core/icon/Icon';
-import Typography from '@/components/elements/core/typography/Typography';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 /**
  * @displayName c-icon-rating

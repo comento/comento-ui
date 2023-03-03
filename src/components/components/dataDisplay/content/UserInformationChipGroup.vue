@@ -8,7 +8,7 @@
 /**
  * @displayName c-user-information-chip-group
  */
-import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
+import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup.vue';
 
 export default {
 	name: 'UserInformationChipGroup',

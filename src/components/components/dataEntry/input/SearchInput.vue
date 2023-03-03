@@ -48,8 +48,8 @@
 </template>
 
 <script>
-import Icon from '@/components/elements/core/icon/Icon';
-import IconButton from '@/components/components/general/button/IconButton';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import IconButton from '@/components/components/general/button/IconButton.vue';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
 

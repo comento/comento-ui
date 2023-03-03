@@ -1,4 +1,2 @@
-import Chip from './Chip';
-import ChipGroup from './ChipGroup';
-
-export { Chip, ChipGroup };
+export { default as CChip } from './Chip.vue';
+export { default as CChipGroup } from './ChipGroup.vue';

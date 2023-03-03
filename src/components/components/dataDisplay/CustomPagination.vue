@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 
 export default {
 	name: 'CustomPagination',

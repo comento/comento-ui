@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
-import Icon from '@/components/elements/core/icon/Icon';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 import uniqueId from '@/utils/unique-id';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];

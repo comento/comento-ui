@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
-import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Icon, { IconNames } from '@/components/elements/core/icon/Icon.vue';
 import customValidator from '@/utils/custom-validator';
 
 export const toastTypes = ['basic', 'error', 'success', 'security'];

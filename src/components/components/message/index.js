@@ -1,9 +1,8 @@
-import Alert from './Alert';
-import Banner from './Banner';
-import Callout from './Callout';
-import Popover from './Popover';
-import Toast from './Toast';
-import Tooltip from './Tooltip';
+export { default as CAlert } from './Alert.vue';
+export { default as CBanner } from './Banner.vue';
+export { default as CCallout } from './Callout.vue';
+export { default as CPopover } from './Popover.vue';
+export { default as CToast } from './Toast.vue';
+export { default as CTooltip } from './Tooltip.vue';
 
-export { Alert, Banner, Callout, Popover, Toast, Tooltip };
 export * from './modal';
