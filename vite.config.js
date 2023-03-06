@@ -1,12 +1,13 @@
 import { defineConfig } from 'vite';
 import { createVuePlugin as vue } from 'vite-plugin-vue2';
 import { resolve } from 'path';
+import svgLoader from 'vite-svg-loader';
 
 const LIBRARY_NAME = 'comento-ui';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [vue()],
+	plugins: [vue(), svgLoader()],
 	resolve: {
 		alias: {
 			'@': resolve(__dirname, './src'),
