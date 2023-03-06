@@ -91,6 +91,7 @@
     "prettier": "^2.1.2",
     "sass": "^1.57.1",
     "shipjs": "0.21.1",
+    "vite-svg-loader": "^4.0.0",
     "vue-docgen-web-types": "^0.1.7",
     "vue-intellisense": "^1.0.1",
     "vue-jest": "^3.0.7",
