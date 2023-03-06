@@ -192,7 +192,7 @@ import IconAnswer2XLargeLine from '@/assets/images/icon/2xlarge/icon-answer-2xla
 import IconBoard2XLargeLine from '@/assets/images/icon/2xlarge/icon-board-2xlarge-line.svg?inline';
 import IconCheckRound2XLargeLine from '@/assets/images/icon/2xlarge/icon-checkRound-2xlarge-line.svg?inline';
 import IconCheckRound2XLargeFill from '@/assets/images/icon/2xlarge/icon-checkRound-2xlarge-fill.svg?inline';
-import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?inline';
+import IconWriting2XLargeLine from '@/assets/images/icon/2xlarge/icon-writing-2xlarge-line.svg?component';
 import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarge-line.svg?inline';
 import IconSupport2XLargeLine from '@/assets/images/icon/2xlarge/icon-support-2xlarge-line.svg?inline';
 import IconPlus2XLargeLine from '@/assets/images/icon/2xlarge/icon-plus-2xlarge-line.svg?inline';

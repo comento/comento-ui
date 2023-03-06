@@ -1,9 +1,8 @@
-import MyButton from './Button.vue';
-
+import Icon from '@/components/elements/core/icon/Icon.vue';
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
-	title: 'Example/Button',
-	component: MyButton,
+	title: 'Example/Icon',
+	component: Icon,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		backgroundColor: { control: 'color' },
@@ -17,30 +16,30 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { MyButton },
-	template: '<my-button @onClick="onClick" v-bind="$props" />',
+	components: { Icon },
+	template: '<Icon name="IconWriting2XLargeLine" v-bind="$props">Icon</Icon>',
 });
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
 	primary: true,
-	label: 'Button',
+	label: 'Icon',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-	label: 'Button',
+	label: 'Icon',
 };
 
 export const Large = Template.bind({});
 Large.args = {
 	size: 'large',
-	label: 'Button',
+	label: 'Icon',
 };
 
 export const Small = Template.bind({});
 Small.args = {
 	size: 'small',
-	label: 'Button',
+	label: 'Icon',
 };
