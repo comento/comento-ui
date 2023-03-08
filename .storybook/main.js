@@ -19,6 +19,14 @@ module.exports = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, '../src'),
     }
+    config.css = {
+      ...config.css,
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "@/assets/style/base/main";`,
+        }
+      }
+    }
     config.plugins.push(svgLoader())
     return config
   }
