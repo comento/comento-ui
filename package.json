@@ -64,7 +64,7 @@
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
     "@storybook/addon-viewport": "^6.0.26",
-    "@storybook/builder-vite": "^0.4.0",
+    "@storybook/builder-vite": "^0.4.2",
     "@storybook/mdx2-csf": "^0.0.4",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/vue": "^6.5.16",
