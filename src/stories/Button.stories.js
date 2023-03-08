@@ -1,8 +1,9 @@
-import Icon from '@/components/elements/core/icon/Icon.vue';
+// import Icon from '@/components/elements/core/icon/Icon.vue';
+import { CButton } from '@/components';
 // More on default export: https://storybook.js.org/docs/vue/writing-stories/introduction#default-export
 export default {
 	title: 'Example/Icon',
-	component: Icon,
+	component: CButton,
 	// More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
 	argTypes: {
 		backgroundColor: { control: 'color' },
@@ -16,8 +17,8 @@ export default {
 // More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Icon },
-	template: '<Icon name="IconWriting2XLargeLine" v-bind="$props">Icon</Icon>',
+	components: { CButton },
+	template: '<CButton name="IconWriting2XLargeLine" v-bind="$props">Icon</CButton>',
 });
 
 export const Primary = Template.bind({});
