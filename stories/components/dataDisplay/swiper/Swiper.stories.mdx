@@ -1,423 +1,817 @@
-import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Swiper, {
-    SwiperControlsColors,
-    SwiperControlPositions,
-    SwiperIndicatorColors,
-    SwiperIndicatorPositions,
-} from '@/components/components/dataDisplay/Swiper';
-import SwiperItemExample from './SwiperItemExample';
+[//]: # (import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';)
 
-<Meta
-    title="Data Display/Swiper"
-    component={Swiper}
-    argTypes={{
-        withControls: {
-            description: "With Controls",
-            control: {
-                type: "boolean",
-            },
-        },
-        controlsPosition: {
-            description: "Controls 위치",
-            control: {
-                type: "select",
-                options: SwiperControlPositions,
-            },
-        },
-        controlsColor: {
-            description: "swiper control color",
-            control: {
-                type: "select",
-                options: SwiperControlsColors,
-            },
-        },
-        controlsCircle: {
-            description: "동그라미모양 컨트롤",
-            control: {
-                type: "boolean",
-            },
-        },
-        withIndicator: {
-            description: "With Indicator",
-            control: {
-                type: "boolean",
-            },
-        },
-        indicatorPosition: {
-            description: "Indicator 위치",
-            control: {
-                type: "select",
-                options: SwiperIndicatorPositions,
-            },
-        },
-        indicatorColor: {
-            description: "swiper indicator color",
-            control: {
-                type: "select",
-                options: SwiperIndicatorColors,
-            },
-        },
-        centeredSlides: {
-            description: "swiper center align",
-            control: {
-                type: "boolean",
-            },
-        },
-        spacing: {
-            description: "swiper item spacing",
-            control: {
-                type: "number",
-            },
-        },
-        slidesPerView: {
-            description: "한번에 보여줄 슬라이드 개수",
-            control: {
-                type: "text",
-            },
-        },
-        slidesPerGroup: {
-            description: "그룹 안의 슬라이드 개수",
-            control: {
-                type: "number",
-            },
-        },
-        autoplay: {
-            description: "자동재생 여부",
-            control: {
-                type: "boolean",
-            },
-        },
-        autoplayDelay: {
-            description: "자동재생 시 슬라이드 사이 시간 간격",
-            control: {
-                type: "number",
-            },
-        },
-        loop: {
-            description: "loop 여부",
-            control: {
-                type: "boolean",
-            },
-        },
-    }}
-/>
+[//]: # (import Swiper, {)
 
-export const Default = (args, { argTypes }) => ({
-    props: Object.keys(argTypes),
-    components: { Swiper, SwiperItemExample },
-    template: `
-        <div style="padding: 12px 32px;">
-            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :centeredSlides="centeredSlides" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup" :autoplay="autoplay" :autoplay-delay="autoplayDelay" :loop="loop">
-                <template v-for="(item, index) in 10" :slot="'item' + index">
-                <SwiperItemExample :text="'ITEM' + (index+1)" ></SwiperItemExample>
-                </template>
-            </Swiper>
-        </div>
-        `,
-});
+[//]: # (    SwiperControlsColors,)
 
-# Swiper
+[//]: # (    SwiperControlPositions,)
 
-**Swiper** 컴포넌트의 문서입니다.<br/>
-loop모드 사용시 event listener는 @click-slide로 전달합니다.
+[//]: # (    SwiperIndicatorColors,)
 
-<Story name="Default" height="100px">
-    {Default.bind({})}
-</Story>
+[//]: # (    SwiperIndicatorPositions,)
 
-<ArgsTable story="Default" />
+[//]: # (} from '@/components/components/dataDisplay/Swiper';)
 
-## Stories
+[//]: # (import SwiperItemExample from './SwiperItemExample';)
 
-### All
+[//]: # ()
+[//]: # (<Meta)
 
-<Canvas>
-    <Story name="All" height="100px">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div style="padding: 12px 24px;">
-                    <Swiper controls-color="light" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                    <Swiper controls-color="dark" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                    <Swiper controls-color="light" controls-position="inside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                    <Swiper controls-color="dark" controls-position="inside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                    <Swiper controls-color="dark" controls-position="top" with-controls :loop="false" style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                </div>
-            `,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (    title="Data Display/Swiper")
 
-### ControlsPosition
+[//]: # (    component={Swiper})
 
-<Canvas>
-    <Story name="ControlsPosition" height="100px">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div style="padding: 12px 32px">
-                    <Swiper controls-color="dark" controls-position="inside" with-controls style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                   <Swiper controls-color="dark" controls-position="outside" with-controls style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                    <Swiper controls-color="dark" controls-position="top" with-controls>
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (    argTypes={{)
 
-### ControlsColor
+[//]: # (        withControls: {)
 
-<Canvas>
-    <Story name="ControlsColor" height="100px">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div>
-                    <Swiper controls-color="light" with-controls style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                   <Swiper controls-color="dark" with-controls>
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (            description: "With Controls",)
 
-### IndicatorColors
+[//]: # (            control: {)
 
-<Canvas>
-    <Story name="IndicatorColors" height="100px">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div>
-                    <Swiper indicator-color="light" with-indicator style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                   <Swiper indicator-color="dark" with-indicator style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                    <Swiper indicator-color="gray" with-indicator>
-                      <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                        <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                      </template>
-                    </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (                type: "boolean",)
 
-### IndicatorPosition
+[//]: # (            },)
 
-<Canvas>
-    <Story name="IndicatorPosition">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div style="padding: 24px 32px;">
-                    <Swiper indicator-color="dark" indicator-position="inside" with-indicator style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                   <Swiper indicator-color="dark" indicator-position="outside" with-indicator>
-                       <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                       </template>
-                   </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (        },)
 
-### Autoplay
+[//]: # (        controlsPosition: {)
 
-<Canvas>
-    <Story name="Autoplay">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div style="padding: 24px 32px;">
-                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator autoplay :slides-per-view="3" :slides-per-group="3" style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                   <Swiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator autoplay>
-                       <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                          <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                       </template>
-                   </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (            description: "Controls 위치",)
 
-## Stories
+[//]: # (            control: {)
 
-### WithControls & WithIndicator
+[//]: # (                type: "select",)
 
-<Canvas>
-    <Story name="WithControls & WithIndicator">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div style="padding: 24px 32px;">
-                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                   <Swiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator >
-                       <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                          <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                       </template>
-                   </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (                options: SwiperControlPositions,)
 
-### sliderPerGroup
+[//]: # (            },)
 
-<Canvas>
-    <Story name="sliderPerGroup">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div style="padding: 24px 32px;">
-                    <Swiper controls-color="dark" controls-position="inside" with-controls indicator-color="dark" indicator-position="inside" with-indicator :slides-per-view="3" :slides-per-group="3" autoplay style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (        },)
 
-### slidesPerView auto
+[//]: # (        controlsColor: {)
 
-<Canvas>
-    <Story name="slidesPerViewAuto">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div style="padding: 24px 32px;">
-                    <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;">
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (            description: "swiper control color",)
 
-### centeredSlides
+[//]: # (            control: {)
 
-<Canvas>
-    <Story name="centeredSlides">
-        {{
-            data() {
-                return {
-                    itemLength: 10,
-                };
-            },
-            template: `
-                <div style="padding: 24px 32px;">
-                    <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;" :centeredSlides=true>
-                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
-                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
-                        </template>
-                    </Swiper>
-                </div>`,
-            components: { Swiper, SwiperItemExample },
-        }}
-    </Story>
-</Canvas>
+[//]: # (                type: "select",)
+
+[//]: # (                options: SwiperControlsColors,)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        controlsCircle: {)
+
+[//]: # (            description: "동그라미모양 컨트롤",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "boolean",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        withIndicator: {)
+
+[//]: # (            description: "With Indicator",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "boolean",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        indicatorPosition: {)
+
+[//]: # (            description: "Indicator 위치",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "select",)
+
+[//]: # (                options: SwiperIndicatorPositions,)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        indicatorColor: {)
+
+[//]: # (            description: "swiper indicator color",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "select",)
+
+[//]: # (                options: SwiperIndicatorColors,)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        centeredSlides: {)
+
+[//]: # (            description: "swiper center align",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "boolean",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        spacing: {)
+
+[//]: # (            description: "swiper item spacing",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "number",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        slidesPerView: {)
+
+[//]: # (            description: "한번에 보여줄 슬라이드 개수",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "text",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        slidesPerGroup: {)
+
+[//]: # (            description: "그룹 안의 슬라이드 개수",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "number",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        autoplay: {)
+
+[//]: # (            description: "자동재생 여부",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "boolean",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        autoplayDelay: {)
+
+[//]: # (            description: "자동재생 시 슬라이드 사이 시간 간격",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "number",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (        loop: {)
+
+[//]: # (            description: "loop 여부",)
+
+[//]: # (            control: {)
+
+[//]: # (                type: "boolean",)
+
+[//]: # (            },)
+
+[//]: # (        },)
+
+[//]: # (    }})
+
+[//]: # (/>)
+
+[//]: # ()
+[//]: # (export const Default = &#40;args, { argTypes }&#41; => &#40;{)
+
+[//]: # (    props: Object.keys&#40;argTypes&#41;,)
+
+[//]: # (    components: { Swiper, SwiperItemExample },)
+
+[//]: # (    template: `)
+
+[//]: # (        <div style="padding: 12px 32px;">)
+
+[//]: # (            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :centeredSlides="centeredSlides" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup" :autoplay="autoplay" :autoplay-delay="autoplayDelay" :loop="loop">)
+
+[//]: # (                <template v-for="&#40;item, index&#41; in 10" :slot="'item' + index">)
+
+[//]: # (                <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;" ></SwiperItemExample>)
+
+[//]: # (                </template>)
+
+[//]: # (            </Swiper>)
+
+[//]: # (        </div>)
+
+[//]: # (        `,)
+
+[//]: # (}&#41;;)
+
+[//]: # ()
+[//]: # (# Swiper)
+
+[//]: # ()
+[//]: # (**Swiper** 컴포넌트의 문서입니다.<br/>)
+
+[//]: # (loop모드 사용시 event listener는 @click-slide로 전달합니다.)
+
+[//]: # ()
+[//]: # (<Story name="Default" height="100px">)
+
+[//]: # (    {Default.bind&#40;{}&#41;})
+
+[//]: # (</Story>)
+
+[//]: # ()
+[//]: # (<ArgsTable story="Default" />)
+
+[//]: # ()
+[//]: # (## Stories)
+
+[//]: # ()
+[//]: # (### All)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="All" height="100px">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div style="padding: 12px 24px;">)
+
+[//]: # (                    <Swiper controls-color="light" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                    <Swiper controls-color="dark" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                    <Swiper controls-color="light" controls-position="inside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                    <Swiper controls-color="dark" controls-position="inside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                    <Swiper controls-color="dark" controls-position="top" with-controls :loop="false" style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                </div>)
+
+[//]: # (            `,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (### ControlsPosition)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="ControlsPosition" height="100px">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div style="padding: 12px 32px">)
+
+[//]: # (                    <Swiper controls-color="dark" controls-position="inside" with-controls style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                   <Swiper controls-color="dark" controls-position="outside" with-controls style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                    <Swiper controls-color="dark" controls-position="top" with-controls>)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (### ControlsColor)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="ControlsColor" height="100px">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div>)
+
+[//]: # (                    <Swiper controls-color="light" with-controls style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                   <Swiper controls-color="dark" with-controls>)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (### IndicatorColors)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="IndicatorColors" height="100px">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div>)
+
+[//]: # (                    <Swiper indicator-color="light" with-indicator style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                   <Swiper indicator-color="dark" with-indicator style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                    <Swiper indicator-color="gray" with-indicator>)
+
+[//]: # (                      <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                        <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                      </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (### IndicatorPosition)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="IndicatorPosition">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div style="padding: 24px 32px;">)
+
+[//]: # (                    <Swiper indicator-color="dark" indicator-position="inside" with-indicator style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                            <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                   <Swiper indicator-color="dark" indicator-position="outside" with-indicator>)
+
+[//]: # (                       <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                           <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                       </template>)
+
+[//]: # (                   </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (### Autoplay)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="Autoplay">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div style="padding: 24px 32px;">)
+
+[//]: # (                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator autoplay :slides-per-view="3" :slides-per-group="3" style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                           <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                   <Swiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator autoplay>)
+
+[//]: # (                       <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                          <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                       </template>)
+
+[//]: # (                   </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (## Stories)
+
+[//]: # ()
+[//]: # (### WithControls & WithIndicator)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="WithControls & WithIndicator">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div style="padding: 24px 32px;">)
+
+[//]: # (                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                           <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                   <Swiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator >)
+
+[//]: # (                       <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                          <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                       </template>)
+
+[//]: # (                   </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (### sliderPerGroup)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="sliderPerGroup">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div style="padding: 24px 32px;">)
+
+[//]: # (                    <Swiper controls-color="dark" controls-position="inside" with-controls indicator-color="dark" indicator-position="inside" with-indicator :slides-per-view="3" :slides-per-group="3" autoplay style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                           <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (### slidesPerView auto)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="slidesPerViewAuto">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div style="padding: 24px 32px;">)
+
+[//]: # (                    <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;">)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                           <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
+
+[//]: # ()
+[//]: # (### centeredSlides)
+
+[//]: # ()
+[//]: # (<Canvas>)
+
+[//]: # (    <Story name="centeredSlides">)
+
+[//]: # (        {{)
+
+[//]: # (            data&#40;&#41; {)
+
+[//]: # (                return {)
+
+[//]: # (                    itemLength: 10,)
+
+[//]: # (                };)
+
+[//]: # (            },)
+
+[//]: # (            template: `)
+
+[//]: # (                <div style="padding: 24px 32px;">)
+
+[//]: # (                    <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;" :centeredSlides=true>)
+
+[//]: # (                        <template v-for="&#40;item, index&#41; in itemLength" :slot="'item' + index">)
+
+[//]: # (                           <SwiperItemExample :text="'ITEM' + &#40;index+1&#41;"></SwiperItemExample>)
+
+[//]: # (                        </template>)
+
+[//]: # (                    </Swiper>)
+
+[//]: # (                </div>`,)
+
+[//]: # (            components: { Swiper, SwiperItemExample },)
+
+[//]: # (        }})
+
+[//]: # (    </Story>)
+
+[//]: # (</Canvas>)
