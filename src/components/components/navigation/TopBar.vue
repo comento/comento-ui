@@ -1,5 +1,5 @@
 <template>
-	<div class="c-top-bar" :class="{ transparent: isTransparent }">
+	<div class="c-top-bar" :class="{ transparent: isTransparent, 'with-alert': withAlert }">
 		<NewGrid>
 			<NewRow>
 				<NewCol :col-sm="12">
@@ -78,6 +78,10 @@ export default {
 			type: String,
 			default: '',
 		},
+		withAlert: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	components: { NewCol, NewRow, NewGrid, Logo, Icon, Typography, Divider },
 };
@@ -101,6 +105,10 @@ export default {
 
 	&.transparent {
 		background-color: transparent;
+	}
+
+	&.with-alert {
+		top: 64px;
 	}
 
 	&-backward {

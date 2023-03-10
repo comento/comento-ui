@@ -2,7 +2,13 @@
 	<nav
 		id="subHeader"
 		class="c-sub-header"
-		:class="{ search: isSearch, transparent: isTransparent, appear: isAppear, 'scroll-top': isScrollTop }"
+		:class="{
+			search: isSearch,
+			transparent: isTransparent,
+			appear: isAppear,
+			'scroll-top': isScrollTop,
+			'with-alert': withAlert,
+		}"
 	>
 		<NewGrid :fluid="isMobileView">
 			<NewRow>
@@ -121,6 +127,13 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 		top: 69px;
 		@include mobile {
 			top: 52px;
+		}
+	}
+
+	&.with-alert {
+		top: calc(52px + 64px);
+		@include pc {
+			top: calc(69px + 56px);
 		}
 	}
 
