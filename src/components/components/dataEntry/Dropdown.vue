@@ -110,7 +110,6 @@ export default {
 		position: absolute;
 		top: 100%;
 		width: 100%;
-		padding: 8px 12px;
 		background: $white;
 		@include shadow4();
 		overflow-y: auto;
@@ -119,6 +118,15 @@ export default {
 
 		::v-deep.c-divider {
 			margin: 6px 0;
+		}
+
+		::v-deep > * {
+			&:first-child {
+				margin: 8px 12px 0;
+			}
+			&:last-child {
+				margin: 0 12px 8px;
+			}
 		}
 	}
 
