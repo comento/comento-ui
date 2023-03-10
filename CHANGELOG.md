@@ -1,3 +1,12 @@
+## [1.1.24-alpha.23](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.22...v1.1.24-alpha.23) (2023-03-10)
+
+
+### Bug Fixes
+
+* Dropdown list 내부가 v-show일 경우 리스트는 없으나 padding이 보이는 오류 해결 ([da5c67b](https://github.com/comento/comento-ui/commit/da5c67b1468862212a407f3ea7cce4cfdfaf3deb))
+
+
+
 ## [1.1.24-alpha.22](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.21...v1.1.24-alpha.22) (2023-03-10)
 
 
