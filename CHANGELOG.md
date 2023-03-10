@@ -1,3 +1,12 @@
+## [1.1.24-alpha.22](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.21...v1.1.24-alpha.22) (2023-03-10)
+
+
+### Features
+
+* 공지 알림 시 top 값 변경 ([2aae67e](https://github.com/comento/comento-ui/commit/2aae67ed28bdabaf10a82aedfcae04f4482835e7))
+
+
+
 ## [1.1.24-alpha.21](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.20...v1.1.24-alpha.21) (2023-02-28)
 
 
