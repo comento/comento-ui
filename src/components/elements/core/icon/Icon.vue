@@ -96,7 +96,6 @@ import IconSirenSmallLine from '@/assets/images/icon/small/icon-siren-small-line
 import IconWritingSmallLine from '@/assets/images/icon/small/icon-writing-small-line.svg?inline';
 import IconVodSmallLine from '@/assets/images/icon/small/icon-vod-small-line.svg?inline';
 import IconDateSmallLine from '@/assets/images/icon/small/icon-date-small-line.svg?inline';
-import IconSearchSmallLine from '@/assets/images/icon/small/icon-search-small-line.svg?inline';
 
 // medium
 import IconLikeMediumLine from '@/assets/images/icon/medium/icon-like-medium-line.svg?inline';
@@ -160,6 +159,8 @@ import IconStarLargeLine from '@/assets/images/icon/large/icon-star-large-line.s
 import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.svg?inline';
 import IconThreeDotLargeFill from '@/assets/images/icon/large/icon-threeDot-large-fill.svg?inline';
 import IconVodProductLargeLine from '@/assets/images/icon/large/icon-vod-product-large-line.svg?inline';
+import IconClassLargeLine from '@/assets/images/icon/large/icon-class-large-line.svg?inline';
+import IconBusinessCaseLargeLine from '@/assets/images/icon/large/icon-business-case-large-line.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -309,7 +310,6 @@ export const IconNames = [
 	'IconWritingSmallLine',
 	'IconVodSmallLine',
 	'IconDateSmallLine',
-	'IconSearchSmallLine',
 
 	// medium
 	'IconLikeMediumLine',
@@ -395,6 +395,8 @@ export const IconNames = [
 	'IconDownloadXLargeLine',
 	'IconMuteXLargeLine',
 	'IconVolumeXLargeLine',
+	'IconClassLargeLine',
+	'IconBusinessCaseLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',
@@ -537,7 +539,6 @@ export default {
 		IconWritingSmallLine,
 		IconVodSmallLine,
 		IconDateSmallLine,
-		IconSearchSmallLine,
 
 		// medium
 		IconLikeMediumLine,
@@ -601,6 +602,8 @@ export default {
 		IconStarLargeFill,
 		IconThreeDotLargeFill,
 		IconVodProductLargeLine,
+		IconClassLargeLine,
+		IconBusinessCaseLargeLine,
 
 		// x-large
 		IconProfileXLargeLine,
