@@ -96,6 +96,9 @@ import IconSirenSmallLine from '@/assets/images/icon/small/icon-siren-small-line
 import IconWritingSmallLine from '@/assets/images/icon/small/icon-writing-small-line.svg?inline';
 import IconVodSmallLine from '@/assets/images/icon/small/icon-vod-small-line.svg?inline';
 import IconDateSmallLine from '@/assets/images/icon/small/icon-date-small-line.svg?inline';
+import IconGoodSmallLine from '@/assets/images/icon/small/icon-good-small-line.svg?inline';
+import IconBadSmallLine from '@/assets/images/icon/small/icon-bad-small-line.svg?inline';
+import IconSearchSmallLine from '@/assets/images/icon/small/icon-search-small-line.svg?inline';
 
 // medium
 import IconLikeMediumLine from '@/assets/images/icon/medium/icon-like-medium-line.svg?inline';
@@ -160,7 +163,7 @@ import IconStarLargeFill from '@/assets/images/icon/large/icon-star-large-fill.s
 import IconThreeDotLargeFill from '@/assets/images/icon/large/icon-threeDot-large-fill.svg?inline';
 import IconVodProductLargeLine from '@/assets/images/icon/large/icon-vod-product-large-line.svg?inline';
 import IconClassLargeLine from '@/assets/images/icon/large/icon-class-large-line.svg?inline';
-import IconBusinessCaseLargeLine from '@/assets/images/icon/large/icon-business-case-large-line.svg?inline';
+import IconBusinessCaseLargeLine from '@/assets/images/icon/large/icon-businessCase-large-line.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -310,6 +313,9 @@ export const IconNames = [
 	'IconWritingSmallLine',
 	'IconVodSmallLine',
 	'IconDateSmallLine',
+	'IconGoodSmallLine',
+	'IconBadSmallLine',
+	'IconSearchSmallLine',
 
 	// medium
 	'IconLikeMediumLine',
@@ -373,6 +379,8 @@ export const IconNames = [
 	'IconStarLargeFill',
 	'IconThreeDotLargeFill',
 	'IconVodProductLargeLine',
+	'IconClassLargeLine',
+	'IconBusinessCaseLargeLine',
 
 	// XLarge
 	'IconProfileXLargeLine',
@@ -539,6 +547,9 @@ export default {
 		IconWritingSmallLine,
 		IconVodSmallLine,
 		IconDateSmallLine,
+		IconGoodSmallLine,
+		IconBadSmallLine,
+		IconSearchSmallLine,
 
 		// medium
 		IconLikeMediumLine,
