@@ -1,3 +1,12 @@
+## [1.1.24-alpha.25](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.24...v1.1.24-alpha.25) (2023-03-13)
+
+
+### Bug Fixes
+
+* 아이콘 변경 ([e7a8a54](https://github.com/comento/comento-ui/commit/e7a8a5496ad0adaaa133b3d8228ac86f9df5de96))
+
+
+
 ## [1.1.24-alpha.24](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.23...v1.1.24-alpha.24) (2023-03-13)
 
 
