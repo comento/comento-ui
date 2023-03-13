@@ -1,3 +1,12 @@
+## [1.1.24-alpha.26](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.25...v1.1.24-alpha.26) (2023-03-13)
+
+
+### Bug Fixes
+
+* fill 속성 삭제 ([56573ed](https://github.com/comento/comento-ui/commit/56573ed9f92ed6abbd2c4ea5c3e44780c0bbb3e1))
+
+
+
 ## [1.1.24-alpha.25](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.24...v1.1.24-alpha.25) (2023-03-13)
 
 
