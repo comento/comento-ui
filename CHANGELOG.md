@@ -1,3 +1,12 @@
+## [1.1.24-alpha.28](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.27...v1.1.24-alpha.28) (2023-03-14)
+
+
+### Features
+
+* FullscreenModal 닫기 버튼 아이콘 x로 변경 ([13a0844](https://github.com/comento/comento-ui/commit/13a084451511382767491c651209fca7d927c3d0))
+
+
+
 ## [1.1.24-alpha.27](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.26...v1.1.24-alpha.27) (2023-03-14)
 
 
