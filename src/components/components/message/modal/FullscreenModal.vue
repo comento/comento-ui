@@ -15,7 +15,7 @@
 		>
 			<div class="c-fullscreen-modal--header-container">
 				<Icon name="IconCloseLargeLine" color="gray800" class="mr-4" @click.native="close()" />
-				<Typography type="body1" :font-weight="500" align="left">
+				<Typography type="body1" :font-weight="500" align="center">
 					<slot name="title" />
 				</Typography>
 				<div class="c-fullscreen-modal--header-action">
@@ -220,6 +220,7 @@ $action-button-height: 104px;
 			@include flexbox();
 			@include flex-direction(row);
 			@include align-items(center);
+			@include justify-content(space-between);
 			padding: 0 16px;
 			position: relative;
 			line-height: 48px;
@@ -227,10 +228,6 @@ $action-button-height: 104px;
 		}
 
 		&-action {
-			position: absolute;
-			top: 50%;
-			right: 16px;
-			@include transform(translateY(-50%));
 			z-index: 1;
 		}
 		+ .c-fullscreen-modal--content {
