@@ -22,7 +22,7 @@
 		</label>
 		<div class="search_input_icon_wrapper" @click="resetKeyword()">
 			<Icon
-				v-if="isTyping && sync_value.length > 0"
+				v-if="sync_value.length > 0"
 				name="IconCloseRoundSmallFill"
 				size="medium"
 				:color="transparent ? 'gray200' : 'gray300'"

@@ -154,7 +154,7 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 			background-color: $gray050;
 			@include pc {
 				// sub header 높이를 맞추기 위한 border
-				border: 1px solid transparent;
+				border-bottom: 1px solid transparent;
 			}
 		}
 		@include mobile {

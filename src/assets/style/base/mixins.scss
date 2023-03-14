@@ -93,7 +93,7 @@
 
 // 툴팁 등에 사용
 @mixin shadow1 {
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.1);
 }
 // 모바일 카드를 감싼 box 등에 사용
 @mixin shadow2 {
@@ -101,11 +101,11 @@
 }
 // topbar, header 등에 사용
 @mixin shadow3 {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.02);
 }
 // xlarge 버튼 등에 사용
 @mixin shadow4 {
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3px 7px 0px rgba(0, 0, 0, 0.06);
 }
 
 @mixin transition($transition) {
