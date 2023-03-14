@@ -1,3 +1,12 @@
+## [1.1.24-alpha.27](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.26...v1.1.24-alpha.27) (2023-03-14)
+
+
+### Bug Fixes
+
+* QA 후 수정 ([4770504](https://github.com/comento/comento-ui/commit/4770504f38cd031d86f89d77811455d6f5793ab1))
+
+
+
 ## [1.1.24-alpha.26](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.25...v1.1.24-alpha.26) (2023-03-13)
 
 
