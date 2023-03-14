@@ -1,3 +1,12 @@
+## [1.2.2](https://github.com/comento/comento-ui/compare/v1.2.1...v1.2.2) (2023-03-14)
+
+
+### Features
+
+* hide-scrollbar 유틸 함수 추가 ([#1022](https://github.com/comento/comento-ui/issues/1022)) ([f182a3e](https://github.com/comento/comento-ui/commit/f182a3e6244dd68e71daa8bd0a75c79a8173f242))
+
+
+
 ## [1.2.1](https://github.com/comento/comento-ui/compare/v1.2.0...v1.2.1) (2023-02-22)
 
 
