@@ -153,10 +153,6 @@ export default {
 	// focus, typing
 	&:focus-within,
 	&.active {
-		.search_input_icon_wrapper .icon_search {
-			opacity: 1;
-		}
-
 		// transparent(focus, typing)
 		&.transparent {
 			.search_input {
