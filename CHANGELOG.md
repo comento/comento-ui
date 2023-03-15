@@ -1,3 +1,17 @@
+## [1.1.24-alpha.29](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.28...v1.1.24-alpha.29) (2023-03-15)
+
+
+### Bug Fixes
+
+* searchInput active시 opacity 변경 제거 ([f6be485](https://github.com/comento/comento-ui/commit/f6be4850f068ace59c842b068f52739acf08e6de))
+
+
+### Features
+
+* search 아이콘 이벤트 제거 ([73c7f5e](https://github.com/comento/comento-ui/commit/73c7f5ed8fe567bc2c08c573c923fbc1da1002c0))
+
+
+
 ## [1.1.24-alpha.28](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.27...v1.1.24-alpha.28) (2023-03-14)
 
 
