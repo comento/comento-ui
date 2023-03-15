@@ -31,7 +31,7 @@
 				tabindex="2"
 			/>
 		</div>
-		<div class="search_input_icon_wrapper left" @click="handleSearch()">
+		<div class="search_input_icon_wrapper left">
 			<Icon
 				role="button"
 				tabindex="1"
