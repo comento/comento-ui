@@ -6,11 +6,11 @@
 					<div class="c-search-top-bar-container">
 						<div class="c-search-top-bar-icon-wrapper">
 							<Icon
-								name="IconBackwardLargeLine"
+								name="IconCloseLargeLine"
 								size="large"
 								color="gray800"
 								class="mr-16"
-								@click="$emit('back')"
+								@click="$emit('close')"
 							/>
 						</div>
 						<SearchInput
