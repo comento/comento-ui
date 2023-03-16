@@ -1,3 +1,12 @@
+## [1.1.24-alpha.31](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.30...v1.1.24-alpha.31) (2023-03-16)
+
+
+### Features
+
+* searchTopBar back -> close로 변경 ([21623c9](https://github.com/comento/comento-ui/commit/21623c91fe081ae62d2d42f325fa890542f399a8))
+
+
+
 ## [1.1.24-alpha.30](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.29...v1.1.24-alpha.30) (2023-03-16)
 
 
