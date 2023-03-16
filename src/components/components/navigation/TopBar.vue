@@ -70,9 +70,15 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		/**
+		 * 타입(default, backward, logo)
+		 */
 		type: {
 			type: String,
 			default: 'default',
+			validator(value) {
+				return headerTypes.includes(value);
+			},
 		},
 		title: {
 			type: String,
