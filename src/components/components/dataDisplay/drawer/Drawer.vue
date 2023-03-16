@@ -27,6 +27,9 @@ export default {
 	name: 'Drawer',
 	mixins: [paddingMixin, scrollMixin],
 	props: {
+		/**
+		 * 방향(left, up, right, down)
+		 */
 		direction: {
 			type: String,
 			default: 'right',
