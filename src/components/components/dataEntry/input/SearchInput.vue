@@ -168,9 +168,9 @@ export default {
 	// transparent
 	&.transparent {
 		.search_input {
-			@include background-opacity(white, 0.06);
+			@include background-opacity(white, 0.1);
 			@include placeholder {
-				@include color-opacity($gray200, 0.6);
+				@include color-opacity($white, 0.8);
 				font-weight: $regular;
 			}
 		}
@@ -201,7 +201,7 @@ export default {
 		}
 
 		@include placeholder {
-			@include color-opacity($gray400, 0.6);
+			color: $gray400;
 			font-weight: $regular;
 		}
 

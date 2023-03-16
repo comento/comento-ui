@@ -83,6 +83,10 @@ export default {
 		cursor: pointer;
 		@include body2();
 
+		&.transparent {
+			color: rgba($color: $white, $alpha: 0.4);
+		}
+
 		&.active {
 			color: $blue600 !important;
 			font-weight: 600;
