@@ -83,7 +83,7 @@ export default {
 		cursor: pointer;
 		@include body2();
 
-		&.transparent {
+		&.transparent > a {
 			color: rgba($color: $white, $alpha: 0.4);
 		}
 
