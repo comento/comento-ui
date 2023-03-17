@@ -239,7 +239,6 @@ export default {
 			}
 		}
 		.icon_search {
-			cursor: pointer;
 			position: relative;
 			margin-left: 14px;
 			display: block;
