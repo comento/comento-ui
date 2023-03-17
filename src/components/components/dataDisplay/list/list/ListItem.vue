@@ -52,7 +52,8 @@ $list-item-padding-x: 4px;
 	@include align-items(center);
 	@include justify-content(space-between);
 	@include border-radius(6px);
-	&:hover {
+
+	@include state-style {
 		background: $gray100;
 	}
 
