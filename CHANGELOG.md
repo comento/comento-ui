@@ -1,3 +1,17 @@
+## [1.1.24-alpha.35](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.34...v1.1.24-alpha.35) (2023-03-17)
+
+
+### Bug Fixes
+
+* hover 스타일 pc에만 적용 ([df86f6f](https://github.com/comento/comento-ui/commit/df86f6f50e7a04b42b255b871c4d179b1516e003))
+
+
+### Features
+
+* header active, hovered color 적용 ([7ffa56d](https://github.com/comento/comento-ui/commit/7ffa56d922b34715dbc0349a695b1b1c0289aa65))
+
+
+
 ## [1.1.24-alpha.34](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.29...v1.1.24-alpha.34) (2023-03-17)
 
 
