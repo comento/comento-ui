@@ -1,3 +1,274 @@
+## [1.1.24-alpha.34](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.29...v1.1.24-alpha.34) (2023-03-17)
+
+
+### Bug Fixes
+
+* 투명일 때 헤더 컬러 수정 ([6e5c365](https://github.com/comento/comento-ui/commit/6e5c3652c449947fe337a425081b7d9f71fc9a64))
+
+
+### Features
+
+* SearchTopBar 아이콘 변경(backward -> close) ([15409d2](https://github.com/comento/comento-ui/commit/15409d2bca06a47b60299ed64b658c7efea9a469))
+
+
+
+## [1.1.24-alpha.29](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.28...v1.1.24-alpha.29) (2023-03-15)
+
+
+### Bug Fixes
+
+* searchInput active시 opacity 변경 제거 ([f6be485](https://github.com/comento/comento-ui/commit/f6be4850f068ace59c842b068f52739acf08e6de))
+
+
+### Features
+
+* icon color 변경 ([8ac05bc](https://github.com/comento/comento-ui/commit/8ac05bc392e6c405305e59619d4aba695797f0ab))
+* search 아이콘 이벤트 제거 ([73c7f5e](https://github.com/comento/comento-ui/commit/73c7f5ed8fe567bc2c08c573c923fbc1da1002c0))
+
+
+
+## [1.1.24-alpha.28](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.27...v1.1.24-alpha.28) (2023-03-14)
+
+
+### Features
+
+* FullscreenModal 닫기 버튼 아이콘 x로 변경 ([13a0844](https://github.com/comento/comento-ui/commit/13a084451511382767491c651209fca7d927c3d0))
+* FullscreenModal 제목 중앙정렬로 변경 ([8348461](https://github.com/comento/comento-ui/commit/8348461752684c82f54848556d60eb1d74203220))
+
+
+
+## [1.1.24-alpha.27](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.26...v1.1.24-alpha.27) (2023-03-14)
+
+
+### Bug Fixes
+
+* QA 후 수정 ([4770504](https://github.com/comento/comento-ui/commit/4770504f38cd031d86f89d77811455d6f5793ab1))
+
+
+
+## [1.1.24-alpha.26](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.25...v1.1.24-alpha.26) (2023-03-13)
+
+
+### Bug Fixes
+
+* fill 속성 삭제 ([56573ed](https://github.com/comento/comento-ui/commit/56573ed9f92ed6abbd2c4ea5c3e44780c0bbb3e1))
+
+
+
+## [1.1.24-alpha.25](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.24...v1.1.24-alpha.25) (2023-03-13)
+
+
+### Bug Fixes
+
+* 아이콘 변경 ([e7a8a54](https://github.com/comento/comento-ui/commit/e7a8a5496ad0adaaa133b3d8228ac86f9df5de96))
+
+
+
+## [1.1.24-alpha.24](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.23...v1.1.24-alpha.24) (2023-03-13)
+
+
+### Features
+
+* Icon 추가 ([878bb13](https://github.com/comento/comento-ui/commit/878bb135f3779e46e9ef4e5a584952186ce5b4ac))
+
+
+
+## [1.1.24-alpha.23](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.22...v1.1.24-alpha.23) (2023-03-10)
+
+
+### Bug Fixes
+
+* Dropdown list 내부가 v-show일 경우 리스트는 없으나 padding이 보이는 오류 해결 ([da5c67b](https://github.com/comento/comento-ui/commit/da5c67b1468862212a407f3ea7cce4cfdfaf3deb))
+
+
+
+## [1.1.24-alpha.22](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.21...v1.1.24-alpha.22) (2023-03-10)
+
+
+### Features
+
+* 공지 알림 시 top 값 변경 ([2aae67e](https://github.com/comento/comento-ui/commit/2aae67ed28bdabaf10a82aedfcae04f4482835e7))
+
+
+
+## [1.1.24-alpha.21](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.20...v1.1.24-alpha.21) (2023-02-28)
+
+
+
+## [1.1.24-alpha.20](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.19...v1.1.24-alpha.20) (2023-02-28)
+
+
+
+## [1.1.24-alpha.19](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.18...v1.1.24-alpha.19) (2023-02-28)
+
+
+### Features
+
+* 하이라이트 스타일 변경 ([#1013](https://github.com/comento/comento-ui/issues/1013)) ([9cedd8d](https://github.com/comento/comento-ui/commit/9cedd8d46e16d197a7f72233e142c597651d706b))
+
+
+
+## [1.1.24-alpha.18](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.17...v1.1.24-alpha.18) (2023-02-24)
+
+
+### Features
+
+* popover typography 제거 ([80b4ca6](https://github.com/comento/comento-ui/commit/80b4ca68b9a23b0b81ca1bd3b7948189d9761398))
+
+
+
+## [1.1.24-alpha.17](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.16...v1.1.24-alpha.17) (2023-02-24)
+
+
+
+## [1.1.24-alpha.16](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.15...v1.1.24-alpha.16) (2023-02-22)
+
+
+### Features
+
+* SearchTopBar에서 SearchInput 클릭이벤트 추가 ([28328ea](https://github.com/comento/comento-ui/commit/28328ea114f58e50abff313aba918effe30dd116))
+
+
+
+## [1.1.24-alpha.15](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.14...v1.1.24-alpha.15) (2023-02-22)
+
+
+### Bug Fixes
+
+* 변수명 오류 수정 ([6e98696](https://github.com/comento/comento-ui/commit/6e986965ba0e6fc3d6c30d030ec6e96cffe62060))
+
+
+### Features
+
+* logo type 추가 ([8c8f6c7](https://github.com/comento/comento-ui/commit/8c8f6c7197e9a104db52ed9ad5779098f9ca07a5))
+* sub header update ([a2d6fa2](https://github.com/comento/comento-ui/commit/a2d6fa2ee740e61b7b9c189061f61f6d800810bc))
+* sub header 변경 ([f89bfd3](https://github.com/comento/comento-ui/commit/f89bfd324f2de38abf0f600d02f6cc9aff007b3a))
+
+
+
+## [1.1.24-alpha.14](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.13...v1.1.24-alpha.14) (2023-02-21)
+
+
+### Features
+
+* top bar isTransparent 적용 ([e5a0463](https://github.com/comento/comento-ui/commit/e5a04637beb92b5b2d0dd8d4ee53475cca6a9d87))
+* top bar 변경 ([ebdf6ff](https://github.com/comento/comento-ui/commit/ebdf6ff7ef6565af84322d7eaa60895ae6ee4444))
+
+
+
+## [1.1.24-alpha.13](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.12...v1.1.24-alpha.13) (2023-02-21)
+
+
+
+## [1.1.24-alpha.12](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.11...v1.1.24-alpha.12) (2023-02-21)
+
+
+### Features
+
+* search input 변경 ([5ce207a](https://github.com/comento/comento-ui/commit/5ce207ae66fea26a7449b631389f274e863e8ef1))
+* search top bar 업데이트 ([346baf3](https://github.com/comento/comento-ui/commit/346baf3f439e64c119555e8650ef2dd8182001b5))
+
+
+
+## [1.1.24-alpha.11](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.10...v1.1.24-alpha.11) (2023-02-17)
+
+
+### Features
+
+* top bar 변경사항 저장 ([db22b23](https://github.com/comento/comento-ui/commit/db22b23f3c125bf3649b2f0c71e6d009561319d5))
+
+
+
+## [1.1.24-alpha.10](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.9...v1.1.24-alpha.10) (2023-02-16)
+
+
+### Bug Fixes
+
+* header router-link -> a tag 변경 ([80fde5d](https://github.com/comento/comento-ui/commit/80fde5de3d11be6dc98ba79ed5b85eafc8cf1d96))
+
+
+### Features
+
+* 헤더 투명 대비 opacity 추가 ([b0646e3](https://github.com/comento/comento-ui/commit/b0646e36a030f6bd928815b4f6746ba2cd6bfbc0))
+
+
+
+## [1.1.24-alpha.9](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.8...v1.1.24-alpha.9) (2023-02-14)
+
+
+### Features
+
+* select 투명버전 추가 ([fbdaf07](https://github.com/comento/comento-ui/commit/fbdaf078e9d8bf427a3e9857794f720a15f3ab11))
+
+
+
+## [1.1.24-alpha.8](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.7...v1.1.24-alpha.8) (2023-02-14)
+
+
+### Bug Fixes
+
+* 값 오류 수정 ([a75b46f](https://github.com/comento/comento-ui/commit/a75b46fb48f960e5f6c492148e9b9f958bf16e77))
+
+
+### Features
+
+* sub-header 하단 border 제거 ([3c0fd4c](https://github.com/comento/comento-ui/commit/3c0fd4c21c09c53f6b2bcd893b6434f3a4a80e51))
+
+
+
+## [1.1.24-alpha.7](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.6...v1.1.24-alpha.7) (2023-02-14)
+
+
+### Features
+
+* topbar, subheader height 변경 ([1b3c302](https://github.com/comento/comento-ui/commit/1b3c302038d8bec2ffb985d35031d632d1698815))
+
+
+
+## [1.1.24-alpha.6](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.5...v1.1.24-alpha.6) (2023-02-10)
+
+
+### Bug Fixes
+
+* Label 스타일 변경 ([#992](https://github.com/comento/comento-ui/issues/992)) ([107832a](https://github.com/comento/comento-ui/commit/107832afe472eed35585c09fe65f1e3fc148e4b2))
+
+
+### Features
+
+* 피드백 반영 ([aaf6d7a](https://github.com/comento/comento-ui/commit/aaf6d7a4b6dfe7a222b23e803851c87888e8e8b2))
+
+
+
+## [1.1.24-alpha.5](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.4...v1.1.24-alpha.5) (2023-02-09)
+
+
+### Features
+
+* 추가 된 컴포넌트 display name 추가 ([bd79a2b](https://github.com/comento/comento-ui/commit/bd79a2b45af896b9ccc7b9a87b2801033e42dd8e))
+
+
+
+## [1.1.24-alpha.4](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.3...v1.1.24-alpha.4) (2023-02-08)
+
+
+### Features
+
+* active, hover number 기반으로 변경 ([a342723](https://github.com/comento/comento-ui/commit/a34272343af194dfed396e373dc2467ea9212e00))
+* transparent 관련 핸들링 ([1b4e765](https://github.com/comento/comento-ui/commit/1b4e765a7e0e072bbc1d0984fcf74a978cebb591))
+
+
+
+## [1.1.24-alpha.3](https://github.com/comento/comento-ui/compare/v0.1.0-alpha.2...v1.1.24-alpha.3) (2023-02-07)
+
+
+### Features
+
+* header 관련 신규 컴포넌트 추가 ([9ec7722](https://github.com/comento/comento-ui/commit/9ec7722b182adb8bd2f66286df26825df8da83f6))
+* sub header 컴포넌트 추가 ([67ec252](https://github.com/comento/comento-ui/commit/67ec2526bffa0d85dba64b462ef967e009b6a59a))
+* 아이콘 추가 ([05387b3](https://github.com/comento/comento-ui/commit/05387b33c0c3e77fdad1560a86747a8a0bc21e30))
+
+
+
 ## [1.1.24-alpha.30](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.29...v1.1.24-alpha.30) (2023-03-16)
 
 
