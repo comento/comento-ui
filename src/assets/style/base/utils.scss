@@ -136,3 +136,7 @@
 .break-all {
   word-break: break-all;
 }
+
+.hide-scrollbar {
+  @include hide-scrollbar();
+}

@@ -367,3 +367,10 @@
   }
 }
 
+@mixin hide-scrollbar {
+  // 크롬, 사파리, 오페라, 엣지
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none; // 파이어폭스
+}
