@@ -1,3 +1,12 @@
+## [1.1.24-alpha.37](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.36...v1.1.24-alpha.37) (2023-03-20)
+
+
+### Bug Fixes
+
+* 투명 헤더 색 수정 ([0d461a9](https://github.com/comento/comento-ui/commit/0d461a9a53123f63231fd11974738eefda5e8213))
+
+
+
 ## [1.1.24-alpha.36](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.35...v1.1.24-alpha.36) (2023-03-20)
 
 
