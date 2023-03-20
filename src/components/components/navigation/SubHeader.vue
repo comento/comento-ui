@@ -110,7 +110,7 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	left: 0;
 	background-color: $white;
 	transition: top 0.1s linear, opacity 0.1s ease-in;
-	z-index: 1;
+	z-index: 80;
 	position: fixed;
 	::v-deep .c-tabs--menu-container {
 		border-bottom: 1px solid $gray100;
