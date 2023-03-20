@@ -87,19 +87,26 @@ export default {
 			color: rgba($color: $white, $alpha: 0.4);
 		}
 
-		&.active > a {
-			color: $blue600 !important;
-			font-weight: 600;
-
+		&.active {
+			& > a {
+				color: $blue600 !important;
+				font-weight: 600;
+			}
 			&.transparent {
-				color: $white !important;
+				& > a {
+					color: $white !important;
+				}
 			}
 		}
-		&.hovered > a {
-			color: $blue800;
-			font-weight: 600;
+		&.hovered {
+			& > a {
+				color: $blue800;
+				font-weight: 600;
+			}
 			&.transparent {
-				color: $white !important;
+				& > a {
+					color: $white !important;
+				}
 			}
 		}
 
