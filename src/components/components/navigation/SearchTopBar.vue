@@ -6,11 +6,11 @@
 					<div class="c-search-top-bar-container">
 						<div class="c-search-top-bar-icon-wrapper">
 							<Icon
-								name="IconCloseLargeLine"
+								:name="`Icon${isClose ? 'Close' : 'Backward'}LargeLine`"
 								size="large"
 								color="gray800"
 								class="mr-16"
-								@click="$emit('close')"
+								@click="$emit('click-button')"
 							/>
 						</div>
 						<SearchInput
@@ -60,6 +60,10 @@ export default {
 			default: '',
 		},
 		showDropdown: {
+			type: Boolean,
+			default: false,
+		},
+		isClose: {
 			type: Boolean,
 			default: false,
 		},
