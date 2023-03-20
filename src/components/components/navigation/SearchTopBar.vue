@@ -109,7 +109,7 @@ export default {
 	top: 0;
 	left: 0;
 	background-color: $white;
-	z-index: 100;
+	z-index: 90;
 
 	&-container {
 		@include flexbox();
