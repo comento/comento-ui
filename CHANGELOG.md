@@ -1,3 +1,14 @@
+## [1.1.24-alpha.39](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.38...v1.1.24-alpha.39) (2023-03-20)
+
+
+### Bug Fixes
+
+* Dropdown list 여백 오류 수정 ([9dfb9c7](https://github.com/comento/comento-ui/commit/9dfb9c79eee147deeb2d7840573839d964fb24ec))
+* select small 글자 크기 body2로 변경 ([863c804](https://github.com/comento/comento-ui/commit/863c80419065011e2757e64652c9592565752178))
+* z-index 수정 ([1365508](https://github.com/comento/comento-ui/commit/1365508171f2f62c4fffed7c989f8968f6d27d4e))
+
+
+
 ## [1.1.24-alpha.38](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.37...v1.1.24-alpha.38) (2023-03-20)
 
 
