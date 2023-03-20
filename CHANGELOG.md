@@ -1,3 +1,17 @@
+## [1.1.24-alpha.36](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.35...v1.1.24-alpha.36) (2023-03-20)
+
+
+### Bug Fixes
+
+* EmptyBox 버튼 여백까지 클릭 영역으로 잡히는 오류 수정 ([48a3522](https://github.com/comento/comento-ui/commit/48a3522f07291e69a31f9db93301cffb6754ccd5))
+
+
+### Features
+
+* LinkButton color link로 고정하기 ([d9206bb](https://github.com/comento/comento-ui/commit/d9206bb153a3eae3dcdaee28d80cd704c81ce579))
+
+
+
 ## [1.1.24-alpha.35](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.34...v1.1.24-alpha.35) (2023-03-17)
 
 
