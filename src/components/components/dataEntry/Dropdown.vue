@@ -121,11 +121,14 @@ export default {
 		}
 
 		::v-deep > * {
+			// Dropdown list가 여러개인 경우
 			&:first-child {
 				margin: 8px 12px 0;
 			}
 			&:last-child {
-				margin: 0 12px 8px;
+				margin-left: 12px;
+				margin-right: 12px;
+				margin-bottom: 8px;
 			}
 		}
 	}
