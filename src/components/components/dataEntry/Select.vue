@@ -402,7 +402,7 @@ export default {
 	&.small {
 		& .c-select--box {
 			& input {
-				@include caption1();
+				@include body2();
 				color: $gray850;
 			}
 			&.c-select--basic {
