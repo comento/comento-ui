@@ -1,3 +1,12 @@
+## [1.1.24-alpha.38](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.37...v1.1.24-alpha.38) (2023-03-20)
+
+
+### Bug Fixes
+
+* z-index 수정 ([94fdd7f](https://github.com/comento/comento-ui/commit/94fdd7ff000e0f5e1aca0df1e7d0f444161fc2f8))
+
+
+
 ## [1.1.24-alpha.37](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.36...v1.1.24-alpha.37) (2023-03-20)
 
 
