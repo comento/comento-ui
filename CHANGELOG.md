@@ -1,3 +1,12 @@
+## [1.1.24-alpha.41](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.40...v1.1.24-alpha.41) (2023-03-21)
+
+
+### Bug Fixes
+
+* SubHeader with-alert 누락 수정 ([e296276](https://github.com/comento/comento-ui/commit/e296276dc08cb4309c61afbc1639d9d98464b99c))
+
+
+
 ## [1.1.24-alpha.40](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.39...v1.1.24-alpha.40) (2023-03-21)
 
 
