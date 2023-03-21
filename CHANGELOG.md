@@ -1,3 +1,12 @@
+## [1.1.24-alpha.42](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.41...v1.1.24-alpha.42) (2023-03-21)
+
+
+### Bug Fixes
+
+* 공지 조건 수정 ([1f4d675](https://github.com/comento/comento-ui/commit/1f4d67585e828d9aa9d771a9ccf9c2b7330a3f58))
+
+
+
 ## [1.1.24-alpha.41](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.40...v1.1.24-alpha.41) (2023-03-21)
 
 
