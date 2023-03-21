@@ -128,16 +128,15 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	}
 
 	&.appear {
-		top: 69px;
-		@include mobile {
-			top: 52px;
-		}
-	}
-
-	&.with-alert {
-		top: calc(52px + 64px);
+		top: 52px;
 		@include pc {
-			top: calc(69px + 56px);
+			top: 69px;
+		}
+		&.with-alert {
+			top: calc(52px + 64px);
+			@include pc {
+				top: calc(69px + 56px);
+			}
 		}
 	}
 
