@@ -86,6 +86,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		withAlert: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
 		tabIndex() {
