@@ -1,3 +1,12 @@
+## [1.1.24-alpha.40](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.39...v1.1.24-alpha.40) (2023-03-21)
+
+
+### Bug Fixes
+
+* fullscreenModal title 중앙정렬 ([46d7fe3](https://github.com/comento/comento-ui/commit/46d7fe3ea49db70436f4b091e3ea2ffdd09f9f52))
+
+
+
 ## [1.1.24-alpha.39](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.38...v1.1.24-alpha.39) (2023-03-20)
 
 
