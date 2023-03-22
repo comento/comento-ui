@@ -11,7 +11,7 @@
 								:color="isTransparent ? 'white' : 'primary'"
 								width="105"
 								height="18"
-								@click="$emit('click-logo')"
+								:url="logoUrl"
 							/>
 							<Divider class="mx-6" style="height: 16px" vertical />
 							<Typography type="body2" :font-weight="500" :color="isTransparent ? 'white' : 'gray500'">
@@ -35,7 +35,7 @@
 								:color="isTransparent ? 'white' : 'primary'"
 								width="105"
 								height="18"
-								@click="$emit('click-logo')"
+								:url="logoUrl"
 							/>
 						</div>
 
@@ -81,6 +81,10 @@ export default {
 		withAlert: {
 			type: Boolean,
 			default: false,
+		},
+		logoUrl: {
+			type: String,
+			default: 'https://comento.kr',
 		},
 	},
 	components: { NewCol, NewRow, NewGrid, Logo, Icon, Typography, Divider },
