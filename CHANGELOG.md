@@ -1,3 +1,17 @@
+## [1.2.4](https://github.com/comento/comento-ui/compare/v1.2.3...v1.2.4) (2023-03-22)
+
+
+### Bug Fixes
+
+* 헤더 로고 오류 수정 ([#1052](https://github.com/comento/comento-ui/issues/1052)) ([69ca25c](https://github.com/comento/comento-ui/commit/69ca25ced9cff1b3ab5d2f5869aee8a7bc90031d))
+
+
+### Features
+
+* EduCard image에 alt 추가 ([#1045](https://github.com/comento/comento-ui/issues/1045)) ([745e966](https://github.com/comento/comento-ui/commit/745e966170aa35a20300305acb1d00a4ea286f3b))
+
+
+
 ## [1.2.3](https://github.com/comento/comento-ui/compare/v1.2.2...v1.2.3) (2023-03-22)
 
 
