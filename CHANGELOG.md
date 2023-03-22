@@ -1,6 +1,5 @@
 ## [1.2.2](https://github.com/comento/comento-ui/compare/v1.2.1...v1.2.2) (2023-03-14)
 
-* Header/검색 개선 UI 작업 반영
 
 ### Features
 
