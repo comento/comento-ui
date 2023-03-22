@@ -83,7 +83,7 @@ import globalMixin from '@/mixins/globalMixin';
 import Hint from '@/components/components/dataDisplay/Hint';
 
 export const selectSizes = ['small', 'medium'];
-export const selectTypes = ['basic', 'underline'];
+export const selectTypes = ['basic', 'underline', 'transparent'];
 
 /**
  * @displayName c-select
@@ -332,6 +332,28 @@ export default {
 					border-bottom: 1px solid $gray400;
 				}
 			}
+			&--transparent {
+				padding: 5px 12px;
+				border-bottom: none;
+				&:hover {
+					border-radius: 6px;
+					background-color: $gray100;
+					.c-select--input {
+						background-color: $gray100;
+					}
+				}
+				&.active {
+					border-bottom: none;
+				}
+				&.c-select--error {
+					border: none;
+					background-color: $red000;
+					border-radius: 6px;
+					.c-select--input {
+						background-color: $red000;
+					}
+				}
+			}
 			&--error {
 				border: 1px solid $red600;
 				&.active {
@@ -380,7 +402,7 @@ export default {
 	&.small {
 		& .c-select--box {
 			& input {
-				@include caption1();
+				@include body2();
 				color: $gray850;
 			}
 			&.c-select--basic {

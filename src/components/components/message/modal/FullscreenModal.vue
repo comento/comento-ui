@@ -14,8 +14,8 @@
 			class="c-fullscreen-modal--header"
 		>
 			<div class="c-fullscreen-modal--header-container">
-				<Icon name="IconBackwardLargeLine" color="gray800" class="mr-4" @click.native="close()" />
-				<Typography type="body1" :font-weight="500" align="left">
+				<Icon name="IconCloseLargeLine" color="gray800" class="mr-4" @click.native="close()" />
+				<Typography type="body1" :font-weight="500" align="center" class="c-fullscreen-modal--header-title">
 					<slot name="title" />
 				</Typography>
 				<div class="c-fullscreen-modal--header-action">
@@ -220,17 +220,20 @@ $action-button-height: 104px;
 			@include flexbox();
 			@include flex-direction(row);
 			@include align-items(center);
+			@include justify-content(space-between);
 			padding: 0 16px;
 			position: relative;
 			line-height: 48px;
 			height: 48px;
 		}
 
-		&-action {
+		&-title {
 			position: absolute;
-			top: 50%;
-			right: 16px;
-			@include transform(translateY(-50%));
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+
+		&-action {
 			z-index: 1;
 		}
 		+ .c-fullscreen-modal--content {

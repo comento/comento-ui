@@ -1,0 +1,117 @@
+import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
+
+import SubHeader from '@/components/components/navigation/SubHeader';
+
+<Meta
+  title="Navigation/SubHeader"
+  component={SubHeader}
+  argTypes={{
+    isAppear: {
+      description: "Header 뒤에 있다가 아래로 나타나는 플래그",
+      table: {
+        type: {
+          summary: "Boolean",
+        },
+      },
+    },
+    isScrollTop: {
+      description: "스크롤이 최상단에 있는지에 대한 플래그",
+      table: {
+        type: {
+          summary: "Boolean",
+        },
+      },
+    },
+    items: {
+      description: "서브헤더 목록",
+      defaultValue: [
+        {
+          url: "#",
+          name: "홈",
+          active: false,
+        },
+        {
+          url: "#",
+          name: "직무부트캠프",
+          active: true,
+        },
+        {
+          url: "#",
+          name: "실무PT",
+          active: false,
+        },
+        {
+          url: "#",
+          name: "진로부트캠프",
+          active: false,
+        },
+        {
+          url: "#",
+          name: "VOD",
+          active: false,
+        },
+      ],
+      control: {type: "array"},
+      table: {
+        summary: {
+          type: "Array"
+        },
+      },
+    },
+    isSearch: {
+      description: "해당 페이지가 검색페이지인지 여부",
+      table: {
+        summary: {
+          type: "Boolean",
+        }
+      }
+    },
+    isNuxt: {
+      description: "이동하는 페이지가 Nuxt인지 여부",
+      table: {
+        summary: {
+          type: "Boolean",
+          default: true,
+        }
+      },
+    },
+    isTransparent: {
+      description: "투명 헤더 사용 여부",
+      table: {
+        summary: {
+          type: "Boolean",
+        }
+      }
+    },
+  }}
+/>
+
+export const Default = (args, {argTypes}) => ({
+  props: Object.keys(argTypes),
+  components: {SubHeader},
+  template:
+    `<div style="padding: 12px 32px">
+    <div style="position: relative">
+    <div style="height: 69px; background-color: #EE7E41">Header</div>
+    <SubHeader
+           :is-appear="isAppear"
+           :is-scroll-top="isScrollTop"
+           :is-search="isSearch"
+           :is-transparent="isTransparent"
+           :is-nuxt="isNuxt"
+           :items="items"
+           :style="{'--triggered-top': '0 !important'}"
+/>
+</div>
+    </div>`,
+});
+
+# SubHeader
+
+**SubHeader** 컴포넌트의 문서입니다.
+
+<Story name="Default" height="100px">
+  {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />

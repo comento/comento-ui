@@ -14,6 +14,9 @@ const windowMixin = {
 		this.$_windowMixin_handle_resize();
 	},
 	beforeDestroy() {
+		if (typeof window === 'undefined') {
+			return;
+		}
 		window.removeEventListener('resize', this.$_windowMixin_handle_resize);
 	},
 };
