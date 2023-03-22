@@ -1,3 +1,12 @@
+## [1.1.24-alpha.43](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.42...v1.1.24-alpha.43) (2023-03-22)
+
+
+### Bug Fixes
+
+* windowMixin 오류 수정 ([c083277](https://github.com/comento/comento-ui/commit/c083277a271888169ebfd25a9887cf4ccfeb1704))
+
+
+
 ## [1.1.24-alpha.42](https://github.com/comento/comento-ui/compare/v1.1.24-alpha.41...v1.1.24-alpha.42) (2023-03-21)
 
 
