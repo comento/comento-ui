@@ -1,0 +1,97 @@
+import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
+import Header from '@/components/components/navigation/Header';
+
+<Meta
+    title="Navigation/Header"
+    component={Header}
+    argTypes={{
+        activatedMenu: {
+            description: '현재 활성화 된 메뉴 Index',
+            defaultValue: -1,
+            control: {
+                type: 'number'
+            },
+            table: {
+                type: {
+                    summary: 'Number',
+                }
+            },
+        },
+        hoveredMenu: {
+            description: '현재 hover 상태가 된 메뉴 Index',
+            defaultValue: -1,
+            control: {
+                type: 'number',
+            },
+            table: {
+                type: {
+                    summary: 'Number',
+                }
+            },
+        },
+        nuxt: {
+            description: 'Nuxt 여부',
+            table: {
+                type: {
+                    summary: 'Boolean',
+                }
+            }
+        },
+        items: {
+            description: 'Header Navigation',
+            table: {
+                type: {
+                    summary: 'Array',
+                }
+            },
+            defaultValue: [
+                {
+                    name: '커뮤니티',
+                    path: '#',
+                },
+                {
+                    name: '클래스',
+                    path: '#',
+                },
+                {
+                    name: '채용',
+                    path: '#',
+                },
+            ]
+        },
+        isTransparent: {
+            description: '투명 헤더 사용 여부',
+            table: {
+                type: {
+                    summary: 'Boolean',
+                }
+            }
+        },
+    }}
+/>
+
+export const Default = (args, {argTypes}) => ({
+    props: Object.keys(argTypes),
+    components: {Header},
+    template: `
+        <div style="width: 100%;">
+        <Header
+            :activated-menu="activatedMenu"
+            :hovered-menu="hoveredMenu"
+            :nuxt="nuxt"
+            :items="items"
+            :is-transparent="isTransparent"
+        >
+        </Header>
+</div>`
+});
+
+# Header
+
+**Header** 컴포넌트의 문서입니다
+
+<Story name="Default" height="100px">
+    {Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
