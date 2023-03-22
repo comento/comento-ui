@@ -5,7 +5,7 @@
 			name="LogoComentoTypoType"
 			width="101px"
 			height="16px"
-			@click="clickLogo"
+			:url="logoUrl"
 		/>
 		<ul class="ml-26 flex">
 			<li
@@ -52,6 +52,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		logoUrl: {
+			type: String,
+			default: 'https://comento.kr',
+		},
 	},
 	methods: {
 		getHeaderNavClass(name) {
@@ -63,9 +67,6 @@ export default {
 		},
 		onMouseEntered(index) {
 			this.$emit('update-nav', index);
-		},
-		clickLogo() {
-			this.$emit('click-logo');
 		},
 	},
 	components: { Logo },
