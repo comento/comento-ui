@@ -186,6 +186,15 @@ import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookMark-xl
 import IconDownloadXLargeLine from '@/assets/images/icon/xlarge/icon-download-xlarge-line.svg?inline';
 import IconMuteXLargeLine from '@/assets/images/icon/xlarge/icon-mute-xlarge-line.svg?inline';
 import IconVolumeXLargeLine from '@/assets/images/icon/xlarge/icon-volume-xlarge-line.svg?inline';
+import IconAlarmAnswer from '@/assets/images/icon/xlarge/icon-alarm-answer.svg?inline';
+import IconAlarmAssignment from '@/assets/images/icon/xlarge/icon-alarm-assignment.svg?inline';
+import IconAlarmCelebrate from '@/assets/images/icon/xlarge/icon-alarm-celebrate.svg?inline';
+import IconAlarmCreditPlus from '@/assets/images/icon/xlarge/icon-alarm-creditPlus.svg?inline';
+import IconAlarmLike from '@/assets/images/icon/xlarge/icon-alarm-like.svg?inline';
+import IconAlarmNotice from '@/assets/images/icon/xlarge/icon-alarm-notice.svg?inline';
+import IconAlarmQuestion from '@/assets/images/icon/xlarge/icon-alarm-question.svg?inline';
+import IconAlarmSelected from '@/assets/images/icon/xlarge/icon-alarm-selected.svg?inline';
+import IconAlarmWon from '@/assets/images/icon/xlarge/icon-alarm-won.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
@@ -403,6 +412,15 @@ export const IconNames = [
 	'IconDownloadXLargeLine',
 	'IconMuteXLargeLine',
 	'IconVolumeXLargeLine',
+	'IconAlarmAnswer',
+	'IconAlarmAssignment',
+	'IconAlarmCelebrate',
+	'IconAlarmCreditPlus',
+	'IconAlarmLike',
+	'IconAlarmNotice',
+	'IconAlarmQuestion',
+	'IconAlarmSelected',
+	'IconAlarmWon',
 
 	//2x-large
 	'IconProfile2XLargeFill',
@@ -635,6 +653,15 @@ export default {
 		IconDownloadXLargeLine,
 		IconMuteXLargeLine,
 		IconVolumeXLargeLine,
+		IconAlarmAnswer,
+		IconAlarmAssignment,
+		IconAlarmCelebrate,
+		IconAlarmCreditPlus,
+		IconAlarmLike,
+		IconAlarmNotice,
+		IconAlarmQuestion,
+		IconAlarmSelected,
+		IconAlarmWon,
 
 		// 2x-large
 		IconProfile2XLargeFill,
