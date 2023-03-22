@@ -1,20 +1,20 @@
 <template>
-	<div class="c-application c-link-button" :class="color">
+	<div class="c-application c-link-button" :class="buttonColor">
 		<!-- external link -->
 		<a v-if="external" v-bind="$attrs" :href="to" :target="target" v-on="$listeners">
-			<Typography :type="type" :color="color">
+			<Typography :type="type" :color="buttonColor">
 				<slot />
 			</Typography>
 		</a>
 		<!-- internal link -->
 		<template v-else>
 			<nuxt-link v-if="nuxt" :to="to" v-bind="$attrs" v-on="$listeners">
-				<Typography :type="type" :color="color">
+				<Typography :type="type" :color="buttonColor">
 					<slot />
 				</Typography>
 			</nuxt-link>
 			<router-link v-else :to="to" tag="a" v-bind="$attrs" v-on="$listeners">
-				<Typography :type="type" :color="color">
+				<Typography :type="type" :color="buttonColor">
 					<slot />
 				</Typography>
 			</router-link>
@@ -25,7 +25,6 @@
 <script>
 import Typography, { TypographyTypes } from '@/components/elements/core/typography/Typography';
 
-export const linkButtonColors = ['default', 'blue600', 'blue400'];
 export const linkButtonTargets = ['_blank', '_self', '_parent', '_top'];
 
 /**
@@ -55,16 +54,6 @@ export default {
 				return isString || isObject;
 			},
 		},
-		/**
-		 * 색상(blue600, blue400)
-		 */
-		color: {
-			type: String,
-			default: 'default',
-			validator(value) {
-				return linkButtonColors.indexOf(value) !== -1;
-			},
-		},
 		external: {
 			type: Boolean,
 			default: true,
@@ -85,38 +74,23 @@ export default {
 			},
 		},
 	},
+	computed: {
+		buttonColor() {
+			return 'link';
+		},
+	},
 	components: { Typography },
 };
 </script>
 
 <style lang="scss" scoped>
+$button-color: $link;
 .c-link-button {
 	a {
 		text-decoration: none;
 		cursor: pointer;
 		@include state-style {
 			text-decoration: underline;
-		}
-	}
-
-	&.default a {
-		::v-deep.c-typography {
-			color: #006beb;
-		}
-		@include state-style {
-			text-decoration-color: #006beb;
-		}
-	}
-
-	&.blue600 a {
-		@include state-style {
-			text-decoration-color: $blue600;
-		}
-	}
-
-	&.blue400 a {
-		@include state-style {
-			text-decoration-color: $blue400;
 		}
 	}
 }

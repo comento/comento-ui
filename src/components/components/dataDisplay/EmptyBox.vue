@@ -8,25 +8,13 @@
 				<Typography class="mt-4" type="body2" color="gray500" align="center">
 					<slot name="contents" />
 				</Typography>
-				<a v-if="external" :href="to">
-					<Button
-						v-if="$slots['link']"
-						class="c-empty-box--emphasized-button"
-						color="light-primary"
-						size="large"
-						@click="onClickButton"
-					>
+				<a v-if="external" :href="to" class="c-empty-box--emphasized-button">
+					<Button v-if="$slots['link']" color="light-primary" size="large" @click="onClickButton">
 						<slot name="link" />
 					</Button>
 				</a>
-				<router-link v-else :to="to">
-					<Button
-						v-if="$slots['link']"
-						class="c-empty-box--emphasized-button"
-						color="light-primary"
-						size="large"
-						@click="onClickButton"
-					>
+				<router-link v-else :to="to" class="c-empty-box--emphasized-button">
+					<Button v-if="$slots['link']" color="light-primary" size="large" @click="onClickButton">
 						<slot name="link" />
 					</Button>
 				</router-link>
@@ -45,7 +33,6 @@
 				:target="target"
 				class="c-empty-box--link"
 				type="caption1"
-				align="center"
 				:external="external"
 				@click="onClickButton"
 			>
@@ -122,13 +109,17 @@ export default {
 	}
 
 	&--link {
+		@include flexbox();
+		@include justify-content(center);
 		margin-top: 14px;
 	}
 
 	&--emphasized {
 		padding: 40px 16px;
 		&-button {
-			margin: 16px auto auto;
+			@include flexbox();
+			@include justify-content(center);
+			margin-top: 16px;
 		}
 	}
 

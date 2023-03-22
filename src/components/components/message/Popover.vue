@@ -14,15 +14,14 @@
 	>
 		<slot> </slot>
 		<template slot="popover">
-			<Typography class="c-pointer c-popover--content-wrapper" :style="styles" type="body2" color="gray800">
+			<div class="c-pointer c-popover--content-wrapper" :style="styles">
 				<slot name="popover"> </slot>
-			</Typography>
+			</div>
 		</template>
 	</v-popover>
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
 import { placements, placementMap } from '@/utils/constants/tooltip';
 
 /**
@@ -84,6 +83,5 @@ export default {
 			};
 		},
 	},
-	components: { Typography },
 };
 </script>

@@ -20,42 +20,40 @@
 				@keypress.enter="handleSearch()"
 			/>
 		</label>
-		<div class="search_input_icon_wrapper">
-			<div @click="resetKeyword()">
-				<Icon
-					v-if="isTyping && sync_value.length > 0"
-					name="IconCloseRoundSmallFill"
-					size="medium"
-					:color="transparent ? 'gray200' : 'gray300'"
-					class="icon_reset"
-					role="button"
-					tabindex="2"
-				/>
-			</div>
-			<div @click="handleSearch()">
-				<IconButton
-					role="button"
-					tabindex="1"
-					icon-name="IconSearchLargeLine"
-					size="medium"
-					:color="computedIconColor"
-					:transparent="transparent"
-					class="icon_search"
-				/>
-			</div>
+		<div class="search_input_icon_wrapper" @click="resetKeyword()">
+			<Icon
+				v-if="sync_value.length > 0"
+				name="IconCloseRoundSmallFill"
+				size="medium"
+				:color="transparent ? 'gray200' : 'gray300'"
+				class="icon_reset"
+				role="button"
+				tabindex="2"
+			/>
+		</div>
+		<div class="search_input_icon_wrapper left">
+			<Icon
+				role="button"
+				tabindex="1"
+				:name="isMobile ? 'IconSearchSmallLine' : 'IconSearchLargeLine'"
+				size="medium"
+				:color="computedIconColor"
+				:transparent="transparent"
+				class="icon_search"
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
-import IconButton from '@/components/components/general/button/IconButton';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
 
 /**
  * @displayName c-search-input
  */
+
 export default {
 	name: 'SearchInput',
 	inheritAttrs: false,
@@ -137,7 +135,6 @@ export default {
 	},
 	components: {
 		Icon,
-		IconButton,
 	},
 	directives: {
 		clickOutside,
@@ -156,14 +153,6 @@ export default {
 	// focus, typing
 	&:focus-within,
 	&.active {
-		.search_input {
-			background: $gray100;
-			padding-right: 70px !important;
-		}
-		.search_input_icon_wrapper .icon_search {
-			opacity: 1;
-		}
-
 		// transparent(focus, typing)
 		&.transparent {
 			.search_input {
@@ -179,9 +168,9 @@ export default {
 	// transparent
 	&.transparent {
 		.search_input {
-			@include background-opacity(white, 0.06);
+			@include background-opacity(white, 0.1);
 			@include placeholder {
-				@include color-opacity($gray200, 0.6);
+				@include color-opacity($white, 0.8);
 				font-weight: $regular;
 			}
 		}
@@ -202,14 +191,17 @@ export default {
 		vertical-align: top;
 		@include transition(all 0.2s ease);
 		border: 0;
-		@include background-opacity($gray000, 0.6);
-		padding: 10px 48px 10px 14px;
+		background-color: $gray100;
+		padding: 10px 36px 10px 58px;
 		@include body2();
-		width: 226px;
+		width: 300px;
 		color: $gray800;
+		@include mobile {
+			padding: 6px 30px 6px 50px;
+		}
 
 		@include placeholder {
-			@include color-opacity($gray400, 0.6);
+			color: $gray400;
 			font-weight: $regular;
 		}
 
@@ -220,12 +212,21 @@ export default {
 	.search_input_icon_wrapper {
 		position: absolute;
 		z-index: 1;
-		right: 0;
+		right: 14px;
 		top: 50%;
 		transform: translateY(-50%);
 		@include flexbox();
 		@include flex-direction(row);
 		@include align-items(center);
+		@include mobile {
+			right: 12px;
+		}
+
+		&.left {
+			left: 0px !important;
+			z-index: 1;
+			width: max-content;
+		}
 
 		.icon_reset {
 			cursor: pointer;
@@ -233,14 +234,19 @@ export default {
 			margin: 0 4px 0 8px;
 			display: block;
 			z-index: 2;
+			@include mobile {
+				margin: 0;
+			}
 		}
 		.icon_search {
-			cursor: pointer;
 			position: relative;
-			margin: 0 12px 0 4px;
+			margin-left: 14px;
 			display: block;
 			z-index: 2;
 			opacity: 0.8;
+			@include mobile {
+				margin-left: 14px;
+			}
 		}
 	}
 }

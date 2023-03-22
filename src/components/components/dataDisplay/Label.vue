@@ -1,11 +1,15 @@
 <template>
-	<p class="c-application c-label" :class="[computedType]">
+	<Typography :type="typographyInfo.type" :color="typographyInfo.color" class="c-application c-label">
 		<slot />
-	</p>
+	</Typography>
 </template>
 
 <script>
-export const labelTypes = ['dataEntry', 'dataDisplay'];
+import Typography from '@/components/elements/core/typography/Typography';
+
+const DATA_ENTRY = 'dataEntry';
+const DATA_DISPLAY = 'dataDisplay';
+export const labelTypes = [DATA_ENTRY, DATA_DISPLAY];
 
 /**
  * @displayName c-label
@@ -18,30 +22,33 @@ export default {
 		 */
 		type: {
 			type: String,
-			default: 'dataEntry',
+			default: DATA_ENTRY,
 			validator(value) {
 				return labelTypes.indexOf(value) !== -1;
 			},
 		},
 	},
 	computed: {
-		computedType() {
-			return `${this.type}`;
+		typographyInfo() {
+			return {
+				[DATA_ENTRY]: {
+					type: 'body2',
+					color: 'gray600',
+				},
+				[DATA_DISPLAY]: {
+					type: 'caption1',
+					color: 'gray400',
+				},
+			}[this.type];
 		},
 	},
+	components: { Typography },
 };
 </script>
 
 <style scoped lang="scss">
 .c-label {
 	display: inline-block;
-	&.dataEntry {
-		@include body2();
-		color: $gray600;
-	}
-	&.dataDisplay {
-		@include caption1();
-		color: $gray300;
-	}
+	padding: 0 4px;
 }
 </style>

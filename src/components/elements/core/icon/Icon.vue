@@ -403,6 +403,8 @@ export const IconNames = [
 	'IconDownloadXLargeLine',
 	'IconMuteXLargeLine',
 	'IconVolumeXLargeLine',
+	'IconClassLargeLine',
+	'IconBusinessCaseLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',

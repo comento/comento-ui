@@ -1,6 +1,6 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { TypographyTypes } from '@/components/elements/core/typography/Typography';
-import LinkButton, { linkButtonColors, linkButtonTargets } from '@/components/components/general/button/LinkButton';
+import LinkButton, { linkButtonTargets } from '@/components/components/general/button/LinkButton';
 
 <Meta
     title="General/Button/LinkButton"
@@ -23,13 +23,6 @@ import LinkButton, { linkButtonColors, linkButtonTargets } from '@/components/co
             defaultValue: "javascript:void(0);",
             control: {
                 type: "text",
-            },
-        },
-        color: {
-            description: "버튼 색상",
-            control: {
-                type: "select",
-                options: linkButtonColors,
             },
         },
         external: {
@@ -56,7 +49,6 @@ export const Default = (args, { argTypes }) => ({
         `<LinkButton
             :type="type"
             :to="to"
-            :color="color"
             :external="external"
             :nuxt="nuxt"
             :target="target"
@@ -84,24 +76,8 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <LinkButton>이동하지 않는 링크 버튼</LinkButton>
-                    <LinkButton to="#" color="blue400" type="body2">맨위로 이동하기</LinkButton>
-                    <LinkButton to="https://comento.kr" color="blue600" type="headline5">코멘토로 이동하기</LinkButton>
-                </div>
-        `,
-            components: { LinkButton },
-        }}
-    </Story>
-</Canvas>
-
-### Colors
-<Canvas>
-    <Story name="Colors" height="100px">
-        {{
-            template: `
-                <div>
-                    <LinkButton >default</LinkButton>
-                    <LinkButton color="blue400">blue400</LinkButton>
-                    <LinkButton color="blue600">blue600</LinkButton>
+                    <LinkButton to="#" type="body2">맨위로 이동하기</LinkButton>
+                    <LinkButton to="https://comento.kr" type="headline5">코멘토로 이동하기</LinkButton>
                 </div>
         `,
             components: { LinkButton },
