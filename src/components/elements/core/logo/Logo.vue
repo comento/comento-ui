@@ -1,10 +1,10 @@
 <template>
 	<keep-alive>
-		<component :is="element" class="c-application c-logo">
+		<div class="c-application c-logo">
 			<a :href="url">
 				<component :is="name" :width="width" :height="height" :style="computedColor" />
 			</a>
-		</component>
+		</div>
 	</keep-alive>
 </template>
 
@@ -15,8 +15,6 @@ import { colors } from '@/utils/constants/color';
 /**
  * @displayName c-logo
  */
-
-export const LogoElements = ['h1', 'h2', 'div', 'span'];
 
 export default {
 	name: 'Logo',
@@ -40,20 +38,6 @@ export default {
 		color: {
 			type: String,
 			default: 'primary',
-		},
-		/**
-		 * 사용 가능 태그 : h1, h2, div, span
-		 */
-		element: {
-			type: String,
-			default: 'div',
-			validator(value) {
-				const isValid = LogoElements.indexOf(value) !== -1;
-				if (!isValid) {
-					console.error(`${value} is not a valid name of the typography element type`);
-				}
-				return isValid;
-			},
 		},
 	},
 	computed: {
