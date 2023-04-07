@@ -283,6 +283,9 @@ export default {
 			height: 43px !important;
 		}
 	}
+	&.c-tabs--menu-container:not(.c-tabs--vertical) {
+		border-bottom-color: $light-gray;
+	}
 }
 /*&--blur-left {*/
 /*	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);*/
