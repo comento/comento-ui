@@ -1,12 +1,14 @@
 <template>
 	<div class="c-header">
-		<Logo
-			:color="isTransparent ? 'white' : 'primary'"
-			name="LogoComentoTypoType"
-			width="101px"
-			height="16px"
-			:url="logoUrl"
-		/>
+		<h1>
+			<Logo
+				:color="isTransparent ? 'white' : 'primary'"
+				name="LogoComentoTypoType"
+				width="101px"
+				height="16px"
+				:url="logoUrl"
+			/>
+		</h1>
 		<ul class="ml-26 flex">
 			<li
 				v-for="(menu, index) in items"
