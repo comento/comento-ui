@@ -1,10 +1,10 @@
 <template>
 	<keep-alive>
-		<h1 class="c-application c-logo">
+		<div class="c-application c-logo">
 			<a :href="url">
 				<component :is="name" :width="width" :height="height" :style="computedColor" />
 			</a>
-		</h1>
+		</div>
 	</keep-alive>
 </template>
 
@@ -15,6 +15,7 @@ import { colors } from '@/utils/constants/color';
 /**
  * @displayName c-logo
  */
+
 export default {
 	name: 'Logo',
 	props: {
