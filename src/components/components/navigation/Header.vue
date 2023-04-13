@@ -80,7 +80,7 @@ export default {
 			hideClassTooltip: false,
 		};
 	},
-	created() {
+	mounted() {
 		this.hideClassTooltip = localStorage.getItem('close-comento-class-tooltip');
 	},
 	methods: {
