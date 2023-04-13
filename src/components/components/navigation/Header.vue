@@ -81,7 +81,7 @@ export default {
 		};
 	},
 	created() {
-		this.hideClassTooltip = window.localStorage.getItem('close-comento-class-tooltip');
+		this.hideClassTooltip = localStorage.getItem('close-comento-class-tooltip');
 	},
 	methods: {
 		getHeaderNavClass(name) {
@@ -96,7 +96,7 @@ export default {
 		},
 		closeClassToolTip() {
 			this.hideClassTooltip = true;
-			window.localStorage.setItem('close-comento-class-tooltip', true);
+			localStorage.setItem('close-comento-class-tooltip', true);
 		},
 	},
 	components: { Typography, Icon, Tooltip, Logo },
