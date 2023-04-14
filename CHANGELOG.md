@@ -1,3 +1,20 @@
+## [1.2.9](https://github.com/comento/comento-ui/compare/v1.2.8...v1.2.9) (2023-04-14)
+
+
+### Bug Fixes
+
+* created -> mounted ([#1070](https://github.com/comento/comento-ui/issues/1070)) ([ff04c49](https://github.com/comento/comento-ui/commit/ff04c49f35f043a169145754921a13901769863a))
+* TellingAvatarQuote의 모바일 패딩 수정 ([#1072](https://github.com/comento/comento-ui/issues/1072)) ([#1073](https://github.com/comento/comento-ui/issues/1073)) ([3ca56f3](https://github.com/comento/comento-ui/commit/3ca56f3c812fc825364911c35178420cb359d8a0))
+* 헤더 내 탭의 divider(border-bottom) 색을 변경 ([#1056](https://github.com/comento/comento-ui/issues/1056)) ([7ac0ae8](https://github.com/comento/comento-ui/commit/7ac0ae81a95611017196703ea2f1a6f7f1a9111b))
+
+
+### Features
+
+* add header tooltip ([#1063](https://github.com/comento/comento-ui/issues/1063)) ([27dc7db](https://github.com/comento/comento-ui/commit/27dc7db05b993eabf9de5023eb5a2c25e0cf51aa))
+* logo type 변경 ([#1060](https://github.com/comento/comento-ui/issues/1060)) ([1d3f323](https://github.com/comento/comento-ui/commit/1d3f323018979340c816c1ff464486aa23cfc227))
+
+
+
 ## [1.2.8](https://github.com/comento/comento-ui/compare/v1.2.7...v1.2.8) (2023-04-13)
 
 
