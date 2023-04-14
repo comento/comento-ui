@@ -65,7 +65,7 @@ $wrapper-margin-bottom: 40px;
 	.telling {
 		&-wrapper {
 			position: relative;
-			padding: 16px 20px;
+			padding: 16px;
 			background: $gray000;
 			border-radius: 8px;
 			margin: 22px 16px 12px;
