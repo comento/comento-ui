@@ -22,11 +22,7 @@
 						@changeTabIndex="changeTabs"
 					>
 						<template v-for="(menu, index) in items" :slot="'item' + index">
-							<span
-								v-if="newMenuIndex === index"
-								:key="`newMenu${index}`"
-								class="c-sub-header-new-notice"
-							/>
+							<span v-if="menu.notice" :key="`notice${index}`" class="c-sub-header-new-notice" />
 							<!--    nuxt 유무에 따라 핸들링          -->
 							<nuxt-link v-if="isNuxt" :key="menu.path" :to="menu.path" :data-cy="menu.name">
 								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
@@ -94,10 +90,6 @@ export default {
 		withAlert: {
 			type: Boolean,
 			default: false,
-		},
-		newMenuIndex: {
-			type: Number,
-			default: -1,
 		},
 	},
 	computed: {
