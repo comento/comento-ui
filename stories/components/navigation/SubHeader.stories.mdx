@@ -83,6 +83,14 @@ import SubHeader from '@/components/components/navigation/SubHeader';
         }
       }
     },
+    newMenuIndex: {
+      description: "새로운 메뉴 표시",
+      table: {
+        summary: {
+          type: "Number",
+        }
+      }
+    },
   }}
 />
 
@@ -101,6 +109,7 @@ export const Default = (args, {argTypes}) => ({
            :is-nuxt="isNuxt"
            :items="items"
            :style="{'--triggered-top': '0 !important'}"
+           :new-menu-index=newMenuIndex
 />
 </div>
     </div>`,
