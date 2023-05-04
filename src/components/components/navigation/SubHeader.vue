@@ -22,6 +22,7 @@
 						@changeTabIndex="changeTabs"
 					>
 						<template v-for="(menu, index) in items" :slot="'item' + index">
+							<span v-if="menu.notice" :key="`notice${index}`" class="c-sub-header-new-notice" />
 							<!--    nuxt 유무에 따라 핸들링          -->
 							<nuxt-link v-if="isNuxt" :key="menu.path" :to="menu.path" :data-cy="menu.name">
 								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
@@ -125,6 +126,15 @@ $hover-background-transparent: rgba(21, 22, 23, 0.1);
 	}
 	@include mobile {
 		top: 52px;
+	}
+	&-new-notice {
+		position: absolute;
+		bottom: 32px;
+		right: 0;
+		width: 4px;
+		height: 4px;
+		background: $secondary;
+		@include border-radius(4px);
 	}
 
 	&.appear {
