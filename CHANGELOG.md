@@ -1,3 +1,19 @@
+## [1.2.11](https://github.com/comento/comento-ui/compare/v1.2.10...v1.2.11) (2023-05-08)
+
+
+### Bug Fixes
+
+* TellingAvatarQuote의 모바일 패딩 수정 ([#1072](https://github.com/comento/comento-ui/issues/1072)) ([a9b7e23](https://github.com/comento/comento-ui/commit/a9b7e233c8be145ee46639c878a40e0d293bdaf8))
+
+
+### Features
+
+* Header 내 Tooltip 관련 코드 제거 ([#1079](https://github.com/comento/comento-ui/issues/1079)) ([451a608](https://github.com/comento/comento-ui/commit/451a60898776cfa1c0206ba613e8198beaa6645e))
+* submenu에 새로운 메뉴가 추가될 시, 표시 될 수 있도록 하는 newMenuIndex 추가 ([#1075](https://github.com/comento/comento-ui/issues/1075)) ([5d3ef84](https://github.com/comento/comento-ui/commit/5d3ef8489ddc20bca407aaa6625e10678d7ec671))
+* submenu에 새로운 메뉴가 추가될 시, 표시 될 수 있도록 하는 newMenuIndex 추가 ([#1075](https://github.com/comento/comento-ui/issues/1075)) ([#1076](https://github.com/comento/comento-ui/issues/1076)) ([0e3da43](https://github.com/comento/comento-ui/commit/0e3da4333e81e2bcacd7b5a2fbd9e0aa5414f01c))
+
+
+
 ## [1.2.10](https://github.com/comento/comento-ui/compare/v1.2.9...v1.2.10) (2023-05-04)
 
 
