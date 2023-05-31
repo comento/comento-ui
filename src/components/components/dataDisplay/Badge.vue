@@ -17,8 +17,8 @@
 <script>
 import { colors } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
-import globalMixin from '@/mixins/globalMixin';
 import { defineComponent } from 'vue';
+import isEmpty from '@/utils/is-empty';
 
 export const badgeColors = ['primary', 'secondary'];
 export const badgeSizes = ['medium', 'small'];
@@ -29,7 +29,6 @@ export const badgeTypes = ['inline', 'absolute'];
  */
 export default defineComponent({
 	name: 'Badge',
-	mixins: [globalMixin],
 	props: {
 		/**
 		 * 색상(primary, secondary)
@@ -130,7 +129,7 @@ export default defineComponent({
 	},
 	methods: {
 		getByte(value) {
-			if (!this.$_isEmpty(value)) {
+			if (!isEmpty(value)) {
 				return value
 					.toString()
 					.split('')

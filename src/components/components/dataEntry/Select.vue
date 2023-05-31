@@ -74,9 +74,9 @@ import clickOutside from '@/directives/click-outside';
 import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
 import EtcIcon from '@/components/elements/core/icon/EtcIcon';
-import globalMixin from '@/mixins/globalMixin';
 import Hint from '@/components/components/dataDisplay/Hint';
 import { defineComponent } from 'vue';
+import hasOwnProperty from '@/utils/has-own-property';
 
 export const selectSizes = ['small', 'medium'];
 export const selectTypes = ['basic', 'underline', 'transparent'];
@@ -86,7 +86,6 @@ export const selectTypes = ['basic', 'underline', 'transparent'];
  */
 export default defineComponent({
 	name: 'Select',
-	mixins: [globalMixin],
 	inheritAttrs: false,
 	props: {
 		/**
@@ -246,8 +245,8 @@ export default defineComponent({
 	},
 	methods: {
 		handleOptions(option, type) {
-			const hasLabel = this.$_hasOwnProperty(option, 'label');
-			const hasValue = this.$_hasOwnProperty(option, 'value');
+			const hasLabel = hasOwnProperty(option, 'label');
+			const hasValue = hasOwnProperty(option, 'value');
 
 			if (type === 'label' && hasLabel) {
 				return option.label;
