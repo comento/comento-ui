@@ -7,9 +7,9 @@ module.exports = {
 	},
 	extends: [
 		'eslint:recommended',
-		'prettier',
 		'plugin:prettier/recommended',
-		'plugin:vue/essential',
+		'plugin:vue/vue3-recommended',
+		'plugin:vue/vue3-essential',
 		'plugin:import/errors',
 		'plugin:import/warnings',
 	],
@@ -19,7 +19,7 @@ module.exports = {
 	},
 	parserOptions: {
 		parser: 'babel-eslint',
-		ecmaVersion: 2018,
+		ecmaVersion: 2020,
 		sourceType: 'module',
 	},
 	plugins: ['prettier', 'html', 'vue'],
@@ -54,6 +54,7 @@ module.exports = {
 		'require-await': 'error', // No async function without await
 		'no-var': 'error',
 		'object-shorthand': 1,
+		'vue/max-attributes-per-line': 'off',
 		'vue/html-indent': [
 			'error',
 			'tab',
@@ -90,7 +91,7 @@ module.exports = {
 					'meta',
 					['template', 'render'],
 					'renderError',
-					['components', 'directives', 'filters'],
+					['components', 'directives'],
 				],
 			},
 		],
