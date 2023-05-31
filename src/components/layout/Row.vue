@@ -5,11 +5,13 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 /**
  * [deprecated]
  * @displayName c-row
  */
-export default {
+export default defineComponent({
 	name: 'Row',
 	props: {
 		rowGutters: {
@@ -22,7 +24,7 @@ export default {
 			return this.rowGutters ? 'no-gutters' : '';
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

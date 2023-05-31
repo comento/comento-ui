@@ -18,15 +18,16 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-profile-with-text
  */
-export default {
+export default defineComponent({
 	name: 'ProfileWithText',
 	components: { Typography },
-};
+});
 </script>
 
 <style lang="scss" scoped>

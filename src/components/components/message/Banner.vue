@@ -38,13 +38,14 @@
 <script>
 import windowMixin from '@/mixins/windowMixin';
 import Typography from '@/components/elements/core/typography/Typography';
+import { defineComponent } from 'vue';
 
 export const bannerTypes = ['full', 'standard'];
 
 /**
  * @displayName c-banner
  */
-export default {
+export default defineComponent({
 	name: 'Banner',
 	mixins: [windowMixin],
 	props: {
@@ -111,7 +112,7 @@ export default {
 		},
 	},
 	components: { Typography },
-};
+});
 </script>
 
 <style lang="scss" scoped>

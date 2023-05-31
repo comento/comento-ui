@@ -15,15 +15,16 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-alarm-list-item
  */
-export default {
+export default defineComponent({
 	name: 'AlarmListItem',
 	components: { Typography },
-};
+});
 </script>
 
 <style lang="scss" scoped>

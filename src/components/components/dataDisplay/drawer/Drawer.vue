@@ -19,11 +19,12 @@
 	</div>
 </template>
 <script>
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 import paddingMixin from '@/mixins/paddingMixin';
 import scrollMixin from '@/mixins/scrollMixin';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'Drawer',
 	mixins: [paddingMixin, scrollMixin],
 	props: {
@@ -123,7 +124,7 @@ export default {
 	components: {
 		Icon,
 	},
-};
+});
 </script>
 <style lang="scss" scoped>
 @import '@/assets/style/base/animation.scss';

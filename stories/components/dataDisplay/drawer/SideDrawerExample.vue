@@ -17,7 +17,7 @@
 		</NewRow>
 		<NewRow>
 			<NewCol>
-				<Button color="primary" @click="toggle">Open</Button>
+				<Button color="primary" @click="toggle"> Open </Button>
 			</NewCol>
 		</NewRow>
 		<SideDrawer
@@ -28,9 +28,9 @@
 			:show-drawer="open"
 			@close="toggle"
 		>
-			<template v-slot:title>test</template>
-			<template v-slot:right-content>
-				<Button color="info" type="outline" size="small">모두 읽음 표시</Button>
+			<template #title> test </template>
+			<template #right-content>
+				<Button color="info" type="outline" size="small"> 모두 읽음 표시 </Button>
 			</template>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
@@ -72,9 +72,10 @@ import SideDrawer from '@/components/components/dataDisplay/drawer/SideDrawer';
 import NewGrid from '@/components/layout/NewGrid';
 import NewRow from '@/components/layout/NewRow';
 import NewCol from '@/components/layout/NewCol';
+import { defineComponent } from 'vue';
 
-export default {
-	name: 'app',
+export default defineComponent({
+	name: 'App',
 	data() {
 		return {
 			open: false,
@@ -102,5 +103,5 @@ export default {
 		Button,
 		SideDrawer,
 	},
-};
+});
 </script>

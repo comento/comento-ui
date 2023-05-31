@@ -5,12 +5,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 /**
  * @displayName c-form-group
  */
-export default {
+export default defineComponent({
 	name: 'FormGroup',
-};
+});
 </script>
 
 <style scoped lang="scss">

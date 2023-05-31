@@ -35,6 +35,7 @@
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 import paddingMixin from '@/mixins/paddingMixin';
+import { defineComponent } from 'vue';
 
 export const CalloutTypes = ['information', 'error', 'success', 'notice'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
@@ -42,7 +43,7 @@ export const CalloutSizes = ['xsmall', 'small', 'medium'];
 /**
  * @displayName c-callout
  */
-export default {
+export default defineComponent({
 	name: 'Callout',
 	mixins: [paddingMixin],
 	props: {
@@ -154,7 +155,7 @@ export default {
 		Typography,
 		Icon,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -8,13 +8,14 @@
 
 <script>
 import { colors, colorKeys } from '@/utils/constants/color';
+import { defineComponent } from 'vue';
 
 export const dividerTypes = ['line', 'dash'];
 
 /**
  * @displayName c-divider
  */
-export default {
+export default defineComponent({
 	name: 'Divider',
 	props: {
 		/**
@@ -68,7 +69,7 @@ export default {
 			};
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

@@ -1,7 +1,7 @@
 <template>
 	<NarrowButton size="medium" :class="classes" @click="$emit('clickFileButton')">
 		{{ text }}
-		<template v-slot:left-icon>
+		<template #left-icon>
 			<Icon name="IconPlusSmallLine" color="gray600" :class="classes" />
 		</template>
 	</NarrowButton>
@@ -11,11 +11,12 @@
 import NarrowButton from '@/components/components/general/button/NarrowButton';
 import Icon from '@/components/elements/core/icon/Icon';
 import customValidator from '@/utils/custom-validator.js';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-file-button
  */
-export default {
+export default defineComponent({
 	name: 'FileButton',
 	props: {
 		text: {
@@ -39,7 +40,7 @@ export default {
 		NarrowButton,
 		Icon,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped></style>

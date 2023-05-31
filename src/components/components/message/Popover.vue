@@ -13,7 +13,7 @@
 		@show="$emit('showPopover')"
 	>
 		<slot> </slot>
-		<template slot="popover">
+		<template #popover>
 			<div class="c-pointer c-popover--content-wrapper" :style="styles">
 				<slot name="popover"> </slot>
 			</div>
@@ -23,11 +23,12 @@
 
 <script>
 import { placements, placementMap } from '@/utils/constants/tooltip';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-popover
  */
-export default {
+export default defineComponent({
 	name: 'Popover',
 	inheritAttrs: false,
 	props: {
@@ -83,5 +84,5 @@ export default {
 			};
 		},
 	},
-};
+});
 </script>

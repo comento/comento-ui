@@ -15,10 +15,10 @@
 						</div>
 						<SearchInput
 							ref="searchInput"
+							v-model:value="sync_keyword"
+							v-model:show-search-dropdown="sync_showDropdown"
 							full
-							:value.sync="sync_keyword"
 							:placeholder="placeholder"
-							:show-search-dropdown.sync="sync_showDropdown"
 							:transparent="isTransparent"
 							data-cy="searchInput"
 							@search="search"
@@ -34,17 +34,18 @@
 </template>
 
 <script>
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Icon from '@/components/elements/core/icon/Icon';
-import SearchInput from '@/components/components/dataEntry/input/SearchInput';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import NewCol from '@/components/layout/NewCol.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import SearchInput from '@/components/components/dataEntry/input/SearchInput.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-search-top-bar
  */
 
-export default {
+export default defineComponent({
 	name: 'SearchTopBar',
 	props: {
 		isTransparent: {
@@ -98,7 +99,7 @@ export default {
 		},
 	},
 	components: { SearchInput, NewCol, NewRow, NewGrid, Icon },
-};
+});
 </script>
 
 <style lang="scss" scoped>

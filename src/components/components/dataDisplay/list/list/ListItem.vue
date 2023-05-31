@@ -5,13 +5,15 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 export const ListItemSizes = ['small', 'medium', 'large'];
 export const ListItemCursors = ['pointer', 'default'];
 
 /**
  * @displayName c-list-item
  */
-export default {
+export default defineComponent({
 	name: 'ListItem',
 	props: {
 		/**
@@ -40,7 +42,7 @@ export default {
 			return `c-${this.cursor}`;
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

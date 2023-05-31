@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
 	name: 'BoxWithShadow',
 	props: {
 		shadowType: {
@@ -21,7 +23,7 @@ export default {
 			return `c-box--${this.shadowType}`;
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

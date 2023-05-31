@@ -24,6 +24,7 @@
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
 import customValidator from '@/utils/custom-validator';
+import { defineComponent } from 'vue';
 
 export const toastTypes = ['basic', 'error', 'success', 'security'];
 export const toastPositions = ['top', 'bottom'];
@@ -31,7 +32,7 @@ export const toastPositions = ['top', 'bottom'];
 /**
  * @displayName c-toast
  */
-export default {
+export default defineComponent({
 	name: 'Toast',
 	props: {
 		show: {
@@ -113,7 +114,7 @@ export default {
 		Icon,
 		Typography,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

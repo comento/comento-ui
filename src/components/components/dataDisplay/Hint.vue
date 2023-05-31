@@ -12,11 +12,12 @@ import customValidator from '@/utils/custom-validator.js';
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 import { colorKeys } from '@/utils/constants/color';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-hint
  */
-export default {
+export default defineComponent({
 	name: 'Hint',
 	props: {
 		/**
@@ -46,7 +47,7 @@ export default {
 		Typography,
 		Icon,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

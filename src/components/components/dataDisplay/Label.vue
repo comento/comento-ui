@@ -6,6 +6,7 @@
 
 <script>
 import Typography from '@/components/elements/core/typography/Typography';
+import { defineComponent } from 'vue';
 
 const DATA_ENTRY = 'dataEntry';
 const DATA_DISPLAY = 'dataDisplay';
@@ -14,7 +15,7 @@ export const labelTypes = [DATA_ENTRY, DATA_DISPLAY];
 /**
  * @displayName c-label
  */
-export default {
+export default defineComponent({
 	name: 'Label',
 	props: {
 		/**
@@ -43,7 +44,7 @@ export default {
 		},
 	},
 	components: { Typography },
-};
+});
 </script>
 
 <style scoped lang="scss">

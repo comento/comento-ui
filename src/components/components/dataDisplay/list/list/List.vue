@@ -5,10 +5,12 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 /**
  * @displayName c-list
  */
-export default {
+export default defineComponent({
 	name: 'List',
 	props: {
 		spacing: {
@@ -21,7 +23,7 @@ export default {
 			return this.spacing && 'spacing';
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

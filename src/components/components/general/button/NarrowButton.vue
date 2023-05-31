@@ -20,13 +20,14 @@
 
 <script>
 import { colors } from '@/utils/constants/color';
+import { defineComponent } from 'vue';
 
 export const narrowButtonSizes = ['small', 'medium', 'large'];
 
 /**
  * @displayName c-narrow-button
  */
-export default {
+export default defineComponent({
 	name: 'NarrowButton',
 	inheritAttrs: false,
 	props: {
@@ -70,7 +71,7 @@ export default {
 			return this.$slots[`${position}-icon`] && `m${oppositePosition}-2`;
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

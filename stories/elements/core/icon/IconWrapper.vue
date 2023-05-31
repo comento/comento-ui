@@ -4,7 +4,7 @@
 			<component :is="component" :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)">
 				<slot />
 			</component>
-			<template v-slot:popover>
+			<template #popover>
 				<div>{{ name }}</div>
 			</template>
 		</Tooltip>
@@ -17,8 +17,9 @@ import EtcIcon from '@/components/elements/core/icon/EtcIcon';
 import Icon from '@/components/elements/core/icon/Icon';
 import Tooltip from '@/components/components/message/Tooltip';
 import copyToClipboard from '@/utils/copy-to-clipboard';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'IconWrapper',
 	props: {
 		component: {
@@ -46,7 +47,7 @@ export default {
 		Icon,
 		Tooltip,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

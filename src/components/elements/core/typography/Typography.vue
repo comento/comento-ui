@@ -12,6 +12,7 @@
 
 <script>
 import { colors } from '@/utils/constants/color';
+import { defineComponent } from 'vue';
 
 export const TypographyTypes = [
 	'display1',
@@ -37,7 +38,7 @@ export const FontWeights = [300, 400, 500, 600, 'light', 'regular', 'medium', 's
 /**
  * @displayName c-typography
  */
-export default {
+export default defineComponent({
 	name: 'Typography',
 	props: {
 		/**
@@ -125,7 +126,7 @@ export default {
 			return this.fontWeight && !this.isNumberFontWeight ? `f-${this.fontWeight}` : '';
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

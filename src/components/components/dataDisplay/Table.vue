@@ -18,12 +18,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 export const cursors = ['pointer', 'default'];
 
 /**
  * @displayName c-table
  */
-export default {
+export default defineComponent({
 	name: 'Table',
 	props: {
 		/**
@@ -45,7 +47,7 @@ export default {
 			return `c-${this.cursor}`;
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

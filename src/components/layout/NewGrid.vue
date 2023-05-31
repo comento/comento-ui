@@ -6,11 +6,12 @@
 
 <script>
 import { colors } from '@/utils/constants/color';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-new-grid
  */
-export default {
+export default defineComponent({
 	name: 'NewGrid',
 	props: {
 		fluid: {
@@ -35,7 +36,7 @@ export default {
 			};
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

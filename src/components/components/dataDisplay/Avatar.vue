@@ -15,6 +15,7 @@
 import Typography from '@/components/elements/core/typography/Typography';
 import Icon from '@/components/elements/core/icon/Icon';
 import uniqueId from '@/utils/unique-id';
+import { defineComponent } from 'vue';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
 export const avatarTypes = ['nickname', 'profile', 'logo', 'image'];
@@ -23,7 +24,7 @@ const avatarColors = ['#f5b3b3', '#f3c499', '#f0db80', '#b4d2a9', '#91cfd3', '#a
 /**
  * @displayName c-avatar
  */
-export default {
+export default defineComponent({
 	name: 'Avatar',
 	props: {
 		/**
@@ -141,7 +142,7 @@ export default {
 		Typography,
 		Icon,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

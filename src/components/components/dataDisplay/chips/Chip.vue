@@ -26,7 +26,8 @@
 
 <script>
 import paddingMixin from '@/mixins/paddingMixin';
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import { defineComponent } from 'vue';
 
 export const ChipColors = ['primary', 'info', 'success', 'secondary', 'error'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
@@ -37,7 +38,7 @@ export const ChipSizesWithCloseButton = ['medium', 'large', 'xlarge'];
  * 작은 정보를 전달하기 위해 사용
  * @displayName c-chip
  */
-export default {
+export default defineComponent({
 	name: 'Chip',
 	mixins: [paddingMixin],
 	props: {
@@ -148,7 +149,7 @@ export default {
 		},
 	},
 	components: { Icon },
-};
+});
 </script>
 
 <style lang="scss" scoped>

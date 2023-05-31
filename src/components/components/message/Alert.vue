@@ -45,13 +45,14 @@ import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 import { colors } from '@/utils/constants/color';
 import IconButton from '@/components/components/general/button/IconButton';
+import { defineComponent } from 'vue';
 
 export const AlertTypes = ['information', 'notice', 'success', 'error', 'image'];
 
 /**
  * @displayName c-alert
  */
-export default {
+export default defineComponent({
 	name: 'Alert',
 	props: {
 		/**
@@ -132,7 +133,7 @@ export default {
 		},
 	},
 	components: { IconButton, NewGrid, NewRow, NewCol, Icon, Typography },
-};
+});
 </script>
 
 <style lang="scss" scoped>

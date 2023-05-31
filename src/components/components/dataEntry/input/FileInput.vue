@@ -21,11 +21,12 @@
 <script>
 import customValidator from '@/utils/custom-validator.js';
 import FileButton from '@/components/components/general/button/FileButton';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-file-input
  */
-export default {
+export default defineComponent({
 	name: 'FileInput',
 	props: {
 		accept: {
@@ -81,7 +82,7 @@ export default {
 	components: {
 		FileButton,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

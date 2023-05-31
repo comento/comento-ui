@@ -35,6 +35,7 @@ const {
 } = colors;
 
 import { buttonColors, ghostTypeButtonColors } from '@/components/components/general/button/Button';
+import { defineComponent } from 'vue';
 
 export const LoaderSizes = ['small', 'medium', 'large', 'xlarge'];
 
@@ -100,7 +101,7 @@ const colorMap = {
 /**
  * @displayName c-loader
  */
-export default {
+export default defineComponent({
 	name: 'Loader',
 	props: {
 		/**
@@ -152,7 +153,7 @@ export default {
 		IconSpinnerLarge,
 		IconSpinnerXLarge,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

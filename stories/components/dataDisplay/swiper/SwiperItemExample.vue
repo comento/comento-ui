@@ -1,14 +1,17 @@
 <template>
 	<Box :paddings="[100, 32, 100, 32]" background-color="orange600">
-		<Typography type="display1" color="white">{{ text }}</Typography>
+		<Typography type="display1" color="white">
+			{{ text }}
+		</Typography>
 	</Box>
 </template>
 
 <script>
 import Box from '@/components/components/general/Box';
 import Typography from '@/components/elements/core/typography/Typography';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'SwiperItemExample',
 	props: {
 		text: {
@@ -19,7 +22,7 @@ export default {
 		Box,
 		Typography,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

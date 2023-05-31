@@ -10,7 +10,9 @@
 		<Loader v-if="loading" size="small" :color="color" />
 		<template v-else>
 			<Icon :name="iconName" :color="computedColor" class="mr-4" />
-			<Typography type="body2" :color="computedColor">{{ text }}</Typography>
+			<Typography type="body2" :color="computedColor">
+				{{ text }}
+			</Typography>
 		</template>
 	</button>
 </template>
@@ -19,13 +21,14 @@
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
 import Loader from '@/components/components/other/Loader';
+import { defineComponent } from 'vue';
 
 export const RATING_BUTTON_COLORS = ['primary', 'info', 'error', 'secondary', 'success'];
 
 /**
  * @displayName c-rating-button
  */
-export default {
+export default defineComponent({
 	name: 'RatingButton',
 	props: {
 		iconName: {
@@ -76,7 +79,7 @@ export default {
 		},
 	},
 	components: { Typography, Icon, Loader },
-};
+});
 </script>
 
 <style lang="scss" scoped>

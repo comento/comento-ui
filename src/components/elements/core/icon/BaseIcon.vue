@@ -16,8 +16,9 @@
 <script>
 import { colorKeys, colors } from '@/utils/constants/color';
 import customValidator from '@/utils/custom-validator';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'BaseIcon',
 	props: {
 		name: {
@@ -64,7 +65,7 @@ export default {
 			};
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

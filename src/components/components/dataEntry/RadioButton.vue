@@ -22,13 +22,14 @@ import { colorKeys } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
 import uniqueId from '@/utils/unique-id';
 import customValidator from '@/utils/custom-validator';
+import { defineComponent } from 'vue';
 export const radioColors = ['primary', 'success', 'info', 'error'];
 export const radioButtonSizes = ['small', 'medium'];
 
 /**
  * @displayName c-radio-button
  */
-export default {
+export default defineComponent({
 	name: 'RadioButton',
 	inheritAttrs: false,
 	props: {
@@ -128,7 +129,7 @@ export default {
 		},
 	},
 	components: { Typography },
-};
+});
 </script>
 
 <style lang="scss" scoped>

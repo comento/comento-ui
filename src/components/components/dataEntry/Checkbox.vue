@@ -22,12 +22,13 @@
 import { colorKeys } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
 import uniqueId from '@/utils/unique-id';
+import { defineComponent } from 'vue';
 export const checkboxSizes = ['xsmall', 'small', 'medium'];
 
 /**
  * @displayName c-checkbox
  */
-export default {
+export default defineComponent({
 	name: 'Checkbox',
 	inheritAttrs: false,
 	props: {
@@ -111,7 +112,7 @@ export default {
 		},
 	},
 	components: { Typography },
-};
+});
 </script>
 
 <style lang="scss" scoped>

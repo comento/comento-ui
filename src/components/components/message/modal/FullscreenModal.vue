@@ -48,13 +48,14 @@ import Icon from '@/components/elements/core/icon/Icon';
 import Divider from '@/components/elements/utility/Divider';
 import Typography from '@/components/elements/core/typography/Typography';
 import Button, { buttonColors } from '@/components/components/general/button/Button';
+import { defineComponent } from 'vue';
 
 export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
 
 /**
  * @displayName c-fullscreen-modal
  */
-export default {
+export default defineComponent({
 	name: 'FullscreenModal',
 	props: {
 		/**
@@ -166,7 +167,7 @@ export default {
 		Typography,
 		Button,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

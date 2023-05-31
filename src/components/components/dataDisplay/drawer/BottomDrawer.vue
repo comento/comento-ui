@@ -30,14 +30,15 @@
 
 <script>
 import scrollMixin from '@/mixins/scrollMixin';
-import Drawer from '@/components/components/dataDisplay/drawer/Drawer';
-import Typography from '@/components/elements/core/typography/Typography';
-import Button from '@/components/components/general/button/Button';
+import Drawer from '@/components/components/dataDisplay/drawer/Drawer.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Button from '@/components/components/general/button/Button.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-bottom-drawer
  */
-export default {
+export default defineComponent({
 	name: 'BottomDrawer',
 	mixins: [scrollMixin],
 	props: {
@@ -93,7 +94,7 @@ export default {
 		Typography,
 		Button,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

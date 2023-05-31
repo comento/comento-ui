@@ -6,6 +6,7 @@
 			prefix-class="c"
 			type="date"
 			:placeholder="placeholder"
+			v-model:open="open"
 			:format="format"
 			:value-type="valueType"
 			:disabled-date="disabledDate"
@@ -15,11 +16,12 @@
 			:clearable="clearable"
 			:popup-class="`c-calendar-${uid}`"
 			:append-to-body="appendToBody"
-			:open.sync="open"
 			v-on="$listeners"
 			@change="handleChange"
 		/>
-		<Hint :color="color">{{ hint }}</Hint>
+		<Hint :color="color">
+			{{ hint }}
+		</Hint>
 	</div>
 </template>
 
@@ -30,6 +32,7 @@ import 'vue2-datepicker/locale/ko';
 import customValidator from '@/utils/custom-validator.js';
 import uniqueId from '@/utils/unique-id';
 import Hint from '@/components/components/dataDisplay/Hint';
+import { defineComponent } from 'vue';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
 export const colors = ['primary', 'success', 'info', 'error'];
@@ -37,7 +40,7 @@ export const colors = ['primary', 'success', 'info', 'error'];
 /**
  * @displayName c-date-picker
  */
-export default {
+export default defineComponent({
 	name: 'DatePicker',
 	props: {
 		value: {
@@ -149,7 +152,7 @@ export default {
 		Hint,
 		'date-picker': DatePicker,
 	},
-};
+});
 </script>
 
 <!-- 스타일은 datePicker.scss -->

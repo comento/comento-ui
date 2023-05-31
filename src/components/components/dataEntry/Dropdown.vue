@@ -22,11 +22,12 @@
 <script>
 import Label from '@/components/components/dataDisplay/Label';
 import uniqueId from '@/utils/unique-id';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-dropdown
  */
-export default {
+export default defineComponent({
 	name: 'Dropdown',
 	props: {
 		maxWidth: {
@@ -87,7 +88,7 @@ export default {
 	components: {
 		Label,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

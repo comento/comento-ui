@@ -11,12 +11,13 @@
 
 <script>
 import TextRatingWrapper from '@/components/components/dataDisplay/rating/TextRatingWrapper';
+import { defineComponent } from 'vue';
 export const TextRatingSizes = ['default', 'small'];
 
 /**
  * @displayName c-text-rating
  */
-export default {
+export default defineComponent({
 	name: 'TextRating',
 	props: {
 		size: {
@@ -30,7 +31,7 @@ export default {
 	components: {
 		TextRatingWrapper,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

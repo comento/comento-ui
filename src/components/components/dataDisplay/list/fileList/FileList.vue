@@ -16,13 +16,14 @@
 </template>
 
 <script>
-import List from '@/components/components/dataDisplay/list/list/List';
-import FileItem from '@/components/components/dataDisplay/list/fileList/FileItem';
+import List from '@/components/components/dataDisplay/list/list/List.vue';
+import FileItem from '@/components/components/dataDisplay/list/fileList/FileItem.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-file-list
  */
-export default {
+export default defineComponent({
 	name: 'FileList',
 	props: {
 		files: {
@@ -60,7 +61,7 @@ export default {
 		},
 	},
 	components: { List, FileItem },
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -44,8 +44,9 @@
 
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'CustomPagination',
 	props: ['props'],
 	computed: {
@@ -57,8 +58,9 @@ export default {
 		},
 	},
 	components: { Icon },
-};
+});
 </script>
+
 <style lang="scss" scoped>
 .pagination {
 	&--row {

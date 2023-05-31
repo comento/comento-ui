@@ -49,12 +49,13 @@
 import Icon from '@/components/elements/core/icon/Icon';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-search-input
  */
 
-export default {
+export default defineComponent({
 	name: 'SearchInput',
 	inheritAttrs: false,
 	props: {
@@ -139,7 +140,7 @@ export default {
 	directives: {
 		clickOutside,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

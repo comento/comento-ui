@@ -21,20 +21,23 @@
 				@click="onSubmitReply"
 			/>
 		</div>
-		<Hint v-if="isShowHint" color="error">{{ hintMessage }}</Hint>
+		<Hint v-if="isShowHint" color="error">
+			{{ hintMessage }}
+		</Hint>
 	</div>
 </template>
 
 <script>
 import IconButton from '@/components/components/general/button/IconButton';
 import Hint from '@/components/components/dataDisplay/Hint';
+import { defineComponent } from 'vue';
 
 export const textareaTypes = ['basic', 'outline', 'reply'];
 
 /**
  * @displayName c-textarea
  */
-export default {
+export default defineComponent({
 	name: 'Textarea',
 	inheritAttrs: false,
 	props: {
@@ -127,7 +130,7 @@ export default {
 		},
 	},
 	components: { Hint, IconButton },
-};
+});
 </script>
 
 <style lang="scss" scoped>

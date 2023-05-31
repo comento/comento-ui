@@ -27,11 +27,12 @@ import Typography from '@/components/elements/core/typography/Typography';
 import Button from '@/components/components/general/button/Button';
 import Label from '@/components/components/dataDisplay/Label';
 import nl2br from '@/utils/nl2br';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-reply
  */
-export default {
+export default defineComponent({
 	name: 'Reply',
 	props: {
 		value: {
@@ -67,7 +68,7 @@ export default {
 	directives: {
 		linkify,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

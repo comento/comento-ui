@@ -37,6 +37,7 @@
 <script>
 import Hint from '@/components/components/dataDisplay/Hint';
 import uniqueId from '@/utils/unique-id';
+import { defineComponent } from 'vue';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const TextFieldAligns = ['left', 'center', 'right'];
@@ -44,7 +45,7 @@ export const TextFieldAligns = ['left', 'center', 'right'];
 /**
  * @displayName c-text-field
  */
-export default {
+export default defineComponent({
 	name: 'TextField',
 	inheritAttrs: false,
 	props: {
@@ -219,7 +220,7 @@ export default {
 		},
 	},
 	components: { Hint },
-};
+});
 </script>
 
 <style lang="scss" scoped>

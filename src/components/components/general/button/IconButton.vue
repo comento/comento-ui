@@ -15,6 +15,7 @@
 <script>
 import { colorKeys } from '@/utils/constants/color';
 import Icon from '@/components/elements/core/icon/Icon';
+import { defineComponent } from 'vue';
 
 export const IconButtonSizes = ['small', 'medium', 'large'];
 export const IconButtonTypes = ['button', 'submit', 'reset'];
@@ -22,7 +23,7 @@ export const IconButtonTypes = ['button', 'submit', 'reset'];
 /**
  * @displayName c-icon-button
  */
-export default {
+export default defineComponent({
 	name: 'IconButton',
 	props: {
 		iconName: {
@@ -77,7 +78,7 @@ export default {
 	components: {
 		Icon,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -36,13 +36,14 @@
 import Modal from '@/components/components/message/modal/Modal';
 import Typography from '@/components/elements/core/typography/Typography';
 import Button, { buttonColors } from '@/components/components/general/button/Button';
+import { defineComponent } from 'vue';
 
 export const aligns = ['left', 'center', 'right'];
 
 /**
  * @displayName c-basic-modal
  */
-export default {
+export default defineComponent({
 	name: 'BasicModal',
 	props: {
 		show: {
@@ -128,7 +129,7 @@ export default {
 		Modal,
 		Button,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

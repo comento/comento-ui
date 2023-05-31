@@ -14,12 +14,14 @@
 <script>
 import colorMixin from '@/mixins/colorMixin';
 import paddingMixin from '@/mixins/paddingMixin';
+import { defineComponent } from 'vue';
 export const Elements = ['div', 'article'];
 
 /**
  * @displayName c-box
  */
-export default {
+
+export default defineComponent({
 	name: 'Box',
 	mixins: [colorMixin, paddingMixin],
 	props: {
@@ -75,7 +77,7 @@ export default {
 			};
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

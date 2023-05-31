@@ -38,8 +38,9 @@ import Modal from '@/components/components/message/modal/Modal';
 import { aligns } from '@/components/components/message/modal/BasicModal';
 import Button, { buttonColors } from '@/components/components/general/button/Button';
 import Typography from '@/components/elements/core/typography/Typography';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'ImageModal',
 	props: {
 		show: {
@@ -102,7 +103,7 @@ export default {
 		Button,
 		Typography,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -18,6 +18,7 @@
 import { colors } from '@/utils/constants/color';
 import Typography from '@/components/elements/core/typography/Typography';
 import globalMixin from '@/mixins/globalMixin';
+import { defineComponent } from 'vue';
 
 export const badgeColors = ['primary', 'secondary'];
 export const badgeSizes = ['medium', 'small'];
@@ -26,7 +27,7 @@ export const badgeTypes = ['inline', 'absolute'];
 /**
  * @displayName c-badge
  */
-export default {
+export default defineComponent({
 	name: 'Badge',
 	mixins: [globalMixin],
 	props: {
@@ -139,7 +140,7 @@ export default {
 		},
 	},
 	components: { Typography },
-};
+});
 </script>
 
 <style lang="scss" scoped>

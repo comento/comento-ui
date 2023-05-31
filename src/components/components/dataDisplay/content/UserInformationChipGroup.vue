@@ -8,9 +8,10 @@
 /**
  * @displayName c-user-information-chip-group
  */
-import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
+import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'UserInformationChipGroup',
 	props: {
 		size: {
@@ -18,7 +19,7 @@ export default {
 		},
 	},
 	components: { ChipGroup },
-};
+});
 </script>
 
 <style lang="scss" scoped>

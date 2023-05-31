@@ -6,8 +6,9 @@
 
 <script>
 import Typography from '@/components/elements/core/typography/Typography';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'TextRatingWrapper',
 	props: {
 		size: {
@@ -30,5 +31,5 @@ export default {
 		},
 	},
 	components: { Typography },
-};
+});
 </script>

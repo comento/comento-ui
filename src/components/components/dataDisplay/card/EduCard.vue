@@ -39,15 +39,15 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
-import Divider from '@/components/elements/utility/Divider';
-import windowMixin from '@/mixins/windowMixin';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Divider from '@/components/elements/utility/Divider.vue';
+import { defineComponent } from 'vue';
 
 /**
  * 직무부트캠프 카드
  * @displayName c-edu-card
  */
-export default {
+export default defineComponent({
 	name: 'EduCard',
 	mixins: [windowMixin],
 	props: {
@@ -144,7 +144,7 @@ export default {
 		Divider,
 		Typography,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

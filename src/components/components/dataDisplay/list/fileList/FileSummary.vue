@@ -17,14 +17,15 @@
 </template>
 
 <script>
-import Button from '@/components/components/general/button/Button';
-import Typography from '@/components/elements/core/typography/Typography';
-import Icon from '@/components/elements/core/icon/Icon';
+import Button from '@/components/components/general/button/Button.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-file-summary
  */
-export default {
+export default defineComponent({
 	name: 'FileSummary',
 	props: {
 		length: {
@@ -46,7 +47,7 @@ export default {
 		Typography,
 		Icon,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

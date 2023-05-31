@@ -5,12 +5,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 export const buttonGroupSizes = ['small', 'medium', 'large'];
 
 /**
  * @displayName c-button-group
  */
-export default {
+export default defineComponent({
 	name: 'ButtonGroup',
 	props: {
 		/**
@@ -36,7 +38,7 @@ export default {
 			return this.vertical ? 'vertical' : 'horizontal';
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -9,7 +9,7 @@
 		:options="swiperOptions"
 	>
 		<swiper-slide
-			v-for="(item, index) in Object.keys(this.$slots).length"
+			v-for="(item, index) in Object.keys($slots).length"
 			:key="`tabs-item-${index}`"
 			:class="{ active: index === tabIndex }"
 		>
@@ -21,7 +21,7 @@
 	<div v-else class="c-application c-tabs c-tabs--menu-container" :class="classes">
 		<div class="c-tabs--menu-wrapper">
 			<div
-				v-for="(node, index) in Object.keys(this.$slots).length"
+				v-for="(node, index) in Object.keys($slots).length"
 				:key="`tabs-item-${index}`"
 				class="c-tabs--menu-button"
 				:class="{ active: index === tabIndex }"
@@ -35,6 +35,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+import { defineComponent } from 'vue';
 
 export const TabsTypes = ['basic', 'swiper'];
 export const TabsDirections = ['horizontal', 'vertical'];
@@ -42,7 +43,7 @@ export const TabsDirections = ['horizontal', 'vertical'];
 /**
  * @displayName c-tabs
  */
-export default {
+export default defineComponent({
 	name: 'Tabs',
 	props: {
 		/**
@@ -134,7 +135,7 @@ export default {
 		Swiper,
 		SwiperSlide,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

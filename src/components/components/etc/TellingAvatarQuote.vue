@@ -25,13 +25,14 @@
 </template>
 
 <script>
-import Avatar from '@/components/components/dataDisplay/Avatar';
-import Typography from '@/components/elements/core/typography/Typography';
+import Avatar from '@/components/components/dataDisplay/Avatar.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-telling-avatar-quote
  */
-export default {
+export default defineComponent({
 	name: 'TellingAvatarQuote',
 	props: {
 		avatarImage: {
@@ -42,7 +43,7 @@ export default {
 		},
 	},
 	components: { Typography, Avatar },
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -13,7 +13,7 @@
 		@show="$emit('showTooltip')"
 	>
 		<slot> </slot>
-		<template slot="popover">
+		<template #popover>
 			<Typography class="c-tooltip--content-wrapper" type="body2" color="gray700">
 				<slot name="popover"> </slot>
 			</Typography>
@@ -24,11 +24,12 @@
 <script>
 import Typography from '@/components/elements/core/typography/Typography';
 import { placements, placementMap } from '@/utils/constants/tooltip';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-tooltip
  */
-export default {
+export default defineComponent({
 	name: 'Tooltip',
 	inheritAttrs: false,
 	props: {
@@ -76,5 +77,5 @@ export default {
 		},
 	},
 	components: { Typography },
-};
+});
 </script>

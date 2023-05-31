@@ -12,12 +12,13 @@
 
 <script>
 import scrollMixin from '@/mixins/scrollMixin';
+import { defineComponent } from 'vue';
 export const OverlayTypes = ['dimmer'];
 
 /**
  * @displayName c-overlay
  */
-export default {
+export default defineComponent({
 	name: 'Overlay',
 	mixins: [scrollMixin],
 	props: {
@@ -64,7 +65,7 @@ export default {
 	mounted() {
 		document.addEventListener('keydown', e => this.handleCloseKeycode(e));
 	},
-	beforeDestroy() {
+	beforeUnmount() {
 		document.removeEventListener('keydown', e => this.handleCloseKeycode(e));
 	},
 	methods: {
@@ -83,7 +84,7 @@ export default {
 			this.$emit('close');
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

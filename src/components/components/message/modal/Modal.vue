@@ -15,8 +15,9 @@
 import scrollMixin from '@/mixins/scrollMixin';
 import Icon from '@/components/elements/core/icon/Icon';
 import Overlay from '@/components/elements/utility/Overlay';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'Modal',
 	mixins: [scrollMixin],
 	props: {
@@ -69,7 +70,7 @@ export default {
 		},
 	},
 	components: { Overlay, Icon },
-};
+});
 </script>
 
 <style lang="scss" scoped>

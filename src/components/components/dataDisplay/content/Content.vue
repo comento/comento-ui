@@ -13,9 +13,10 @@
 
 <script>
 import linkify from 'vue-linkify';
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
+import { defineComponent } from 'vue';
 
 export const contentTypes = ['overline', 'title', 'body', 'caption'];
 
@@ -23,7 +24,7 @@ export const contentTypes = ['overline', 'title', 'body', 'caption'];
  * 주로 게시글의 본문에 사용
  * @displayName c-content
  */
-export default {
+export default defineComponent({
 	name: 'Content',
 	props: {
 		/**
@@ -65,7 +66,7 @@ export default {
 	directives: {
 		linkify,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

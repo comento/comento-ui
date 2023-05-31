@@ -5,12 +5,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 /**
  * @displayName c-rating-group
  */
-export default {
+export default defineComponent({
 	name: 'RatingGroup',
-};
+});
 </script>
 
 <style lang="scss" scoped>

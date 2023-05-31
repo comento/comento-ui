@@ -25,7 +25,7 @@
 		<div class="c-modal--button-group">
 			<!-- 취소 버튼 -->
 			<div class="c-modal--cancel-button c-pointer" @click="close">
-				<Typography type="body1" :color="cancelButtonColor" align="center">취소</Typography>
+				<Typography type="body1" :color="cancelButtonColor" align="center"> 취소 </Typography>
 			</div>
 			<!-- 확인 버튼 -->
 			<div class="c-modal--confirm-button c-pointer" @click="successCallback">
@@ -40,11 +40,12 @@
 <script>
 import Modal from '@/components/components/message/modal/Modal';
 import Typography from '@/components/elements/core/typography/Typography';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-permission-modal
  */
-export default {
+export default defineComponent({
 	name: 'PermissionModal',
 	props: {
 		show: {
@@ -82,7 +83,7 @@ export default {
 		Modal,
 		Typography,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

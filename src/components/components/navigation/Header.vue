@@ -17,7 +17,9 @@
 				:class="getHeaderNavClass(index)"
 				@mouseenter="onMouseEntered(index)"
 			>
-				<nuxt-link v-if="nuxt" v-bind="$attrs" :to="menu.path" v-on="$listeners">{{ menu.name }}</nuxt-link>
+				<nuxt-link v-if="nuxt" v-bind="$attrs" :to="menu.path" v-on="$listeners">
+					{{ menu.name }}
+				</nuxt-link>
 				<a v-else v-bind="$attrs" :href="menu.path" v-on="$listeners">{{ menu.name }}</a>
 			</li>
 		</ul>
@@ -26,12 +28,13 @@
 
 <script>
 import Logo from '@/components/elements/core/logo/Logo';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-header
  */
 
-export default {
+export default defineComponent({
 	name: 'Header',
 	props: {
 		activatedMenu: {
@@ -72,7 +75,7 @@ export default {
 		},
 	},
 	components: { Logo },
-};
+});
 </script>
 
 <style lang="scss" scoped>

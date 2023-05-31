@@ -25,11 +25,12 @@
 <script>
 import Modal from '@/components/components/message/modal/Modal';
 import Typography from '@/components/elements/core/typography/Typography';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-alert-modal
  */
-export default {
+export default defineComponent({
 	name: 'AlertModal',
 	props: {
 		show: {
@@ -59,7 +60,7 @@ export default {
 		Modal,
 		Typography,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

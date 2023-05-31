@@ -5,7 +5,9 @@
 				<Loader v-if="isLoading" class="c-file-item--content-icon" size="small" />
 				<Icon v-else class="c-file-item--content-icon" name="IconFileSmallLine" color="gray700" />
 			</template>
-			<Typography type="body2" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
+			<Typography type="body2" color="gray700" class="text-truncate">
+				{{ file.title || file.name }}
+			</Typography>
 		</div>
 		<Icon
 			v-if="isRemovable"
@@ -27,15 +29,16 @@
 </template>
 
 <script>
-import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
-import Icon from '@/components/elements/core/icon/Icon';
-import Loader from '@/components/components/other/Loader';
-import Typography from '@/components/elements/core/typography/Typography';
+import ListItem from '@/components/components/dataDisplay/list/list/ListItem.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import Loader from '@/components/components/other/Loader.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-file-item
  */
-export default {
+export default defineComponent({
 	name: 'FileItem',
 	props: {
 		file: {
@@ -75,7 +78,7 @@ export default {
 		},
 	},
 	components: { Icon, Loader, Typography, ListItem },
-};
+});
 </script>
 
 <style lang="scss" scoped>

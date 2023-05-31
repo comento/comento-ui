@@ -5,12 +5,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 /**
  * @displayName c-alarm-list
  */
-export default {
+export default defineComponent({
 	name: 'AlarmList',
-};
+});
 </script>
 
 <style lang="scss" scoped>

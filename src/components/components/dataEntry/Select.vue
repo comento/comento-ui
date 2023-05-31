@@ -10,7 +10,7 @@
 		:class="classes"
 	>
 		<!-- select 영역 -->
-		<template v-slot:item>
+		<template #item>
 			<div class="c-select--box" :class="[computedLined, computedActive, computedError]" @click="handleOpen">
 				<div class="c-select--item">
 					<!-- 라벨 보여주기 -->
@@ -42,15 +42,10 @@
 		</template>
 
 		<!-- list 영역 -->
-		<template v-if="open" v-slot:list>
+		<template v-if="open" #list>
 			<List spacing>
-				<template v-for="(option, index) in options">
-					<ListItem
-						:key="`c-select--option-${index}`"
-						size="large"
-						class="c-select--list-item"
-						@click="handleEmitInputEvent(option)"
-					>
+				<template v-for="(option, index) in options" :key="`c-select--list-${index}`">
+					<ListItem size="large" class="c-select--list-item" @click="handleEmitInputEvent(option)">
 						<Typography :type="computedListItemTypography" color="gray800">
 							{{ handleOptions(option, 'label') }}
 						</Typography>
@@ -61,7 +56,7 @@
 							class="c-pointer"
 						/>
 					</ListItem>
-					<Divider :key="index" class="my-6" />
+					<Divider class="my-6" />
 				</template>
 			</List>
 		</template>
@@ -81,6 +76,7 @@ import { colorKeys } from '@/utils/constants/color';
 import EtcIcon from '@/components/elements/core/icon/EtcIcon';
 import globalMixin from '@/mixins/globalMixin';
 import Hint from '@/components/components/dataDisplay/Hint';
+import { defineComponent } from 'vue';
 
 export const selectSizes = ['small', 'medium'];
 export const selectTypes = ['basic', 'underline', 'transparent'];
@@ -88,7 +84,7 @@ export const selectTypes = ['basic', 'underline', 'transparent'];
 /**
  * @displayName c-select
  */
-export default {
+export default defineComponent({
 	name: 'Select',
 	mixins: [globalMixin],
 	inheritAttrs: false,
@@ -293,7 +289,7 @@ export default {
 	directives: {
 		clickOutside,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

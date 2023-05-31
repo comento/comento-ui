@@ -23,14 +23,15 @@
 
 <script>
 import scrollMixin from '@/mixins/scrollMixin';
-import Box from '@/components/components/general/Box';
-import Drawer from '@/components/components/dataDisplay/drawer/Drawer';
-import Typography from '@/components/elements/core/typography/Typography';
+import Box from '@/components/components/general/Box.vue';
+import Drawer from '@/components/components/dataDisplay/drawer/Drawer.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-side-drawer
  */
-export default {
+export default defineComponent({
 	name: 'SideDrawer',
 	mixins: [scrollMixin],
 	props: {
@@ -64,7 +65,7 @@ export default {
 		Drawer,
 		Typography,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

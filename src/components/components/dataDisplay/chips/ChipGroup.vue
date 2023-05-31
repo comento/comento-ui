@@ -5,12 +5,13 @@
 </template>
 
 <script>
-import { ChipSizes } from '@/components/components/dataDisplay/chips/Chip';
+import { ChipSizes } from '@/components/components/dataDisplay/chips/Chip.vue';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-chip-group
  */
-export default {
+export default defineComponent({
 	name: 'ChipGroup',
 	props: {
 		/**
@@ -29,7 +30,7 @@ export default {
 			return `${this.size}`;
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

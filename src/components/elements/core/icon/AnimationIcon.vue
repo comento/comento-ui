@@ -3,13 +3,14 @@ import IconCheckRoundSmallLineAnimation from '@/assets/images/icon/animation/ico
 import IconThreeDotSmallFillAnimation from '@/assets/images/icon/animation/icon-threeDot-small-fill-animation.svg?inline';
 import BaseIcon from '@/components/elements/core/icon/BaseIcon';
 import customValidator from '@/utils/custom-validator';
+import { defineComponent } from 'vue';
 
 export const AnimationIconNames = ['IconCheckRoundSmallLineAnimation', 'IconThreeDotSmallFillAnimation'];
 
 /**
  * @displayName c-animation-icon
  */
-export default {
+export default defineComponent({
 	name: 'AnimationIcon',
 	extends: BaseIcon,
 	props: {
@@ -26,7 +27,7 @@ export default {
 		IconCheckRoundSmallLineAnimation,
 		IconThreeDotSmallFillAnimation,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

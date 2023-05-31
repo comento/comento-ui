@@ -216,6 +216,7 @@ import IconStar4XLargeLine from '@/assets/images/icon/4xlarge/icon-star-4xlarge-
 import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarge-line.svg?inline';
 
 import customValidator from '@/utils/custom-validator';
+import { defineComponent } from 'vue';
 
 export const IconNames = [
 	// xsmall
@@ -438,7 +439,7 @@ export const IconNames = [
 /**
  * @displayName c-icon
  */
-export default {
+export default defineComponent({
 	name: 'Icon',
 	extends: BaseIcon,
 	props: {
@@ -666,5 +667,5 @@ export default {
 		IconStar4XLargeLine,
 		IconBoard4XLargeLine,
 	},
-};
+});
 </script>

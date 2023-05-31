@@ -41,13 +41,14 @@
 import Modal from '@/components/components/message/modal/Modal';
 import Typography from '@/components/elements/core/typography/Typography';
 import Button, { buttonColors } from '@/components/components/general/button/Button';
+import { defineComponent } from 'vue';
 
 export const aligns = ['left', 'center', 'right'];
 
 /**
  * @displayName c-with-form-modal
  */
-export default {
+export default defineComponent({
 	name: 'WithFormModal',
 	props: {
 		show: {
@@ -136,7 +137,7 @@ export default {
 		Typography,
 		Button,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

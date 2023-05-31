@@ -13,7 +13,7 @@
 			v-on="$listeners"
 		>
 			<base-swiper-slide
-				v-for="(node, index) in Object.keys(this.$slots).length"
+				v-for="(node, index) in Object.keys($slots).length"
 				:key="`tabs-item-${index}-${key}`"
 				style="width: auto"
 			>
@@ -97,6 +97,7 @@
 import customValidator from '@/utils/custom-validator.js';
 import Icon from '@/components/elements/core/icon/Icon';
 import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesome-swiper';
+import { defineComponent } from 'vue';
 
 export const SwiperControlsColors = ['light', 'dark'];
 export const SwiperControlPositions = ['inside', 'outside', 'top'];
@@ -106,7 +107,7 @@ export const SwiperIndicatorPositions = ['inside', 'outside'];
 /**
  * @displayName c-swiper
  */
-export default {
+export default defineComponent({
 	name: 'Swiper',
 	inheritAttrs: false,
 	props: {
@@ -325,7 +326,7 @@ export default {
 		BaseSwiperSlide,
 		Icon,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

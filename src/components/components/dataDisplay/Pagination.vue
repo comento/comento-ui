@@ -13,11 +13,12 @@
 <script>
 import pagination from 'vue-pagination-2';
 import CustomPagination from '@/components/components/dataDisplay/CustomPagination';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-pagination
  */
-export default {
+export default defineComponent({
 	name: 'Pagination',
 	props: {
 		page: {
@@ -48,5 +49,5 @@ export default {
 		},
 	},
 	components: { pagination },
-};
+});
 </script>

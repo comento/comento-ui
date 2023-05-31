@@ -39,6 +39,7 @@
 <script>
 import Loader from '@/components/components/other/Loader';
 import Icon from '@/components/elements/core/icon/Icon';
+import { defineComponent } from 'vue';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
@@ -48,7 +49,7 @@ export const buttonTypes = ['fill', 'outline', 'ghost', 'text', 'fab'];
 /**
  * @displayName c-button
  */
-export default {
+export default defineComponent({
 	name: 'Button',
 	inheritAttrs: false,
 	props: {
@@ -168,7 +169,7 @@ export default {
 		},
 	},
 	components: { Icon, Loader },
-};
+});
 </script>
 
 <style lang="scss" scoped>

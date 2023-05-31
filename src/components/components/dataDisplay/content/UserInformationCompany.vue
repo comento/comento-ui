@@ -11,10 +11,11 @@
 /**
  * @displayName c-user-information-company
  */
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import Icon from '@/components/elements/core/icon/Icon';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'UserInformationCompany',
 	props: {
 		type: String,
@@ -34,7 +35,7 @@ export default {
 		},
 	},
 	components: { Typography, Icon },
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -5,12 +5,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 /**
  * @displayName c-input-group
  */
-export default {
+export default defineComponent({
 	name: 'InputGroup',
-};
+});
 </script>
 
 <style lang="scss" scoped>

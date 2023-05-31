@@ -43,18 +43,19 @@
 </template>
 
 <script>
-import NewCol from '@/components/layout/NewCol';
-import Tabs from '@/components/components/dataDisplay/Tabs';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import Button from '@/components/components/general/button/Button';
+import NewCol from '@/components/layout/NewCol.vue';
+import Tabs from '@/components/components/dataDisplay/Tabs.vue';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import Button from '@/components/components/general/button/Button.vue';
 import windowMixin from '@/mixins/windowMixin';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-sub-header
  */
 
-export default {
+export default defineComponent({
 	name: 'SubHeader',
 	mixins: [windowMixin],
 	props: {
@@ -103,7 +104,7 @@ export default {
 		},
 	},
 	components: { NewRow, NewGrid, Tabs, NewCol, Button },
-};
+});
 </script>
 
 <style lang="scss" scoped>

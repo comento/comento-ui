@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<Button @click="toggle">Open</Button>
+		<Button @click="toggle"> Open </Button>
 		<BottomDrawer
 			:mask-closable="true"
 			:z-index="1002"
@@ -10,7 +10,7 @@
 			show-action-button
 			@close="toggle"
 		>
-			<template v-slot:title>test</template>
+			<template #title> test </template>
 			<div>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
 				tortor id purus varius, sit amet sodales erat consequat. Integer ultrices mauris vehicula eros lacinia,
@@ -48,9 +48,10 @@
 <script>
 import BottomDrawer from '@/components/components/dataDisplay/drawer/BottomDrawer';
 import Button from '@/components/components/general/button/Button';
+import { defineComponent } from 'vue';
 
-export default {
-	name: 'app',
+export default defineComponent({
+	name: 'App',
 	data() {
 		return {
 			open: false,
@@ -69,7 +70,7 @@ export default {
 		Button,
 		BottomDrawer,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

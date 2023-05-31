@@ -15,8 +15,9 @@
 
 <script>
 import { colors } from '@/utils/constants/color';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
 	name: 'ColorExample',
 	data() {
 		return {
@@ -44,7 +45,7 @@ export default {
 			return textBlack.includes(color) ? 'text-black' : 'text-white';
 		},
 	},
-};
+});
 </script>
 
 <style scoped lang="scss">

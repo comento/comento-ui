@@ -7,7 +7,7 @@
 			<div class="name-company-wrapper">
 				<div class="name-icon-wrapper">
 					<div v-if="$slots['name']" class="name-wrapper">
-						<slot name="name" v-bind:type="type" />
+						<slot name="name" :type="type" />
 					</div>
 					<div v-if="$slots['user-info']" class="user-info-wrapper">
 						<slot name="user-info" />
@@ -23,12 +23,14 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 export const userInformationTypes = ['simple', 'normal', 'full'];
 
 /**
  * @displayName c-user-information
  */
-export default {
+export default defineComponent({
 	name: 'UserInformation',
 	props: {
 		/**
@@ -47,7 +49,7 @@ export default {
 			return this.type === 'full' ? { marginTop: '4px' } : null;
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

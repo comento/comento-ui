@@ -9,10 +9,12 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+
 /**
  * @displayName c-new-col
  */
-export default {
+export default defineComponent({
 	name: 'NewCol',
 	props: {
 		colSm: {
@@ -96,7 +98,7 @@ export default {
 			return this.offsetBetweenItems ? { padding: `0 ${this.offsetBetweenItems}px` } : null;
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

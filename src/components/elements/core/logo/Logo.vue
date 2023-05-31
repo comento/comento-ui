@@ -11,12 +11,13 @@
 <script>
 import LogoComentoTypoType from '@/assets/images/logo/logo-comento-typo-type.svg?inline';
 import { colors } from '@/utils/constants/color';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-logo
  */
 
-export default {
+export default defineComponent({
 	name: 'Logo',
 	props: {
 		name: {
@@ -51,7 +52,7 @@ export default {
 	components: {
 		LogoComentoTypoType,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

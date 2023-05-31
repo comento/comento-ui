@@ -50,20 +50,21 @@
 </template>
 
 <script>
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Logo from '@/components/elements/core/logo/Logo';
-import Icon from '@/components/elements/core/icon/Icon';
-import Typography from '@/components/elements/core/typography/Typography';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import NewCol from '@/components/layout/NewCol.vue';
+import Logo from '@/components/elements/core/logo/Logo.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import { Divider } from '@/components';
+import { defineComponent } from 'vue';
 export const headerTypes = ['default', 'backward', 'logo'];
 
 /**
  * @displayName c-top-bar
  */
 
-export default {
+export default defineComponent({
 	name: 'TopBar',
 	props: {
 		isTransparent: {
@@ -88,7 +89,7 @@ export default {
 		},
 	},
 	components: { NewCol, NewRow, NewGrid, Logo, Icon, Typography, Divider },
-};
+});
 </script>
 
 <style lang="scss" scoped>

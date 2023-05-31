@@ -8,7 +8,9 @@
 /**
  * @displayName c-new-row
  */
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
 	name: 'NewRow',
 	props: {
 		noGutters: {
@@ -21,7 +23,7 @@ export default {
 			return this.noGutters ? 'no-gutters' : '';
 		},
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

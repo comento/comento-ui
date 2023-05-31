@@ -10,11 +10,12 @@
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
+import { defineComponent } from 'vue';
 
 /**
  * @displayName c-icon-rating
  */
-export default {
+export default defineComponent({
 	name: 'IconRating',
 	props: {
 		color: {
@@ -34,7 +35,7 @@ export default {
 		Icon,
 		Typography,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>

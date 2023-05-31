@@ -47,13 +47,14 @@ import Box from '@/components/components/general/Box';
 import Typography from '@/components/elements/core/typography/Typography';
 import LinkButton from '@/components/components/general/button/LinkButton';
 import Button from '@/components/components/general/button/Button';
+import { defineComponent } from 'vue';
 
 export const Types = ['simple', 'emphasized'];
 
 /**
  * @displayName c-empty-box
  */
-export default {
+export default defineComponent({
 	name: 'EmptyBox',
 	props: {
 		/**
@@ -97,7 +98,7 @@ export default {
 		LinkButton,
 		Button,
 	},
-};
+});
 </script>
 
 <style lang="scss" scoped>
