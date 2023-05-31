@@ -36,9 +36,9 @@
 </template>
 
 <script>
-import windowMixin from '@/mixins/windowMixin';
 import Typography from '@/components/elements/core/typography/Typography';
 import { defineComponent } from 'vue';
+import useWindowResize from '@/services/useWindowResize';
 
 export const bannerTypes = ['full', 'standard'];
 
@@ -47,7 +47,6 @@ export const bannerTypes = ['full', 'standard'];
  */
 export default defineComponent({
 	name: 'Banner',
-	mixins: [windowMixin],
 	props: {
 		/**
 		 * 타입(full, standard)
@@ -73,6 +72,10 @@ export default defineComponent({
 			type: String,
 			default: 'center',
 		},
+	},
+	setup() {
+		const { isMobile } = useWindowResize();
+		return { isMobile };
 	},
 	computed: {
 		computedStyleVariables() {

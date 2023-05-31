@@ -71,6 +71,7 @@ import Typography from '@/components/elements/core/typography/Typography.vue';
 import Divider from '@/components/elements/utility/Divider.vue';
 import Icon from '@/components/elements/core/icon/Icon.vue';
 import { defineComponent } from 'vue';
+import useWindowResize from '@/services/useWindowResize';
 
 /**
  * 직무부트캠프 프로모션용 카드
@@ -78,7 +79,6 @@ import { defineComponent } from 'vue';
  */
 export default defineComponent({
 	name: 'PromotionEduCard',
-	mixins: [windowMixin],
 	props: {
 		backgroundImage: {
 			type: String,
@@ -101,6 +101,10 @@ export default defineComponent({
 		dominantColor: {
 			type: Object,
 		},
+	},
+	setup() {
+		const { isMobile } = useWindowResize();
+		return { isMobile };
 	},
 	computed: {
 		computedStyle() {

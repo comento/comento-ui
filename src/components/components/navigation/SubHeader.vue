@@ -48,7 +48,7 @@ import Tabs from '@/components/components/dataDisplay/Tabs.vue';
 import NewGrid from '@/components/layout/NewGrid.vue';
 import NewRow from '@/components/layout/NewRow.vue';
 import Button from '@/components/components/general/button/Button.vue';
-import windowMixin from '@/mixins/windowMixin';
+import useWindowResize from '@/services/useWindowResize';
 import { defineComponent } from 'vue';
 
 /**
@@ -57,7 +57,6 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'SubHeader',
-	mixins: [windowMixin],
 	props: {
 		// 헤더가 숨어있다가 나오는지 여부
 		isAppear: {
@@ -92,6 +91,10 @@ export default defineComponent({
 			type: Boolean,
 			default: false,
 		},
+	},
+	setup() {
+		const { isMobile } = useWindowResize();
+		return { isMobile };
 	},
 	computed: {
 		tabIndex() {

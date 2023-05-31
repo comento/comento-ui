@@ -42,6 +42,7 @@
 import Typography from '@/components/elements/core/typography/Typography.vue';
 import Divider from '@/components/elements/utility/Divider.vue';
 import { defineComponent } from 'vue';
+import useWindowResize from '@/services/useWindowResize';
 
 /**
  * 직무부트캠프 카드
@@ -49,7 +50,6 @@ import { defineComponent } from 'vue';
  */
 export default defineComponent({
 	name: 'EduCard',
-	mixins: [windowMixin],
 	props: {
 		backgroundImage: {
 			type: String,
@@ -98,6 +98,10 @@ export default defineComponent({
 			type: String,
 			default: '',
 		},
+	},
+	setup() {
+		const { isMobile } = useWindowResize();
+		return { isMobile };
 	},
 	computed: {
 		computedStyle() {
