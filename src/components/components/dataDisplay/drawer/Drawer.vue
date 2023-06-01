@@ -21,12 +21,10 @@
 <script>
 import Icon from '@/components/elements/core/icon/Icon.vue';
 import getPadding from '@/utils/get-padding';
-import scrollMixin from '@/mixins/scrollMixin';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'Drawer',
-	mixins: [scrollMixin],
 	props: {
 		direction: {
 			type: String,

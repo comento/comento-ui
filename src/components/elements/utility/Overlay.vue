@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import scrollMixin from '@/mixins/scrollMixin';
 import { defineComponent } from 'vue';
 export const OverlayTypes = ['dimmer'];
 
@@ -20,7 +19,6 @@ export const OverlayTypes = ['dimmer'];
  */
 export default defineComponent({
 	name: 'Overlay',
-	mixins: [scrollMixin],
 	props: {
 		show: {
 			type: Boolean,

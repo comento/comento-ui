@@ -12,14 +12,13 @@
 </template>
 
 <script>
-import scrollMixin from '@/mixins/scrollMixin';
+import { toggleNotScroll } from '@/utils/not-scroll';
 import Icon from '@/components/elements/core/icon/Icon';
 import Overlay from '@/components/elements/utility/Overlay';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'Modal',
-	mixins: [scrollMixin],
 	props: {
 		show: {
 			type: Boolean,
@@ -56,7 +55,7 @@ export default defineComponent({
 	},
 	watch: {
 		show() {
-			this.$_handleNotScroll(this.show);
+			toggleNotScroll(this.show);
 		},
 	},
 	methods: {

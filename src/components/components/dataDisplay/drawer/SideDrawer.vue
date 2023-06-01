@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import scrollMixin from '@/mixins/scrollMixin';
+import { toggleNotScroll } from '@/utils/not-scroll';
 import Box from '@/components/components/general/Box.vue';
 import Drawer from '@/components/components/dataDisplay/drawer/Drawer.vue';
 import Typography from '@/components/elements/core/typography/Typography.vue';
@@ -33,7 +33,6 @@ import { defineComponent } from 'vue';
  */
 export default defineComponent({
 	name: 'SideDrawer',
-	mixins: [scrollMixin],
 	props: {
 		/**
 		 * 방향(left, right)
@@ -52,7 +51,7 @@ export default defineComponent({
 	},
 	watch: {
 		showDrawer() {
-			this.$_handleNotScroll(this.showDrawer);
+			toggleNotScroll(this.showDrawer);
 		},
 	},
 	methods: {

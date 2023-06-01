@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import scrollMixin from '@/mixins/scrollMixin';
+import { toggleNotScroll } from '@/utils/not-scroll';
 import Drawer from '@/components/components/dataDisplay/drawer/Drawer.vue';
 import Typography from '@/components/elements/core/typography/Typography.vue';
 import Button from '@/components/components/general/button/Button.vue';
@@ -40,7 +40,6 @@ import { defineComponent } from 'vue';
  */
 export default defineComponent({
 	name: 'BottomDrawer',
-	mixins: [scrollMixin],
 	props: {
 		showDrawer: {
 			type: Boolean,
@@ -86,7 +85,7 @@ export default defineComponent({
 	},
 	watch: {
 		showDrawer() {
-			this.$_handleNotScroll(this.showDrawer);
+			toggleNotScroll(this.showDrawer);
 		},
 	},
 	components: {
