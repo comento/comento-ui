@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-icon-rating" v-bind="$attrs" v-on="$listeners">
+	<div class="c-application c-icon-rating" v-bind="$attrs">
 		<Icon :name="iconName" :color="color" class="mr-4" />
 		<Typography type="body2" :color="color">
 			{{ text }}

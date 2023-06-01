@@ -19,7 +19,6 @@
 				v-bind="$attrs"
 				:autocomplete="computedAutocomplete"
 				@input="handleTyping"
-				v-on="$listeners"
 				@focus="onFocus"
 				@blur="blurFocus"
 			/>

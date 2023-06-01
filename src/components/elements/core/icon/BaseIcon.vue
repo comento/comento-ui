@@ -8,7 +8,6 @@
 			:class="classes"
 			:style="styles"
 			v-bind="$attrs"
-			v-on="$listeners"
 		/>
 	</keep-alive>
 </template>
@@ -53,7 +52,7 @@ export default defineComponent({
 			}
 		},
 		hasEventListener() {
-			return Boolean(this.$listeners && this.$listeners.click);
+			return Boolean(this.$attrs && this.$attrs.click);
 		},
 		classes() {
 			return [this.hasEventListener && 'c-icon--link'];

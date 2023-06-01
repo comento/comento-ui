@@ -1,5 +1,5 @@
 <template>
-	<article class="c-application c-edu-card" v-bind="$attrs" :style="computedStyle" v-on="$listeners">
+	<article class="c-application c-edu-card" v-bind="$attrs" :style="computedStyle">
 		<div class="c-edu-card--image-container">
 			<div v-if="$slots['chip']" class="c-edu-card--chip-container">
 				<slot name="chip" />

@@ -9,7 +9,6 @@
 		:popper-options="popperOptions"
 		:container="container"
 		v-bind="$attrs"
-		v-on="$listeners"
 		@show="$emit('showPopover')"
 	>
 		<slot> </slot>

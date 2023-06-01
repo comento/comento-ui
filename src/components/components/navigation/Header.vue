@@ -17,10 +17,10 @@
 				:class="getHeaderNavClass(index)"
 				@mouseenter="onMouseEntered(index)"
 			>
-				<nuxt-link v-if="nuxt" v-bind="$attrs" :to="menu.path" v-on="$listeners">
+				<nuxt-link v-if="nuxt" v-bind="$attrs" :to="menu.path">
 					{{ menu.name }}
 				</nuxt-link>
-				<a v-else v-bind="$attrs" :href="menu.path" v-on="$listeners">{{ menu.name }}</a>
+				<a v-else v-bind="$attrs" :href="menu.path">{{ menu.name }}</a>
 			</li>
 		</ul>
 	</div>

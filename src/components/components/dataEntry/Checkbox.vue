@@ -8,7 +8,6 @@
 			:disabled="disabled"
 			v-bind="$attrs"
 			@click="$event.target.blur()"
-			v-on="$listeners"
 		/>
 		<label :class="{ disabled }" :for="computedId">
 			<Typography :color="computedColor" :type="computedTypographyType">

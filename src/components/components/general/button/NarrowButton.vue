@@ -5,7 +5,6 @@
 		:style="[computedColor]"
 		v-bind="$attrs"
 		type="button"
-		v-on="$listeners"
 		@click="$event.target.blur()"
 	>
 		<div class="c-narrow-button--icon" :class="setIconSpacing('left')">

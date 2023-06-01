@@ -1,19 +1,19 @@
 <template>
 	<div class="c-application c-link-button" :class="buttonColor">
 		<!-- external link -->
-		<a v-if="external" v-bind="$attrs" :href="to" :target="target" v-on="$listeners">
+		<a v-if="external" v-bind="$attrs" :href="to" :target="target">
 			<Typography :type="type" :color="buttonColor">
 				<slot />
 			</Typography>
 		</a>
 		<!-- internal link -->
 		<template v-else>
-			<nuxt-link v-if="nuxt" :to="to" v-bind="$attrs" v-on="$listeners">
+			<nuxt-link v-if="nuxt" :to="to" v-bind="$attrs">
 				<Typography :type="type" :color="buttonColor">
 					<slot />
 				</Typography>
 			</nuxt-link>
-			<router-link v-else :to="to" tag="a" v-bind="$attrs" v-on="$listeners">
+			<router-link v-else :to="to" tag="a" v-bind="$attrs">
 				<Typography :type="type" :color="buttonColor">
 					<slot />
 				</Typography>

@@ -10,7 +10,6 @@
 			:options="swiperOptions"
 			:cleanup-styles-on-destroy="false"
 			v-bind="$attrs"
-			v-on="$listeners"
 		>
 			<base-swiper-slide
 				v-for="(node, index) in Object.keys($slots).length"

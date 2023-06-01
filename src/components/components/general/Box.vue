@@ -1,12 +1,5 @@
 <template>
-	<component
-		:is="element"
-		class="c-application c-box"
-		:class="classes"
-		:style="styles"
-		v-bind="$attrs"
-		v-on="$listeners"
-	>
+	<component :is="element" class="c-application c-box" :class="classes" :style="styles" v-bind="$attrs">
 		<slot />
 	</component>
 </template>

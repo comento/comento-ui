@@ -1,7 +1,7 @@
 <template>
 	<!--컴포넌트 전환시 캐싱 가능 keep-alive-->
 	<keep-alive>
-		<component :is="computedName" ref="icon" class="c-application c-icon" v-bind="$attrs" v-on="$listeners" />
+		<component :is="computedName" ref="icon" class="c-application c-icon" v-bind="$attrs" />
 	</keep-alive>
 </template>
 

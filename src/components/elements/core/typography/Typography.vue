@@ -4,7 +4,7 @@
 		class="c-application c-typography"
 		:class="computedClass"
 		:style="computedStyle"
-		v-on="$listeners"
+		v-bind="$attrs"
 	>
 		<slot />
 	</component>

@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-alarm-list-item" tabindex="0" v-on="$listeners">
+	<div class="c-application c-alarm-list-item" tabindex="0" v-bind="$attrs">
 		<div class="c-alarm-list-item--icon">
 			<slot name="icon" />
 		</div>

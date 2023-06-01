@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-form-group" v-bind="$attrs" v-on="$listeners">
+	<div class="c-application c-form-group" v-bind="$attrs">
 		<slot />
 	</div>
 </template>

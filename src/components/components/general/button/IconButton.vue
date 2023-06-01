@@ -5,7 +5,6 @@
 		:class="computedClasses"
 		v-bind="$attrs"
 		:disabled="disabled"
-		v-on="$listeners"
 		@click="$event.target.blur()"
 	>
 		<Icon :name="iconName" :color="computedColor" :rotate="rotate" />

@@ -1,11 +1,6 @@
 <template>
 	<transition name="slide-fade">
-		<aside
-			v-if="sync_show"
-			class="c-application c-toast"
-			:class="[computedType, computedPosition]"
-			v-on="$listeners"
-		>
+		<aside v-if="sync_show" class="c-application c-toast" :class="[computedType, computedPosition]" v-bind="$attrs">
 			<div v-if="$slots['icon']" class="c-toast--icon">
 				<slot name="icon" />
 			</div>

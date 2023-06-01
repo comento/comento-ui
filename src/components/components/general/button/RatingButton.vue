@@ -4,7 +4,6 @@
 		:class="[color, { loading: loading }]"
 		v-bind="$attrs"
 		:disabled="disabled"
-		v-on="$listeners"
 		@click="$event.target.blur()"
 	>
 		<Loader v-if="loading" size="small" :color="color" />

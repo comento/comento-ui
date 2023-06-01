@@ -15,7 +15,6 @@
 		]"
 		v-bind="$attrs"
 		:disabled="disabled"
-		v-on="$listeners"
 		@click="$event.target.blur()"
 	>
 		<template v-if="loading">

@@ -1,5 +1,5 @@
 <template>
-	<article class="c-application c-promotion-edu-card" v-bind="$attrs" :style="computedStyle" v-on="$listeners">
+	<article class="c-application c-promotion-edu-card" v-bind="$attrs" :style="computedStyle">
 		<div class="c-promotion-edu-card--image-container">
 			<div v-if="$slots['additional-button']" class="c-promotion-edu-card--additional-button">
 				<slot name="additional-button" />

@@ -11,7 +11,7 @@
 			{ 'c-chip--with-close-button': withCloseButton },
 		]"
 		:style="[computedPadding]"
-		v-on="$listeners"
+		v-bind="$attrs"
 	>
 		<slot />
 		<Icon

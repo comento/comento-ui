@@ -3,10 +3,10 @@
 		<date-picker
 			:ref="`c-date-picker-${uid}`"
 			v-model="sync_value"
+			v-model:open="open"
 			prefix-class="c"
 			type="date"
 			:placeholder="placeholder"
-			v-model:open="open"
 			:format="format"
 			:value-type="valueType"
 			:disabled-date="disabledDate"
@@ -16,7 +16,7 @@
 			:clearable="clearable"
 			:popup-class="`c-calendar-${uid}`"
 			:append-to-body="appendToBody"
-			v-on="$listeners"
+			v-bind="$attrs"
 			@change="handleChange"
 		/>
 		<Hint :color="color">

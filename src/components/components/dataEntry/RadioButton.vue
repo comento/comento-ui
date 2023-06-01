@@ -1,14 +1,6 @@
 <template>
 	<div class="c-application c-radio-button" :class="[computedClasses, computedRadioColor]">
-		<input
-			:id="computedId"
-			v-model="sync_value"
-			type="radio"
-			:disabled="disabled"
-			v-bind="$attrs"
-			:name="name"
-			v-on="$listeners"
-		/>
+		<input :id="computedId" v-model="sync_value" type="radio" :disabled="disabled" v-bind="$attrs" :name="name" />
 		<label :class="{ disabled, checked: value }" :for="computedId">
 			<Typography :color="computedColor" :type="computedTypographyType">
 				<slot />

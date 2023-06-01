@@ -5,7 +5,6 @@
 			:class="[computedSize, computedType, computedFull, { 'c-callout--closable': closable }]"
 			:style="[computedPadding]"
 			v-bind="$attrs"
-			v-on="$listeners"
 		>
 			<div class="c-callout--wrapper">
 				<div class="flex align-center w-full">

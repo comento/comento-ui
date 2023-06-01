@@ -13,7 +13,6 @@
 				class="search_input full"
 				:placeholder="placeholder"
 				v-bind="$attrs"
-				v-on="$listeners"
 				@input="handleTyping"
 				@click="handleShowSearchDropdown()"
 				@keyup="handleAutocomplete()"
