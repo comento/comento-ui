@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import paddingMixin from '@/mixins/paddingMixin';
+import getPadding from '@/utils/get-padding';
 import Icon from '@/components/elements/core/icon/Icon.vue';
 import { defineComponent } from 'vue';
 
@@ -40,7 +40,6 @@ export const ChipSizesWithCloseButton = ['medium', 'large', 'xlarge'];
  */
 export default defineComponent({
 	name: 'Chip',
-	mixins: [paddingMixin],
 	props: {
 		/**
 		 * 타입(fill, outline, clickable-fill, clickable-outline)
@@ -112,7 +111,7 @@ export default defineComponent({
 		computedPadding() {
 			if (this.paddings) {
 				return {
-					...this.$_setPadding(this.paddings),
+					...getPadding(this.paddings),
 				};
 			} else {
 				return null;

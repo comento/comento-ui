@@ -20,13 +20,13 @@
 </template>
 <script>
 import Icon from '@/components/elements/core/icon/Icon.vue';
-import paddingMixin from '@/mixins/paddingMixin';
+import getPadding from '@/utils/get-padding';
 import scrollMixin from '@/mixins/scrollMixin';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'Drawer',
-	mixins: [paddingMixin, scrollMixin],
+	mixins: [scrollMixin],
 	props: {
 		direction: {
 			type: String,
@@ -100,7 +100,7 @@ export default defineComponent({
 		},
 		styles() {
 			return {
-				...this.$_setPadding(this.computedPaddings),
+				...getPadding(this.computedPaddings),
 				...this.indexClass(),
 				...this.computedMaxHeight,
 			};

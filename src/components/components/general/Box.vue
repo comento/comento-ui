@@ -13,7 +13,7 @@
 
 <script>
 import colorMixin from '@/mixins/colorMixin';
-import paddingMixin from '@/mixins/paddingMixin';
+import getPadding from '@/utils/get-padding';
 import { defineComponent } from 'vue';
 export const Elements = ['div', 'article'];
 
@@ -23,7 +23,7 @@ export const Elements = ['div', 'article'];
 
 export default defineComponent({
 	name: 'Box',
-	mixins: [colorMixin, paddingMixin],
+	mixins: [colorMixin],
 	props: {
 		hasBorder: {
 			type: Boolean,
@@ -73,7 +73,7 @@ export default defineComponent({
 			return {
 				...(this.backgroundColor && this.$_setBackgroundColor(this.backgroundColor)),
 				...(this.borderColor && this.$_setBorderColor(this.borderColor)),
-				...this.$_setPadding(paddings),
+				...getPadding(paddings),
 			};
 		},
 	},

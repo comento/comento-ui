@@ -34,7 +34,7 @@
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
 import Typography from '@/components/elements/core/typography/Typography';
-import paddingMixin from '@/mixins/paddingMixin';
+import getPadding from '@/utils/get-padding';
 import { defineComponent } from 'vue';
 
 export const CalloutTypes = ['information', 'error', 'success', 'notice'];
@@ -45,7 +45,6 @@ export const CalloutSizes = ['xsmall', 'small', 'medium'];
  */
 export default defineComponent({
 	name: 'Callout',
-	mixins: [paddingMixin],
 	props: {
 		/**
 		 * 타입(information, error, success, notice)
@@ -129,7 +128,7 @@ export default defineComponent({
 			return this.closable ? 'callout-fade' : null;
 		},
 		computedPadding() {
-			return this.paddings ? { ...this.$_setPadding(this.paddings) } : null;
+			return this.paddings ? { ...getPadding(this.paddings) } : null;
 		},
 		iconName() {
 			const name = {
