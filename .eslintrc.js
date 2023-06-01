@@ -76,7 +76,6 @@ module.exports = {
 					'functional',
 					['delimiters', 'comments'],
 					'extends',
-					'mixins',
 					'inheritAttrs',
 					'model',
 					['props', 'propsData'],

@@ -1,6 +1,5 @@
 import * as components from './components';
 import './plugins';
-import './mixins';
 import './directives';
 import './assets/style/base/global.scss';
 import './assets/style/quill/quill.scss';
