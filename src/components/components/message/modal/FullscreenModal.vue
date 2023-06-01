@@ -14,7 +14,7 @@
 			class="c-fullscreen-modal--header"
 		>
 			<div class="c-fullscreen-modal--header-container">
-				<Icon name="IconCloseLargeLine" color="gray800" class="mr-4" @click.native="close()" />
+				<Icon name="IconCloseLargeLine" color="gray800" class="mr-4" @click="close()" />
 				<Typography type="body1" :font-weight="500" align="center" class="c-fullscreen-modal--header-title">
 					<slot name="title" />
 				</Typography>
