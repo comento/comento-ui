@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import DatePicker, { valueTypes, colors } from '@/components/components/dataEntry/DatePicker';
-import Typography from '@/components/elements/core/typography/Typography';
+import CDatePicker, { valueTypes, colors } from '@/components/components/dataEntry/CDatePicker.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 <Meta
     title="Data Entry/DatePicker"
-    component={ DatePicker }
+    component={ CDatePicker }
     argTypes={{
         value: {
             description: "값",
@@ -56,9 +56,9 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { DatePicker },
+    components: { CDatePicker },
     template:
-        `<DatePicker
+        `<CDatePicker
             :value.sync="value"
             :format="format"
             :placeholder="placeholder"
@@ -72,7 +72,7 @@ export const Default = (args, { argTypes }) => ({
 
 # DatePicker
 
-**DatePicker** 컴포넌트의 문서입니다.
+**c-date-picker** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -101,8 +101,8 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <div style="margin-bottom: 20px">
-                        <Typography style="margin-bottom: 10px">시작 가능한 날짜</Typography>
-                        <DatePicker
+                        <CTypography style="margin-bottom: 10px">시작 가능한 날짜</CTypography>
+                        <CDatePicker
                             :value.sync="date1"
                             format="YYYY-MM-DD 부터"
                             :disabled-date="notBeforeToday"
@@ -110,8 +110,8 @@ export const Default = (args, { argTypes }) => ({
                         />
                     </div>
                     <div>
-                        <Typography style="margin-bottom: 10px">disabled</Typography>
-                        <DatePicker
+                        <CTypography style="margin-bottom: 10px">disabled</CTypography>
+                        <CDatePicker
                             :value.sync="date2"
                             format="YYYY.MM.DD"
                             disabled
@@ -119,7 +119,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                 </div>
         `,
-            components: { DatePicker, Typography },
+            components: { CDatePicker, CTypography },
         }}
     </Story>
 </Canvas>

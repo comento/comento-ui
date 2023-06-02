@@ -1,3 +1,3 @@
-import Logo from './Logo';
+import CLogo from './CLogo.vue';
 
-export { Logo };
+export { CLogo };

@@ -1,5 +1,5 @@
 <script>
-import BaseIcon from '@/components/elements/core/icon/BaseIcon';
+import BaseIcon from '@/components/elements/core/icon/BaseIcon.vue';
 import IconDropdownMediumLineEtc from '@/assets/images/icon/etc/icon-dropdown-medium-line-etc.svg?inline';
 import IconDropdownSmallFillEtc from '@/assets/images/icon/etc/icon-dropdown-small-fill-etc.svg?inline';
 import customValidator from '@/utils/custom-validator';
@@ -7,9 +7,6 @@ import { defineComponent } from 'vue';
 
 export const EtcIconNames = ['IconDropdownMediumLineEtc', 'IconDropdownSmallFillEtc'];
 
-/**
- * @displayName c-etc-icon
- */
 export default defineComponent({
 	name: 'EtcIcon',
 	extends: BaseIcon,

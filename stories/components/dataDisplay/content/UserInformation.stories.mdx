@@ -1,19 +1,19 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import UserInformation, { userInformationTypes } from '@/components/components/dataDisplay/content/UserInformation';
-import UserInformationName from "@/components/components/dataDisplay/content/UserInformationName";
-import UserInformationCaption from "@/components/components/dataDisplay/content/UserInformationCaption";
-import UserInformationChipGroup from "@/components/components/dataDisplay/content/UserInformationChipGroup";
-import UserInformationCompany from "@/components/components/dataDisplay/content/UserInformationCompany";
-import Content from '@/components/components/dataDisplay/content/Content';
-import Icon from '@/components/elements/core/icon/Icon';
-import Avatar from '@/components/components/dataDisplay/Avatar';
-import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
-import Chip from '@/components/components/dataDisplay/chips/Chip';
-import Divider from '@/components/elements/utility/Divider';
+import CUserInformation, { userInformationTypes } from '@/components/components/dataDisplay/content/CUserInformation';
+import CUserInformationName from "@/components/components/dataDisplay/content/CUserInformationName";
+import CUserInformationCaption from "@/components/components/dataDisplay/content/CUserInformationCaption";
+import CUserInformationChipGroup from "@/components/components/dataDisplay/content/CUserInformationChipGroup";
+import CUserInformationCompany from "@/components/components/dataDisplay/content/CUserInformationCompany";
+import CContent from '@/components/components/dataDisplay/content/CContent';
+import CIcon from '@/components/elements/core/icon/CIcon';
+import CAvatar from '@/components/components/dataDisplay/CAvatar';
+import CChipGroup from '@/components/components/dataDisplay/chips/CChipGroup';
+import CChip from '@/components/components/dataDisplay/chips/CChip';
+import CDivider from '@/components/elements/utility/CDivider';
 
 <Meta
     title="Data Display/Content/UserInformation"
-    component={ UserInformation }
+    component={ CUserInformation }
     argTypes={{
         type: {
             description: "타입",
@@ -39,7 +39,7 @@ import Divider from '@/components/elements/utility/Divider';
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { UserInformation, Content, Avatar, Icon, ChipGroup, Chip, UserInformationName, UserInformationCompany, UserInformationCaption, UserInformationChipGroup },
+    components: { CUserInformation, CContent, CAvatar, CIcon, CChipGroup, CChip, CUserInformationName, CUserInformationCompany, CUserInformationCaption, CUserInformationChipGroup },
     data() {
         return {
             matchedItems: ['회사', '산업', '직무', '학교'],
@@ -56,26 +56,26 @@ export const Basic = (args, { argTypes }) => ({
         }
     },
     template: `
-        <UserInformation :type="type">
+        <CUserInformation :type="type">
             <template v-slot:avatar>
-                <Avatar type="nickname" :text="name.substr(0, 1)" :size="avatarSize"/>
+                <CAvatar type="nickname" :text="name.substr(0, 1)" :size="avatarSize"/>
             </template>
         <template v-slot:name>
-            <UserInformationName :type="type">
+            <CUserInformationName :type="type">
                 {{ name }}
-            </UserInformationName>
+            </CUserInformationName>
         </template>
         <template v-slot:user-info>
-            <UserInformationCompany :type="type">
+            <CUserInformationCompany :type="type">
                 {{ company }}
-            </UserInformationCompany>
+            </CUserInformationCompany>
         </template>
         <template v-slot:other>
-          <UserInformationCaption v-if="type !== 'full'">2022.00.00</UserInformationCaption>
+          <CUserInformationCaption v-if="type !== 'full'">2022.00.00</CUserInformationCaption>
           <template v-else>
-            <UserInformationCaption >코부사장 ∙ 채택률 90% ∙
-            <UserInformationChipGroup size="small">
-            <Chip
+            <CUserInformationCaption >코부사장 ∙ 채택률 90% ∙
+            <CUserInformationChipGroup size="small">
+            <CChip
               v-for="(item, index) in matchedItems"
               :key="'chip' + index"
               type="outline"
@@ -83,18 +83,18 @@ export const Basic = (args, { argTypes }) => ({
               size="small"
               >
                 {{ item }}
-            </Chip>
-            </UserInformationChipGroup>
+            </CChip>
+            </CUserInformationChipGroup>
               일치
-            </UserInformationCaption>
+            </CUserInformationCaption>
           </template>
         </template>
-      </UserInformation>`,
+      </CUserInformation>`,
 });
 
 # UserInformation
 
-**UserInformation** 컴포넌트의 문서입니다.
+**c-user-information** 컴포넌트의 문서입니다.
 <Story name="Basic" height="100px">
     {Basic.bind({})}
 </Story>
@@ -135,25 +135,25 @@ export const Basic = (args, { argTypes }) => ({
             template: `
               <div>
               <template v-for="({ name, company, matchedItems, size, type }, index) in sampleItems">
-                <UserInformation :type="type" :key="'user-information' + index">
+                <CUserInformation :type="type" :key="'user-information' + index">
                   <template v-slot:avatar>
-                    <Avatar type="nickname" :text="name.substr(0, 1)" :size="size"/>
+                    <CAvatar type="nickname" :text="name.substr(0, 1)" :size="size"/>
                   </template>
                   <template v-slot:name>
-                    <UserInformationName :type="type">
+                    <CUserInformationName :type="type">
                       {{ name }}
-                    </UserInformationName>
+                    </CUserInformationName>
                   </template>
                   <template v-slot:user-info>
-                    <UserInformationCompany :type="type">
+                    <CUserInformationCompany :type="type">
                       {{  company }}
-                    </UserInformationCompany>
+                    </CUserInformationCompany>
                   </template>
                   <template v-slot:other>
-                    <UserInformationCaption v-if="type !== 'full'">2022.00.00</UserInformationCaption>
+                    <CUserInformationCaption v-if="type !== 'full'">2022.00.00</CUserInformationCaption>
                     <template v-else>
-                      <UserInformationCaption >코부사장 ∙ 채택률 90% ∙
-                        <UserInformationChipGroup size="small">
+                      <CUserInformationCaption >코부사장 ∙ 채택률 90% ∙
+                        <CUserInformationChipGroup size="small">
                           <Chip
                               v-for="(item, index) in matchedItems"
                               :key="'chip' + index"
@@ -163,49 +163,49 @@ export const Basic = (args, { argTypes }) => ({
                           >
                             {{ item }}
                           </Chip>
-                        </UserInformationChipGroup>
+                        </CUserInformationChipGroup>
                         일치
-                      </UserInformationCaption>
+                      </CUserInformationCaption>
                     </template>
                   </template>
-                </UserInformation>
-                <Divider :key="'divider' + index" class="my-8" />
+                </CUserInformation>
+                <CDivider :key="'divider' + index" class="my-8" />
               </template>
-              <UserInformation type="simple">
+              <CUserInformation type="simple">
                 <template v-slot:avatar>
-                  <Avatar type="profile" size="xsmall"/>
+                  <CAvatar type="profile" size="xsmall"/>
                 </template>
                 <template v-slot:name>
-                  <UserInformationName>
+                  <CUserInformationName>
                     질문자
-                  </UserInformationName>
+                  </CUserInformationName>
                 </template>
-              </UserInformation>
-              <Divider class="my-8" />
-              <UserInformation type="normal">
+              </CUserInformation>
+              <CDivider class="my-8" />
+              <CUserInformation type="normal">
                 <template v-slot:avatar>
-                  <Avatar type="profile" size="small"/>
+                  <CAvatar type="profile" size="small"/>
                 </template>
                 <template v-slot:name>
-                  <UserInformationName>
+                  <CUserInformationName>
                     질문자
-                  </UserInformationName>
+                  </CUserInformationName>
                 </template>
-              </UserInformation>
-              <Divider class="my-8" />
-              <UserInformation type="full">
+              </CUserInformation>
+              <CDivider class="my-8" />
+              <CUserInformation type="full">
                 <template v-slot:avatar>
-                  <Avatar type="profile" size="medium"/>
+                  <CAvatar type="profile" size="medium"/>
                 </template>
                 <template v-slot:name>
-                  <UserInformationName>
+                  <CUserInformationName>
                     질문자
-                  </UserInformationName>
+                  </CUserInformationName>
                 </template>
-              </UserInformation>
+              </CUserInformation>
               </div>
             `,
-            components: { UserInformation, Icon, ChipGroup, Chip, Avatar, Divider, UserInformationName, UserInformationCaption, UserInformationChipGroup, UserInformationCompany },
+            components: { CUserInformation, CIcon, CChipGroup, CChip, CAvatar, CDivider, CUserInformationName, CUserInformationCaption, CUserInformationChipGroup, CUserInformationCompany },
         }}
     </Story>
 </Canvas>

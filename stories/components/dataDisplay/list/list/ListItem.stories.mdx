@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import ListItem, { ListItemSizes, ListItemCursors } from '@/components/components/dataDisplay/list/list/ListItem';
-import Typography from '@/components/elements/core/typography/Typography';
+import CListItem, { ListItemSizes, ListItemCursors } from '@/components/components/dataDisplay/list/list/CListItem.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 <Meta
     title="Data Display/List/List/ListItem"
-    component={ ListItem }
+    component={ CListItem }
     argTypes={{
         label: {
             description: "내부 텍스트",
@@ -37,18 +37,18 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { ListItem, Typography },
+    components: { CListItem, CTypography },
     template:
-      `<ListItem :size="size" :cursor="cursor">
-        <Typography type="body2" color="gray800">
+      `<CListItem :size="size" :cursor="cursor">
+        <CTypography type="body2" color="gray800">
           {{ label }}
-        </Typography>
-      </ListItem>`,
+        </CTypography>
+      </CListItem>`,
 });
 
 # ListItem
 
-**ListItem** 컴포넌트의 문서입니다.
+**c-list-item** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -63,14 +63,14 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <ListItem size="small">Small</ListItem>
-                  <ListItem size="medium">Medium</ListItem>
-                  <ListItem size="large">Large</ListItem>
+                  <CListItem size="small">Small</CListItem>
+                  <CListItem size="medium">Medium</CListItem>
+                  <CListItem size="large">Large</CListItem>
                 </div>
         `,
-            components: { ListItem },
+            components: { CListItem },
         }}
-    </Story>
+    </Story>C
 </Canvas>
 
 ### Cursors
@@ -79,11 +79,11 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <ListItem size="medium" cursor="pointer">Pointer</ListItem>
-                  <ListItem size="medium" cursor="default">Default</ListItem>
+                  <CListItem size="medium" cursor="pointer">Pointer</CListItem>
+                  <CListItem size="medium" cursor="default">Default</CListItem>
                 </div>
         `,
-            components: { ListItem },
+            components: { CListItem },
         }}
     </Story>
 </Canvas>

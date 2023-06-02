@@ -1,7 +1,7 @@
 <template>
-	<NewGrid>
-		<NewRow class="mb-20">
-			<NewCol>
+	<CNewGrid>
+		<CNewRow class="mb-20">
+			<CNewCol>
 				<div class="flex flex-row">
 					<div class="mr-20">
 						<input id="left" v-model="direction" type="radio" value="left" />
@@ -13,14 +13,14 @@
 						<label for="right">right</label>
 					</div>
 				</div>
-			</NewCol>
-		</NewRow>
-		<NewRow>
-			<NewCol>
-				<Button color="primary" @click="toggle"> Open </Button>
-			</NewCol>
-		</NewRow>
-		<SideDrawer
+			</CNewCol>
+		</CNewRow>
+		<CNewRow>
+			<CNewCol>
+				<CButton color="primary" @click="toggle"> Open </CButton>
+			</CNewCol>
+		</CNewRow>
+		<CSideDrawer
 			:mask-closable="true"
 			:z-index="1002"
 			:direction="direction"
@@ -30,7 +30,7 @@
 		>
 			<template #title> test </template>
 			<template #right-content>
-				<Button color="info" type="outline" size="small"> 모두 읽음 표시 </Button>
+				<CButton color="info" type="outline" size="small"> 모두 읽음 표시 </CButton>
 			</template>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non sollicitudin lacus. Morbi lacinia
@@ -62,16 +62,16 @@
 				malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
 				lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
 			</p>
-		</SideDrawer>
-	</NewGrid>
+		</CSideDrawer>
+	</CNewGrid>
 </template>
 
 <script>
-import Button from '@/components/components/general/button/Button';
-import SideDrawer from '@/components/components/dataDisplay/drawer/SideDrawer';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
+import CButton from '@/components/components/general/button/CButton.vue';
+import CSideDrawer from '@/components/components/dataDisplay/drawer/CSideDrawer.vue';
+import CNewGrid from '@/components/layout/CNewGrid.vue';
+import CNewRow from '@/components/layout/CNewRow.vue';
+import CNewCol from '@/components/layout/CNewCol.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -97,11 +97,11 @@ export default defineComponent({
 		},
 	},
 	components: {
-		NewCol,
-		NewRow,
-		NewGrid,
-		Button,
-		SideDrawer,
+		CNewCol,
+		CNewRow,
+		CNewGrid,
+		CButton,
+		CSideDrawer,
 	},
 });
 </script>

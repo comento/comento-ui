@@ -1,13 +1,13 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import EmptyBox, { Types } from '@/components/components/dataDisplay/EmptyBox';
-import Typography from '@/components/elements/core/typography/Typography';
+import CNewGrid from '@/components/layout/CNewGrid.vue';
+import CNewRow from '@/components/layout/CNewRow.vue';
+import CNewCol from '@/components/layout/CNewCol.vue';
+import CEmptyBox, { Types } from '@/components/components/dataDisplay/CEmptyBox.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 <Meta
 	title="Data Display/EmptyBox"
-	component={EmptyBox}
+	component={CEmptyBox}
 	argTypes={{
 		type: {
 			description: '빈화면 타입<br/>',
@@ -41,11 +41,11 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { EmptyBox, NewGrid, NewRow, NewCol, Typography },
-	template: `<NewGrid>
-            <NewRow>
-                <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
-                    <EmptyBox :type="type" :to="to" :target="target" :external="external" :full="full">
+	components: { CEmptyBox, CNewGrid, CNewRow, CNewCol, CTypography },
+	template: `<CNewGrid>
+            <CNewRow>
+                <CNewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
+                    <CEmptyBox :type="type" :to="to" :target="target" :external="external" :full="full">
                         <template v-slot:title>
                             제출된 과제가 없습니다.
                         </template>
@@ -55,15 +55,15 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:link>
                             모집 중인 캠프 보기
                         </template>
-                    </EmptyBox>
-                </NewCol>
-            </NewRow>
-        </NewGrid>`,
+                    </CEmptyBox>
+                </CNewCol>
+            </CNewRow>
+        </CNewGrid>`,
 });
 
 # EmptyBox
 
-**EmptyBox** 컴포넌트의 문서입니다.
+**c-empty-box** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
 	{Default.bind({})}
@@ -76,11 +76,11 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
 	<Story name="Simple" height="100px">
 		{{
-			components: { EmptyBox, Typography, NewGrid, NewRow, NewCol },
-			template: `<NewGrid>
-                    <NewRow>
-                        <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
-                            <EmptyBox type="simple" target="_blank" external to="https://comento.kr">
+			components: { CEmptyBox, CTypography, CNewGrid, CNewRow, CNewCol },
+			template: `<CNewGrid>
+                    <CNewRow>
+                        <CNewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center" >
+                            <CEmptyBox type="simple" target="_blank" external to="https://comento.kr">
                                 <template v-slot:title>
                                     제출된 과제가 없습니다.
                                 </template>
@@ -90,10 +90,10 @@ export const Default = (args, { argTypes }) => ({
                                 <template v-slot:link>
                                     모집 중인 캠프 보기
                                 </template>
-                            </EmptyBox>
-                            </NewCol>
-                    </NewRow>
-                </NewGrid>`,
+                            </CEmptyBox>
+                            </CNewCol>
+                    </CNewRow>
+                </CNewGrid>`,
 		}}
 	</Story>
 </Canvas>
@@ -101,11 +101,11 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
 	<Story name="Emphasized" height="120px">
 		{{
-			components: { EmptyBox, Typography, NewGrid, NewRow, NewCol },
-			template: `<NewGrid>
-                    <NewRow>
-                        <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center">
-                            <EmptyBox type="emphasized">
+			components: { CEmptyBox, CTypography, CNewGrid, CNewRow, CNewCol },
+			template: `<CNewGrid>
+                    <CNewRow>
+                        <CNewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center">
+                            <CEmptyBox type="emphasized">
                                 <template v-slot:title>
                                     신청한 캠프가 없습니다.
                                 </template>
@@ -115,10 +115,10 @@ export const Default = (args, { argTypes }) => ({
                                 <template v-slot:link>
                                     모집 중인 캠프 보기
                                 </template>
-                            </EmptyBox>
-                        </NewCol>
-                    </NewRow>
-                </NewGrid>`,
+                            </CEmptyBox>
+                        </CNewCol>
+                    </CNewRow>
+                </CNewGrid>`,
 		}}
 	</Story>
 </Canvas>

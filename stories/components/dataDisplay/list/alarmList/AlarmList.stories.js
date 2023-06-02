@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/vue';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import AlarmList from '@/components/components/dataDisplay/list/alarmList/AlarmList';
-import AlarmListItem from '@/components/components/dataDisplay/list/alarmList/AlarmListItem';
-import Typography from '@/components/elements/core/typography/Typography';
+import CNewGrid from '@/components/layout/CNewGrid.vue';
+import CNewRow from '@/components/layout/CNewRow.vue';
+import CNewCol from '@/components/layout/CNewCol.vue';
+import CAlarmList from '@/components/components/dataDisplay/list/alarmList/CAlarmList.vue';
+import CAlarmListItem from '@/components/components/dataDisplay/list/alarmList/CAlarmListItem.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => ({
-	components: { NewGrid, NewRow, NewCol, AlarmList, AlarmListItem, Typography },
+	components: { CNewGrid, CNewRow, CNewCol, CAlarmList, CAlarmListItem, CTypography },
 	data() {
 		return {
 			alarms: [
@@ -31,17 +31,17 @@ storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => 
 		};
 	},
 	template: `
-		<NewGrid fluid>
-			<NewRow>
-				<NewCol :col-lg="3" :col-sm="12">
-					<AlarmList>
-						<AlarmListItem
+		<CNewGrid fluid>
+			<CNewRow>
+				<CNewCol :col-lg="3" :col-sm="12">
+					<CAlarmList>
+						<CAlarmListItem
 							v-for="({icon, message, date, confirm_style}, index) in alarms" 
 							:key="'alarm-list-item-' + index" 
 							:class="confirm_style"
 						>
 							<template v-slot:icon>
-								<img :src="'https://cdn.comento.kr/images/icon/alarm/icon-alarm-' + icon + '.svg'" />
+								<img :src="'https://cdn.comento.kr/images/icon/alarm/icon-alarm-' + icon + '.svg'" alt="" />
 							</template>
 							<template v-slot:message>
 								{{ message }}
@@ -49,9 +49,9 @@ storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => 
 							<template v-slot:date>
 								{{ date }}
 							</template>
-						</AlarmListItem>
-					</AlarmList>
-				</NewCol>
-			</NewRow>
-		</NewGrid>`,
+						</CAlarmListItem>
+					</CAlarmList>
+				</CNewCol>
+			</CNewRow>
+		</CNewGrid>`,
 }));

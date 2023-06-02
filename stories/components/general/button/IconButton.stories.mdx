@@ -1,12 +1,12 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/Button';
-import Typography from '@/components/elements/core/typography/Typography';
-import IconButton, { IconButtonSizes, IconButtonTypes } from "@/components/components/general/button/IconButton";
-import { IconNames } from "@/components/elements/core/icon/Icon";
+import { buttonSizes, buttonColors, buttonTypes } from '@/components/components/general/button/CButton.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
+import CIconButton, { IconButtonSizes, IconButtonTypes } from '@/components/components/general/button/CIconButton.vue';
+import { IconNames } from '@/components/elements/core/icon/CIcon.vue';
 
 <Meta
-    title="General/Button/IconButton"
-    component={ IconButton }
+    title="GeCneral/Button/IconButton"
+    component={ CIconButton }
     argTypes={{
         iconName: {
             description: "버튼에 들어갈 텍스트",
@@ -57,9 +57,9 @@ import { IconNames } from "@/components/elements/core/icon/Icon";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { IconButton },
+    components: { CIconButton },
     template:
-        `<IconButton
+        `<CIconButton
             :iconName="iconName"
             :size="size"
             :color="color"
@@ -72,7 +72,7 @@ export const Default = (args, { argTypes }) => ({
 
 # IconButton
 
-**IconButton** 컴포넌트의 문서입니다.
+**c-icon-button** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -89,10 +89,10 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                       <template v-for="(item, index) in exampleData">
                         <div class="flex mb-10">
-                            <IconButton :icon-name="item.iconName" :size="item.iconSize" class="mr-10"/>
-                            <IconButton :icon-name="item.iconName" :size="item.iconSize" class="hover-test mr-10"/>
-                            <IconButton :icon-name="item.iconName" :size="item.iconSize" transparent class="hover-test mr-10"/>
-                            <IconButton :icon-name="item.iconName" :size="item.iconSize" disabled class="mr-10"/>
+                            <CIconButton :icon-name="item.iconName" :size="item.iconSize" class="mr-10"/>
+                            <CIconButton :icon-name="item.iconName" :size="item.iconSize" class="hover-test mr-10"/>
+                            <CIconButton :icon-name="item.iconName" :size="item.iconSize" transparent class="hover-test mr-10"/>
+                            <CIconButton :icon-name="item.iconName" :size="item.iconSize" disabled class="mr-10"/>
                         </div>
                       </template>
                 </div>
@@ -115,10 +115,10 @@ export const Default = (args, { argTypes }) => ({
                     ]
                 }
             },
-            components: { IconButton,
+            components: { CIconButton,
                 'ButtonStateTitle': {
-                    template: `<Typography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></Typography>`,
-                    components: {Typography},
+                    template: `<CTypography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></CTypography>`,
+                    components: {CTypography},
                 },
             },
         }}

@@ -1,13 +1,13 @@
 import { ArgsTable, Meta, Story, Props, Canvas } from '@storybook/addon-docs/blocks';
-import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
+import CIcon, { IconNames } from '@/components/elements/core/icon/CIcon.vue';
 import { colorKeys } from '@/utils/constants/color';
 import IconWrapper from './IconWrapper';
-import EtcIcon from '@/components/elements/core/icon/EtcIcon';
-import Typography from '@/components/elements/core/typography/Typography';
+import EtcIcon from '@/components/elements/core/icon/EtcIcon.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 <Meta
 	title="Core/Icon/Icon"
-	component={Icon}
+	component={CIcon}
 	argTypes={{
 		name: {
 			description: '아이콘 이름',
@@ -41,13 +41,13 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Icon },
-	template: '<icon :name="name" :color="color" :rotate="Number(rotate)" />',
+	components: { CIcon },
+	template: '<CIcon :name="name" :color="color" :rotate="Number(rotate)" />',
 });
 
 # Icon
 
-**Icon** 컴포넌트의 문서입니다.
+**c-icon** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
 	{Default.bind({})}
@@ -349,7 +349,7 @@ export const Default = (args, { argTypes }) => ({
                     </div>
                 </div>
             `,
-             components: { IconWrapper, EtcIcon, Typography },
+             components: { IconWrapper, EtcIcon, CTypography },
         }}
     </Story>
 </Canvas>

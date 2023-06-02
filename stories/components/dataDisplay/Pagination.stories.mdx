@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Pagination from '@/components/components/dataDisplay/Pagination';
+import CPagination from '@/components/components/dataDisplay/CPagination.vue';
 
 <Meta
     title="Data Display/Pagination"
-    component={ Pagination }
+    component={ CPagination }
     argTypes={{
         page: {
             description: "현재 페이지",
@@ -36,7 +36,7 @@ export const Default = (args, { argTypes }) => ({
         pageData: this.page,
       };
     },
-    components: { Pagination },
+    components: { CPagination },
     methods: {
         paginationHandler(page) {
           this.pageData = page;
@@ -44,13 +44,13 @@ export const Default = (args, { argTypes }) => ({
     },
     template:
       `<div>
-          <Pagination :page="pageData" :per-page="perPage" :records="records" @paginate="paginationHandler" />
+          <CPagination :page="pageData" :per-page="perPage" :records="records" @paginate="paginationHandler" />
       </div>`,
 });
 
 # Pagination
 
-**Pagination** 컴포넌트의 문서입니다.
+**c-pagination** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}

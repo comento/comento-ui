@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Loader, { LoaderSizes } from '@/components/components/other/Loader';
-import { buttonColors } from '@/components/components/general/button/Button';
-import Typography from '@/components/elements/core/typography/Typography';
+import CLoader, { LoaderSizes } from '@/components/components/other/CLoader.vue';
+import { buttonColors } from '@/components/components/general/button/CButton.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 <Meta
   title="Other/Loader"
-  component={ Loader }
+  component={ CLoader }
   argTypes={{
       size: {
         description: "로더 크기<br/>`String`",
@@ -45,14 +45,14 @@ import Typography from '@/components/elements/core/typography/Typography';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Loader },
+  components: { CLoader },
   template:
-    '<Loader :color="color" :size="size" :reversed="reversed"/>',
+    '<CLoader :color="color" :size="size" :reversed="reversed"/>',
 });
 
 # Loader
 
-**Loader** 컴포넌트의 문서입니다.
+**c-loader** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -71,37 +71,37 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <!--small-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">small</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">small</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
-                                <Loader size="small" :color="item"></Loader>
+                                <CLoader size="small" :color="item"></CLoader>
                             </template>
                         </div>
                     </div>
                     <!--medium-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">medium</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">medium</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
-                               <Loader size="medium" :color="item"></Loader>
+                               <CLoader size="medium" :color="item"></CLoader>
                             </template>
                         </div>
                     </div>
                     <!--large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">large</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">large</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
-                                <Loader size="large" :color="item"></Loader>
+                                <CLoader size="large" :color="item"></CLoader>
                             </template>
                         </div>
                     </div>
                     <!--xlarge-->
                     <div>
-                      <Typography type="body1" style="margin-bottom: 10px">xlarge</Typography>
+                      <CTypography type="body1" style="margin-bottom: 10px">xlarge</CTypography>
                       <div style="display: flex; flex-wrap: wrap;">
                         <template v-for="(item, index) in buttonColors">
-                          <Loader size="xlarge" :color="item"></Loader>
+                          <CLoader size="xlarge" :color="item"></CLoader>
                         </template>
                       </div>
                     </div>
@@ -109,37 +109,37 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <!--small-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">small</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">small</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
-                                <Loader size="small" :color="item" reversed></Loader>
+                                <CLoader size="small" :color="item" reversed></CLoader>
                             </template>
                         </div>
                     </div>
                     <!--medium-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">medium</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">medium</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
-                                <Loader size="medium" :color="item" reversed></Loader>
+                                <CLoader size="medium" :color="item" reversed></CLoader>
                             </template>
                         </div>
                     </div>
                     <!--large-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">large</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">large</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
-                                <Loader size="large" :color="item" reversed></Loader>
+                                <CLoader size="large" :color="item" reversed></CLoader>
                             </template>
                         </div>
                     </div>
                     <!--xlarge-->
                     <div>
-                        <Typography type="body1" style="margin-bottom: 10px">xlarge</Typography>
+                        <CTypography type="body1" style="margin-bottom: 10px">xlarge</CTypography>
                         <div style="display: flex; flex-wrap: wrap;">
                             <template v-for="(item, index) in buttonColors">
-                                <Loader size="xlarge" :color="item" reversed></Loader>
+                                <CLoader size="xlarge" :color="item" reversed></CLoader>
                             </template>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ export const Default = (args, { argTypes }) => ({
                     buttonColors
                 }
             },
-            components: { Loader, Typography },
+            components: { CLoader, CTypography },
         }}
     </Story>
 </Canvas>
@@ -163,7 +163,7 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div style="display: flex; flex-wrap: wrap;">
                     <template v-for="item in LoaderSizes">
-                        <Loader :size="item" />
+                        <CLoader :size="item" />
                     </template>
                 </div>
             `,
@@ -172,7 +172,7 @@ export const Default = (args, { argTypes }) => ({
                     LoaderSizes,
                 };
             },
-            components: { Loader },
+            components: { CLoader },
         }}
     </Story>
 </Canvas>
@@ -184,7 +184,7 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div style="display: flex; flex-wrap: wrap;">
                     <template v-for="(item, index) in buttonColors">
-                       <Loader :color="item" />
+                       <CLoader :color="item" />
                     </template>
                 </div>
             `,
@@ -193,7 +193,7 @@ export const Default = (args, { argTypes }) => ({
                     buttonColors,
                 };
             },
-            components: { Loader },
+            components: { CLoader },
         }}
     </Story>
 </Canvas>
@@ -205,7 +205,7 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div style="display: flex; flex-wrap: wrap;">
                     <template v-for="(item, index) in buttonColors">
-                       <Loader :color="item" reversed />
+                       <CLoader :color="item" reversed />
                     </template>
                 </div>
             `,
@@ -214,7 +214,7 @@ export const Default = (args, { argTypes }) => ({
                     buttonColors,
                 };
             },
-            components: { Loader },
+            components: { CLoader },
         }}
     </Story>
 </Canvas>

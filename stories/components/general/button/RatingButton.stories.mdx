@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Typography from '@/components/elements/core/typography/Typography';
-import RatingButton, { RATING_BUTTON_COLORS } from "@/components/components/general/button/RatingButton";
-import { IconNames } from "@/components/elements/core/icon/Icon";
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
+import CRatingButton, { RATING_BUTTON_COLORS } from "@/components/components/general/button/CRatingButton.vue";
+import { IconNames } from "@/components/elements/core/icon/CIcon.vue";
 
 <Meta
     title="General/Button/RatingButton"
-    component={ RatingButton }
+    component={ CRatingButton }
     argTypes={{
         iconName: {
             description: "아이콘 이름",
@@ -45,15 +45,15 @@ import { IconNames } from "@/components/elements/core/icon/Icon";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { RatingButton },
+    components: { CRatingButton },
     template: `
-        <RatingButton :icon-name="iconName" :color="color" :text="text" :loading="loading" :disabled="disabled" />
+        <CRatingButton :icon-name="iconName" :color="color" :text="text" :loading="loading" :disabled="disabled" />
     `,
 });
 
 # RatingButton
 
-**RatingButton** 컴포넌트의 문서입니다.
+**c-rating-button** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -69,21 +69,21 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <div v-for="item in RATING_BUTTON_COLORS" :key="item" class="flex">
-                        <RatingButton
+                        <CRatingButton
                           :color="item"
                           text="button 0"
                         />
-                        <RatingButton
+                        <CRatingButton
                           :color="item"
                           text="button 0"
                           class="hover-test"
                         />
-                        <RatingButton
+                        <CRatingButton
                           :color="item"
                           loading
                           text="button 0"
                         />
-                        <RatingButton
+                        <CRatingButton
                           :color="item"
                           disabled
                           text="button 0"
@@ -96,7 +96,7 @@ export const Default = (args, { argTypes }) => ({
                     RATING_BUTTON_COLORS,
                 };
             },
-            components: { RatingButton },
+            components: { CRatingButton },
         }}
     </Story>
 </Canvas>

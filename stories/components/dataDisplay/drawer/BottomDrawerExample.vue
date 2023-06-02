@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-		<Button @click="toggle"> Open </Button>
-		<BottomDrawer
+		<CButton @click="toggle"> Open </CButton>
+		<CBottomDrawer
 			:mask-closable="true"
 			:z-index="1002"
 			:closeable="false"
@@ -41,13 +41,13 @@
 				malesuada tellus sed massa pulvinar, sed maximus lorem elementum. Vivamus facilisis libero sit amet
 				lacinia malesuada. Nam varius tortor quis lacus ultrices fermentum.
 			</div>
-		</BottomDrawer>
+		</CBottomDrawer>
 	</div>
 </template>
 
 <script>
-import BottomDrawer from '@/components/components/dataDisplay/drawer/BottomDrawer';
-import Button from '@/components/components/general/button/Button';
+import CBottomDrawer from '@/components/components/dataDisplay/drawer/CBottomDrawer.vue';
+import CButton from '@/components/components/general/button/CButton.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -67,8 +67,8 @@ export default defineComponent({
 		},
 	},
 	components: {
-		Button,
-		BottomDrawer,
+		CButton,
+		CBottomDrawer,
 	},
 });
 </script>

@@ -1,3 +1,3 @@
-import Typography from './Typography';
+import CTypography from './CTypography.vue';
 
-export { Typography };
+export { CTypography };

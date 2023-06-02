@@ -1,16 +1,16 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Dropdown from '@/components/components/dataEntry/Dropdown';
-import List from '@/components/components/dataDisplay/list/list/List';
-import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
-import Divider from '@/components/elements/utility/Divider';
-import SearchInput from '@/components/components/dataEntry/input/SearchInput';
-import TextField from '@/components/components/dataEntry/input/TextField';
-import Label from '@/components/components/dataDisplay/Label';
+import CDropdown from '@/components/components/dataEntry/CDropdown.vue';
+import CList from '@/components/components/dataDisplay/list/list/CList.vue';
+import CListItem from '@/components/components/dataDisplay/list/list/CListItem.vue';
+import CDivider from '@/components/elements/utility/CDivider.vue';
+import CSearchInput from '@/components/components/dataEntry/input/CSearchInput.vue';
+import CTextField from '@/components/components/dataEntry/input/CTextField.vue';
+import CLabel from '@/components/components/dataDisplay/CLabel.vue';
 import clickOutside from '@/directives/click-outside';
 
 <Meta
     title="Data Entry/Dropdown/Dropdown"
-    component={ Dropdown }
+    component={ CDropdown }
     argTypes={{
         maxHeight: {
             description: "리스트 최대 높이",
@@ -23,7 +23,7 @@ import clickOutside from '@/directives/click-outside';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Dropdown, SearchInput, List, ListItem, Divider },
+    components: { CDropdown, CSearchInput, CList, CListItem, CDivider },
     data: () => ({
         listItems: ['List1', 'List2', 'List3', 'List4', 'List5'],
         showSearchDropdown: false,
@@ -40,9 +40,9 @@ export const Default = (args, { argTypes }) => ({
         },
     },
     template:
-        `<Dropdown :max-width="maxWidth" :max-height="maxHeight" :label="label" :full="full" :vertical="vertical">
+        `<CDropdown :max-width="maxWidth" :max-height="maxHeight" :label="label" :full="full" :vertical="vertical">
             <template v-slot:item>
-                <SearchInput
+                <CSearchInput
                     full
                     :showSearchDropdown.sync="showSearchDropdown"
                     :value.sync="value"
@@ -50,21 +50,21 @@ export const Default = (args, { argTypes }) => ({
                 />
             </template>
             <template v-slot:list>
-                <List v-if="showSearchDropdown" spacing>
+                <CList v-if="showSearchDropdown" spacing>
                     <template v-for="(item, index) in listItems">
-                        <ListItem :key="'list-item-' + index" size="large" @click="clickDropdownItem(item)">
+                        <CListItem :key="'list-item-' + index" size="large" @click="clickDropdownItem(item)">
                             {{ item }}
-                        </ListItem>
-                        <Divider :key="'divider-' + index" />
+                        </CListItem>
+                        <CDivider :key="'divider-' + index" />
                     </template>
-                </List>
+                </CList>
             </template>
-        </Dropdown>`,
+        </CDropdown>`,
 });
 
 # Dropdown
 
-**Dropdown** 컴포넌트의 문서입니다.
+**c-dropdown** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="150px">
     {Default.bind({})}
@@ -98,9 +98,9 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <div style="margin-bottom: 20px">
-                        <Dropdown max-width="230px" label="searchInput Dropdown">
+                        <CDropdown max-width="230px" label="searchInput Dropdown">
                             <template v-slot:item>
-                                <SearchInput
+                                <CSearchInput
                                     full
                                     :showSearchDropdown.sync="showSearchDropdown"
                                     :value.sync="searchInputValue"
@@ -108,27 +108,27 @@ export const Default = (args, { argTypes }) => ({
                                 />
                             </template>
                             <template v-slot:list v-if="showSearchDropdown">
-                                <Label type="dataDisplay" style="padding: 4px 0">
+                                <CLabel type="dataDisplay" style="padding: 4px 0">
                                     인기검색어
-                                </Label>
-                                <List spacing>
+                                </CLabel>
+                                <CList spacing>
                                     <template v-for="(item, index) in listItems">
-                                        <ListItem
+                                        <CListItem
                                             size="large"
                                             :key="'list-item-' + index"
                                             @click="clickSearchInputDropdownItem(item)"
                                         >
                                             {{ item }}
-                                        </ListItem>
-                                        <Divider :key="'divider-' + index" />
+                                        </CListItem>
+                                        <CDivider :key="'divider-' + index" />
                                     </template>
-                                </List>
+                                </CList>
                             </template>
-                        </Dropdown>
+                        </CDropdown>
                     </div>
-                    <Dropdown max-width="230px" label="Input Dropdown">
+                    <CDropdown max-width="230px" label="Input Dropdown">
                         <template v-slot:item>
-                            <TextField
+                            <CTextField
                                 v-click-outside="closeList"
                                 :value.sync="inputValue"
                                 outline
@@ -138,19 +138,19 @@ export const Default = (args, { argTypes }) => ({
                             />
                         </template>
                         <template v-slot:list>
-                            <List v-if="showInputDropdown" spacing>
+                            <CList v-if="showInputDropdown" spacing>
                                 <template v-for="(item, index) in listItems">
-                                    <ListItem :key="'list-item-' + index" size="large" @click="clickInputDropdownItem(item)">
+                                    <CListItem :key="'list-item-' + index" size="large" @click="clickInputDropdownItem(item)">
                                         {{ item }}
-                                    </ListItem>
-                                    <Divider :key="'divider-' + index" />
+                                    </CListItem>
+                                    <CDivider :key="'divider-' + index" />
                                 </template>
-                            </List>
+                            </CList>
                         </template>
-                    </Dropdown>
+                    </CDropdown>
                 </div>
             `,
-            components: { Dropdown, SearchInput, List, ListItem, Divider, TextField, Label },
+            components: { CDropdown, CSearchInput, CList, CListItem, CDivider, CTextField, CLabel },
             directives: {
                 clickOutside,
             },

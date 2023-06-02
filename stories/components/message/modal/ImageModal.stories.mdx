@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { aligns } from '@/components/components/message/modal/BasicModal';
-import ImageModal from "@/components/components/message/modal/ImageModal";
-import Button, { buttonColors } from '@/components/components/general/button/Button';
+import { aligns } from '@/components/components/message/modal/CBasicModal.vue';
+import CImageModal from "@/components/components/message/modal/CImageModal.vue";
+import CButton, { buttonColors } from '@/components/components/general/button/CButton.vue';
 
 <Meta
     title="Message/Modal/ImageModal"
-    component={ ImageModal }
+    component={ CImageModal }
     argTypes={{
         show: {
             description: "모달 활성화",
@@ -50,11 +50,11 @@ import Button, { buttonColors } from '@/components/components/general/button/But
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { ImageModal, Button },
+    components: { CImageModal, CButton },
     template: `
         <div>
-            <Button @click="show = true">Open</Button>
-            <ImageModal
+            <CButton @click="show = true">Open</CButton>
+            <CImageModal
                 :show.sync="show"
                 :persistent="persistent"
                 :align="align"
@@ -70,7 +70,7 @@ export const Default = (args, { argTypes }) => ({
                 <template v-slot:content>
                     <div v-for="content in content" v-html="content" />
                 </template>
-            </ImageModal>
+            </CImageModal>
         </div>
     `,
     methods: {
@@ -82,7 +82,7 @@ export const Default = (args, { argTypes }) => ({
 
 # ImageModal
 
-**ImageModal** 컴포넌트의 문서입니다.
+**c-image-modal** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}

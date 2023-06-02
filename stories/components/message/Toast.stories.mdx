@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Toast, { toastTypes, toastPositions } from '@/components/components/message/Toast';
-import Button from '@/components/components/general/button/Button';
-import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
+import CToast, { toastTypes, toastPositions } from '@/components/components/message/CToast.vue';
+import CButton from '@/components/components/general/button/CButton.vue';
+import CIcon, { IconNames } from '@/components/elements/core/icon/CIcon.vue';
 
 <Meta
     title="Message/Toast"
-    component={ Toast }
+    component={ CToast }
     argTypes={{
         message: {
             description: "toast 메시지",
@@ -52,11 +52,11 @@ import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Button, Toast },
+    components: { CButton, CToast },
     template: `
         <div>
-            <Button @click="show = true">Open</Button>
-            <Toast
+            <CButton @click="show = true">Open</CButton>
+            <CToast
                 :show.sync="show"
                 :type="type"
                 :icon="icon"
@@ -69,7 +69,7 @@ export const Default = (args, { argTypes }) => ({
 
 # Toast
 
-**Toast** 컴포넌트의 문서입니다.
+**c-toast** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -87,8 +87,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <Toast
+                    <CButton @click="show = true">Open</CButton>
+                    <CToast
                       :show.sync="show"
                       position="top"
                       type="success"
@@ -98,7 +98,7 @@ export const Default = (args, { argTypes }) => ({
                 </div>
             `,
             components: {
-                Toast, Button, Icon
+                CToast, CButton, CIcon
             }
         }}
     </Story>

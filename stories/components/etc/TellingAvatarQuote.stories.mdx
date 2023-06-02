@@ -1,15 +1,15 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
-import TellingAvatarQuote from '@/components/components/etc/TellingAvatarQuote';
-import Icon, { IconNames } from '@/components/elements/core/icon/Icon';
+import CGrid from '@/components/layout/CGrid.vue';
+import CRow from '@/components/layout/CRow.vue';
+import CStyleCol from '@/components/layout/CStyleCol.vue';
+import CTellingAvatarQuote from '@/components/components/etc/CTellingAvatarQuote.vue';
+import CIcon, { IconNames } from '@/components/elements/core/icon/CIcon.vue';
 const iconOptions = [null, ...IconNames];
 import { colorKeys } from '@/utils/constants/color';
 
 <Meta
     title="Etc/TellingAvatarQuote"
-    component={ TellingAvatarQuote }
+    component={ CTellingAvatarQuote }
     argTypes={{
         avatarImage: {
             description: "아바타 이미지 주소",
@@ -58,12 +58,12 @@ import { colorKeys } from '@/utils/constants/color';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Grid, Row, StyleCol, Icon, TellingAvatarQuote },
+    components: { CGrid, CRow, CStyleCol, CIcon, CTellingAvatarQuote },
     template: `
-        <Grid fluid :style="isMobile ? 'background: #F4F5F7' : 'background: #FAFBFC'">
-            <Row>
-                <StyleCol :col-lg="8" :col-sm="12" :offset-lg="isMobile ? 0 : 2">
-                    <TellingAvatarQuote :avatar-image="avatarImage" :avatar-name="avatarName">
+        <CGrid fluid :style="isMobile ? 'background: #F4F5F7' : 'background: #FAFBFC'">
+            <CRow>
+                <CStyleCol :col-lg="8" :col-sm="12" :offset-lg="isMobile ? 0 : 2">
+                    <CTellingAvatarQuote :avatar-image="avatarImage" :avatar-name="avatarName">
                         <template v-slot:title>
                             {{ title }}
                         </template>
@@ -73,16 +73,16 @@ export const Default = (args, { argTypes }) => ({
                         <template v-slot:icon>
                             <Icon :name="iconName" :color="iconColor" />
                         </template>
-                    </TellingAvatarQuote>
-                </StyleCol>
-            </Row>
-        </Grid>
+                    </CTellingAvatarQuote>
+                </CStyleCol>
+            </CRow>
+        </CGrid>
     `,
 });
 
 # TellingAvatarQuote
 
-**TellingAvatarQuote** 컴포넌트의 문서입니다.
+**c-telling-avatar-quote** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -97,10 +97,10 @@ export const Default = (args, { argTypes }) => ({
     <Story name="All" height="100px">
         {{
             template: `
-                <Grid fluid :style="isMobile ? 'background: #F4F5F7' : 'background: #FAFBFC'">
-                    <Row>
-                        <StyleCol :col-lg="9" :col-sm="12" :offset-lg="isMobile ? 0 : 1">
-                            <TellingAvatarQuote
+                <CGrid fluid :style="isMobile ? 'background: #F4F5F7' : 'background: #FAFBFC'">
+                    <CRow>
+                        <CStyleCol :col-lg="9" :col-sm="12" :offset-lg="isMobile ? 0 : 1">
+                            <CTellingAvatarQuote
                                 avatar-image="https://cdn.comento.kr/edu/title_rOTsM9QAHs.jpg"
                                 avatar-name="침착한 백엔드"
                             >
@@ -115,12 +115,12 @@ export const Default = (args, { argTypes }) => ({
                                 <template v-slot:icon>
                                     <Icon name="IconCheckRoundSmallFill" color="primary" />
                                 </template>
-                            </TellingAvatarQuote>
-                        </StyleCol>
-                    </Row>
-                    <Row>
-                        <StyleCol :col-lg="9" :col-sm="12" :offset-lg="isMobile ? 0 : 1">
-                            <TellingAvatarQuote
+                            </CTellingAvatarQuote>
+                        </CStyleCol>
+                    </CRow>
+                    <CRow>
+                        <CStyleCol :col-lg="9" :col-sm="12" :offset-lg="isMobile ? 0 : 1">
+                            <CTellingAvatarQuote
                                 avatar-image="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg"
                                 avatar-name="민들레"
                             >
@@ -134,12 +134,12 @@ export const Default = (args, { argTypes }) => ({
                                 <template v-slot:icon>
                                     <Icon name="IconCheckRoundSmallFill" color="primary" />
                                 </template>
-                            </TellingAvatarQuote>
-                        </StyleCol>
-                    </Row>
-                </Grid>
+                            </CTellingAvatarQuote>
+                        </CStyleCol>
+                    </CRow>
+                </CGrid>
             `,
-            components: { TellingAvatarQuote, Grid, Row, StyleCol, Icon },
+            components: { CTellingAvatarQuote, CGrid, CRow, CStyleCol, CIcon },
         }}
     </Story>
 </Canvas>

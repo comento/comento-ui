@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Alert, { AlertTypes } from '@/components/components/message/Alert';
-import Icon from "@/components/elements/core/icon/Icon";
+import CAlert, { AlertTypes } from '@/components/components/message/CAlert.vue';
+import CIcon from "@/components/elements/core/icon/CIcon.vue";
 import { colorKeys } from '@/utils/constants/color';
 
 <Meta
     title="Message/Alert"
-    component={Alert}
+    component={CAlert}
     argTypes={{
         type: {
             description: "alert type",
@@ -40,19 +40,19 @@ import { colorKeys } from '@/utils/constants/color';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Alert },
+    components: { CAlert },
     template: `
       <div style="width: 100%; position: relative">
-        <Alert style="position: absolute;" :type="type" :closable="closable">
+        <CAlert style="position: absolute;" :type="type" :closable="closable">
           {{text}}
-        </Alert>
+        </CAlert>
       </div>
     `,
 });
 
 # Alert
 
-**Alert** 컴포넌트의 문서입니다.
+**c-alert** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -68,25 +68,25 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width: 100%; position: relative; height: 600px">
-                    <Alert style="position: absolute;" type="information">
+                    <CAlert style="position: absolute;" type="information">
                       [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
-                    </Alert>
-                    <Alert style="position: absolute; top: 100px" type="notice">
+                    </CAlert>
+                    <CAlert style="position: absolute; top: 100px" type="notice">
                       [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
-                    </Alert>
-                    <Alert style="position: absolute; top: 200px" type="success">
+                    </CAlert>
+                    <CAlert style="position: absolute; top: 200px" type="success">
                       [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
-                    </Alert>
-                    <Alert style="position: absolute; top: 300px" type="error">
+                    </CAlert>
+                    <CAlert style="position: absolute; top: 300px" type="error">
                       [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
-                    </Alert>
-                    <Alert style="position: absolute; top: 400px" type="image" />
-                    <Alert style="position: absolute; top: 500px" type="notice">
+                    </CAlert>
+                    <CAlert style="position: absolute; top: 400px" type="image" />
+                    <CAlert style="position: absolute; top: 500px" type="notice">
                       <template v-slot:icon>
-                        <Icon :name="customIconName" color="primary" />
+                        <CIcon :name="customIconName" color="primary" />
                       </template>
                       [커스텀 예시] 코멘토 유저분들 사랑합니다~! 건강하고 행복하세요~~
-                    </Alert>
+                    </CAlert>
                 </div>
             `,
             computed: {
@@ -94,7 +94,7 @@ export const Default = (args, { argTypes }) => ({
                     return this.isMobile ? 'IconStarSmallFill' : 'IconStarLargeFill';
                 }
             },
-            components: { Alert, Icon },
+            components: { CAlert, CIcon },
         }}
     </Story>
 </Canvas>
@@ -114,22 +114,22 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
               <div style="width: 100%; position: relative; height: 500px">
-                  <Alert v-if="showAlert1" style="position: absolute;" type="information" closable @close="showAlert1 = false">
+                  <CAlert v-if="showAlert1" style="position: absolute;" type="information" closable @close="showAlert1 = false">
                     [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
-                  </Alert>
-                  <Alert v-if="showAlert2" style="position: absolute; top: 100px" type="notice" closable @close="showAlert2 = false">
+                  </CAlert>
+                  <CAlert v-if="showAlert2" style="position: absolute; top: 100px" type="notice" closable @close="showAlert2 = false">
                     [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
-                  </Alert>
-                  <Alert v-if="showAlert3" style="position: absolute; top: 200px" type="success" closable @close="showAlert3 = false">
+                  </CAlert>
+                  <CAlert v-if="showAlert3" style="position: absolute; top: 200px" type="success" closable @close="showAlert3 = false">
                     [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
-                  </Alert>
-                  <Alert v-if="showAlert4" style="position: absolute; top: 300px" type="error" closable @close="showAlert4 = false">
+                  </CAlert>
+                  <CAlert v-if="showAlert4" style="position: absolute; top: 300px" type="error" closable @close="showAlert4 = false">
                     [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
-                  </Alert>
-                  <Alert v-if="showAlert5" style="position: absolute; top: 400px" type="image" closable close-button-color="white" @close="showAlert5 = false" />
+                  </CAlert>
+                  <CAlert v-if="showAlert5" style="position: absolute; top: 400px" type="image" closable close-button-color="white" @close="showAlert5 = false" />
               </div>
             `,
-            components: { Alert }
+            components: { CAlert }
         }}
     </Story>
 </Canvas>

@@ -1,16 +1,16 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import EduCard from '@/components/components/dataDisplay/card/EduCard';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
-import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
-import Chip from '@/components/components/dataDisplay/chips/Chip';
-import Icon from '@/components/elements/core/icon/Icon';
-import Swiper from '@/components/components/dataDisplay/Swiper';
+import CEduCard from '@/components/components/dataDisplay/card/CEduCard';
+import CGrid from '@/components/layout/CGrid';
+import CRow from '@/components/layout/CRow';
+import CStyleCol from '@/components/layout/CStyleCol';
+import CChipGroup from '@/components/components/dataDisplay/chips/CChipGroup';
+import CChip from '@/components/components/dataDisplay/chips/CChip';
+import CIcon from '@/components/elements/core/icon/CIcon';
+import CSwiper from '@/components/components/dataDisplay/CSwiper';
 
 <Meta
 	title="Data Display/Card/EduCard"
-	component={EduCard}
+	component={CEduCard}
 	argTypes={{
 		backgroundImage: {
 			description: '카드 배경<br/>`String`',
@@ -125,12 +125,12 @@ import Swiper from '@/components/components/dataDisplay/Swiper';
 
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Grid, Row, StyleCol, EduCard },
+	components: { CGrid, CRow, CStyleCol, CEduCard },
 	template: `
-        <Grid>
-            <Row>
-                <StyleCol :col-lg="4">
-                    <EduCard
+        <CGrid>
+            <CRow>
+                <CStyleCol :col-lg="4">
+                    <CEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :caption-left="captionLeft"
@@ -142,10 +142,10 @@ export const Default = (args, { argTypes }) => ({
                         :emphasized="emphasized"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
-                </StyleCol>
-                <StyleCol :col-lg="4">
-                    <EduCard
+                    </CEduCard>
+                </CStyleCol>
+                <CStyleCol :col-lg="4">
+                    <CEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :caption-left="captionLeft"
@@ -157,10 +157,10 @@ export const Default = (args, { argTypes }) => ({
                         :emphasized="emphasized"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
-                </StyleCol>
-                <StyleCol :col-lg="4">
-                    <EduCard
+                    </CEduCard>
+                </CStyleCol>
+                <CStyleCol :col-lg="4">
+                    <CEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :caption-left="captionLeft"
@@ -172,16 +172,16 @@ export const Default = (args, { argTypes }) => ({
                         :emphasized="emphasized"
                     >
                        <template v-slot:title>Title</template>
-                    </EduCard>
-                </StyleCol>
-            </Row>
-        </Grid>
+                    </CEduCard>
+                </CStyleCol>
+            </CRow>
+        </CGrid>
         `,
 });
 
 # EduCard
 
-**EduCard** 컴포넌트의 문서입니다.
+**c-edu-card** 컴포넌트의 문서입니다.
 
 <Story name="Default">{Default.bind({})}</Story>
 
@@ -201,10 +201,10 @@ export const Default = (args, { argTypes }) => ({
 			},
 			template: `
                 <div>
-                    <Grid>
-                        <Row>
-                            <StyleCol :col-lg="4">
-                                <EduCard
+                    <CGrid>
+                        <CRow>
+                            <CStyleCol :col-lg="4">
+                                <CEduCard
                                     :background-image="exampleBackgroundImage"
                                     category="생산기술"
                                     caption-left="3개의 스케줄"
@@ -212,40 +212,40 @@ export const Default = (args, { argTypes }) => ({
                                     additional-subtitle="2차 앵콜"
                                 >
                                    <template v-slot:chip>
-                                      <ChipGroup>
-                                        <Chip size="medium">복습 VOD</Chip>
-                                      </ChipGroup>
+                                      <CChipGroup>
+                                        <CChip size="medium">복습 VOD</CChip>
+                                      </CChipGroup>
                                    </template>
                                    <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
-                                </EduCard>
-                            </StyleCol>
-                            <StyleCol :col-lg="4">
-                                <EduCard
+                                </CEduCard>
+                            </CStyleCol>
+                            <CStyleCol :col-lg="4">
+                                <CEduCard
                                     :background-image="exampleBackgroundImage"
                                     category="생산기술"
                                     caption-left="3개의 스케줄"
                                     caption-right="1월 20일까지"
                                 >
                                    <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
-                                </EduCard>
-                            </StyleCol>
-                            <StyleCol :col-lg="4">
-                                <EduCard
+                                </CEduCard>
+                            </CStyleCol>
+                            <CStyleCol :col-lg="4">
+                                <CEduCard
                                     :background-image="exampleBackgroundImage"
                                     category="생산기술"
                                     caption-left="3개의 스케줄"
                                     caption-right="1월 20일까지"
                                 >
                                     <template v-slot:additional-button>
-                                        <Icon name="IconBookmarkLargeLine" color="white" />
+                                        <CIcon name="IconBookmarkLargeLine" color="white" />
                                     </template>
                                    <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
-                                </EduCard>
-                            </StyleCol>
-                        </Row>
-                        <Row class="mt-50">
-                            <StyleCol :col-lg="4">
-                                <EduCard
+                                </CEduCard>
+                            </CStyleCol>
+                        </CRow>
+                        <CRow class="mt-50">
+                            <CStyleCol :col-lg="4">
+                                <CEduCard
                                     emphasized
                                     :background-image="exampleBackgroundImage"
                                     category="생산기술"
@@ -254,15 +254,15 @@ export const Default = (args, { argTypes }) => ({
                                     additional-subtitle="2차 앵콜"
                                 >
                                    <template v-slot:chip>
-                                      <ChipGroup>
-                                        <Chip size="medium">복습 VOD</Chip>
-                                      </ChipGroup>
+                                      <CChipGroup>
+                                        <CChip size="medium">복습 VOD</CChip>
+                                      </CChipGroup>
                                    </template>
                                    <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
-                                </EduCard>
-                            </StyleCol>
-                            <StyleCol :col-lg="4">
-                                <EduCard
+                                </CEduCard>
+                            </CStyleCol>
+                            <CStyleCol :col-lg="4">
+                                <CEduCard
                                     emphasized
                                     :background-image="exampleBackgroundImage"
                                     category="생산기술"
@@ -270,10 +270,10 @@ export const Default = (args, { argTypes }) => ({
                                     caption-right="1월 20일까지"
                                 >
                                    <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
-                                </EduCard>
-                            </StyleCol>
-                            <StyleCol :col-lg="4">
-                                <EduCard
+                                </CEduCard>
+                            </CStyleCol>
+                            <CStyleCol :col-lg="4">
+                                <CEduCard
                                     emphasized
                                     :background-image="exampleBackgroundImage"
                                     category="생산기술"
@@ -281,16 +281,16 @@ export const Default = (args, { argTypes }) => ({
                                     caption-right="1월 20일까지"
                                 >
                                     <template v-slot:additional-button>
-                                        <Icon name="IconBookmarkLargeLine" color="white" />
+                                        <CIcon name="IconBookmarkLargeLine" color="white" />
                                     </template>
                                    <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
-                                </EduCard>
-                            </StyleCol>
-                        </Row>
-                    </Grid>
+                                </CEduCard>
+                            </CStyleCol>
+                        </CRow>
+                    </CGrid>
                 </div>
             `,
-			components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip, Icon },
+			components: { CGrid, CRow, CStyleCol, CEduCard, CChipGroup, CChip, CIcon },
 		}}
 	</Story>
 </Canvas>
@@ -307,10 +307,10 @@ export const Default = (args, { argTypes }) => ({
 			},
 			template: `
                 <div>
-                    <Grid :fluid="isMobile">
-                        <Row>
-                            <StyleCol :col-lg="12">
-                                <Swiper
+                    <CGrid :fluid="isMobile">
+                        <CRow>
+                            <CStyleCol :col-lg="12">
+                                <CSwiper
                                     controls-color="dark"
                                     controls-position="outside"
                                     :with-controls="!isMobile"
@@ -319,7 +319,7 @@ export const Default = (args, { argTypes }) => ({
                                     :spacing="isMobile ? 16 : 24"
                                 >
                                     <template v-for="(_, index) in 6" :slot="'item' + index">
-                                        <EduCard
+                                        <CEduCard
                                             with-swiper
                                             :background-image="exampleBackgroundImage"
                                             category="생산기술"
@@ -328,22 +328,22 @@ export const Default = (args, { argTypes }) => ({
                                             additional-subtitle="2차 앵콜"
                                         >
                                            <template v-if="index % 3 === 0" v-slot:chip>
-                                              <ChipGroup>
-                                                <Chip size="medium">복습 VOD</Chip>
-                                              </ChipGroup>
+                                              <CChipGroup>
+                                                <CChip size="medium">복습 VOD</CChip>
+                                              </CChipGroup>
                                            </template>
                                            <template v-if="index % 2 === 1" v-slot:additional-button>
-                                               <Icon name="IconBookmarkLargeLine" color="white" />
+                                               <CIcon name="IconBookmarkLargeLine" color="white" />
                                            </template>
                                            <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
-                                        </EduCard>
+                                        </CEduCard>
                                     </template>
-                                </Swiper>
-                            </StyleCol>
-                        </Row>
-                        <Row class="mt-50">
-                            <StyleCol :col-lg="12">
-                                <Swiper
+                                </CSwiper>
+                            </CStyleCol>
+                        </CRow>
+                        <CRow class="mt-50">
+                            <CStyleCol :col-lg="12">
+                                <CSwiper
                                     controls-color="dark"
                                     controls-position="outside"
                                     :with-controls="!isMobile"
@@ -353,7 +353,7 @@ export const Default = (args, { argTypes }) => ({
                                     :autoplay="isMobile"
                                 >
                                     <template v-for="(_, index) in 6" :slot="'item' + index">
-                                        <EduCard
+                                        <CEduCard
                                             emphasized
                                             with-swiper
                                             :background-image="exampleBackgroundImage"
@@ -363,23 +363,23 @@ export const Default = (args, { argTypes }) => ({
                                             additional-subtitle="2차 앵콜"
                                         >
                                            <template v-if="index % 3 === 0" v-slot:chip>
-                                              <ChipGroup>
-                                                <Chip size="medium">복습 VOD</Chip>
-                                              </ChipGroup>
+                                              <CChipGroup>
+                                                <CChip size="medium">복습 VOD</CChip>
+                                              </CChipGroup>
                                            </template>
                                            <template v-if="index % 2 === 1" v-slot:additional-button>
-                                              <Icon name="IconBookmarkLargeLine" color="white" />
+                                              <CIcon name="IconBookmarkLargeLine" color="white" />
                                           </template>
                                            <template v-slot:title>대기업 현직자와 알기 쉽게 이해하는 생산기술 생산관리의 핵심 알아보고 보고서 작성과 직무 체험하기</template>
-                                        </EduCard>
+                                        </CEduCard>
                                     </template>
-                                </Swiper>
-                            </StyleCol>
-                        </Row>
-                    </Grid>
+                                </CSwiper>
+                            </CStyleCol>
+                        </CRow>
+                    </CGrid>
                 </div>
             `,
-			components: { Grid, Row, StyleCol, EduCard, ChipGroup, Chip, Icon, Swiper },
+			components: { CGrid, CRow, CStyleCol, CEduCard, CChipGroup, CChip, CIcon, CSwiper },
 		}}
 	</Story>
 </Canvas>

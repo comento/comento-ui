@@ -1,24 +1,24 @@
 import { storiesOf } from '@storybook/vue';
-import IconRating from '@/components/components/dataDisplay/rating/IconRating';
-import RatingGroup from '@/components/components/dataDisplay/rating/RatingGroup';
-import Icon from '@/components/elements/core/icon/Icon';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Typography from '@/components/elements/core/typography/Typography';
+import CIconRating from '@/components/components/dataDisplay/rating/CIconRating.vue';
+import CRatingGroup from '@/components/components/dataDisplay/rating/CRatingGroup.vue';
+import CIcon from '@/components/elements/core/icon/CIcon.vue';
+import CNewGrid from '@/components/layout/CNewGrid.vue';
+import CNewRow from '@/components/layout/CNewRow.vue';
+import CNewCol from '@/components/layout/CNewCol.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 storiesOf('Data Display/Rating/RatingGroup', module).add('Index', () => ({
-	components: { IconRating, RatingGroup, Icon, NewGrid, NewRow, NewCol, Typography },
+	components: { CIconRating, CRatingGroup, CIcon, CNewGrid, CNewRow, CNewCol, CTypography },
 	template: `
-		<NewGrid fluid>
-		<NewRow>
-			<NewCol :col-sm="12" :col-lg="8">
-				<RatingGroup>
-					<IconRating icon-name="IconCommentSmallLine" color="primary" text="6" />
-					<IconRating icon-name="IconLikeSmallLine" color="error" text="6" />
-				</RatingGroup>
-			</NewCol>
-		</NewRow>
-		</NewGrid>
+		<CNewGrid fluid>
+		<CNewRow>
+			<CNewCol :col-sm="12" :col-lg="8">
+				<CRatingGroup>
+					<CIconRating icon-name="IconCommentSmallLine" color="primary" text="6" />
+					<CIconRating icon-name="IconLikeSmallLine" color="error" text="6" />
+				</CRatingGroup>
+			</CNewCol>
+		</CNewRow>
+		</CNewGrid>
 		`,
 }));

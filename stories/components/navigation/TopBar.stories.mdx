@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
-import TopBar,{ headerTypes } from '@/components/components/navigation/TopBar';
-import IconButton from '@/components/components/general/button/IconButton';
+import CTopBar,{ headerTypes } from '@/components/components/navigation/CTopBar.vue';
+import CIconButton from '@/components/components/general/button/CIconButton.vue';
 
 <Meta
   title="Navigation/TopBar"
-  component={TopBar}
+  component={CTopBar}
   argTypes={{
     isTransparent: {
       description: '투명 헤더 사용 여부',
@@ -33,17 +33,17 @@ import IconButton from '@/components/components/general/button/IconButton';
 
 export const Default = (args, {argTypes}) => ({
   props: Object.keys(argTypes),
-  components: {TopBar, IconButton},
+  components: {CTopBar, CIconButton},
   template: `
     <div style="width: 100%; display: flex; justify-content: center">
       <div style="width: 375px" :style="{backgroundColor : isTransparent ? 'black' : 'white' }">
-        <TopBar :is-transparent="isTransparent" :type="type" :title="title" style="position: relative" >
+        <CTopBar :is-transparent="isTransparent" :type="type" :title="title" style="position: relative" >
           <template v-slot:actions>
-            <IconButton icon-name="IconSearchLargeLine" size="medium" color="info" />
-            <IconButton icon-name="IconBookmarkLargeLine" size="medium" color="info" />
-            <IconButton icon-name="IconAlarmLargeLine" size="medium" color="info" />
+            <CIconButton icon-name="IconSearchLargeLine" size="medium" color="info" />
+            <CIconButton icon-name="IconBookmarkLargeLine" size="medium" color="info" />
+            <CIconButton icon-name="IconAlarmLargeLine" size="medium" color="info" />
           </template>
-        </TopBar>
+        </CTopBar>
   </div>
 </div>`,
 });
@@ -51,7 +51,7 @@ export const Default = (args, {argTypes}) => ({
 
 # TopBar
 
-**TopBar** 컴포넌트의 문서입니다.
+**c-top-bar** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}

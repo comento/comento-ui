@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Logo from '@/components/elements/core/logo/Logo';
+import CLogo from '@/components/elements/core/logo/CLogo.vue';
 import { colors } from '@/utils/constants/color';
 
 <Meta
   title="Core/Logo"
-  component={ Logo }
+  component={ CLogo }
   argTypes={{
     name: {
       description: "로고 아이콘 이름",
@@ -46,14 +46,14 @@ import { colors } from '@/utils/constants/color';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Logo },
+  components: { CLogo },
   template:
-    `<Logo :name="name" :url="url" :width="width" :height="height" :color="color"/>`,
+    `<CLogo :name="name" :url="url" :width="width" :height="height" :color="color"/>`,
 });
 
 # Logo
 
-**Logo** 컴포넌트의 문서입니다.
+**c-logo** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -68,14 +68,14 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <Logo color="primary" class="p-14" />
-                  <Logo color="#353535" class="p-14"  />
+                  <CLogo color="primary" class="p-14" />
+                  <CLogo color="#353535" class="p-14"  />
                   <div style="background: rgba(18, 109, 93, 0.7);" class="d-inline-block p-14">
-                    <Logo color="white"  />
+                    <CLogo color="white"  />
                   </div>
                 </div>
         `,
-            components: { Logo },
+            components: { CLogo },
         }}
     </Story>
 </Canvas>

@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
-import Textarea, { textareaTypes } from '@/components/components/dataEntry/Textarea';
+import CTextarea, { textareaTypes } from '@/components/components/dataEntry/CTextarea.vue';
 
 <Meta
     title="Data Entry/Textarea"
-    component={ Textarea }
+    component={ CTextarea }
     argTypes={{
         placeholder: {
             description: "Textarea placeholder",
@@ -47,7 +47,7 @@ import Textarea, { textareaTypes } from '@/components/components/dataEntry/Texta
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Textarea },
+    components: { CTextarea },
     data() {
         return {
             valueData: this.value,
@@ -55,7 +55,7 @@ export const Default = (args, { argTypes }) => ({
     },
     template:
         `<div style="background:aliceblue; padding:20px">
-            <Textarea :type="type"
+            <CTextarea :type="type"
                       :placeholder="placeholder"
                       :max-height="maxHeight"
                       :min-height="minHeight"
@@ -68,7 +68,7 @@ export const Default = (args, { argTypes }) => ({
 
 # Textarea
 
-**Textarea** 컴포넌트의 문서입니다.
+**c-textarea** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -83,13 +83,13 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width:300px">
-                    <Textarea
+                    <CTextarea
                         type="outline"
                         error
                     />
                 </div>
             `,
-            components: { Textarea },
+            components: { CTextarea },
         }}
     </Story>
 </Canvas>

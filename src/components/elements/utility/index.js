@@ -1,4 +1,4 @@
-import Divider from './Divider';
-import Overlay from './Overlay';
+import CDivider from './CDivider.vue';
+import COverlay from './COverlay.vue';
 
-export { Divider, Overlay };
+export { CDivider, COverlay };

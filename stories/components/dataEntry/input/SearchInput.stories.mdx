@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import SearchInput from '@/components/components/dataEntry/input/SearchInput';
-import Divider from '@/components/elements/utility/Divider';
+import CSearchInput from '@/components/components/dataEntry/input/CSearchInput.vue';
+import CDivider from '@/components/elements/utility/CDivider.vue';
 
 <Meta
     title="Data Entry/Input/SearchInput"
-    component={ SearchInput }
+    component={ CSearchInput }
     argTypes={{
         placeholder: {
             description: "placeholder 문구",
@@ -33,7 +33,7 @@ import Divider from '@/components/elements/utility/Divider';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { SearchInput },
+    components: { CSearchInput },
     computed: {
         transparentBackground() {
             return { background: this.transparent ? '#CF5310' : 'white' };
@@ -41,7 +41,7 @@ export const Default = (args, { argTypes }) => ({
     },
     template: `
       <div class="flex p-10" :style="transparentBackground">
-        <SearchInput
+        <CSearchInput
             :placeholder="placeholder"
             :value.sync="value"
             :full="full"
@@ -54,7 +54,7 @@ export const Default = (args, { argTypes }) => ({
 
 # SearchInput
 
-**SearchInput** 컴포넌트의 문서입니다.
+**c-search-input** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -70,16 +70,16 @@ export const Default = (args, { argTypes }) => ({
             template: `
               <div>
                 <div class="flex p-10" style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05)">
-                  <SearchInput :value.sync="value1"
+                  <CSearchInput :value.sync="value1"
                   />
                 </div>
-                <Divider class="my-10" />
+                <CDivider class="my-10" />
                 <div class="flex p-10" style="background-color: rgba(18, 109, 93, 0.7)">
-                  <SearchInput :value.sync="value2" :transparent="true" />
+                  <CSearchInput :value.sync="value2" :transparent="true" />
                 </div>
-                <Divider class="my-10" />
+                <CDivider class="my-10" />
                 <div class="flex p-10 my-4" style="background-color: black">
-                  <SearchInput :value.sync="value3" :transparent="true" />
+                  <CSearchInput :value.sync="value3" :transparent="true" />
                 </div>
               </div>
             `,
@@ -91,7 +91,7 @@ export const Default = (args, { argTypes }) => ({
                     value3: '',
                 };
             },
-            components: { SearchInput, Divider },
+            components: { CSearchInput, CDivider },
         }}
     </Story>
 </Canvas>

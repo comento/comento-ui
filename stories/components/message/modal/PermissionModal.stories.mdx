@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
-import PermissionModal from '@/components/components/message/modal/PermissionModal';
-import Button from '@/components/components/general/button/Button';
+import CPermissionModal from '@/components/components/message/modal/CPermissionModal.vue';
+import CButton from '@/components/components/general/button/CButton.vue';
 import { colorKeys } from '@/utils/constants/color';
 
 <Meta
     title="Message/Modal/PermissionModal"
-    component={ PermissionModal }
+    component={ CPermissionModal }
     argTypes={{
         show: {
             description: "모달 활성화",
@@ -61,8 +61,8 @@ export const Default = (args, { argTypes }) => ({
     },
     template: `
         <div>
-            <Button @click="show = true">Open</Button>
-            <PermissionModal
+            <CButton @click="show = true">Open</CButton>
+            <CPermissionModal
                 :show.sync="show"
                 :cancel-button-color="cancelButtonColor"
                 :confirm-button-color="confirmButtonColor"
@@ -76,15 +76,15 @@ export const Default = (args, { argTypes }) => ({
                 <template v-slot:content>
                     <div v-html="content" />
                 </template>
-            </PermissionModal>
+            </CPermissionModal>
         </div>
     `,
-    components: { PermissionModal, Button },
+    components: { CPermissionModal, CButton },
 });
 
 # PermissionModal
 
-**PermissionModal** 컴포넌트의 문서입니다.
+**c-permission-modal** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}

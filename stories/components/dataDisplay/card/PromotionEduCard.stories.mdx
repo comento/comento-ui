@@ -1,14 +1,14 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import PromotionEduCard from '@/components/components/dataDisplay/card/PromotionEduCard';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
-import ChipGroup from '@/components/components/dataDisplay/chips/ChipGroup';
-import Chip from '@/components/components/dataDisplay/chips/Chip';
+import CPromotionEduCard from '@/components/components/dataDisplay/card/CPromotionEduCard';
+import CGrid from '@/components/layout/CGrid';
+import CRow from '@/components/layout/CRow';
+import CStyleCol from '@/components/layout/CStyleCol';
+import CChipGroup from '@/components/components/dataDisplay/chips/CChipGroup';
+import CChip from '@/components/components/dataDisplay/chips/CChip';
 
 <Meta
 	title="Data Display/Card/PromotionEduCard"
-	component={PromotionEduCard}
+	component={CPromotionEduCard}
 	argTypes={{
 		backgroundImage: {
 			description: '카드 배경<br/>`String`',
@@ -104,54 +104,54 @@ import Chip from '@/components/components/dataDisplay/chips/Chip';
 
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Grid, Row, StyleCol, PromotionEduCard },
+	components: { CGrid, CRow, CStyleCol, CPromotionEduCard },
 	template: `
-        <Grid>
-            <Row>
-                <StyleCol :col-lg="4">
-                    <PromotionEduCard
+        <CGrid>
+            <CRow>
+                <CStyleCol :col-lg="4">
+                    <CPromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :score-average="scoreAverage"
                         :review-count="reviewCount"
                         :applicant-count="applicantCount"
-						:dominant-color="dominantColor"
+						            :dominant-color="dominantColor"
                     >
                        <template v-slot:title>Title</template>
-                    </PromotionEduCard>
-                </StyleCol>
-                <StyleCol :col-lg="4">
-                    <PromotionEduCard
+                    </CPromotionEduCard>
+                </CStyleCol>
+                <CStyleCol :col-lg="4">
+                    <CPromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :score-average="scoreAverage"
                         :review-count="reviewCount"
                         :applicant-count="applicantCount"
-						:dominant-color="dominantColor"
+						            :dominant-color="dominantColor"
                     >
                        <template v-slot:title>Title</template>
-                    </PromotionEduCard>
-                </StyleCol>
-                <StyleCol :col-lg="4">
-                    <PromotionEduCard
+                    </CPromotionEduCard>
+                </CStyleCol>
+                <CStyleCol :col-lg="4">
+                    <CPromotionEduCard
                         :background-image="backgroundImage"
                         :category="category"
                         :score-average="scoreAverage"
                         :review-count="reviewCount"
                         :applicant-count="applicantCount"
-						:dominant-color="dominantColor"
+						            :dominant-color="dominantColor"
                     >
                        <template v-slot:title>Title</template>
-                    </PromotionEduCard>
-                </StyleCol>
-            </Row>
-        </Grid>
+                    </CPromotionEduCard>
+                </CStyleCol>
+            </CRow>
+        </CGrid>
         `,
 });
 
 # PromotionEduCard
 
-**PromotionEduCard** 컴포넌트의 문서입니다.
+**c-promotion-edu-card** 컴포넌트의 문서입니다.
 
 <Story name="Default">{Default.bind({})}</Story>
 
@@ -170,49 +170,49 @@ export const Default = (args, { argTypes }) => ({
 				};
 			},
 			template: `
-                <Grid>
-                    <Row>
-                        <StyleCol :col-lg="4">
-                            <PromotionEduCard
+                <CGrid>
+                    <CRow>
+                        <CStyleCol :col-lg="4">
+                            <CPromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 :score-average="4.4"
                                 :review-count="50"
                                 :applicant-count="72"
-								:dominant-color="{ red: 43, green: 86, blue: 108 }"
+								                :dominant-color="{ red: 43, green: 86, blue: 108 }"
                             >
                                 <template v-slot:title>Title</template>
                                 <template v-slot:alternative-caption>대체 캡션 사용</template>
-                            </PromotionEduCard>
-                        </StyleCol>
-                        <StyleCol :col-lg="4">
-                            <PromotionEduCard
+                            </CPromotionEduCard>
+                        </CStyleCol>
+                        <CStyleCol :col-lg="4">
+                            <CPromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 :score-average="4.4"
                                 :review-count="50"
                                 :applicant-count="72"
-								:dominant-color="{ red: 69, green: 112, blue: 84 }"
+								                :dominant-color="{ red: 69, green: 112, blue: 84 }"
                             >
                                 <template v-slot:title>Title</template>
-                            </PromotionEduCard>
-                        </StyleCol>
-                        <StyleCol :col-lg="4">
-                            <PromotionEduCard
+                            </CPromotionEduCard>
+                        </CStyleCol>
+                        <CStyleCol :col-lg="4">
+                            <CPromotionEduCard
                                 :background-image="exampleBackgroundImage"
                                 category="category"
                                 :score-average="5"
                                 :review-count="50"
                                 :applicant-count="72"
-								:dominant-color="{ red: 114, green: 96, blue: 55 }"
+								                :dominant-color="{ red: 114, green: 96, blue: 55 }"
                             >
                                 <template v-slot:title>Title</template>
-                            </PromotionEduCard>
-                        </StyleCol>
-                    </Row>
-                </Grid>
+                            </CPromotionEduCard>
+                        </CStyleCol>
+                    </CRow>
+                </CGrid>
             `,
-			components: { Grid, Row, StyleCol, PromotionEduCard, ChipGroup, Chip },
+			components: { CGrid, CRow, CStyleCol, CPromotionEduCard, CChipGroup, CChip },
 		}}
 	</Story>
 </Canvas>

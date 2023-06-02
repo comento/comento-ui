@@ -1,4 +1,4 @@
-import BottomDrawer from './BottomDrawer';
-import SideDrawer from './SideDrawer';
+import CBottomDrawer from './CBottomDrawer.vue';
+import CSideDrawer from './CSideDrawer.vue';
 
-export { BottomDrawer, SideDrawer };
+export { CBottomDrawer, CSideDrawer };

@@ -1,19 +1,19 @@
 import { storiesOf } from '@storybook/vue';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import AlarmListItem from '@/components/components/dataDisplay/list/alarmList/AlarmListItem';
-import Typography from '@/components/elements/core/typography/Typography';
+import CNewGrid from '@/components/layout/CNewGrid.vue';
+import CNewRow from '@/components/layout/CNewRow.vue';
+import CNewCol from '@/components/layout/CNewCol.vue';
+import CAlarmListItem from '@/components/components/dataDisplay/list/alarmList/CAlarmListItem.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 storiesOf('Data Display/list/alarmList/AlarmListItem', module).add('Default', () => ({
-	components: { NewGrid, NewRow, NewCol, AlarmListItem, Typography },
+	components: { CNewGrid, CNewRow, CNewCol, CAlarmListItem, CTypography },
 	template: `
-		<NewGrid fluid>
-		<NewRow>
-			<NewCol :col-lg="3" :col-sm="12">
-				<AlarmListItem class="alarm-unread">
+		<CNewGrid fluid>
+		<CNewRow>
+			<CNewCol :col-lg="3" :col-sm="12">
+				<CAlarmListItem class="alarm-unread">
 					<template v-slot:icon>
-						<img :src="'https://cdn.comento.kr/images/icon/alarm/icon-alarm-won.svg'" />
+						<img :src="'https://cdn.comento.kr/images/icon/alarm/icon-alarm-won.svg'" alt="" />
 					</template>
 					<template v-slot:message>
 						현금 환급을 신청한 30,000원이 계좌로 입금됐어요.
@@ -21,8 +21,8 @@ storiesOf('Data Display/list/alarmList/AlarmListItem', module).add('Default', ()
 					<template v-slot:date>
 						2021.02.22
 					</template>
-				</AlarmListItem>
-			</NewCol>
-		</NewRow>
-		</NewGrid>`,
+				</CAlarmListItem>
+			</CNewCol>
+		</CNewRow>
+		</CNewGrid>`,
 }));

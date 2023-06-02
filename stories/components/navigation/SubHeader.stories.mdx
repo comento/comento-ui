@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
 
-import SubHeader from '@/components/components/navigation/SubHeader';
+import CSubHeader from '@/components/components/navigation/CSubHeader.vue';
 
 <Meta
   title="Navigation/SubHeader"
-  component={SubHeader}
+  component={CSubHeader}
   argTypes={{
     isAppear: {
       description: "Header 뒤에 있다가 아래로 나타나는 플래그",
@@ -89,12 +89,12 @@ import SubHeader from '@/components/components/navigation/SubHeader';
 
 export const Default = (args, {argTypes}) => ({
   props: Object.keys(argTypes),
-  components: {SubHeader},
+  components: {CSubHeader},
   template:
     `<div style="padding: 12px 32px">
     <div style="position: relative">
     <div style="height: 69px; background-color: #EE7E41">Header</div>
-    <SubHeader
+    <CSubHeader
            :is-appear="isAppear"
            :is-scroll-top="isScrollTop"
            :is-search="isSearch"
@@ -109,7 +109,7 @@ export const Default = (args, {argTypes}) => ({
 
 # SubHeader
 
-**SubHeader** 컴포넌트의 문서입니다.
+**c-sub-header** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}

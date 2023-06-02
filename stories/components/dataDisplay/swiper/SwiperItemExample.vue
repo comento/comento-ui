@@ -1,14 +1,14 @@
 <template>
-	<Box :paddings="[100, 32, 100, 32]" background-color="orange600">
-		<Typography type="display1" color="white">
+	<CBox :paddings="[100, 32, 100, 32]" background-color="orange600">
+		<CTypography type="display1" color="white">
 			{{ text }}
-		</Typography>
-	</Box>
+		</CTypography>
+	</CBox>
 </template>
 
 <script>
-import Box from '@/components/components/general/Box';
-import Typography from '@/components/elements/core/typography/Typography';
+import CBox from '@/components/components/general/CBox.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -19,8 +19,8 @@ export default defineComponent({
 		},
 	},
 	components: {
-		Box,
-		Typography,
+		CBox,
+		CTypography,
 	},
 });
 </script>

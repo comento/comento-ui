@@ -1,10 +1,10 @@
-import Checkbox from './Checkbox';
-import DatePicker from './DatePicker';
-import Dropdown from './Dropdown';
-import FormGroup from './FormGroup';
-import RadioButton from './RadioButton';
-import Select from './Select';
-import Textarea from './Textarea';
+import CCheckbox from './CCheckbox.vue';
+import CDatePicker from './CDatePicker.vue';
+import CDropdown from './CDropdown.vue';
+import CFormGroup from './CFormGroup.vue';
+import CRadioButton from './CRadioButton.vue';
+import CSelect from './CSelect.vue';
+import CTextarea from './CTextarea.vue';
 
-export { Checkbox, DatePicker, Dropdown, FormGroup, RadioButton, Select, Textarea };
+export { CCheckbox, CDatePicker, CDropdown, CFormGroup, CRadioButton, CSelect, CTextarea };
 export * from './input';

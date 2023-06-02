@@ -1,8 +1,9 @@
-import AlertModal from './AlertModal';
-import BasicModal from './BasicModal';
-import FullscreenModal from './FullscreenModal';
-import Modal from './Modal';
-import PermissionModal from './PermissionModal';
-import WithFormModal from './WithFormModal';
+import CAlertModal from './CAlertModal.vue';
+import BasicModal from './CBasicModal.vue';
+import CFullscreenModal from './CFullscreenModal.vue';
+import CImageModal from './CImageModal.vue';
+import CModal from './CModal.vue';
+import CPermissionModal from './CPermissionModal.vue';
+import CWithFormModal from './CWithFormModal.vue';
 
-export { AlertModal, BasicModal, FullscreenModal, Modal, PermissionModal, WithFormModal };
+export { CAlertModal, BasicModal, CFullscreenModal, CImageModal, CModal, CPermissionModal, CWithFormModal };

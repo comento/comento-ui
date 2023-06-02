@@ -1,21 +1,21 @@
 <template>
 	<div class="icon-wrapper">
-		<Tooltip placement="bottom">
+		<CTooltip placement="bottom">
 			<component :is="component" :name="name" :color="color" :rotate="rotate" @click="copyToClipboard(name)">
 				<slot />
 			</component>
 			<template #popover>
 				<div>{{ name }}</div>
 			</template>
-		</Tooltip>
+		</CTooltip>
 	</div>
 </template>
 
 <script>
-import AnimationIcon from '@/components/elements/core/icon/AnimationIcon';
-import EtcIcon from '@/components/elements/core/icon/EtcIcon';
-import Icon from '@/components/elements/core/icon/Icon';
-import Tooltip from '@/components/components/message/Tooltip';
+import CAnimationIcon from '@/components/elements/core/icon/CAnimationIcon.vue';
+import EtcIcon from '@/components/elements/core/icon/EtcIcon.vue';
+import CIcon from '@/components/elements/core/icon/CIcon.vue';
+import CTooltip from '@/components/components/message/CTooltip.vue';
 import copyToClipboard from '@/utils/copy-to-clipboard';
 import { defineComponent } from 'vue';
 
@@ -42,10 +42,10 @@ export default defineComponent({
 		copyToClipboard,
 	},
 	components: {
-		AnimationIcon,
+		CAnimationIcon,
 		EtcIcon,
-		Icon,
-		Tooltip,
+		CIcon,
+		CTooltip,
 	},
 });
 </script>

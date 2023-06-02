@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import TextRating, {TextRatingSizes} from "@/components/components/dataDisplay/rating/TextRating";
-import Typography from "@/components/elements/core/typography/Typography";
+import CTextRating, {TextRatingSizes} from '@/components/components/dataDisplay/rating/CTextRating.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
 <Meta
     title="Data Display/Rating/TextRating"
-    component={ TextRating }
+    component={ CTextRating }
     argTypes={{
         size: {
             description: '사이즈',
@@ -19,21 +19,21 @@ import Typography from "@/components/elements/core/typography/Typography";
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     template: `
-        <TextRating :size="size">
+        <CTextRating :size="size">
             <template v-slot:text-left>
                 댓글
             </template>
             <template v-slot:text-right>
               <strong>3</strong>
             </template>
-        </TextRating>
+        </CTextRating>
     `,
-    components: { TextRating },
+    components: { CTextRating },
 });
 
 # TextRating
 
-**TextRating** 컴포넌트의 문서입니다.
+**c-text-rating** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -47,27 +47,27 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
             <div style="display: flex; flex-direction: column">
-                <TextRating size="default">
+                <CTextRating size="default">
                     <template v-slot:text-left>
                         댓글
                     </template>
                     <template v-slot:text-right>
-                        <Typography color="gray850" :font-weight="500">
+                        <CTypography color="gray850" :font-weight="500">
                             3
-                        </Typography>
+                        </CTypography>
                     </template>
-                    </TextRating>
+                    </CTextRating>
                     <TextRating size="small">
                         <template v-slot:text-left>
                             총
                         </template>
                     <template v-slot:text-right>
-                        <Typography color="gray700" element="span" :font-weight="500">204</Typography>건
+                        <CTypography color="gray700" element="span" :font-weight="500">204</CTypography>건
                     </template>
                 </TextRating>
             </div>
     `,
-            components: { TextRating, Typography },
+            components: { CTextRating, CTypography },
         }}
     </Story>
 </Canvas>

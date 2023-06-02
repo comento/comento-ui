@@ -1,13 +1,13 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Content, { contentTypes } from '@/components/components/dataDisplay/content/Content';
-import Button from '@/components/components/general/button/Button';
-import Box from '@/components/components/general/Box';
-import Typography from '@/components/elements/core/typography/Typography';
+import CContent, { contentTypes } from '@/components/components/dataDisplay/content/CContent';
+import CButton from '@/components/components/general/button/CButton';
+import CBox from '@/components/components/general/CBox';
+import CTypography from '@/components/elements/core/typography/CTypography';
 import { colorKeys } from '@/utils/constants/color';
 
 <Meta
     title="Data Display/Content/Content"
-    component={ Content }
+    component={ CContent }
     argTypes={{
         text: {
             description: "텍스트",
@@ -39,14 +39,14 @@ import { colorKeys } from '@/utils/constants/color';
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Content, Box },
+    components: { CContent, CBox },
     template:
-        `<Content :type="type" :color="color">{{ text }}</Content>`,
+        `<CContent :type="type" :color="color">{{ text }}</CContent>`,
 });
 
 # Content
 
-**Content** 컴포넌트의 문서입니다.
+**c-content** 컴포넌트의 문서입니다.
 <Story name="Basic" height="100px">
     {Basic.bind({})}
 </Story>
@@ -60,21 +60,21 @@ export const Basic = (args, { argTypes }) => ({
     <Story name="All" height="100px">
         {{
             template: `
-                <Box>
-                    <Content type="overline">SK텔레콤 · 서비스 기획</Content>
-                    <Content type="title">
-                        <Typography color="primary" class="d-inline-block">Q.</Typography> 데이터 드리븐 UX
-                    </Content>
-                    <Content type="body">
+                <CBox>
+                    <CContent type="overline">SK텔레콤 · 서비스 기획</CContent>
+                    <CContent type="title">
+                        <CTypography color="primary" class="d-inline-block">Q.</CTypography> 데이터 드리븐 UX
+                    </CContent>
+                    <CContent type="body">
                         회사에서 데이터 기반 의사 결정이 이루어지나요? 취준생 때는 접근할 수 있는 데이터가 없다 보니,
                         회사에서 일하는 방식과 조금 동떨어진 곳에서 계속 준비하는 기분이에요.
                         일련의 행동들이 개인의 경험이나 직관에 의존하기보다는 데이터에 준거하여 이루어질 때 우리는 Data-Driven이라던데
-                    </Content>
-                    <Content type="caption">2020.06.18</Content>
-                    <Button color="primary" class="ml-auto">답변 추가하기</Button>
-                </Box>
+                    </CContent>
+                    <CContent type="caption">2020.06.18</CContent>
+                    <CButton color="primary" class="ml-auto">답변 추가하기</CButton>
+                </CBox>
             `,
-            components: { Content, Button, Box, Typography},
+            components: { CContent, CButton, CBox, CTypography},
         }}
     </Story>
 </Canvas>

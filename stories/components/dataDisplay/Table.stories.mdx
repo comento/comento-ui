@@ -1,24 +1,24 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Table from '@/components/components/dataDisplay/Table';
-import Typography from '@/components/elements/core/typography/Typography';
-import Divider from '@/components/elements/utility/Divider';
-import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
-import List from '@/components/components/dataDisplay/list/list/List';
-import Button from '@/components/components/general/button/Button';
-import LinkButton from '@/components/components/general/button/LinkButton';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
+import CTable from '@/components/components/dataDisplay/CTable.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
+import CDivider from '@/components/elements/utility/CDivider.vue';
+import CListItem from '@/components/components/dataDisplay/list/list/CListItem.vue';
+import CList from '@/components/components/dataDisplay/list/list/CList.vue';
+import CButton from '@/components/components/general/button/CButton.vue';
+import CLinkButton from '@/components/components/general/button/CLinkButton.vue';
+import CGrid from '@/components/layout/CGrid.vue';
+import CRow from '@/components/layout/CRow.vue';
+import CStyleCol from '@/components/layout/CStyleCol.vue';
 
 <Meta
     title="Data Display/Table"
-    component={ Table }
+    component={ CTable }
     argTypes={{}}
 />
 
 
 # Table
-**Table** 컴포넌트의 문서입니다.
+**c-table** 컴포넌트의 문서입니다.
 
 
 ## Stories
@@ -26,7 +26,7 @@ import StyleCol from '@/components/layout/StyleCol';
 <Canvas>
     <Story name="All" height="100px">
         {{
-            components: { Table, Typography, Divider, List, ListItem, Button, Grid, Row, StyleCol },
+            components: { CTable, CTypography, CDivider, CList, CListItem, CButton, CGrid, CRow, CStyleCol },
             data() {
                 return {
                     tableHeadItems1: ["직무", "캠프명", "만족도", "시작일", "신청"],
@@ -74,12 +74,12 @@ import StyleCol from '@/components/layout/StyleCol';
                 };
             },
             template:
-                `<Grid>
-                    <Row class="mb-60">
-                        <StyleCol :col-lg="12" :col-sm="12" col-gutters>
-                            <Table>
+                `<CGrid>
+                    <CRow class="mb-60">
+                        <CStyleCol :col-lg="12" :col-sm="12" col-gutters>
+                            <CTable>
                                 <template v-slot:head>
-                                    <Typography
+                                    <CTypography
                                         type="body2"
                                         color="gray800"
                                         v-for="(head, index) in tableHeadItems1"
@@ -87,41 +87,41 @@ import StyleCol from '@/components/layout/StyleCol';
                                         :class="{'text-left': index === 1}"
                                     >
                                         {{ head }}
-                                    </Typography>
+                                    </CTypography>
                                 </template>
                                 <template v-slot:body>
                                     <template v-for="item in tableBodyItems1">
                                         <ul>
                                             <li>
-                                                <Typography type="body2">{{ item.job }}</Typography>
+                                                <CTypography type="body2">{{ item.job }}</CTypography>
                                             </li>
                                             <li>
-                                                <Typography type="body2" align="left" color="gray800">{{ item.title }}</Typography>
+                                                <CTypography type="body2" align="left" color="gray800">{{ item.title }}</CTypography>
                                             </li>
                                             <li>
-                                                <Typography type="body2" color="gray500" style="display: flex; justify-content: center">
-                                                    <Typography color="primary">{{ item.score }}</Typography>/5
-                                                </Typography>
+                                                <CTypography type="body2" color="gray500" style="display: flex; justify-content: center">
+                                                    <CTypography color="primary">{{ item.score }}</CTypography>/5
+                                                </CTypography>
                                             </li>
                                             <li>
-                                                <Typography type="body2" color="gray600">
+                                                <CTypography type="body2" color="gray600">
                                                     {{ item.start_at }}
-                                                </Typography>
+                                                </CTypography>
                                             </li>
                                             <li>
-                                                <Button type="outline" color="info" size="small" style="margin: 0 auto">신청하기</Button>
+                                                <CButton type="outline" color="info" size="small" style="margin: 0 auto">신청하기</CButton>
                                             </li>
                                         </ul>
                                     </template>
                                 </template>
-                            </Table>
-                        </StyleCol>
-                    </Row>
-                    <Row>
-                        <StyleCol :col-lg="4" :col-sm="12" :offset-lg="isMobile ? 0 : 4" col-gutters>
-                            <Table>
+                            </CTable>
+                        </CStyleCol>
+                    </CRow>
+                    <CRow>
+                        <CStyleCol :col-lg="4" :col-sm="12" :offset-lg="isMobile ? 0 : 4" col-gutters>
+                            <CTable>
                                 <template v-slot:head>
-                                    <Typography
+                                    <CTypography
                                         type="body2"
                                         color="gray800"
                                         v-for="(head, index) in tableHeadItems2"
@@ -129,42 +129,42 @@ import StyleCol from '@/components/layout/StyleCol';
                                         :class="{'text-left': index === 1 || index === 3}"
                                     >
                                         {{ head }}
-                                    </Typography>
+                                    </CTypography>
                                 </template>
                                 <template v-slot:body>
                                     <template v-for="(item, index) in tableBodyItems2">
                                         <ul>
                                             <li>
-                                                <Typography type="body2">{{ index + 1 }}</Typography>
+                                                <CTypography type="body2">{{ index + 1 }}</CTypography>
                                             </li>
                                             <li>
-                                                <Typography type="body2" align="left" color="gray800">{{ item.name }}</Typography>
+                                                <CTypography type="body2" align="left" color="gray800">{{ item.name }}</CTypography>
                                             </li>
                                             <li>
-                                                <Typography type="body2" color="gray600">
+                                                <CTypography type="body2" color="gray600">
                                                     {{ item.week }}차
-                                                </Typography>
+                                                </CTypography>
                                             </li>
                                             <li>
-                                                <Typography type="caption1" color="gray600" class="text-left" v-html="item.created_at" />
+                                                <CTypography type="caption1" color="gray600" class="text-left" v-html="item.created_at" />
                                             </li>
                                             <li>
-                                                <Button
+                                                <CButton
                                                     type="outline"
                                                     color="info"
                                                     size="small"
                                                     style="margin: 0 auto"
                                                 >
                                                     {{item.state}}
-                                                </Button>
+                                                </CButton>
                                             </li>
                                         </ul>
                                     </template>
                                 </template>
-                            </Table>
-                        </StyleCol>
-                    </Row>
-                </Grid>`,
+                            </CTable>
+                        </CStyleCol>
+                    </CRow>
+                </CGrid>`,
         }}
     </Story>
 </Canvas>
@@ -173,19 +173,19 @@ import StyleCol from '@/components/layout/StyleCol';
 <Canvas>
     <Story name="Empty" height="100px">
         {{
-            components: { Table, Typography, LinkButton, Grid, Row, StyleCol },
+            components: { CTable, CTypography, CLinkButton, CGrid, CRow, CStyleCol },
             data() {
                 return {
                     tableHeadItems: ["구분", "작성자", "차수", "제출일시", "피드백"],
                 };
             },
             template:
-                `<Grid>
-                    <Row>
-                        <StyleCol :col-lg="4" :col-sm="12" :offset-lg="isMobile ? 0 : 4" col-gutters>
-                            <Table>
+                `<CGrid>
+                    <CRow>
+                        <CStyleCol :col-lg="4" :col-sm="12" :offset-lg="isMobile ? 0 : 4" col-gutters>
+                            <CTable>
                                 <template v-slot:head>
-                                    <Typography
+                                    <CTypography
                                         type="body2"
                                         color="gray800"
                                         v-for="(head, index) in tableHeadItems"
@@ -193,18 +193,18 @@ import StyleCol from '@/components/layout/StyleCol';
                                         :class="{'text-left': index === 1 || index === 3}"
                                     >
                                         {{ head }}
-                                    </Typography>
+                                    </CTypography>
                                 </template>
                                 <template v-slot:empty>
-                                    <Typography type="body2" color="gray700">
+                                    <CTypography type="body2" color="gray700">
                                         아직 과제가 제출되지 않았어요 :(<br />
-                                        <LinkButton type="body2" style="display: inline-flex">여기</LinkButton>를 눌러 과제를 제출하세요!
-                                    </Typography>
+                                        <CLinkButton type="body2" style="display: inline-flex">여기</CLinkButton>를 눌러 과제를 제출하세요!
+                                    </CTypography>
                                 </template>
-                            </Table>
-                        </StyleCol>
-                    </Row>
-                </Grid>`,
+                            </CTable>
+                        </CStyleCol>
+                    </CRow>
+                </CGrid>`,
         }}
     </Story>
 </Canvas>

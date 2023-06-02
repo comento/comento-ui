@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Button, { buttonSizes, buttonColors, buttonTypes, ghostTypeButtonColors } from '@/components/components/general/button/Button';
-import Typography from '@/components/elements/core/typography/Typography';
-import Icon from '@/components/elements/core/icon/Icon';
+import CButton, { buttonSizes, buttonColors, buttonTypes, ghostTypeButtonColors } from '@/components/components/general/button/CButton.vue';
+import CTypography from '@/components/elements/core/typography/Typography.vue';
+import CIcon from '@/components/elements/core/icon/Icon.vue';
 
 <Meta
   title="General/Button/Button"
-  component={ Button }
+  component={ CButton }
   argTypes={{
     label: {
       description: "버튼에 들어갈 텍스트",
@@ -56,9 +56,9 @@ import Icon from '@/components/elements/core/icon/Icon';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Button },
+  components: { CButton },
   template:
-    `<Button
+    `<CButton
         :size="size"
         :color="color"
         :type="type"
@@ -70,12 +70,12 @@ export const Default = (args, { argTypes }) => ({
         :shadow="shadow"
     >
       {{label}}
-    </Button>`,
+    </CButton>`,
 });
 
 # Button
 
-**Button** 컴포넌트의 문서입니다.
+**c-button** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -92,36 +92,36 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                   <template v-for="(type, index) in buttonTypes">
                     <div class="flex">
-                        <ButtonStateTitle class="mr-30">{{type}}</ButtonStateTitle>
+                        <CButtonStateTitle class="mr-30">{{type}}</CButtonStateTitle>
                         <div class="flex-column mr-30">
-                            <ButtonStateTitle>default</ButtonStateTitle>
+                            <CButtonStateTitle>default</CButtonStateTitle>
                             <div :style="getGhostTypeBackgroundColor(type)">
                                 <template v-for="(color, index) in getFilterButtonColors(type)">
-                                    <Button :color="color" :type="type" class="mb-16">Button</Button>
+                                    <CButton :color="color" :type="type" class="mb-16">Button</CButton>
                                 </template>
                             </div>
                         </div>
                         <div class="flex-column mr-30">
-                            <ButtonStateTitle>hover</ButtonStateTitle>
+                            <CButtonStateTitle>hover</CButtonStateTitle>
                             <div :style="getGhostTypeBackgroundColor(type)">
                                 <template v-for="(color, index) in getFilterButtonColors(type)">
-                                    <Button :color="color" :type="type" class="mb-16 hover-test">Button</Button>
+                                    <CButton :color="color" :type="type" class="mb-16 hover-test">Button</CButton>
                                 </template>
                             </div>
                         </div>
                         <div class="flex-column mr-30">
-                            <ButtonStateTitle>disabled</ButtonStateTitle>
+                            <CButtonStateTitle>disabled</CButtonStateTitle>
                             <div :style="getGhostTypeBackgroundColor(type)">
                                 <template v-for="(color, index) in getFilterButtonColors(type)">
-                                    <Button :color="color" :type="type" disabled class="mb-16">Button</Button>
+                                    <CButton :color="color" :type="type" disabled class="mb-16">Button</CButton>
                                 </template>
                             </div>
                         </div>
                         <div class="flex-column mr-30">
-                            <ButtonStateTitle>loading</ButtonStateTitle>
+                            <CButtonStateTitle>loading</CButtonStateTitle>
                             <div :style="getGhostTypeBackgroundColor(type)">
                                 <template v-for="(color, index) in getFilterButtonColors(type)">
-                                    <Button :color="color" :type="type" class="mb-16" loading style="color: transparent;">Button</Button>
+                                    <CButton :color="color" :type="type" class="mb-16" loading style="color: transparent;">Button</CButton>
                                 </template>
                             </div>
                         </div>
@@ -152,10 +152,10 @@ export const Default = (args, { argTypes }) => ({
                     return Object.assign(buttonColors, {}).filter(item => item !== 'light-primary')
                 },
             },
-            components: { Button, Typography,
+            components: { CButton, CTypography,
                 'ButtonStateTitle': {
-                    template: `<Typography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></Typography>`,
-                    components: {Typography},
+                    template: `<CTypography type="body2" color="gray400" class="mb-10" style="min-width: 70px"><slot/></CTypography>`,
+                    components: {CTypography},
                 },
             },
         }}
@@ -170,14 +170,14 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <div style="display: flex; justify-content: space-between;">
-                    <Button size="small">Small</Button>
-                    <Button size="medium">Medium</Button>
-                    <Button size="large">Large</Button>
-                    <Button size="xlarge">XLarge</Button>
+                    <CButton size="small">Small</CButton>
+                    <CButton size="medium">Medium</CButton>
+                    <CButton size="large">Large</CButton>
+                    <CButton size="xlarge">XLarge</CButton>
                   </div>
                 </div>
         `,
-            components: { Button },
+            components: { CButton },
         }}
     </Story>
 </Canvas>
@@ -189,22 +189,22 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <div style="display: flex">
-                    <Button color="primary" type="fill" size="medium" loading>Fill Primary</Button>
-                    <Button color="success" type="fill" size="medium" loading>Fill Success</Button>
-                    <Button color="error" type="fill" size="medium" loading>Fill Error</Button>
-                    <Button color="secondary" type="fill" size="medium" loading>Fill Secondary</Button>
-                    <Button color="info" type="fill" size="medium" loading>Fill Info</Button>
+                    <CButton color="primary" type="fill" size="medium" loading>Fill Primary</CButton>
+                    <CButton color="success" type="fill" size="medium" loading>Fill Success</CButton>
+                    <CButton color="error" type="fill" size="medium" loading>Fill Error</CButton>
+                    <CButton color="secondary" type="fill" size="medium" loading>Fill Secondary</CButton>
+                    <CButton color="info" type="fill" size="medium" loading>Fill Info</CButton>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="outline" size="medium" loading>Fill Primary</Button>
-                    <Button color="success" type="outline" size="medium" loading>Fill Success</Button>
-                    <Button color="error" type="outline" size="medium" loading>Fill Error</Button>
-                    <Button color="secondary" type="outline" size="medium" loading>Fill Secondary</Button>
-                    <Button color="info" type="outline" size="medium" loading>Fill Info</Button>
+                    <CButton color="primary" type="outline" size="medium" loading>Fill Primary</CButton>
+                    <CButton color="success" type="outline" size="medium" loading>Fill Success</CButton>
+                    <CButton color="error" type="outline" size="medium" loading>Fill Error</CButton>
+                    <CButton color="secondary" type="outline" size="medium" loading>Fill Secondary</CButton>
+                    <CButton color="info" type="outline" size="medium" loading>Fill Info</CButton>
                   </div>
                 </div>
         `,
-            components: { Button },
+            components: { CButton },
         }}
     </Story>
 </Canvas>
@@ -216,104 +216,104 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                   <div style="display: flex">
-                    <Button color="primary" type="fill" size="medium" disabled>
+                    <CButton color="primary" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusSmallLine" color="primary" />
                         </template>
                         Fill Primary
-                    </Button>
-                    <Button color="success" type="fill" size="medium" disabled>
+                    </CButton>
+                    <CButton color="success" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="success" />
+                            <CIcon name="IconPlusSmallLine" color="success" />
                         </template>
                         Fill Success
-                    </Button>
-                    <Button color="error" type="fill" size="medium" disabled>
+                    </CButton>
+                    <CButton color="error" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="error" />
+                            <CIcon name="IconPlusSmallLine" color="error" />
                         </template>
                         Fill Error
-                    </Button>
-                    <Button color="secondary" type="fill" size="medium" disabled>
+                    </CButton>
+                    <CButton color="secondary" type="fill" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusSmallLine" color="secondary" />
                         </template>
                         Fill Secondary
-                    </Button>
-                    <Button color="info" type="fill" size="medium" disabled>
+                    </CButton>
+                    <CButton color="info" type="fill" size="medium" disabled>
                       <template v-slot:left-icon>
-                        <Icon name="IconPlusSmallLine" color="secondary" />
+                        <CIcon name="IconPlusSmallLine" color="secondary" />
                       </template>
                       Fill Info
-                    </Button>
+                    </CButton>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="outline" size="medium" disabled>
+                    <CButton color="primary" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="primary" />
+                            <CIcon name="IconPlusSmallLine" color="primary" />
                         </template>
                         Fill Primary
-                    </Button>
-                    <Button color="success" type="outline" size="medium" disabled>
+                    </CButton>
+                    <CButton color="success" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="success" />
+                            <CIcon name="IconPlusSmallLine" color="success" />
                         </template>
                         Fill Success
-                    </Button>
-                    <Button color="error" type="outline" size="medium" disabled>
+                    </CButton>
+                    <CButton color="error" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusSmallLine" color="error" />
                         </template>
                         Fill Error
-                    </Button>
-                    <Button color="secondary" type="outline" size="medium" disabled>
+                    </CButton>
+                    <CButton color="secondary" type="outline" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="secondary" />
+                            <CIcon name="IconPlusSmallLine" color="secondary" />
                         </template>
                         Fill Secondary
-                    </Button>
-                    <Button color="info" type="outline" size="medium" disabled>
+                    </CButton>
+                    <CButton color="info" type="outline" size="medium" disabled>
                       <template v-slot:left-icon>
-                        <Icon name="IconPlusSmallLine" color="secondary" />
+                        <CIcon name="IconPlusSmallLine" color="secondary" />
                       </template>
                       Fill Info
-                    </Button>
+                    </CButton>
                   </div>
                   <div style="display: flex">
-                    <Button color="primary" type="text" size="medium" disabled>
+                    <CButton color="primary" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="primary" />
+                            <CIcon name="IconPlusSmallLine" color="primary" />
                         </template>
                         Fill Primary
-                    </Button>
-                    <Button color="success" type="text" size="medium" disabled>
+                    </CButton>
+                    <CButton color="success" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="success" />
+                            <CIcon name="IconPlusSmallLine" color="success" />
                         </template>
                         Fill Success
-                    </Button>
-                    <Button color="error" type="text" size="medium" disabled>
+                    </CButton>
+                    <CButton color="error" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="error" />
+                            <CIcon name="IconPlusSmallLine" color="error" />
                         </template>
                         Fill Error
-                    </Button>
+                    </CButton>
                     <Button color="secondary" type="text" size="medium" disabled>
                         <template v-slot:left-icon>
                             <Icon name="IconPlusSmallLine" color="secondary" />
                         </template>
                         Fill Secondary
                     </Button>
-                    <Button color="info" type="text" size="medium" disabled>
+                    <CButton color="info" type="text" size="medium" disabled>
                       <template v-slot:left-icon>
-                        <Icon name="IconPlusSmallLine" color="secondary" />
+                        <CIcon name="IconPlusSmallLine" color="secondary" />
                       </template>
                       Fill Info
-                    </Button>
+                    </CButton>
                   </div>
                 </div>
         `,
-            components: { Button, Icon },
+            components: { CButton, CIcon },
         }}
     </Story>
 </Canvas>
@@ -325,60 +325,60 @@ export const Default = (args, { argTypes }) => ({
             template: `
             <div>
                 <div style="display: flex; justify-content: space-between;">
-                    <Button color="primary" type="fill" size="small">
+                    <CButton color="primary" type="fill" size="small">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="white" />
+                            <CIcon name="IconPlusSmallLine" color="white" />
                         </template>
                         Small
-                    </Button>
-                    <Button color="primary" type="fill" size="medium">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="medium">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="white" />
+                            <CIcon name="IconPlusSmallLine" color="white" />
                         </template>
                         Medium
-                    </Button>
-                    <Button color="primary" type="fill" size="large">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="large">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="white" />
+                            <CIcon name="IconPlusSmallLine" color="white" />
                         </template>
                         Large
-                    </Button>
-                    <Button color="primary" type="fill" size="xlarge">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="xlarge">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusLargeLine" color="white" />
+                            <CIcon name="IconPlusLargeLine" color="white" />
                         </template>
                         XLarge
-                    </Button>
+                    </CButton>
                 </div>
                 <div style="display: flex; justify-content: space-between; margin-top:20px">
-                    <Button color="primary" type="fill" size="small">
+                    <CButton color="primary" type="fill" size="small">
                         <template v-slot:left-icon>
-                            <Icon name="IconExclamationSmallFill" color="white" />
+                            <CIcon name="IconExclamationSmallFill" color="white" />
                         </template>
                         Small
-                    </Button>
-                    <Button color="primary" type="fill" size="medium">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="medium">
                         <template v-slot:left-icon>
-                            <Icon name="IconExclamationSmallFill" color="white" />
+                            <CIcon name="IconExclamationSmallFill" color="white" />
                         </template>
                         Medium
-                    </Button>
-                    <Button color="primary" type="fill" size="large">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="large">
                         <template v-slot:left-icon>
-                            <Icon name="IconExclamationSmallFill" color="white" />
+                            <CIcon name="IconExclamationSmallFill" color="white" />
                         </template>
                         Large
-                    </Button>
-                    <Button color="primary" type="fill" size="xlarge">
+                    </CButton>
+                    <CButton color="primary" type="fill" size="xlarge">
                         <template v-slot:left-icon>
-                            <Icon name="IconExclamationLargeFill" color="white" />
+                            <CIcon name="IconExclamationLargeFill" color="white" />
                         </template>
                         XLarge
-                    </Button>
+                    </CButton>
                 </div>
             </div>
         `,
-            components: { Button, Icon },
+            components: { CButton, CIcon },
         }}
     </Story>
 </Canvas>

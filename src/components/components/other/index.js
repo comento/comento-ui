@@ -1,3 +1,3 @@
-import Loader from './Loader';
+import CLoader from './CLoader.vue';
 
-export { Loader };
+export { CLoader };

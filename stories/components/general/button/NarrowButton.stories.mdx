@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import NarrowButton, { narrowButtonSizes } from '@/components/components/general/button/NarrowButton';
+import CNarrowButton, { narrowButtonSizes } from '@/components/components/general/button/CNarrowButton.vue';
 import { colorKeys } from '@/utils/constants/color';
-import Icon from '@/components/elements/core/icon/Icon';
+import CIcon from '@/components/elements/core/icon/Icon.vue';
 
 <Meta
     title="General/Button/NarrowButton"
-    component={NarrowButton}
+    component={CNarrowButton}
     argTypes={{
         label: {
             description: "버튼에 들어갈 텍스트",
@@ -40,19 +40,19 @@ import Icon from '@/components/elements/core/icon/Icon';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { NarrowButton },
+    components: { CNarrowButton },
     template: `
         <div class="p-10" :style="{background: transparent ? '#ee7e41' : '' }">
-            <NarrowButton :color="color" :size="size" :transparent="transparent">
+            <CNarrowButton :color="color" :size="size" :transparent="transparent">
                 {{label}}
-            </NarrowButton>
+            </CNarrowButton>
         </div>
     `,
 });
 
 # NarrowButton
 
-**NarrowButton** 컴포넌트의 문서입니다.
+**c-narrow-button** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -69,50 +69,50 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <div style="display: flex">
-                        <NarrowButton color="gray400">
+                        <CNarrowButton color="gray400">
                             Small Gray400
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallLine" color="gray400" />
+                                <CIcon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
-                        </NarrowButton>
-                        <NarrowButton color="gray600">
+                        </CNarrowButton>
+                        <CNarrowButton color="gray600">
                             Small Gray600
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallLine" color="gray400" />
+                                <CIcon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
-                        </NarrowButton>
+                        </CNarrowButton>
                     </div>
                     <div style="display: flex">
-                        <NarrowButton color="gray400" size="medium">
+                        <CNarrowButton color="gray400" size="medium">
                             Medium Gray400
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallLine" color="gray400" />
+                                <CIcon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
-                        </NarrowButton>
-                        <NarrowButton color="gray600" size="medium">
+                        </CNarrowButton>
+                        <CNarrowButton color="gray600" size="medium">
                             Medium Gray600
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallLine" color="gray400" />
+                                <CIcon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
-                        </NarrowButton>
+                        </CNarrowButton>
                     </div>
                     <div style="display: flex">
-                        <NarrowButton color="gray400" size="large">
+                        <CNarrowButton color="gray400" size="large">
                             Large Gray400
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallLine" color="gray400" />
+                                <CIcon name="IconTextArrowSmallLine" color="gray400" />
                             </template>
-                        </NarrowButton>
-                        <NarrowButton color="gray600" size="large">
+                        </CNarrowButton>
+                        <CNarrowButton color="gray600" size="large">
                             Large Gray600
                             <template v-slot:right-icon>
-                                <Icon name="IconTextArrowSmallLine" color="gray600" />
+                                <CIcon name="IconTextArrowSmallLine" color="gray600" />
                             </template>
-                        </NarrowButton>
+                        </CNarrowButton>
                     </div>
                 </div>
-            `,
-            components: { NarrowButton, Icon },
+            `,C
+            components: { CNarrowButton, CIcon },
         }}
     </Story>
 </Canvas>
@@ -124,13 +124,13 @@ export const Default = (args, { argTypes }) => ({
             template: `
             <div>
                 <div style="display: flex">
-                    <NarrowButton size="small">Small</NarrowButton>
-                    <NarrowButton size="medium">Medium</NarrowButton>
-                    <NarrowButton size="large">Large</NarrowButton>
+                    <CNarrowButton size="small">Small</CNarrowButton>
+                    <CNarrowButton size="medium">Medium</CNarrowButton>
+                    <CNarrowButton size="large">Large</CNarrowButton>
                 </div>
             </div>
         `,
-            components: { NarrowButton, Icon },
+            components: { CNarrowButton, CIcon },
         }}
     </Story>
 </Canvas>
@@ -142,12 +142,12 @@ export const Default = (args, { argTypes }) => ({
             template: `
             <div>
                 <div style="display: flex">
-                    <NarrowButton color="gray400">Gray400</NarrowButton>
-                    <NarrowButton color="gray600">Gray600</NarrowButton>
+                    <CNarrowButton color="gray400">Gray400</CNarrowButton>
+                    <CNarrowButton color="gray600">Gray600</CNarrowButton>
                 </div>
             </div>
         `,
-            components: { NarrowButton, Icon },
+            components: { CNarrowButton, CIcon },
         }}
     </Story>
 </Canvas>
@@ -159,28 +159,28 @@ export const Default = (args, { argTypes }) => ({
             template: `
             <div>
                 <div style="display: flex">
-                    <NarrowButton color="gray400">
+                    <CNarrowButton color="gray400">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="gray400" />
+                            <CIcon name="IconPlusSmallLine" color="gray400" />
                         </template>
                         WithIcon
                         <template v-slot:right-icon>
-                            <Icon name="IconTextArrowSmallLine" color="gray400" />
+                            <CIcon name="IconTextArrowSmallLine" color="gray400" />
                         </template>
-                    </NarrowButton>
-                    <NarrowButton color="gray600">
+                    </CNarrowButton>
+                    <CNarrowButton color="gray600">
                         <template v-slot:left-icon>
-                            <Icon name="IconPlusSmallLine" color="gray600" />
+                            <CIcon name="IconPlusSmallLine" color="gray600" />
                         </template>
                         WithIcon
                         <template v-slot:right-icon>
-                            <Icon name="IconTextArrowSmallLine" color="gray600" />
+                            <CIcon name="IconTextArrowSmallLine" color="gray600" />
                         </template>
-                    </NarrowButton>
+                    </CNarrowButton>
                 </div>
             </div>
         `,
-            components: { NarrowButton, Icon },
+            components: { CNarrowButton, CIcon },C
         }}
     </Story>
 </Canvas>
@@ -193,35 +193,35 @@ export const Default = (args, { argTypes }) => ({
                 <div>
                     <div style="background: #CF5310" class="p-8 mb-10">
                         <div class="flex">
-                            <NarrowButton size="small" color="white" transparent class="mr-10">Small</NarrowButton>
-                            <NarrowButton size="small" color="white" transparent class="hover-test">Small</NarrowButton>
+                            <CNarrowButton size="small" color="white" transparent class="mr-10">Small</CNarrowButton>
+                            <CNarrowButton size="small" color="white" transparent class="hover-test">Small</CNarrowButton>
                         </div>
                         <div class="flex my-10">
-                            <NarrowButton size="medium" color="white" transparent class="mr-10">Medium</NarrowButton>
-                            <NarrowButton size="medium" color="white" transparent class="hover-test">Medium</NarrowButton>
+                            <CNarrowButton Csize="medium" color="white" transparent class="mr-10">Medium</CNarrowButton>
+                            <CNarrowButton size="medium" color="white" transparent class="hover-test">Medium</CNarrowButton>
                         </div>
                         <div class="flex">
-                            <NarrowButton size="large" color="white" transparent class="mr-10">Large</NarrowButton>
-                            <NarrowButton size="large" color="white" transparent class="hover-test">Large</NarrowButton>
+                            <CNarrowButton size="CClarge" color="white" transparent class="mr-10">Large</CNarrowButton>
+                            <CNarrowButton size="large" color="white" transparent class="hover-test">Large</CNarrowButton>
                         </div>
                     </div>
                     <div style="background: #040505" class="p-8">
                         <div class="flex">
-                            <NarrowButton size="small" color="white" transparent class="mr-10">Small</NarrowButton>
-                            <NarrowButton size="small" color="white" transparent class="hover-test">Small</NarrowButton>
+                            <CNarrowButtoßn size="small" color="white" transparent class="mr-10">Small</CNarrowButtoßn>
+                            <CNarrowButton size="small" color="white" transparent class="hover-test">Small</CNarrowButton>
                         </div>
                         <div class="flex my-10">
-                            <NarrowButton size="medium" color="white" transparent class="mr-10">Medium</NarrowButton>
-                            <NarrowButton size="medium" color="white" transparent class="hover-test">Medium</NarrowButton>
+                            <CCNarrowButton size="medium" color="white" transparent class="mr-10">Medium</CCNarrowButton>
+                            <CCNarrowButton size="medium" color="white" transparent class="hover-test">Medium</CCNarrowButton>
                         </div>
                         <div class="flex">
-                            <NarrowButton size="large" color="white" transparent class="mr-10">Large</NarrowButton>
-                            <NarrowButton size="large" color="white" transparent class="hover-test">Large</NarrowButton>
+                            <CNarrowButton size="large" color="white" transparent class="mr-10">Large</CNarrowButton>
+                            <CNarrowButton size="large" color="white" transparent class="hover-test">Large</CNarrowButton>
                         </div>
                     </div>
                 </div>
             `,
-            components: { NarrowButton, Icon },
+            components: { CNarrowButton, CIcon },
         }}
     </Story>
 </Canvas>

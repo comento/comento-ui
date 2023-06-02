@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Avatar, { avatarSizes, avatarTypes } from '@/components/components/dataDisplay/Avatar';
+import CAvatar, { avatarSizes, avatarTypes } from '@/components/components/dataDisplay/CAvatar.vue';
 
 <Meta
     title="Data Display/Avatar"
-    component={ Avatar }
+    component={ CAvatar }
     argTypes={{
         size: {
             description: "아바타 크기",
@@ -45,14 +45,14 @@ import Avatar, { avatarSizes, avatarTypes } from '@/components/components/dataDi
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Avatar },
+    components: { CAvatar },
     template:
-        `<Avatar :type="type" :src="src" :size="size" :text="text" :color="color" />`,
+        `<CAvatar :type="type" :src="src" :size="size" :text="text" :color="color" />`,
 });
 
 # Avatar
 
-**Avatar** 컴포넌트의 문서입니다.
+**c-avatar** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -68,28 +68,28 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                  <Avatar type="nickname" size="xsmall" class="mr-24" />
-                  <Avatar type="nickname" size="small" class="mr-24" />
-                  <Avatar type="nickname" size="medium" class="mr-24" />
-                  <Avatar type="nickname" size="large" />
+                  <CAvatar type="nickname" size="xsmall" class="mr-24" />
+                  <CAvatar type="nickname" size="small" class="mr-24" />
+                  <CAvatar type="nickname" size="medium" class="mr-24" />
+                  <CAvatar type="nickname" size="large" />
                   <hr class="mt-8 mb-8">
-                  <Avatar type="profile" size="xsmall" class="mr-24" />
-                  <Avatar type="profile" size="small" class="mr-24" />
-                  <Avatar type="profile" size="medium" class="mr-24" />
-                  <Avatar type="profile" size="large" />
+                  <CAvatar type="profile" size="xsmall" class="mr-24" />
+                  <CAvatar type="profile" size="small" class="mr-24" />
+                  <CAvatar type="profile" size="medium" class="mr-24" />
+                  <CAvatar type="profile" size="large" />
                   <hr class="mt-8 mb-8">
-                  <Avatar type="logo" size="xsmall"  class="mr-24" />
-                  <Avatar type="logo" size="small"  class="mr-24" />
-                  <Avatar type="logo" size="medium"  class="mr-24" />
-                  <Avatar type="logo" size="large"  class="mr-24" />
+                  <CAvatar type="logo" size="xsmall"  class="mr-24" />
+                  <CAvatar type="Clogo" size="small"  class="mr-24" />
+                  <CAvatar type="logo" size="medium"  class="mr-24" />
+                  <CAvatar type="logo" size="large"  class="mr-24" />
                   <hr class="mt-8 mb-8">
-                  <Avatar type="image" size="xsmall" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
-                  <Avatar type="image" size="small" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
-                  <Avatar type="image" size="medium" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
-                  <Avatar type="image" size="large" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
+                  <CAvatar type="image" size="xsmall" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
+                  <CAvatar type="image" size="small" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
+                  <CAvatar type="image" size="medium" class="mr-24" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
+                  <CAvatar type="image" size="large" src="https://cdn.comento.kr/edu/title_acbf02a6a4798087.jpg" />
                 </div>
         `,
-            components: { Avatar },
+            components: { CAvatar },
         }}
     </Story>
 </Canvas>

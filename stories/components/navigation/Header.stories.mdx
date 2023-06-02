@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
-import Header from '@/components/components/navigation/Header';
+import CHeader from '@/components/components/navigation/CHeader.vue';
 
 <Meta
     title="Navigation/Header"
-    component={Header}
+    component={CHeader}
     argTypes={{
         activatedMenu: {
             description: '현재 활성화 된 메뉴 Index',
@@ -72,23 +72,23 @@ import Header from '@/components/components/navigation/Header';
 
 export const Default = (args, {argTypes}) => ({
     props: Object.keys(argTypes),
-    components: {Header},
+    components: {CHeader},
     template: `
         <div style="width: 100%;">
-        <Header
+        <CHeader
             :activated-menu="activatedMenu"
             :hovered-menu="hoveredMenu"
             :nuxt="nuxt"
             :items="items"
             :is-transparent="isTransparent"
         >
-        </Header>
+        </CHeader>
 </div>`
 });
 
 # Header
 
-**Header** 컴포넌트의 문서입니다
+**c-header** 컴포넌트의 문서입니다
 
 <Story name="Default" height="100px">
     {Default.bind({})}

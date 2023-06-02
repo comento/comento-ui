@@ -1,14 +1,14 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Tooltip from '@/components/components/message/Tooltip';
+import CTooltip from '@/components/components/message/CTooltip.vue';
 import { placements } from '@/utils/constants/tooltip';
-import Icon from '@/components/elements/core/icon/Icon';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
+import CIcon from '@/components/elements/core/icon/CIcon.vue';
+import CNewGrid from '@/components/layout/CNewGrid.vue';
+import CNewRow from '@/components/layout/CNewRow.vue';
+import CNewCol from '@/components/layout/CNewCol.vue';
 
 <Meta
   title="Message/Tooltip"
-  component={ Tooltip }
+  component={ CTooltip }
   argTypes={{
     placement: {
       description: "기준점에서 Tooltip이 보이는 위치<br/>`String`",
@@ -45,20 +45,20 @@ import NewCol from '@/components/layout/NewCol';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Tooltip, Icon },
+  components: { CTooltip, CIcon },
   template: `<div style="width: 100%; display: flex; justify-content: center;">
-                 <Tooltip :placement="placement" :container="container">
-                     <Icon name="IconProfileLargeFill"></Icon>
+                 <CTooltip :placement="placement" :container="container">
+                     <CIcon name="IconProfileLargeFill"></CIcon>
                      <template v-slot:popover>
                            <div>{{ text }}</div>
                      </template>
-                 </Tooltip>
+                 </CTooltip>
              </div>`
 });
 
 # Tooltip
 
-**Tooltip** 컴포넌트의 문서입니다.
+**c-tooltip** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -73,98 +73,98 @@ export const Default = (args, { argTypes }) => ({
     <Story name="All" height="100px">
         {{
             template: `
-                <NewGrid>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="margin-top: 50px; margin-bottom: 40px">
-                            <Tooltip placement="top-right" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                <CNewGrid>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="margin-top: 50px; margin-bottom: 40px">
+                            <CTooltip placement="top-right" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>top-right</div>
                                     </template>
-                            </Tooltip>
-                            <Tooltip placement="top" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                            <CTooltip placement="top" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>top</div>
                                     </template>
-                            </Tooltip>
-                            <Tooltip placement="top-left" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                            <CTooltip placement="top-left" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>top-left</div>
                                     </template>
-                            </Tooltip>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="height: 120px">
-                            <Tooltip placement="bottom-right" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="height: 120px">
+                            <CTooltip placement="bottom-right" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom-right</div>
                                     </template>
-                            </Tooltip>
-                            <Tooltip placement="bottom" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                            <CTooltip placement="bottom" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom</div>
                                     </template>
-                            </Tooltip>
-                            <Tooltip placement="bottom-left" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                            <CTooltip placement="bottom-left" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom-left</div>
                                     </template>
-                            </Tooltip>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="height: 40px; margin-bottom: 40px">
-                            <Tooltip placement="right-top" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="height: 40px; margin-bottom: 40px">
+                            <CTooltip placement="right-top" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right-top</div>
                                     </template>
-                            </Tooltip>
-                            <Tooltip placement="right" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                            <CTooltip placement="right" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right</div>
                                     </template>
-                            </Tooltip>
-                            <Tooltip placement="right-bottom" open>
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                            <CTooltip placement="right-bottom" open>
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right-bottom</div>
                                     </template>
-                            </Tooltip>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow>
-                      <NewCol class="flex flex-row justify-around" style="height: 40px">
-                        <Tooltip placement="left-top" open>
-                          <Icon name="IconProfileLargeFill"></Icon>
+                            </CTooltip>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow>
+                      <CNewCol class="flex flex-row justify-around" style="height: 40px">
+                        <CTooltip placement="left-top" open>
+                          <CIcon name="IconProfileLargeFill"></CIcon>
                           <template v-slot:popover>
                             <div>left-top</div>
                           </template>
-                        </Tooltip>
-                        <Tooltip placement="left" open>
-                          <Icon name="IconProfileLargeFill"></Icon>
+                        </CTooltip>
+                        <CTooltip placement="left" open>
+                          <CIcon name="IconProfileLargeFill"></CIcon>
                           <template v-slot:popover>
                             <div>left</div>
                           </template>
-                        </Tooltip>
-                        <Tooltip placement="left-bottom" open>
-                          <Icon name="IconProfileLargeFill"></Icon>
+                        </CTooltip>
+                        <CTooltip placement="left-bottom" open>
+                          <CIcon name="IconProfileLargeFill"></CIcon>
                           <template v-slot:popover>
                             <div>left-bottom</div>
                           </template>
-                        </Tooltip>
-                      </NewCol>
-                    </NewRow>
-                </NewGrid>
+                        </CTooltip>
+                      </CNewCol>
+                    </CNewRow>
+                </CNewGrid>
           `,
-          components: { NewGrid, NewRow, NewCol, Tooltip, Icon },
+          components: { CNewGrid, CNewRow, CNewCol, CTooltip, CIcon },
         }}
     </Story>
 </Canvas>

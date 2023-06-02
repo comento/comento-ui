@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Select, { selectSizes, selectTypes }  from '@/components/components/dataEntry/Select';
-import Typography from '@/components/elements/core/typography/Typography';
+import CSelect, { selectSizes, selectTypes }  from '@/components/components/dataEntry/CSelect.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import { colors } from '@/utils/constants/color';
 
 <Meta
     title="Data Entry/Dropdown/Select"
-    component={ Select }
+    component={ CSelect }
     argTypes={{
         type: {
             description: "select type",
@@ -67,13 +67,13 @@ import { colors } from '@/utils/constants/color';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Select },
+    components: { CSelect },
     data: () => ({
         listItems: ['List1', 'List2', 'List3', 'List4', 'List5'],
     }),
     template: `
         <div>
-            <Select
+            <CSelect
                 v-model="value"
                 :type="type"
                 :options="options"
@@ -93,7 +93,7 @@ export const Default = (args, { argTypes }) => ({
 });
 
 # Select
-**Select** 컴포넌트의 문서입니다.
+**c-select** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="150px">
     {Default.bind({})}
@@ -115,14 +115,14 @@ export const Default = (args, { argTypes }) => ({
       template: `
                 <div>
                     <div class="mb-10">
-                        <Select v-model="select1" :options="options" />
+                        <CSelect v-model="select1" :options="options" />
                     </div>
                     <div class="mb-10">
-                        <Select v-model="select2" :options="options" type="underline" />
+                        <CSelect v-model="select2" :options="options" type="underline" />
                     </div>
                 </div>
         `,
-      components: { Select },
+      components: { CSelect },
     }}
   </Story>
 </Canvas>
@@ -141,20 +141,20 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <div class="mb-10">
-                        <Select v-model="select1" :options="options" size="small" />
+                        <CSelect v-model="select1" :options="options" size="small" />
                     </div>
                     <div class="mb-10">
-                        <Select v-model="select2" :options="options" size="medium" />
+                        <CSelect v-model="select2" :options="options" size="medium" />
                     </div>
                     <div class="mb-10">
-                        <Select v-model="select3" :options="options" size="small" full />
+                        <CSelect v-model="select3" :options="options" size="small" full />
                     </div>
                     <div>
-                        <Select v-model="select4" :options="options" size="medium" full />
+                        <CSelect v-model="select4" :options="options" size="medium" full />
                     </div>
                 </div>
         `,
-            components: { Select },
+            components: { CSelect },
         }}
     </Story>
 </Canvas>
@@ -172,23 +172,23 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <div style="margin-bottom: 30px">
-                        <Select v-model="select1" :options="options1" label="Label" />
-                        <Typography color="gray800" type="body2">
+                        <CSelect v-model="select1" :options="options1" label="Label" />
+                        <CTypography color="gray800" type="body2">
                           options: {{ options1 }}<br />
                           선택된 값: {{ select1 }}
-                        </Typography>
-                        <Typography></Typography>
+                        </CTypography>
+                        <CTypography></CTypography>
                     </div>
                     <div>
-                        <Select v-model="select2" :options="options2" label="Label" :vertical="false" />
-                        <Typography color="gray800" type="body2">
+                        <CSelect v-model="select2" :options="options2" label="Label" :vertical="false" />
+                        <CTypography color="gray800" type="body2">
                           options: {{ options2 }}<br />
                           선택된 값: {{ select2 }}
-                        </Typography>
+                        </CTypography>
                     </div>
                 </div>
         `,
-            components: { Select, Typography },
+            components: { CSelect, CTypography },
         }}
     </Story>
 </Canvas>
@@ -203,10 +203,10 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Select v-model="select" :options="options" label="Label" :vertical="false" error/>
+                    <CSelect v-model="select" :options="options" label="Label" :vertical="false" error/>
                 </div>
         `,
-            components: { Select },
+            components: { CSelect },
         }}
     </Story>
 </Canvas>

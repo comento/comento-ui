@@ -1,12 +1,12 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Button from '@/components/components/general/button/Button';
-import ButtonGroup, { buttonGroupSizes } from '@/components/components/general/button/ButtonGroup';
-import Typography from '@/components/elements/core/typography/Typography';
-import Icon from '@/components/elements/core/icon/Icon';
+import CButton from '@/components/components/general/button/CButton.vue';
+import CButtonGroup, { buttonGroupSizes } from '@/components/components/general/button/CButtonGroup.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
+import CIcon from '@/components/elements/core/icon/CIcon.vue';
 
 <Meta
   title="General/Button/ButtonGroup"
-  component={ ButtonGroup }
+  component={ CButtonGroup }
   argTypes={{
     size: {
       description: "버튼의 크기",
@@ -28,17 +28,17 @@ import Icon from '@/components/elements/core/icon/Icon';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { ButtonGroup, Button },
+  components: { CButtonGroup, CButton },
   template:
-    `<ButtonGroup :size="size" :vertical="vertical">
-      <Button type="outline" :size="size">Button</Button>
-      <Button type="outline" :size="size">Button</Button>
-    </ButtonGroup>`,
+    `<CButtonGroup :size="size" :vertical="vertical">
+      <CButton type="outline" :size="size">Button</CButton>
+      <CButton type="outline" :size="size">Button</CButton>
+    </CButtonGroup>`,
 });
 
-# Button
+# ButtonGroup
 
-**Button** 컴포넌트의 문서입니다.
+**c-button-group** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -52,21 +52,21 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <ButtonGroup size="small">
-                        <Button type="outline" size="small">Small</Button>
-                        <Button type="outline" size="small">Small</Button>
-                    </ButtonGroup>
-                    <ButtonGroup size="medium" style="margin: 10px 0">
-                        <Button type="outline" size="medium">Medium</Button>
-                        <Button type="outline" size="medium">Medium</Button>
-                    </ButtonGroup>
-                    <ButtonGroup size="large">
-                        <Button type="outline" size="large">Large</Button>
-                        <Button type="outline" size="large">Large</Button>
-                    </ButtonGroup>
+                    <CButtonGroup size="small">
+                        <CButton type="outline" size="small">Small</CButton>
+                        <CButton type="outline" size="small">Small</CButton>
+                    </CButtonGroup>
+                    <CButtonGroup size="medium" styCle="margin: 10px 0">
+                        <CButton type="outline" size="medium">Medium</CButton>
+                        <CButton type="outline" size="medium">Medium</CButton>
+                    </CButtonGroup>
+                    <CButtonGroup size="large">
+                        <CButton type="outline" size="large">Large</CButton>
+                        <CButton type="outline" size="large">Large</CButton>
+                    </CButtonGroup>
                 </div>
         `,
-            components: { ButtonGroup, Button },
+            components: { CButtonGroup, CButton },
         }}
     </Story>
 </Canvas>
@@ -77,29 +77,29 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <Typography color="gray800">Horizontal ButtonGroup</Typography>
-                    <ButtonGroup size="small" style="margin-bottom: 10px">
-                        <Button size="small" type="text" color="info">
+                    <CTypography color="gray800">Horizontal ButtonGroup</CTypography>
+                    <CButtonGroup size="small" style="margin-bottom: 10px">
+                        <CButton size="small" type="text" color="info">
                             <template v-slot:left-icon>
-                                <Icon name="IconPlusSmallLine" color="gray500" />
+                                <CIcon name="IconPlusSmallLine" color="gray500" />
                             </template>
                             Button
-                        </Button>
-                        <Button size="small" type="text" color="info">
+                        </CButton>
+                        <CButton size="small" type="text" color="info">
                             <template v-slot:left-icon>
-                                <Icon name="IconPlusSmallLine" color="gray500" />
+                                <CIcon name="IconPlusSmallLine" color="gray500" />
                             </template>
                             Button
-                        </Button>
-                    </ButtonGroup>
-                    <Typography color="gray800">Vertical ButtonGroup</Typography>
-                    <ButtonGroup size="small" vertical>
-                        <Button type="outline" size="small">Button</Button>
-                        <Button type="outline" size="small">Button</Button>
-                    </ButtonGroup>
+                        </CButton>
+                    </CButtonGroup>
+                    <CTypography color="gray800">Vertical ButtonGroup</CTypography>
+                    <CButtonGroup size="small" vertical>
+                        <CButton type="outline" size="small">Button</CButton>
+                        <CButton type="outline" size="small">Button</CButton>
+                    </CButtonGroup>
                 </div>
         `,
-            components: { ButtonGroup, Button, Typography, Icon },
+            components: { CButtonGroup, CButton, CTypography, CIcon },
         }}
     </Story>
 </Canvas>

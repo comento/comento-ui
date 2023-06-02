@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import IconRating from "@/components/components/dataDisplay/rating/IconRating";
+import CIconRating from '@/components/components/dataDisplay/rating/CIconRating.vue';
 import { colorKeys } from '@/utils/constants/color';
-import { IconNames } from '@/components/elements/core/icon/Icon';
+import { IconNames } from '@/components/elements/core/icon/CIcon.vue';
 
 <Meta
 	title="Data Display/Rating/IconRating"
-	component={ IconRating }
+	component={ CIconRating }
 	argTypes={{
 		color: {
 			description: '색상',
@@ -34,14 +34,14 @@ import { IconNames } from '@/components/elements/core/icon/Icon';
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
     template: `
-        <IconRating :color="color" :text="text" :icon-name="iconName"/>
+        <CIconRating :color="color" :text="text" :icon-name="iconName"/>
     `,
-    components: { IconRating },
+    components: { CIconRating },
 });
 
 # IconRating
 
-**IconRating** 컴포넌트의 문서입니다.
+**c-icon-rating** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
  {Default.bind({})}
@@ -55,11 +55,11 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
             <div style="display: flex; flex-direction: column">
-                <IconRating color="primary" text="6"/>
-                <IconRating color="error" icon-name="IconLikeSmallLine" text="6"/>
+                <CIconRating color="primary" text="6"/>
+                <CIconRating color="error" icon-name="IconLikeSmallLine" text="6"/>
             </div>
     `,
-            components: { IconRating },
+            components: { CIconRating },
         }}
     </Story>
 </Canvas>

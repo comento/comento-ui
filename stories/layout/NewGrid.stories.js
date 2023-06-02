@@ -1,171 +1,171 @@
 import { storiesOf } from '@storybook/vue';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Typography from '@/components/elements/core/typography/Typography';
+import CNewGrid from '@/components/layout/CNewGrid.vue';
+import CNewRow from '@/components/layout/CNewRow.vue';
+import CNewCol from '@/components/layout/CNewCol.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
 
-storiesOf('Layout/NewGrid', module)
+storiesOf('Layout/NewGCrid', module)
 	.add('Basic', () => ({
-		components: { NewGrid, NewRow, NewCol, Typography },
+		components: { CNewGrid, CNewRow, CNewCol, CTypography },
 		template: `<div>
-		<Typography type="display1" element="div" align="center" >PC (1140)</Typography>
-		<Typography type="display1" element="div" align="center" class="mb-64">Mobile (375)</Typography>
-		<NewGrid>
-			<NewRow>
-				<NewCol :col-sm="4" :col-lg="12" class="mb-40" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</Typography>
-				</NewCol>
-			</NewRow>
-			<NewRow>
-				<NewCol :col-sm="3" :col-lg="9" class="mb-40">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan" >col-9</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" class="mb-40">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-			</NewRow>
-			<NewRow>
-				<NewCol :col-sm="1" :col-lg="3" class="mb-40" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-			</NewRow>
-			<NewRow>
-				<NewCol :col-sm="1" :col-lg="3" class="mb-40">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
+		<CTypography type="display1" element="div" align="center" >PC (1140)</CTypography>
+		<CTypography type="display1" element="div" align="center" class="mb-64">Mobile (375)</CTypography>
+		<CNewGrid>
+			<CNewRow>
+				<CNewCol :col-sm="4" :col-lg="12" class="mb-40" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</CTypography>
+				</CNewCol>
+			</CNewRow>
+			<CNewRow>
+				<CNewCol :col-sm="3" :col-lg="9" class="mb-40">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan" >col-9</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" class="mb-40">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+			</CNewRow>
+			<CNewRow>
+				<CNewCol :col-sm="1" :col-lg="3" class="mb-40" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+			</CNewRow>
+			<CNewRow>
+				<CNewCol :col-sm="1" :col-lg="3" class="mb-40">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
 				<NewCol :col-sm="1" :col-lg="3" :offset-lg="3">
 					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
 				<NewCol :col-sm="1" :col-lg="3" >
 					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
 				</NewCol>
-			</NewRow>
-			<NewRow>
+			</CNewRow>
+			<CNewRow>
 				<NewCol :col-sm="1" :col-lg="1" >
 					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
 				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" :offset-lg="1">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-			</NewRow>
-		</NewGrid>
+				<CNewCol :col-sm="1" :col-lg="1" :offset-lg="1">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+			</CNewRow>
+		</CNewGrid>
 		</div>`,
 	}))
 	.add('Full', () => ({
 		components: { NewGrid, NewRow, NewCol, Typography },
 		template: `<div>
-		<Typography type="display1" element="div" align="center" >PC (1140)</Typography>
-		<Typography type="display1" element="div" align="center" class="mb-64">Mobile (375)</Typography>
-		<NewGrid fluid>
-			<NewRow>
-				<NewCol :col-sm="4" :col-lg="12" class="mb-40" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</Typography>
-				</NewCol>
-			</NewRow>
-			<NewRow>
-				<NewCol :col-sm="3" :col-lg="9" class="mb-40">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan" >col-9</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" class="mb-40">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-			</NewRow>
-			<NewRow>
-				<NewCol :col-sm="1" :col-lg="3" class="mb-40" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-			</NewRow>
-			<NewRow>
-				<NewCol :col-sm="1" :col-lg="3" class="mb-40">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" :offset-lg="3">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="3" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</Typography>
-				</NewCol>
-			</NewRow>
-			<NewRow>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" :offset-lg="1">
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-				<NewCol :col-sm="1" :col-lg="1" >
-					<Typography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</Typography>
-				</NewCol>
-			</NewRow>
-		</NewGrid>
+		<CTypography type="display1" element="div" align="center" >PC (1140)</CTypography>
+		<CTypography type="display1" element="div" align="center" class="mb-64">Mobile (375)</CTypography>
+		<CNewGrid fluid>
+			<CNewRow>
+				<CNewCol :col-sm="4" :col-lg="12" class="mb-40" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-12</CTypography>
+				</CNewCol>
+			</CNewRow>
+			<CNewRow>
+				<CNewCol :col-sm="3" :col-lg="9" class="mb-40">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan" >col-9</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" class="mb-40">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+			</CNewRow>
+			<CNewRow>
+				<CNewCol :col-sm="1" :col-lg="3" class="mb-40" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+			</CNewRow>
+			<CNewRow>
+				<CNewCol :col-sm="1" :col-lg="3" class="mb-40">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" :offset-lg="3">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="3" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-3</CTypography>
+				</CNewCol>
+			</CNewRow>
+			<CNewRow>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" :offset-lg="1">
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+				<CNewCol :col-sm="1" :col-lg="1" >
+					<CTypography type="headline7" element="p" align="center" class="pa-16" style="background: lightcyan">col-1</CTypography>
+				</CNewCol>
+			</CNewRow>
+		</CNewGrid>
 		</div>`,
 	}));

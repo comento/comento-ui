@@ -1,3 +1,3 @@
-import TellingAvatarQuote from './TellingAvatarQuote';
+import CTellingAvatarQuote from './CTellingAvatarQuote.vue';
 
-export { TellingAvatarQuote };
+export { CTellingAvatarQuote };

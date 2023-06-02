@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story } from '@storybook/addon-docs/blocks';
-import SearchTopBar from '@/components/components/navigation/SearchTopBar';
+import CSearchTopBar from '@/components/components/navigation/CSearchTopBar.vue';
 
 <Meta
   title="Navigation/SearchTopBar"
-  component={SearchTopBar}
+  component={CSearchTopBar}
   argTypes={{
     isTransparent: {
       description: "투명 헤더 사용 여부",
@@ -36,11 +36,11 @@ import SearchTopBar from '@/components/components/navigation/SearchTopBar';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { SearchTopBar },
+  components: { CSearchTopBar },
   template: `
     <div style='width: 100%; display: flex; justify-content: center'>
     <div style='width: 375px'>
-      <SearchTopBar :is-transparent='isTransparent' :keyword='keyword' :placeholder='placeholder'
+      <CSearchTopBar :is-transparent='isTransparent' :keyword='keyword' :placeholder='placeholder'
               :show-dropdown='showDropdown' :is-close="isClose" style="position: relative"  />
     </div>
     </div>
@@ -49,7 +49,7 @@ export const Default = (args, { argTypes }) => ({
 
 # SearchTopBar
 
-**SearchTopBar** 컴포넌트의 문서입니다
+**c-search-top-bar** 컴포넌트의 문서입니다
 
 <Story name="Default" height="100px">
 	{Default.bind({})}

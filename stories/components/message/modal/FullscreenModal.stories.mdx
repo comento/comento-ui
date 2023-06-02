@@ -1,14 +1,14 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FullscreenModal, { fullscreenDirection } from '@/components/components/message/modal/FullscreenModal';
-import Button, { buttonColors } from '@/components/components/general/button/Button';
-import SearchInput from '@/components/components/dataEntry/input/SearchInput';
-import Icon from '@/components/elements/core/icon/Icon';
-import Typography from "@/components/elements/core/typography/Typography";
-import Divider from "@/components/elements/utility/Divider";
+import CFullscreenModal, { fullscreenDirection } from '@/components/components/message/modal/CFullscreenModal.vue';
+import CButton, { buttonColors } from '@/components/components/general/button/CButton.vue';
+import CSearchInput from '@/components/components/dataEntry/input/CSearchInput.vue';
+import CIcon from '@/components/elements/core/icon/CIcon.vue';
+import CTypography from '@/components/elements/core/typography/CTypography.vue';
+import CDivider from '@/components/elements/utility/CDivider.vue';
 
 <Meta
     title="Message/Modal/FullscreenModal"
-    component={ FullscreenModal }
+    component={ CFullscreenModal }
     argTypes={{
         show: {
             description: "모달 활성화",
@@ -59,11 +59,11 @@ import Divider from "@/components/elements/utility/Divider";
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { FullscreenModal, Button },
+    components: { CFullscreenModal, CButton },
     template: `
         <div>
-            <Button @click="show = true">Open</Button>
-            <FullscreenModal
+            <CButton @click="show = true">Open</CButton>
+            <CFullscreenModal
                 :show.sync="show"
                 :direction="direction"
                 :show-action-button="showActionButton"
@@ -83,13 +83,13 @@ export const Default = (args, { argTypes }) => ({
                         - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                     </div>
                 </template>
-            </FullscreenModal>
+            </CFullscreenModal>
         </div>`
 });
 
 # FullscreenModal
 
-**FullscreenModal** 컴포넌트의 문서입니다.
+**c-fullscreen-modal** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -107,8 +107,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal
                         :show.sync="show"
                         direction="left"
                     >
@@ -123,11 +123,11 @@ export const Default = (args, { argTypes }) => ({
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                             </div>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button
+                CFullscreenModal, CButton
             }
         }}
     </Story>
@@ -143,8 +143,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal
                         :show.sync="show"
                         direction="left"
                     >
@@ -152,7 +152,7 @@ export const Default = (args, { argTypes }) => ({
                             title
                         </template>
                         <template v-slot:action>
-                            <Button size="small" type="outline"  @click="show = false">닫기</Button>
+                            <CButton size="small" type="outline"  @click="show = false">닫기</CButton>
                         </template>
                         <template v-slot:content>
                             <div style="padding:16px">
@@ -162,11 +162,11 @@ export const Default = (args, { argTypes }) => ({
                                 - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
                             </div>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button
+                CFullscreenModal, CButton
             }
         }}
     </Story>
@@ -181,30 +181,30 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal :show.sync="show">
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal :show.sync="show">
                         <template v-slot:content>
                             <div class="py-6 px-16 flex">
                                 <div class="mr-4" @click="show = false" style="display: flex; align-items: center;">
-                                    <Icon name="IconBackwardLargeLine" color="gray800" />
+                                    <CIcon name="IconBackwardLargeLine" color="gray800" />
                                 </div>
-                                <SearchInput
+                                <CSearchInput
                                     ref="searchModalInput"
                                     placeholder="예시로 들어 갈 수 있습니다."
                                     full
-                                ></SearchInput>
+                                ></CSearchInput>
                             </div>
-                            <Divider color="gray200" />
+                            <CDivider color="gray200" />
                             <div style="padding:25px">
                                 content영역만 있을 경우 보여지는 fullcreenModal입니다.<br>
                                 content영역만 있는 경우, 페이지처럼 보이도록 의도할 수 있습니다.
                             </div>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             components: {
-                FullscreenModal, Button, SearchInput, Icon, Divider
+                CFullscreenModal, CButton, CSearchInput, CIcon, CDivider
             }
         }}
     </Story>
@@ -219,8 +219,8 @@ export const Default = (args, { argTypes }) => ({
             }),
             template: `
                 <div>
-                    <Button @click="show = true">Open</Button>
-                    <FullscreenModal
+                    <CButton @click="show = true">Open</CButton>
+                    <CFullscreenModal
                         :show.sync="show"
                         direction="left"
                         show-action-button
@@ -231,10 +231,10 @@ export const Default = (args, { argTypes }) => ({
                             Title이 있는 경우
                         </template>
                         <template v-slot:action>
-                            <Button size="small" type="outline" @click="onClick">초기화</Button>
+                            <CButton size="small" type="outline" @click="onClick">초기화</CButton>
                         </template>
                         <template v-slot:content>
-                            <Typography type="display1" style="padding:16px">
+                            <CTypography type="display1" style="padding:16px">
                                 동해 물과 백두산이 마르고 닳도록<br />
                                 하느님이 보우하사 우리나라 만세<br />
                                 무궁화 삼천리 화려강산<br />
@@ -248,9 +248,9 @@ export const Default = (args, { argTypes }) => ({
                                 <br/>
                                 이 기상과 이 맘으로 충성을 다하여<br />
                                 괴로우나 즐거우나 나라 사랑하세
-                            </Typography>
+                            </CTypography>
                         </template>
-                    </FullscreenModal>
+                    </CFullscreenModal>
                 </div>
             `,
             methods: {
@@ -259,7 +259,7 @@ export const Default = (args, { argTypes }) => ({
                 },
             },
             components: {
-                FullscreenModal, Button, Typography
+                CFullscreenModal, CButton, CTypography
             }
         }}
     </Story>

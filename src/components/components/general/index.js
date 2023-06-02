@@ -1,4 +1,4 @@
-import Box from './Box';
+import CBox from './CBox.vue';
 
-export { Box };
+export { CBox };
 export * from './button';

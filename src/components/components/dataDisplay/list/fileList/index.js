@@ -1,5 +1,5 @@
-import FileItem from './FileItem';
-import FileList from './FileList';
-import FileSummary from './FileSummary';
+import CFileItem from './CFileItem.vue';
+import CFileList from './CFileList.vue';
+import CFileSummary from './CFileSummary.vue';
 
-export { FileItem, FileList, FileSummary };
+export { CFileItem, CFileList, CFileSummary };

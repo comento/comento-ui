@@ -1,28 +1,28 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FormGroup from '@/components/components/dataEntry/FormGroup';
-import Textarea from '@/components/components/dataEntry/Textarea';
-import TextField from '@/components/components/dataEntry/input/TextField';
+import CFormGroup from '@/components/components/dataEntry/FormGroup.vue';
+import CTextarea from '@/components/components/dataEntry/Textarea.vue';
+import CTextField from '@/components/components/dataEntry/input/TextField.vue';
 
 <Meta
     title="Data Entry/FormGroup"
-    component={ FormGroup }
+    component={ CFormGroup }
 />
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { FormGroup, TextField, Textarea },
+    components: { CFormGroup, CTextField, CTextarea },
     template:
         `<div style="width:300px">
-             <FormGroup>
-                 <TextField outline placeholder="사이 사이 간격 12px"/>
-                 <Textarea type="outline" />
-             </FormGroup>
+             <CFormGroup>
+                 <CTextField outline placeholder="사이 사이 간격 12px"/>
+                 <CTextarea type="outline" />
+             </CFormGroup>
          </div>`,
 });
 
 # FormGroup
 
-**FormGroup** 컴포넌트의 문서입니다.
+**c-form-group** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="150px">
     {Default.bind({})}

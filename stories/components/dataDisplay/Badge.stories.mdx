@@ -1,11 +1,11 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Badge, { badgeColors, badgeSizes, badgeTypes } from '@/components/components/dataDisplay/Badge';
-import Icon from '@/components/elements/core/icon/Icon';
-import Divider from '@/components/elements/utility/Divider';
+import CBadge, { badgeColors, badgeSizes, badgeTypes } from '@/components/components/dataDisplay/CBadge.vue';
+import CIcon from '@/components/elements/core/icon/Icon.vue';
+import CDivider from '@/components/elements/utility/Divider.vue';
 
 <Meta
   title="Data Display/Badge"
-  component={Badge}
+  component={CBadge}
   argTypes={{
     color: {
       description: "뱃지 색상",
@@ -52,9 +52,9 @@ import Divider from '@/components/elements/utility/Divider';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Badge, Icon },
+  components: { CBadge, CIcon },
   template: `
-    <Badge
+    <CBadge
       :color="color"
       :text="text"
       :size="size"
@@ -62,14 +62,14 @@ export const Default = (args, { argTypes }) => ({
       :offset-y="offsetY"
       :type="type"
     >
-        <Icon name="IconAlarmLargeLine" />
-    </Badge>
+        <CIcon name="IconAlarmLargeLine" />
+    </CBadge>
   `,
 });
 
 # Badge
 
-**Badge** 컴포넌트의 문서입니다.
+**c-badge** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -87,7 +87,7 @@ export const Default = (args, { argTypes }) => ({
       template: `
         <div>
           <div class="mt-20">
-            <Badge
+            <CBadge
               text="1"
               color="primary"
               size="small"
@@ -95,8 +95,8 @@ export const Default = (args, { argTypes }) => ({
               :offset-y="28"
             >
               <Icon name="IconAlarmLargeLine" />
-            </Badge>
-            <Badge
+            </CBadge>
+            <CBadge
               text="99+"
               color="primary"
               size="small"
@@ -105,8 +105,8 @@ export const Default = (args, { argTypes }) => ({
               style="margin: 0 24px"
             >
               <Icon name="IconAlarmLargeLine" />
-            </Badge>
-            <Badge
+            </CBadge>
+            <CBadge
               text="N"
               color="primary"
               size="small"
@@ -114,10 +114,10 @@ export const Default = (args, { argTypes }) => ({
               :offset-y="28"
             >
               <Icon name="IconAlarmLargeLine" />
-            </Badge>
+            </CBadge>
           </div>
-          <Divider class="my-10" />
-          <Badge
+          <CDivider class="my-10" />
+          <CBadge
             text="1"
             color="primary"
             :offset-x="12"
@@ -126,8 +126,8 @@ export const Default = (args, { argTypes }) => ({
             <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
                 <Icon name="IconAlarmLargeLine" />
             </div>
-          </Badge>
-          <Badge
+          </CBadge>
+          <CBadge
             text="99+"
             color="primary"
             :offset-x="12"
@@ -135,21 +135,21 @@ export const Default = (args, { argTypes }) => ({
             style="margin: 0 24px"
           >
             <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-              <Icon name="IconAlarmLargeLine" />
+              <CIcon name="IconAlarmLargeLine" />
             </div>
-          </Badge>
-          <Badge
+          </CBadge>
+          <CBadge
             text="N"
             color="primary"
             :offset-x="12"
             :offset-y="38"
           >
             <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-              <Icon name="IconAlarmLargeLine" />
+              <CIcon name="IconAlarmLargeLine" />
             </div>
-          </Badge>
+          </CBadge>
           <div class="mt-20">
-            <Badge
+            <CBadge
               text="1"
               color="primary"
               size="small"
@@ -157,10 +157,10 @@ export const Default = (args, { argTypes }) => ({
               :offset-y="38"
             >
               <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-                <Icon name="IconAlarmLargeLine" />
+                <CIcon name="IconAlarmLargeLine" />
               </div>
-            </Badge>
-            <Badge
+            </CBadge>
+            <CBadge
               text="99+"
               color="primary"
               size="small"
@@ -169,10 +169,10 @@ export const Default = (args, { argTypes }) => ({
               style="margin: 0 24px"
             >
               <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-                <Icon name="IconAlarmLargeLine" />
+                <CIcon name="IconAlarmLargeLine" />
               </div>
-            </Badge>
-            <Badge
+            </CBadge>
+            <CBadge
               text="N"
               color="primary"
               size="small"
@@ -180,13 +180,13 @@ export const Default = (args, { argTypes }) => ({
               :offset-y="38"
             >
               <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-                <Icon name="IconAlarmLargeLine" />
+                <CIcon name="IconAlarmLargeLine" />
               </div>
-            </Badge>
+            </CBadge>
           </div>
         </div>
       `,
-      components: { Badge, Icon, Divider },
+      components: { CBadge, CIcon, CDivider },
     }}
   </Story>
 </Canvas>
@@ -199,16 +199,16 @@ export const Default = (args, { argTypes }) => ({
       template: `
         <div>
           <div class="mt-20">
-            <Badge
+            <CBadge
               text="1"
               color="secondary"
               size="small"
               :offset-x="12"
               :offset-y="28"
             >
-              <Icon name="IconAlarmLargeLine" />
-            </Badge>
-            <Badge
+              <CIcon name="IconAlarmLargeLine" />
+            </CBadge>
+            <CBadge
               text="99+"
               color="secondary"
               size="small"
@@ -216,30 +216,30 @@ export const Default = (args, { argTypes }) => ({
               :offset-y="28"
               style="margin: 0 24px"
             >
-              <Icon name="IconAlarmLargeLine" />
-            </Badge>
-            <Badge
+              <CIcon name="IconAlarmLargeLine" />
+            </CBadge>
+            <CBadge
               text="N"
               color="secondary"
               size="small"
               :offset-x="12"
               :offset-y="28"
             >
-              <Icon name="IconAlarmLargeLine" />
-            </Badge>
+              <CIcon name="IconAlarmLargeLine" />
+            </CBadge>
           </div>
-          <Divider class="my-10" />
-          <Badge
+          <CDivider class="my-10" />
+          <CBadge
             text="1"
             color="secondary"
             :offset-x="12"
             :offset-y="38"
           >
             <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-              <Icon name="IconAlarmLargeLine" />
+              <CIcon name="IconAlarmLargeLine" />
             </div>
-          </Badge>
-          <Badge
+          </CBadge>
+          <CBadge
             text="99+"
             color="secondary"
             :offset-x="12"
@@ -247,21 +247,21 @@ export const Default = (args, { argTypes }) => ({
             style="margin: 0 24px"
           >
             <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-              <Icon name="IconAlarmLargeLine" />
+              <CIcon name="IconAlarmLargeLine" />
             </div>
-          </Badge>
-          <Badge
+          </CBadge>
+          <CBadge
             text="N"
             color="secondary"
             :offset-x="12"
             :offset-y="38"
           >
             <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-              <Icon name="IconAlarmLargeLine" />
+              <CIcon name="IconAlarmLargeLine" />
             </div>
-          </Badge>
+          </CBadge>
           <div class="mt-20">
-            <Badge
+            <CBadge
               text="1"
               color="secondary"
               size="small"
@@ -269,10 +269,10 @@ export const Default = (args, { argTypes }) => ({
               :offset-y="38"
             >
               <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-                <Icon name="IconAlarmLargeLine" />
+                <CIcon name="IconAlarmLargeLine" />
               </div>
-            </Badge>
-            <Badge
+            </CBadge>
+            <CBadge
               text="99+"
               color="secondary"
               size="small"
@@ -281,10 +281,10 @@ export const Default = (args, { argTypes }) => ({
               style="margin: 0 24px"
             >
               <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-                <Icon name="IconAlarmLargeLine" />
+                <CIcon name="IconAlarmLargeLine" />
               </div>
-            </Badge>
-            <Badge
+            </CBadge>
+            <CBadge
               text="N"
               color="secondary"
               size="small"
@@ -292,13 +292,13 @@ export const Default = (args, { argTypes }) => ({
               :offset-y="38"
             >
               <div style="background: #F4F5F7; border-radius: 50px; width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
-                <Icon name="IconAlarmLargeLine" />
+                <CIcon name="IconAlarmLargeLine" />
               </div>
-            </Badge>
+            </CBadge>
           </div>
         </div>
       `,
-      components: { Badge, Icon, Divider },
+      components: { CBadge, CIcon, CDivider },
     }}
   </Story>
 </Canvas>
@@ -311,16 +311,16 @@ export const Default = (args, { argTypes }) => ({
     {{
       template: `
         <div style="background: #F4F5F7; border-radius: 25px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-            <Badge
+            <CBadge
                 text="1"
                 color="secondary"
                 type="inline"
             >
-              <Icon name="IconAlarmLargeLine" />
-            </Badge>
+              <CIcon name="IconAlarmLargeLine" />
+            </CBadge>
         </div>
       `,
-      components: { Badge, Icon },
+      components: { CBadge, CIcon },
     }}
   </Story>
 </Canvas>

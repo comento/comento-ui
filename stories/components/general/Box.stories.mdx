@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Box, { Elements } from '@/components/components/general/Box';
+import CBox, { Elements } from '@/components/components/general/CBox.vue';
 import { colors } from '@/utils/constants/color';
 
 <Meta
   title="General/Box"
-  component={Box}
+  component={CBox}
   argTypes={{
     label: {
       description: "Box에 들어갈 slot",
@@ -80,10 +80,10 @@ import { colors } from '@/utils/constants/color';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Box },
+  components: { CBox },
   template: `
     <div style="display: flex; justify-content:center; align-items: center; background-color: #F4F5F7; width: 100%; height: 200px;">
-      <Box
+      <CBox
         :has-border="hasBorder"
         :background-color="backgroundColor"
         :border-color="borderColor"
@@ -92,13 +92,13 @@ export const Default = (args, { argTypes }) => ({
         :element="element"
       >
         <div style="background-color: #F4F5F7;">{{label}}</div>
-      </Box>
+      </CBox>
     </div>`,
 });
 
 # Box
 
-**Box** 컴포넌트의 문서입니다.
+**c-box** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -115,15 +115,15 @@ export const Default = (args, { argTypes }) => ({
     {{
       template: `
         <div style="display: flex; justify-content:center; align-items: center; backgroundColor: #F4F5F7; width: 100%; height: 200px; ">
-          <Box style="marginRight: 10px;" background-color="white">
+          <CBox style="marginRight: 10px;" background-color="white">
             <div style="backgroundColor: #F4F5F7;">without Shadow</div>
-          </Box>
-          <Box :has-shadow="true" background-color="white">
+          </CBox>
+          <CBox :has-shadow="true" background-color="white">
             <div style="backgroundColor: #F4F5F7;">with Shadow</div>
-          </Box>
+          </CBox>
         </div>
         `,
-      components: { Box },
+      components: { CBox },
     }}
   </Story>
 </Canvas>

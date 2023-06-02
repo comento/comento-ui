@@ -1,15 +1,15 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Swiper, {
+import CSwiper, {
     SwiperControlsColors,
     SwiperControlPositions,
     SwiperIndicatorColors,
     SwiperIndicatorPositions,
-} from '@/components/components/dataDisplay/Swiper';
+} from '@/components/components/dataDisplay/CSwiper.vue';
 import SwiperItemExample from './SwiperItemExample';
 
 <Meta
     title="Data Display/Swiper"
-    component={Swiper}
+    component={CSwiper}
     argTypes={{
         withControls: {
             description: "With Controls",
@@ -104,21 +104,21 @@ import SwiperItemExample from './SwiperItemExample';
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Swiper, SwiperItemExample },
+    components: { CSwiper, SwiperItemExample },
     template: `
         <div style="padding: 12px 32px;">
-            <Swiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :centeredSlides="centeredSlides" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup" :autoplay="autoplay" :autoplay-delay="autoplayDelay" :loop="loop">
+            <CSwiper :with-controls="withControls" :controls-position="controlsPosition" :controls-color="controlsColor" :controls-circle="controlsCircle" :with-indicator="withIndicator" :indicator-position="indicatorPosition" :indicator-color="indicatorColor" :centeredSlides="centeredSlides" :spacing="spacing" :slides-per-view="slidesPerView" :slides-per-group="slidesPerGroup" :autoplay="autoplay" :autoplay-delay="autoplayDelay" :loop="loop">
                 <template v-for="(item, index) in 10" :slot="'item' + index">
                 <SwiperItemExample :text="'ITEM' + (index+1)" ></SwiperItemExample>
                 </template>
-            </Swiper>
+            </CSwiper>
         </div>
         `,
 });
 
 # Swiper
 
-**Swiper** 컴포넌트의 문서입니다.<br/>
+**c-swiper** 컴포넌트의 문서입니다.<br/>
 loop모드 사용시 event listener는 @click-slide로 전달합니다.
 
 <Story name="Default" height="100px">
@@ -141,34 +141,34 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div style="padding: 12px 24px;">
-                    <Swiper controls-color="light" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">
+                    <CSwiper controls-color="light" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                    <Swiper controls-color="dark" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">
+                    </CSwiper>
+                    <CSwiper controls-color="dark" controls-position="inside" with-controls :loop="false" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                    <Swiper controls-color="light" controls-position="inside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">
+                    </CSwiper>
+                    <CSwiper controls-color="light" controls-position="inside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                    <Swiper controls-color="dark" controls-position="inside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">
+                    </CSwiper>
+                    <CSwiper controls-color="dark" controls-position="inside" with-controls controls-circle :loop="false" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                    <Swiper controls-color="dark" controls-position="top" with-controls :loop="false" style="margin-bottom: 100px;">
+                    </CSwiper>
+                    <CSwiper controls-color="dark" controls-position="top" with-controls :loop="false" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
+                    </CSwiper>
                 </div>
             `,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -185,23 +185,23 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div style="padding: 12px 32px">
-                    <Swiper controls-color="dark" controls-position="inside" with-controls style="margin-bottom: 100px;">
+                    <CSwiper controls-color="dark" controls-position="inside" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                   <Swiper controls-color="dark" controls-position="outside" with-controls style="margin-bottom: 100px;">
+                    </CSwiper>
+                   <CSwiper controls-color="dark" controls-position="outside" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                    <Swiper controls-color="dark" controls-position="top" with-controls>
+                    </CSwiper>
+                    <CSwiper controls-color="dark" controls-position="top" with-controls>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
+                    </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -218,18 +218,18 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div>
-                    <Swiper controls-color="light" with-controls style="margin-bottom: 100px;">
+                    <CSwiper controls-color="light" with-controls style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                   <Swiper controls-color="dark" with-controls>
+                    </CSwiper>
+                   <CSwiper controls-color="dark" with-controls>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
+                    </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -246,23 +246,23 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div>
-                    <Swiper indicator-color="light" with-indicator style="margin-bottom: 100px;">
+                    <CSwiper indicator-color="light" with-indicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                   <Swiper indicator-color="dark" with-indicator style="margin-bottom: 100px;">
+                    </CSwiper>
+                   <CSwiper indicator-color="dark" with-indicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                    <Swiper indicator-color="gray" with-indicator>
+                    </CSwiper>
+                    <CSwiper indicator-color="gray" with-indicator>
                       <template v-for="(item, index) in itemLength" :slot="'item' + index">
                         <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                       </template>
-                    </Swiper>
+                    </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -279,18 +279,18 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper indicator-color="dark" indicator-position="inside" with-indicator style="margin-bottom: 100px;">
+                    <CSwiper indicator-color="dark" indicator-position="inside" with-indicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                             <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                   <Swiper indicator-color="dark" indicator-position="outside" with-indicator>
+                    </CSwiper>
+                   <CSwiper indicator-color="dark" indicator-position="outside" with-indicator>
                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                        </template>
-                   </Swiper>
+                   </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -307,18 +307,18 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator autoplay :slides-per-view="3" :slides-per-group="3" style="margin-bottom: 100px;">
+                    <CSwiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator autoplay :slides-per-view="3" :slides-per-group="3" style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                   <Swiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator autoplay>
+                    </CSwiper>
+                   <CSwiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator autoplay>
                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                        </template>
-                   </Swiper>
+                   </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -337,18 +337,18 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator style="margin-bottom: 100px;">
+                    <CSwiper controls-color="light" controls-position="inside" with-controls indicator-color="light" indicator-position="inside" with-indicator style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
-                   <Swiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator >
+                    </CSwiper>
+                   <CSwiper controls-color="dark" controls-position="outside" with-controls indicator-color="dark" indicator-position="outside" with-indicator >
                        <template v-for="(item, index) in itemLength" :slot="'item' + index">
                           <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                        </template>
-                   </Swiper>
+                   </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -365,13 +365,13 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper controls-color="dark" controls-position="inside" with-controls indicator-color="dark" indicator-position="inside" with-indicator :slides-per-view="3" :slides-per-group="3" autoplay style="margin-bottom: 100px;">
+                    <CSwiper controls-color="dark" controls-position="inside" with-controls indicator-color="dark" indicator-position="inside" with-indicator :slides-per-view="3" :slides-per-group="3" autoplay style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
+                    </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -388,13 +388,13 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;">
+                    <CSwiper slides-per-view="auto" autoplay style="margin-bottom: 100px;">
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
+                    </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>
@@ -411,13 +411,13 @@ loop모드 사용시 event listener는 @click-slide로 전달합니다.
             },
             template: `
                 <div style="padding: 24px 32px;">
-                    <Swiper slides-per-view="auto" autoplay style="margin-bottom: 100px;" :centeredSlides=true>
+                    <CSwiper slides-per-view="auto" autoplay style="margin-bottom: 100px;" :centeredSlides=true>
                         <template v-for="(item, index) in itemLength" :slot="'item' + index">
                            <SwiperItemExample :text="'ITEM' + (index+1)"></SwiperItemExample>
                         </template>
-                    </Swiper>
+                    </CSwiper>
                 </div>`,
-            components: { Swiper, SwiperItemExample },
+            components: { CSwiper, SwiperItemExample },
         }}
     </Story>
 </Canvas>

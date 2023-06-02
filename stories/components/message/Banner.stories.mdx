@@ -1,14 +1,14 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Banner from '@/components/components/message/Banner';
-import Button from "@/components/components/general/button/Button";
-import Typography from '@/components/elements/core/typography/Typography';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
+import CBanner from '@/components/components/message/CBanner.vue';
+import CButton from '@/components/components/general/button/Button.vue';
+import CTypography from '@/components/elements/core/typography/Typography.vue';
+import CNewGrid from '@/components/layout/NewGrid.vue';
+import CNewRow from '@/components/layout/NewRow.vue';
+import CNewCol from '@/components/layout/NewCol.vue';
 
 <Meta
 	title="Message/Banner"
-	component={Banner}
+	component={CBanner}
 	argTypes={{
 		type: {
 			description: 'banner 종류',
@@ -42,22 +42,22 @@ import NewCol from '@/components/layout/NewCol';
 
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Banner, Button, Typography, NewGrid, NewRow, NewCol },
+	components: { CBanner, CButton, CTypography, CNewGrid, CNewRow, CNewCol },
 	template: `<div>
-            <Banner :type="type" :title="title" :description="description" :align-items="alignItems">
+            <CBanner :type="type" :title="title" :description="description" :align-items="alignItems">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
                 <template v-slot:button v-if="type === 'full'">
-                    <Button size="xlarge" full>CTA BTN</Button>
+                    <CButton size="xlarge" full>CTA BTN</CButton>
                 </template>
-            </Banner>
+            </CBanner>
         </div>`,
 });
 
 # Banner
 
-**Banner** 컴포넌트의 문서입니다.
+**c-banner** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
 	{Default.bind({})}
@@ -72,26 +72,26 @@ export const Default = (args, { argTypes }) => ({
 <Canvas>
 	<Story name="All" height="500px">
 		{{
-			components: { Banner, Button, NewGrid, NewCol, NewRow, Typography },
+			components: { CBanner, CButton, CNewGrid, CNewCol, CNewRow, CTypography },
 			template: `<div>
-                <Banner type="standard" title="Title" description="Description">
+                <CBanner type="standard" title="Title" description="Description">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
-            </Banner>
-						<Banner class="mt-40" type="full" title="Title" description="Description">
+            </CBanner>
+						<CBanner class="mt-40" type="full" title="Title" description="Description">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
-            </Banner>
-            <Banner class="mt-40" type="full" title="Title" description="Description">
+            </CBanner>
+            <CBanner class="mt-40" type="full" title="Title" description="Description">
                 <template v-slot:background>
                     <div style="background-color: #f3f4f5; height: 100%;"></div>
                 </template>
                 <template v-slot:button>
-                    <Button size="xlarge" full>CTA BTN</Button>
+                    <CButton size="xlarge" full>CTA BTN</CButton>
                 </template>
-            </Banner>
+            </CBanner>
             </div>`,
 		}}
 	</Story>

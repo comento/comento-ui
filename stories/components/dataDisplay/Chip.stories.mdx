@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Chip, { ChipColors, ChipSizes, ChipTypes, ChipSizesWithCloseButton } from '@/components/components/dataDisplay/chips/Chip';
-import Typography from "@/components/elements/core/typography/Typography";
+import CChip, { ChipColors, ChipSizes, ChipTypes, ChipSizesWithCloseButton } from '@/components/components/dataDisplay/chips/CChip.vue';
+import CTypography from "@/components/elements/core/typography/CTypography.vue";
 
 <Meta
     title="Data Display/Chip/Chip"
-    component={ Chip }
+    component={ CChip }
     argTypes={{
         text: {
             description: "Chip 들어갈 텍스트",
@@ -67,14 +67,14 @@ import Typography from "@/components/elements/core/typography/Typography";
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { Chip },
+    components: { CChip },
     template:
-        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent" :with-close-button="withCloseButton" :clickable="clickable">{{text}}</Chip>`,
+        `<CChip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent" :with-close-button="withCloseButton" :clickable="clickable">{{text}}</CChip>`,
 });
 
 # Chip
 
-**Chip** 컴포넌트의 문서입니다.
+**c-chip** 컴포넌트의 문서입니다.
 
 <Story name="Basic" height="100px">
     {Basic.bind({})}
@@ -96,11 +96,11 @@ export const Basic = (args, { argTypes }) => ({
                                 <div class="flex">
                                     <div class="flex-row mr-30 mb-8">
                                         <template v-for="(size, index) in ChipSizes">
-                                            <Chip :type="type" :color="color" :size="size" class="mr-8">Chip</Chip>
+                                            <CChip :type="type" :color="color" :size="size" class="mr-8">Chip</CChip>
                                         </template>
                                         <template v-if="type === 'fill'">
                                           <template v-for="(size, index) in ChipSizesWithCloseButton">
-                                            <Chip :type="type" :color="color" :size="size" with-close-button class="mr-8" @clickCloseButton="handleClickChipClosebutton" @click="handleClick">Chip</Chip>
+                                            <CChip :type="type" :color="color" :size="size" with-close-button class="mr-8" @clickCloseButton="handleClickChipClosebutton" @click="handleClick">Chip</CChip>
                                           </template>
                                         </template>
                                     </div>
@@ -126,7 +126,7 @@ export const Basic = (args, { argTypes }) => ({
                     console.info('handleclick')
                 },
             },
-            components: { Chip,Typography },
+            components: { CChip,CTypography },
         }}
     </Story>
 </Canvas>

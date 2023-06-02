@@ -11,7 +11,7 @@ const ComponentLibrary = {
 		for (const componentName in components) {
 			const component = components[componentName];
 
-			Vue.component(`C${component.name}`, component);
+			Vue.component(component.name, component);
 		}
 	},
 };

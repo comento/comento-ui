@@ -1,16 +1,16 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Popover from '@/components/components/message/Popover';
+import CPopover from '@/components/components/message/CPopover.vue';
 import { placements } from '@/utils/constants/tooltip';
-import Typography from '@/components/elements/core/typography/Typography';
-import Icon from '@/components/elements/core/icon/Icon';
-import Button from '@/components/components/general/button/Button';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
+import CTypography from '@/components/elements/core/typography/Typography.vue';
+import CIcon from '@/components/elements/core/icon/Icon.vue';
+import CButton from '@/components/components/general/button/Button.vue';
+import CNewGrid from '@/components/layout/NewGrid.vue';
+import CNewRow from '@/components/layout/NewRow.vue';
+import CNewCol from '@/components/layout/NewCol.vue';
 
 <Meta
   title="Message/Popover"
-  component={ Popover }
+  component={ CPopover }
   argTypes={{
     placement: {
       description: "기준점에서 Popover가 보이는 위치<br/>`String`",
@@ -46,20 +46,20 @@ import NewCol from '@/components/layout/NewCol';
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Popover, Icon },
+  components: { CPopover, CIcon },
   template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                <Popover :placement="placement" :padding-x="paddingX" :container="container">
-   			        <Icon name="IconProfileLargeFill"></Icon>
+                <CPopover :placement="placement" :padding-x="paddingX" :container="container">
+   			        <CIcon name="IconProfileLargeFill"></CIcon>
    			            <template v-slot:popover>
    				            <div>menu 1</div>
    			            </template>
-   			    </Popover>
+   			    </CPopover>
    			 </div>`
 });
 
 # Popover
 
-**Popover** 컴포넌트의 문서입니다.
+**c-popover** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -74,160 +74,160 @@ export const Default = (args, { argTypes }) => ({
     <Story name="All" height="300px">
         {{
             template: `
-                <NewGrid>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="height: 120px; margin-top: 50px">
-                            <Popover placement="top-right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                <CNewGrid>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="height: 120px; margin-top: 50px">
+                            <CPopover placement="top-right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
                                     <div>top-right</div>
                                 </template>
-                            </Popover>
-                            <Popover placement="top" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="top" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
                                     <div>top</div>
                                 </template>
-                            </Popover>
-                            <Popover placement="top-left" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="top-left" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
                                     <div>top-left</div>
                                 </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="margin-top: 30px; margin-bottom: 70px">
-                            <Popover placement="top-right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="margin-top: 30px; margin-bottom: 70px">
+                            <CPopover placement="top-right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
-                                    <Typography type="body2">Title</Typography>
-                                    <Typography type="caption1" color="gray800">content</Typography>
+                                    <CTypography type="body2">Title</CTypography>
+                                    <CTypography type="caption1" color="gray800">content</CTypography>
                                     <Button>button</Button>
                                 </template>
-                            </Popover>
-                            <Popover placement="top" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="top" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
-                                    <Typography type="body2">Title</Typography>
-                                    <Typography type="caption1" color="gray800">content</Typography>
-                                    <Button>button</Button>
+                                    <CTypography type="body2">Title</CTypography>
+                                    <CTypography type="caption1" color="gray800">content</CTypography>
+                                    <CButton>button</CButton>
                                 </template>
-                            </Popover>
-                            <Popover placement="top-left" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="top-left" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
-                                    <Typography type="body2">Title</Typography>
-                                    <Typography type="caption1" color="gray800">content</Typography>
-                                    <Button>button</Button>
+                                    <CTypography type="body2">Title</CTypography>
+                                    <CTypography type="caption1" color="gray800">content</CTypography>
+                                    <CButton>button</CButton>
                                 </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="height: 120px">
-                            <Popover placement="bottom-right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="height: 120px">
+                            <CPopover placement="bottom-right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom-right</div>
                                     </template>
-                            </Popover>
-                            <Popover placement="bottom" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="bottom" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom</div>
                                     </template>
-                            </Popover>
-                            <Popover placement="bottom-left" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="bottom-left" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom-left</div>
                                     </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="height: 150px">
-                            <Popover placement="bottom-right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="height: 150px">
+                            <CPopover placement="bottom-right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
-                                        <Typography type="body2">Title</Typography>
-                                        <Typography type="caption1" color="gray800">content</Typography>
-                                        <Button>button</Button>
+                                        <CTypography type="body2">Title</CTypography>
+                                        <CTypography type="caption1" color="gray800">content</CTypography>
+                                        <CButton>button</CButton>
                                     </template>
-                            </Popover>
-                            <Popover placement="bottom" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="bottom" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
-                                        <Typography type="body2">Title</Typography>
-                                        <Typography type="caption1" color="gray800">content</Typography>
-                                        <Button>button</Button>
+                                        <CTypography type="body2">Title</CTypography>
+                                        <CTypography type="caption1" color="gray800">content</CTypography>
+                                        <CButton>button</CButton>
                                     </template>
-                            </Popover>
-                            <Popover placement="bottom-left" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="bottom-left" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
-                                        <Typography type="body2">Title</Typography>
-                                        <Typography type="caption1" color="gray800">content</Typography>
-                                        <Button>button</Button>
+                                        <CTypography type="body2">Title</CTypography>
+                                        <CTypography type="caption1" color="gray800">content</CTypography>
+                                        <CButton>button</CButton>
                                     </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow class="mt-40">
-                        <NewCol class="flex flex-row justify-around" style="height: 40px">
-                            <Popover placement="right-top" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow class="mt-40">
+                        <CNewCol class="flex flex-row justify-around" style="height: 40px">
+                            <CPopover placement="right-top" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right-top</div>
                                     </template>
-                            </Popover>
-                            <Popover placement="right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right</div>
                                     </template>
-                            </Popover>
-                            <Popover placement="right-bottom" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="right-bottom" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right-bottom</div>
                                     </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow class="mt-80">
-                        <NewCol class="flex flex-row justify-around" style="height: 110px">
-                            <Popover placement="right-top" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow class="mt-80">
+                        <CNewCol class="flex flex-row justify-around" style="height: 110px">
+                            <CPopover placement="right-top" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
-                                        <Typography type="body2">Title</Typography>
-                                        <Typography type="caption1" color="gray800">content</Typography>
-                                        <Button>button</Button>
+                                        <CTypography type="body2">Title</CTypography>
+                                        <CTypography type="caption1" color="gray800">content</CTypography>
+                                        <CButton>button</CButton>
                                     </template>
-                            </Popover>
-                            <Popover placement="right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
-                                        <Typography type="body2">Title</Typography>
-                                        <Typography type="caption1" color="gray800">content</Typography>
-                                        <Button>button</Button>
+                                        <CTypography type="body2">Title</CTypography>
+                                        <CTypography type="caption1" color="gray800">content</CTypography>
+                                        <CButton>button</CButton>
                                     </template>
-                            </Popover>
-                            <Popover placement="right-bottom" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="right-bottom" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
-                                        <Typography type="body2">Title</Typography>
-                                        <Typography type="caption1" color="gray800">content</Typography>
-                                        <Button>button</Button>
+                                        <CTypography type="body2">Title</CTypography>
+                                        <CTypography type="caption1" color="gray800">content</CTypography>
+                                        <CButton>button</CButton>
                                     </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                </NewGrid>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                </CNewGrid>
             `,
-            components: { Popover, Icon, Typography, Button, NewGrid, NewRow, NewCol },
+            components: { CPopover, CIcon, CTypography, CButton, CNewGrid, CNewRow, CNewCol },
         }}
     </Story>
 </Canvas>
@@ -237,76 +237,76 @@ export const Default = (args, { argTypes }) => ({
     <Story name="Position" height="100px">
         {{
             template: `
-                <NewGrid>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="margin-top: 50px; margin-bottom: 30px">
-                            <Popover placement="top-right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                <CNewGrid>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="margin-top: 50px; margin-bottom: 30px">
+                            <CPopover placement="top-right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
                                     <div>top-right</div>
                                 </template>
-                            </Popover>
-                            <Popover placement="top" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="top" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
                                     <div>top</div>
                                 </template>
-                            </Popover>
-                            <Popover placement="top-left" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="top-left" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                 <template v-slot:popover>
                                     <div>top-left</div>
                                 </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow>
-                        <NewCol class="flex flex-row justify-around" style="height: 60px">
-                            <Popover placement="bottom-right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow>
+                        <CNewCol class="flex flex-row justify-around" style="height: 60px">
+                            <CPopover placement="bottom-right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom-right</div>
                                     </template>
-                            </Popover>
-                            <Popover placement="bottom" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="bottom" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom</div>
                                     </template>
-                            </Popover>
-                            <Popover placement="bottom-left" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="bottom-left" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>bottom-left</div>
                                     </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                    <NewRow class="mt-40">
-                        <NewCol class="flex flex-row justify-around" style="height: 40px">
-                            <Popover placement="right-top" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                    <CNewRow class="mt-40">
+                        <CNewCol class="flex flex-row justify-around" style="height: 40px">
+                            <CPopover placement="right-top" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right-top</div>
                                     </template>
-                            </Popover>
-                            <Popover placement="right" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="right" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right</div>
                                     </template>
-                            </Popover>
-                            <Popover placement="right-bottom" :open="true">
-                                <Icon name="IconProfileLargeFill"></Icon>
+                            </CPopover>
+                            <CPopover placement="right-bottom" :open="true">
+                                <CIcon name="IconProfileLargeFill"></CIcon>
                                     <template v-slot:popover>
                                         <div>right-bottom</div>
                                     </template>
-                            </Popover>
-                        </NewCol>
-                    </NewRow>
-                </NewGrid>
+                            </CPopover>
+                        </CNewCol>
+                    </CNewRow>
+                </CNewGrid>
             `,
-            components: { Popover, Icon, Typography, Button, NewGrid, NewRow, NewCol },
+            components: { CPopover, CIcon, CTypography, CButton, CNewGrid, CNewRow, CNewCol },
         }}
     </Story>
 </Canvas>
@@ -317,41 +317,41 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width: 100%; height: 100px; display: flex; justify-content: space-around; align-items: center">
-                    <Popover placement="bottom-right" :open="true">
-                        <Icon name="IconProfileLargeFill"></Icon>
+                    <CPopover placement="bottom-right" :open="true">
+                        <CIcon name="IconProfileLargeFill"></CIcon>
                             <template v-slot:popover>
-                                <Typography type="body2">Title</Typography>
-                                <Typography type="caption1" color="gray800">content</Typography>
-                                <Button>button</Button>
+                                <CTypography type="body2">Title</CTypography>
+                                <CTypography type="caption1" color="gray800">content</CTypography>
+                                <CButton>button</CButton>
                             </template>
-                    </Popover>
-                    <Popover placement="bottom" :open="true">
-                        <Icon name="IconProfileLargeFill"></Icon>
+                    </CPopover>
+                    <CPopover placement="bottom" :open="true">
+                        <CIcon name="IconProfileLargeFill"></CIcon>
                             <template v-slot:popover>
-                                <Typography type="body2">Title</Typography>
-                                <Typography type="caption1" color="gray800">content</Typography>
-                                <Button>button</Button>
+                                <CTypography type="body2">Title</CTypography>
+                                <CTypography type="caption1" color="gray800">content</CTypography>
+                                <CButton>button</CButton>
                             </template>
-                    </Popover>
-                    <Popover placement="bottom-left" :open="true">
-                        <Icon name="IconProfileLargeFill"></Icon>
+                    </CPopover>
+                    <CPopover placement="bottom-left" :open="true">
+                        <CIcon name="IconProfileLargeFill"></CIcon>
                             <template v-slot:popover>
-                                <Typography type="body2">Title</Typography>
-                                <Typography type="caption1" color="gray800">content</Typography>
-                                <Button>button</Button>
+                                <CTypography type="body2">Title</CTypography>
+                                <CTypography type="caption1" color="gray800">content</CTypography>
+                                <CButton>button</CButton>
                             </template>
-                    </Popover>
-                    <Popover placement="right" :open="true">
-                        <Icon name="IconProfileLargeFill"></Icon>
+                    </CPopover>
+                    <CPopover placement="right" :open="true">
+                        <CIcon name="IconProfileLargeFill"></CIcon>
                             <template v-slot:popover>
-                                <Typography type="body2">Title</Typography>
-                                <Typography type="caption1" color="gray800">content</Typography>
-                                <Button>button</Button>
+                                <CTypography type="body2">Title</CTypography>
+                                <CTypography type="caption1" color="gray800">content</CTypography>
+                                <CButton>button</CButton>
                             </template>
-                    </Popover>
+                    </CPopover>
                  </div>
         `,
-          components: { Popover, Icon, Typography, Button },
+          components: { CPopover, CIcon, CTypography, CButton },
         }}
     </Story>
 </Canvas>

@@ -1,10 +1,10 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { TypographyTypes } from '@/components/elements/core/typography/Typography';
-import LinkButton, { linkButtonTargets } from '@/components/components/general/button/LinkButton';
+import { TypographyTypes } from '@/components/elements/core/typography/CTypography.vue';
+import CLinkButton, { linkButtonTargets } from '@/components/components/general/button/CLinkButton.vue';
 
 <Meta
     title="General/Button/LinkButton"
-    component={ LinkButton }
+    component={ CLinkButton }
     argTypes={{
         label: {
             description: "버튼에 들어갈 텍스트",
@@ -44,9 +44,9 @@ import LinkButton, { linkButtonTargets } from '@/components/components/general/b
 
 export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { LinkButton },
+    components: { CLinkButton },
     template:
-        `<LinkButton
+        `<CLinkButton
             :type="type"
             :to="to"
             :external="external"
@@ -54,12 +54,12 @@ export const Default = (args, { argTypes }) => ({
             :target="target"
         >
             {{label}}
-        </LinkButton>`,
+        </CLinkButton>`,
 });
 
 # LinkButton
 
-**LinkButton** 컴포넌트의 문서입니다.
+**c-link-button** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
     {Default.bind({})}
@@ -75,12 +75,12 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div>
-                    <LinkButton>이동하지 않는 링크 버튼</LinkButton>
-                    <LinkButton to="#" type="body2">맨위로 이동하기</LinkButton>
-                    <LinkButton to="https://comento.kr" type="headline5">코멘토로 이동하기</LinkButton>
+                    <CLinkButton>이동하지 않는 링크 버튼</CLinkButton>
+                    <CLinkButton to="#" type="body2">맨위로 이동하기</CLinkButton>
+                    <CLinkButton to="https://comento.kr" type="headline5">코멘토로 이동하기</CLinkButton>
                 </div>
         `,
-            components: { LinkButton },
+            components: { CLinkButton },
         }}
     </Story>
 </Canvas>
