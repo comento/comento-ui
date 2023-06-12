@@ -70,12 +70,17 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	methods: {
-		close() {
-			this.$emit('update:show', false);
-			this.$emit('close');
-		},
+	emits: ['update:show', 'close'],
+	setup(props, { emit }) {
+		const close = () => {
+			emit('update:show', false);
+			emit('close');
+		};
+		return {
+			close,
+		};
 	},
+	methods: {},
 	components: {
 		CModal,
 		CTypography,

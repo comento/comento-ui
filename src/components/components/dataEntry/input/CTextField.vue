@@ -36,7 +36,7 @@
 <script>
 import CHint from '@/components/components/dataDisplay/CHint.vue';
 import uniqueId from '@/utils/unique-id';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs, ref, onMounted, nextTick } from 'vue';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const TextFieldAligns = ['left', 'center', 'right'];
@@ -125,95 +125,81 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	data() {
-		return {
-			isFocused: false,
-			uid: uniqueId(),
-		};
-	},
-	computed: {
-		sync_value: {
-			get() {
-				return this.value;
-			},
-			set(val) {
-				this.$emit('update:value', val);
-			},
-		},
-		computedLined() {
-			if (this.outline) {
-				return 'c-text-field--outline';
-			} else {
-				return 'c-text-field--underline';
-			}
-		},
-		computedId() {
-			return this.id || `text-field-${this.uid}`;
-		},
-		computedShowLabel() {
-			return this.label;
-		},
-		computedShowHint() {
-			return !!this.hint && (this.persistentHint || this.isFocused || this.active);
-		},
-		computedLabel() {
-			return { label: this.computedShowLabel };
-		},
-		computedFull() {
-			return this.full && 'full';
-		},
-		computedAlign() {
-			return {
-				textAlign: this.align,
-			};
-		},
-		computedActive() {
-			return { active: this.active };
-		},
-		computedAutocomplete() {
-			return this.autocomplete ? 'on' : 'off';
-		},
-		computedError() {
-			return { error: this.error };
-		},
-		hintColor() {
-			if (this.error) {
+	emits: ['update:value'],
+	setup(props, { emit }) {
+		const { value, outline, id, label, hint, persistentHint, full, align, active, autocomplete, error } =
+			toRefs(props);
+		const isFocused = ref(false);
+		const uid = ref(uniqueId());
+		const textField = ref(null);
+
+		const sync_value = computed({
+			get: () => value.value,
+			set: val => emit('update:value', val),
+		});
+
+		const computedLined = computed(() => (outline.value ? 'c-text-field--outline' : 'c-text-field--underline'));
+		const computedId = computed(() => id.value || `text-field-${uid.value}`);
+		const computedShowLabel = computed(() => label.value);
+		const computedShowHint = computed(
+			() => !!hint.value && (persistentHint.value || isFocused.value || active.value),
+		);
+		const computedLabel = computed(() => ({ label: computedShowLabel.value }));
+		const computedFull = computed(() => full.value && 'full');
+		const computedAlign = computed(() => ({ textAlign: align.value }));
+		const computedActive = computed(() => ({ active: active.value }));
+		const computedAutocomplete = computed(() => (autocomplete.value ? 'on' : 'off'));
+		const computedError = computed(() => ({ error: error.value }));
+		const hintColor = computed(() => {
+			if (error.value) {
 				return 'error';
 			}
-
-			if (this.outline && this.label && (this.isFocused || this.active)) {
+			if (outline.value && label.value && (isFocused.value || active.value)) {
 				return 'primary';
 			}
 
 			return 'gray400';
-		},
-	},
-	mounted() {
-		this.$nextTick(() => {
-			this.handleTextFieldPadding();
 		});
-	},
-	methods: {
-		handleTyping(e) {
-			this.sync_value = e.target.value;
-		},
-		onFocus() {
-			this.isFocused = true;
-		},
-		blurFocus() {
-			this.isFocused = false;
-		},
-		handleTextFieldPadding() {
-			const textField = this.$refs[this.computedId];
-			const textFieldItems = textField.parentElement.childNodes;
+
+		const handleTyping = e => (sync_value.value = e.target.value);
+		const onFocus = () => (isFocused.value = true);
+		const blurFocus = () => (isFocused.value = false);
+		const handleTextFieldPadding = () => {
+			const textFieldItems = textField.value.parentElement.childNodes;
 			textFieldItems.forEach(item => {
 				if (item && item.className === 'c-text-field--append') {
 					const appendWidth = item.offsetWidth;
-					const textField = this.$refs[this.computedId];
-					textField.style.paddingRight = `${appendWidth + 2}px`;
+					textField.value.style.paddingRight = `${appendWidth + 2}px`;
 				}
 			});
-		},
+		};
+
+		onMounted(() => {
+			nextTick(() => {
+				handleTextFieldPadding();
+			});
+		});
+
+		return {
+			sync_value,
+			isFocused,
+			uid,
+			computedLined,
+			computedId,
+			computedShowLabel,
+			computedShowHint,
+			computedLabel,
+			computedFull,
+			computedAlign,
+			computedActive,
+			computedAutocomplete,
+			computedError,
+			hintColor,
+			handleTyping,
+			onFocus,
+			blurFocus,
+			textField,
+		};
 	},
 	components: { CHint },
 });

@@ -7,7 +7,8 @@
 <script>
 import { setBackgroundColor, setBorderColor } from '@/utils/get-colors';
 import getPadding from '@/utils/get-padding';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
+import useWindowResize from '@/services/useWindowResize';
 export const Elements = ['div', 'article'];
 
 export default defineComponent({
@@ -40,30 +41,36 @@ export default defineComponent({
 			default: 'div',
 		},
 	},
-	computed: {
-		classes() {
-			return {
-				'c-box--has-border': this.hasBorder,
-				'c-box--has-shadow': this.hasShadow,
-			};
-		},
-		styles() {
-			let paddings;
-			if (!this.paddings) {
-				if (this.isMobile) {
-					paddings = [16, 16, 16, 16];
+	setup(props) {
+		const { hasBorder, hasShadow, paddings, backgroundColor, borderColor } = toRefs(props);
+		const { isMobile } = useWindowResize();
+		const classes = computed(() => ({
+			'c-box--has-border': hasBorder,
+			'c-box--has-shadow': hasShadow,
+		}));
+
+		const styles = computed(() => {
+			let boxPaddings;
+			if (!paddings.value) {
+				if (isMobile) {
+					boxPaddings = [16, 16, 16, 16];
 				} else {
-					paddings = [16, 20, 16, 20];
+					boxPaddings = [16, 20, 16, 20];
 				}
 			} else {
-				paddings = this.paddings;
+				boxPaddings = paddings;
 			}
 			return {
-				...(this.backgroundColor && setBackgroundColor(this.backgroundColor)),
-				...(this.borderColor && setBorderColor(this.borderColor)),
-				...getPadding(paddings),
+				...(backgroundColor.value && setBackgroundColor(backgroundColor)),
+				...(borderColor.value && setBorderColor(borderColor)),
+				...getPadding(boxPaddings),
 			};
-		},
+		});
+
+		return {
+			classes,
+			styles,
+		};
 	},
 });
 </script>

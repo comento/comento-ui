@@ -32,7 +32,7 @@ import 'vue2-datepicker/locale/ko';
 import customValidator from '@/utils/custom-validator.js';
 import uniqueId from '@/utils/unique-id';
 import CHint from '@/components/components/dataDisplay/CHint.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, ref, computed, nextTick, watch } from 'vue';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
 export const colors = ['primary', 'success', 'info', 'error'];
@@ -95,47 +95,32 @@ export default defineComponent({
 			default: true,
 		},
 	},
-	data() {
-		return {
-			open: false,
-			uid: uniqueId(),
+	emits: ['update:value'],
+	setup(props, { emit }) {
+		const { value, full, color, disabled } = toRefs(props);
+		const open = ref(false);
+		const uid = ref(uniqueId());
+
+		const sync_value = computed({
+			get: () => value.value,
+			set: val => emit('update:value', val),
+		});
+
+		const computedClasses = computed(() => ({ full: full.value }));
+		const computedColor = computed(() => color.value);
+
+		const handleChange = () => {
+			open.value = false;
 		};
-	},
-	computed: {
-		sync_value: {
-			get() {
-				return this.value;
-			},
-			set(value) {
-				this.$emit('update:value', value);
-			},
-		},
-		computedClasses() {
-			return { full: this.full };
-		},
-		computedColor() {
-			return this.color;
-		},
-	},
-	watch: {
-		open() {
-			if (this.open && !this.disabled) {
-				this.handleCalendarSize();
-			}
-		},
-	},
-	methods: {
-		handleChange() {
-			this.open = false;
-		},
-		handleCalendarSize() {
-			const $datePicker = this.$refs[`c-date-picker-${this.uid}`];
+
+		const handleCalendarSize = () => {
+			const $datePicker = this.$refs[`c-date-picker-${uid.value}`];
 			const datePickerWidth = $datePicker.$el.clientWidth;
 
-			this.$nextTick(() => {
+			nextTick(() => {
 				const calendarDefaultWidth = 248;
 				const calendarDefaultContentHeight = 224;
-				const $calendar = document.querySelector(`.c-calendar-${this.uid} > div > div > div`);
+				const $calendar = document.querySelector(`.c-calendar-${uid.value} > div > div > div`);
 				const $calendarContent = $calendar.lastChild;
 				$calendar.style.width = `${datePickerWidth}px`;
 
@@ -143,7 +128,23 @@ export default defineComponent({
 					$calendarContent.style.height = `${calendarDefaultContentHeight * 1.2}px`;
 				}
 			});
-		},
+		};
+
+		watch(open, newOpen => {
+			if (newOpen && !disabled.value) {
+				handleCalendarSize();
+			}
+		});
+
+		return {
+			open,
+			uid,
+			sync_value,
+			computedClasses,
+			computedColor,
+			handleChange,
+			handleCalendarSize,
+		};
 	},
 	components: {
 		CHint,

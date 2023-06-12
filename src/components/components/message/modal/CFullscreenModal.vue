@@ -48,7 +48,7 @@ import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import CDivider from '@/components/elements/utility/CDivider.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CButton, { buttonColors } from '@/components/components/general/button/CButton.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, ref, computed, toRefs, watch, nextTick } from 'vue';
 
 export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
 
@@ -100,25 +100,69 @@ export default defineComponent({
 			},
 		},
 	},
-	data() {
+	emits: ['update:show', 'close'],
+	setup(props, { emit }) {
+		const { direction, showActionButton, show } = toRefs(props);
+		const scroll = ref(false);
+		const showFullscreenModal = ref(false);
+		const fullscreenModal = ref(null);
+		const content = ref(null);
+		const header = ref(null);
+		const actionButton = ref(null);
+
+		const computedDirection = computed(() => direction);
+		const computedWithActionButton = computed(() => ({ 'with-action-button': showActionButton }));
+		const computedScroll = computed(() => ({ scroll: scroll.value }));
+
+		const classes = computed(() => [computedDirection.value, computedWithActionButton.value, computedScroll.value]);
+
+		watch(
+			() => show,
+			show => {
+				if (show) {
+					showFullscreenModal.value = true;
+					setScroll();
+					setTimeout(() => {
+						fullscreenModal.value.classList.add('active');
+					});
+				} else {
+					close();
+				}
+			},
+		);
+
+		function close() {
+			fullscreenModal.value.classList.remove('active');
+			setTimeout(() => {
+				showFullscreenModal.value = false;
+				emit('update:show', false);
+				emit('close');
+			}, 300);
+		}
+
+		function setScroll() {
+			nextTick(() => {
+				if (content.value.firstChild) {
+					const contentHeight = content.value.firstChild.clientHeight;
+					const fullscreenModalHeight = fullscreenModal.value.clientHeight;
+					const headerHeight = header.value ? header.value.clientHeight : 0;
+					const actionButtonHeight = actionButton.value ? actionButton.value.clientHeight : 0;
+
+					if (contentHeight > fullscreenModalHeight - (headerHeight + actionButtonHeight)) {
+						scroll.value = true;
+					}
+				}
+			});
+		}
+
 		return {
-			scroll: false,
-			showFullscreenModal: false,
+			scroll,
+			showFullscreenModal,
+			computedDirection,
+			computedWithActionButton,
+			computedScroll,
+			classes,
 		};
-	},
-	computed: {
-		computedDirection() {
-			return this.direction;
-		},
-		computedWithActionButton() {
-			return { 'with-action-button': this.showActionButton };
-		},
-		computedScroll() {
-			return { scroll: this.scroll };
-		},
-		classes() {
-			return [this.computedDirection, this.computedWithActionButton, this.computedScroll];
-		},
 	},
 	watch: {
 		show(show) {

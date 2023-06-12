@@ -3,9 +3,9 @@
 		class="c-application c-chip"
 		:class="[
 			computedType,
-			computedColor,
-			computedSize,
-			computedFull,
+			color,
+			size,
+			full,
 			computedTransparent,
 			computedClickable,
 			{ 'c-chip--with-close-button': withCloseButton },
@@ -27,7 +27,7 @@
 <script>
 import getPadding from '@/utils/get-padding';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const ChipColors = ['primary', 'info', 'success', 'secondary', 'error'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
@@ -92,59 +92,40 @@ export default defineComponent({
 			type: Boolean,
 		},
 	},
-	computed: {
-		computedType() {
-			return `${this.type} ${this.type.includes('clickable') ? 'clickable' : ''}`;
-		},
-		computedColor() {
-			return `${this.color}`;
-		},
-		computedSize() {
-			return `${this.size}`;
-		},
-		computedFull() {
-			return {
-				full: this.full,
-			};
-		},
-		computedPadding() {
-			if (this.paddings) {
-				return {
-					...getPadding(this.paddings),
-				};
-			} else {
-				return null;
-			}
-		},
-		computedTransparent() {
-			return {
-				transparent: this.transparent,
-			};
-		},
-		computedClickable() {
-			return {
-				clickable: this.clickable,
-			};
-		},
-		computedCloseButtonIconName() {
-			if (!ChipSizesWithCloseButton.includes(this.size)) return;
+	emits: ['clickCloseButton'],
+	setup(props, { emit }) {
+		const { type, transparent, clickable, size, color, paddings } = toRefs(props);
+		const computedType = computed(() => `${type.value} ${type.value.includes('clickable') ? 'clickable' : ''}`);
+		const computedPadding = computed(() => {
+			if (paddings.value) return { ...getPadding(paddings) };
+			return null;
+		});
+		const computedTransparent = computed(() => ({ transparent }));
+		const computedClickable = computed(() => ({ clickable }));
+		const computedCloseButtonIconName = computed(() => {
+			if (!ChipSizesWithCloseButton.includes(size.value)) return;
 			const closeButtonIconSize = {
 				medium: 'XSmall',
 				large: 'XSmall',
 				xlarge: 'Small',
-			}[this.size];
+			}[size];
 			return `IconClose${closeButtonIconSize[0] + closeButtonIconSize.slice(1)}Line`;
-		},
-		computedCloseButtonColor() {
+		});
+		const computedCloseButtonColor = computed(() => {
 			const whiteColorTypes = ['success', 'secondary', 'error'];
-			if (whiteColorTypes.includes(this.color)) return 'white';
-			return this.color;
-		},
-	},
-	methods: {
-		handleClickCloseButton() {
-			this.$emit('clickCloseButton');
-		},
+			if (whiteColorTypes.includes(color.value)) return 'white';
+			return color;
+		});
+		const handleClickCloseButton = () => emit('clickCloseButton');
+		return {
+			computedType,
+			computedPadding,
+			computedTransparent,
+			computedClickable,
+			computedCloseButtonIconName,
+			computedCloseButtonColor,
+			handleClickCloseButton,
+		};
 	},
 	components: { CIcon },
 });

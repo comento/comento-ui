@@ -38,7 +38,7 @@
 <script>
 import CLoader from '@/components/components/other/CLoader.vue';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs, ref } from 'vue';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
@@ -112,57 +112,50 @@ export default defineComponent({
 			default: 'IconWriting2XLargeLine',
 		},
 	},
-	computed: {
-		isFabType() {
-			return this.type === 'fab';
-		},
-		computedSize() {
-			if (this.isFabType) return;
-			return this.size;
-		},
-		computedColor() {
-			return this.color;
-		},
-		computedType() {
-			return this.type;
-		},
-		computedGhostTypeClass() {
-			return this.type === 'ghost' ? 'outline' : '';
-		},
-		computedFull() {
-			return { full: this.full };
-		},
-		computedLoading() {
-			return { loading: this.loading };
-		},
-		computedShadow() {
-			return { shadow: this.shadow };
-		},
-		computedFixed() {
-			return { 'p-fixed': this.fixed };
-		},
-		computedAbsolute() {
-			return { 'p-absolute': this.absolute };
-		},
-		computedLoaderSize() {
-			return this.size === 'xlarge' ? 'large' : this.size;
-		},
-		computedIconMargin() {
-			const isXLarge = this.size.indexOf('xlarge') !== -1;
-			return isXLarge ? 4 : 2;
-		},
-		isFillType() {
-			return this.type === 'fill' || this.type === 'fab';
-		},
-		showIcon() {
-			return this.isFabType;
-		},
-	},
-	methods: {
-		setIconSpacing(position) {
-			const oppositePosition = position === 'left' ? 'r' : 'l';
-			return this.$slots[`${position}-icon`] && `m${oppositePosition}-${this.computedIconMargin}`;
-		},
+	emits: ['update:value', 'input', 'submit'],
+	setup(props, { emit }) {
+		const { value, type, error, maxHeight, minHeight } = toRefs(props);
+		const sync_value = computed({
+			get: () => value,
+			set: val => emit('update:value', val),
+		});
+
+		const classes = computed(() => [`${type.value}`, error.value ? 'c-textarea--error' : null]);
+
+		const computedStyles = computed(() => ({
+			'max-height': maxHeight,
+			'min-height': minHeight.value ? minHeight : type.value === 'reply' ? '38px' : '110px',
+			'overflow-y': maxHeight.value === 'auto' ? 'hidden' : 'auto',
+		}));
+
+		const replyIconColor = computed(() => (sync_value.value ? 'blue600' : 'gray200'));
+
+		const isShowHint = computed(() => type.value === 'outline' && error);
+
+		const textareaRef = ref(null);
+
+		const onInput = () => {
+			textareaRef.value.style.height = '1px';
+			textareaRef.value.style.height = `${textareaRef.value.scrollHeight}px`;
+			emit('input', textareaRef.value.value);
+		};
+
+		const onSubmitReply = () => {
+			if (sync_value.value) {
+				emit('submit');
+			}
+		};
+
+		return {
+			sync_value,
+			classes,
+			computedStyles,
+			replyIconColor,
+			isShowHint,
+			textareaRef,
+			onInput,
+			onSubmitReply,
+		};
 	},
 	components: { CIcon, CLoader },
 });

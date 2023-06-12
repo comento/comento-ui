@@ -84,10 +84,12 @@ export default defineComponent({
 			default: true,
 		},
 	},
-	methods: {
-		onClickButton() {
-			this.$emit('click-button');
-		},
+	emits: ['click-button'],
+	setup(props, { emit }) {
+		const onClickButton = () => emit('click-button');
+		return {
+			onClickButton,
+		};
 	},
 	components: {
 		CBox,

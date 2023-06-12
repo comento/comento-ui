@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 /**
  * [deprecated]
@@ -57,46 +57,42 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedSm() {
-			if (this.colSm !== -1) {
-				return `col-${this.colSm}`;
-			} else {
-				return null;
-			}
-		},
-		computedOffsetSm() {
-			if (this.offsetSm !== -1) {
-				return `offset-${this.offsetSm}`;
-			} else {
-				return null;
-			}
-		},
-		computedLg() {
-			if (this.colLg !== -1) {
-				return `col-lg-${this.colLg}`;
-			} else {
-				return null;
-			}
-		},
-		computedOffsetLg() {
-			if (this.offsetLg !== -1) {
-				return `offset-lg-${this.offsetLg}`;
-			} else {
-				return null;
-			}
-		},
-		computedGutters() {
-			if (this.colGutters) {
-				return 'no-gutters';
-			} else {
-				return null;
-			}
-		},
-		computedStyle() {
+	setup(props) {
+		const { colSm, offsetSm, colLg, offsetLg, colGutters, offsetBetweenItems } = toRefs(props);
+
+		const computedSm = computed(() => {
+			return colSm.value !== -1 ? `col-${colSm.value}` : null;
+		});
+
+		const computedOffsetSm = computed(() => {
+			return offsetSm.value !== -1 ? `offset-${offsetSm.value}` : null;
+		});
+
+		const computedLg = computed(() => {
+			return colLg.value !== -1 ? `col-lg-${colLg.value}` : null;
+		});
+
+		const computedOffsetLg = computed(() => {
+			return offsetLg.value !== -1 ? `offset-lg-${offsetLg.value}` : null;
+		});
+
+		const computedGutters = computed(() => {
+			return colGutters.value ? 'no-gutters' : null;
+		});
+
+		const computedStyle = computed(() => {
 			// 그리드 안의 사이 간격
-			return this.offsetBetweenItems ? { padding: `0 ${this.offsetBetweenItems}px` } : null;
-		},
+			return offsetBetweenItems.value ? { padding: `0 ${offsetBetweenItems.value}px` } : null;
+		});
+
+		return {
+			computedSm,
+			computedOffsetSm,
+			computedLg,
+			computedOffsetLg,
+			computedGutters,
+			computedStyle,
+		};
 	},
 });
 </script>

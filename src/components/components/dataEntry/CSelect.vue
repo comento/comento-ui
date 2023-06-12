@@ -15,12 +15,12 @@
 				<div class="c-select--item">
 					<!-- 라벨 보여주기 -->
 					<input
-						v-if="selectOption"
+						v-if="selectOption.value"
 						type="text"
-						:value="handleOptions(selectOption, 'label')"
+						:value="handleOptions(selectOption.value, 'label')"
 						readonly
 						class="c-select--input"
-						@input="value = $event.target.value"
+						@input="handleEmitInputEvent($event.target.value)"
 					/>
 					<input
 						v-else
@@ -29,7 +29,7 @@
 						:placeholder="placeholder"
 						readonly
 						class="c-select--input"
-						@input="value = $event.target.value"
+						@input="handleEmitInputEvent($event.target.value)"
 					/>
 				</div>
 				<div class="c-select--icon">
@@ -42,7 +42,7 @@
 		</template>
 
 		<!-- list 영역 -->
-		<template v-if="open" #list>
+		<template v-if="open.value" #list>
 			<CList spacing>
 				<template v-for="(option, index) in options" :key="`c-select--list-${index}`">
 					<CListItem size="large" class="c-select--list-item" @click="handleEmitInputEvent(option)">
@@ -75,8 +75,7 @@ import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
 import CEtcIcon from '@/components/elements/core/icon/EtcIcon.vue';
 import CHint from '@/components/components/dataDisplay/CHint.vue';
-import { defineComponent } from 'vue';
-import hasOwnProperty from '@/utils/has-own-property';
+import { defineComponent, ref, computed, toRefs, watch } from 'vue';
 
 export const selectSizes = ['small', 'medium'];
 export const selectTypes = ['basic', 'underline', 'transparent'];
@@ -172,78 +171,50 @@ export default defineComponent({
 			default: '메시지는 선택사항입니다',
 		},
 	},
-	data() {
-		return {
-			open: false,
-			selectOption: null,
-		};
-	},
-	computed: {
-		computedIconRotate() {
-			return !this.open ? 0 : 180;
-		},
-		computedIconName() {
+	emits: ['input'],
+	setup(props, { emit }) {
+		const { size, error, color, disabled, type, options } = toRefs(props);
+		const open = ref(false);
+		const selectOption = ref(null);
+
+		const computedIconRotate = computed(() => (!open.value ? 0 : 180));
+
+		const computedIconName = computed(() => {
 			const defaultIconNames = {
 				small: 'IconDropdownSmallFillEtc',
 				medium: 'IconDropdownMediumLineEtc',
 			};
 
-			return defaultIconNames[this.size];
-		},
-		computedIconColor() {
+			return defaultIconNames[size.value];
+		});
+
+		const computedIconColor = computed(() => {
 			const defaultIconColors = {
 				small: 'gray600',
 				medium: 'blue600',
 			};
 
-			if (this.error) return 'red600';
-			return this.color || defaultIconColors[this.size];
-		},
-		hasObjectOptions() {
-			return this.options.every(option => typeof option === 'object');
-		},
-		classes() {
-			return [this.size, this.computedDisabled];
-		},
-		computedListItemTypography() {
+			if (error.value) return 'red600';
+			return color.value || defaultIconColors[size.value];
+		});
+
+		const classes = computed(() => [size.value, { disabled: disabled.value }]);
+		const computedListItemTypography = computed(() => {
 			const defaultListItemTypography = {
 				small: 'body2',
 				medium: 'body2',
 			};
-			return defaultListItemTypography[this.size];
-		},
-		computedDisabled() {
-			return { disabled: this.disabled };
-		},
-		computedLined() {
-			return `c-select--${this.type}`;
-		},
-		computedError() {
-			return this.error ? `c-select--error` : '';
-		},
-		computedActive() {
-			return { active: this.open };
-		},
-	},
-	watch: {
-		// 이렇게 해야 options가 반응형일 때를 대응할 수 있다.
-		options() {
-			const option = this.options.find(option => option.value === this.value);
-			this.handleSelect(option);
-		},
-		// 초기 렌더링 시 object option을 가지고 있어도 select를 하기 전 value 그대로 노출되는 이슈 해결
-		value: {
-			immediate: true,
-			handler(newVal) {
-				const option = this.options.find(option => option.value === newVal);
-				this.handleSelect(option);
-			},
-		},
-	},
-	methods: {
-		handleOptions(option, type) {
-			const hasLabel = hasOwnProperty(option, 'label');
-			const hasValue = hasOwnProperty(option, 'value');
+			return defaultListItemTypography[size.value];
+		});
+
+		const computedDisabled = computed(() => ({ disabled: disabled.value }));
+		const computedLined = computed(() => `c-select--${type.value}`);
+		const computedError = computed(() => (error.value ? `c-select--error` : ''));
+		const computedActive = computed(() => ({ active: open.value }));
+
+		const handleOptions = (option, type) => {
+			const hasLabel = Object.prototype.hasOwnProperty.call(option, 'label');
+			const hasValue = Object.prototype.hasOwnProperty.call(option, 'value');
 
 			if (type === 'label' && hasLabel) {
 				return option.label;
@@ -252,25 +223,56 @@ export default defineComponent({
 				return option.value;
 			}
 			return option;
-		},
-		handleEmitInputEvent(option) {
-			this.$emit('input', this.handleOptions(option, 'value'));
-		},
-		handleSelect(option) {
-			this.selectOption = option;
-			this.close();
-		},
-		handleOpen() {
-			if (!this.disabled) {
-				this.toggleOpen();
+		};
+
+		const handleEmitInputEvent = option => {
+			emit('input', handleOptions(option, 'value'));
+		};
+
+		const handleSelect = option => {
+			selectOption.value = option;
+			close();
+		};
+
+		const handleOpen = () => {
+			if (!disabled.value) {
+				toggleOpen();
 			}
-		},
-		toggleOpen() {
-			this.open = !this.open;
-		},
-		close() {
-			this.open = false;
-		},
+		};
+
+		const toggleOpen = () => (open.value = !open.value);
+		const close = () => (open.value = false);
+
+		watch(options, newOptions => {
+			const option = newOptions.find(option => option.value === selectOption.value);
+			handleSelect(option);
+		});
+
+		watch(
+			selectOption,
+			newValue => {
+				const option = options.value.find(option => option.value === newValue);
+				handleSelect(option);
+			},
+			{ immediate: true },
+		);
+
+		return {
+			open,
+			selectOption,
+			computedIconRotate,
+			computedIconName,
+			computedIconColor,
+			classes,
+			computedListItemTypography,
+			computedDisabled,
+			computedLined,
+			computedError,
+			computedActive,
+			handleEmitInputEvent,
+			handleOptions,
+			handleOpen,
+		};
 	},
 	components: {
 		CHint,

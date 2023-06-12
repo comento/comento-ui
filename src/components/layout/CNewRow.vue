@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CNewRow',
@@ -15,10 +15,13 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		computedGutters() {
-			return this.noGutters ? 'no-gutters' : '';
-		},
+	setup(props) {
+		const { noGutters } = toRefs(props);
+		const computedGutters = computed(() => (noGutters.value ? 'no-gutters' : ''));
+
+		return {
+			computedGutters,
+		};
 	},
 });
 </script>

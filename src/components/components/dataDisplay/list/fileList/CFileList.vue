@@ -18,7 +18,7 @@
 <script>
 import CList from '@/components/components/dataDisplay/list/list/CList.vue';
 import CFileItem from '@/components/components/dataDisplay/list/fileList/CFileItem.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CFileList',
@@ -38,24 +38,22 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		computedClass() {
-			return { full: this.full };
-		},
-	},
-	methods: {
-		handleClickFileDownloadIcon(payload) {
-			this.$emit('clickFileDownloadIcon', payload);
-		},
-		handleClickFileItemContent(payload) {
-			this.$emit('clickFileItemContent', payload);
-		},
-		handleClickFileTrashIcon(payload) {
-			this.$emit('clickFileTrashIcon', payload);
-		},
-		handleClickFileItem(payload) {
-			this.$emit('clickFileItem', payload);
-		},
+	emits: ['clickFileDownloadIcon', 'clickFileItemContent', 'clickFileTrashIcon', 'clickFileItem'],
+	setup(props, { emit }) {
+		const { full } = toRefs(props);
+		const computedClass = () => ({ full });
+		const handleClickFileDownloadIcon = payload => emit('clickFileDownloadIcon', payload);
+		const handleClickFileItemContent = payload => emit('clickFileItemContent', payload);
+		const handleClickFileTrashIcon = payload => emit('clickFileTrashIcon', payload);
+		const handleClickFileItem = payload => emit('clickFileItem', payload);
+
+		return {
+			computedClass,
+			handleClickFileDownloadIcon,
+			handleClickFileItemContent,
+			handleClickFileTrashIcon,
+			handleClickFileItem,
+		};
 	},
 	components: { CList, CFileItem },
 });

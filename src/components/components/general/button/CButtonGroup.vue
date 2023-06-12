@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const buttonGroupSizes = ['small', 'medium', 'large'];
 
@@ -30,10 +30,13 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedVertical() {
-			return this.vertical ? 'vertical' : 'horizontal';
-		},
+	setup(props) {
+		const { vertical } = toRefs(props);
+		const computedVertical = computed(() => (vertical.value ? 'vertical' : 'horizontal'));
+
+		return {
+			computedVertical,
+		};
 	},
 });
 </script>

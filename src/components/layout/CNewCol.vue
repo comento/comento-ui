@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CNewCol',
@@ -54,46 +54,41 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedSm() {
-			if (this.colSm !== -1) {
-				return `new-col-sm-${this.colSm}`;
-			} else {
-				return null;
-			}
-		},
-		computedOffsetSm() {
-			if (this.offsetSm !== -1) {
-				return `new-offset-sm-${this.offsetSm}`;
-			} else {
-				return null;
-			}
-		},
-		computedLg() {
-			if (this.colLg !== -1) {
-				return `new-col-lg-${this.colLg}`;
-			} else {
-				return null;
-			}
-		},
-		computedOffsetLg() {
-			if (this.offsetLg !== -1) {
-				return `new-offset-lg-${this.offsetLg}`;
-			} else {
-				return null;
-			}
-		},
-		computedGutters() {
-			if (this.noGutters) {
-				return 'no-gutters';
-			} else {
-				return null;
-			}
-		},
-		computedStyle() {
-			// 그리드 안의 사이 간격
-			return this.offsetBetweenItems ? { padding: `0 ${this.offsetBetweenItems}px` } : null;
-		},
+	setup(props) {
+		const { colSm, offsetSm, colLg, offsetLg, noGutters, offsetBetweenItems } = toRefs(props);
+
+		const computedSm = computed(() => {
+			return colSm.value !== -1 ? `new-col-sm-${colSm.value}` : null;
+		});
+
+		const computedOffsetSm = computed(() => {
+			return offsetSm.value !== -1 ? `new-offset-sm-${offsetSm.value}` : null;
+		});
+
+		const computedLg = computed(() => {
+			return colLg.value !== -1 ? `new-col-lg-${colLg.value}` : null;
+		});
+
+		const computedOffsetLg = computed(() => {
+			return offsetLg.value !== -1 ? `new-offset-lg-${offsetLg.value}` : null;
+		});
+
+		const computedGutters = computed(() => {
+			return noGutters.value ? 'no-gutters' : null;
+		});
+
+		const computedStyle = computed(() => {
+			return offsetBetweenItems.value ? { padding: `0 ${offsetBetweenItems.value}px` } : null;
+		});
+
+		return {
+			computedSm,
+			computedOffsetSm,
+			computedLg,
+			computedOffsetLg,
+			computedGutters,
+			computedStyle,
+		};
 	},
 });
 </script>

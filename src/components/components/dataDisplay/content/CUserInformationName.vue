@@ -13,7 +13,7 @@
 <script>
 import { userInformationTypes } from '@/components/components/dataDisplay/content/CUserInformation.vue';
 import CTypography, { TypographyTypes } from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CUserInformationName',
@@ -26,19 +26,22 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedType() {
+	setup(props) {
+		const { type } = toRefs(props);
+		const computedType = () => {
 			return (
 				{
 					simple: 'caption1',
 					normal: 'body2',
 					full: 'body1',
-				}[this.type] || this.type
+				}[type] || type
 			);
-		},
-		computedEllipsisClass() {
-			return this.type === 'full' ? 'ellipsis' : null;
-		},
+		};
+		const computedEllipsisClass = () => (type.value === 'full' ? 'ellipsis' : null);
+		return {
+			computedType,
+			computedEllipsisClass,
+		};
 	},
 	components: { CTypography },
 });

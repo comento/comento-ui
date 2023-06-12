@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CList',
@@ -15,10 +15,10 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		computedSpacing() {
-			return this.spacing && 'spacing';
-		},
+	setup(props) {
+		const { spacing } = toRefs(props);
+		const computedSpacing = computed(() => spacing.value && 'spacing');
+		return { computedSpacing };
 	},
 });
 </script>

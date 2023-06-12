@@ -48,7 +48,7 @@
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
-import { defineComponent } from 'vue';
+import { defineComponent, ref, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CSearchInput',
@@ -76,58 +76,63 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	data: () => ({
-		isTyping: false,
-		uid: uniqueId(),
-	}),
-	computed: {
-		sync_value: {
-			get() {
-				return this.value;
-			},
-			set(val) {
-				this.$emit('update:value', val);
-			},
-		},
-		computedFull() {
-			return { full: this.full };
-		},
-		computedTransparent() {
-			return { transparent: this.transparent };
-		},
-		classes() {
-			return [this.computedFull, this.computedTransparent, this.computedActive];
-		},
-		computedIconColor() {
-			return this.transparent ? 'gray100' : 'gray500';
-		},
-		computedActive() {
-			return { active: this.sync_value.length > 0 };
-		},
-	},
-	methods: {
-		hideSearchDropdown() {
-			if (this.showSearchDropdown) this.$emit('update:showSearchDropdown', false);
-		},
-		handleTyping(e) {
-			this.isTyping = true;
-			this.sync_value = e.target.value;
-		},
-		handleAutocomplete() {
-			this.$emit('autocomplete');
-		},
-		resetKeyword() {
-			this.sync_value = '';
-			this.handleAutocomplete();
-			this.isTyping = false;
-			this.$refs.searchInput.focus();
-		},
-		handleSearch() {
-			this.$emit('search');
-		},
-		handleShowSearchDropdown() {
-			this.$emit('update:showSearchDropdown', !this.showSearchDropdown);
-		},
+	emits: ['update:value', 'update:showSearchDropdown', 'autocomplete', 'search'],
+	setup(props, { emit }) {
+		const { value, full, showSearchDropdown, transparent } = toRefs(props);
+		const sync_value = ref(value.value);
+		const isTyping = ref(false);
+		const uid = uniqueId();
+
+		const computedFull = computed(() => ({ full: full.value }));
+		const computedTransparent = computed(() => ({ transparent: transparent.value }));
+		const computedActive = computed(() => ({ active: sync_value.value.length > 0 }));
+		const classes = computed(() => [computedFull.value, computedTransparent.value, computedActive.value]);
+		const computedIconColor = computed(() => (transparent.value ? 'gray100' : 'gray500'));
+
+		const hideSearchDropdown = () => {
+			if (showSearchDropdown.value) emit('update:showSearchDropdown', false);
+		};
+
+		const handleTyping = e => {
+			isTyping.value = true;
+			sync_value.value = e.target.value;
+			emit('update:value', sync_value.value);
+		};
+
+		const handleAutocomplete = () => {
+			emit('autocomplete');
+		};
+
+		const resetKeyword = () => {
+			sync_value.value = '';
+			handleAutocomplete();
+			isTyping.value = false;
+		};
+
+		const handleSearch = () => {
+			emit('search');
+		};
+
+		const handleShowSearchDropdown = () => {
+			emit('update:showSearchDropdown', !showSearchDropdown.value);
+		};
+
+		return {
+			sync_value,
+			uid,
+			computedFull,
+			computedTransparent,
+			classes,
+			computedIconColor,
+			computedActive,
+			hideSearchDropdown,
+			handleTyping,
+			handleAutocomplete,
+			resetKeyword,
+			handleSearch,
+			handleShowSearchDropdown,
+			isTyping,
+		};
 	},
 	components: {
 		CIcon,

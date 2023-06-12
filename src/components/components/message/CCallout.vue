@@ -9,7 +9,7 @@
 			<div class="c-callout--wrapper">
 				<div class="flex align-center w-full">
 					<!-- 아이콘 -->
-					<slot v-if="$slots['icon']" name="icon" />
+					<slot v-if="hasIconSlot" name="icon" />
 					<CIcon v-else :name="iconName" :color="computedIconColor" />
 
 					<!-- 문구 -->
@@ -34,7 +34,7 @@
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import getPadding from '@/utils/get-padding';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const CalloutTypes = ['information', 'error', 'success', 'notice'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
@@ -91,60 +91,86 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedFull() {
-			return this.full && 'full';
-		},
-		computedIconColor() {
+	emits: ['closeCallout'],
+	setup(props, { emit, slots }) {
+		const { full, type, size, closable, paddings } = toRefs(props);
+
+		const computedFull = computed(() => {
+			return full.value && 'full';
+		});
+
+		const computedIconColor = computed(() => {
 			return {
 				information: 'gray600',
 				error: 'red600',
 				success: 'green600',
 				notice: 'blue600',
-			}[this.type];
-		},
-		computedSize() {
-			return this.size;
-		},
-		computedType() {
-			return this.type;
-		},
-		computedFontType() {
+			}[type.value];
+		});
+
+		const computedSize = computed(() => {
+			return size.value;
+		});
+
+		const computedType = computed(() => {
+			return type.value;
+		});
+
+		const computedFontType = computed(() => {
 			return {
 				medium: 'body2',
 				small: 'caption1',
 				xsmall: 'caption2',
-			}[this.size];
-		},
-		computedCloseIconName() {
-			const iconSize = this.size === 'xsmall' ? 'XSmall' : 'Small';
+			}[size.value];
+		});
+
+		const computedCloseIconName = computed(() => {
+			const iconSize = size.value === 'xsmall' ? 'XSmall' : 'Small';
 			return `IconClose${iconSize}Line`;
-		},
-		computedTransition() {
-			return this.closable ? 'callout-fade' : null;
-		},
-		computedPadding() {
-			return this.paddings ? { ...getPadding(this.paddings) } : null;
-		},
-		iconName() {
+		});
+
+		const computedTransition = computed(() => {
+			return closable.value ? 'callout-fade' : null;
+		});
+
+		const computedPadding = computed(() => {
+			return paddings.value ? { ...getPadding(paddings.value) } : null;
+		});
+
+		const iconName = computed(() => {
 			const name = {
 				information: 'Information',
 				error: 'Exclamation',
 				notice: 'Megaphone',
 				success: 'CheckRound',
-			}[this.type];
-			const size = {
+			}[type.value];
+			const sizeMap = {
 				xsmall: 'XSmall',
 				small: 'Small',
 				medium: 'Small',
-			}[this.size];
-			return `Icon${name + size}Line`;
-		},
-	},
-	methods: {
-		handleClose() {
-			this.$emit('closeCallout');
-		},
+			}[size.value];
+			return `Icon${name + sizeMap}Line`;
+		});
+
+		const handleClose = () => {
+			emit('closeCallout');
+		};
+
+		const hasIconSlot = computed(() => Boolean(slots.icon));
+
+		return {
+			computedFull,
+			computedIconColor,
+			computedSize,
+			computedType,
+			computedFontType,
+			computedCloseIconName,
+			computedTransition,
+			computedPadding,
+			iconName,
+			handleClose,
+			hasIconSlot,
+		};
 	},
 	components: {
 		CTypography,

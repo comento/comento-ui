@@ -16,9 +16,16 @@ import linkify from 'vue-linkify';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const contentTypes = ['overline', 'title', 'body', 'caption'];
+
+const CONTENT_ITEMS = {
+	overline: { type: 'caption1', element: 'p', color: 'gray400' },
+	title: { type: 'headline7', element: 'h2', color: 'gray900' },
+	body: { type: 'body1', element: 'p', color: 'gray850' },
+	caption: { type: 'body2', element: 'p', color: 'gray300' },
+};
 
 /**
  * 주로 게시글의 본문에 사용
@@ -46,20 +53,11 @@ export default defineComponent({
 			},
 		},
 	},
-	data() {
-		return {
-			contentItems: {
-				overline: { type: 'caption1', element: 'p', color: 'gray400' },
-				title: { type: 'headline7', element: 'h2', color: 'gray900' },
-				body: { type: 'body1', element: 'p', color: 'gray850' },
-				caption: { type: 'body2', element: 'p', color: 'gray300' },
-			},
-		};
-	},
-	computed: {
-		computedColor() {
-			return this.color || this.contentItems[this.type].color;
-		},
+	setup(props) {
+		const { color, type } = toRefs(props);
+		const contentItems = CONTENT_ITEMS;
+		const computedColor = computed(() => String(color.value || contentItems[type].color));
+		return { contentItems, computedColor };
 	},
 	components: { CTypography },
 	directives: {

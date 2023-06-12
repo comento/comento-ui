@@ -92,11 +92,14 @@ export default defineComponent({
 			type: String,
 		},
 	},
-	methods: {
-		close() {
-			this.$emit('update:show', false);
-			this.$emit('close');
-		},
+	emits: ['update:show', 'close'],
+	setup(props, { emit }) {
+		const close = () => {
+			emit('update:show', false);
+			emit('close');
+		};
+
+		return { close };
 	},
 	components: {
 		CModal,

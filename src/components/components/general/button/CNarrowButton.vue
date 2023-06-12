@@ -19,7 +19,7 @@
 
 <script>
 import { colors } from '@/utils/constants/color';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const narrowButtonSizes = ['small', 'medium', 'large'];
 
@@ -46,26 +46,30 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		mappedColor() {
-			return this.color ? colors[this.color] : 'inherit';
-		},
-		computedColor() {
-			return { color: this.mappedColor };
-		},
-		computedIconMargin() {
-			const isMoreThanLarge = this.size.indexOf('large') !== -1;
+	setup(props, { slots }) {
+		const { color, size, transparent } = toRefs(props);
+		const mappedColor = computed(() => (color.value ? colors[color] : 'inherit'));
+		const computedColor = computed(() => ({ color: mappedColor.value }));
+
+		const computedIconMargin = computed(() => {
+			const isMoreThanLarge = size.value.indexOf('large') !== -1;
 			return isMoreThanLarge ? '4px' : '2px';
-		},
-		computedClasses() {
-			return [this.size, { transparent: this.transparent }];
-		},
-	},
-	methods: {
-		setIconSpacing(position) {
+		});
+
+		const computedClasses = computed(() => [size, { transparent }]);
+
+		const setIconSpacing = position => {
 			const oppositePosition = position === 'left' ? 'r' : 'l';
-			return this.$slots[`${position}-icon`] && `m${oppositePosition}-2`;
-		},
+			return slots[`${position}-icon`] && `m${oppositePosition}-2`;
+		};
+
+		return {
+			mappedColor,
+			computedColor,
+			computedIconMargin,
+			computedClasses,
+			setIconSpacing,
+		};
 	},
 });
 </script>

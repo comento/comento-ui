@@ -4,7 +4,7 @@
 		:z-index="1002"
 		direction="down"
 		:closeable="showCloseButton"
-		:max-height="computedMaxHeight"
+		:max-height="maxHeight"
 		@close="$emit('close')"
 	>
 		<div v-if="showDrawer" class="c-bottom-drawer" :class="computedClass">
@@ -33,7 +33,9 @@ import { toggleNotScroll } from '@/utils/not-scroll';
 import BaseDrawer from '@/components/components/dataDisplay/drawer/BaseDrawer.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CButton from '@/components/components/general/button/CButton.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, watch, toRefs } from 'vue';
+
+const MAX_HEIGHT = '68vh';
 
 export default defineComponent({
 	name: 'CBottomDrawer',
@@ -72,18 +74,16 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		computedClass() {
-			return [this.scroll && 'scroll', this.showActionButton && 'with-button'];
-		},
-		computedMaxHeight() {
-			return '68vh';
-		},
-	},
-	watch: {
-		showDrawer() {
-			toggleNotScroll(this.showDrawer);
-		},
+	emits: ['close'],
+	setup(props) {
+		const { scroll, showActionButton, showDrawer } = toRefs(props);
+		const maxHeight = MAX_HEIGHT;
+
+		const computedClass = () => [scroll.value && 'scroll', showActionButton.value && 'with-button'];
+
+		watch(showDrawer, () => toggleNotScroll(showDrawer));
+
+		return { maxHeight, computedClass };
 	},
 	components: {
 		BaseDrawer,

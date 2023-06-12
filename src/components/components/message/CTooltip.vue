@@ -23,7 +23,7 @@
 <script>
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import { placements, placementMap } from '@/utils/constants/tooltip';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CTooltip',
@@ -67,10 +67,16 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		mapPlacement() {
-			return placementMap[this.placement];
-		},
+	emits: ['showTooltip'],
+	setup(props) {
+		const { placement } = toRefs(props);
+		const mapPlacement = computed(() => {
+			return placementMap[placement.value];
+		});
+
+		return {
+			mapPlacement,
+		};
 	},
 	components: { CTypography },
 });

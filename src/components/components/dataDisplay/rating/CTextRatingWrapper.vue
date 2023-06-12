@@ -6,7 +6,7 @@
 
 <script>
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CTextRatingWrapper',
@@ -16,19 +16,21 @@ export default defineComponent({
 			default: 'default',
 		},
 	},
-	computed: {
-		computedTypoType() {
-			return {
-				default: 'body2',
-				small: 'caption1',
-			}[this.size];
-		},
-		computedTypoColor() {
-			return {
-				default: 'gray700',
-				small: 'gray500',
-			}[this.size];
-		},
+	setup(props) {
+		const { size } = toRefs(props);
+		const computedTypoType = computed(() => ({ default: 'body2', small: 'caption1' }[size]));
+		const computedTypoColor = computed(
+			() =>
+				({
+					default: 'gray700',
+					small: 'gray500',
+				}[size]),
+		);
+
+		return {
+			computedTypoType,
+			computedTypoColor,
+		};
 	},
 	components: { CTypography },
 });

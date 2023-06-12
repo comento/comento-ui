@@ -44,12 +44,12 @@
 
 <script>
 import CNewCol from '@/components/layout/CNewCol.vue';
-import CTabs from '@/components/components/dataDisplay/CTabs.vue';
+import CTabs from '@/components/components/dataDisplay/CTabs.vue.bak';
 import CNewGrid from '@/components/layout/CNewGrid.vue';
 import CNewRow from '@/components/layout/CNewRow.vue';
 import CButton from '@/components/components/general/button/CButton.vue';
 import useWindowResize from '@/services/useWindowResize';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed } from 'vue';
 
 export default defineComponent({
 	name: 'CSubHeader',
@@ -88,19 +88,18 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	setup() {
+	emits: ['change-tab-index'],
+	setup(props, { emit }) {
+		const { items } = toRefs(props);
 		const { isMobile } = useWindowResize();
-		return { isMobile };
-	},
-	computed: {
-		tabIndex() {
-			return this.items.findIndex(item => item.active);
-		},
-	},
-	methods: {
-		changeTabs(tabs) {
-			this.$emit('change-tab-index', this.tabIndex, tabs);
-		},
+		const tabIndex = computed(() => items.value.findIndex(item => item.active));
+		const changeTabs = tabs => emit('change-tab-index', tabIndex, tabs);
+
+		return {
+			isMobile,
+			tabIndex,
+			changeTabs,
+		};
 	},
 	components: { CNewRow, CNewGrid, CTabs, CNewCol, CButton },
 });

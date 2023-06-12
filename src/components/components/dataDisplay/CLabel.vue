@@ -6,7 +6,7 @@
 
 <script>
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 const DATA_ENTRY = 'dataEntry';
 const DATA_DISPLAY = 'dataDisplay';
@@ -26,8 +26,9 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		typographyInfo() {
+	setup(props) {
+		const { type } = toRefs(props);
+		const typographyInfo = computed(() => {
 			return {
 				[DATA_ENTRY]: {
 					type: 'body2',
@@ -37,8 +38,10 @@ export default defineComponent({
 					type: 'caption1',
 					color: 'gray400',
 				},
-			}[this.type];
-		},
+			}[type];
+		});
+
+		return { typographyInfo };
 	},
 	components: { CTypography },
 });

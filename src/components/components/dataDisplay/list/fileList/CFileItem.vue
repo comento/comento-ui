@@ -60,19 +60,19 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	methods: {
-		handleClickFileItem({ file, index }) {
-			this.$emit('clickFileItem', { file, index });
-		},
-		handleClickFileDownloadIcon({ file, index }) {
-			this.$emit('clickFileDownloadIcon', { file, index });
-		},
-		handleClickFileItemContent({ file, index }) {
-			this.$emit('clickFileItemContent', { file, index });
-		},
-		handleClickFileTrashIcon({ file, index }) {
-			this.$emit('clickFileTrashIcon', { file, index });
-		},
+	emits: ['clickFileItem', 'clickFileDownloadIcon', 'clickFileItemContent', 'clickFileTrashIcon'],
+	setup(props, { emit }) {
+		const handleClickFileItem = ({ file, index }) => emit('clickFileItem', { file, index });
+		const handleClickFileDownloadIcon = ({ file, index }) => emit('clickFileDownloadIcon', { file, index });
+		const handleClickFileItemContent = ({ file, index }) => emit('clickFileItemContent', { file, index });
+		const handleClickFileTrashIcon = ({ file, index }) => emit('clickFileTrashIcon', { file, index });
+
+		return {
+			handleClickFileItem,
+			handleClickFileDownloadIcon,
+			handleClickFileItemContent,
+			handleClickFileTrashIcon,
+		};
 	},
 	components: { CIcon, CLoader, CTypography, CListItem },
 });

@@ -14,7 +14,7 @@
 <script>
 import { colorKeys } from '@/utils/constants/color';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const IconButtonSizes = ['small', 'medium', 'large'];
 export const IconButtonTypes = ['button', 'submit', 'reset'];
@@ -63,13 +63,15 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedColor() {
-			return this.disabled ? 'gray200' : this.color;
-		},
-		computedClasses() {
-			return [this.size, { transparent: this.transparent }];
-		},
+	setup(props) {
+		const { disabled, size, color, transparent } = toRefs(props);
+		const computedColor = computed(() => (disabled.value ? 'gray200' : color));
+		const computedClasses = computed(() => [size, { transparent }]);
+
+		return {
+			computedColor,
+			computedClasses,
+		};
 	},
 	components: {
 		CIcon,

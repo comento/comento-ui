@@ -49,18 +49,27 @@
 
 <script>
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CCustomPagination',
-	props: ['props'],
-	computed: {
-		computedPrevClass() {
-			return { 'pagination--icon-disabled': this.props.prevProps.disabled };
+	props: {
+		props: {
+			type: Object,
+			required: true,
 		},
-		computedNextClass() {
-			return { 'pagination--icon-disabled': this.props.nextProps.disabled };
-		},
+	},
+	setup(props) {
+		const { props: propsValue } = toRefs(props);
+
+		const computedPrevClass = computed(() => ({
+			'pagination--icon-disabled': propsValue.value.prevProps.disabled,
+		}));
+		const computedNextClass = computed(() => ({
+			'pagination--icon-disabled': propsValue.value.nextProps.disabled,
+		}));
+
+		return { computedPrevClass, computedNextClass };
 	},
 	components: { CIcon },
 });

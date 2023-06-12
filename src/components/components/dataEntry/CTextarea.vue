@@ -29,7 +29,7 @@
 <script>
 import CIconButton from '@/components/components/general/button/CIconButton.vue';
 import CHint from '@/components/components/dataDisplay/CHint.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs, ref } from 'vue';
 
 export const textareaTypes = ['basic', 'outline', 'reply'];
 
@@ -78,52 +78,50 @@ export default defineComponent({
 			default: '메시지는 선택사항입니다',
 		},
 	},
-	computed: {
-		classes() {
-			return [this.computedType, this.computedError];
-		},
-		computedType() {
-			return `${this.type}`;
-		},
-		computedError() {
-			if (this.error) return 'c-textarea--error';
-			return null;
-		},
-		computedStyles() {
-			return {
-				'max-height': this.maxHeight,
-				'min-height': this.minHeight ? this.minHeight : this.type === 'reply' ? '38px' : '110px',
-				'overflow-y': this.maxHeight === 'auto' ? 'hidden' : 'auto',
-			};
-		},
-		sync_value: {
-			get() {
-				return this.value;
-			},
-			set(val) {
-				this.$emit('update:value', val);
-			},
-		},
-		replyIconColor() {
-			if (this.sync_value) {
-				return 'blue600';
-			} else {
-				return 'gray200';
+	emits: ['update:value', 'input', 'submit'],
+	setup(props, { emit }) {
+		const { value, type, error, maxHeight, minHeight } = toRefs(props);
+		const sync_value = computed({
+			get: () => value,
+			set: val => emit('update:value', val),
+		});
+
+		const classes = computed(() => [`${value.value}`, error.value ? 'c-textarea--error' : null]);
+
+		const computedStyles = computed(() => ({
+			'max-height': maxHeight,
+			'min-height': minHeight.value ? minHeight : type.value === 'reply' ? '38px' : '110px',
+			'overflow-y': maxHeight.value === 'auto' ? 'hidden' : 'auto',
+		}));
+
+		const replyIconColor = computed(() => (sync_value.value ? 'blue600' : 'gray200'));
+
+		const isShowHint = computed(() => type.value === 'outline' && error);
+
+		const textareaRef = ref(null);
+
+		const onInput = () => {
+			textareaRef.value.style.height = '1px';
+			textareaRef.value.style.height = `${textareaRef.value.scrollHeight}px`;
+			emit('input', textareaRef.value.value);
+		};
+
+		const onSubmitReply = () => {
+			if (sync_value.value) {
+				emit('submit');
 			}
-		},
-		isShowHint() {
-			return this.type === 'outline' && this.error;
-		},
-	},
-	methods: {
-		onInput(event) {
-			event.target.style.height = '1px';
-			event.target.style.height = `${event.target.scrollHeight}px`;
-			this.$emit('input', event.target.value);
-		},
-		onSubmitReply() {
-			this.value && this.$emit('submit');
-		},
+		};
+
+		return {
+			sync_value,
+			classes,
+			computedStyles,
+			replyIconColor,
+			isShowHint,
+			textareaRef,
+			onInput,
+			onSubmitReply,
+		};
 	},
 	components: { CHint, CIconButton },
 });

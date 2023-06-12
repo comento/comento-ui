@@ -6,7 +6,7 @@
 
 <script>
 import { colors } from '@/utils/constants/color';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 /**
  * [deprecated]
@@ -23,18 +23,28 @@ export default defineComponent({
 			default: '',
 		},
 	},
-	computed: {
-		computedFluid() {
-			return `${this.fluid ? 'fluid' : 'container'}`;
-		},
-		computedColor() {
-			return this.gridColor && colors[this.gridColor] ? colors[this.gridColor] : 'inherit';
-		},
-		computedBgColor() {
+	setup(props) {
+		const { fluid, gridColor } = toRefs(props);
+
+		const computedFluid = computed(() => {
+			return `${fluid.value ? 'fluid' : 'container'}`;
+		});
+
+		const computedColor = computed(() => {
+			return gridColor.value && colors[gridColor.value] ? colors[gridColor.value] : 'inherit';
+		});
+
+		const computedBgColor = computed(() => {
 			return {
-				backgroundColor: this.computedColor,
+				backgroundColor: computedColor.value,
 			};
-		},
+		});
+
+		return {
+			computedFluid,
+			computedColor,
+			computedBgColor,
+		};
 	},
 });
 </script>

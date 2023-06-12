@@ -15,7 +15,7 @@
 						</div>
 						<CSearchInput
 							ref="searchInput"
-							v-model:value="sync_keyword"
+							v-model:value="syncKeyword"
 							v-model:show-search-dropdown="sync_showDropdown"
 							full
 							:placeholder="placeholder"
@@ -39,7 +39,7 @@ import CNewRow from '@/components/layout/CNewRow.vue';
 import CNewCol from '@/components/layout/CNewCol.vue';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import CSearchInput from '@/components/components/dataEntry/input/CSearchInput.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed } from 'vue';
 
 export default defineComponent({
 	name: 'CSearchTopBar',
@@ -65,34 +65,46 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		sync_showDropdown: {
+	emits: ['click-button', 'update:showDropdown', 'update:keyword', 'search', 'autocomplete', 'click-search-input'],
+	setup(props, { emit }) {
+		const { showDropdown, keyword } = toRefs(props);
+		const sync_showDropdown = computed({
 			get() {
-				return this.showDropdown;
+				return showDropdown.value;
 			},
 			set(value) {
-				return this.$emit('update:showDropdown', value);
+				emit('update:showDropdown', value);
 			},
-		},
-		sync_keyword: {
+		});
+
+		const syncKeyword = computed({
 			get() {
-				return this.keyword;
+				return keyword.value;
 			},
 			set(value) {
-				return this.$emit('update:keyword', value);
+				emit('update:keyword', value);
 			},
-		},
-	},
-	methods: {
-		search() {
-			this.$emit('search');
-		},
-		autocomplete() {
-			this.$emit('autocomplete', this.sync_keyword);
-		},
-		clickSearchInput() {
-			this.$emit('click-search-input');
-		},
+		});
+
+		const search = () => {
+			emit('search');
+		};
+
+		const autocomplete = () => {
+			emit('autocomplete', syncKeyword.value);
+		};
+
+		const clickSearchInput = () => {
+			emit('click-search-input');
+		};
+
+		return {
+			sync_showDropdown,
+			syncKeyword,
+			search,
+			autocomplete,
+			clickSearchInput,
+		};
 	},
 	components: { CSearchInput, CNewCol, CNewRow, CNewGrid, CIcon },
 });

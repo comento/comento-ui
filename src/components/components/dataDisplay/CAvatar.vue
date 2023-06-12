@@ -1,9 +1,9 @@
 <template>
-	<div class="c-application c-avatar--container" :class="[computedSize]">
-		<i class="c-avatar" :class="[computedType, computedSize]" :style="computedStyle" />
+	<div class="c-application c-avatar--container" :class="[size]">
+		<i class="c-avatar" :class="[type, size]" :style="computedStyle" />
 		<div class="c-avatar--item">
 			<CIcon v-if="isProfileType" :name="computedIconName" :color="computedColorName" />
-			<div v-if="isLogoType" class="c-avatar--logo" :class="[computedSize]" />
+			<div v-if="isLogoType" class="c-avatar--logo" :class="[size]" />
 			<CTypography v-if="isNicknameType" :type="computedTypography" font-weight="semi-bold" color="white">
 				{{ text || computedRandomText }}
 			</CTypography>
@@ -15,7 +15,7 @@
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import uniqueId from '@/utils/unique-id';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const avatarSizes = ['xsmall', 'small', 'medium', 'large'];
 export const avatarTypes = ['nickname', 'profile', 'logo', 'image'];
@@ -67,73 +67,63 @@ export default defineComponent({
 			default: 'gray300',
 		},
 	},
-	data() {
-		return {
-			uid: uniqueId(),
-		};
-	},
-	computed: {
-		isNicknameType() {
-			return this.type === 'nickname';
-		},
-		isProfileType() {
-			return this.type === 'profile';
-		},
-		isLogoType() {
-			return this.type === 'logo';
-		},
-		isImageType() {
-			return this.type === 'image';
-		},
-		computedType() {
-			return `${this.type}`;
-		},
-		computedSize() {
-			return `${this.size}`;
-		},
-		computedStyle() {
-			if (this.isImageType) {
-				return { 'background-image': `url(${this.src})` };
-			}
-			if (this.isNicknameType) {
-				return { background: this.computedRandomBackground };
-			}
-			return {};
-		},
-		computedId() {
-			return this.id > -1 ? this.id : this.uid;
-		},
-		computedRandomBackground() {
-			const randomNo = this.computedId % avatarColors.length;
+	setup(props) {
+		const { type, id, src, size, color } = toRefs(props);
+		const uid = uniqueId();
+
+		const isNicknameType = computed(() => type.value === 'nickname');
+		const isProfileType = computed(() => type.value === 'profile');
+		const isLogoType = computed(() => type.value === 'logo');
+		const isImageType = computed(() => type.value === 'image');
+		const computedId = computed(() => (id.value > -1 ? id : uid));
+		const computedRandomBackground = computed(() => {
+			const randomNo = computedId.value % avatarColors.length;
 			return avatarColors[randomNo];
-		},
-		computedRandomText() {
+		});
+		const computedStyle = computed(() => {
+			if (isImageType.value) return { 'background-image': `url(${src.value})` };
+			if (isNicknameType.value) return { background: computedRandomBackground };
+			return {};
+		});
+
+		const computedRandomText = computed(() => {
 			const text = 'ABCDEGHIJKLMNOPQRSTUVWXYZ';
 			const textLength = text.length;
-			const randomNo = this.uid % textLength;
+			const randomNo = uid % textLength;
 			return text[randomNo];
-		},
-		computedTypography() {
-			const typographyBySize = {
-				xsmall: 'caption2',
-				small: 'body2',
-				medium: 'body1',
-				large: 'headline4',
-			};
-			return typographyBySize[this.size];
-		},
-		computedIconName() {
+		});
+
+		const computedTypography = computed(
+			() =>
+				({
+					xsmall: 'caption2',
+					small: 'body2',
+					medium: 'body1',
+					large: 'headline4',
+				}[size]),
+		);
+		const computedIconName = computed(() => {
 			const iconBySize = {
 				xsmall: 'Small',
 				small: 'Large',
 				medium: 'XLarge',
 				large: '2XLarge',
 			};
-			return `IconProfile${iconBySize[this.size]}Fill`;
-		},
-		computedColorName() {
-			return this.color.toLowerCase();
-		},
+			return `IconProfile${iconBySize[size]}Fill`;
+		});
+		const computedColorName = computed(() => color.value.toLowerCase());
+
+		return {
+			uid,
+			computedStyle,
+			isProfileType,
+			isLogoType,
+			isNicknameType,
+			computedIconName,
+			computedColorName,
+			computedTypography,
+			computedRandomText,
+		};
 	},
 	components: {
 		CTypography,

@@ -38,7 +38,8 @@ import CContent from '@/components/components/dataDisplay/content/CContent.vue';
 import CRatingGroup from '@/components/components/dataDisplay/rating/CRatingGroup.vue';
 import CIconRating from '@/components/components/dataDisplay/rating/CIconRating.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
+import useWindowResize from '@/services/useWindowResize';
 
 /**
  * 멘토링 카드
@@ -71,24 +72,17 @@ export default defineComponent({
 			default: 0,
 		},
 	},
-	computed: {
-		isShowHiddenRepliesCount() {
-			return this.showRepliesCount > 0 && this.repliesCount - this.showRepliesCount > 0;
-		},
-		hiddenRepliesCount() {
-			return this.repliesCount - this.showRepliesCount;
-		},
-		computedRepliesCount() {
-			return this.handleCheckNegativeNumber(this.repliesCount);
-		},
-		computedLikeCount() {
-			return this.handleCheckNegativeNumber(this.likeCount);
-		},
-	},
-	methods: {
-		handleCheckNegativeNumber(value) {
-			return value < 0 ? 0 : value;
-		},
+	setup(props) {
+		const { repliesCount, showRepliesCount, likeCount } = toRefs(props);
+		const { isMobile } = useWindowResize();
+		const isShowHiddenRepliesCount = computed(
+			() => showRepliesCount.value > 0 && repliesCount.value - showRepliesCount.value > 0,
+		);
+		const hiddenRepliesCount = computed(() => repliesCount.value - showRepliesCount.value);
+		const handleCheckNegativeNumber = value => (value < 0 ? 0 : value);
+		const computedRepliesCount = computed(() => handleCheckNegativeNumber(repliesCount));
+		const computedLikeCount = computed(() => handleCheckNegativeNumber(likeCount));
+		return { isMobile, isShowHiddenRepliesCount, hiddenRepliesCount, computedRepliesCount, computedLikeCount };
 	},
 	components: {
 		CIconRating,

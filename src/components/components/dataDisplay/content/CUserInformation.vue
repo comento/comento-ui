@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const userInformationTypes = ['simple', 'normal', 'full'];
 
@@ -41,10 +41,10 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedOtherWrapperStyle() {
-			return this.type === 'full' ? { marginTop: '4px' } : null;
-		},
+	setup(props) {
+		const { type } = toRefs(props);
+		const computedOtherWrapperStyle = computed(() => (type.value === 'full' ? { marginTop: '4px' } : null));
+		return { computedOtherWrapperStyle };
 	},
 });
 </script>

@@ -25,7 +25,7 @@
 <script>
 import CModal from '@/components/components/message/modal/CModal.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, ref, toRefs, watchEffect } from 'vue';
 
 export default defineComponent({
 	name: 'CAlertModal',
@@ -47,11 +47,23 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	methods: {
-		close() {
-			this.$emit('update:show', false);
-			this.$emit('close');
-		},
+	emits: ['update:show', 'close'],
+	setup(props, { emit }) {
+		const { show } = toRefs(props);
+		const showRef = ref(show);
+
+		watchEffect(() => {
+			showRef.value = show.value;
+		});
+
+		const close = () => {
+			emit('update:show', false);
+			emit('close');
+		};
+
+		return {
+			close,
+		};
 	},
 	components: {
 		CModal,

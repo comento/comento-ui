@@ -23,10 +23,10 @@
 
 <script>
 import { toggleNotScroll } from '@/utils/not-scroll';
-import CBox from '@/components/Ccomponents/general/CBox.vue';
+import CBox from '@/components/components/general/CBox.vue';
 import BaseDrawer from '@/components/components/dataDisplay/drawer/BaseDrawer.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, watch } from 'vue';
 
 export default defineComponent({
 	name: 'CSideDrawer',
@@ -46,15 +46,10 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	watch: {
-		showDrawer() {
-			toggleNotScroll(this.showDrawer);
-		},
-	},
-	methods: {
-		toggle() {
-			this.showDrawer = !this.showDrawer;
-		},
+	emits: ['close'],
+	setup(props) {
+		const { showDrawer } = toRefs(props);
+		watch(showDrawer, () => toggleNotScroll(showDrawer));
 	},
 	components: {
 		CBox,

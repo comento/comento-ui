@@ -15,7 +15,8 @@
 import { toggleNotScroll } from '@/utils/not-scroll';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import COverlay from '@/components/elements/utility/COverlay.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, watch, toRefs } from 'vue';
+import useWindowResize from '@/services/useWindowResize';
 
 export default defineComponent({
 	name: 'CModal',
@@ -43,30 +44,37 @@ export default defineComponent({
 			default: 'auto',
 		},
 	},
-	computed: {
-		computedStyle() {
-			return {
-				maxWidth: !this.isMobile && this.maxWidth,
-				maxHeight: this.maxHeight,
-				minHeight: this.minHeight,
-				width: this.width,
-			};
-		},
-	},
-	watch: {
-		show() {
-			toggleNotScroll(this.show);
-		},
-	},
-	methods: {
-		handleCloseModal() {
-			if (!this.persistent) {
-				this.close();
+	emits: ['close'],
+	setup(props, { emit }) {
+		const { show, maxWidth, maxHeight, minHeight, width, persistent } = toRefs(props);
+		const { isMobile } = useWindowResize();
+
+		const computedStyle = computed(() => ({
+			maxWidth: !isMobile && maxWidth.value,
+			maxHeight: maxHeight.value,
+			minHeight: minHeight.value,
+			width: width.value,
+		}));
+
+		const handleCloseModal = () => {
+			if (!persistent.value) {
+				close();
 			}
-		},
-		close() {
-			this.$emit('close');
-		},
+		};
+
+		const close = () => {
+			emit('close');
+		};
+
+		watch(show, value => {
+			toggleNotScroll(value);
+		});
+
+		return {
+			computedStyle,
+			handleCloseModal,
+			close,
+		};
 	},
 	components: { COverlay, CIcon },
 });

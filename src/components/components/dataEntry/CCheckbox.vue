@@ -21,7 +21,7 @@
 import { colorKeys } from '@/utils/constants/color';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import uniqueId from '@/utils/unique-id';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs, ref } from 'vue';
 export const checkboxSizes = ['xsmall', 'small', 'medium'];
 
 export default defineComponent({
@@ -75,37 +75,36 @@ export default defineComponent({
 			},
 		},
 	},
-	data() {
-		return {
-			uid: uniqueId(),
-		};
-	},
-	computed: {
-		sync_value: {
-			get() {
-				return this.value;
-			},
-			set(val) {
-				this.$emit('update:value', val);
-			},
-		},
-		computedId() {
-			return this.id || `c-checkbox-${this.uid}`;
-		},
-		computedColor() {
-			return this.disabled ? 'gray300' : this.color;
-		},
-		computedClasses() {
-			return [this.size];
-		},
-		computedTypographyType() {
+	emits: ['update:value'],
+	setup(props, { emit }) {
+		const { value, disabled, id, color, size } = toRefs(props);
+		const uid = ref(uniqueId());
+
+		const sync_value = computed({
+			get: () => value.value,
+			set: val => emit('update:value', val),
+		});
+
+		const computedId = computed(() => id.value || `c-checkbox-${uid.value}`);
+		const computedColor = computed(() => (disabled.value ? 'gray300' : color.value));
+		const computedClasses = computed(() => [size.value]);
+
+		const computedTypographyType = computed(() => {
 			const sizeForTypeList = {
 				xsmall: 'caption1',
 				small: 'body2',
 				medium: 'body1',
 			};
-			return sizeForTypeList[this.size];
-		},
+			return sizeForTypeList[size.value];
+		});
+
+		return {
+			sync_value,
+			computedId,
+			computedColor,
+			computedClasses,
+			computedTypographyType,
+		};
 	},
 	components: { CTypography },
 });

@@ -11,7 +11,7 @@
 import CNarrowButton from '@/components/components/general/button/CNarrowButton.vue';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import customValidator from '@/utils/custom-validator.js';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CFileButton',
@@ -28,10 +28,13 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		classes() {
-			return { 'c-not-allowed': this.disabled };
-		},
+	setup(props) {
+		const { disabled } = toRefs(props);
+		const classes = computed(() => ({ 'c-not-allowed': disabled }));
+
+		return {
+			classes,
+		};
 	},
 	components: {
 		CNarrowButton,

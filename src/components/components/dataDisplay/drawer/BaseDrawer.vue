@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-drawer">
 		<transition name="fade" mode="out-in">
-			<div v-if="$slots.default" :style="indexClass()" :class="{ mask }" @click="onMask" />
+			<div v-if="$slots.default" :style="indexClass" :class="{ mask }" @click="onMask" />
 		</transition>
 		<transition :enter-active-class="directionInClass" :leave-active-class="directionOutClass">
 			<div
@@ -21,7 +21,7 @@
 <script>
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import getPadding from '@/utils/get-padding';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'BaseDrawer',
@@ -73,51 +73,41 @@ export default defineComponent({
 			type: String,
 		},
 	},
-	computed: {
-		directionInClass() {
-			return `animated bounceIn${this.direction.toLowerCase()}`;
-		},
-		directionOutClass() {
-			return `animated bounceOut${this.direction.toLowerCase()}`;
-		},
-		directionCloseClass() {
-			return `close-${this.direction.toLowerCase()}`;
-		},
-		computedIndex() {
-			return this.zIndex;
-		},
-		computedPaddings() {
-			if (this.paddings) {
-				return this.paddings;
-			} else {
-				return [0, 0, 0, 0];
-			}
-		},
-		computedMaxHeight() {
-			return { 'max-height': this.maxHeight };
-		},
-		styles() {
+	emits: ['close'],
+	setup(props, { emit }) {
+		const { direction, paddings, zIndex, maskClosable, maxHeight } = toRefs(props);
+		const directionInClass = computed(() => `animated bounceIn${direction.value.toLowerCase()}`);
+		const directionOutClass = computed(() => `animated bounceOut${direction.value.toLowerCase()}`);
+		const directionCloseClass = computed(() => `close-${direction.value.toLowerCase()}`);
+		const computedPaddings = computed(() => (paddings.value ? paddings : [0, 0, 0, 0]));
+		const computedMaxHeight = computed(() => {
+			return { 'max-height': maxHeight };
+		});
+		const indexClass = (offset = 0) => {
+			return { zIndex: zIndex.value + offset };
+		};
+		const styles = computed(() => {
 			return {
-				...getPadding(this.computedPaddings),
-				...this.indexClass(),
-				...this.computedMaxHeight,
+				...getPadding(computedPaddings),
+				...indexClass(),
+				...computedMaxHeight,
 			};
-		},
-	},
-	methods: {
-		close() {
-			this.$emit('close');
-		},
-		onMask() {
-			if (this.maskClosable) {
-				this.close();
-			}
-		},
-		indexClass(offset = 0) {
-			return {
-				zIndex: this.computedIndex + offset,
-			};
-		},
+		});
+
+		const close = () => emit('close');
+		const onMask = () => (maskClosable.value ? close() : false);
+
+		return {
+			directionInClass,
+			directionOutClass,
+			directionCloseClass,
+			computedPaddings,
+			computedMaxHeight,
+			styles,
+			indexClass,
+			close,
+			onMask,
+		};
 	},
 	components: {
 		CIcon,

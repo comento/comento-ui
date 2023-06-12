@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-chip-group" :class="[computedSize]">
+	<div class="c-application c-chip-group" :class="[size]">
 		<slot />
 	</div>
 </template>
@@ -20,11 +20,6 @@ export default defineComponent({
 			validator(value) {
 				return ChipSizes.indexOf(value) !== -1;
 			},
-		},
-	},
-	computed: {
-		computedSize() {
-			return `${this.size}`;
 		},
 	},
 });

@@ -24,7 +24,7 @@
 
 <script>
 import CTypography, { TypographyTypes } from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 
 export const linkButtonTargets = ['_blank', '_self', '_parent', '_top'];
 
@@ -72,10 +72,12 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		buttonColor() {
-			return 'link';
-		},
+	setup() {
+		const buttonColor = computed(() => 'link');
+
+		return {
+			buttonColor,
+		};
 	},
 	components: { CTypography },
 });

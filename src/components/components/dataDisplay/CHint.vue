@@ -1,7 +1,7 @@
 <template>
 	<div v-if="hasSlot" class="c-hint">
-		<CIcon name="IconExclamationXSmallFill" :color="computedIconColor" />
-		<CTypography type="caption2" :color="computedTextColor" element="p" align="left">
+		<CIcon name="IconExclamationXSmallFill" :color="color" />
+		<CTypography type="caption2" :color="color" element="p" align="left">
 			<slot />
 		</CTypography>
 	</div>
@@ -29,16 +29,9 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedIconColor() {
-			return this.color;
-		},
-		computedTextColor() {
-			return this.color;
-		},
-		hasSlot() {
-			return this.$slots.default && this.$slots.default[0].text !== '';
-		},
+	setup(props, { slots }) {
+		const hasSlot = () => slots.default && slots.default()[0].text !== '';
+		return { hasSlot };
 	},
 	components: {
 		CTypography,

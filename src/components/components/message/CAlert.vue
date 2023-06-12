@@ -7,7 +7,7 @@
 						<div class="c-alert--wrapper">
 							<div class="c-alert--content">
 								<div v-if="type !== 'image'" class="c-alert--icon">
-									<slot v-if="$slots['icon']" name="icon" />
+									<slot v-if="hasIconSlot" name="icon" />
 									<CIcon v-else :name="iconTypeMap[type].icon" :color="iconTypeMap[type].color" />
 								</div>
 								<CTypography
@@ -45,7 +45,8 @@ import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import { colors } from '@/utils/constants/color';
 import CIconButton from '@/components/components/general/button/CIconButton.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
+import useWindowResize from '@/services/useWindowResize';
 
 export const AlertTypes = ['information', 'notice', 'success', 'error', 'image'];
 
@@ -84,50 +85,73 @@ export default defineComponent({
 			default: 'gray400',
 		},
 	},
-	computed: {
-		computedTransition() {
-			return this.closable ? 'c-alert--fade' : null;
-		},
-		classes() {
-			return { closable: this.closable };
-		},
-		styles() {
-			return {
-				...this.backgroundForType,
-			};
-		},
-		backgroundForType() {
-			if (this.type === 'image') {
+	emits: ['close'],
+	setup(props, { emit, slots }) {
+		const { closable, type, backgroundImage } = toRefs(props);
+		const { isMobile } = useWindowResize();
+
+		const computedTransition = computed(() => {
+			return closable.value ? 'c-alert--fade' : null;
+		});
+
+		const classes = computed(() => {
+			return { closable: closable.value };
+		});
+
+		const backgroundForType = computed(() => {
+			if (type.value === 'image') {
 				return {
-					background: `url(${this.backgroundImage}) no-repeat`,
+					background: `url(${backgroundImage.value}) no-repeat`,
 					backgroundSize: '100% 100%',
 				};
 			}
-			return { backgroundColor: colors[this.iconTypeMap[this.type].backgroundColor] };
-		},
-		iconSize() {
-			return this.isMobile ? 'Small' : 'Large';
-		},
-		closeIconName() {
-			return this.isMobile ? 'IconCloseSmallLine' : 'IconCloseLargeLine';
-		},
-		iconTypeMap() {
+			return { backgroundColor: colors[iconTypeMap.value[type.value].backgroundColor] };
+		});
+
+		const styles = computed(() => {
+			return {
+				...backgroundForType.value,
+			};
+		});
+
+		const iconSize = computed(() => {
+			return isMobile ? 'Small' : 'Large';
+		});
+
+		const closeIconName = computed(() => {
+			return isMobile ? 'IconCloseSmallLine' : 'IconCloseLargeLine';
+		});
+
+		const iconTypeMap = computed(() => {
 			return {
 				information: {
 					backgroundColor: 'gray000',
 					color: 'gray600',
-					icon: `IconInformation${this.iconSize}Line`,
+					icon: `IconInformation${iconSize.value}Line`,
 				},
-				notice: { backgroundColor: 'blue000', color: 'primary', icon: `IconMegaphone${this.iconSize}Line` },
-				success: { backgroundColor: 'green000', color: 'success', icon: `IconCheckRound${this.iconSize}Line` },
-				error: { backgroundColor: 'red000', color: 'error', icon: `IconExclamation${this.iconSize}Line` },
+				notice: { backgroundColor: 'blue000', color: 'primary', icon: `IconMegaphone${iconSize.value}Line` },
+				success: { backgroundColor: 'green000', color: 'success', icon: `IconCheckRound${iconSize.value}Line` },
+				error: { backgroundColor: 'red000', color: 'error', icon: `IconExclamation${iconSize.value}Line` },
 			};
-		},
-	},
-	methods: {
-		handleClose() {
-			this.$emit('close');
-		},
+		});
+
+		const handleClose = () => {
+			emit('close');
+		};
+
+		const hasIconSlot = computed(() => slots.icon);
+
+		return {
+			computedTransition,
+			classes,
+			styles,
+			iconSize,
+			closeIconName,
+			iconTypeMap,
+			handleClose,
+			isMobile,
+			hasIconSlot,
+		};
 	},
 	components: { CIconButton, CNewGrid, CNewRow, CNewCol, CIcon, CTypography },
 });

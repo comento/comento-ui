@@ -28,7 +28,7 @@
 
 <script>
 import CLogo from '@/components/elements/core/logo/CLogo.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CHeader',
@@ -58,17 +58,25 @@ export default defineComponent({
 			default: 'https://comento.kr',
 		},
 	},
-	methods: {
-		getHeaderNavClass(name) {
+	emits: ['update-nav'],
+	setup(props, { emit }) {
+		const { activatedMenu, hoveredMenu, isTransparent } = toRefs(props);
+		const getHeaderNavClass = name => {
 			return {
-				active: this.activatedMenu === name,
-				hovered: this.hoveredMenu === name,
-				transparent: this.isTransparent,
+				active: activatedMenu.value === name,
+				hovered: hoveredMenu.value === name,
+				transparent: isTransparent.value,
 			};
-		},
-		onMouseEntered(index) {
-			this.$emit('update-nav', index);
-		},
+		};
+
+		const onMouseEntered = index => {
+			emit('update-nav', index);
+		};
+
+		return {
+			getHeaderNavClass,
+			onMouseEntered,
+		};
 	},
 	components: { CLogo },
 });

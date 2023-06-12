@@ -21,7 +21,7 @@
 <script>
 import customValidator from '@/utils/custom-validator.js';
 import CFileButton from '@/components/components/general/button/CFileButton.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed, ref } from 'vue';
 
 export default defineComponent({
 	name: 'CFileInput',
@@ -56,25 +56,28 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		classes() {
+	emits: ['uploadFiles'],
+	setup(props, { emit }) {
+		const { full, disabled } = toRefs(props);
+		const files = ref(null);
+
+		const classes = computed(() => {
 			return {
-				full: this.full,
-				disabled: this.disabled,
+				full: full.value,
+				disabled: disabled.value,
 			};
-		},
-	},
-	methods: {
-		handleFilesUpload() {
-			const uploadedFiles = this.$refs.files.files;
-			this.$emit('uploadFiles', uploadedFiles);
-		},
-		handleClickFileButton() {
-			this.$refs.files.click();
-		},
-		handleFileInputClick(event) {
-			event.target.value = null;
-		},
+		});
+
+		const handleFilesUpload = () => {
+			const uploadedFiles = files.value.files;
+			emit('uploadFiles', uploadedFiles);
+		};
+
+		const handleClickFileButton = () => files.value.click();
+
+		const handleFileInputClick = event => (event.target.value = null);
+
+		return { files, classes, handleFilesUpload, handleClickFileButton, handleFileInputClick };
 	},
 	components: {
 		CFileButton,

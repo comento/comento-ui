@@ -11,7 +11,7 @@
 <script>
 import LogoComentoTypoType from '@/assets/images/logo/logo-comento-typo-type.svg?inline';
 import { colors } from '@/utils/constants/color';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed } from 'vue';
 
 export default defineComponent({
 	name: 'CLogo',
@@ -37,13 +37,19 @@ export default defineComponent({
 			default: 'primary',
 		},
 	},
-	computed: {
-		computedColor() {
-			if (!this.color) {
+	setup(props) {
+		const { color } = toRefs(props);
+
+		const computedColor = computed(() => {
+			if (!color.value) {
 				return null;
 			}
-			return { fill: colors[this.color] ?? this.color };
-		},
+			return { fill: colors[color.value] ?? color.value };
+		});
+
+		return {
+			computedColor,
+		};
 	},
 	components: {
 		LogoComentoTypoType,

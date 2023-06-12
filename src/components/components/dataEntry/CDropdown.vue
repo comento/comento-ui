@@ -24,7 +24,7 @@
 <script>
 import CLabel from '@/components/components/dataDisplay/CLabel.vue';
 import uniqueId from '@/utils/unique-id';
-import { defineComponent } from 'vue';
+import { defineComponent, ref, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CDropdown',
@@ -65,24 +65,22 @@ export default defineComponent({
 			},
 		},
 	},
-	data() {
+	setup(props) {
+		const { full, maxWidth, maxHeight, vertical } = toRefs(props);
+		const uid = ref(uniqueId());
+
+		const computedMaxWidth = computed(() => ({ maxWidth: !full.value && maxWidth.value }));
+		const computedMaxHeight = computed(() => ({ maxHeight: maxHeight.value !== 'auto' && maxHeight.value }));
+		const computedDirection = computed(() => !vertical.value && 'horizontal');
+		const computedFull = computed(() => ({ full: full.value }));
+
 		return {
-			uid: uniqueId(),
+			uid,
+			computedMaxWidth,
+			computedMaxHeight,
+			computedDirection,
+			computedFull,
 		};
-	},
-	computed: {
-		computedMaxWidth() {
-			return { maxWidth: !this.full && this.maxWidth };
-		},
-		computedMaxHeight() {
-			return { maxHeight: this.maxHeight !== 'auto' && this.maxHeight };
-		},
-		computedDirection() {
-			return !this.vertical && 'horizontal';
-		},
-		computedFull() {
-			return { full: this.full };
-		},
 	},
 	components: {
 		CLabel,

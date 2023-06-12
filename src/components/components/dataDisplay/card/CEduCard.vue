@@ -41,7 +41,7 @@
 <script>
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CDivider from '@/components/elements/utility/CDivider.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 import useWindowResize from '@/services/useWindowResize';
 
 /**
@@ -98,50 +98,43 @@ export default defineComponent({
 			default: '',
 		},
 	},
-	setup() {
+	setup(props) {
+		const { width, imageHeight, emphasized, backgroundColor, withSwiper } = toRefs(props);
 		const { isMobile } = useWindowResize();
-		return { isMobile };
-	},
-	computed: {
-		computedStyle() {
-			return {
-				'--card-width': this.computedWidth,
-				'--image-height': this.computedImageHeight,
-				'--background-color': this.backgroundColor,
-				'--title-height': this.computedTitleHeight,
-				'--border-radius': this.computedBorderRadius,
-			};
-		},
-		computedWidth() {
-			return this.isMobileWithSwiper ? '152px' : this.width;
-		},
-		computedImageHeight() {
-			if (this.imageHeight) return this.imageHeight;
-			if (this.emphasized) return this.isMobile ? '180px' : '300px';
-			if (this.isMobileWithSwiper) return '100px';
-
-			return this.isMobile ? '144px' : '136px';
-		},
-		computedTitleHeight() {
-			return this.isMobileWithSwiper ? '40px' : '50px';
-		},
-		isMobileWithSwiper() {
-			return this.isMobile && this.withSwiper;
-		},
-		computedTypographyForMobileWithSwiper() {
+		const isMobileWithSwiper = computed(() => isMobile && withSwiper);
+		const computedWidth = computed(() => (isMobileWithSwiper.value ? '152px' : width));
+		const computedImageHeight = computed(() => {
+			if (imageHeight.value) return imageHeight;
+			if (emphasized.value) return isMobile ? '180px' : '300px';
+			if (isMobileWithSwiper.value) return '100px';
+			return isMobile ? '144px' : '136px';
+		});
+		const computedTitleHeight = computed(() => (isMobileWithSwiper.value ? '40px' : '50px'));
+		const computedTypographyForMobileWithSwiper = computed(() => {
 			return {
 				title: ['body1', 'body2'],
 				caption: ['caption1', 'caption2'],
 			};
-		},
-		computedBorderRadius() {
-			return this.isMobileWithSwiper ? '8px' : '10px';
-		},
-	},
-	methods: {
-		getTypography(type) {
-			return this.computedTypographyForMobileWithSwiper[type][Number(this.isMobileWithSwiper)];
-		},
+		});
+		const computedBorderRadius = computed(() => (isMobileWithSwiper.value ? '8px' : '10px'));
+		const computedStyle = computed(() => {
+			return {
+				'--card-width': computedWidth,
+				'--image-height': computedImageHeight,
+				'--background-color': backgroundColor,
+				'--title-height': computedTitleHeight,
+				'--border-radius': computedBorderRadius,
+			};
+		});
+		const getTypography = type => {
+			return computedTypographyForMobileWithSwiper[type][Number(isMobileWithSwiper)];
+		};
+
+		return {
+			isMobile,
+			computedStyle,
+			getTypography,
+		};
 	},
 	components: {
 		CDivider,

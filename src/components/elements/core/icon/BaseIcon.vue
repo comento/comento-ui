@@ -15,7 +15,7 @@
 <script>
 import { colorKeys, colors } from '@/utils/constants/color';
 import customValidator from '@/utils/custom-validator';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed } from 'vue';
 
 export default defineComponent({
 	name: 'BaseIcon',
@@ -40,29 +40,28 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedRotate() {
-			return this.rotate !== 0 ? { transform: `rotate(${this.rotate}deg)` } : null;
-		},
-		computedFill() {
+	setup(props, { attrs }) {
+		const { rotate, color } = toRefs(props);
+		const computedRotate = computed(() =>
+			rotate.value !== 0 ? { transform: `rotate(${rotate.value}deg)` } : null,
+		);
+		const computedFill = computed(() => {
 			if (this.color) {
-				return { fill: colors[this.color] };
+				return { fill: colors[color.value] };
 			} else {
 				return null;
 			}
-		},
-		hasEventListener() {
-			return Boolean(this.$attrs && this.$attrs.click);
-		},
-		classes() {
-			return [this.hasEventListener && 'c-icon--link'];
-		},
-		styles() {
-			return {
-				...this.computedFill,
-				...this.computedRotate,
-			};
-		},
+		});
+		const hasEventListener = computed(() => Boolean(attrs && attrs.onClick));
+		const classes = computed(() => [hasEventListener.value && 'c-icon--link']);
+
+		return {
+			computedRotate,
+			computedFill,
+			styles: { ...computedRotate, ...computedFill },
+			hasEventListener,
+			classes,
+		};
 	},
 });
 </script>

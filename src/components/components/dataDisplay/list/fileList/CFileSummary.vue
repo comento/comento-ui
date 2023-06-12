@@ -20,7 +20,7 @@
 import CButton from '@/components/components/general/button/CButton.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CFileSummary',
@@ -34,10 +34,11 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		computedClass() {
-			return { full: this.full };
-		},
+	emits: ['clickAllFileDownloadButton'],
+	setup(props) {
+		const { full } = toRefs(props);
+		const computedClass = computed(() => ({ full }));
+		return { computedClass };
 	},
 	components: {
 		CButton,

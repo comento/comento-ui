@@ -5,11 +5,11 @@
 		</div>
 		<div class="c-banner--content" :class="[computedAlignItems]">
 			<!-- slot-based -->
-			<div v-if="$slots.title || $slots.description" class="c-banner--wrapper">
-				<div v-if="$slots.title" class="c-banner--title">
+			<div v-if="hasTitleSlot || hasDescriptionSlot" class="c-banner--wrapper">
+				<div v-if="hasTitleSlot" class="c-banner--title">
 					<slot name="title" />
 				</div>
-				<div v-if="$slots.description" class="c-banner--description">
+				<div v-if="hasDescriptionSlot" class="c-banner--description">
 					<slot name="description" />
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 
 <script>
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed } from 'vue';
 import useWindowResize from '@/services/useWindowResize';
 
 export const bannerTypes = ['full', 'standard'];
@@ -70,46 +70,67 @@ export default defineComponent({
 			default: 'center',
 		},
 	},
-	setup() {
+	setup(props, { slots }) {
+		const { alignItems, type } = toRefs(props);
 		const { isMobile } = useWindowResize();
-		return { isMobile };
-	},
-	computed: {
-		computedStyleVariables() {
+
+		const computedStyleVariables = computed(() => {
 			return {
-				'--align-items': this.alignItems,
-				'--justify-content': this.isMobileWithButton ? 'space-between' : 'center',
-				'--wrapper-margin': this.isMobileWithButton ? '48px' : '0px',
+				'--align-items': alignItems.value,
+				'--justify-content': isMobileWithButton.value ? 'space-between' : 'center',
+				'--wrapper-margin': isMobileWithButton.value ? '48px' : '0px',
 			};
-		},
-		computedTitleType() {
-			if (this.type === 'full') {
-				return this.isMobile ? 'headline1' : 'display1';
+		});
+
+		const computedTitleType = computed(() => {
+			if (type.value === 'full') {
+				return isMobile ? 'headline1' : 'display1';
 			}
-			return this.isMobile ? 'headline2' : 'headline1';
-		},
-		computedDescriptionType() {
-			if (this.type === 'full') {
-				return this.isMobile ? 'headline7' : 'headline5';
+			return isMobile ? 'headline2' : 'headline1';
+		});
+
+		const computedDescriptionType = computed(() => {
+			if (type.value === 'full') {
+				return isMobile ? 'headline7' : 'headline5';
 			}
-			return this.isMobile ? 'body1' : 'headline7';
-		},
-		computedDescriptionWeight() {
-			if (this.type === 'full' && this.isMobile) {
+			return isMobile ? 'body1' : 'headline7';
+		});
+
+		const computedDescriptionWeight = computed(() => {
+			if (type.value === 'full' && isMobile) {
 				return 'light';
 			}
 
 			return 'regular';
-		},
-		isButtonVisible() {
-			return this.$slots['button'];
-		},
-		computedAlignItems() {
-			return `c-banner--${this.alignItems}`;
-		},
-		isMobileWithButton() {
-			return this.isButtonVisible && this.isMobile;
-		},
+		});
+
+		const isButtonVisible = computed(() => {
+			return !!slots['button'];
+		});
+
+		const computedAlignItems = computed(() => {
+			return `c-banner--${alignItems.value}`;
+		});
+
+		const isMobileWithButton = computed(() => {
+			return isButtonVisible.value && isMobile;
+		});
+
+		const hasTitleSlot = computed(() => slots.title);
+		const hasDescriptionSlot = computed(() => slots.description);
+
+		return {
+			isMobile,
+			computedStyleVariables,
+			computedTitleType,
+			computedDescriptionType,
+			computedDescriptionWeight,
+			isButtonVisible,
+			computedAlignItems,
+			isMobileWithButton,
+			hasTitleSlot,
+			hasDescriptionSlot,
+		};
 	},
 	components: { CTypography },
 });

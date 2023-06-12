@@ -10,27 +10,22 @@
 <script>
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CUserInformationCompany',
 	props: {
 		type: String,
 	},
-	computed: {
-		computedType() {
-			return (
-				{
-					full: 'body2',
-					normal: 'body2',
-					simple: 'caption1',
-				}[this.type] || 'body2'
-			);
-		},
-		computedEllipsisClass() {
-			return this.type === 'full' ? 'ellipsis' : null;
-		},
+	setup(props) {
+		const { type } = toRefs(props);
+		const computedType = computed(() =>
+			String({ full: 'body2', normal: 'body2', simple: 'caption1' }[type] || 'body2'),
+		);
+		const computedEllipsisClass = () => (type.value === 'full' ? 'ellipsis' : null);
+		return { computedType, computedEllipsisClass };
 	},
+	computed: {},
 	components: { CTypography, CIcon },
 });
 </script>

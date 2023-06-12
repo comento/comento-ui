@@ -12,7 +12,7 @@
 
 <script>
 import { colors } from '@/utils/constants/color';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed } from 'vue';
 
 export const TypographyTypes = [
 	'display1',
@@ -99,29 +99,43 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedColor() {
-			if (!this.color) return 'inherit';
-			return colors[this.color] ? colors[this.color] : this.color;
-		},
-		isNumberFontWeight() {
-			return Number.isInteger(this.fontWeight);
-		},
-		computedStyle() {
+	setup(props) {
+		const { color, fontWeight, align, type } = toRefs(props);
+
+		const computedColor = computed(() => {
+			if (!color.value) return 'inherit';
+			return colors[color.value] ? colors[color.value] : color.value;
+		});
+
+		const isNumberFontWeight = computed(() => {
+			return Number.isInteger(fontWeight.value);
+		});
+
+		const computedStyle = computed(() => {
 			return [
 				{
-					color: this.computedColor,
-					textAlign: this.align,
+					color: computedColor.value,
+					textAlign: align.value,
 				},
-				this.isNumberFontWeight && { fontWeight: this.fontWeight },
+				isNumberFontWeight.value && { fontWeight: fontWeight.value },
 			];
-		},
-		computedClass() {
-			return [this.type && `c-${this.type}`, this.fontWeightClass];
-		},
-		fontWeightClass() {
-			return this.fontWeight && !this.isNumberFontWeight ? `f-${this.fontWeight}` : '';
-		},
+		});
+
+		const computedClass = computed(() => {
+			return [type.value && `c-${type.value}`, fontWeightClass.value];
+		});
+
+		const fontWeightClass = computed(() => {
+			return fontWeight.value && !isNumberFontWeight.value ? `f-${fontWeight.value}` : '';
+		});
+
+		return {
+			computedColor,
+			isNumberFontWeight,
+			computedStyle,
+			computedClass,
+			fontWeightClass,
+		};
 	},
 });
 </script>

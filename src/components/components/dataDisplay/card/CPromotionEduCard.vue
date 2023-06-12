@@ -75,7 +75,7 @@
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CDivider from '@/components/elements/utility/CDivider.vue';
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 import useWindowResize from '@/services/useWindowResize';
 
 /**
@@ -106,28 +106,24 @@ export default defineComponent({
 			type: Object,
 		},
 	},
-	setup() {
+	setup(props) {
+		const { dominantColor, imageHeight } = toRefs(props);
 		const { isMobile } = useWindowResize();
-		return { isMobile };
-	},
-	computed: {
-		computedStyle() {
+		const computedImageHeight = computed(() => {
+			if (imageHeight.value !== '') return imageHeight;
+			return isMobile ? '144px' : '136px';
+		});
+		const computedDominantColor = computed(
+			() => `${dominantColor.value.red}, ${dominantColor.value.green}, ${dominantColor.value.blue}`,
+		);
+		const computedStyle = computed(() => {
 			return {
 				'--card-width': this.width,
-				'--image-height': this.computedImageHeight,
-				'--dominant-color': this.computedDominantColor,
+				'--image-height': computedImageHeight,
+				'--dominant-color': computedDominantColor,
 			};
-		},
-		computedImageHeight() {
-			if (this.imageHeight !== '') {
-				return this.imageHeight;
-			}
-
-			return this.isMobile ? '144px' : '136px';
-		},
-		computedDominantColor() {
-			return `${this.dominantColor.red}, ${this.dominantColor.green}, ${this.dominantColor.blue}`;
-		},
+		});
+		return { isMobile, computedStyle };
 	},
 	components: {
 		CDivider,

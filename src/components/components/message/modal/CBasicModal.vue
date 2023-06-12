@@ -36,7 +36,8 @@
 import CModal from '@/components/components/message/modal/CModal.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CButton, { buttonColors } from '@/components/components/general/button/CButton.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, ref, computed, watchEffect, toRefs } from 'vue';
+import useWindowResize from '@/services/useWindowResize';
 
 export const aligns = ['left', 'center', 'right'];
 
@@ -98,28 +99,36 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedClasses() {
-			return [this.computedScroll, this.computedWithButton];
-		},
-		computedScroll() {
-			return { scroll: this.scroll };
-		},
-		computedWithButton() {
-			return { 'with-button': this.showActionButton };
-		},
-		computedMaxHeight() {
-			return this.isMobile ? '86vh' : '640px';
-		},
-		computedWidth() {
-			return this.full || this.isMobile ? '100%' : 'auto';
-		},
-	},
-	methods: {
-		close() {
-			this.$emit('update:show', false);
-			this.$emit('close');
-		},
+	emits: ['update:show', 'close'],
+	setup(props, { emit }) {
+		const { show, scroll, showActionButton, full } = toRefs(props);
+		const { isMobile } = useWindowResize();
+		const showRef = ref(show);
+
+		watchEffect(() => {
+			showRef.value = show.value;
+		});
+
+		const computedClasses = computed(() => [
+			scroll.value ? 'scroll' : '',
+			showActionButton.value ? 'with-button' : '',
+		]);
+
+		const computedMaxHeight = computed(() => (isMobile ? '86vh' : '640px'));
+
+		const computedWidth = computed(() => (full.value || isMobile ? '100%' : 'auto'));
+
+		const close = () => {
+			emit('update:show', false);
+			emit('close');
+		};
+
+		return {
+			close,
+			computedClasses,
+			computedMaxHeight,
+			computedWidth,
+		};
 	},
 	components: {
 		CTypography,

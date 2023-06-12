@@ -8,7 +8,7 @@
 
 <script>
 import { colors, colorKeys } from '@/utils/constants/color';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed } from 'vue';
 
 export const dividerTypes = ['line', 'dash'];
 
@@ -45,26 +45,37 @@ export default defineComponent({
 			},
 		},
 	},
-	data: () => ({}),
-	computed: {
-		computedType() {
-			return this.type;
-		},
-		computedVertical() {
-			if (this.vertical) {
+	setup(props) {
+		const { type, vertical, color } = toRefs(props);
+
+		const computedType = computed(() => {
+			return type.value;
+		});
+
+		const computedVertical = computed(() => {
+			if (vertical.value) {
 				return 'vertical';
 			} else {
 				return 'horizontal';
 			}
-		},
-		computedColor() {
-			return this.color && colors[this.color] ? colors[this.color] : 'inherit';
-		},
-		computedStyle() {
+		});
+
+		const computedColor = computed(() => {
+			return color.value && colors[color.value] ? colors[color.value] : 'inherit';
+		});
+
+		const computedStyle = computed(() => {
 			return {
-				borderColor: this.computedColor,
+				borderColor: computedColor.value,
 			};
-		},
+		});
+
+		return {
+			computedType,
+			computedVertical,
+			computedColor,
+			computedStyle,
+		};
 	},
 });
 </script>

@@ -1,11 +1,11 @@
 <template>
-	<div class="c-application c-badge--container" :class="[computedType]">
+	<div class="c-application c-badge--container" :class="[type]">
 		<!-- badge 대상 컴포넌트 -->
 		<slot />
 
 		<!-- badge -->
 		<div v-if="text" class="c-badge--wrapper">
-			<div class="c-badge" :style="[computedStyle]" :class="[computedSize, computedPosition]">
+			<div class="c-badge" :style="[computedStyle]" :class="[size, computedPosition]">
 				<CTypography type="caption2" color="white" font-weight="semi-bold" class="c-badge--text">
 					{{ text }}
 				</CTypography>
@@ -17,8 +17,8 @@
 <script>
 import { colors } from '@/utils/constants/color';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
-import { defineComponent } from 'vue';
 import isEmpty from '@/utils/is-empty';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const badgeColors = ['primary', 'secondary'];
 export const badgeSizes = ['medium', 'small'];
@@ -79,28 +79,22 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedStyle() {
-			return {
-				...this.computedPadding,
-				...this.computedBackground,
-				...(this.typeAbsolute && this.computedPosition),
-			};
-		},
-		computedPosition() {
-			return {
-				top: `calc(100% - ${this.offsetY}px)`,
-				left: `calc(100% - ${this.offsetX}px)`,
-			};
-		},
-		computedBackground() {
-			return {
-				background: colors[this.color],
-			};
-		},
-		computedPadding() {
-			const is2Byte = this.getByte(this.text) === 2;
-			const isN = this.text === 'N';
+	setup(props) {
+		const { type, color, text } = toRefs(props);
+		const typeAbsolute = () => type.value === 'absolute';
+		const computedBackground = () => ({ background: colors[color] });
+		const getByte = value => {
+			if (!isEmpty(value)) {
+				return value
+					.toString()
+					.split('')
+					.map(s => s.charCodeAt(0))
+					.reduce((prev, c) => prev + (c === 10 ? 2 : c >> 7 ? 2 : 1), 0);
+			}
+		};
+		const computedPadding = () => {
+			const is2Byte = getByte(text) === 2;
+			const isN = text.value === 'N';
 			if (is2Byte || isN) {
 				// 2byte거나 'N'일 때는 동그란 모양을 위해 padding을 조정함
 				const paddings = {
@@ -110,30 +104,22 @@ export default defineComponent({
 				return { padding: paddings[this.size] };
 			}
 			return false;
-		},
-		computedSize() {
-			return this.size;
-		},
-		computedType() {
-			return this.type;
-		},
-		typeAbsolute() {
-			return this.type === 'absolute';
-		},
-		typeInline() {
-			return this.type === 'inline';
-		},
-	},
-	methods: {
-		getByte(value) {
-			if (!isEmpty(value)) {
-				return value
-					.toString()
-					.split('')
-					.map(s => s.charCodeAt(0))
-					.reduce((prev, c) => prev + (c === 10 ? 2 : c >> 7 ? 2 : 1), 0);
-			}
-		},
+		};
+
+		const computedStyle = computed(() => ({
+			...computedPadding,
+			...computedBackground,
+			...(typeAbsolute.value && this.computedPosition),
+		}));
+		const computedPosition = computed(() => ({
+			top: `calc(100% - ${this.offsetY}px)`,
+			left: `calc(100% - ${this.offsetX}px)`,
+		}));
+
+		return {
+			computedStyle,
+			computedPosition,
+		};
 	},
 	components: { CTypography },
 });

@@ -84,6 +84,7 @@ export default defineComponent({
 			default: 'https://comento.kr',
 		},
 	},
+	emits: ['click-backward'],
 	components: { CNewCol, CNewRow, CNewGrid, CLogo, CIcon, CTypography, CDivider },
 });
 </script>

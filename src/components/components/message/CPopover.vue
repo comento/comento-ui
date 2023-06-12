@@ -22,7 +22,7 @@
 
 <script>
 import { placements, placementMap } from '@/utils/constants/tooltip';
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs, computed } from 'vue';
 
 export default defineComponent({
 	name: 'CPopover',
@@ -69,16 +69,25 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		mapPlacement() {
-			return placementMap[this.placement];
-		},
-		styles() {
+	emits: ['showPopover'],
+	setup(props) {
+		const { placement, paddingX } = toRefs(props);
+
+		const mapPlacement = computed(() => {
+			return placementMap[placement.value];
+		});
+
+		const styles = computed(() => {
 			return {
-				'padding-left': `${this.paddingX}px`,
-				'padding-right': `${this.paddingX}px`,
+				'padding-left': `${paddingX.value}px`,
+				'padding-right': `${paddingX.value}px`,
 			};
-		},
+		});
+
+		return {
+			mapPlacement,
+			styles,
+		};
 	},
 });
 </script>

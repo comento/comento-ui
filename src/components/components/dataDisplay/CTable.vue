@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const cursors = ['pointer', 'default'];
 
@@ -36,13 +36,13 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		classes() {
-			return [this.computedCursor];
-		},
-		computedCursor() {
-			return `c-${this.cursor}`;
-		},
+	setup(props) {
+		const { cursor } = toRefs(props);
+
+		const computedCursor = computed(() => `c-${cursor.value}`);
+		const classes = computed(() => [computedCursor]);
+
+		return { classes, computedCursor };
 	},
 });
 </script>

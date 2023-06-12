@@ -5,10 +5,9 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-
 export const ListItemSizes = ['small', 'medium', 'large'];
 export const ListItemCursors = ['pointer', 'default'];
+import { defineComponent, computed, toRefs } from 'vue';
 
 export default defineComponent({
 	name: 'CListItem',
@@ -34,10 +33,10 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedCursor() {
-			return `c-${this.cursor}`;
-		},
+	setup(props) {
+		const { cursor } = toRefs(props);
+		const computedCursor = computed(() => `c-${cursor.value}`);
+		return { computedCursor };
 	},
 });
 </script>

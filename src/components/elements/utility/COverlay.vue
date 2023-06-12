@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, onBeforeUnmount, onMounted, computed, toRefs } from 'vue';
 export const OverlayTypes = ['dimmer'];
 
 export default defineComponent({
@@ -49,35 +49,50 @@ export default defineComponent({
 			},
 		},
 	},
-	computed: {
-		computedType() {
-			return `c-overlay--type-${this.type}`;
-		},
-		computedZIndex() {
-			return { zIndex: this.zIndex };
-		},
-	},
-	mounted() {
-		document.addEventListener('keydown', e => this.handleCloseKeycode(e));
-	},
-	beforeUnmount() {
-		document.removeEventListener('keydown', e => this.handleCloseKeycode(e));
-	},
-	methods: {
-		handleCloseKeycode(e) {
+	emits: ['close'],
+	setup(props, { emit }) {
+		const { type, zIndex, show, persistent } = toRefs(props);
+
+		const computedType = computed(() => {
+			return `c-overlay--type-${type.value}`;
+		});
+
+		const computedZIndex = computed(() => {
+			return { zIndex: zIndex.value };
+		});
+
+		const handleCloseKeycode = e => {
 			const isEsc = e.keyCode === 27;
-			if (this.show && isEsc) {
-				this.handleCloseModal();
+			if (show.value && isEsc) {
+				handleCloseModal();
 			}
-		},
-		handleCloseModal() {
-			if (!this.persistent) {
-				this.close();
+		};
+
+		const handleCloseModal = () => {
+			if (!persistent.value) {
+				close();
 			}
-		},
-		close() {
-			this.$emit('close');
-		},
+		};
+
+		const close = () => {
+			emit('close');
+		};
+
+		onMounted(() => {
+			document.addEventListener('keydown', handleCloseKeycode);
+		});
+
+		onBeforeUnmount(() => {
+			document.removeEventListener('keydown', handleCloseKeycode);
+		});
+
+		return {
+			computedType,
+			computedZIndex,
+			handleCloseKeycode,
+			handleCloseModal,
+			close,
+		};
 	},
 });
 </script>

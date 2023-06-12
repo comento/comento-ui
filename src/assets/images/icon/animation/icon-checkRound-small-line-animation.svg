@@ -1,4 +1,3 @@
-<?xml-stylesheet type="text/css" href=".css" ?>
 <svg class="success-svg" width="18px" height="18px" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
     <circle class="success-circle" cx="9" cy="9" r="6.7" stroke-width="1.5" fill="none"/>
     <polyline

@@ -14,7 +14,8 @@ import { colorKeys } from '@/utils/constants/color';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import uniqueId from '@/utils/unique-id';
 import customValidator from '@/utils/custom-validator';
-import { defineComponent } from 'vue';
+import { defineComponent, ref, computed, toRefs } from 'vue';
+
 export const radioColors = ['primary', 'success', 'info', 'error'];
 export const radioButtonSizes = ['small', 'medium'];
 
@@ -83,39 +84,39 @@ export default defineComponent({
 			},
 		},
 	},
-	data() {
-		return {
-			uid: uniqueId(),
-		};
-	},
-	computed: {
-		sync_value: {
-			get() {
-				return this.value;
-			},
-			set(val) {
-				this.$emit('update:value', val);
-			},
-		},
-		computedId() {
-			return this.id || `c-radio-button-${this.uid}`;
-		},
-		computedColor() {
-			return this.disabled ? 'gray300' : this.fontColor;
-		},
-		computedClasses() {
-			return [this.size];
-		},
-		computedTypographyType() {
+	emits: ['update:value'],
+	setup(props, { emit }) {
+		const { value, id, disabled, fontColor, size, radioColor } = toRefs(props);
+		const uid = ref(uniqueId());
+
+		const sync_value = computed({
+			get: () => value.value,
+			set: val => emit('update:value', val),
+		});
+
+		const computedId = computed(() => id.value || `c-radio-button-${uid.value}`);
+		const computedColor = computed(() => (disabled.value ? 'gray300' : fontColor.value));
+		const computedClasses = computed(() => [size.value]);
+
+		const computedTypographyType = computed(() => {
 			const sizeForTypeList = {
 				small: 'body2',
 				medium: 'body1',
 			};
-			return sizeForTypeList[this.size];
-		},
-		computedRadioColor() {
-			return this.radioColor;
-		},
+			return sizeForTypeList[size.value];
+		});
+
+		const computedRadioColor = computed(() => radioColor.value);
+
+		return {
+			uid,
+			sync_value,
+			computedId,
+			computedColor,
+			computedClasses,
+			computedTypographyType,
+			computedRadioColor,
+		};
 	},
 	components: { CTypography },
 });

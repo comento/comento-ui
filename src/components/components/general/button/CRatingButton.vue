@@ -20,7 +20,7 @@
 import CIcon from '@/components/elements/core/icon/CIcon.vue';
 import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CLoader from '@/components/components/other/CLoader.vue';
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 export const RATING_BUTTON_COLORS = ['primary', 'info', 'error', 'secondary', 'success'];
 
@@ -55,24 +55,29 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		computedColor() {
-			if (this.disabled) {
+	setup(props) {
+		const { disabled, color } = toRefs(props);
+		const computedColor = computed(() => {
+			if (disabled.value) {
 				return {
 					primary: 'blue100',
 					info: 'gray200',
 					error: 'red100',
 					secondary: 'orange100',
 					success: 'green100',
-				}[this.color];
+				}[color];
 			}
 
-			if (this.color === 'info') {
+			if (color.value === 'info') {
 				return 'gray500';
 			}
 
-			return this.color;
-		},
+			return color;
+		});
+
+		return {
+			computedColor,
+		};
 	},
 	components: { CTypography, CIcon, CLoader },
 });

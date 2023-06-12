@@ -31,7 +31,7 @@ import CTypography from '@/components/elements/core/typography/CTypography.vue';
 import CButton from '@/components/components/general/button/CButton.vue';
 import CLabel from '@/components/components/dataDisplay/CLabel.vue';
 import nl2br from '@/utils/nl2br';
-import { defineComponent } from 'vue';
+import { defineComponent, reactive } from 'vue';
 
 /**
  * @displayName c-reply
@@ -57,11 +57,12 @@ export default defineComponent({
 			default: true,
 		},
 	},
-	methods: {
-		nl2br,
-		clickReportButton() {
-			this.$emit('clickReportButton');
-		},
+	emits: ['clickReportButton'],
+	setup(props, { emit }) {
+		const reactiveProps = reactive(props);
+		const clickReportButton = () => emit('clickReportButton');
+
+		return { ...reactiveProps, nl2br, clickReportButton };
 	},
 	components: {
 		CButton,

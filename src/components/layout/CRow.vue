@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, toRefs } from 'vue';
 
 /**
  * [deprecated]
@@ -18,10 +18,16 @@ export default defineComponent({
 			default: false,
 		},
 	},
-	computed: {
-		computedGutters() {
-			return this.rowGutters ? 'no-gutters' : '';
-		},
+	setup(props) {
+		const { rowGutters } = toRefs(props);
+
+		const computedGutters = computed(() => {
+			return rowGutters.value ? 'no-gutters' : '';
+		});
+
+		return {
+			computedGutters,
+		};
 	},
 });
 </script>
