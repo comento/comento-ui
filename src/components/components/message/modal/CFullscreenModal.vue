@@ -285,7 +285,7 @@ $action-button-height: 104px;
 		}
 	}
 
-	::v-deep .c-overlay {
+	:deep(.c-overlay) {
 		position: relative;
 		.c-modal {
 			max-width: 100%;

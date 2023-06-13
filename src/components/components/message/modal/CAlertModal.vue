@@ -73,7 +73,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-::v-deep .c-overlay {
+:deep(.c-overlay) {
 	z-index: 9999 !important;
 }
 

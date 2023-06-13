@@ -183,7 +183,7 @@ export default defineComponent({
 		}
 	}
 
-	&::v-deep a {
+	&:deep(a) {
 		text-decoration: underline !important;
 	}
 
@@ -239,7 +239,7 @@ export default defineComponent({
 			@include ellipsis(1);
 		}
 
-		&::v-deep strong {
+		&:deep(strong) {
 			@include f-regular();
 		}
 	}

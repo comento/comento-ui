@@ -94,7 +94,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-::v-deep .c-drawer {
+:deep(.c-drawer) {
 	@include border-radius(16px 16px 0 0);
 	@include shadow1();
 	min-height: fit-content;

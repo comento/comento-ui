@@ -114,11 +114,11 @@ export default defineComponent({
 		box-sizing: border-box;
 		z-index: 8;
 
-		::v-deep.c-divider {
+		:deep(.c-divider) {
 			margin: 6px 0;
 		}
 
-		::v-deep > * {
+		:deep(> *) {
 			// Dropdown list가 여러개인 경우
 			&:first-child {
 				margin: 8px 12px 0;

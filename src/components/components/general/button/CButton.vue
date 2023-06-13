@@ -218,7 +218,7 @@ $info-text-color: $info;
 		&:active {
 			pointer-events: none;
 		}
-		.c-button--icon::v-deep .c-icon {
+		.c-button--icon:deep(.c-icon) {
 			@include disabled();
 		}
 	}
@@ -317,7 +317,7 @@ $info-text-color: $info;
 	}
 	&:disabled {
 		background-color: $primary-disabled-background-color;
-		.c-button--icon::v-deep .c-icon {
+		.c-button--icon:deep(.c-icon) {
 			fill: $white !important;
 		}
 		.c-button--loading {
@@ -334,7 +334,7 @@ $info-text-color: $info;
 			background-color: $primary-disabled-background-color;
 		}
 		&:disabled {
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $primary-disabled-background-color !important;
 			}
 			color: $primary-disabled-background-color;
@@ -352,7 +352,7 @@ $info-text-color: $info;
 			color: $primary-disabled-background-color;
 			border: 1px solid $primary-disabled-background-color;
 			background-color: $white;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $primary-disabled-background-color !important;
 			}
 		}
@@ -386,7 +386,7 @@ $info-text-color: $info;
 	&:disabled {
 		color: $blue100;
 		background-color: $blue000;
-		.c-button--icon::v-deep .c-icon {
+		.c-button--icon:deep(.c-icon) {
 			fill: $blue600 !important;
 		}
 		.c-button--loading {
@@ -405,7 +405,7 @@ $info-text-color: $info;
 	}
 	&:disabled {
 		background-color: $success-disabled-background-color;
-		.c-button--icon::v-deep .c-icon {
+		.c-button--icon:deep(.c-icon) {
 			fill: $white !important;
 		}
 		.c-button--loading {
@@ -424,7 +424,7 @@ $info-text-color: $info;
 		&:disabled {
 			color: $success-disabled-background-color;
 			background: none;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $success-disabled-background-color !important;
 			}
 		}
@@ -440,7 +440,7 @@ $info-text-color: $info;
 			color: $success-disabled-background-color;
 			border: 1px solid $success-disabled-background-color;
 			background-color: $white;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $success-disabled-background-color !important;
 			}
 		}
@@ -459,7 +459,7 @@ $info-text-color: $info;
 	&:disabled {
 		background-color: $gray000;
 		color: $info-disabled-color;
-		.c-button--icon::v-deep .c-icon {
+		.c-button--icon:deep(.c-icon) {
 			fill: $info-disabled-color !important;
 		}
 		.c-button--loading {
@@ -477,7 +477,7 @@ $info-text-color: $info;
 		&:disabled {
 			color: $info-disabled-color;
 			background: none;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $info-disabled-color !important;
 			}
 		}
@@ -493,7 +493,7 @@ $info-text-color: $info;
 			color: $info-disabled-color;
 			border: 1px solid $info-disabled-color;
 			background: none;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $info-disabled-color !important;
 			}
 		}
@@ -523,7 +523,7 @@ $info-text-color: $info;
 	}
 	&:disabled {
 		background-color: $error-disabled-background-color;
-		.c-button--icon::v-deep .c-icon {
+		.c-button--icon:deep(.c-icon) {
 			fill: $white !important;
 		}
 		.c-button--loading {
@@ -541,7 +541,7 @@ $info-text-color: $info;
 		&:disabled {
 			color: $error-disabled-background-color;
 			background: none;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $error-disabled-background-color !important;
 			}
 		}
@@ -557,7 +557,7 @@ $info-text-color: $info;
 			color: $error-disabled-background-color;
 			border: 1px solid $error-disabled-background-color;
 			background-color: $white;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $error-disabled-background-color !important;
 			}
 		}
@@ -574,7 +574,7 @@ $info-text-color: $info;
 	}
 	&:disabled {
 		background-color: $secondary-disabled-background-color;
-		.c-button--icon::v-deep .c-icon {
+		.c-button--icon:deep(.c-icon) {
 			fill: $white !important;
 		}
 		.c-button--loading {
@@ -592,7 +592,7 @@ $info-text-color: $info;
 		&:disabled {
 			color: $secondary-disabled-background-color;
 			background: none;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $secondary-disabled-background-color !important;
 			}
 		}
@@ -608,7 +608,7 @@ $info-text-color: $info;
 			color: $secondary-disabled-background-color;
 			border: 1px solid $secondary-disabled-background-color;
 			background-color: $white;
-			.c-button--icon::v-deep .c-icon {
+			.c-button--icon:deep(.c-icon) {
 				fill: $secondary-disabled-background-color !important;
 			}
 		}

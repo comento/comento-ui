@@ -33,44 +33,44 @@ $margin-xlarge: 10px;
 
 .c-chip-group {
 	@include clearfix();
-	&::v-deep .c-chip {
+	&:deep(.c-chip) {
 		float: left;
 	}
-	/*사이즈*/
+
 	&.small {
-		&::v-deep .c-chip {
+		&:deep(.c-chip) {
 			margin-right: $margin-small;
 			&:last-child {
 				margin-right: 0;
 			}
 		}
-		&::v-deep .c-row {
+		&:deep(.c-row) {
 			.c-style-col {
 				padding-right: $margin-small;
 			}
 		}
 	}
 	&.medium {
-		&::v-deep .c-chip {
+		&:deep(.c-chip) {
 			margin-right: $margin-medium;
 			&:last-child {
 				margin-right: 0;
 			}
 		}
-		&::v-deep .c-row {
+		&:deep(.c-row) {
 			.c-style-col {
 				padding-right: $margin-medium;
 			}
 		}
 	}
 	&.large {
-		&::v-deep .c-chip {
+		&:deep(.c-chip) {
 			margin-right: $margin-large;
 			&:last-child {
 				margin-right: 0;
 			}
 		}
-		&::v-deep .c-row {
+		&:deep(.c-row) {
 			.c-style-col {
 				padding-right: $margin-large;
 			}
@@ -78,20 +78,20 @@ $margin-xlarge: 10px;
 	}
 
 	&.xlarge {
-		&::v-deep .c-chip {
+		&:deep(.c-chip) {
 			margin-right: $margin-xlarge;
 			&:last-child {
 				margin-right: 0;
 			}
 		}
-		&::v-deep .c-row {
+		&:deep(.c-row) {
 			.c-style-col {
 				padding-right: $margin-xlarge;
 			}
 		}
 	}
 
-	&::v-deep .c-row {
+	&:deep(.c-row) {
 		margin: 0;
 		.c-style-col {
 			padding: 0;

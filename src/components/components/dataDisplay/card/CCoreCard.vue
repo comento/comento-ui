@@ -106,7 +106,7 @@ export default defineComponent({
 	}
 
 	&--content-wrapper {
-		::v-deep.c-content--body {
+		:deep(.c-content--body) {
 			@include ellipsis(4, normal);
 			@include pc {
 				@include ellipsis(3, normal);
@@ -114,7 +114,7 @@ export default defineComponent({
 		}
 
 		.c-icon-rating {
-			::v-deep.c-icon {
+			:deep(.c-icon) {
 				cursor: pointer;
 			}
 		}

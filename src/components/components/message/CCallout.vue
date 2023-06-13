@@ -181,7 +181,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @mixin callout-icon-margin-right($margin-right) {
-	::v-deep svg:first-child {
+	:deep(svg:first-child) {
 		overflow: inherit; //overflow: hidden 때문에 margin을 주면 아이콘이 짤려서 추가함
 		margin-right: $margin-right;
 		cursor: auto;
@@ -242,7 +242,7 @@ export default defineComponent({
 	&--message {
 		word-break: keep-all;
 		white-space: normal;
-		&::v-deep strong {
+		&:deep(strong) {
 			@include f-regular();
 		}
 

@@ -161,28 +161,28 @@ export default defineComponent({
 		width: 100%;
 	}
 	&.primary {
-		&::v-deep .c-input {
+		&:deep(.c-input) {
 			&:focus {
 				border-color: $primary;
 			}
 		}
 	}
 	&.error {
-		&::v-deep .c-input {
+		&:deep(.c-input) {
 			&:focus {
 				border-color: $error;
 			}
 		}
 	}
 	&.success {
-		&::v-deep .c-input {
+		&:deep(.c-input) {
 			&:focus {
 				border-color: $success;
 			}
 		}
 	}
 	&.info {
-		&::v-deep .c-input {
+		&:deep(.c-input) {
 			&:focus {
 				border-color: $info;
 			}

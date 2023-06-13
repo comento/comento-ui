@@ -103,7 +103,7 @@ export default defineComponent({
 		&:active {
 			pointer-events: none;
 		}
-		.c-button--icon::v-deep .c-icon {
+		.c-button--icon:deep(.c-icon) {
 			@include disabled();
 		}
 	}

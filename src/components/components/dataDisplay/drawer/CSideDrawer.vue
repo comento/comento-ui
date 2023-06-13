@@ -60,7 +60,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-::v-deep .c-drawer {
+:deep(.c-drawer) {
 	width: 308px;
 	height: 100%;
 	@include pc {

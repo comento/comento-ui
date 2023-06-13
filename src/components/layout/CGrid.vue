@@ -75,7 +75,7 @@ export default defineComponent({
 				max-width: $container-max-width-pc;
 			}
 		}
-		&::v-deep > .c-row {
+		&:deep(.c-row) {
 			margin-right: -24px;
 			margin-left: -24px;
 		}

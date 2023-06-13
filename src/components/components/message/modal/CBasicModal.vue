@@ -183,7 +183,7 @@ export default defineComponent({
 		padding-left: 32px;
 		padding-right: 32px;
 
-		&::v-deep * + *:not(br) {
+		&:deep(* + *:not(br)) {
 			margin-top: 8px;
 		}
 		max-height: calc(640px - 265px);

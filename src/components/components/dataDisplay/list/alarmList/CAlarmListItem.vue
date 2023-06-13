@@ -41,7 +41,7 @@ export default defineComponent({
 
 	&--icon {
 		flex: none;
-		::v-deep img {
+		:deep(img) {
 			width: 30px;
 			height: 30px;
 			margin-right: 12px;
@@ -49,7 +49,7 @@ export default defineComponent({
 	}
 
 	&--message,
-	&--message::v-deep * {
+	&--message:deep(*) {
 		word-break: break-all !important;
 	}
 }

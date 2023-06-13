@@ -130,7 +130,7 @@ $wrapper-margin-bottom: 40px;
 				word-break: normal;
 			}
 
-			::v-deep.c-icon {
+			:deep(.c-icon) {
 				margin-left: 2px;
 			}
 		}

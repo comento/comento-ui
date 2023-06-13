@@ -14,7 +14,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .c-form-group {
-	&::v-deep > * {
+	:deep(> *) {
 		&:not(:last-child) {
 			margin-bottom: 12px;
 		}
