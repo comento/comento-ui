@@ -37,10 +37,17 @@ export const Default = (args, { argTypes }) => ({
     methods: {
         clickDropdownItem(item) {
             this.value = item;
+			this.closeDropdown();
         },
+		closeDropdown() {
+			this.showSearchDropdown = false;
+		}
     },
+	directives: {
+		clickOutside,
+	},
     template:
-        `<Dropdown :max-width="maxWidth" :max-height="maxHeight" :label="label" :full="full" :vertical="vertical">
+        `<Dropdown :max-width="maxWidth" :max-height="maxHeight" :label="label" :full="full" :vertical="vertical" :show-dropdown.sync="showSearchDropdown">
             <template v-slot:item>
                 <SearchInput
                     full
@@ -103,7 +110,7 @@ export const Default = (args, { argTypes }) => ({
             template: `
                 <div>
                     <div style="margin-bottom: 20px">
-                        <Dropdown max-width="230px" label="searchInput Dropdown" :show-dropdown.sync="showSearchDropdown" v-click-outside="closeSearchList">
+                        <Dropdown max-width="230px" label="searchInput Dropdown" :show-dropdown.sync="showSearchDropdown">
                             <template v-slot:item>
                                 <SearchInput
                                     full
@@ -131,7 +138,7 @@ export const Default = (args, { argTypes }) => ({
                             </template>
                         </Dropdown>
                     </div>
-                    <Dropdown max-width="230px" label="Input Dropdown" v-click-outside="closeInputList">
+                    <Dropdown max-width="230px" label="Input Dropdown" :show-dropdown.sync="showInputDropdown">
                         <template v-slot:item>
                             <TextField
                                 :value.sync="inputValue"
