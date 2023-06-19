@@ -37,10 +37,17 @@ export const Default = (args, { argTypes }) => ({
     methods: {
         clickDropdownItem(item) {
             this.value = item;
+			this.closeDropdown();
         },
+		closeDropdown() {
+			this.showSearchDropdown = false;
+		}
     },
+	directives: {
+		clickOutside,
+	},
     template:
-        `<Dropdown :max-width="maxWidth" :max-height="maxHeight" :label="label" :full="full" :vertical="vertical">
+        `<Dropdown :max-width="maxWidth" :max-height="maxHeight" :label="label" :full="full" :vertical="vertical" :show-dropdown.sync="showSearchDropdown">
             <template v-slot:item>
                 <SearchInput
                     full
@@ -50,7 +57,7 @@ export const Default = (args, { argTypes }) => ({
                 />
             </template>
             <template v-slot:list>
-                <List v-if="showSearchDropdown" spacing>
+                <List spacing>
                     <template v-for="(item, index) in listItems">
                         <ListItem :key="'list-item-' + index" size="large" @click="clickDropdownItem(item)">
                             {{ item }}
@@ -87,18 +94,23 @@ export const Default = (args, { argTypes }) => ({
             methods: {
                 clickSearchInputDropdownItem(item) {
                     this.searchInputValue = item;
+					this.closeSearchList();
                 },
                 clickInputDropdownItem(item) {
                     this.inputValue = item;
+					this.closeInputList();
                 },
-                closeList() {
+                closeInputList() {
                     this.showInputDropdown = false;
                 },
+				closeSearchList() {
+					this.showSearchDropdown = false;
+				}
             },
             template: `
                 <div>
                     <div style="margin-bottom: 20px">
-                        <Dropdown max-width="230px" label="searchInput Dropdown">
+                        <Dropdown max-width="230px" label="searchInput Dropdown" :show-dropdown.sync="showSearchDropdown">
                             <template v-slot:item>
                                 <SearchInput
                                     full
@@ -107,7 +119,7 @@ export const Default = (args, { argTypes }) => ({
                                     style="width: 230px"
                                 />
                             </template>
-                            <template v-slot:list v-if="showSearchDropdown">
+                            <template v-slot:list>
                                 <Label type="dataDisplay" style="padding: 4px 0">
                                     인기검색어
                                 </Label>
@@ -126,10 +138,9 @@ export const Default = (args, { argTypes }) => ({
                             </template>
                         </Dropdown>
                     </div>
-                    <Dropdown max-width="230px" label="Input Dropdown">
+                    <Dropdown max-width="230px" label="Input Dropdown" :show-dropdown.sync="showInputDropdown">
                         <template v-slot:item>
                             <TextField
-                                v-click-outside="closeList"
                                 :value.sync="inputValue"
                                 outline
                                 full
@@ -138,7 +149,7 @@ export const Default = (args, { argTypes }) => ({
                             />
                         </template>
                         <template v-slot:list>
-                            <List v-if="showInputDropdown" spacing>
+                            <List spacing>
                                 <template v-for="(item, index) in listItems">
                                     <ListItem :key="'list-item-' + index" size="large" @click="clickInputDropdownItem(item)">
                                         {{ item }}

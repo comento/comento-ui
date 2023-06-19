@@ -1,5 +1,10 @@
 <template>
-	<div :id="`c-dropdown-${uid}`" class="c-application c-dropdown" :class="[computedDirection, computedFull]">
+	<div
+		:id="`c-dropdown-${uid}`"
+		v-click-outside="hideDropdown"
+		class="c-application c-dropdown"
+		:class="[computedDirection, computedFull]"
+	>
 		<!-- 라벨 영역 -->
 		<div v-if="label" class="c-dropdown--label">
 			<Label type="dataEntry">{{ label }}</Label>
@@ -12,7 +17,7 @@
 			</div>
 
 			<!-- 리스트 영역 -->
-			<div v-if="$slots['list']" class="c-dropdown--list-wrapper" :style="computedMaxHeight">
+			<div v-if="$slots['list'] && showDropdown" class="c-dropdown--list-wrapper" :style="computedMaxHeight">
 				<slot name="list" />
 			</div>
 		</div>
@@ -22,6 +27,7 @@
 <script>
 import Label from '@/components/components/dataDisplay/Label';
 import uniqueId from '@/utils/unique-id';
+import clickOutside from '@/directives/click-outside';
 
 /**
  * @displayName c-dropdown
@@ -64,6 +70,13 @@ export default {
 				return typeof value === 'boolean';
 			},
 		},
+		showDropdown: {
+			type: Boolean,
+			default: false,
+			validator(value) {
+				return typeof value === 'boolean';
+			},
+		},
 	},
 	data() {
 		return {
@@ -84,8 +97,16 @@ export default {
 			return { full: this.full };
 		},
 	},
+	methods: {
+		hideDropdown() {
+			this.$emit('update:show-dropdown', false);
+		},
+	},
 	components: {
 		Label,
+	},
+	directives: {
+		clickOutside,
 	},
 };
 </script>
