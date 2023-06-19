@@ -57,7 +57,7 @@ export const Default = (args, { argTypes }) => ({
                 />
             </template>
             <template v-slot:list>
-                <List v-if="showSearchDropdown" spacing>
+                <List spacing>
                     <template v-for="(item, index) in listItems">
                         <ListItem :key="'list-item-' + index" size="large" @click="clickDropdownItem(item)">
                             {{ item }}
@@ -119,7 +119,7 @@ export const Default = (args, { argTypes }) => ({
                                     style="width: 230px"
                                 />
                             </template>
-                            <template v-slot:list v-if="showSearchDropdown">
+                            <template v-slot:list>
                                 <Label type="dataDisplay" style="padding: 4px 0">
                                     인기검색어
                                 </Label>
@@ -149,7 +149,7 @@ export const Default = (args, { argTypes }) => ({
                             />
                         </template>
                         <template v-slot:list>
-                            <List v-if="showInputDropdown" spacing>
+                            <List spacing>
                                 <template v-for="(item, index) in listItems">
                                     <ListItem :key="'list-item-' + index" size="large" @click="clickInputDropdownItem(item)">
                                         {{ item }}

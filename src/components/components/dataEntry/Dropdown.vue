@@ -17,7 +17,7 @@
 			</div>
 
 			<!-- 리스트 영역 -->
-			<div v-if="$slots['list']" class="c-dropdown--list-wrapper" :style="computedMaxHeight">
+			<div v-if="$slots['list'] && showDropdown" class="c-dropdown--list-wrapper" :style="computedMaxHeight">
 				<slot name="list" />
 			</div>
 		</div>
