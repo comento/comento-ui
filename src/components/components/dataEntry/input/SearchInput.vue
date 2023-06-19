@@ -7,7 +7,6 @@
 				:id="`c-search-input-${uid}`"
 				ref="searchInput"
 				v-model="sync_value"
-				v-click-outside="hideSearchDropdown"
 				autocomplete="off"
 				type="text"
 				class="search_input full"
@@ -47,7 +46,6 @@
 
 <script>
 import Icon from '@/components/elements/core/icon/Icon';
-import clickOutside from '@/directives/click-outside';
 import uniqueId from '@/utils/unique-id';
 
 /**
@@ -110,9 +108,6 @@ export default {
 		},
 	},
 	methods: {
-		hideSearchDropdown() {
-			if (this.showSearchDropdown) this.$emit('update:showSearchDropdown', false);
-		},
 		handleTyping(e) {
 			this.isTyping = true;
 			this.sync_value = e.target.value;
@@ -135,9 +130,6 @@ export default {
 	},
 	components: {
 		Icon,
-	},
-	directives: {
-		clickOutside,
 	},
 };
 </script>
