@@ -8,6 +8,7 @@
 		:full="full"
 		class="c-select"
 		:class="classes"
+		:show-dropdown="open"
 	>
 		<!-- select 영역 -->
 		<template v-slot:item>
@@ -42,7 +43,7 @@
 		</template>
 
 		<!-- list 영역 -->
-		<template v-if="open" v-slot:list>
+		<template v-slot:list>
 			<List spacing>
 				<template v-for="(option, index) in options">
 					<ListItem
