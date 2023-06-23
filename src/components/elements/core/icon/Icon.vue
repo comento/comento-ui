@@ -164,6 +164,7 @@ import IconThreeDotLargeFill from '@/assets/images/icon/large/icon-threeDot-larg
 import IconVodProductLargeLine from '@/assets/images/icon/large/icon-vod-product-large-line.svg?inline';
 import IconClassLargeLine from '@/assets/images/icon/large/icon-class-large-line.svg?inline';
 import IconBusinessCaseLargeLine from '@/assets/images/icon/large/icon-businessCase-large-line.svg?inline';
+import IconBuildingLargeLine from '@/assets/images/icon/large/icon-building-large-line.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -405,6 +406,7 @@ export const IconNames = [
 	'IconVolumeXLargeLine',
 	'IconClassLargeLine',
 	'IconBusinessCaseLargeLine',
+	'IconBuildingLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',
@@ -615,6 +617,7 @@ export default {
 		IconVodProductLargeLine,
 		IconClassLargeLine,
 		IconBusinessCaseLargeLine,
+		IconBuildingLargeLine,
 
 		// x-large
 		IconProfileXLargeLine,
