@@ -1,3 +1,52 @@
+## [1.2.13](https://github.com/comento/comento-ui/compare/v1.2.12...v1.2.13) (2023-06-23)
+
+
+
+## [1.2.12](https://github.com/comento/comento-ui/compare/v1.2.11...v1.2.12) (2023-06-19)
+
+
+
+## [1.2.11](https://github.com/comento/comento-ui/compare/v1.2.10...v1.2.11) (2023-05-08)
+
+
+### Bug Fixes
+
+* TellingAvatarQuote의 모바일 패딩 수정 ([#1072](https://github.com/comento/comento-ui/issues/1072)) ([a9b7e23](https://github.com/comento/comento-ui/commit/a9b7e233c8be145ee46639c878a40e0d293bdaf8))
+
+
+### Features
+
+* Header 내 Tooltip 관련 코드 제거 ([#1079](https://github.com/comento/comento-ui/issues/1079)) ([451a608](https://github.com/comento/comento-ui/commit/451a60898776cfa1c0206ba613e8198beaa6645e))
+* submenu에 새로운 메뉴가 추가될 시, 표시 될 수 있도록 하는 newMenuIndex 추가 ([#1075](https://github.com/comento/comento-ui/issues/1075)) ([5d3ef84](https://github.com/comento/comento-ui/commit/5d3ef8489ddc20bca407aaa6625e10678d7ec671))
+* submenu에 새로운 메뉴가 추가될 시, 표시 될 수 있도록 하는 newMenuIndex 추가 ([#1075](https://github.com/comento/comento-ui/issues/1075)) ([#1076](https://github.com/comento/comento-ui/issues/1076)) ([0e3da43](https://github.com/comento/comento-ui/commit/0e3da4333e81e2bcacd7b5a2fbd9e0aa5414f01c))
+
+
+
+## [1.2.10](https://github.com/comento/comento-ui/compare/v1.2.9...v1.2.10) (2023-05-04)
+
+
+
+## [1.2.9](https://github.com/comento/comento-ui/compare/v1.2.8...v1.2.9) (2023-04-14)
+
+
+### Bug Fixes
+
+* created -> mounted ([#1070](https://github.com/comento/comento-ui/issues/1070)) ([ff04c49](https://github.com/comento/comento-ui/commit/ff04c49f35f043a169145754921a13901769863a))
+* TellingAvatarQuote의 모바일 패딩 수정 ([#1072](https://github.com/comento/comento-ui/issues/1072)) ([#1073](https://github.com/comento/comento-ui/issues/1073)) ([3ca56f3](https://github.com/comento/comento-ui/commit/3ca56f3c812fc825364911c35178420cb359d8a0))
+* 헤더 내 탭의 divider(border-bottom) 색을 변경 ([#1056](https://github.com/comento/comento-ui/issues/1056)) ([7ac0ae8](https://github.com/comento/comento-ui/commit/7ac0ae81a95611017196703ea2f1a6f7f1a9111b))
+
+
+### Features
+
+* add header tooltip ([#1063](https://github.com/comento/comento-ui/issues/1063)) ([27dc7db](https://github.com/comento/comento-ui/commit/27dc7db05b993eabf9de5023eb5a2c25e0cf51aa))
+* logo type 변경 ([#1060](https://github.com/comento/comento-ui/issues/1060)) ([1d3f323](https://github.com/comento/comento-ui/commit/1d3f323018979340c816c1ff464486aa23cfc227))
+
+
+
+## [1.2.8](https://github.com/comento/comento-ui/compare/v1.2.7...v1.2.8) (2023-04-13)
+
+
+
 ## [1.2.7](https://github.com/comento/comento-ui/compare/v1.2.6...v1.2.7) (2023-04-13)
 
 
