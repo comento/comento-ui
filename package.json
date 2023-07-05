@@ -16,7 +16,7 @@
     "copy-fonts": "cp -R src/assets/style/base/fonts.scss dist",
     "copy-mixins": "cp -R src/assets/style/base/mixins.scss dist && cp -R src/assets/style/base/flexbox.scss dist && cp -R src/assets/style/base/functions.scss dist",
     "web-types": "vue-docgen-web-types",
-    "build": "yarn bundle && yarn copy && yarn web-types && yarn make-prop-tags",
+    "build": "yarn bundle && yarn copy && yarn web-types",
     "lint": "vue-cli-service lint",
     "release": "shipjs prepare",
     "storybook": "start-storybook -p 6006 -c .storybook",
@@ -26,7 +26,8 @@
     "test": "jest",
     "test:watchAll": "jest --watchAll",
     "test:coverage": "jest --coverage",
-    "make-prop-tags": "vue-int --input src/components --output dist --recursive"
+    "make-prop-tags": "vue-int --input src/components --output dist --recursive",
+    "deploy": "yarn build && yarn release"
   },
   "dependencies": {
     "@storybook/storybook-deployer": "^2.8.7",
