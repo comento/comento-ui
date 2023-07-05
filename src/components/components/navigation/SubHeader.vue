@@ -87,10 +87,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		isNuxt: {
-			type: Boolean,
-			default: false,
-		},
 		isTransparent: {
 			type: Boolean,
 			default: false,
