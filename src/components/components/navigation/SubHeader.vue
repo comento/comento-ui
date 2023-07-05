@@ -23,17 +23,29 @@
 					>
 						<template v-for="(menu, index) in items" :slot="'item' + index">
 							<span v-if="menu.notice" :key="`notice${index}`" class="c-sub-header-new-notice" />
-							<!--    nuxt 유무에 따라 핸들링          -->
-							<nuxt-link v-if="isNuxt" :key="menu.path" :to="menu.path" :data-cy="menu.name">
-								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
-									{{ menu.name }}
-								</Button>
-							</nuxt-link>
-							<a v-else :key="menu.path" :href="menu.path" :data-cy="menu.name">
+							<a
+								v-if="menu.anchor"
+								:key="menu.path"
+								:href="menu.path"
+								:data-cy="menu.name"
+								:target="menu.target || '_self'"
+							>
 								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
 									{{ menu.name }}
 								</Button>
 							</a>
+							<!--    nuxt 유무에 따라 핸들링          -->
+							<nuxt-link
+								v-else
+								:key="menu.path"
+								:to="menu.path"
+								:data-cy="menu.name"
+								:target="menu.target || '_self'"
+							>
+								<Button :key="index" class="c-sub-header-menu" :class="{ active: tabIndex === index }">
+									{{ menu.name }}
+								</Button>
+							</nuxt-link>
 						</template>
 					</Tabs>
 				</NewCol>

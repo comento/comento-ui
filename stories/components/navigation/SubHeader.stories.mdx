@@ -26,30 +26,32 @@ import SubHeader from '@/components/components/navigation/SubHeader';
       description: "서브헤더 목록",
       defaultValue: [
         {
-          url: "#",
+          path: "#",
           name: "홈",
           active: false,
         },
         {
-          url: "#",
+          path: "#",
           name: "직무부트캠프",
           active: true,
         },
         {
-          url: "#",
+          path: "#",
           name: "실무PT",
           active: false,
         },
         {
-          url: "#",
+          path: "#",
           name: "진로부트캠프",
           active: false,
           notice:true,
         },
         {
-          url: "#",
+          path: "#",
           name: "VOD",
           active: false,
+          target: "_blank",
+          anchor: true,
         },
       ],
       control: {type: "array"},
