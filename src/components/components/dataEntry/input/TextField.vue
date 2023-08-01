@@ -72,7 +72,7 @@ export default {
 		},
 		label: {
 			type: String,
-			default: null,
+			default: '',
 		},
 		outline: {
 			type: Boolean,
@@ -154,7 +154,7 @@ export default {
 			return this.id || `text-field-${this.uid}`;
 		},
 		computedShowLabel() {
-			return this.label;
+			return !!this.label && this.outline && !this.disabled;
 		},
 		computedShowHint() {
 			return !!this.hint && (this.persistentHint || this.isFocused || this.active);
@@ -309,7 +309,7 @@ $disabled-background-color: $gray000;
 	&.label {
 		.c-text-field--input-wrapper {
 			.c-text-field--input {
-				&.outline {
+				&.c-text-field--outline {
 					&:focus,
 					&.active {
 						border-color: $primary;
@@ -325,7 +325,8 @@ $disabled-background-color: $gray000;
 							border-color: $input-border-color;
 						}
 						+ .c-text-field--label {
-							opacity: 0;
+							opacity: 1;
+							color: $gray250;
 						}
 					}
 
@@ -335,17 +336,19 @@ $disabled-background-color: $gray000;
 							color: $error;
 						}
 					}
+
+					+ .c-text-field--label {
+						@include transition(all 0.2s ease);
+						position: absolute;
+						top: -6px;
+						left: 12px;
+						padding: 0 2px;
+						background: $white;
+						color: $gray250;
+						opacity: 1;
+						@include caption2;
+					}
 				}
-			}
-			.c-text-field--label {
-				@include transition(all 0.2s ease);
-				position: absolute;
-				top: -6px;
-				left: 12px;
-				padding: 0 2px;
-				background: $white;
-				@include caption2;
-				opacity: 0;
 			}
 		}
 	}
