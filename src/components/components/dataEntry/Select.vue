@@ -300,13 +300,16 @@ export default {
 <style lang="scss" scoped>
 .c-select {
 	&.disabled {
+		opacity: 0.4;
 		.c-select {
 			&--box,
 			&--item > div,
 			&--item > input,
 			&--icon svg {
-				opacity: 0.4;
 				cursor: not-allowed;
+			}
+			&--input {
+				color: $gray300 !important;
 			}
 		}
 	}
