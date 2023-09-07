@@ -363,8 +363,11 @@ export default {
 				&.active {
 					border: 1px solid $red600;
 				}
-				.c-select--input::placeholder {
-					color: $red100;
+				.c-select--input {
+					color: $red600 !important;
+					&::placeholder {
+						color: $red100;
+					}
 				}
 			}
 		}
