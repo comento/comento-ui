@@ -215,6 +215,7 @@ import IconCheckRound4XLargeFill from '@/assets/images/icon/4xlarge/icon-checkRo
 import IconStar4XLargeFill from '@/assets/images/icon/4xlarge/icon-star-4xlarge-fill.svg?inline';
 import IconStar4XLargeLine from '@/assets/images/icon/4xlarge/icon-star-4xlarge-line.svg?inline';
 import IconBoard4XLargeLine from '@/assets/images/icon/4xlarge/icon-board-4xlarge-line.svg?inline';
+import IconExclamation4XLargeFill from '@/assets/images/icon/4xlarge/icon-exclamation-4xlarge-fill.svg?inline';
 
 import customValidator from '@/utils/custom-validator';
 
@@ -435,6 +436,7 @@ export const IconNames = [
 	'IconCheckRound4XLargeFill',
 	'IconStar4XLargeFill',
 	'IconStar4XLargeLine',
+	'IconExclamation4XLargeFill',
 ];
 
 /**
@@ -668,6 +670,7 @@ export default {
 		IconStar4XLargeFill,
 		IconStar4XLargeLine,
 		IconBoard4XLargeLine,
+		IconExclamation4XLargeFill,
 	},
 };
 </script>
