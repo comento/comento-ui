@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           registry-url: "https://registry.npmjs.org"
-          node-version: '16.15.0'
+          node-version: '19.9.0'
       - run: yarn
       - uses: chromaui/action@v1
         with:
