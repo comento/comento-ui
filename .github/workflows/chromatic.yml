@@ -11,6 +11,7 @@ jobs:
         with:
           registry-url: "https://registry.npmjs.org"
           node-version: '19.9.0'
+      - run: export NODE_OPTIONS=--openssl-legacy-provider
       - run: yarn
       - uses: chromaui/action@v1
         with:
