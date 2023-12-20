@@ -384,6 +384,7 @@ export const IconNames = [
 	'IconVodProductLargeLine',
 	'IconClassLargeLine',
 	'IconBusinessCaseLargeLine',
+	'IconTaskLargeLine',
 
 	// XLarge
 	'IconProfileXLargeLine',
