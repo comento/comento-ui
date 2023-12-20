@@ -1,3 +1,12 @@
+## [1.3.1](https://github.com/comento/comento-ui/compare/v1.3.0...v1.3.1) (2023-12-20)
+
+
+### Bug Fixes
+
+* 아이콘 validator 값 추가 ([#1110](https://github.com/comento/comento-ui/issues/1110)) ([de4df6a](https://github.com/comento/comento-ui/commit/de4df6af147c85beb79a51f107f51736780b699f))
+
+
+
 # [1.3.0](https://github.com/comento/comento-ui/compare/v1.2.19...v1.3.0) (2023-12-20)
 
 
