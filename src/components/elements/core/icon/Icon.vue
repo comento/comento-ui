@@ -165,6 +165,7 @@ import IconVodProductLargeLine from '@/assets/images/icon/large/icon-vod-product
 import IconClassLargeLine from '@/assets/images/icon/large/icon-class-large-line.svg?inline';
 import IconBusinessCaseLargeLine from '@/assets/images/icon/large/icon-businessCase-large-line.svg?inline';
 import IconBuildingLargeLine from '@/assets/images/icon/large/icon-building-large-line.svg?inline';
+import IconTaskLargeLine from '@/assets/images/icon/large/icon-task-large-line.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -620,6 +621,7 @@ export default {
 		IconClassLargeLine,
 		IconBusinessCaseLargeLine,
 		IconBuildingLargeLine,
+		IconTaskLargeLine,
 
 		// x-large
 		IconProfileXLargeLine,
