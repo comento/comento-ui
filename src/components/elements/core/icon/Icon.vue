@@ -99,6 +99,7 @@ import IconDateSmallLine from '@/assets/images/icon/small/icon-date-small-line.s
 import IconGoodSmallLine from '@/assets/images/icon/small/icon-good-small-line.svg?inline';
 import IconBadSmallLine from '@/assets/images/icon/small/icon-bad-small-line.svg?inline';
 import IconSearchSmallLine from '@/assets/images/icon/small/icon-search-small-line.svg?inline';
+import IconShareSmallLine from '@/assets/images/icon/small/icon-share-small-line.svg?inline';
 
 // medium
 import IconLikeMediumLine from '@/assets/images/icon/medium/icon-like-medium-line.svg?inline';
@@ -319,6 +320,7 @@ export const IconNames = [
 	'IconGoodSmallLine',
 	'IconBadSmallLine',
 	'IconSearchSmallLine',
+	'IconShareSmallLine',
 
 	// medium
 	'IconLikeMediumLine',
@@ -556,6 +558,7 @@ export default {
 		IconGoodSmallLine,
 		IconBadSmallLine,
 		IconSearchSmallLine,
+		IconShareSmallLine,
 
 		// medium
 		IconLikeMediumLine,
