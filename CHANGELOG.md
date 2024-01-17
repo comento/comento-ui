@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/comento/comento-ui/compare/v1.3.1...v1.4.0) (2024-01-17)
+
+
+### Features
+
+* add icon-share-small-line ([#1112](https://github.com/comento/comento-ui/issues/1112)) ([#1113](https://github.com/comento/comento-ui/issues/1113)) ([ebda9f2](https://github.com/comento/comento-ui/commit/ebda9f2aeaabb92406f0d1c66bb71cca09927739))
+
+
+
 ## [1.3.1](https://github.com/comento/comento-ui/compare/v1.3.0...v1.3.1) (2023-12-20)
 
 
