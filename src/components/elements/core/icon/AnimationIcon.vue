@@ -1,7 +1,7 @@
 <script>
 import IconCheckRoundSmallLineAnimation from '@/assets/images/icon/animation/icon-checkRound-small-line-animation.svg?inline';
 import IconThreeDotSmallFillAnimation from '@/assets/images/icon/animation/icon-threeDot-small-fill-animation.svg?inline';
-import BaseIcon from '@/components/elements/core/icon/BaseIcon';
+import BaseIcon from '@/components/elements/core/icon/BaseIcon.vue';
 import customValidator from '@/utils/custom-validator';
 
 export const AnimationIconNames = ['IconCheckRoundSmallLineAnimation', 'IconThreeDotSmallFillAnimation'];

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import Hint from '@/components/components/dataDisplay/Hint';
+import Hint from '@/components/components/dataDisplay/Hint.vue';
 import uniqueId from '@/utils/unique-id';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];

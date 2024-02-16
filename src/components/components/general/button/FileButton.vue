@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import NarrowButton from '@/components/components/general/button/NarrowButton';
-import Icon from '@/components/elements/core/icon/Icon';
+import NarrowButton from '@/components/components/general/button/NarrowButton.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 import customValidator from '@/utils/custom-validator.js';
 
 /**

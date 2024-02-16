@@ -1,3 +1,1 @@
-import Loader from './Loader';
-
-export { Loader };
+export { default as CLoader } from './Loader.vue';

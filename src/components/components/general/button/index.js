@@ -1,9 +1,7 @@
-import Button from './Button';
-import ButtonGroup from './ButtonGroup';
-import FileButton from './FileButton';
-import IconButton from './IconButton';
-import LinkButton from './LinkButton';
-import NarrowButton from './NarrowButton';
-import RatingButton from './RatingButton';
-
-export { Button, ButtonGroup, FileButton, IconButton, LinkButton, NarrowButton, RatingButton };
+export { default as CButton } from './Button.vue';
+export { default as CButtonGroup } from './ButtonGroup.vue';
+export { default as CFileButton } from './FileButton.vue';
+export { default as CIconButton } from './IconButton.vue';
+export { default as CLinkButton } from './LinkButton.vue';
+export { default as CNarrowButton } from './NarrowButton.vue';
+export { default as CRatingButton } from './RatingButton.vue';

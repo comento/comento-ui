@@ -30,9 +30,9 @@
 
 <script>
 import scrollMixin from '@/mixins/scrollMixin';
-import Drawer from '@/components/components/dataDisplay/drawer/Drawer';
-import Typography from '@/components/elements/core/typography/Typography';
-import Button from '@/components/components/general/button/Button';
+import Drawer from '@/components/components/dataDisplay/drawer/Drawer.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Button from '@/components/components/general/button/Button.vue';
 
 /**
  * @displayName c-bottom-drawer

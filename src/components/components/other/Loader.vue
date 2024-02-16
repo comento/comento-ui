@@ -34,7 +34,7 @@ const {
 	white,
 } = colors;
 
-import { buttonColors, ghostTypeButtonColors } from '@/components/components/general/button/Button';
+import { buttonColors, ghostTypeButtonColors } from '@/components/components/general/button/Button.vue';
 
 export const LoaderSizes = ['small', 'medium', 'large', 'xlarge'];
 

@@ -2,7 +2,17 @@
   "name": "comento-ui",
   "version": "1.2.2",
   "license": "MIT",
-  "main": "dist/comento-ui.common.js",
+  "main": "./dist/comento-ui.umd.js",
+  "module": "./dist/comento-ui.es.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/comento-ui.es.js",
+      "require": "./dist/comento-ui.umd.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/comento/comento-ui.git"
@@ -78,10 +88,6 @@
     "vue-jest": "^3.0.7",
     "vue-styleguidist": "^4.41.2"
   },
-  "files": [
-    "dist/*",
-    "src/plugins/*"
-  ],
   "browserslist": [
     "last 2 version",
     "> 5% in KR",

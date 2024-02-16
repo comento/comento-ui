@@ -70,18 +70,18 @@
 </template>
 
 <script>
-import List from '@/components/components/dataDisplay/list/list/List';
-import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
-import Divider from '@/components/elements/utility/Divider';
-import Dropdown from '@/components/components/dataEntry/Dropdown';
-import Typography from '@/components/elements/core/typography/Typography';
-import Icon from '@/components/elements/core/icon/Icon';
+import List from '@/components/components/dataDisplay/list/list/List.vue';
+import ListItem from '@/components/components/dataDisplay/list/list/ListItem.vue';
+import Divider from '@/components/elements/utility/Divider.vue';
+import Dropdown from '@/components/components/dataEntry/Dropdown.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 import clickOutside from '@/directives/click-outside';
 import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
-import EtcIcon from '@/components/elements/core/icon/EtcIcon';
+import EtcIcon from '@/components/elements/core/icon/EtcIcon.vue';
 import globalMixin from '@/mixins/globalMixin';
-import Hint from '@/components/components/dataDisplay/Hint';
+import Hint from '@/components/components/dataDisplay/Hint.vue';
 
 export const selectSizes = ['small', 'medium'];
 export const selectTypes = ['basic', 'underline', 'transparent'];

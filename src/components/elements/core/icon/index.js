@@ -1,5 +1,3 @@
-import AnimationIcon from './AnimationIcon';
-import EtcIcon from './EtcIcon';
-import Icon from './Icon';
-
-export { AnimationIcon, EtcIcon, Icon };
+export { default as CAnimationIcon } from './AnimationIcon.vue';
+export { default as CEtcIcon } from './EtcIcon.vue';
+export { default as CIcon } from './Icon.vue';

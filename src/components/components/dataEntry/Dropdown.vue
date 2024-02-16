@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Label from '@/components/components/dataDisplay/Label';
+import Label from '@/components/components/dataDisplay/Label.vue';
 import uniqueId from '@/utils/unique-id';
 import clickOutside from '@/directives/click-outside';
 

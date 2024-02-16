@@ -43,10 +43,10 @@
 </template>
 
 <script>
-import Box from '@/components/components/general/Box';
-import Typography from '@/components/elements/core/typography/Typography';
-import LinkButton from '@/components/components/general/button/LinkButton';
-import Button from '@/components/components/general/button/Button';
+import Box from '@/components/components/general/Box.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import LinkButton from '@/components/components/general/button/LinkButton.vue';
+import Button from '@/components/components/general/button/Button.vue';
 
 export const Types = ['simple', 'emphasized'];
 
