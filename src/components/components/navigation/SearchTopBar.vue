@@ -34,11 +34,11 @@
 </template>
 
 <script>
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Icon from '@/components/elements/core/icon/Icon';
-import SearchInput from '@/components/components/dataEntry/input/SearchInput';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import NewCol from '@/components/layout/NewCol.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import SearchInput from '@/components/components/dataEntry/input/SearchInput.vue';
 
 /**
  * @displayName c-search-top-bar

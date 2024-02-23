@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Logo from '@/components/elements/core/logo/Logo';
+import Logo from '@/components/elements/core/logo/Logo.vue';
 
 /**
  * @displayName c-header

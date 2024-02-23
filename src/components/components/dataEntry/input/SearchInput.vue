@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 import uniqueId from '@/utils/unique-id';
 
 /**

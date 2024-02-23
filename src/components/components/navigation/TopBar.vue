@@ -50,13 +50,13 @@
 </template>
 
 <script>
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Logo from '@/components/elements/core/logo/Logo';
-import Icon from '@/components/elements/core/icon/Icon';
-import Typography from '@/components/elements/core/typography/Typography';
-import { Divider } from '@/components';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import NewCol from '@/components/layout/NewCol.vue';
+import Logo from '@/components/elements/core/logo/Logo.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Divider from '@/components/elements/utility/Divider.vue';
 export const headerTypes = ['default', 'backward', 'logo'];
 
 /**

@@ -35,7 +35,7 @@
 
 <script>
 import Modal from '@/components/components/message/modal/Modal.vue';
-import { aligns } from '@/components/components/message/modal/BasicModal';
+import { aligns } from '@/components/components/message/modal/BasicModal.vue';
 import Button, { buttonColors } from '@/components/components/general/button/Button.vue';
 import Typography from '@/components/elements/core/typography/Typography.vue';
 

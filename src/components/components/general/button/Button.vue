@@ -39,6 +39,7 @@
 <script>
 import Loader from '@/components/components/other/Loader.vue';
 import Icon from '@/components/elements/core/icon/Icon.vue';
+import Vue from 'vue';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
@@ -48,7 +49,7 @@ export const buttonTypes = ['fill', 'outline', 'ghost', 'text', 'fab'];
 /**
  * @displayName c-button
  */
-export default {
+export default Vue.extend({
 	name: 'Button',
 	inheritAttrs: false,
 	props: {
@@ -168,10 +169,10 @@ export default {
 		},
 	},
 	components: { Icon, Loader },
-};
+});
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped module>
 $primary-background-color: $primary;
 $primary-hover-background-color: $blue800;
 $primary-disabled-background-color: $blue100;
