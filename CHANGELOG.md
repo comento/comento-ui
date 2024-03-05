@@ -1,3 +1,38 @@
+# [1.4.0-alpha](https://github.com/comento/comento-ui/compare/v1.1.12...v1.4.0-alpha) (2024-03-05)
+
+
+### Bug Fixes
+
+* created -> mounted ([#1070](https://github.com/comento/comento-ui/issues/1070)) ([ff04c49](https://github.com/comento/comento-ui/commit/ff04c49f35f043a169145754921a13901769863a))
+* TellingAvatarQuote의 모바일 패딩 수정 ([#1072](https://github.com/comento/comento-ui/issues/1072)) ([a9b7e23](https://github.com/comento/comento-ui/commit/a9b7e233c8be145ee46639c878a40e0d293bdaf8))
+* 아이콘 validator 값 추가 ([#1110](https://github.com/comento/comento-ui/issues/1110)) ([de4df6a](https://github.com/comento/comento-ui/commit/de4df6af147c85beb79a51f107f51736780b699f))
+* 아이콘 기본 색상 추가 ([#1107](https://github.com/comento/comento-ui/issues/1107)) ([161b924](https://github.com/comento/comento-ui/commit/161b9242c26c89e455d4a152135060401653dee2))
+* 헤더 내 탭의 divider(border-bottom) 색을 변경 ([#1056](https://github.com/comento/comento-ui/issues/1056)) ([7ac0ae8](https://github.com/comento/comento-ui/commit/7ac0ae81a95611017196703ea2f1a6f7f1a9111b))
+* 헤더 로고 오류 수정 ([#1052](https://github.com/comento/comento-ui/issues/1052)) ([69ca25c](https://github.com/comento/comento-ui/commit/69ca25ced9cff1b3ab5d2f5869aee8a7bc90031d))
+
+
+### Features
+
+* add header tooltip ([#1063](https://github.com/comento/comento-ui/issues/1063)) ([27dc7db](https://github.com/comento/comento-ui/commit/27dc7db05b993eabf9de5023eb5a2c25e0cf51aa))
+* add icon-share-small-line ([#1112](https://github.com/comento/comento-ui/issues/1112)) ([4115430](https://github.com/comento/comento-ui/commit/411543033580c04baf1efbce8bf54b2cceed6941))
+* EduCard image에 alt 추가 ([#1045](https://github.com/comento/comento-ui/issues/1045)) ([745e966](https://github.com/comento/comento-ui/commit/745e966170aa35a20300305acb1d00a4ea286f3b))
+* export할 때 컴포넌트 이름 prefix C 추가 ([a42ff57](https://github.com/comento/comento-ui/commit/a42ff570740849c7f1459a2922cefb03b3355699))
+* Header 내 Tooltip 관련 코드 제거 ([#1079](https://github.com/comento/comento-ui/issues/1079)) ([451a608](https://github.com/comento/comento-ui/commit/451a60898776cfa1c0206ba613e8198beaa6645e))
+* icon exclamation 4x-large size 추가 ([#1102](https://github.com/comento/comento-ui/issues/1102)) ([2db7487](https://github.com/comento/comento-ui/commit/2db748766b193b645c52ec40e74fe74d524aed9b))
+* IconBuildingLargeLine 추가 ([#1084](https://github.com/comento/comento-ui/issues/1084)) ([621e1e3](https://github.com/comento/comento-ui/commit/621e1e3599878d01accf2c0beb612f851bcd2ed4))
+* logo type 변경 ([#1060](https://github.com/comento/comento-ui/issues/1060)) ([1d3f323](https://github.com/comento/comento-ui/commit/1d3f323018979340c816c1ff464486aa23cfc227))
+* select - error 컬러 변경 ([#1099](https://github.com/comento/comento-ui/issues/1099)) ([839389f](https://github.com/comento/comento-ui/commit/839389fce13790d0894de4656dccee3efc751e70))
+* select disabled시 opacity 적용 위치, font color 변경 ([#1096](https://github.com/comento/comento-ui/issues/1096)) ([7b91e7b](https://github.com/comento/comento-ui/commit/7b91e7b577b232eede10a03aadf1f6131a9e3c91))
+* SubHeader a tag, target 선택 ([#1087](https://github.com/comento/comento-ui/issues/1087)) ([ca42e04](https://github.com/comento/comento-ui/commit/ca42e04240bfe3360be56dc30a91f1fbf95b90db))
+* submenu에 새로운 메뉴가 추가될 시, 표시 될 수 있도록 하는 newMenuIndex 추가 ([#1075](https://github.com/comento/comento-ui/issues/1075)) ([5d3ef84](https://github.com/comento/comento-ui/commit/5d3ef8489ddc20bca407aaa6625e10678d7ec671))
+* vite lib build config 추가 & entry 추가 & pcakge.json 설정 ([bf465db](https://github.com/comento/comento-ui/commit/bf465db90b1c7fdb14a9944a344ea7b190cb616c))
+* vite lib entry 변경 ([63a2e6b](https://github.com/comento/comento-ui/commit/63a2e6ba3d9219ce6416abcc2a9154983ab16344))
+* 가변 다이나믹 서브셋 글꼴 적용 ([#1093](https://github.com/comento/comento-ui/issues/1093)) ([1a84e83](https://github.com/comento/comento-ui/commit/1a84e83859aefa3cab3f79128e8f1acb1faa0bb6))
+* 번들 css 파일명 수정 ([90e4857](https://github.com/comento/comento-ui/commit/90e48573483df80fe72e9159a3c0a1d378eaf51b))
+* 아이콘 추가(IconTaskLargeLine) ([#1108](https://github.com/comento/comento-ui/issues/1108)) ([446fe2a](https://github.com/comento/comento-ui/commit/446fe2a867dd95af1fc4f7768418c04acf9c9e98))
+
+
+
 ## [1.2.2](https://github.com/comento/comento-ui/compare/v1.2.1...v1.2.2) (2023-03-14)
 
 
