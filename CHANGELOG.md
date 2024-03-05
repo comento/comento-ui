@@ -1,6 +1,19 @@
 # [1.4.0-alpha](https://github.com/comento/comento-ui/compare/v1.1.12...v1.4.0-alpha) (2024-03-05)
 
 
+### Features
+
+* add icon-share-small-line ([#1112](https://github.com/comento/comento-ui/issues/1112)) ([4115430](https://github.com/comento/comento-ui/commit/411543033580c04baf1efbce8bf54b2cceed6941))
+* export할 때 컴포넌트 이름 prefix C 추가 ([a42ff57](https://github.com/comento/comento-ui/commit/a42ff570740849c7f1459a2922cefb03b3355699))
+* vite lib build config 추가 & entry 추가 & pcakge.json 설정 ([bf465db](https://github.com/comento/comento-ui/commit/bf465db90b1c7fdb14a9944a344ea7b190cb616c))
+* vite lib entry 변경 ([63a2e6b](https://github.com/comento/comento-ui/commit/63a2e6ba3d9219ce6416abcc2a9154983ab16344))
+* 번들 css 파일명 수정 ([90e4857](https://github.com/comento/comento-ui/commit/90e48573483df80fe72e9159a3c0a1d378eaf51b))
+
+
+
+# [1.4.0-alpha](https://github.com/comento/comento-ui/compare/v1.1.12...v1.4.0-alpha) (2024-03-05)
+
+
 ### Bug Fixes
 
 * created -> mounted ([#1070](https://github.com/comento/comento-ui/issues/1070)) ([ff04c49](https://github.com/comento/comento-ui/commit/ff04c49f35f043a169145754921a13901769863a))
