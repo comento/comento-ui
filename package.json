@@ -11,7 +11,8 @@
     ".": {
       "import": "./dist/comento-ui.es.js",
       "require": "./dist/comento-ui.umd.js"
-    }
+    },
+    "./comento-ui.css": "./dist/comento-ui.css"
   },
   "repository": {
     "type": "git",
