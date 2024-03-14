@@ -1,3 +1,7 @@
+# [1.4.0-alpha.1](https://github.com/comento/comento-ui/compare/v1.4.0-alpha...v1.4.0-alpha.1) (2024-03-14)
+
+
+
 # [1.4.0-alpha](https://github.com/comento/comento-ui/compare/v1.1.12...v1.4.0-alpha) (2024-03-05)
 
 

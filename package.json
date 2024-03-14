@@ -1,6 +1,6 @@
 {
   "name": "comento-ui",
-  "version": "1.4.0-alpha",
+  "version": "1.4.0-alpha.1",
   "license": "MIT",
   "main": "./dist/comento-ui.umd.js",
   "module": "./dist/comento-ui.es.js",
