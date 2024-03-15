@@ -88,6 +88,7 @@
     "vue-docgen-web-types": "^0.1.7",
     "vue-intellisense": "^1.0.1",
     "vue-jest": "^3.0.7",
+    "vue-loader": "^17.4.2",
     "vue-styleguidist": "^4.41.2"
   },
   "browserslist": [
