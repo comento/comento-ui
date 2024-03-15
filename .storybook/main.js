@@ -3,7 +3,7 @@ const {mergeConfig} = require("vite");
 
 // // Export a function. Accept the base config as the only param.
 module.exports = {
-  // addons: ['@storybook/addon-docs', '@storybook/addon-viewport'],
+  addons: ['@storybook/addon-docs', '@storybook/addon-viewport'],
   stories: ['../stories/**/*.stories.@(js|mdx)'],
   framework: '@storybook/vue',
   core: {
