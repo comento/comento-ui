@@ -43,11 +43,11 @@
 </template>
 
 <script>
-import Modal from '@/components/components/message/modal/Modal';
-import Icon from '@/components/elements/core/icon/Icon';
-import Divider from '@/components/elements/utility/Divider';
-import Typography from '@/components/elements/core/typography/Typography';
-import Button, { buttonColors } from '@/components/components/general/button/Button';
+import Modal from '@/components/components/message/modal/Modal.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import Divider from '@/components/elements/utility/Divider.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Button, { buttonColors } from '@/components/components/general/button/Button.vue';
 
 export const fullscreenDirection = ['left', 'right', 'top', 'bottom', 'none'];
 

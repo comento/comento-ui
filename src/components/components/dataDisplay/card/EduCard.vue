@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
-import Divider from '@/components/elements/utility/Divider';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Divider from '@/components/elements/utility/Divider.vue';
 import windowMixin from '@/mixins/windowMixin';
 
 /**

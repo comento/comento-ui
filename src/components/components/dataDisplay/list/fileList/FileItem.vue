@@ -27,10 +27,10 @@
 </template>
 
 <script>
-import ListItem from '@/components/components/dataDisplay/list/list/ListItem';
-import Icon from '@/components/elements/core/icon/Icon';
-import Loader from '@/components/components/other/Loader';
-import Typography from '@/components/elements/core/typography/Typography';
+import ListItem from '@/components/components/dataDisplay/list/list/ListItem.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import Loader from '@/components/components/other/Loader.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 /**
  * @displayName c-file-item

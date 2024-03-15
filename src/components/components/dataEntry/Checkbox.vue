@@ -20,7 +20,7 @@
 
 <script>
 import { colorKeys } from '@/utils/constants/color';
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import uniqueId from '@/utils/unique-id';
 export const checkboxSizes = ['xsmall', 'small', 'medium'];
 

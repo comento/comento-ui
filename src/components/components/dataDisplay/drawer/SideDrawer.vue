@@ -23,9 +23,9 @@
 
 <script>
 import scrollMixin from '@/mixins/scrollMixin';
-import Box from '@/components/components/general/Box';
-import Drawer from '@/components/components/dataDisplay/drawer/Drawer';
-import Typography from '@/components/elements/core/typography/Typography';
+import Box from '@/components/components/general/Box.vue';
+import Drawer from '@/components/components/dataDisplay/drawer/Drawer.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 /**
  * @displayName c-side-drawer

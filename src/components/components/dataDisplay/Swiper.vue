@@ -95,7 +95,7 @@
 
 <script>
 import customValidator from '@/utils/custom-validator.js';
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 import { Swiper as BaseSwiper, SwiperSlide as BaseSwiperSlide } from 'vue-awesome-swiper';
 
 export const SwiperControlsColors = ['light', 'dark'];

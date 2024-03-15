@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import Avatar from '@/components/components/dataDisplay/Avatar';
-import Typography from '@/components/elements/core/typography/Typography';
+import Avatar from '@/components/components/dataDisplay/Avatar.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 /**
  * @displayName c-telling-avatar-quote

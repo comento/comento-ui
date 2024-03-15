@@ -38,13 +38,13 @@
 </template>
 
 <script>
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import Icon from '@/components/elements/core/icon/Icon';
-import Typography from '@/components/elements/core/typography/Typography';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import NewCol from '@/components/layout/NewCol.vue';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import { colors } from '@/utils/constants/color';
-import IconButton from '@/components/components/general/button/IconButton';
+import IconButton from '@/components/components/general/button/IconButton.vue';
 
 export const AlertTypes = ['information', 'notice', 'success', 'error', 'image'];
 

@@ -22,10 +22,10 @@
 
 <script>
 import linkify from 'vue-linkify';
-import Box from '@/components/components/general/Box';
-import Typography from '@/components/elements/core/typography/Typography';
-import Button from '@/components/components/general/button/Button';
-import Label from '@/components/components/dataDisplay/Label';
+import Box from '@/components/components/general/Box.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Button from '@/components/components/general/button/Button.vue';
+import Label from '@/components/components/dataDisplay/Label.vue';
 import nl2br from '@/utils/nl2br';
 
 /**

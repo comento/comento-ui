@@ -19,7 +19,7 @@
 	</div>
 </template>
 <script>
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 import paddingMixin from '@/mixins/paddingMixin';
 import scrollMixin from '@/mixins/scrollMixin';
 

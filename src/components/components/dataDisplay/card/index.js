@@ -1,5 +1,3 @@
-import CoreCard from './CoreCard';
-import EduCard from './EduCard';
-import PromotionEduCard from './PromotionEduCard';
-
-export { CoreCard, EduCard, PromotionEduCard };
+export { default as CCoreCard } from './CoreCard.vue';
+export { default as CEduCard } from './EduCard.vue';
+export { default as CPromotionEduCard } from './PromotionEduCard.vue';

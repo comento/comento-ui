@@ -1,8 +1,6 @@
-import AlertModal from './AlertModal';
-import BasicModal from './BasicModal';
-import FullscreenModal from './FullscreenModal';
-import Modal from './Modal';
-import PermissionModal from './PermissionModal';
-import WithFormModal from './WithFormModal';
-
-export { AlertModal, BasicModal, FullscreenModal, Modal, PermissionModal, WithFormModal };
+export { default as CAlertModal } from './AlertModal.vue';
+export { default as CBasicModal } from './BasicModal.vue';
+export { default as CFullscreenModal } from './FullscreenModal.vue';
+export { default as CModal } from './Modal.vue';
+export { default as CPermissionModal } from './PermissionModal.vue';
+export { default as CWithFormModal } from './WithFormModal.vue';

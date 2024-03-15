@@ -2,8 +2,7 @@ module.exports = {
 	root: true,
 	env: {
 		browser: true,
-		es6: true,
-		node: true,
+		es2021: true,
 	},
 	extends: [
 		'eslint:recommended',
@@ -16,11 +15,6 @@ module.exports = {
 	globals: {
 		Atomics: 'readonly',
 		SharedArrayBuffer: 'readonly',
-	},
-	parserOptions: {
-		parser: 'babel-eslint',
-		ecmaVersion: 2018,
-		sourceType: 'module',
 	},
 	plugins: ['prettier', 'html', 'vue'],
 	rules: {
@@ -113,5 +107,9 @@ module.exports = {
 				],
 			},
 		],
+		'vue/multi-word-component-names': 'off',
+		// TODO : rule off 제거하고 반영할 것.
+		'vue/no-mutating-props': 'off',
+		'import/no-named-as-default': 'off',
 	},
 };
