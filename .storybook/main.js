@@ -4,4 +4,7 @@ const path = require('path');
 module.exports = {
   addons: ['@storybook/addon-docs', '@storybook/addon-viewport'],
   stories: ['../stories/**/*.stories.(js|mdx)'],
+  core: {
+    builder: 'storybook-builder-vite-vue2',
+  },
 };

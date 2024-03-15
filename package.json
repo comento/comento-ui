@@ -60,7 +60,6 @@
   "devDependencies": {
     "@storybook/addon-docs": "^6.0.22",
     "@storybook/addon-viewport": "^6.0.26",
-    "@storybook/vue": "^6.0.21",
     "@vue/test-utils": "^1.1.0",
     "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
@@ -86,7 +85,10 @@
     "vue-docgen-web-types": "^0.1.7",
     "vue-intellisense": "^1.0.1",
     "vue-jest": "^3.0.7",
-    "vue-styleguidist": "^4.41.2"
+    "vue-styleguidist": "^4.41.2",
+    "storybook-builder-vite-vue2": "^0.1.32",
+    "@storybook/vue": "^6.5.0-beta.1",
+    "vue-loader": "^17.4.2"
   },
   "browserslist": [
     "last 2 version",
