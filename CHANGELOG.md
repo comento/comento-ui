@@ -1,3 +1,13 @@
+## [1.4.1](https://github.com/comento/comento-ui/compare/v1.4.0...v1.4.1) (2024-05-02)
+
+
+### Features
+
+* add icon-share-small-line ([#1112](https://github.com/comento/comento-ui/issues/1112)) ([4115430](https://github.com/comento/comento-ui/commit/411543033580c04baf1efbce8bf54b2cceed6941))
+* 폰트 cdn 서버 변경 ([#1120](https://github.com/comento/comento-ui/issues/1120)) ([239ead8](https://github.com/comento/comento-ui/commit/239ead85f1df367b152162e63d97afcc14ffa2ea))
+
+
+
 # [1.4.0](https://github.com/comento/comento-ui/compare/v1.3.1...v1.4.0) (2024-01-17)
 
 
