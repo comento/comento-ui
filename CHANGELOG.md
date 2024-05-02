@@ -1,3 +1,26 @@
+## [1.2.14](https://github.com/comento/comento-ui/compare/v1.2.13...v1.2.14) (2024-05-02)
+
+
+### Bug Fixes
+
+* 아이콘 validator 값 추가 ([#1110](https://github.com/comento/comento-ui/issues/1110)) ([de4df6a](https://github.com/comento/comento-ui/commit/de4df6af147c85beb79a51f107f51736780b699f))
+* 아이콘 기본 색상 추가 ([#1107](https://github.com/comento/comento-ui/issues/1107)) ([161b924](https://github.com/comento/comento-ui/commit/161b9242c26c89e455d4a152135060401653dee2))
+
+
+### Features
+
+* add icon-share-small-line ([#1112](https://github.com/comento/comento-ui/issues/1112)) ([4115430](https://github.com/comento/comento-ui/commit/411543033580c04baf1efbce8bf54b2cceed6941))
+* icon exclamation 4x-large size 추가 ([#1102](https://github.com/comento/comento-ui/issues/1102)) ([2db7487](https://github.com/comento/comento-ui/commit/2db748766b193b645c52ec40e74fe74d524aed9b))
+* IconBuildingLargeLine 추가 ([#1084](https://github.com/comento/comento-ui/issues/1084)) ([621e1e3](https://github.com/comento/comento-ui/commit/621e1e3599878d01accf2c0beb612f851bcd2ed4))
+* select - error 컬러 변경 ([#1099](https://github.com/comento/comento-ui/issues/1099)) ([839389f](https://github.com/comento/comento-ui/commit/839389fce13790d0894de4656dccee3efc751e70))
+* select disabled시 opacity 적용 위치, font color 변경 ([#1096](https://github.com/comento/comento-ui/issues/1096)) ([7b91e7b](https://github.com/comento/comento-ui/commit/7b91e7b577b232eede10a03aadf1f6131a9e3c91))
+* SubHeader a tag, target 선택 ([#1087](https://github.com/comento/comento-ui/issues/1087)) ([ca42e04](https://github.com/comento/comento-ui/commit/ca42e04240bfe3360be56dc30a91f1fbf95b90db))
+* 가변 다이나믹 서브셋 글꼴 적용 ([#1093](https://github.com/comento/comento-ui/issues/1093)) ([1a84e83](https://github.com/comento/comento-ui/commit/1a84e83859aefa3cab3f79128e8f1acb1faa0bb6))
+* 아이콘 추가(IconTaskLargeLine) ([#1108](https://github.com/comento/comento-ui/issues/1108)) ([446fe2a](https://github.com/comento/comento-ui/commit/446fe2a867dd95af1fc4f7768418c04acf9c9e98))
+* 폰트 cdn 서버 변경 ([#1120](https://github.com/comento/comento-ui/issues/1120)) ([239ead8](https://github.com/comento/comento-ui/commit/239ead85f1df367b152162e63d97afcc14ffa2ea))
+
+
+
 ## [1.2.13](https://github.com/comento/comento-ui/compare/v1.2.12...v1.2.13) (2023-06-23)
 
 
