@@ -34,7 +34,7 @@
 			<Icon
 				role="button"
 				tabindex="1"
-				:name="isMobile ? 'IconSearchSmallLine' : 'IconSearchLargeLine'"
+				name="IconSearchLargeLine"
 				size="medium"
 				:color="computedIconColor"
 				:transparent="transparent"
@@ -184,13 +184,10 @@ export default {
 		@include transition(all 0.2s ease);
 		border: 0;
 		background-color: $gray100;
-		padding: 10px 36px 10px 58px;
-		@include body2();
+		padding: 7.5px 36px 7.5px 58px;
+		@include body1();
 		width: 300px;
 		color: $gray800;
-		@include mobile {
-			padding: 6px 30px 6px 50px;
-		}
 
 		@include placeholder {
 			color: $gray400;
