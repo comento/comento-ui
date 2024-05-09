@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/comento/comento-ui/compare/v1.4.1...v1.5.0) (2024-05-09)
+
+
+### Features
+
+* change search input font-size ([#1127](https://github.com/comento/comento-ui/issues/1127)) ([#1128](https://github.com/comento/comento-ui/issues/1128)) ([3db830f](https://github.com/comento/comento-ui/commit/3db830fbac45b777ae0252721225ed081e98d1e1))
+
+
+
 ## [1.4.1](https://github.com/comento/comento-ui/compare/v1.4.0...v1.4.1) (2024-05-02)
 
 
