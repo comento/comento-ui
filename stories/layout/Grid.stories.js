@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/vue';
-import Grid from '@/components/layout/Grid';
-import Row from '@/components/layout/Row';
-import StyleCol from '@/components/layout/StyleCol';
-import Typography from '@/components/elements/core/typography/Typography';
+import Grid from '@/components/layout/Grid.vue';
+import Row from '@/components/layout/Row.vue';
+import StyleCol from '@/components/layout/StyleCol.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 storiesOf('Layout/Grid(legacy)', module)
 	.add('Basic', () => ({

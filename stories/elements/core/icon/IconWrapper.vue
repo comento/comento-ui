@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import AnimationIcon from '@/components/elements/core/icon/AnimationIcon';
-import EtcIcon from '@/components/elements/core/icon/EtcIcon';
+import AnimationIcon from '@/components/elements/core/icon/AnimationIcon.vue';
+import EtcIcon from '@/components/elements/core/icon/EtcIcon.vue';
 import Icon from '@/components/elements/core/icon/Icon.vue';
-import Tooltip from '@/components/components/message/Tooltip';
+import Tooltip from '@/components/components/message/Tooltip.vue';
 import copyToClipboard from '@/utils/copy-to-clipboard';
 
 export default {

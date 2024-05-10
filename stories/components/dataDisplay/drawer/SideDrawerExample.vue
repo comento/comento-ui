@@ -68,10 +68,10 @@
 
 <script>
 import Button from '@/components/components/general/button/Button.vue';
-import SideDrawer from '@/components/components/dataDisplay/drawer/SideDrawer';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
+import SideDrawer from '@/components/components/dataDisplay/drawer/SideDrawer.vue';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import NewCol from '@/components/layout/NewCol.vue';
 
 export default {
 	name: 'app',

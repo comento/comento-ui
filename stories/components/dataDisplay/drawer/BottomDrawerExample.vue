@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import BottomDrawer from '@/components/components/dataDisplay/drawer/BottomDrawer';
+import BottomDrawer from '@/components/components/dataDisplay/drawer/BottomDrawer.vue';
 import Button from '@/components/components/general/button/Button.vue';
 
 export default {
