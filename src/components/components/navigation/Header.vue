@@ -9,7 +9,7 @@
 				:url="logoUrl"
 			/>
 		</h1>
-		<ul class="ml-26 flex">
+		<ul class="ml-24 flex">
 			<li
 				v-for="(menu, index) in items"
 				:key="`menu-${index}`"
