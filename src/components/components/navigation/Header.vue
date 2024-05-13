@@ -4,8 +4,8 @@
 			<Logo
 				:color="isTransparent ? 'white' : 'primary'"
 				name="LogoComentoTypoType"
-				width="101px"
-				height="16px"
+				width="105px"
+				height="18px"
 				:url="logoUrl"
 			/>
 		</h1>
