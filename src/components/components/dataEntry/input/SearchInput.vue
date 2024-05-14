@@ -166,6 +166,9 @@ export default {
 				font-weight: $regular;
 			}
 		}
+		.search_input_icon_wrapper .icon_search {
+			opacity: 0.8;
+		}
 	}
 
 	&.full {
@@ -232,7 +235,6 @@ export default {
 			margin-left: 14px;
 			display: block;
 			z-index: 2;
-			opacity: 0.8;
 			@include mobile {
 				margin-left: 14px;
 			}
