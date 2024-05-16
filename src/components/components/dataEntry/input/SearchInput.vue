@@ -187,10 +187,14 @@ export default {
 		@include transition(all 0.2s ease);
 		border: 0;
 		background-color: $gray100;
-		padding: 7.5px 36px 7.5px 58px;
-		@include body1();
+		padding: 10px 36px 10px 58px;
+		@include body2();
 		width: 300px;
 		color: $gray800;
+		@include mobile {
+			padding: 7.5px 36px 7.5px 58px;
+			@include body1();
+		}
 
 		@include placeholder {
 			color: $gray400;
