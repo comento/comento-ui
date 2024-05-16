@@ -49,7 +49,7 @@ html {
 body {
   @include selection($body-selection); // 드래그 색상
   -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body, header, footer, section, article, aside, div {
