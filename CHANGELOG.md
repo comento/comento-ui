@@ -1,3 +1,19 @@
+## [1.5.1](https://github.com/comento/comento-ui/compare/v1.5.0...v1.5.1) (2024-05-22)
+
+
+### Bug Fixes
+
+* 헤더 스타일 오류 수정 ([#1131](https://github.com/comento/comento-ui/issues/1131)) ([6eebba7](https://github.com/comento/comento-ui/commit/6eebba7ca85f1acf06525fc19b9a4a7b28ef201c))
+
+
+### Features
+
+* change search input font-size ([#1127](https://github.com/comento/comento-ui/issues/1127)) ([b55c28d](https://github.com/comento/comento-ui/commit/b55c28de21f8ee949730f11adf8162c72c1bf2fb))
+* font-smoothing 적용 ([#1132](https://github.com/comento/comento-ui/issues/1132)) ([e5aee38](https://github.com/comento/comento-ui/commit/e5aee38c90b2ca9647319c2f385f436188199525))
+* search input pc 규격 변경 ([#1130](https://github.com/comento/comento-ui/issues/1130)) ([043f656](https://github.com/comento/comento-ui/commit/043f656b1519c99a8d36ae33e6f6e5ed62e6bede))
+
+
+
 # [1.5.0](https://github.com/comento/comento-ui/compare/v1.4.1...v1.5.0) (2024-05-09)
 
 
