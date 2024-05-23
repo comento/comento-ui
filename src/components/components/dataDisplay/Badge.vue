@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-badge--container" :class="[computedType]">
+	<div class="c-application c-badge--container" :class="[computedType, computedBorderRadius]">
 		<!-- badge 대상 컴포넌트 -->
 		<slot />
 
@@ -102,12 +102,7 @@ export default {
 			};
 		},
 		computedBorderRadius() {
-			const is2Byte = this.getByte(this.text) === 2;
-			const isN = this.text === 'N';
-			if (is2Byte || isN) {
-				return { 'border-radius': '50%' };
-			}
-			return false;
+			return { 'rounded-full': this.text.length === 1 };
 		},
 		computedSize() {
 			return this.size;
@@ -120,17 +115,6 @@ export default {
 		},
 		typeInline() {
 			return this.type === 'inline';
-		},
-	},
-	methods: {
-		getByte(value) {
-			if (!this.$_isEmpty(value)) {
-				return value
-					.toString()
-					.split('')
-					.map(s => s.charCodeAt(0))
-					.reduce((prev, c) => prev + (c === 10 ? 2 : c >> 7 ? 2 : 1), 0);
-			}
 		},
 	},
 	components: { Typography },
@@ -190,5 +174,9 @@ export default {
 		top: 0;
 		width: 100%;
 	}
+}
+
+.rounded-full {
+	@include border-radius(50%);
 }
 </style>
