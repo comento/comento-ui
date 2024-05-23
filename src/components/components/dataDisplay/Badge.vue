@@ -85,7 +85,7 @@ export default {
 	computed: {
 		computedStyle() {
 			return {
-				...this.computedPadding,
+				...this.computedBorderRadius,
 				...this.computedBackground,
 				...(this.typeAbsolute && this.computedPosition),
 			};
@@ -101,16 +101,11 @@ export default {
 				background: colors[this.color],
 			};
 		},
-		computedPadding() {
+		computedBorderRadius() {
 			const is2Byte = this.getByte(this.text) === 2;
 			const isN = this.text === 'N';
 			if (is2Byte || isN) {
-				// 2byte거나 'N'일 때는 동그란 모양을 위해 padding을 조정함
-				const paddings = {
-					medium: '3px 4px',
-					small: '3px',
-				};
-				return { padding: paddings[this.size] };
+				return { 'border-radius': '50%' };
 			}
 			return false;
 		},
