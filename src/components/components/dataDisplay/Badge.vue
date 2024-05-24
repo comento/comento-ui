@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-badge--container" :class="[computedType, computedBorderRadius]">
+	<div class="c-application c-badge--container" :class="[computedType]">
 		<!-- badge 대상 컴포넌트 -->
 		<slot />
 
@@ -85,7 +85,6 @@ export default {
 	computed: {
 		computedStyle() {
 			return {
-				...this.computedBorderRadius,
 				...this.computedBackground,
 				...(this.typeAbsolute && this.computedPosition),
 			};
@@ -100,9 +99,6 @@ export default {
 			return {
 				background: colors[this.color],
 			};
-		},
-		computedBorderRadius() {
-			return { 'rounded-full': this.text.length === 1 };
 		},
 		computedSize() {
 			return this.size;
@@ -125,7 +121,7 @@ export default {
 .c-badge {
 	@include caption2();
 	min-width: 0;
-	@include border-radius(28px);
+	@include border-radius(9999px);
 	@include flexbox();
 	@include align-items(center);
 	@include justify-content(center);
@@ -174,9 +170,5 @@ export default {
 		top: 0;
 		width: 100%;
 	}
-}
-
-.rounded-full {
-	@include border-radius(50%);
 }
 </style>
