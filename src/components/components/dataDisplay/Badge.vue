@@ -85,7 +85,6 @@ export default {
 	computed: {
 		computedStyle() {
 			return {
-				...this.computedBorderRadius,
 				...this.computedBackground,
 				...(this.typeAbsolute && this.computedPosition),
 			};
@@ -101,14 +100,6 @@ export default {
 				background: colors[this.color],
 			};
 		},
-		computedBorderRadius() {
-			const is2Byte = this.getByte(this.text) === 2;
-			const isN = this.text === 'N';
-			if (is2Byte || isN) {
-				return { 'border-radius': '50%' };
-			}
-			return false;
-		},
 		computedSize() {
 			return this.size;
 		},
@@ -122,17 +113,6 @@ export default {
 			return this.type === 'inline';
 		},
 	},
-	methods: {
-		getByte(value) {
-			if (!this.$_isEmpty(value)) {
-				return value
-					.toString()
-					.split('')
-					.map(s => s.charCodeAt(0))
-					.reduce((prev, c) => prev + (c === 10 ? 2 : c >> 7 ? 2 : 1), 0);
-			}
-		},
-	},
 	components: { Typography },
 };
 </script>
@@ -141,7 +121,7 @@ export default {
 .c-badge {
 	@include caption2();
 	min-width: 0;
-	@include border-radius(28px);
+	@include border-radius(9999px);
 	@include flexbox();
 	@include align-items(center);
 	@include justify-content(center);
