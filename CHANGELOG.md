@@ -1,3 +1,12 @@
+## [1.5.3](https://github.com/comento/comento-ui/compare/v1.5.2...v1.5.3) (2024-05-24)
+
+
+### Bug Fixes
+
+* Badge 한 글자 측정하는 조건 오류 수정 ([#1136](https://github.com/comento/comento-ui/issues/1136)) ([35a0715](https://github.com/comento/comento-ui/commit/35a0715133fb9b98bff75b0f9d5bcfa30c58e249))
+
+
+
 ## [1.5.2](https://github.com/comento/comento-ui/compare/v1.5.1...v1.5.2) (2024-05-23)
 
 
