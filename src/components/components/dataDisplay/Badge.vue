@@ -170,5 +170,12 @@ export default {
 		top: 0;
 		width: 100%;
 	}
+	&--text {
+		width: 100%;
+		height: 100%;
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(center);
+	}
 }
 </style>
