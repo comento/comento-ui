@@ -1,5 +1,5 @@
 <script>
-import BaseIcon from '@/components/elements/core/icon/BaseIcon';
+import BaseIcon from '@/components/elements/core/icon/BaseIcon.vue';
 
 // xsmall
 import IconProfileXSmallLine from '@/assets/images/icon/xsmall/icon-profile-xsmall-line.svg?inline';

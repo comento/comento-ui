@@ -55,11 +55,11 @@
 </template>
 
 <script>
-import NewCol from '@/components/layout/NewCol';
-import Tabs from '@/components/components/dataDisplay/Tabs';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import Button from '@/components/components/general/button/Button';
+import NewCol from '@/components/layout/NewCol.vue';
+import Tabs from '@/components/components/dataDisplay/Tabs.vue';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import Button from '@/components/components/general/button/Button.vue';
 import windowMixin from '@/mixins/windowMixin';
 
 /**

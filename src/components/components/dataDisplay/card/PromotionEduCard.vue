@@ -67,10 +67,10 @@
 </template>
 
 <script>
-import Typography from '@/components/elements/core/typography/Typography';
-import Divider from '@/components/elements/utility/Divider';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Divider from '@/components/elements/utility/Divider.vue';
 import windowMixin from '@/mixins/windowMixin';
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 
 /**
  * 직무부트캠프 프로모션용 카드

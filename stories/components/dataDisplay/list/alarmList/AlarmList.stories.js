@@ -1,10 +1,10 @@
 import { storiesOf } from '@storybook/vue';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
-import AlarmList from '@/components/components/dataDisplay/list/alarmList/AlarmList';
-import AlarmListItem from '@/components/components/dataDisplay/list/alarmList/AlarmListItem';
-import Typography from '@/components/elements/core/typography/Typography';
+import NewGrid from '@/components/layout/NewGrid.vue';
+import NewRow from '@/components/layout/NewRow.vue';
+import NewCol from '@/components/layout/NewCol.vue';
+import AlarmList from '@/components/components/dataDisplay/list/alarmList/AlarmList.vue';
+import AlarmListItem from '@/components/components/dataDisplay/list/alarmList/AlarmListItem.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 storiesOf('Data Display/list/alarmList/alarmList', module).add('Default', () => ({
 	components: { NewGrid, NewRow, NewCol, AlarmList, AlarmListItem, Typography },

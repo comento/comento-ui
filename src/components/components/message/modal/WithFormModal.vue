@@ -38,9 +38,9 @@
 </template>
 
 <script>
-import Modal from '@/components/components/message/modal/Modal';
-import Typography from '@/components/elements/core/typography/Typography';
-import Button, { buttonColors } from '@/components/components/general/button/Button';
+import Modal from '@/components/components/message/modal/Modal.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Button, { buttonColors } from '@/components/components/general/button/Button.vue';
 
 export const aligns = ['left', 'center', 'right'];
 

@@ -1,4 +1,3 @@
-import Box from './Box';
+export { default as CBox } from './Box.vue';
 
-export { Box };
 export * from './button';

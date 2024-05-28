@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import Modal from '@/components/components/message/modal/Modal';
-import Typography from '@/components/elements/core/typography/Typography';
+import Modal from '@/components/components/message/modal/Modal.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 
 /**
  * @displayName c-permission-modal

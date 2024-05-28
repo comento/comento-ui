@@ -16,7 +16,7 @@
 
 <script>
 import { colors } from '@/utils/constants/color';
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import globalMixin from '@/mixins/globalMixin';
 
 export const badgeColors = ['primary', 'secondary'];

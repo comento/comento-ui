@@ -19,7 +19,7 @@
 
 <script>
 import { colorKeys } from '@/utils/constants/color';
-import Typography from '@/components/elements/core/typography/Typography';
+import Typography from '@/components/elements/core/typography/Typography.vue';
 import uniqueId from '@/utils/unique-id';
 import customValidator from '@/utils/custom-validator';
 export const radioColors = ['primary', 'success', 'info', 'error'];

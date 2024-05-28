@@ -14,7 +14,7 @@
 
 <script>
 import { colorKeys } from '@/utils/constants/color';
-import Icon from '@/components/elements/core/icon/Icon';
+import Icon from '@/components/elements/core/icon/Icon.vue';
 
 export const IconButtonSizes = ['small', 'medium', 'large'];
 export const IconButtonTypes = ['button', 'submit', 'reset'];

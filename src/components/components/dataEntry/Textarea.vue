@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import IconButton from '@/components/components/general/button/IconButton';
-import Hint from '@/components/components/dataDisplay/Hint';
+import IconButton from '@/components/components/general/button/IconButton.vue';
+import Hint from '@/components/components/dataDisplay/Hint.vue';
 
 export const textareaTypes = ['basic', 'outline', 'reply'];
 

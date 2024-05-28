@@ -1,6 +1,4 @@
-import SubHeader from './SubHeader';
-import SearchTopBar from './SearchTopBar';
-import TopBar from './TopBar';
-import Header from './Header';
-
-export { SubHeader, SearchTopBar, TopBar, Header };
+export { default as CSubHeader } from './SubHeader.vue';
+export { default as CSearchTopBar } from './SearchTopBar.vue';
+export { default as CTopBar } from './TopBar.vue';
+export { default as CHeader } from './Header.vue';

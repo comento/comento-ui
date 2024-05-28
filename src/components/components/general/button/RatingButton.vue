@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import Icon from '@/components/elements/core/icon/Icon';
-import Typography from '@/components/elements/core/typography/Typography';
-import Loader from '@/components/components/other/Loader';
+import Icon from '@/components/elements/core/icon/Icon.vue';
+import Typography from '@/components/elements/core/typography/Typography.vue';
+import Loader from '@/components/components/other/Loader.vue';
 
 export const RATING_BUTTON_COLORS = ['primary', 'info', 'error', 'secondary', 'success'];
 
