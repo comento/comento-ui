@@ -1,3 +1,12 @@
+## [1.5.4](https://github.com/comento/comento-ui/compare/v1.5.3...v1.5.4) (2024-05-28)
+
+
+### Bug Fixes
+
+* Badge text가 왼쪽으로 쏠려보이는 오류 수정 ([#1138](https://github.com/comento/comento-ui/issues/1138)) ([6715622](https://github.com/comento/comento-ui/commit/67156226a547d9108b4f5dd02deb9c4901ab9224))
+
+
+
 ## [1.5.3](https://github.com/comento/comento-ui/compare/v1.5.2...v1.5.3) (2024-05-24)
 
 
