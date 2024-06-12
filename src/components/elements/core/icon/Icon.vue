@@ -100,6 +100,7 @@ import IconGoodSmallLine from '@/assets/images/icon/small/icon-good-small-line.s
 import IconBadSmallLine from '@/assets/images/icon/small/icon-bad-small-line.svg?inline';
 import IconSearchSmallLine from '@/assets/images/icon/small/icon-search-small-line.svg?inline';
 import IconShareSmallLine from '@/assets/images/icon/small/icon-share-small-line.svg?inline';
+import IconSkipSmallFill from '@/assets/images/icon/small/icon-skip-small-fill.svg?inline';
 
 // medium
 import IconLikeMediumLine from '@/assets/images/icon/medium/icon-like-medium-line.svg?inline';
@@ -321,6 +322,7 @@ export const IconNames = [
 	'IconBadSmallLine',
 	'IconSearchSmallLine',
 	'IconShareSmallLine',
+	'IconSkipSmallFill',
 
 	// medium
 	'IconLikeMediumLine',
@@ -559,6 +561,7 @@ export default {
 		IconBadSmallLine,
 		IconSearchSmallLine,
 		IconShareSmallLine,
+		IconSkipSmallFill,
 
 		// medium
 		IconLikeMediumLine,
