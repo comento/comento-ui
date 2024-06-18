@@ -369,6 +369,7 @@ export default {
 	}
 	&.xlarge {
 		@include body1();
+		height: 34px;
 		padding: 4.5px 12px;
 		font-weight: $regular;
 		@include border-radius(8px);
