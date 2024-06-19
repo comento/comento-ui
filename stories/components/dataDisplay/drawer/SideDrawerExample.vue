@@ -67,11 +67,11 @@
 </template>
 
 <script>
-import Button from '@/components/components/general/button/Button';
-import SideDrawer from '@/components/components/dataDisplay/drawer/SideDrawer';
-import NewGrid from '@/components/layout/NewGrid';
-import NewRow from '@/components/layout/NewRow';
-import NewCol from '@/components/layout/NewCol';
+import Button from '@/components/button/Button';
+import SideDrawer from '@/components/drawer/SideDrawer';
+import NewGrid from '@/components/grid/NewGrid.vue';
+import NewRow from '@/components/grid/NewRow.vue';
+import NewCol from '@/components/grid/NewCol.vue';
 
 export default {
 	name: 'app',
