@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import Button from '@/components/button/Button';
-import Typography from '@/components/typography/Typography';
-import Icon from '@/components/icon/Icon';
+import Button from '@/components/button/Button.vue';
+import Typography from '@/components/typography/Typography.vue';
+import Icon from '@/components/icon/Icon.vue';
 
 /**
  * @displayName c-file-summary

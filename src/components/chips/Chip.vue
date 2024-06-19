@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import paddingMixin from '@/mixins/paddingMixin';
-import Icon from '@/components/icon/Icon';
+import paddingMixin from '@/mixins/paddingMixin.js';
+import Icon from '@/components/icon/Icon.vue';
 
 export const ChipColors = ['primary', 'info', 'success', 'secondary', 'error'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];

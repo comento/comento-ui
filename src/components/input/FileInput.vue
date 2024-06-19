@@ -20,7 +20,7 @@
 
 <script>
 import customValidator from '@/utils/custom-validator.js';
-import FileButton from '@/components/button/FileButton';
+import FileButton from '@/components/button/FileButton.vue';
 
 /**
  * @displayName c-file-input

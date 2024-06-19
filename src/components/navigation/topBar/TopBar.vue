@@ -56,7 +56,7 @@ import NewCol from '@/components/grid/NewCol.vue';
 import Logo from '@/components/logo/Logo.vue';
 import Icon from '@/components/icon/Icon.vue';
 import Typography from '@/components/typography/Typography.vue';
-import { Divider } from '@/components/index.js';
+import Divider from '@/components/divider/Divider.vue';
 export const headerTypes = ['default', 'backward', 'logo'];
 
 /**

@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import Modal from '@/components/modal/Modal';
-import { aligns } from '@/components/modal/BasicModal';
-import Button, { buttonColors } from '@/components/button/Button';
-import Typography from '@/components/typography/Typography';
+import Modal from '@/components/modal/Modal.vue';
+import { aligns } from '@/components/modal/BasicModal.vue';
+import Button, { buttonColors } from '@/components/button/Button.vue';
+import Typography from '@/components/typography/Typography.vue';
 
 export default {
 	name: 'ImageModal',

@@ -6,7 +6,7 @@
 /**
  * @displayName c-user-information-caption
  */
-import Typography from '@/components/typography/Typography';
+import Typography from '@/components/typography/Typography.vue';
 
 export default {
 	name: 'UserInformationCaption',

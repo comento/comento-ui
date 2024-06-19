@@ -36,7 +36,7 @@
 
 <script>
 import Hint from '@/components/hint/Hint.vue';
-import uniqueId from '@/utils/unique-id';
+import uniqueId from '@/utils/unique-id.js';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
 export const TextFieldAligns = ['left', 'center', 'right'];

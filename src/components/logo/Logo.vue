@@ -10,7 +10,7 @@
 
 <script>
 import LogoComentoTypoType from '@/assets/images/logo/logo-comento-typo-type.svg?inline';
-import { colors } from '@/utils/constants/color';
+import { colors } from '@/utils/constants/color.js';
 
 /**
  * @displayName c-logo

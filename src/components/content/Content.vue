@@ -13,9 +13,9 @@
 
 <script>
 import linkify from 'vue-linkify';
-import Typography from '@/components/typography/Typography';
-import customValidator from '@/utils/custom-validator';
-import { colorKeys } from '@/utils/constants/color';
+import Typography from '@/components/typography/Typography.vue';
+import customValidator from '@/utils/custom-validator.js';
+import { colorKeys } from '@/utils/constants/color.js';
 
 export const contentTypes = ['overline', 'title', 'body', 'caption'];
 

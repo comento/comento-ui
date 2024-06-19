@@ -19,9 +19,9 @@
 	</div>
 </template>
 <script>
-import Icon from '@/components/icon/Icon';
-import paddingMixin from '@/mixins/paddingMixin';
-import scrollMixin from '@/mixins/scrollMixin';
+import Icon from '@/components/icon/Icon.vue';
+import paddingMixin from '@/mixins/paddingMixin.js';
+import scrollMixin from '@/mixins/scrollMixin.js';
 
 export default {
 	name: 'Drawer',

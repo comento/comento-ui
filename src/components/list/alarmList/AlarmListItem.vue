@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Typography from '@/components/typography/Typography';
+import Typography from '@/components/typography/Typography.vue';
 
 /**
  * @displayName c-alarm-list-item

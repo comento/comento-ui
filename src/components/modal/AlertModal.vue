@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import Modal from '@/components/modal/Modal';
-import Typography from '@/components/typography/Typography';
+import Modal from '@/components/modal/Modal.vue';
+import Typography from '@/components/typography/Typography.vue';
 
 /**
  * @displayName c-alert-modal

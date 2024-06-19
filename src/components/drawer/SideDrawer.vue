@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import scrollMixin from '@/mixins/scrollMixin';
+import scrollMixin from '@/mixins/scrollMixin.js';
 import Box from '@/components/box/Box.vue';
-import Drawer from '@/components/drawer/Drawer';
-import Typography from '@/components/typography/Typography';
+import Drawer from '@/components/drawer/Drawer.vue';
+import Typography from '@/components/typography/Typography.vue';
 
 /**
  * @displayName c-side-drawer

@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import List from '@/components/list/list/List';
-import FileItem from '@/components/list/fileList/FileItem';
+import List from '@/components/list/list/List.vue';
+import FileItem from '@/components/list/fileList/FileItem.vue';
 
 /**
  * @displayName c-file-list

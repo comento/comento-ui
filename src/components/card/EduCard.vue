@@ -39,9 +39,9 @@
 </template>
 
 <script>
-import Typography from '@/components/typography/Typography';
+import Typography from '@/components/typography/Typography.vue';
 import Divider from '@/components/divider/Divider.vue';
-import windowMixin from '@/mixins/windowMixin';
+import windowMixin from '@/mixins/windowMixin.js';
 
 /**
  * 직무부트캠프 카드

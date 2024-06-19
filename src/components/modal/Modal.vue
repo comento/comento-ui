@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import scrollMixin from '@/mixins/scrollMixin';
-import Icon from '@/components/icon/Icon';
+import scrollMixin from '@/mixins/scrollMixin.js';
+import Icon from '@/components/icon/Icon.vue';
 import Overlay from '@/components/overlay/Overlay.vue';
 
 export default {

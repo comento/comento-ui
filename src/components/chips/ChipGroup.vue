@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { ChipSizes } from '@/components/chips/Chip';
+import { ChipSizes } from '@/components/chips/Chip.vue';
 
 /**
  * @displayName c-chip-group

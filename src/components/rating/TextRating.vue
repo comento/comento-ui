@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import TextRatingWrapper from '@/components/rating/TextRatingWrapper';
+import TextRatingWrapper from '@/components/rating/TextRatingWrapper.vue';
 export const TextRatingSizes = ['default', 'small'];
 
 /**

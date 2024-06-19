@@ -11,8 +11,8 @@
 /**
  * @displayName c-user-information-company
  */
-import Typography from '@/components/typography/Typography';
-import Icon from '@/components/icon/Icon';
+import Typography from '@/components/typography/Typography.vue';
+import Icon from '@/components/icon/Icon.vue';
 
 export default {
 	name: 'UserInformationCompany',

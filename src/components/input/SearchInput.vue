@@ -45,8 +45,8 @@
 </template>
 
 <script>
-import Icon from '@/components/icon/Icon';
-import uniqueId from '@/utils/unique-id';
+import Icon from '@/components/icon/Icon.vue';
+import uniqueId from '@/utils/unique-id.js';
 
 /**
  * @displayName c-search-input

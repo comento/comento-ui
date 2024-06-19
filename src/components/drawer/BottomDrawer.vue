@@ -29,10 +29,10 @@
 </template>
 
 <script>
-import scrollMixin from '@/mixins/scrollMixin';
-import Drawer from '@/components/drawer/Drawer';
-import Typography from '@/components/typography/Typography';
-import Button from '@/components/button/Button';
+import scrollMixin from '@/mixins/scrollMixin.js';
+import Drawer from '@/components/drawer/Drawer.vue';
+import Typography from '@/components/typography/Typography.vue';
+import Button from '@/components/button/Button.vue';
 
 /**
  * @displayName c-bottom-drawer
