@@ -37,9 +37,9 @@
 					<EtcIcon :name="computedIconName" :color="computedIconColor" :rotate="computedIconRotate" />
 				</div>
 			</div>
-			<Hint v-if="error" color="error">
+			<SupportingText v-if="error" color="error">
 				{{ hintMessage }}
-			</Hint>
+			</SupportingText>
 		</template>
 
 		<!-- list 영역 -->
@@ -81,7 +81,7 @@ import customValidator from '@/utils/custom-validator';
 import { colorKeys } from '@/utils/constants/color';
 import EtcIcon from '@/components/elements/core/icon/EtcIcon';
 import globalMixin from '@/mixins/globalMixin';
-import Hint from '@/components/components/dataDisplay/Hint';
+import SupportingText from '@/components/components/dataDisplay/SupportingText.vue';
 
 export const selectSizes = ['small', 'medium'];
 export const selectTypes = ['basic', 'underline', 'transparent'];
@@ -282,7 +282,7 @@ export default {
 		},
 	},
 	components: {
-		Hint,
+		SupportingText,
 		EtcIcon,
 		Icon,
 		Divider,

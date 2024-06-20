@@ -6,7 +6,7 @@ import InputGroup from '@/components/components/dataEntry/input/InputGroup';
 import TextField from '@/components/components/dataEntry/input/TextField';
 import Button from '@/components/components/general/button/Button';
 import Box from '@/components/components/general/Box';
-import Hint from '@/components/components/dataDisplay/Hint';
+import SupportingText from '@/components/components/dataDisplay/SupportingText.vue';
 
 <Meta
     title="Data Entry/Input/InputGroup"
@@ -58,7 +58,7 @@ export const Default = (args, { argTypes }) => ({
                                     중복검사
                                 </Button>
                             </InputGroup>
-                            <Hint>한글 10자, 영문∙숫자∙특수문자 20자까지 입력 가능합니다.<br v-show="isMobile">(혼용 가능)</Hint>
+                            <SupportingText>한글 10자, 영문∙숫자∙특수문자 20자까지 입력 가능합니다.<br v-show="isMobile">(혼용 가능)</SupportingText>
                         </StyleCol>
                     </Row>
                 </Grid>
@@ -68,7 +68,7 @@ export const Default = (args, { argTypes }) => ({
                     name: null,
                 };
             },
-            components: { Grid, Row, StyleCol, InputGroup, TextField, Button, Hint },
+            components: { Grid, Row, StyleCol, InputGroup, TextField, Button, SupportingText },
         }}
     </Story>
 </Canvas>

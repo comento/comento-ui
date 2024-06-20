@@ -28,14 +28,14 @@
 				<slot name="append" />
 			</div>
 		</div>
-		<Hint v-if="computedShowHint" :color="hintColor">
+		<SupportingText v-if="computedShowHint" :color="hintColor">
 			{{ hint }}
-		</Hint>
+		</SupportingText>
 	</div>
 </template>
 
 <script>
-import Hint from '@/components/components/dataDisplay/Hint';
+import SupportingText from '@/components/components/dataDisplay/SupportingText.vue';
 import uniqueId from '@/utils/unique-id';
 
 export const TextFieldTypes = ['text', 'number', 'password', 'email', 'tel', 'url'];
@@ -218,7 +218,7 @@ export default {
 			});
 		},
 	},
-	components: { Hint },
+	components: { SupportingText },
 };
 </script>
 

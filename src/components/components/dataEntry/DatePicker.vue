@@ -19,7 +19,7 @@
 			v-on="$listeners"
 			@change="handleChange"
 		/>
-		<Hint :color="color">{{ hint }}</Hint>
+		<SupportingText :color="color">{{ hint }}</SupportingText>
 	</div>
 </template>
 
@@ -29,7 +29,7 @@ import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/locale/ko';
 import customValidator from '@/utils/custom-validator.js';
 import uniqueId from '@/utils/unique-id';
-import Hint from '@/components/components/dataDisplay/Hint';
+import SupportingText from '@/components/components/dataDisplay/SupportingText.vue';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
 export const colors = ['primary', 'success', 'info', 'error'];
@@ -146,7 +146,7 @@ export default {
 		},
 	},
 	components: {
-		Hint,
+		SupportingText,
 		'date-picker': DatePicker,
 	},
 };

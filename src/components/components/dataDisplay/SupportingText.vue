@@ -1,7 +1,7 @@
 <template>
-	<div v-if="hasSlot" class="c-hint">
+	<div v-if="hasSlot" class="c-supporting-text">
 		<Icon name="IconExclamationXSmallFill" :color="computedIconColor" />
-		<Typography type="caption2" :color="computedTextColor" element="p" align="left">
+		<Typography type="caption2" :color="computedTextColor" element="span" align="left">
 			<slot />
 		</Typography>
 	</div>
@@ -14,10 +14,10 @@ import Icon from '@/components/elements/core/icon/Icon';
 import { colorKeys } from '@/utils/constants/color';
 
 /**
- * @displayName c-hint
+ * @displayName c-supporting-text
  */
 export default {
-	name: 'Hint',
+	name: 'SupportingText',
 	props: {
 		/**
 		 * 색상
@@ -27,7 +27,7 @@ export default {
 			default: 'info',
 			validator(value) {
 				const isValid = colorKeys.indexOf(value) !== -1;
-				return customValidator(value, isValid, 'Hint', 'color');
+				return customValidator(value, isValid, 'SupportingText', 'color');
 			},
 		},
 	},
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-hint {
+.c-supporting-text {
 	margin-top: 4px;
 	@include flexbox();
 	@include flex-direction(row);
