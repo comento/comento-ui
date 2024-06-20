@@ -1,0 +1,55 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import SupportingText from '@/components/components/dataDisplay/SupportingText.vue';
+
+<Meta
+	title="Data Display/SupportingText"
+	component={ SupportingText }
+	argTypes={{
+		color: {
+			control: {
+				type: 'select',
+				options: ['info', 'primary', 'error'],
+			},
+			table: {
+				type: { summary: 'string' },
+			},
+		},
+		text: {
+			control: { type: 'text' },
+			defaultValue: '메시지는 선택사항입니다.',
+		},
+	}}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { SupportingText },
+	template: '<SupportingText :color="color">{{text}}</SupportingText>',
+});
+
+# SupportingText
+
+**SupportingText** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+	{Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+## Stories
+### Color
+<Canvas>
+	<Story name="Color" height="100px">
+		{{
+			template: `
+				<div>
+					<SupportingText color="info">메시지는 선택사항입니다.</SupportingText>
+					<SupportingText color="primary">메시지는 선택사항입니다.</SupportingText>
+					<SupportingText color="error">메시지는 선택사항입니다.</SupportingText>
+				</div>
+			`,
+			components: { SupportingText },
+		}}
+	</Story>
+</Canvas>
