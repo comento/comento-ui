@@ -1,3 +1,18 @@
+## [1.5.5](https://github.com/comento/comento-ui/compare/v1.5.4...v1.5.5) (2024-06-24)
+
+
+### Bug Fixes
+
+* Chip xlarge height 수정 ([#1142](https://github.com/comento/comento-ui/issues/1142)) ([fd01e71](https://github.com/comento/comento-ui/commit/fd01e71d4b9a76700a9001e013718f6d47a5f68f))
+
+
+### Features
+
+* add IconSkipSmallFill icon ([#1140](https://github.com/comento/comento-ui/issues/1140)) ([0e09e78](https://github.com/comento/comento-ui/commit/0e09e788ce913d8f69056ee470762f5f3a46221c))
+* toast mobile bottom 위치 수정 ([#1141](https://github.com/comento/comento-ui/issues/1141)) ([489aaae](https://github.com/comento/comento-ui/commit/489aaae0f84aac15b520888b01301c2309dc7e02))
+
+
+
 ## [1.5.4](https://github.com/comento/comento-ui/compare/v1.5.3...v1.5.4) (2024-05-28)
 
 
