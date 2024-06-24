@@ -119,7 +119,7 @@ export default {
 <style lang="scss" scoped>
 .c-toast {
 	position: fixed;
-	bottom: 16px;
+	bottom: 108px;
 	left: 50%;
 	color: $white;
 	@include transform(translate(-50%));
