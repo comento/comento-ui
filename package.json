@@ -11,7 +11,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "bundle": "vue-cli-service build --target lib --name comento-ui src/main.js",
-    "generate-index": "node scripts/generate-component-index.js && yarn lint",
+    "generate-index": "node scripts/generate-component-index.js",
     "copy": "yarn copy-color && yarn copy-fonts && yarn copy-mixins",
     "copy-color": "cp -R src/assets/style/base/color.scss dist && cp -R src/utils/constants/color.js dist/color.js",
     "copy-fonts": "cp -R src/assets/style/base/fonts.scss dist",
