@@ -21,13 +21,13 @@
 				@click="onSubmitReply"
 			/>
 		</div>
-		<Hint v-if="isShowHint" color="error">{{ hintMessage }}</Hint>
+		<SupportingText v-if="isShowHint" color="error">{{ hintMessage }}</SupportingText>
 	</div>
 </template>
 
 <script>
 import IconButton from '@/components/button/IconButton.vue';
-import Hint from '@/components/hint/Hint.vue';
+import SupportingText from '@/components/supportingText/SupportingText.vue';
 
 export const textareaTypes = ['basic', 'outline', 'reply'];
 
@@ -126,7 +126,7 @@ export default {
 			this.value && this.$emit('submit');
 		},
 	},
-	components: { Hint, IconButton },
+	components: { SupportingText, IconButton },
 };
 </script>
 
