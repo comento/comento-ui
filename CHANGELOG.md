@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/comento/comento-ui/compare/v1.5.5...v1.6.0) (2024-06-26)
+
+
+### Features
+
+* SupportingText 추가 ([#1146](https://github.com/comento/comento-ui/issues/1146)) ([09b0d6f](https://github.com/comento/comento-ui/commit/09b0d6f30ecf2789826174c8cccb120dddc791d4))
+
+
+
 ## [1.5.5](https://github.com/comento/comento-ui/compare/v1.5.4...v1.5.5) (2024-06-24)
 
 
