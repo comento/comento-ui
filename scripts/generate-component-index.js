@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// EOL 설정 (줄바꿈 문자)
-const EOL = '\n';
+const NEW_LINE = '\n';
 
 // 제외할 파일 목록
 const excludeFiles = ['BaseIcon.vue', 'CustomPagination.vue', 'TextRatingWrapper.vue', 'Drawer.vue', 'EtcIcon.vue'];
@@ -16,6 +15,7 @@ const outputPath = path.join(srcDir, 'index.js');
 // 함수: .vue 파일을 찾고, index.js 파일을 생성
 function generateIndexJs(dir) {
 	let importStatements = '';
+	let exportStatements = 'export {' + NEW_LINE;
 
 	// 재귀적으로 디렉토리를 탐색하여 .vue 파일을 찾음
 	function traverseDirectory(currentDir) {
@@ -28,16 +28,20 @@ function generateIndexJs(dir) {
 			if (fileStat.isDirectory()) {
 				traverseDirectory(filePath);
 			} else if (path.extname(file) === '.vue' && !excludeFiles.includes(file)) {
+				const componentName = path.basename(file, '.vue');
 				const relativePath = path.relative(dir, filePath).replace(/\\/g, '/');
 
-				importStatements += `import './${relativePath}';${EOL}`;
+				importStatements += `import ${componentName} from './${relativePath}';${NEW_LINE}`;
+				exportStatements += `	${componentName},${NEW_LINE}`;
 			}
 		});
 	}
 
 	traverseDirectory(dir);
 
-	const fileContent = importStatements;
+	exportStatements += '};' + NEW_LINE;
+
+	const fileContent = importStatements + NEW_LINE + exportStatements;
 	fs.writeFileSync(outputPath, fileContent, 'utf8');
 	console.log(`index.js 파일이 생성되었습니다: ${outputPath}`);
 }
