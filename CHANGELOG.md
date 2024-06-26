@@ -1,3 +1,12 @@
+## [1.6.1](https://github.com/comento/comento-ui/compare/v1.6.0...v1.6.1) (2024-06-26)
+
+
+### Bug Fixes
+
+* 스크립트 오류 수정 ([#1148](https://github.com/comento/comento-ui/issues/1148)) ([d3ca6b6](https://github.com/comento/comento-ui/commit/d3ca6b65e6fd0b9098d3fc4340bb3e6d2c465aae))
+
+
+
 # [1.6.0](https://github.com/comento/comento-ui/compare/v1.5.5...v1.6.0) (2024-06-26)
 
 
