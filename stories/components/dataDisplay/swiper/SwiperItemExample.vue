@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Box from '@/components/components/general/Box';
-import Typography from '@/components/elements/core/typography/Typography';
+import Box from '@/components/box/Box.vue';
+import Typography from '@/components/typography/Typography';
 
 export default {
 	name: 'SwiperItemExample',
