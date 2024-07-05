@@ -22,11 +22,6 @@ $grid-column-width-pc: math.div($container-width-pc - $grid-gutter-width-pc * ($
 $grid-column-width-mobile: math.div($container-width-mobile - $grid-gutter-width-mobile * ($grid-columns-mobile - 1) , $grid-columns-mobile);
 $container-sm:            (1140px + $grid-gutter-width-pc);
 
-//
-//  # html
-//
-$html-overflow-y:        scroll;
-
 $light:                  300;
 $regular:                400;
 $medium:                 500;
