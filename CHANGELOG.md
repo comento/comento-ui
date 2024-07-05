@@ -1,3 +1,12 @@
+## [1.6.2](https://github.com/comento/comento-ui/compare/v1.6.1...v1.6.2) (2024-07-05)
+
+
+### Features
+
+* 스크롤바 커스텀 스타일 제거 ([#1150](https://github.com/comento/comento-ui/issues/1150)) ([db13e2d](https://github.com/comento/comento-ui/commit/db13e2dc8d8b35e09b54bfad77150c53390e85de))
+
+
+
 ## [1.6.1](https://github.com/comento/comento-ui/compare/v1.6.0...v1.6.1) (2024-06-26)
 
 
