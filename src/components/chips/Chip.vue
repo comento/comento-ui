@@ -137,8 +137,10 @@ export default {
 			return `IconClose${closeButtonIconSize[0] + closeButtonIconSize.slice(1)}Line`;
 		},
 		computedCloseButtonColor() {
-			const whiteColorTypes = ['success', 'secondary', 'error'];
-			if (whiteColorTypes.includes(this.color)) return 'white';
+			const whiteFillColors = ['success', 'secondary'];
+			if (this.type.includes('fill') && whiteFillColors.includes(this.color)) {
+				return 'white';
+			}
 			return this.color;
 		},
 	},
