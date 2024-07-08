@@ -137,8 +137,11 @@ export default {
 			return `IconClose${closeButtonIconSize[0] + closeButtonIconSize.slice(1)}Line`;
 		},
 		computedCloseButtonColor() {
-			const whiteFillColors = ['success', 'secondary'];
-			if (this.type.includes('fill') && whiteFillColors.includes(this.color)) {
+			const whiteFillConfig = {
+				colors: ['success', 'secondary'],
+				types: ['fill', 'clickable-fill'],
+			};
+			if (whiteFillConfig.types.includes(this.type) && whiteFillConfig.colors.includes(this.color)) {
 				return 'white';
 			}
 			return this.color;
