@@ -1,3 +1,12 @@
+## [1.6.3](https://github.com/comento/comento-ui/compare/v1.6.2...v1.6.3) (2024-07-08)
+
+
+### Bug Fixes
+
+* Chip close button 색상 오류 수정, 스토리북 예시 추가 ([#1152](https://github.com/comento/comento-ui/issues/1152)) ([9adc114](https://github.com/comento/comento-ui/commit/9adc114dfaf279cd8e73f8be34f76c6aee704b92))
+
+
+
 ## [1.6.2](https://github.com/comento/comento-ui/compare/v1.6.1...v1.6.2) (2024-07-05)
 
 
