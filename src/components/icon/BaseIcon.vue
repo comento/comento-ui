@@ -69,7 +69,6 @@ export default {
 
 <style lang="scss" scoped>
 .c-icon {
-	cursor: auto;
 	background: transparent !important;
 	&--link {
 		cursor: pointer;
