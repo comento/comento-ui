@@ -32,6 +32,7 @@ import IconBookmarkXSmallLine from '@/assets/images/icon/xsmall/icon-bookmark-xs
 import IconBookmarkXSmallFill from '@/assets/images/icon/xsmall/icon-bookmark-xsmall-fill.svg?inline';
 import IconLoadingXSmallFill from '@/assets/images/icon/xsmall/icon-loading-xsmall-fill.svg?inline';
 import IconExportXSmallLine from '@/assets/images/icon/xsmall/icon-export-xsmall-line.svg?inline';
+import IconLockXSmallFill from '@/assets/images/icon/xsmall/icon-lock-xsmall-fill.svg?inline';
 
 // small
 import IconProfileSmallLine from '@/assets/images/icon/small/icon-profile-small-line.svg?inline';
@@ -254,6 +255,7 @@ export const IconNames = [
 	'IconBookmarkXSmallFill',
 	'IconLoadingXSmallFill',
 	'IconExportXSmallLine',
+	'IconLockXSmallFill',
 
 	// small
 	'IconProfileSmallLine',
@@ -493,6 +495,7 @@ export default {
 		IconBookmarkXSmallFill,
 		IconLoadingXSmallFill,
 		IconExportXSmallLine,
+		IconLockXSmallFill,
 
 		// small
 		IconProfileSmallLine,
