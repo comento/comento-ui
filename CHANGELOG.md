@@ -1,3 +1,13 @@
+## [1.6.4](https://github.com/comento/comento-ui/compare/v1.6.3...v1.6.4) (2024-07-22)
+
+
+### Features
+
+* Icon에서 cursor 선언 지우기 ([#1154](https://github.com/comento/comento-ui/issues/1154)) ([a25393a](https://github.com/comento/comento-ui/commit/a25393aeb70d7f52d9e32e2e30c9a2d64466a08e))
+* 아이콘 추가 ([#1155](https://github.com/comento/comento-ui/issues/1155)) ([c4fa7a7](https://github.com/comento/comento-ui/commit/c4fa7a79ae56181e1e711f5a89edbaae29db28c7))
+
+
+
 ## [1.6.3](https://github.com/comento/comento-ui/compare/v1.6.2...v1.6.3) (2024-07-08)
 
 
