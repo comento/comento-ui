@@ -1,3 +1,12 @@
+## [1.6.5](https://github.com/comento/comento-ui/compare/v1.6.4...v1.6.5) (2024-08-01)
+
+
+### Features
+
+* 050 컬러 추가 ([#1157](https://github.com/comento/comento-ui/issues/1157)) ([8dd4d09](https://github.com/comento/comento-ui/commit/8dd4d09a8c0a46eb869c545298553c7d6c422668))
+
+
+
 ## [1.6.4](https://github.com/comento/comento-ui/compare/v1.6.3...v1.6.4) (2024-07-22)
 
 
