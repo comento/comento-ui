@@ -34,6 +34,7 @@ import IconLoadingXSmallFill from '@/assets/images/icon/xsmall/icon-loading-xsma
 import IconExportXSmallLine from '@/assets/images/icon/xsmall/icon-export-xsmall-line.svg?inline';
 import IconLockXSmallFill from '@/assets/images/icon/xsmall/icon-lock-xsmall-fill.svg?inline';
 import IconDownloadXSmallLine from '@/assets/images/icon/xsmall/icon-download-xsmall-line.svg?inline';
+import IconEmailXSmallFill from '@/assets/images/icon/xsmall/icon-email-xsmall-fill.svg?inline';
 
 // small
 import IconProfileSmallLine from '@/assets/images/icon/small/icon-profile-small-line.svg?inline';
@@ -258,6 +259,7 @@ export const IconNames = [
 	'IconExportXSmallLine',
 	'IconLockXSmallFill',
 	'IconDownloadXSmallLine',
+	'IconEmailXSmallFill',
 
 	// small
 	'IconProfileSmallLine',
@@ -499,6 +501,7 @@ export default {
 		IconExportXSmallLine,
 		IconLockXSmallFill,
 		IconDownloadXSmallLine,
+		IconEmailXSmallFill,
 
 		// small
 		IconProfileSmallLine,
