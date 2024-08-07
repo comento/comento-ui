@@ -1,15 +1,17 @@
+import * as bodyScrollLock from 'body-scroll-lock';
+
 const scrollMixin = {
 	data: () => ({
 		notScrollClassName: 'not-scroll',
 	}),
 	methods: {
 		$_addNotScroll() {
-			document.querySelector('html').classList.add(this.notScrollClassName);
-			document.querySelector('body').classList.add(this.notScrollClassName);
+			bodyScrollLock.disableBodyScroll(document.body, {
+				reserveScrollBarGap: true,
+			});
 		},
 		$_removeNotScroll() {
-			document.querySelector('html').classList.remove(this.notScrollClassName);
-			document.querySelector('body').classList.remove(this.notScrollClassName);
+			bodyScrollLock.enableBodyScroll(document.body);
 		},
 		$_handleNotScroll(value) {
 			value ? this.$_addNotScroll() : this.$_removeNotScroll();
