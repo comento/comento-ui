@@ -1,3 +1,12 @@
+## [1.6.6](https://github.com/comento/comento-ui/compare/v1.6.5...v1.6.6) (2024-08-07)
+
+
+### Bug Fixes
+
+* 스크롤 없앨 때 덜컹거리는 현상 수정 ([#1160](https://github.com/comento/comento-ui/issues/1160)) ([c9ea968](https://github.com/comento/comento-ui/commit/c9ea96842fcdc8f5e748369a9ae820adb6584b9d))
+
+
+
 ## [1.6.5](https://github.com/comento/comento-ui/compare/v1.6.4...v1.6.5) (2024-08-01)
 
 
