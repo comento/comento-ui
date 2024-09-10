@@ -1,5 +1,5 @@
 <template>
-	<div v-if="show" class="c-application" @click="handleCloseModal">
+	<div v-if="show" class="c-application" data-body-scroll-lock-ignore="true" @click="handleCloseModal">
 		<Overlay :show="show" :z-index="9998" :persistent="persistent" @close="close">
 			<div class="c-modal" :style="[computedStyle]" @click.stop>
 				<div v-if="showCloseButton" class="c-modal--close-button" @click="close">
