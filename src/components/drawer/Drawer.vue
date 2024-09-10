@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-drawer">
+	<div class="c-application c-drawer" data-body-scroll-lock-ignore="true">
 		<transition name="fade" mode="out-in">
 			<div v-if="$slots.default" :style="indexClass()" :class="{ mask }" @click="onMask" />
 		</transition>
