@@ -5,13 +5,14 @@ const scrollMixin = {
 		$_addNotScroll() {
 			bodyScrollLock.disableBodyScroll(document.body, {
 				reserveScrollBarGap: true,
+				// iOS에서 이슈가 있어서 사용
+				// https://github.com/willmcpo/body-scroll-lock#allowtouchmove
 				allowTouchMove: el => {
-					// iOS에서 이슈가 있어서 사용
-					// https://github.com/willmcpo/body-scroll-lock#allowtouchmove
 					while (el && el !== document.body) {
 						if (el.dataset.bodyScrollLockIgnore === 'true') {
 							return true;
 						}
+
 						el = el.parentNode;
 					}
 					return false;
