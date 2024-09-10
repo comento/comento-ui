@@ -1,3 +1,12 @@
+## [1.6.8](https://github.com/comento/comento-ui/compare/v1.6.7...v1.6.8) (2024-09-10)
+
+
+### Bug Fixes
+
+* body-scroll-lock allowTouchMove 범위 수정 ([#1164](https://github.com/comento/comento-ui/issues/1164)) ([5330864](https://github.com/comento/comento-ui/commit/5330864236f3214b5a08ffed8f74202aeb5437c0))
+
+
+
 ## [1.6.7](https://github.com/comento/comento-ui/compare/v1.6.6...v1.6.7) (2024-09-10)
 
 
