@@ -1,3 +1,12 @@
+## [1.6.7](https://github.com/comento/comento-ui/compare/v1.6.6...v1.6.7) (2024-09-10)
+
+
+### Bug Fixes
+
+* iOS에서 사용할 수 있게 allowTouchMove 옵션 추가 ([#1162](https://github.com/comento/comento-ui/issues/1162)) ([69ce728](https://github.com/comento/comento-ui/commit/69ce728b0c97e9b9df151d578b12a4391cad6c31))
+
+
+
 ## [1.6.6](https://github.com/comento/comento-ui/compare/v1.6.5...v1.6.6) (2024-08-07)
 
 
