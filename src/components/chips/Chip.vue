@@ -8,16 +8,19 @@
 			computedFull,
 			computedTransparent,
 			computedClickable,
+			computedWithICon,
 			{ 'c-chip--with-close-button': withCloseButton },
 		]"
 		:style="[computedPadding]"
 		v-on="$listeners"
 	>
+		<Icon v-if="leftIcon" :name="leftIcon" :color="computedIconColor" class="mr-2" />
 		<slot />
+		<Icon v-if="rightIcon" :name="rightIcon" :color="computedIconColor" class="ml-2" />
 		<Icon
 			v-if="withCloseButton"
 			:name="computedCloseButtonIconName"
-			:color="computedCloseButtonColor"
+			:color="computedIconColor"
 			class="ml-4 c-pointer"
 			@click.stop="handleClickCloseButton"
 		/>
@@ -92,6 +95,14 @@ export default {
 		withCloseButton: {
 			type: Boolean,
 		},
+		leftIcon: {
+			type: String,
+			default: '',
+		},
+		rightIcon: {
+			type: String,
+			default: '',
+		},
 	},
 	computed: {
 		computedType() {
@@ -136,7 +147,7 @@ export default {
 			}[this.size];
 			return `IconClose${closeButtonIconSize[0] + closeButtonIconSize.slice(1)}Line`;
 		},
-		computedCloseButtonColor() {
+		computedIconColor() {
 			const whiteFillConfig = {
 				colors: ['success', 'secondary'],
 				types: ['fill', 'clickable-fill'],
@@ -145,6 +156,17 @@ export default {
 				return 'white';
 			}
 			return this.color;
+		},
+		computedWithICon() {
+			if (this.leftIcon && this.rightIcon) {
+				return 'with-icon with-icon-both';
+			} else if (this.leftIcon) {
+				return 'with-icon with-icon-left';
+			} else if (this.rightIcon) {
+				return 'with-icon with-icon-right';
+			} else {
+				return '';
+			}
 		},
 	},
 	methods: {
@@ -336,9 +358,31 @@ export default {
 		padding: 1.5px 4px;
 		font-weight: $regular;
 		line-height: 16px;
+		&.with-icon {
+			&-both {
+				padding: 1.5px 6px;
+			}
+			&-right {
+				padding-right: 6px;
+			}
+			&-left {
+				padding-left: 6px;
+			}
+		}
 		&.clickable {
 			@include border-radius(12px);
 			padding: 1.5px 6px;
+			&.with-icon {
+				&-both {
+					padding: 1.5px 6px;
+				}
+				&-right {
+					padding-right: 6px;
+				}
+				&-left {
+					padding-left: 6px;
+				}
+			}
 		}
 	}
 	&.medium {
@@ -347,9 +391,32 @@ export default {
 		padding: 4.5px 8px;
 		font-weight: $regular;
 		@include border-radius(6px);
+		&.with-icon {
+			&-both {
+				padding: 4.5px 6px;
+			}
+			&-right {
+				padding-right: 6px;
+			}
+			&-left {
+				padding-left: 6px;
+			}
+		}
 		&.clickable {
 			@include border-radius(12px);
 			padding: 4.5px 10px;
+			&.with-icon {
+				height: 26px;
+				&-both {
+					padding: 4.5px 8px;
+				}
+				&-right {
+					padding-right: 8px;
+				}
+				&-left {
+					padding-left: 8px;
+				}
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 6px !important;
@@ -361,15 +428,35 @@ export default {
 		padding: 5px 10px;
 		font-weight: $regular;
 		@include border-radius(6px);
+		&.with-icon {
+			&-both {
+				padding: 5px 8px;
+			}
+			&-right {
+				padding-right: 8px;
+			}
+			&-left {
+				padding-left: 8px;
+			}
+		}
 		&.clickable {
 			@include border-radius(15px);
 			padding: 5px 12px;
+			&.with-icon {
+				height: 32px;
+				&-both {
+					padding: 5px 12px;
+				}
+				&-right {
+					padding-right: 12px;
+				}
+				&-left {
+					padding-left: 12px;
+				}
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 8px !important;
-		}
-		&.c-chip--with-close-button {
-			padding-right: 6px !important;
 		}
 	}
 	&.xlarge {
@@ -378,15 +465,35 @@ export default {
 		padding: 4.5px 12px;
 		font-weight: $regular;
 		@include border-radius(8px);
+		&.with-icon {
+			&-both {
+				padding: 4.5px 10px;
+			}
+			&-right {
+				padding-right: 10px;
+			}
+			&-left {
+				padding-left: 10px;
+			}
+		}
 		&.clickable {
 			@include border-radius(19px);
 			padding: 4.5px 14px;
+			&.with-icon {
+				height: 36px;
+				&-both {
+					padding: 4.5px 14px;
+				}
+				&-right {
+					padding-right: 14px;
+				}
+				&-left {
+					padding-left: 14px;
+				}
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 10px !important;
-		}
-		&.c-chip--with-close-button {
-			padding-right: 8px !important;
 		}
 	}
 	&.clickable-fill {

@@ -1,6 +1,7 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Chip, { ChipColors, ChipSizes, ChipTypes, ChipSizesWithCloseButton } from '@/components/chips/Chip';
 import Typography from "@/components/typography/Typography";
+import Icon, { IconNames } from '@/components/icon/Icon';
 
 <Meta
     title="Data Display/Chip/Chip"
@@ -62,6 +63,22 @@ import Typography from "@/components/typography/Typography";
         clickable: {
             description: "click 가능한 chip인지"
         },
+        leftIcon: {
+            description: "왼쪽 아이콘",
+            defaultValue: "",
+            control: {
+                type: "select",
+                options: IconNames,
+            },
+        },
+        rightIcon: {
+            description: "오른쪽 아이콘",
+            defaultValue: "",
+            control: {
+                type: "select",
+                options: IconNames,
+            },
+        },
     }}
 />
 
@@ -69,7 +86,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Chip },
     template:
-        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent" :with-close-button="withCloseButton" :clickable="clickable">{{text}}</Chip>`,
+        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent" :with-close-button="withCloseButton" :clickable="clickable" :left-icon="leftIcon" :right-icon="rightIcon">{{text}}</Chip>`,
 });
 
 # Chip
@@ -106,6 +123,48 @@ export const Basic = (args, { argTypes }) => ({
                             </template>
                         </div>
                     </template>
+                    <div class="mb-28">
+                        <div class="flex">
+                            <div class="flex-row mr-30 mb-8">
+                                <Chip left-icon="IconProfileXSmallFill" class="mr-8">Chip</Chip>
+                                <Chip left-icon="IconProfileSmallFill" class="mr-8" size="large">Chip</Chip>
+                                <Chip left-icon="IconProfileSmallFill" class="mr-8" size="xlarge">Chip</Chip>
+                                <Chip right-icon="IconProfileXSmallFill" class="mr-8">Chip</Chip>
+                                <Chip right-icon="IconProfileSmallFill" class="mr-8" size="large">Chip</Chip>
+                                <Chip right-icon="IconProfileSmallFill" class="mr-8" size="xlarge">Chip</Chip>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-row mr-30 mb-8">
+                                <Chip left-icon="IconProfileXSmallFill" class="mr-8" type="outline" color='success'>Chip</Chip>
+                                <Chip left-icon="IconProfileSmallFill" class="mr-8" size="large" type="outline" color='success'>Chip</Chip>
+                                <Chip left-icon="IconProfileSmallFill" class="mr-8" size="xlarge" type="outline" color='success'>Chip</Chip>
+                                <Chip right-icon="IconProfileXSmallFill" class="mr-8" type="outline" color='success'>Chip</Chip>
+                                <Chip right-icon="IconProfileSmallFill" class="mr-8" size="large" type="outline" color='success'>Chip</Chip>
+                                <Chip right-icon="IconProfileSmallFill" class="mr-8" size="xlarge" type="outline" color='success'>Chip</Chip>
+                            </div>
+                        </div>
+                        <div class='flex'>
+                            <div class="flex-row mr-30 mb-8">
+                                <Chip left-icon="IconProfileXSmallFill" class="mr-8" clickable color="primary">Chip</Chip>
+                                <Chip left-icon="IconProfileSmallFill" class="mr-8" size="large" clickable color="primary">Chip</Chip>
+                                <Chip left-icon="IconProfileSmallFill" class="mr-8" size="xlarge" clickable color="primary">Chip</Chip>
+                                <Chip right-icon="IconProfileXSmallFill" class="mr-8" clickable color="primary">Chip</Chip>
+                                <Chip right-icon="IconProfileSmallFill" class="mr-8" size="large" clickable color="primary">Chip</Chip>
+                                <Chip right-icon="IconProfileSmallFill" class="mr-8" size="xlarge" clickable color="primary">Chip</Chip>
+                            </div>
+                        </div>
+                        <div class='flex'>
+                            <div class="flex-row mr-30 mb-8">
+                                <Chip left-icon="IconProfileXSmallFill" class="mr-8" clickable type="outline" color='secondary'>Chip</Chip>
+                                <Chip left-icon="IconProfileSmallFill" class="mr-8" size="large" clickable type="outline" color="secondary">Chip</Chip>
+                                <Chip left-icon="IconProfileSmallFill" class="mr-8" size="xlarge" clickable type="outline" color="secondary">Chip</Chip>
+                                <Chip right-icon="IconProfileXSmallFill" class="mr-8" clickable type="outline" color="secondary">Chip</Chip>
+                                <Chip right-icon="IconProfileSmallFill" class="mr-8" size="large" clickable type="outline" color="secondary">Chip</Chip>
+                                <Chip right-icon="IconProfileSmallFill" class="mr-8" size="xlarge" clickable type="outline" color="secondary">Chip</Chip>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `,
             data() {
