@@ -8,7 +8,7 @@
 			computedFull,
 			computedTransparent,
 			computedClickable,
-			computedWithICon,
+			computedWithIcon,
 			{ 'c-chip--with-close-button': withCloseButton },
 		]"
 		:style="[computedPadding]"
@@ -157,7 +157,7 @@ export default {
 			}
 			return this.color;
 		},
-		computedWithICon() {
+		computedWithIcon() {
 			if (this.leftIcon && this.rightIcon) {
 				return 'with-icon with-icon-both';
 			} else if (this.leftIcon) {
