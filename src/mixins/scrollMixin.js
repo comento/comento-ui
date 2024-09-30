@@ -9,11 +9,11 @@ const scrollMixin = {
 				// https://github.com/willmcpo/body-scroll-lock#allowtouchmove
 				allowTouchMove: el => {
 					while (el && el !== document.body) {
-						if (el.dataset.bodyScrollLockIgnore === 'true') {
+						if (el instanceof HTMLElement && el.dataset && el.dataset.bodyScrollLockIgnore === 'true') {
 							return true;
 						}
 
-						el = el.parentNode;
+						el = el.parentElement;
 					}
 					return false;
 				},
