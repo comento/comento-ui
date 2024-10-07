@@ -13,6 +13,8 @@
 		]"
 		:style="[computedPadding]"
 		v-on="$listeners"
+		@mouseover="handleMouseOver"
+		@mouseleave="handleMouseLeave"
 	>
 		<Icon v-if="leftIcon" :name="leftIcon" :color="computedIconColor" class="mr-2" />
 		<slot />
@@ -104,6 +106,11 @@ export default {
 			default: '',
 		},
 	},
+	data() {
+		return {
+			isHovered: false,
+		};
+	},
 	computed: {
 		computedType() {
 			return `${this.type} ${this.type.includes('clickable') ? 'clickable' : ''}`;
@@ -152,6 +159,10 @@ export default {
 				colors: ['success', 'secondary'],
 				types: ['fill', 'clickable-fill'],
 			};
+			if ((this.leftIcon || this.rightIcon) && this.color === 'error' && this.type.includes('fill')) {
+				if (this.isHovered) return 'red800';
+				return this.color;
+			}
 			if (whiteFillConfig.types.includes(this.type) && whiteFillConfig.colors.includes(this.color)) {
 				return 'white';
 			}
@@ -170,6 +181,12 @@ export default {
 		},
 	},
 	methods: {
+		handleMouseOver() {
+			this.isHovered = true;
+		},
+		handleMouseLeave() {
+			this.isHovered = false;
+		},
 		handleClickCloseButton() {
 			this.$emit('clickCloseButton');
 		},
@@ -192,23 +209,14 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				background-color: $gray200;
 			}
 		}
 
-		&.outline {
-			color: $gray700;
-			border: 1px solid $gray400;
-			background-color: $white;
-
-			&.clickable {
-				@include state-style {
-					background-color: $gray100;
-				}
-			}
-		}
+		&.outline,
 		&.clickable-outline {
 			color: $gray700;
 			border: 1px solid $gray400;
@@ -223,34 +231,26 @@ export default {
 	}
 	&.primary {
 		color: $primary;
-		border: 1px solid $light-primary;
-		background-color: $light-primary;
+		border: 1px solid $blue050;
+		background-color: $blue050;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				background-color: $blue400;
 			}
 		}
 
-		&.outline {
-			color: $primary;
-			border: 1px solid $primary;
-			background-color: $white;
-
-			&.clickable {
-				@include state-style {
-					background-color: $blue100;
-				}
-			}
-		}
+		&.outline,
 		&.clickable-outline {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.clickable {
+			&.clickable,
+			&.with-icon {
 				@include state-style {
-					background-color: $blue100;
+					background-color: $blue050;
 				}
 			}
 		}
@@ -260,23 +260,21 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				background-color: $green800;
 			}
 		}
 
-		&.outline {
-			color: $success;
-			border: 1px solid $success;
-			background-color: $white;
-		}
+		&.outline,
 		&.clickable-outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.clickable {
+			&.clickable,
+			&.with-icon {
 				@include state-style {
 					background-color: $green100;
 				}
@@ -288,24 +286,21 @@ export default {
 		border: 1px solid $secondary;
 		background-color: $secondary;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				background-color: $orange800;
 			}
 		}
 
-		&.outline {
-			color: $secondary;
-			border: 1px solid $secondary;
-			background-color: $white;
-		}
-
+		&.outline,
 		&.clickable-outline {
 			color: $secondary;
 			border: 1px solid $secondary;
 			background-color: $white;
 
-			&.clickable {
+			&.clickable,
+			&.with-icon {
 				@include state-style {
 					background-color: $orange100;
 				}
@@ -315,35 +310,27 @@ export default {
 	&.error {
 		color: $error;
 		border: 1px solid $red100;
-		background-color: $red100;
+		background-color: $red050;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				color: $red800;
 				background-color: $red400;
 			}
 		}
-		&.clickable-outline {
-			@include state-style {
-				color: $red600;
-				background-color: $red100;
-			}
-		}
 
-		&.outline {
-			color: $error;
-			border: 1px solid $error;
-			background-color: $white;
-		}
-
+		&.outline,
 		&.clickable-outline {
 			color: $error;
 			border: 1px solid $error;
 			background-color: $white;
 
-			&.clickable {
+			&.clickable,
+			&.with-icon {
 				@include state-style {
-					background-color: $red100;
+					color: $error;
+					background-color: $red050;
 				}
 			}
 		}
@@ -354,69 +341,26 @@ export default {
 	/*사이즈*/
 	&.small {
 		@include caption2();
-		height: 16px;
-		padding: 1.5px 4px;
+		height: 18px;
+		padding: 2.5px 4px;
 		font-weight: $regular;
-		line-height: 16px;
-		&.with-icon {
-			&-both {
-				padding: 1.5px 6px;
-			}
-			&-right {
-				padding-right: 6px;
-			}
-			&-left {
-				padding-left: 6px;
-			}
-		}
+		line-height: 18px;
+
 		&.clickable {
 			@include border-radius(12px);
-			padding: 1.5px 6px;
-			&.with-icon {
-				&-both {
-					padding: 1.5px 6px;
-				}
-				&-right {
-					padding-right: 6px;
-				}
-				&-left {
-					padding-left: 6px;
-				}
-			}
+			padding: 2.5px 6px;
 		}
 	}
 	&.medium {
 		@include caption1();
-		height: 24px;
-		padding: 4.5px 8px;
+		height: 26px;
+		padding: 5.5px 8px;
 		font-weight: $regular;
 		@include border-radius(6px);
-		&.with-icon {
-			&-both {
-				padding: 4.5px 6px;
-			}
-			&-right {
-				padding-right: 6px;
-			}
-			&-left {
-				padding-left: 6px;
-			}
-		}
+
 		&.clickable {
 			@include border-radius(12px);
-			padding: 4.5px 10px;
-			&.with-icon {
-				height: 26px;
-				&-both {
-					padding: 4.5px 8px;
-				}
-				&-right {
-					padding-right: 8px;
-				}
-				&-left {
-					padding-left: 8px;
-				}
-			}
+			padding: 5.5px 10px;
 		}
 		&.c-chip--with-close-button {
 			padding-right: 6px !important;
@@ -424,36 +368,14 @@ export default {
 	}
 	&.large {
 		@include body2();
-		height: 30px;
-		padding: 5px 10px;
+		height: 32px;
+		padding: 6px 10px;
 		font-weight: $regular;
 		@include border-radius(6px);
-		&.with-icon {
-			&-both {
-				padding: 5px 8px;
-			}
-			&-right {
-				padding-right: 8px;
-			}
-			&-left {
-				padding-left: 8px;
-			}
-		}
+
 		&.clickable {
 			@include border-radius(15px);
-			padding: 5px 12px;
-			&.with-icon {
-				height: 32px;
-				&-both {
-					padding: 5px 12px;
-				}
-				&-right {
-					padding-right: 12px;
-				}
-				&-left {
-					padding-left: 12px;
-				}
-			}
+			padding: 6px 12px;
 		}
 		&.c-chip--with-close-button {
 			padding-right: 8px !important;
@@ -461,39 +383,24 @@ export default {
 	}
 	&.xlarge {
 		@include body1();
-		height: 34px;
-		padding: 4.5px 12px;
+		height: 36px;
+		padding: 5.5px 12px;
 		font-weight: $regular;
 		@include border-radius(8px);
-		&.with-icon {
-			&-both {
-				padding: 4.5px 10px;
-			}
-			&-right {
-				padding-right: 10px;
-			}
-			&-left {
-				padding-left: 10px;
-			}
-		}
+
 		&.clickable {
 			@include border-radius(19px);
-			padding: 4.5px 14px;
-			&.with-icon {
-				height: 36px;
-				&-both {
-					padding: 4.5px 14px;
-				}
-				&-right {
-					padding-right: 14px;
-				}
-				&-left {
-					padding-left: 14px;
-				}
-			}
+			padding: 5.5px 14px;
 		}
 		&.c-chip--with-close-button {
 			padding-right: 10px !important;
+		}
+	}
+	&.with-icon {
+		cursor: pointer;
+		&.fill,
+		&.clickable-fill {
+			border-color: transparent !important;
 		}
 	}
 	&.clickable-fill {
