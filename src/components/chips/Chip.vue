@@ -309,7 +309,7 @@ export default {
 	}
 	&.error {
 		color: $error;
-		border: 1px solid $red100;
+		border: 1px solid $red050;
 		background-color: $red050;
 
 		&.clickable,
@@ -361,6 +361,30 @@ export default {
 		&.clickable {
 			@include border-radius(12px);
 			padding: 5.5px 10px;
+			&.with-icon {
+				&-both {
+					padding-left: 8px;
+					padding-right: 8px;
+				}
+				&-left {
+					padding-left: 8px;
+				}
+				&-right {
+					padding-right: 8px;
+				}
+			}
+		}
+		&.with-icon {
+			&-both {
+				padding-left: 6px;
+				padding-right: 6px;
+			}
+			&-left {
+				padding-left: 6px;
+			}
+			&-right {
+				padding-right: 6px;
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 6px !important;
@@ -376,6 +400,30 @@ export default {
 		&.clickable {
 			@include border-radius(15px);
 			padding: 6px 12px;
+			&.with-icon {
+				&-both {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+				&-left {
+					padding-left: 10px;
+				}
+				&-right {
+					padding-right: 10px;
+				}
+			}
+		}
+		&.with-icon {
+			&-both {
+				padding-left: 6px;
+				padding-right: 6px;
+			}
+			&-left {
+				padding-left: 6px;
+			}
+			&-right {
+				padding-right: 6px;
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 8px !important;
@@ -391,6 +439,30 @@ export default {
 		&.clickable {
 			@include border-radius(19px);
 			padding: 5.5px 14px;
+			&.with-icon {
+				&-both {
+					padding-left: 12px;
+					padding-right: 12px;
+				}
+				&-left {
+					padding-left: 12px;
+				}
+				&-right {
+					padding-right: 12px;
+				}
+			}
+		}
+		&.with-icon {
+			&-both {
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+			&-left {
+				padding-left: 8px;
+			}
+			&-right {
+				padding-right: 8px;
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 10px !important;
