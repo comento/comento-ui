@@ -8,16 +8,21 @@
 			computedFull,
 			computedTransparent,
 			computedClickable,
+			computedWithIcon,
 			{ 'c-chip--with-close-button': withCloseButton },
 		]"
 		:style="[computedPadding]"
 		v-on="$listeners"
+		@mouseover="handleMouseOver"
+		@mouseleave="handleMouseLeave"
 	>
+		<Icon v-if="leftIcon" :name="leftIcon" :color="computedIconColor" class="mr-2" />
 		<slot />
+		<Icon v-if="rightIcon" :name="rightIcon" :color="computedIconColor" class="ml-2" />
 		<Icon
 			v-if="withCloseButton"
 			:name="computedCloseButtonIconName"
-			:color="computedCloseButtonColor"
+			:color="computedIconColor"
 			class="ml-4 c-pointer"
 			@click.stop="handleClickCloseButton"
 		/>
@@ -92,6 +97,19 @@ export default {
 		withCloseButton: {
 			type: Boolean,
 		},
+		leftIcon: {
+			type: String,
+			default: '',
+		},
+		rightIcon: {
+			type: String,
+			default: '',
+		},
+	},
+	data() {
+		return {
+			isHovered: false,
+		};
 	},
 	computed: {
 		computedType() {
@@ -136,18 +154,39 @@ export default {
 			}[this.size];
 			return `IconClose${closeButtonIconSize[0] + closeButtonIconSize.slice(1)}Line`;
 		},
-		computedCloseButtonColor() {
+		computedIconColor() {
 			const whiteFillConfig = {
 				colors: ['success', 'secondary'],
 				types: ['fill', 'clickable-fill'],
 			};
+			if ((this.leftIcon || this.rightIcon) && this.color === 'error' && this.type.includes('fill')) {
+				if (this.isHovered) return 'red800';
+				return this.color;
+			}
 			if (whiteFillConfig.types.includes(this.type) && whiteFillConfig.colors.includes(this.color)) {
 				return 'white';
 			}
 			return this.color;
 		},
+		computedWithIcon() {
+			if (this.leftIcon && this.rightIcon) {
+				return 'with-icon with-icon-both';
+			} else if (this.leftIcon) {
+				return 'with-icon with-icon-left';
+			} else if (this.rightIcon) {
+				return 'with-icon with-icon-right';
+			} else {
+				return '';
+			}
+		},
 	},
 	methods: {
+		handleMouseOver() {
+			this.isHovered = true;
+		},
+		handleMouseLeave() {
+			this.isHovered = false;
+		},
 		handleClickCloseButton() {
 			this.$emit('clickCloseButton');
 		},
@@ -170,23 +209,14 @@ export default {
 		border: 1px solid $gray100;
 		background-color: $gray100;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				background-color: $gray200;
 			}
 		}
 
-		&.outline {
-			color: $gray700;
-			border: 1px solid $gray400;
-			background-color: $white;
-
-			&.clickable {
-				@include state-style {
-					background-color: $gray100;
-				}
-			}
-		}
+		&.outline,
 		&.clickable-outline {
 			color: $gray700;
 			border: 1px solid $gray400;
@@ -201,34 +231,26 @@ export default {
 	}
 	&.primary {
 		color: $primary;
-		border: 1px solid $light-primary;
-		background-color: $light-primary;
+		border: 1px solid $blue050;
+		background-color: $blue050;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				background-color: $blue400;
 			}
 		}
 
-		&.outline {
-			color: $primary;
-			border: 1px solid $primary;
-			background-color: $white;
-
-			&.clickable {
-				@include state-style {
-					background-color: $blue100;
-				}
-			}
-		}
+		&.outline,
 		&.clickable-outline {
 			color: $primary;
 			border: 1px solid $primary;
 			background-color: $white;
 
-			&.clickable {
+			&.clickable,
+			&.with-icon {
 				@include state-style {
-					background-color: $blue100;
+					background-color: $blue050;
 				}
 			}
 		}
@@ -238,23 +260,21 @@ export default {
 		border: 1px solid $success;
 		background-color: $success;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				background-color: $green800;
 			}
 		}
 
-		&.outline {
-			color: $success;
-			border: 1px solid $success;
-			background-color: $white;
-		}
+		&.outline,
 		&.clickable-outline {
 			color: $success;
 			border: 1px solid $success;
 			background-color: $white;
 
-			&.clickable {
+			&.clickable,
+			&.with-icon {
 				@include state-style {
 					background-color: $green100;
 				}
@@ -266,24 +286,21 @@ export default {
 		border: 1px solid $secondary;
 		background-color: $secondary;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				background-color: $orange800;
 			}
 		}
 
-		&.outline {
-			color: $secondary;
-			border: 1px solid $secondary;
-			background-color: $white;
-		}
-
+		&.outline,
 		&.clickable-outline {
 			color: $secondary;
 			border: 1px solid $secondary;
 			background-color: $white;
 
-			&.clickable {
+			&.clickable,
+			&.with-icon {
 				@include state-style {
 					background-color: $orange100;
 				}
@@ -292,36 +309,28 @@ export default {
 	}
 	&.error {
 		color: $error;
-		border: 1px solid $red100;
-		background-color: $red100;
+		border: 1px solid $red050;
+		background-color: $red050;
 
-		&.clickable {
+		&.clickable,
+		&.with-icon {
 			@include state-style {
 				color: $red800;
 				background-color: $red400;
 			}
 		}
-		&.clickable-outline {
-			@include state-style {
-				color: $red600;
-				background-color: $red100;
-			}
-		}
 
-		&.outline {
-			color: $error;
-			border: 1px solid $error;
-			background-color: $white;
-		}
-
+		&.outline,
 		&.clickable-outline {
 			color: $error;
 			border: 1px solid $error;
 			background-color: $white;
 
-			&.clickable {
+			&.clickable,
+			&.with-icon {
 				@include state-style {
-					background-color: $red100;
+					color: $error;
+					background-color: $red050;
 				}
 			}
 		}
@@ -332,24 +341,50 @@ export default {
 	/*사이즈*/
 	&.small {
 		@include caption2();
-		height: 16px;
-		padding: 1.5px 4px;
+		height: 18px;
+		padding: 2.5px 4px;
 		font-weight: $regular;
-		line-height: 16px;
+		line-height: 18px;
+
 		&.clickable {
 			@include border-radius(12px);
-			padding: 1.5px 6px;
+			padding: 2.5px 6px;
 		}
 	}
 	&.medium {
 		@include caption1();
-		height: 24px;
-		padding: 4.5px 8px;
+		height: 26px;
+		padding: 5.5px 8px;
 		font-weight: $regular;
 		@include border-radius(6px);
+
 		&.clickable {
 			@include border-radius(12px);
-			padding: 4.5px 10px;
+			padding: 5.5px 10px;
+			&.with-icon {
+				&-both {
+					padding-left: 8px;
+					padding-right: 8px;
+				}
+				&-left {
+					padding-left: 8px;
+				}
+				&-right {
+					padding-right: 8px;
+				}
+			}
+		}
+		&.with-icon {
+			&-both {
+				padding-left: 6px;
+				padding-right: 6px;
+			}
+			&-left {
+				padding-left: 6px;
+			}
+			&-right {
+				padding-right: 6px;
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 6px !important;
@@ -357,36 +392,87 @@ export default {
 	}
 	&.large {
 		@include body2();
-		height: 30px;
-		padding: 5px 10px;
+		height: 32px;
+		padding: 6px 10px;
 		font-weight: $regular;
 		@include border-radius(6px);
+
 		&.clickable {
 			@include border-radius(15px);
-			padding: 5px 12px;
+			padding: 6px 12px;
+			&.with-icon {
+				&-both {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+				&-left {
+					padding-left: 10px;
+				}
+				&-right {
+					padding-right: 10px;
+				}
+			}
+		}
+		&.with-icon {
+			&-both {
+				padding-left: 6px;
+				padding-right: 6px;
+			}
+			&-left {
+				padding-left: 6px;
+			}
+			&-right {
+				padding-right: 6px;
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 8px !important;
-		}
-		&.c-chip--with-close-button {
-			padding-right: 6px !important;
 		}
 	}
 	&.xlarge {
 		@include body1();
-		height: 34px;
-		padding: 4.5px 12px;
+		height: 36px;
+		padding: 5.5px 12px;
 		font-weight: $regular;
 		@include border-radius(8px);
+
 		&.clickable {
 			@include border-radius(19px);
-			padding: 4.5px 14px;
+			padding: 5.5px 14px;
+			&.with-icon {
+				&-both {
+					padding-left: 12px;
+					padding-right: 12px;
+				}
+				&-left {
+					padding-left: 12px;
+				}
+				&-right {
+					padding-right: 12px;
+				}
+			}
+		}
+		&.with-icon {
+			&-both {
+				padding-left: 8px;
+				padding-right: 8px;
+			}
+			&-left {
+				padding-left: 8px;
+			}
+			&-right {
+				padding-right: 8px;
+			}
 		}
 		&.c-chip--with-close-button {
 			padding-right: 10px !important;
 		}
-		&.c-chip--with-close-button {
-			padding-right: 8px !important;
+	}
+	&.with-icon {
+		cursor: pointer;
+		&.fill,
+		&.clickable-fill {
+			border-color: transparent !important;
 		}
 	}
 	&.clickable-fill {
