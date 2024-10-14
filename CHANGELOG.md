@@ -1,3 +1,18 @@
+# [1.7.0](https://github.com/comento/comento-ui/compare/v1.6.8...v1.7.0) (2024-10-14)
+
+
+### Bug Fixes
+
+* allowTouchMove에서 오류 발생 수정 ([#1166](https://github.com/comento/comento-ui/issues/1166)) ([ef54e70](https://github.com/comento/comento-ui/commit/ef54e70c547d7e6294419fb22def2afddd896663))
+* Modal, BottomDrawer, SideDrawer beforeDestroy 추가 ([#1168](https://github.com/comento/comento-ui/issues/1168)) ([f11929e](https://github.com/comento/comento-ui/commit/f11929e009d88b1ca942efa29bbc1506e46ddecb))
+
+
+### Features
+
+* chip 컴포넌트 수정 반영 ([#1167](https://github.com/comento/comento-ui/issues/1167)) ([64302d2](https://github.com/comento/comento-ui/commit/64302d2e2b85b19f41c804e393c646755bc6e74f)), closes [/comento.agit.io/g/300257914/wall/347071764#comment_panel_348516572](https://github.com//comento.agit.io/g/300257914/wall/347071764/issues/comment_panel_348516572)
+
+
+
 ## [1.6.8](https://github.com/comento/comento-ui/compare/v1.6.7...v1.6.8) (2024-09-10)
 
 
