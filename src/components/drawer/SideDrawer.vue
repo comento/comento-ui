@@ -54,6 +54,9 @@ export default {
 			this.$_handleNotScroll(this.showDrawer);
 		},
 	},
+	beforeDestroy() {
+		this.$_handleNotScroll(false);
+	},
 	methods: {
 		toggle() {
 			this.showDrawer = !this.showDrawer;
