@@ -1,6 +1,7 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Chip, { ChipColors, ChipSizes, ChipTypes, ChipSizesWithCloseButton } from '@/components/chips/Chip';
 import Typography from "@/components/typography/Typography";
+import Icon, { IconNames } from '@/components/icon/Icon';
 
 <Meta
     title="Data Display/Chip/Chip"
@@ -62,6 +63,22 @@ import Typography from "@/components/typography/Typography";
         clickable: {
             description: "click 가능한 chip인지"
         },
+        leftIcon: {
+            description: "왼쪽 아이콘",
+            defaultValue: "",
+            control: {
+                type: "select",
+                options: IconNames,
+            },
+        },
+        rightIcon: {
+            description: "오른쪽 아이콘",
+            defaultValue: "",
+            control: {
+                type: "select",
+                options: IconNames,
+            },
+        },
     }}
 />
 
@@ -69,7 +86,7 @@ export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { Chip },
     template:
-        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent" :with-close-button="withCloseButton" :clickable="clickable">{{text}}</Chip>`,
+        `<Chip :type="type" :size="size" :color="color" :full="full" :paddings="paddings" :transparent="transparent" :with-close-button="withCloseButton" :clickable="clickable" :left-icon="leftIcon" :right-icon="rightIcon">{{text}}</Chip>`,
 });
 
 # Chip
@@ -106,7 +123,26 @@ export const Basic = (args, { argTypes }) => ({
                             </template>
                         </div>
                     </template>
+                <div class="mt-80">
+                    <h2>withIcon.ver</h2>
+                    <template v-for="(type, index) in ChipTypes">
+                        <div class="mb-18">
+                            <template v-for="(color, index) in ChipColors">
+                                <div class="flex">
+                                    <div class="flex-row mr-30 mb-8">
+                                        <template v-for="(size, index) in ChipSizes">
+                                            <Chip left-icon="IconBookmarkSmallLine" :type="type" :color="color" :size="size" class="mr-8">Chip</Chip>
+                                        </template>
+                                        <template v-for="(size, index) in ChipSizesWithCloseButton">
+                                            <Chip right-icon="IconBookmarkSmallFill" :type="type" :color="color" :size="size" class="mr-8" @clickCloseButton="handleClickChipClosebutton" @click="handleClick">Chip</Chip>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
                 </div>
+            </div>
             `,
             data() {
                 return {
