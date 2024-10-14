@@ -58,6 +58,9 @@ export default {
 			this.$_handleNotScroll(this.show);
 		},
 	},
+	beforeDestroy() {
+		this.$_handleNotScroll(false);
+	},
 	methods: {
 		handleCloseModal() {
 			if (!this.persistent) {

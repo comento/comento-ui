@@ -88,6 +88,9 @@ export default {
 			this.$_handleNotScroll(this.showDrawer);
 		},
 	},
+	beforeDestroy() {
+		this.$_handleNotScroll(false);
+	},
 	components: {
 		Drawer,
 		Typography,
