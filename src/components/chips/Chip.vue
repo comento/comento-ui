@@ -171,12 +171,7 @@ export default {
 				this.color === 'error' && this.type === 'fill' && this.computedHasIcon && this.isHovered;
 
 			if (isDarkTheme) {
-				if (this.color === 'primary') {
-					return 'blue800';
-				}
-				if (this.color === 'error') {
-					return 'red800';
-				}
+				return this.color === 'primary' ? 'blue800' : 'red800';
 			}
 
 			if (isExceptionDarkThemeCase) {
