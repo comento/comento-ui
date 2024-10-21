@@ -196,7 +196,7 @@ export default {
 			}
 		},
 		computedHasIcon() {
-			return this.leftIcon || this.rightIcon;
+			return !!this.leftIcon || !!this.rightIcon;
 		},
 	},
 	methods: {
