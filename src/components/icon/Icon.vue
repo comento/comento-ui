@@ -261,15 +261,15 @@ import IconVolumeXLargeLine from '@/assets/images/icon/xlarge/icon-volume-xlarge
 import IconWritingXLargeLine from '@/assets/images/icon/xlarge/icon-writing-xlarge-line.svg?inline';
 import IconPlusXLargeLine from '@/assets/images/icon/xlarge/icon-plus-xlarge-line.svg?inline';
 import IconDownXLargeLine from '@/assets/images/icon/xlarge/icon-down-xlarge-line.svg?inline';
-import IconAlarmCelebrate from '@/assets/images/icon/xlarge/icon-alarm-celebrate.svg?inline';
-import IconAlarmWon from '@/assets/images/icon/xlarge/icon-alarm-won.svg?inline';
-import IconAlarmCreditPlus from '@/assets/images/icon/xlarge/icon-alarm-creditPlus.svg?inline';
-import IconAlarmAnswer from '@/assets/images/icon/xlarge/icon-alarm-answer.svg?inline';
-import IconAlarmQuestion from '@/assets/images/icon/xlarge/icon-alarm-question.svg?inline';
-import IconAlarmLike from '@/assets/images/icon/xlarge/icon-alarm-like.svg?inline';
-import IconAlarmSelected from '@/assets/images/icon/xlarge/icon-alarm-selected.svg?inline';
-import IconAlarmAssignment from '@/assets/images/icon/xlarge/icon-alarm-assignment.svg?inline';
-import IconAlarmNotice from '@/assets/images/icon/xlarge/icon-alarm-notice.svg?inline';
+import IconAlarmCelebrateXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-celebrate.svg?inline';
+import IconAlarmWonXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-won.svg?inline';
+import IconAlarmCreditPlusXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-creditPlus.svg?inline';
+import IconAlarmAnswerXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-answer.svg?inline';
+import IconAlarmQuestionXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-question.svg?inline';
+import IconAlarmLikeXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-like.svg?inline';
+import IconAlarmSelectedXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-selected.svg?inline';
+import IconAlarmAssignmentXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-assignment.svg?inline';
+import IconAlarmNoticeXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-notice.svg?inline';
 import IconExportXLargeLine from '@/assets/images/icon/xlarge/icon-export-xlarge-line.svg?inline';
 import IconFileXLargeLine from '@/assets/images/icon/xlarge/icon-file-xlarge-line.svg?inline';
 import IconImportXLargeLine from '@/assets/images/icon/xlarge/icon-import-xlarge-line.svg?inline';
@@ -577,15 +577,15 @@ export const IconNames = [
 	'IconWritingXLargeLine',
 	'IconPlusXLargeLine',
 	'IconDownXLargeLine',
-	'IconAlarmCelebrate',
-	'IconAlarmWon',
-	'IconAlarmCreditPlus',
-	'IconAlarmAnswer',
-	'IconAlarmQuestion',
-	'IconAlarmLike',
-	'IconAlarmSelected',
-	'IconAlarmAssignment',
-	'IconAlarmNotice',
+	'IconAlarmCelebrateXLargeFill',
+	'IconAlarmWonXLargeFill',
+	'IconAlarmCreditPlusXLargeFill',
+	'IconAlarmAnswerXLargeFill',
+	'IconAlarmQuestionXLargeFill',
+	'IconAlarmLikeXLargeFill',
+	'IconAlarmSelectedXLargeFill',
+	'IconAlarmAssignmentXLargeFill',
+	'IconAlarmNoticeXLargeFill',
 	'IconExportXLargeLine',
 	'IconFileXLargeLine',
 	'IconImportXLargeLine',
@@ -906,15 +906,15 @@ export default {
 		IconWritingXLargeLine,
 		IconPlusXLargeLine,
 		IconDownXLargeLine,
-		IconAlarmCelebrate,
-		IconAlarmWon,
-		IconAlarmCreditPlus,
-		IconAlarmAnswer,
-		IconAlarmQuestion,
-		IconAlarmLike,
-		IconAlarmSelected,
-		IconAlarmAssignment,
-		IconAlarmNotice,
+		IconAlarmCelebrateXLargeFill,
+		IconAlarmWonXLargeFill,
+		IconAlarmCreditPlusXLargeFill,
+		IconAlarmAnswerXLargeFill,
+		IconAlarmQuestionXLargeFill,
+		IconAlarmLikeXLargeFill,
+		IconAlarmSelectedXLargeFill,
+		IconAlarmAssignmentXLargeFill,
+		IconAlarmNoticeXLargeFill,
 		IconExportXLargeLine,
 		IconFileXLargeLine,
 		IconImportXLargeLine,
