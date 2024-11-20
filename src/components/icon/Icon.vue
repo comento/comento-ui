@@ -104,12 +104,69 @@ import IconBadSmallLine from '@/assets/images/icon/small/icon-bad-small-line.svg
 import IconSearchSmallLine from '@/assets/images/icon/small/icon-search-small-line.svg?inline';
 import IconShareSmallLine from '@/assets/images/icon/small/icon-share-small-line.svg?inline';
 import IconSkipSmallFill from '@/assets/images/icon/small/icon-skip-small-fill.svg?inline';
+import IconSettingSmallLine from '@/assets/images/icon/small/icon-setting-small-line.svg?inline';
+import IconMenuSmallLine from '@/assets/images/icon/small/icon-menu-small-line.svg?inline';
+import IconDownSmallLine from '@/assets/images/icon/small/icon-down-small-line.svg?inline';
+import IconGoodSmallFill from '@/assets/images/icon/small/icon-good-small-fill.svg?inline';
+import IconBadSmallFill from '@/assets/images/icon/small/icon-bad-small-fiil.svg?inline';
+import IconNextSmallLine from '@/assets/images/icon/small/icon-next-small-line.svg?inline';
 
 // medium
 import IconLikeMediumLine from '@/assets/images/icon/medium/icon-like-medium-line.svg?inline';
 import IconLikeMediumFill from '@/assets/images/icon/medium/icon-like-medium-fill.svg?inline';
 import IconArrowUpRoundMediumLine from '@/assets/images/icon/medium/icon-arrowUpRound-medium-line.svg?inline';
 import IconArrowUpRoundMediumFill from '@/assets/images/icon/medium/icon-arrowUpRound-medium-fill.svg?inline';
+import IconLoadingMediumFill from '@/assets/images/icon/medium/icon-loading-medium-fill.svg?inline';
+import IconExclamationMediumLine from '@/assets/images/icon/medium/icon-exclamation-medium-line.svg?inline';
+import IconExclamationMediumFill from '@/assets/images/icon/medium/icon-exclamation-medium-fill.svg?inline';
+import IconCheckMediumLine from '@/assets/images/icon/medium/icon-check-medium-line.svg?inline';
+import IconArrowMediumLine from '@/assets/images/icon/medium/icon-arrow-medium-line.svg?inline';
+import IconTextArrowMediumLine from '@/assets/images/icon/medium/icon-textArrow-medium-line.svg?inline';
+import IconRevertMediumLine from '@/assets/images/icon/medium/icon-revert-medium-line.svg?inline';
+import IconPlusMediumLine from '@/assets/images/icon/medium/icon-plus-medium-line.svg?inline';
+import IconMinusMediumLine from '@/assets/images/icon/medium/icon-minus-medium-line.svg?inline';
+import IconCloseMediumLine from '@/assets/images/icon/medium/icon-close-medium-line.svg?inline';
+import IconFilterMediumLine from '@/assets/images/icon/medium/icon-filter-medium-line.svg?inline';
+import IconBookmarkMediumLine from '@/assets/images/icon/medium/icon-bookmark-medium-line.svg?inline';
+import IconBookmarkMediumFill from '@/assets/images/icon/medium/icon-bookmark-medium-fill.svg?inline';
+import IconShareMediumLine from '@/assets/images/icon/medium/icon-share-medium-line.svg?inline';
+import IconCheckRoundMediumLine from '@/assets/images/icon/medium/icon-checkRound-medium-line.svg?inline';
+import IconCheckRoundMediumFill from '@/assets/images/icon/medium/icon-checkRound-medium-fill.svg?inline';
+import IconQuestionMarkMediumLine from '@/assets/images/icon/medium/icon-questionMark-medium-line.svg?inline';
+import IconQuestionMarkMediumFill from '@/assets/images/icon/medium/icon-questionMark-medium-fill.svg?inline';
+import IconInformationMediumLine from '@/assets/images/icon/medium/icon-information-medium-line.svg?inline';
+import IconInformationMediumFill from '@/assets/images/icon/medium/icon-information-medium-fill.svg?inline';
+import IconCloseRoundMediumLine from '@/assets/images/icon/medium/icon-closeRound-medium-line.svg?inline';
+import IconCloseRoundMediumFill from '@/assets/images/icon/medium/icon-closeRound-medium-fill.svg?inline';
+import IconPlusRoundMediumLine from '@/assets/images/icon/medium/icon-plusRound-medium-line.svg?inline';
+import IconArrowRoundMediumLine from '@/assets/images/icon/medium/icon-arrowRound-medium-line.svg?inline';
+import IconCouponMediumLine from '@/assets/images/icon/medium/icon-coupon-medium-line.svg?inline';
+import IconLockMediumLine from '@/assets/images/icon/medium/icon-lock-medium-line.svg?inline';
+import IconLockMediumFill from '@/assets/images/icon/medium/icon-lock-medium-fill.svg?inline';
+import IconImportMediumLine from '@/assets/images/icon/medium/icon-import-medium-line.svg?inline';
+import IconLinkMediumLine from '@/assets/images/icon/medium/icon-link-medium-line.svg?inline';
+import IconDownloadMediumLine from '@/assets/images/icon/medium/icon-download-medium-line.svg?inline';
+import IconTrashMediumLine from '@/assets/images/icon/medium/icon-trash-medium-line.svg?inline';
+import IconLocationMediumLine from '@/assets/images/icon/medium/icon-location-medium-line.svg?inline';
+import IconLocationMediumFill from '@/assets/images/icon/medium/icon-location-medium-fill.svg?inline';
+import IconSupportMediumLine from '@/assets/images/icon/medium/icon-support-medium-line.svg?inline';
+import IconMegaphoneMediumLine from '@/assets/images/icon/medium/icon-megaphone-medium-line.svg?inline';
+import IconExportMediumLine from '@/assets/images/icon/medium/icon-export-medium-line.svg?inline';
+import IconStarMediumLine from '@/assets/images/icon/medium/icon-star-medium-line.svg?inline';
+import IconStarMediumFill from '@/assets/images/icon/medium/icon-star-medium-fill.svg?inline';
+import IconThreeDotsMediumFill from '@/assets/images/icon/medium/icon-threeDot-medium-fill.svg?inline';
+import IconWritingMediumLine from '@/assets/images/icon/medium/icon-writing-medium-line.svg?inline';
+import IconSearchMediumLine from '@/assets/images/icon/medium/icon-search-medium-line.svg?inline';
+import IconFileMediumLine from '@/assets/images/icon/medium/icon-file-medium-line.svg?inline';
+import IconProfileMediumLine from '@/assets/images/icon/medium/icon-profile-medium-line.svg?inline';
+import IconProfileMediumFill from '@/assets/images/icon/medium/icon-profile-medium-fill.svg?inline';
+import IconVodMediumLine from '@/assets/images/icon/medium/icon-vod-medium-line.svg?inline';
+import IconCommentMediumLine from '@/assets/images/icon/medium/icon-comment-medium-line.svg?inline';
+import IconSettingMediumLine from '@/assets/images/icon/medium/icon-setting-medium-line.svg?inline';
+import IconSecurityMediumLine from '@/assets/images/icon/medium/icon-security-medium-line.svg?inline';
+import IconSecurityMediumFill from '@/assets/images/icon/medium/icon-security-medium-fill.svg?inline';
+import IconSendMediumFill from '@/assets/images/icon/medium/icon-send-medium-fill.svg?inline';
+import IconReplyMediumLine from '@/assets/images/icon/medium/icon-reply-medium-line.svg?inline';
 
 // large
 import IconProfileLargeLine from '@/assets/images/icon/large/icon-profile-large-line.svg?inline';
@@ -171,6 +228,14 @@ import IconClassLargeLine from '@/assets/images/icon/large/icon-class-large-line
 import IconBusinessCaseLargeLine from '@/assets/images/icon/large/icon-businessCase-large-line.svg?inline';
 import IconBuildingLargeLine from '@/assets/images/icon/large/icon-building-large-line.svg?inline';
 import IconTaskLargeLine from '@/assets/images/icon/large/icon-task-large-line.svg?inline';
+import IconFeedLargeLine from '@/assets/images/icon/large/icon-feed-large-line.svg?inline';
+import IconImportHistoryLargeLine from '@/assets/images/icon/large/icon-importHistory-large-line.svg?inline';
+import IconGuideBookLargeLine from '@/assets/images/icon/large/icon-guidebook-large-line.svg?inline';
+import IconExitLargeLine from '@/assets/images/icon/large/icon-exit-large-line.svg?inline';
+import IconArrowUpRoundLargeLine from '@/assets/images/icon/large/icon-arrowUpRound-large-line.svg?inline';
+import IconArrowUpRoundLargeFill from '@/assets/images/icon/large/icon-arrowUpRound-large-fill.svg?inline';
+import IconCloseRoundLargeLine from '@/assets/images/icon/large/icon-closeRound-large-line.svg?inline';
+import IconCloseRoundLargeFill from '@/assets/images/icon/large/icon-closeRound-large-fill.svg?inline';
 
 // x-large
 import IconProfileXLargeLine from '@/assets/images/icon/xlarge/icon-profile-xlarge-line.svg?inline';
@@ -193,6 +258,29 @@ import IconBookmarkXLargeLine from '@/assets/images/icon/xlarge/icon-bookMark-xl
 import IconDownloadXLargeLine from '@/assets/images/icon/xlarge/icon-download-xlarge-line.svg?inline';
 import IconMuteXLargeLine from '@/assets/images/icon/xlarge/icon-mute-xlarge-line.svg?inline';
 import IconVolumeXLargeLine from '@/assets/images/icon/xlarge/icon-volume-xlarge-line.svg?inline';
+import IconWritingXLargeLine from '@/assets/images/icon/xlarge/icon-writing-xlarge-line.svg?inline';
+import IconPlusXLargeLine from '@/assets/images/icon/xlarge/icon-plus-xlarge-line.svg?inline';
+import IconDownXLargeLine from '@/assets/images/icon/xlarge/icon-down-xlarge-line.svg?inline';
+import IconAlarmCelebrateXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-celebrate.svg?inline';
+import IconAlarmWonXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-won.svg?inline';
+import IconAlarmCreditPlusXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-creditPlus.svg?inline';
+import IconAlarmAnswerXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-answer.svg?inline';
+import IconAlarmQuestionXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-question.svg?inline';
+import IconAlarmLikeXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-like.svg?inline';
+import IconAlarmSelectedXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-selected.svg?inline';
+import IconAlarmAssignmentXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-assignment.svg?inline';
+import IconAlarmNoticeXLargeFill from '@/assets/images/icon/xlarge/icon-alarm-notice.svg?inline';
+import IconExportXLargeLine from '@/assets/images/icon/xlarge/icon-export-xlarge-line.svg?inline';
+import IconFileXLargeLine from '@/assets/images/icon/xlarge/icon-file-xlarge-line.svg?inline';
+import IconImportXLargeLine from '@/assets/images/icon/xlarge/icon-import-xlarge-line.svg?inline';
+import IconLockXLargeLine from '@/assets/images/icon/xlarge/icon-lock-xlarge-line.svg?inline';
+import IconLockXLargeFill from '@/assets/images/icon/xlarge/icon-lock-xlarge-fill.svg?inline';
+import IconLocationXLargeLine from '@/assets/images/icon/xlarge/icon-location-xlarge-line.svg?inline';
+import IconLocationXLargeFill from '@/assets/images/icon/xlarge/icon-location-xlarge-fill.svg?inline';
+import IconFilterXLargeLine from '@/assets/images/icon/xlarge/icon-filter-xlarge-line.svg?inline';
+import IconMegaphoneXLargeLine from '@/assets/images/icon/xlarge/icon-megaphone-xlarge-line.svg?inline';
+import IconThreeDotXLargeLine from '@/assets/images/icon/xlarge/icon-threeDot-xlarge-line.svg?inline';
+import IconArrowRoundXLargeLine from '@/assets/images/icon/xlarge/icon-arrowRound-xlarge-line.svg?inline';
 
 // 2x-large
 import IconProfile2XLargeFill from '@/assets/images/icon/2xlarge/icon-profile-2xlarge-fill.svg?inline';
@@ -209,6 +297,7 @@ import IconPhoto2XLargeLine from '@/assets/images/icon/2xlarge/icon-photo-2xlarg
 import IconSupport2XLargeLine from '@/assets/images/icon/2xlarge/icon-support-2xlarge-line.svg?inline';
 import IconPlus2XLargeLine from '@/assets/images/icon/2xlarge/icon-plus-2xlarge-line.svg?inline';
 import IconBag2XLargeLine from '@/assets/images/icon/2xlarge/icon-bag-2xlarge-line.svg?inline';
+import IconSend2XLargeFill from '@/assets/images/icon/2xlarge/icon-send-2xlarge-fill.svg?inline';
 
 // 4x-large
 import IconJob4XLargeLine from '@/assets/images/icon/4xlarge/icon-job-4xlarge-line.svg?inline';
@@ -329,12 +418,69 @@ export const IconNames = [
 	'IconSearchSmallLine',
 	'IconShareSmallLine',
 	'IconSkipSmallFill',
+	'IconSettingSmallLine',
+	'IconMenuSmallLine',
+	'IconDownSmallLine',
+	'IconGoodSmallFill',
+	'IconBadSmallFill',
+	'IconNextSmallLine',
 
 	// medium
 	'IconLikeMediumLine',
 	'IconLikeMediumFill',
 	'IconArrowUpRoundMediumLine',
 	'IconArrowUpRoundMediumFill',
+	'IconLoadingMediumFill',
+	'IconExclamationMediumLine',
+	'IconExclamationMediumFill',
+	'IconCheckMediumLine',
+	'IconArrowMediumLine',
+	'IconTextArrowMediumLine',
+	'IconRevertMediumLine',
+	'IconPlusMediumLine',
+	'IconMinusMediumLine',
+	'IconCloseMediumLine',
+	'IconFilterMediumLine',
+	'IconBookmarkMediumLine',
+	'IconBookmarkMediumFill',
+	'IconShareMediumLine',
+	'IconCheckRoundMediumLine',
+	'IconCheckRoundMediumFill',
+	'IconQuestionMarkMediumLine',
+	'IconQuestionMarkMediumFill',
+	'IconInformationMediumLine',
+	'IconInformationMediumFill',
+	'IconCloseRoundMediumLine',
+	'IconCloseRoundMediumFill',
+	'IconPlusRoundMediumLine',
+	'IconArrowRoundMediumLine',
+	'IconCouponMediumLine',
+	'IconLockMediumLine',
+	'IconLockMediumFill',
+	'IconImportMediumLine',
+	'IconLinkMediumLine',
+	'IconDownloadMediumLine',
+	'IconTrashMediumLine',
+	'IconLocationMediumLine',
+	'IconLocationMediumFill',
+	'IconSupportMediumLine',
+	'IconMegaphoneMediumLine',
+	'IconExportMediumLine',
+	'IconStarMediumLine',
+	'IconStarMediumFill',
+	'IconThreeDotsMediumFill',
+	'IconWritingMediumLine',
+	'IconSearchMediumLine',
+	'IconFileMediumLine',
+	'IconProfileMediumLine',
+	'IconProfileMediumFill',
+	'IconVodMediumLine',
+	'IconCommentMediumLine',
+	'IconSettingMediumLine',
+	'IconSecurityMediumLine',
+	'IconSecurityMediumFill',
+	'IconSendMediumFill',
+	'IconReplyMediumLine',
 
 	// large
 	'IconProfileLargeLine',
@@ -395,6 +541,14 @@ export const IconNames = [
 	'IconClassLargeLine',
 	'IconBusinessCaseLargeLine',
 	'IconTaskLargeLine',
+	'IconFeedLargeLine',
+	'IconImportHistoryLargeLine',
+	'IconGuideBookLargeLine',
+	'IconExitLargeLine',
+	'IconArrowUpRoundLargeLine',
+	'IconArrowUpRoundLargeFill',
+	'IconCloseRoundLargeLine',
+	'IconCloseRoundLargeFill',
 
 	// XLarge
 	'IconProfileXLargeLine',
@@ -420,6 +574,29 @@ export const IconNames = [
 	'IconClassLargeLine',
 	'IconBusinessCaseLargeLine',
 	'IconBuildingLargeLine',
+	'IconWritingXLargeLine',
+	'IconPlusXLargeLine',
+	'IconDownXLargeLine',
+	'IconAlarmCelebrateXLargeFill',
+	'IconAlarmWonXLargeFill',
+	'IconAlarmCreditPlusXLargeFill',
+	'IconAlarmAnswerXLargeFill',
+	'IconAlarmQuestionXLargeFill',
+	'IconAlarmLikeXLargeFill',
+	'IconAlarmSelectedXLargeFill',
+	'IconAlarmAssignmentXLargeFill',
+	'IconAlarmNoticeXLargeFill',
+	'IconExportXLargeLine',
+	'IconFileXLargeLine',
+	'IconImportXLargeLine',
+	'IconLockXLargeLine',
+	'IconLockXLargeFill',
+	'IconLocationXLargeLine',
+	'IconLocationXLargeFill',
+	'IconFilterXLargeLine',
+	'IconMegaphoneXLargeLine',
+	'IconThreeDotXLargeLine',
+	'IconArrowRoundXLargeLine',
 
 	//2x-large
 	'IconProfile2XLargeFill',
@@ -436,6 +613,7 @@ export const IconNames = [
 	'IconSupport2XLargeLine',
 	'IconPlus2XLargeLine',
 	'IconBag2XLargeLine',
+	'IconSend2XLargeFill',
 
 	//4x-large
 	'IconJob4XLargeLine',
@@ -571,12 +749,69 @@ export default {
 		IconSearchSmallLine,
 		IconShareSmallLine,
 		IconSkipSmallFill,
+		IconSettingSmallLine,
+		IconMenuSmallLine,
+		IconDownSmallLine,
+		IconGoodSmallFill,
+		IconBadSmallFill,
+		IconNextSmallLine,
 
 		// medium
 		IconLikeMediumLine,
 		IconLikeMediumFill,
 		IconArrowUpRoundMediumLine,
 		IconArrowUpRoundMediumFill,
+		IconLoadingMediumFill,
+		IconExclamationMediumLine,
+		IconExclamationMediumFill,
+		IconCheckMediumLine,
+		IconArrowMediumLine,
+		IconTextArrowMediumLine,
+		IconRevertMediumLine,
+		IconPlusMediumLine,
+		IconMinusMediumLine,
+		IconCloseMediumLine,
+		IconFilterMediumLine,
+		IconBookmarkMediumLine,
+		IconBookmarkMediumFill,
+		IconShareMediumLine,
+		IconCheckRoundMediumLine,
+		IconCheckRoundMediumFill,
+		IconQuestionMarkMediumLine,
+		IconQuestionMarkMediumFill,
+		IconInformationMediumLine,
+		IconInformationMediumFill,
+		IconCloseRoundMediumLine,
+		IconCloseRoundMediumFill,
+		IconPlusRoundMediumLine,
+		IconArrowRoundMediumLine,
+		IconCouponMediumLine,
+		IconLockMediumLine,
+		IconLockMediumFill,
+		IconImportMediumLine,
+		IconLinkMediumLine,
+		IconDownloadMediumLine,
+		IconTrashMediumLine,
+		IconLocationMediumLine,
+		IconLocationMediumFill,
+		IconSupportMediumLine,
+		IconMegaphoneMediumLine,
+		IconExportMediumLine,
+		IconStarMediumLine,
+		IconStarMediumFill,
+		IconThreeDotsMediumFill,
+		IconWritingMediumLine,
+		IconSearchMediumLine,
+		IconFileMediumLine,
+		IconProfileMediumLine,
+		IconProfileMediumFill,
+		IconVodMediumLine,
+		IconCommentMediumLine,
+		IconSettingMediumLine,
+		IconSecurityMediumLine,
+		IconSecurityMediumFill,
+		IconSendMediumFill,
+		IconReplyMediumLine,
 
 		// large
 		IconProfileLargeLine,
@@ -638,6 +873,14 @@ export default {
 		IconBusinessCaseLargeLine,
 		IconBuildingLargeLine,
 		IconTaskLargeLine,
+		IconFeedLargeLine,
+		IconImportHistoryLargeLine,
+		IconGuideBookLargeLine,
+		IconExitLargeLine,
+		IconArrowUpRoundLargeLine,
+		IconArrowUpRoundLargeFill,
+		IconCloseRoundLargeLine,
+		IconCloseRoundLargeFill,
 
 		// x-large
 		IconProfileXLargeLine,
@@ -660,6 +903,29 @@ export default {
 		IconDownloadXLargeLine,
 		IconMuteXLargeLine,
 		IconVolumeXLargeLine,
+		IconWritingXLargeLine,
+		IconPlusXLargeLine,
+		IconDownXLargeLine,
+		IconAlarmCelebrateXLargeFill,
+		IconAlarmWonXLargeFill,
+		IconAlarmCreditPlusXLargeFill,
+		IconAlarmAnswerXLargeFill,
+		IconAlarmQuestionXLargeFill,
+		IconAlarmLikeXLargeFill,
+		IconAlarmSelectedXLargeFill,
+		IconAlarmAssignmentXLargeFill,
+		IconAlarmNoticeXLargeFill,
+		IconExportXLargeLine,
+		IconFileXLargeLine,
+		IconImportXLargeLine,
+		IconLockXLargeLine,
+		IconLockXLargeFill,
+		IconLocationXLargeLine,
+		IconLocationXLargeFill,
+		IconFilterXLargeLine,
+		IconMegaphoneXLargeLine,
+		IconThreeDotXLargeLine,
+		IconArrowRoundXLargeLine,
 
 		// 2x-large
 		IconProfile2XLargeFill,
@@ -676,6 +942,7 @@ export default {
 		IconSupport2XLargeLine,
 		IconPlus2XLargeLine,
 		IconBag2XLargeLine,
+		IconSend2XLargeFill,
 
 		// 4x-large
 		IconJob4XLargeLine,
