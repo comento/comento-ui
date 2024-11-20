@@ -159,13 +159,29 @@ export default {
 				colors: ['success', 'secondary'],
 				types: ['fill', 'clickable-fill'],
 			};
-			if ((this.leftIcon || this.rightIcon) && this.color === 'error' && this.type.includes('fill')) {
-				if (this.isHovered) return 'red800';
-				return this.color;
+			const darkFillConfig = {
+				colors: ['primary', 'error'],
+				types: ['clickable-fill'],
+			};
+
+			const isDarkTheme = darkFillConfig.types.includes(this.type) && this.isHovered;
+			const isWhiteFill =
+				whiteFillConfig.types.includes(this.type) && whiteFillConfig.colors.includes(this.color);
+			const isExceptionDarkThemeCase =
+				this.color === 'error' && this.type === 'fill' && this.computedHasIcon && this.isHovered;
+
+			if (isDarkTheme) {
+				return this.color === 'primary' ? 'blue800' : 'red800';
 			}
-			if (whiteFillConfig.types.includes(this.type) && whiteFillConfig.colors.includes(this.color)) {
+
+			if (isExceptionDarkThemeCase) {
+				return 'red800';
+			}
+
+			if (isWhiteFill) {
 				return 'white';
 			}
+
 			return this.color;
 		},
 		computedWithIcon() {
@@ -178,6 +194,9 @@ export default {
 			} else {
 				return '';
 			}
+		},
+		computedHasIcon() {
+			return !!this.leftIcon || !!this.rightIcon;
 		},
 	},
 	methods: {
@@ -240,6 +259,11 @@ export default {
 				background-color: $blue400;
 			}
 		}
+		&.clickable {
+			@include state-style {
+				color: $blue800;
+			}
+		}
 
 		&.outline,
 		&.clickable-outline {
@@ -251,6 +275,7 @@ export default {
 			&.with-icon {
 				@include state-style {
 					background-color: $blue050;
+					color: $primary;
 				}
 			}
 		}
