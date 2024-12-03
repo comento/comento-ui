@@ -17,7 +17,9 @@
 				:class="getHeaderNavClass(index)"
 				@mouseenter="onMouseEntered(index)"
 			>
-				<nuxt-link v-if="nuxt" v-bind="$attrs" :to="menu.path" v-on="$listeners">{{ menu.name }}</nuxt-link>
+				<nuxt-link v-if="menu.nuxt" v-bind="$attrs" :to="menu.path" v-on="$listeners">{{
+					menu.name
+				}}</nuxt-link>
 				<a v-else v-bind="$attrs" :href="menu.path" v-on="$listeners">{{ menu.name }}</a>
 			</li>
 		</ul>
@@ -41,10 +43,6 @@ export default {
 		hoveredMenu: {
 			type: Number,
 			default: -1,
-		},
-		nuxt: {
-			type: Boolean,
-			default: false,
 		},
 		items: {
 			type: Array,
