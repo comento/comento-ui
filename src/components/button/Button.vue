@@ -42,7 +42,7 @@ import Icon from '@/components/icon/Icon.vue';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
 export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
-export const ghostTypeButtonColors = ['primary', 'info', 'white'];
+export const ghostTypeButtonColors = ['primary', 'info'];
 export const buttonTypes = ['fill', 'outline', 'ghost', 'text', 'fab'];
 
 /**
