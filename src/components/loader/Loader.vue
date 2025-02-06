@@ -14,7 +14,7 @@ import IconSpinnerXLarge from '@/assets/images/icon/xlarge/icon-spinner-xlarge.s
 import { colors } from '@/utils/constants/color.js';
 const {
 	gray200,
-	gray500,
+	gray400,
 	gray600,
 	gray800,
 	blue000,
@@ -84,7 +84,7 @@ const colorMap = {
 		fill: gray600,
 	},
 	'info-reversed': {
-		stroke: gray500,
+		stroke: gray400,
 		fill: gray800,
 	},
 };
