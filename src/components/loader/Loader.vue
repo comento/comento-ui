@@ -14,8 +14,8 @@ import IconSpinnerXLarge from '@/assets/images/icon/xlarge/icon-spinner-xlarge.s
 import { colors } from '@/utils/constants/color.js';
 const {
 	gray200,
-	gray400,
 	gray500,
+	gray600,
 	gray800,
 	blue000,
 	blue100,
@@ -80,20 +80,12 @@ const colorMap = {
 		fill: white,
 	},
 	info: {
-		stroke: gray400,
-		fill: gray800,
+		stroke: gray200,
+		fill: gray600,
 	},
 	'info-reversed': {
 		stroke: gray500,
 		fill: gray800,
-	},
-	white: {
-		stroke: gray200,
-		fill: gray500,
-	},
-	'white-reversed': {
-		stroke: gray500,
-		fill: gray200,
 	},
 };
 
@@ -141,10 +133,23 @@ export default {
 			return `IconSpinner${this.capitalizedSize}`;
 		},
 	},
+	watch: {
+		color() {
+			this.changeColor();
+		},
+		reversed() {
+			this.changeColor();
+		},
+	},
 	mounted() {
-		const colorMapKey = this.reversed ? `${this.color}-reversed` : this.color;
-		this.$refs['icon'].querySelectorAll('.circle')[0].setAttribute('stroke', colorMap[colorMapKey]['stroke']);
-		this.$refs['icon'].querySelectorAll('.quarter')[0].setAttribute('fill', colorMap[colorMapKey]['fill']);
+		this.changeColor();
+	},
+	methods: {
+		changeColor() {
+			const colorMapKey = this.reversed ? `${this.color}-reversed` : this.color;
+			this.$refs['icon'].querySelectorAll('.circle')[0].setAttribute('stroke', colorMap[colorMapKey]['stroke']);
+			this.$refs['icon'].querySelectorAll('.quarter')[0].setAttribute('fill', colorMap[colorMapKey]['fill']);
+		},
 	},
 	components: {
 		IconSpinnerSmall,
