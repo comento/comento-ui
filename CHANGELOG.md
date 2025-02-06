@@ -1,3 +1,13 @@
+## [1.7.13](https://github.com/comento/comento-ui/compare/v1.7.2...v1.7.13) (2025-02-06)
+
+
+### Features
+
+* /edu에 따른 next화가 되어 menu마다 nuxt값을 확인하여 링크 이동할 수 있도록 변경 ([#1174](https://github.com/comento/comento-ui/issues/1174)) ([8a86195](https://github.com/comento/comento-ui/commit/8a861959cc9fae9f2c8f2f9d19d8aa6ac1db9e56))
+* Loader 컴포넌트 색상 관련 수정 ([#1178](https://github.com/comento/comento-ui/issues/1178)) ([1ef8260](https://github.com/comento/comento-ui/commit/1ef826066db544845f467bc141c91b345e1b6496))
+
+
+
 ## [1.7.2](https://github.com/comento/comento-ui/compare/v1.7.1...v1.7.2) (2024-12-05)
 
 
