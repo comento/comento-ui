@@ -39,6 +39,9 @@ import { aligns } from '@/components/modal/BasicModal.vue';
 import Button, { buttonColors } from '@/components/button/Button.vue';
 import Typography from '@/components/typography/Typography.vue';
 
+/**
+ * @displayName c-image-modal
+ */
 export default {
 	name: 'ImageModal',
 	props: {
