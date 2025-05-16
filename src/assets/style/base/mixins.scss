@@ -93,7 +93,7 @@
 
 // 툴팁 등에 사용
 @mixin shadow1 {
-  box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
 }
 // 모바일 카드를 감싼 box 등에 사용
 @mixin shadow2 {
@@ -101,11 +101,19 @@
 }
 // topbar, header 등에 사용
 @mixin shadow3 {
-  box-shadow: 0 2px 8px 0px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.02);
 }
 // xlarge 버튼 등에 사용
 @mixin shadow4 {
-  box-shadow: 0 3px 7px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.06);
+}
+// 400이상의 컬러가 사용 된 요소에 shadow1 수준의 높이감을 줄 때 사용
+@mixin shadow5 {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.26);
+}
+// 상세페이지 Fab 등 기본 shadow보다 깊이감이 더 필요한 강조 UI 요소에 사용
+@mixin shadow6 {
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.24);
 }
 
 @mixin transition($transition) {
