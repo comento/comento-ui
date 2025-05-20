@@ -3,7 +3,7 @@
 		<aside
 			v-if="sync_show"
 			class="c-application c-toast"
-			:class="[computedType, computedPosition]"
+			:class="[computedType, computedPosition, hasButton]"
 			v-on="$listeners"
 		>
 			<div v-if="$slots['icon']" class="c-toast--icon">
@@ -94,6 +94,9 @@ export default {
 		computedPosition() {
 			return `position-${this.position}`;
 		},
+		hasButton() {
+			return this.$slots['button'] ? 'has-button' : '';
+		},
 	},
 	watch: {
 		show() {
@@ -129,6 +132,9 @@ export default {
 	@include border-radius(8px);
 	@include shadow4();
 	display: table; // width: fit-content 대체
+	@include mobile {
+		width: 100%;
+	}
 	max-width: 90%;
 	@include flexbox();
 	@include flex-direction(row);
@@ -148,10 +154,26 @@ export default {
 
 	&--button {
 		@include flexbox();
+		&::v-deep > button {
+			@include border-radius(6px);
+			padding: 6px 10px;
+			color: white;
+			@include body2();
+			font-weight: 600;
+		}
 	}
 
 	&.basic {
 		background: $gray850;
+
+		.c-toast--button {
+			&::v-deep > button {
+				background: rgba(255, 255, 255, 0.38);
+				@include state-style {
+					background: rgba(255, 255, 255, 0.58);
+				}
+			}
+		}
 	}
 	&.error {
 		background: $error;
@@ -161,6 +183,17 @@ export default {
 	}
 	&.security {
 		background: $primary;
+	}
+
+	&.has-button {
+		padding: 10px 16px;
+		cursor: pointer;
+		@include pc {
+			width: 343px;
+		}
+		.c-toast--button {
+			margin-left: auto;
+		}
 	}
 
 	@include pc {
