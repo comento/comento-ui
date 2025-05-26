@@ -64,7 +64,7 @@ export default {
 		 */
 		type: {
 			type: String,
-			default: 'simple',
+			default: 'emphasized',
 			validator(value) {
 				const isValid = Types.indexOf(value) !== -1;
 				if (!isValid) {
