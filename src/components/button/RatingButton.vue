@@ -1,16 +1,18 @@
 <template>
 	<button
 		class="c-application c-rating-button"
-		:class="[color, { loading: loading }]"
+		:class="[color, { loading: loading }, size]"
 		v-bind="$attrs"
 		:disabled="disabled"
 		v-on="$listeners"
 		@click="$event.target.blur()"
 	>
-		<Loader v-if="loading" size="small" :color="color" />
+		<Loader v-if="loading" :size="loaderSize" :color="color" />
 		<template v-else>
 			<Icon :name="iconName" :color="computedColor" class="mr-4" />
-			<Typography type="body2" :color="computedColor">{{ text }}</Typography>
+			<Typography :type="typographyType" :color="computedColor" :font-weight="400">
+				{{ text }}
+			</Typography>
 		</template>
 	</button>
 </template>
@@ -21,6 +23,7 @@ import Typography from '@/components/typography/Typography.vue';
 import Loader from '@/components/loader/Loader.vue';
 
 export const RATING_BUTTON_COLORS = ['primary', 'info', 'error', 'secondary', 'success'];
+export const RATING_BUTTON_SIZES = ['small', 'large'];
 
 /**
  * @displayName c-rating-button
@@ -55,6 +58,17 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		size: {
+			type: String,
+			default: 'small',
+			validator(value) {
+				const isValid = RATING_BUTTON_SIZES.includes(value);
+				if (!isValid) {
+					console.error(`${value} is not a valid value of RatingButton size`);
+				}
+				return isValid;
+			},
+		},
 	},
 	computed: {
 		computedColor() {
@@ -73,6 +87,12 @@ export default {
 			}
 
 			return this.color;
+		},
+		typographyType() {
+			return this.size === 'large' ? 'body1' : 'body2';
+		},
+		loaderSize() {
+			return this.size === 'large' ? 'medium' : 'small';
 		},
 	},
 	components: { Typography, Icon, Loader },
@@ -117,6 +137,10 @@ export default {
 		@include state-style {
 			background: $green000;
 		}
+	}
+
+	&.large {
+		padding: 6px;
 	}
 
 	&.loading {
