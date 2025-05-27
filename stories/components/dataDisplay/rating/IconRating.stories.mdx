@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import IconRating from "@/components/rating/IconRating";
+import IconRating, { IconRatingSizes } from "@/components/rating/IconRating";
 import { colorKeys } from '@/utils/constants/color';
 import { IconNames } from '@/components/icon/Icon';
 
@@ -28,13 +28,21 @@ import { IconNames } from '@/components/icon/Icon';
 				type: 'text',
 			},
 		},
+		size: {
+			description: '크기',
+			defaultValue: 'small',
+			control: {
+				type: 'select',
+				options: IconRatingSizes,
+			}
+		}
 	}}
 />
 
 export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
     template: `
-        <IconRating :color="color" :text="text" :icon-name="iconName"/>
+        <IconRating :color="color" :text="text" :icon-name="iconName" :size="size" />
     `,
     components: { IconRating },
 });
@@ -62,4 +70,19 @@ export const Default = (args, { argTypes }) => ({
             components: { IconRating },
         }}
     </Story>
+</Canvas>
+
+### Sizes
+<Canvas>
+	<Story name="Sizes" height="100px">
+		{{
+			template: `
+            <div style="display: flex; flex-direction: column">
+                <IconRating color="primary" icon-name="IconCommentSmallLine" text="6" size="small" />
+                <IconRating color="primary" icon-name="IconCommentMediumLine" text="6" size="large" />
+            </div>
+    `,
+			components: { IconRating },
+		}}
+	</Story>
 </Canvas>
