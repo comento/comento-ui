@@ -2,8 +2,8 @@
 	<v-popover
 		class="c-application"
 		:placement="mapPlacement"
-		:handle-resize="true"
-		popover-base-class="c-tooltip"
+		handle-resize
+		:popover-base-class="`c-tooltip ${color}`"
 		popover-arrow-class="c-tooltip--arrow"
 		popover-inner-class="c-tooltip--inner"
 		:popper-options="popperOptions"
@@ -14,8 +14,8 @@
 	>
 		<slot> </slot>
 		<template slot="popover">
-			<Typography class="c-tooltip--content-wrapper" type="body2" color="gray700">
-				<slot name="popover"> </slot>
+			<Typography class="c-tooltip--content-wrapper" type="body2" :color="typographyColor">
+				<slot name="popover" />
 			</Typography>
 		</template>
 	</v-popover>
@@ -24,6 +24,8 @@
 <script>
 import Typography from '@/components/typography/Typography.vue';
 import { placements, placementMap } from '@/utils/constants/tooltip.js';
+
+export const TOOLTIP_COLORS = ['white', 'black'];
 
 /**
  * @displayName c-tooltip
@@ -69,10 +71,20 @@ export default {
 			type: [Boolean, String],
 			default: false,
 		},
+		color: {
+			type: String,
+			default: 'white',
+			validator(value) {
+				return TOOLTIP_COLORS.includes(value);
+			},
+		},
 	},
 	computed: {
 		mapPlacement() {
 			return placementMap[this.placement];
+		},
+		typographyColor() {
+			return this.color === 'white' ? 'gray700' : 'white';
 		},
 	},
 	components: { Typography },
