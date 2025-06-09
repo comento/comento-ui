@@ -146,7 +146,7 @@ export default {
 	}
 
 	&--title-wrapper {
-		padding: 8px 32px 16px 32px;
+		padding: 24px 32px 16px 32px;
 	}
 
 	&--content-wrapper {
@@ -166,7 +166,8 @@ export default {
 		padding: 24px 32px 0 32px;
 	}
 	&--image {
-		padding: 0 32px;
+		padding: 8px 32px 0; // X버튼 영역 때문에 상단 여백 8px 추가
+		display: block;
 	}
 }
 </style>
