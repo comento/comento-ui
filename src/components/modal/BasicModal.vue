@@ -23,7 +23,12 @@
 			</div>
 
 			<!-- button 영역 -->
-			<div v-if="showActionButton" class="c-modal--action-button-wrapper">
+			<div
+				v-if="showActionButton"
+				class="c-modal--action-button-wrapper"
+				:class="{ 'has-secondary': $slots['secondary-button'] }"
+			>
+				<slot name="secondary-button" />
 				<Button size="large" :loading="loading" :color="buttonColor" full @click="successCallback">
 					{{ successMessage }}
 				</Button>
@@ -187,6 +192,11 @@ export default {
 	}
 	&--action-button-wrapper {
 		padding: 24px 32px 0 32px;
+		&.has-secondary {
+			@include flexbox();
+			@include flex-direction(row);
+			gap: 8px;
+		}
 	}
 }
 </style>
