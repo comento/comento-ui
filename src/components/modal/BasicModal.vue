@@ -139,7 +139,7 @@ export default {
 <style lang="scss" scoped>
 .c-modal {
 	&--wrapper {
-		padding: 32px 0;
+		padding: 40px 0 32px;
 		&.scroll {
 			.c-modal--content-wrapper {
 				padding-bottom: 4px;
@@ -174,7 +174,7 @@ export default {
 	}
 
 	&--title-wrapper {
-		padding: 8px 32px 16px 32px;
+		padding: 0 32px 16px 32px;
 	}
 
 	&--content-wrapper {

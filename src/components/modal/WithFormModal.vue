@@ -142,7 +142,7 @@ export default {
 <style lang="scss" scoped>
 .c-modal {
 	&--wrapper {
-		padding: 40px 0;
+		padding: 40px 0 32px;
 		&.scroll {
 			.c-modal--content-wrapper {
 				overflow-y: scroll;

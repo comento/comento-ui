@@ -111,7 +111,7 @@ export default {
 <style lang="scss" scoped>
 .c-modal {
 	&--wrapper {
-		padding: 32px 0;
+		padding: 40px 0 32px;
 		&.scroll {
 			.c-modal--content-wrapper {
 				padding-bottom: 4px;
@@ -166,7 +166,7 @@ export default {
 		padding: 24px 32px 0 32px;
 	}
 	&--image {
-		padding: 8px 32px 0; // X버튼 영역 때문에 상단 여백 8px 추가
+		padding: 0 32px;
 		display: block;
 	}
 }
