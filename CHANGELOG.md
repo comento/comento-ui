@@ -1,3 +1,12 @@
+## [1.7.14](https://github.com/comento/comento-ui/compare/v1.7.13...v1.7.14) (2025-06-23)
+
+
+### Bug Fixes
+
+* Vue 프로젝트의 서브헤더 사이즈를 디자인에 맞게 수정 ([#1180](https://github.com/comento/comento-ui/issues/1180)) ([#1181](https://github.com/comento/comento-ui/issues/1181)) ([#1182](https://github.com/comento/comento-ui/issues/1182)) ([9f5771a](https://github.com/comento/comento-ui/commit/9f5771a3a85de78cc2cf988d4ff9862c5603bbc8))
+
+
+
 ## [1.7.13](https://github.com/comento/comento-ui/compare/v1.7.2...v1.7.13) (2025-02-06)
 
 
