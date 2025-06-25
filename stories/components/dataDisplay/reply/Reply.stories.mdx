@@ -1,0 +1,176 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Reply from '@/components/reply/Reply.vue';
+import Avatar from '@/components/avatar/Avatar.vue';
+import Typography from '@/components/typography/Typography.vue';
+import Icon from '@/components/icon/Icon.vue';
+import ReplyUserInformationExample from './ReplyUserInformationExample.vue';
+import ReplyActionsExample from './ReplyActionsExample.vue';
+import ReplyInteractionsExample from './ReplyInteractionsExample.vue';
+import nl2br from '../../../../src/utils/nl2br';
+
+<Meta
+	title="Data Display/Reply"
+	component={Reply}
+	argTypes={{
+		type: {
+			description: '댓글 타입',
+			defaultValue: 'default',
+			control: {
+				type: 'select',
+				options: ['default', 'simple'],
+			},
+		},
+	}}
+/>
+
+export const Basic = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	components: { Reply, ReplyUserInformationExample, Avatar, Typography, Icon, ReplyActionsExample, ReplyInteractionsExample },
+	data() {
+		return {
+			name: '닉네임',
+			company: '코멘토',
+		};
+	},
+	computed: {
+		avatarSize() {
+			const sizes = {
+				default: 'small',
+				simple: 'xsmall',
+			};
+			return sizes[this.type];
+		},
+	},
+	methods: {
+		nl2br,
+	},
+	template: `
+        <Reply>
+            <template v-slot:user-information>
+                <ReplyUserInformationExample :type="type">
+                    <template v-slot:avatar>
+                        <Avatar type="nickname" :text="name.substr(0, 1)" :size="avatarSize"/>
+                    </template>
+                    <template v-slot:name>
+                        {{ name }}
+                    </template>
+                    <template v-slot:meta>
+						<Typography :type="type === 'simple' ? 'caption1' : 'body2'" color="gray500" :font-weight="400" class="mr-2">
+							{{ company }}
+						</Typography>
+						<Icon name="IconCheckRoundXSmallFill" color="primary"/>
+                    </template>
+					<template v-slot:content>
+						2025.01.01
+					</template>
+                </ReplyUserInformationExample>
+            </template>
+			<template v-slot:value>
+				<span v-html="nl2br('댓글 내용이 표시됩니다.<br />링크는 이렇게 표시 됩니다. https://comento.kr')" />
+			</template>
+			<template v-slot:actions>
+				<ReplyActionsExample />
+			</template>
+			<template v-slot:interactions>
+				<ReplyInteractionsExample/>
+			</template>
+        </Reply>`,
+});
+
+# Reply
+
+**Reply** 컴포넌트의 문서입니다.
+
+<Story name="Basic" height="100px">
+	{Basic.bind({})}
+</Story>
+
+<ArgsTable story="Basic" />
+
+## Stories
+
+### Types
+
+<Canvas>
+	<Story name="Types" height="100px">
+		{{
+			data() {
+				return {
+					nickname: '레오나',
+					company: '코멘토',
+				};
+			},
+			methods: {
+				nl2br,
+			},
+			template: `
+                <div>
+					<p class="mb-10">type: default</p>
+                    <Reply>
+                        <template v-slot:user-information>
+                            <ReplyUserInformationExample>
+                                <template v-slot:avatar>
+                                    <Avatar type="nickname" :text="nickname.substr(0, 1)" size="small"/>
+                                </template>
+                                <template v-slot:name>
+                                    {{ nickname }}
+                                </template>
+                                <template v-slot:meta>
+									<Typography type="body2" color="gray500" :font-weight="400" class="mr-2">
+										{{ company }}
+									</Typography>
+									<Icon name="IconCheckRoundXSmallFill" color="primary"/>
+                                </template>
+								<template v-slot:content>
+									2025.01.01
+								</template>
+                            </ReplyUserInformationExample>
+                        </template>
+						<template v-slot:value>
+							<span v-html="nl2br('댓글 내용이 표시됩니다.<br />두줄일 경우 이렇게 표시 됩니다.')" />
+						</template>
+						<template v-slot:actions>
+							<ReplyActionsExample placement="bottom-right" />
+						</template>
+						<template v-slot:interactions>
+							<ReplyInteractionsExample/>
+						</template>
+                    </Reply>
+					<p class="mt-30 mb-10">type: simple</p>
+                    <Reply>
+                        <template v-slot:user-information>
+                            <ReplyUserInformationExample type="simple">
+                                <template v-slot:avatar>
+                                    <Avatar type="nickname" :text="nickname.substr(0, 1)" size="xsmall"/>
+                                </template>
+                                <template v-slot:name>
+                                    {{ nickname }}
+                                </template>
+                                <template v-slot:meta>
+									<Typography type="caption1" color="gray500" :font-weight="400" class="mr-2">
+										{{ company }}
+									</Typography>
+									<Icon name="IconCheckRoundXSmallFill" color="primary"/>
+                                </template>
+								<template v-slot:content>
+									2025.01.01
+								</template>
+                            </ReplyUserInformationExample>
+                        </template>
+						<template v-slot:value>
+							<Typography element="span" color="gray500" :font-weight="400" class="mr-4">@닉네임</Typography>
+							댓글 내용이 표시됩니다.<br />두줄일 경우 이렇게 표시 됩니다.
+						</template>
+						<template v-slot:actions>
+							<ReplyActionsExample placement="bottom-right" />
+						</template>
+						<template v-slot:interactions>
+							<ReplyInteractionsExample/>
+						</template>
+                    </Reply>
+                </div>
+            `,
+			components: { Reply, ReplyUserInformationExample, ReplyActionsExample, ReplyInteractionsExample, Avatar, Typography, Icon },
+		}}
+	</Story>
+</Canvas>
