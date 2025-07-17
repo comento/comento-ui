@@ -272,7 +272,7 @@ $disabled-background-color: $gray000;
 			}
 
 			~ .c-text-field--append {
-				padding-right: $outline-padding - 4px;
+				padding-right: $outline-padding;
 				@include border-radius(4px);
 			}
 		}
@@ -362,7 +362,7 @@ $disabled-background-color: $gray000;
 		right: 1px;
 		background: white;
 		height: calc(100% - 2px);
-		padding-left: 10px;
+		padding-left: 12px;
 	}
 }
 </style>
