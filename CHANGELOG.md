@@ -1,3 +1,18 @@
+## [1.7.15](https://github.com/comento/comento-ui/compare/v1.7.14...v1.7.15) (2025-07-21)
+
+
+### Bug Fixes
+
+* Vue 프로젝트의 서브헤더 사이즈를 디자인에 맞게 수정 ([#1180](https://github.com/comento/comento-ui/issues/1180)) ([1df2717](https://github.com/comento/comento-ui/commit/1df2717e67d9c4a42a4fbb0bdae59eeb60b6b5ca))
+* Vue 프로젝트의 서브헤더 사이즈를 디자인에 맞게 수정 ([#1180](https://github.com/comento/comento-ui/issues/1180)) ([#1181](https://github.com/comento/comento-ui/issues/1181)) ([4dae9a4](https://github.com/comento/comento-ui/commit/4dae9a43b779d8f89cfa305ecc3f002c67f965f8))
+
+
+### Features
+
+* 여백 변경(우측 요소 있을 때, SearchInput) ([#1184](https://github.com/comento/comento-ui/issues/1184)) ([34d0eca](https://github.com/comento/comento-ui/commit/34d0ecab6e9b59167015bdaa19cd5650c51e4441))
+
+
+
 ## [1.7.14](https://github.com/comento/comento-ui/compare/v1.7.13...v1.7.14) (2025-06-23)
 
 
