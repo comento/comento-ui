@@ -14,7 +14,7 @@
 /**
  * @displayName c-user-information-name
  */
-import { userInformationTypes } from '@/components/content/UserInformation.vue';
+import { userInformationTypes } from '@/components/userInformation/UserInformation.vue';
 import Typography, { TypographyTypes } from '@/components/typography/Typography.vue';
 
 export default {

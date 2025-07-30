@@ -1,9 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import UserInformation, { userInformationTypes } from '@/components/content/UserInformation';
-import UserInformationName from "@/components/content/UserInformationName";
-import UserInformationCaption from "@/components/content/UserInformationCaption";
-import UserInformationChipGroup from "@/components/content/UserInformationChipGroup";
-import UserInformationCompany from "@/components/content/UserInformationCompany";
+import UserInformation, { userInformationTypes } from '@/components/userInformation/UserInformation';
+import UserInformationName from "@/components/userInformation/UserInformationName";
+import UserInformationCaption from "@/components/userInformation/UserInformationCaption";
+import UserInformationChipGroup from "@/components/userInformation/UserInformationChipGroup";
+import UserInformationCompany from "@/components/userInformation/UserInformationCompany";
 import Content from '@/components/content/Content';
 import Icon from '@/components/icon/Icon';
 import Avatar from '@/components/avatar/Avatar.vue';
@@ -12,7 +12,7 @@ import Chip from '@/components/chips/Chip';
 import Divider from '@/components/divider/Divider.vue';
 
 <Meta
-    title="Data Display/Content/UserInformation"
+    title="Data Display/UserInformation"
     component={ UserInformation }
     argTypes={{
         type: {
