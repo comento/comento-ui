@@ -3,7 +3,10 @@ import Reply from '@/components/reply/Reply.vue';
 import Avatar from '@/components/avatar/Avatar.vue';
 import Typography from '@/components/typography/Typography.vue';
 import Icon from '@/components/icon/Icon.vue';
-import ReplyUserInformationExample from './ReplyUserInformationExample.vue';
+import UserInformation from '@/components/userInformation/UserInformation.vue';
+import UserInformationName from "@/components/userInformation/UserInformationName.vue";
+import UserInformationCaption from "@/components/userInformation/UserInformationCaption.vue";
+import UserInformationCompany from "@/components/userInformation/UserInformationCompany.vue";
 import ReplyActionsExample from './ReplyActionsExample.vue';
 import ReplyInteractionsExample from './ReplyInteractionsExample.vue';
 import nl2br from '../../../../src/utils/nl2br';
@@ -25,7 +28,18 @@ import nl2br from '../../../../src/utils/nl2br';
 
 export const Basic = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
-	components: { Reply, ReplyUserInformationExample, Avatar, Typography, Icon, ReplyActionsExample, ReplyInteractionsExample },
+	components: {
+		Reply,
+		UserInformation,
+		UserInformationName,
+		UserInformationCompany,
+		UserInformationCaption,
+		Avatar,
+		Typography,
+		Icon,
+		ReplyActionsExample,
+		ReplyInteractionsExample,
+	},
 	data() {
 		return {
 			name: '닉네임',
@@ -40,6 +54,13 @@ export const Basic = (args, { argTypes }) => ({
 			};
 			return sizes[this.type];
 		},
+		userInformationType() {
+			const types = {
+				default: 'normal',
+				simple: 'simple',
+			};
+			return types[this.type];
+		},
 	},
 	methods: {
 		nl2br,
@@ -47,23 +68,24 @@ export const Basic = (args, { argTypes }) => ({
 	template: `
         <Reply>
             <template v-slot:user-information>
-                <ReplyUserInformationExample :type="type">
-                    <template v-slot:avatar>
-                        <Avatar type="nickname" :text="name.substr(0, 1)" :size="avatarSize"/>
-                    </template>
-                    <template v-slot:name>
-                        {{ name }}
-                    </template>
-                    <template v-slot:meta>
-						<Typography :type="type === 'simple' ? 'caption1' : 'body2'" color="gray500" :font-weight="400" class="mr-2">
-							{{ company }}
-						</Typography>
-						<Icon name="IconCheckRoundXSmallFill" color="primary"/>
-                    </template>
-					<template v-slot:content>
-						2025.01.01
+				<UserInformation :type="userInformationType">
+					<template v-slot:avatar>
+						<Avatar type="nickname" :text="name.substr(0, 1)" :size="avatarSize" />
 					</template>
-                </ReplyUserInformationExample>
+					<template v-slot:name>
+						<UserInformationName :type="userInformationType">
+							{{ name }}
+						</UserInformationName>
+					</template>
+					<template v-slot:user-info>
+						<UserInformationCompany :type="userInformationType">
+							{{ company }}
+						</UserInformationCompany>
+					</template>
+					<template v-slot:other>
+						<UserInformationCaption>2025.01.01</UserInformationCaption>
+					</template>
+				</UserInformation>
             </template>
 			<template v-slot:value>
 				<span v-html="nl2br('댓글 내용이 표시됩니다.<br />링크는 이렇게 표시 됩니다. https://comento.kr')" />
@@ -108,23 +130,24 @@ export const Basic = (args, { argTypes }) => ({
 					<p class="mb-10">type: default</p>
                     <Reply>
                         <template v-slot:user-information>
-                            <ReplyUserInformationExample>
-                                <template v-slot:avatar>
-                                    <Avatar type="nickname" :text="nickname.substr(0, 1)" size="small"/>
-                                </template>
-                                <template v-slot:name>
-                                    {{ nickname }}
-                                </template>
-                                <template v-slot:meta>
-									<Typography type="body2" color="gray500" :font-weight="400" class="mr-2">
-										{{ company }}
-									</Typography>
-									<Icon name="IconCheckRoundXSmallFill" color="primary"/>
-                                </template>
-								<template v-slot:content>
-									2025.01.01
+							<UserInformation type="normal">
+								<template v-slot:avatar>
+									<Avatar type="nickname" :text="nickname.substr(0, 1)" size="small" />
 								</template>
-                            </ReplyUserInformationExample>
+								<template v-slot:name>
+									<UserInformationName type="normal">
+										{{ nickname }}
+									</UserInformationName>
+								</template>
+								<template v-slot:user-info>
+									<UserInformationCompany type="normal">
+										{{ company }}
+									</UserInformationCompany>
+								</template>
+								<template v-slot:other>
+									<UserInformationCaption>2025.01.01</UserInformationCaption>
+								</template>
+							</UserInformation>
                         </template>
 						<template v-slot:value>
 							<span v-html="nl2br('댓글 내용이 표시됩니다.<br />두줄일 경우 이렇게 표시 됩니다.')" />
@@ -139,23 +162,24 @@ export const Basic = (args, { argTypes }) => ({
 					<p class="mt-30 mb-10">type: simple</p>
                     <Reply>
                         <template v-slot:user-information>
-                            <ReplyUserInformationExample type="simple">
-                                <template v-slot:avatar>
-                                    <Avatar type="nickname" :text="nickname.substr(0, 1)" size="xsmall"/>
-                                </template>
-                                <template v-slot:name>
-                                    {{ nickname }}
-                                </template>
-                                <template v-slot:meta>
-									<Typography type="caption1" color="gray500" :font-weight="400" class="mr-2">
-										{{ company }}
-									</Typography>
-									<Icon name="IconCheckRoundXSmallFill" color="primary"/>
-                                </template>
-								<template v-slot:content>
-									2025.01.01
+							<UserInformation type="simple">
+								<template v-slot:avatar>
+									<Avatar type="nickname" :text="nickname.substr(0, 1)" size="xsmall" />
 								</template>
-                            </ReplyUserInformationExample>
+								<template v-slot:name>
+									<UserInformationName type="simple">
+										{{ nickname }}
+									</UserInformationName>
+								</template>
+								<template v-slot:user-info>
+									<UserInformationCompany type="simple">
+										{{ company }}
+									</UserInformationCompany>
+								</template>
+								<template v-slot:other>
+									<UserInformationCaption>2025.01.01</UserInformationCaption>
+								</template>
+							</UserInformation>
                         </template>
 						<template v-slot:value>
 							<Typography element="span" color="gray500" :font-weight="400" class="mr-4">@닉네임</Typography>
@@ -170,7 +194,18 @@ export const Basic = (args, { argTypes }) => ({
                     </Reply>
                 </div>
             `,
-			components: { Reply, ReplyUserInformationExample, ReplyActionsExample, ReplyInteractionsExample, Avatar, Typography, Icon },
+			components: {
+				Reply,
+				UserInformation,
+				UserInformationName,
+				UserInformationCompany,
+				UserInformationCaption,
+				ReplyActionsExample,
+				ReplyInteractionsExample,
+				Avatar,
+				Typography,
+				Icon,
+			},
 		}}
 	</Story>
 </Canvas>
