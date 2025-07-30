@@ -4,7 +4,6 @@ import UserInformationName from "@/components/userInformation/UserInformationNam
 import UserInformationCaption from "@/components/userInformation/UserInformationCaption";
 import UserInformationChipGroup from "@/components/userInformation/UserInformationChipGroup";
 import UserInformationCompany from "@/components/userInformation/UserInformationCompany";
-import Content from '@/components/content/Content';
 import Icon from '@/components/icon/Icon';
 import Avatar from '@/components/avatar/Avatar.vue';
 import ChipGroup from '@/components/chips/ChipGroup';
@@ -39,7 +38,7 @@ import Divider from '@/components/divider/Divider.vue';
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { UserInformation, Content, Avatar, Icon, ChipGroup, Chip, UserInformationName, UserInformationCompany, UserInformationCaption, UserInformationChipGroup },
+    components: { UserInformation, Avatar, Icon, ChipGroup, Chip, UserInformationName, UserInformationCompany, UserInformationCaption, UserInformationChipGroup },
     data() {
         return {
             matchedItems: ['회사', '산업', '직무', '학교'],

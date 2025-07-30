@@ -1,6 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import CoreCard from '@/components/card/CoreCard.vue';
-import Content from '@/components/content/Content.vue';
+import CoreCard from '@/components/card/coreCard/CoreCard.vue';
 import Avatar from '@/components/avatar/Avatar.vue';
 import Icon from '@/components/icon/Icon.vue';
 import NewGrid from '@/components/grid/NewGrid.vue';
@@ -43,7 +42,6 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: {
         CoreCard,
-        Content,
         Avatar,
         Icon,
         NewGrid,
@@ -123,7 +121,6 @@ export const Default = (args, { argTypes }) => ({
         {{
             components: {
                 CoreCard,
-                Content,
                 Avatar,
                 Icon,
                 NewGrid,
