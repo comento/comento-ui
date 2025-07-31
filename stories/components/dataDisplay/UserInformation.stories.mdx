@@ -134,7 +134,7 @@ export const Basic = (args, { argTypes }) => ({
             template: `
               <div>
               <template v-for="({ name, company, matchedItems, size, type }, index) in sampleItems">
-                <UserInformation :type="type" :key="'user-information' + index">
+                <UserInformation :type="type" :key="'user-information' + index" class="mb-30">
                   <template v-slot:avatar>
                     <Avatar type="nickname" :text="name.substr(0, 1)" :size="size"/>
                   </template>
@@ -168,40 +168,7 @@ export const Basic = (args, { argTypes }) => ({
                     </template>
                   </template>
                 </UserInformation>
-                <Divider :key="'divider' + index" class="my-8" />
               </template>
-              <UserInformation type="simple">
-                <template v-slot:avatar>
-                  <Avatar type="profile" size="xsmall"/>
-                </template>
-                <template v-slot:name>
-                  <UserInformationName>
-                    질문자
-                  </UserInformationName>
-                </template>
-              </UserInformation>
-              <Divider class="my-8" />
-              <UserInformation type="normal">
-                <template v-slot:avatar>
-                  <Avatar type="profile" size="small"/>
-                </template>
-                <template v-slot:name>
-                  <UserInformationName>
-                    질문자
-                  </UserInformationName>
-                </template>
-              </UserInformation>
-              <Divider class="my-8" />
-              <UserInformation type="full">
-                <template v-slot:avatar>
-                  <Avatar type="profile" size="medium"/>
-                </template>
-                <template v-slot:name>
-                  <UserInformationName>
-                    질문자
-                  </UserInformationName>
-                </template>
-              </UserInformation>
               </div>
             `,
             components: { UserInformation, Icon, ChipGroup, Chip, Avatar, Divider, UserInformationName, UserInformationCaption, UserInformationChipGroup, UserInformationCompany },
