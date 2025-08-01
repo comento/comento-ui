@@ -68,20 +68,20 @@ export const Default = (args, { argTypes }) => ({
         {{
             template: `
                 <div style="width: 100%; position: relative; height: 600px">
-                    <Alert style="position: absolute;" type="information">
+                    <Alert style="position: absolute;" type="info">
                       [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
                     </Alert>
-                    <Alert style="position: absolute; top: 100px" type="notice">
+                    <Alert style="position: absolute; top: 100px" type="primary">
                       [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
                     </Alert>
                     <Alert style="position: absolute; top: 200px" type="success">
                       [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
                     </Alert>
-                    <Alert style="position: absolute; top: 300px" type="error">
+                    <Alert style="position: absolute; top: 300px" type="accent">
                       [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
                     </Alert>
                     <Alert style="position: absolute; top: 400px" type="image" />
-                    <Alert style="position: absolute; top: 500px" type="notice">
+                    <Alert style="position: absolute; top: 500px" type="primary">
                       <template v-slot:icon>
                         <Icon :name="customIconName" color="primary" />
                       </template>
@@ -114,16 +114,16 @@ export const Default = (args, { argTypes }) => ({
             },
             template: `
               <div style="width: 100%; position: relative; height: 500px">
-                  <Alert v-if="showAlert1" style="position: absolute;" type="information" closable @close="showAlert1 = false">
+                  <Alert v-if="showAlert1" style="position: absolute;" type="info" closable @close="showAlert1 = false">
                     [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
                   </Alert>
-                  <Alert v-if="showAlert2" style="position: absolute; top: 100px" type="notice" closable @close="showAlert2 = false">
+                  <Alert v-if="showAlert2" style="position: absolute; top: 100px" type="primary" closable @close="showAlert2 = false">
                     [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
                   </Alert>
                   <Alert v-if="showAlert3" style="position: absolute; top: 200px" type="success" closable @close="showAlert3 = false">
                     [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
                   </Alert>
-                  <Alert v-if="showAlert4" style="position: absolute; top: 300px" type="error" closable @close="showAlert4 = false">
+                  <Alert v-if="showAlert4" style="position: absolute; top: 300px" type="accent" closable @close="showAlert4 = false">
                     [공지] PC에서는 최대 한줄이고 MOBILE에서는 최대 두줄입니다.
                   </Alert>
                   <Alert v-if="showAlert5" style="position: absolute; top: 400px" type="image" closable close-button-color="white" @close="showAlert5 = false" />
