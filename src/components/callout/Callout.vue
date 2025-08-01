@@ -2,7 +2,7 @@
 	<transition :name="computedTransition">
 		<div
 			class="c-application c-callout--container"
-			:class="[computedSize, computedType, computedFull, { 'c-callout--closable': closable }]"
+			:class="[computedSize, computedColor, computedFull, { 'c-callout--closable': closable }]"
 			:style="[computedPadding]"
 			v-bind="$attrs"
 			v-on="$listeners"
@@ -36,7 +36,7 @@ import Icon from '@/components/icon/Icon.vue';
 import Typography from '@/components/typography/Typography.vue';
 import paddingMixin from '@/mixins/paddingMixin.js';
 
-export const CalloutTypes = ['information', 'accent', 'success', 'notice'];
+export const CalloutColors = ['info', 'accent', 'success', 'primary'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
 
 /**
@@ -47,15 +47,15 @@ export default {
 	mixins: [paddingMixin],
 	props: {
 		/**
-		 * 타입(information, accent, success, notice)
+		 * 색상(info, accent, success, primary)
 		 */
-		type: {
+		color: {
 			type: String,
-			default: 'information',
+			default: 'info',
 			validator(value) {
-				const isValid = CalloutTypes.indexOf(value) !== -1;
+				const isValid = CalloutColors.indexOf(value) !== -1;
 				if (!isValid) {
-					console.error(`${value} is not a valid value of Callout type`);
+					console.error(`${value} is not a valid value of Callout color`);
 				}
 				return isValid;
 			},
@@ -101,17 +101,17 @@ export default {
 		},
 		computedIconColor() {
 			return {
-				information: 'gray600',
+				info: 'gray600',
 				accent: 'red600',
 				success: 'green600',
-				notice: 'blue600',
-			}[this.type];
+				primary: 'blue600',
+			}[this.color];
 		},
 		computedSize() {
 			return this.size;
 		},
-		computedType() {
-			return this.type;
+		computedColor() {
+			return this.color;
 		},
 		computedFontType() {
 			return {
@@ -132,11 +132,11 @@ export default {
 		},
 		iconName() {
 			const name = {
-				information: 'Information',
+				info: 'Information',
 				accent: 'Exclamation',
-				notice: 'Megaphone',
+				primary: 'Megaphone',
 				success: 'CheckRound',
-			}[this.type];
+			}[this.color];
 			const size = {
 				xsmall: 'XSmall',
 				small: 'Small',
@@ -197,8 +197,8 @@ export default {
 			@include callout-icon-margin-right(6px);
 		}
 
-		// type
-		&.information {
+		// color
+		&.info {
 			background-color: $gray000;
 		}
 		&.accent {
@@ -207,7 +207,7 @@ export default {
 		&.success {
 			background-color: $green000;
 		}
-		&.notice {
+		&.primary {
 			background-color: $blue000;
 		}
 	}
