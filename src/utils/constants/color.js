@@ -35,7 +35,7 @@ export const green100 = '#cdf5e0';
 export const green050 = '#e5faef';
 export const green000 = '#f5fdf9';
 
-// Error
+// Accent
 // Red
 export const red800 = '#971818';
 export const red600 = '#e92525';
@@ -64,7 +64,7 @@ export const yellow000 = '#fffdf5';
 export const primary = blue600;
 export const lightPrimary = blue100;
 export const success = green600;
-export const error = red600;
+export const accent = red600;
 export const info = gray600;
 export const secondary = orange600;
 export const yellow = yellow600;
@@ -118,7 +118,7 @@ export const colors = {
 	primary: primary,
 	lightPrimary: lightPrimary,
 	success: success,
-	error: error,
+	accent: accent,
 	info: info,
 	secondary: secondary,
 	yellow: yellow,

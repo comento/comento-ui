@@ -25,7 +25,7 @@ import Typography from '@/components/typography/Typography.vue';
 import Icon, { IconNames } from '@/components/icon/Icon.vue';
 import customValidator from '@/utils/custom-validator.js';
 
-export const toastTypes = ['basic', 'error', 'success', 'security'];
+export const toastTypes = ['basic', 'accent', 'success', 'security'];
 export const toastPositions = ['top', 'bottom'];
 
 /**
@@ -45,7 +45,7 @@ export default {
 		},
 		type: {
 			/**
-			 * 타입(basic, error, success, security)
+			 * 타입(basic, accent, success, security)
 			 */
 			type: String,
 			default: 'basic',
@@ -153,8 +153,8 @@ export default {
 	&.basic {
 		background: $gray850;
 	}
-	&.error {
-		background: $error;
+	&.accent {
+		background: $accent;
 	}
 	&.success {
 		background: $success;

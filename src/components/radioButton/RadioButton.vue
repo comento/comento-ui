@@ -22,7 +22,7 @@ import { colorKeys } from '@/utils/constants/color.js';
 import Typography from '@/components/typography/Typography.vue';
 import uniqueId from '@/utils/unique-id.js';
 import customValidator from '@/utils/custom-validator.js';
-export const radioColors = ['primary', 'success', 'info', 'error'];
+export const radioColors = ['primary', 'success', 'info', 'accent'];
 export const radioButtonSizes = ['small', 'medium'];
 
 /**
@@ -61,7 +61,7 @@ export default {
 			},
 		},
 		/**
-		 * 색상(primary, success, secondary, error)
+		 * 색상(primary, success, secondary, accent)
 		 */
 		radioColor: {
 			type: String,
@@ -288,28 +288,28 @@ export default {
 			}
 		}
 	}
-	&.error {
+	&.accent {
 		input[type='radio'] {
 			&:hover:not(:disabled),
 			&:focus:not(:disabled) {
 				& + label:before {
 					background-color: $red000;
-					border-color: $error;
+					border-color: $accent;
 				}
 			}
 			& + label {
 				&.checked {
 					&:after {
-						background-color: $error;
+						background-color: $accent;
 					}
 				}
 			}
 			&:checked:not(:disabled) {
 				& + label:before {
-					border-color: $error;
+					border-color: $accent;
 				}
 				& + label:after {
-					background-color: $error;
+					background-color: $accent;
 				}
 			}
 		}

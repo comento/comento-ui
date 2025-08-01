@@ -41,7 +41,7 @@ import Loader from '@/components/loader/Loader.vue';
 import Icon from '@/components/icon/Icon.vue';
 
 export const buttonSizes = ['small', 'medium', 'large', 'xlarge'];
-export const buttonColors = ['primary', 'light-primary', 'success', 'error', 'secondary', 'info'];
+export const buttonColors = ['primary', 'light-primary', 'success', 'accent', 'secondary', 'info'];
 export const ghostTypeButtonColors = ['primary', 'info'];
 export const buttonTypes = ['fill', 'outline', 'ghost', 'text', 'fab'];
 
@@ -63,7 +63,7 @@ export default {
 			},
 		},
 		/**
-		 * 색상(primary, light-primary, success, error, secondary, info)
+		 * 색상(primary, light-primary, success, accent, secondary, info)
 		 */
 		color: {
 			type: String,
@@ -182,10 +182,10 @@ $success-hover-background-color: $green800;
 $success-disabled-background-color: $green100;
 $success-text-color: $success;
 
-$error-background-color: $error;
-$error-hover-background-color: $red800;
-$error-disabled-background-color: $red100;
-$error-text-color: $error;
+$accent-background-color: $accent;
+$accent-hover-background-color: $red800;
+$accent-disabled-background-color: $red100;
+$accent-text-color: $accent;
 
 $secondary-background-color: $secondary;
 $secondary-hover-background-color: $orange800;
@@ -526,49 +526,49 @@ $info-text-color: $info;
 	}
 }
 
-.error {
-	background-color: $error-background-color;
+.accent {
+	background-color: $accent-background-color;
 	@include state-style {
-		background-color: $error-hover-background-color;
+		background-color: $accent-hover-background-color;
 	}
 	&:disabled {
-		background-color: $error-disabled-background-color;
+		background-color: $accent-disabled-background-color;
 		.c-button--icon::v-deep .c-icon {
 			fill: $white !important;
 		}
 		.c-button--loading {
-			background-color: $error-disabled-background-color;
+			background-color: $accent-disabled-background-color;
 		}
 	}
 	.c-button--loading {
-		background-color: $error-background-color;
+		background-color: $accent-background-color;
 	}
 	&.text {
-		color: $error-text-color;
+		color: $accent-text-color;
 		@include state-style {
 			background-color: $red100;
 		}
 		&:disabled {
-			color: $error-disabled-background-color;
+			color: $accent-disabled-background-color;
 			background: none;
 			.c-button--icon::v-deep .c-icon {
-				fill: $error-disabled-background-color !important;
+				fill: $accent-disabled-background-color !important;
 			}
 		}
 	}
 	&.outline {
 		background-color: transparent;
-		border: 1px solid $error-text-color;
-		color: $error-text-color;
+		border: 1px solid $accent-text-color;
+		color: $accent-text-color;
 		@include state-style {
-			background-color: $error-disabled-background-color;
+			background-color: $accent-disabled-background-color;
 		}
 		&:disabled {
-			color: $error-disabled-background-color;
-			border: 1px solid $error-disabled-background-color;
+			color: $accent-disabled-background-color;
+			border: 1px solid $accent-disabled-background-color;
 			background-color: $white;
 			.c-button--icon::v-deep .c-icon {
-				fill: $error-disabled-background-color !important;
+				fill: $accent-disabled-background-color !important;
 			}
 		}
 		.c-button--loading {

@@ -36,7 +36,7 @@ import Icon from '@/components/icon/Icon.vue';
 import Typography from '@/components/typography/Typography.vue';
 import paddingMixin from '@/mixins/paddingMixin.js';
 
-export const CalloutTypes = ['information', 'error', 'success', 'notice'];
+export const CalloutTypes = ['information', 'accent', 'success', 'notice'];
 export const CalloutSizes = ['xsmall', 'small', 'medium'];
 
 /**
@@ -47,7 +47,7 @@ export default {
 	mixins: [paddingMixin],
 	props: {
 		/**
-		 * 타입(information, error, success, notice)
+		 * 타입(information, accent, success, notice)
 		 */
 		type: {
 			type: String,
@@ -102,7 +102,7 @@ export default {
 		computedIconColor() {
 			return {
 				information: 'gray600',
-				error: 'red600',
+				accent: 'red600',
 				success: 'green600',
 				notice: 'blue600',
 			}[this.type];
@@ -133,7 +133,7 @@ export default {
 		iconName() {
 			const name = {
 				information: 'Information',
-				error: 'Exclamation',
+				accent: 'Exclamation',
 				notice: 'Megaphone',
 				success: 'CheckRound',
 			}[this.type];
@@ -201,7 +201,7 @@ export default {
 		&.information {
 			background-color: $gray000;
 		}
-		&.error {
+		&.accent {
 			background-color: $red000;
 		}
 		&.success {

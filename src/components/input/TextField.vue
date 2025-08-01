@@ -181,7 +181,7 @@ export default {
 		},
 		hintColor() {
 			if (this.error) {
-				return 'error';
+				return 'accent';
 			}
 
 			if (this.outline && this.label && (this.isFocused || this.active)) {
@@ -298,8 +298,8 @@ $disabled-background-color: $gray000;
 
 		&.c-text-field--outline.error,
 		&.c-text-field--underline.error {
-			color: $error;
-			border-color: $error;
+			color: $accent;
+			border-color: $accent;
 
 			&::placeholder {
 				color: $red100;
@@ -331,9 +331,9 @@ $disabled-background-color: $gray000;
 					}
 
 					&.error {
-						border-color: $error;
+						border-color: $accent;
 						+ .c-text-field--label {
-							color: $error;
+							color: $accent;
 						}
 					}
 
