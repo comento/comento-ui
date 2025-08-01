@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Toast, { toastTypes, toastPositions } from '@/components/toast/Toast.vue';
+import Toast, { toastColors, toastPositions } from '@/components/toast/Toast.vue';
 import Button from '@/components/button/Button';
 import Icon, { IconNames } from '@/components/icon/Icon';
 
@@ -20,11 +20,11 @@ import Icon, { IconNames } from '@/components/icon/Icon';
                 type: "boolean",
             },
         },
-        type: {
-            description: "종류",
+        color: {
+            description: "색상",
             control: {
                 type: "select",
-                options: toastTypes,
+                options: toastColors,
             },
         },
         timeout: {
@@ -58,7 +58,7 @@ export const Default = (args, { argTypes }) => ({
             <Button @click="show = true">Open</Button>
             <Toast
                 :show.sync="show"
-                :type="type"
+                :color="color"
                 :icon="icon"
                 :message="message"
                 :timeout="timeout"
@@ -91,7 +91,7 @@ export const Default = (args, { argTypes }) => ({
                     <Toast
                       :show.sync="show"
                       position="top"
-                      type="success"
+                      color="success"
                       icon="IconSecurityLargeFill"
                       message="결제 정보 암호화 중"
                     />
