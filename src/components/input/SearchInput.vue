@@ -24,7 +24,7 @@
 				v-if="sync_value.length > 0"
 				name="IconCloseRoundSmallFill"
 				size="medium"
-				:color="transparent ? 'gray200' : 'gray300'"
+				:color="transparent ? 'gray200' : 'gray400'"
 				class="icon_reset"
 				role="button"
 				tabindex="2"
