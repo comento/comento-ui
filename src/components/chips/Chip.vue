@@ -33,7 +33,7 @@
 import paddingMixin from '@/mixins/paddingMixin.js';
 import Icon from '@/components/icon/Icon.vue';
 
-export const ChipColors = ['primary', 'info', 'success', 'secondary', 'error'];
+export const ChipColors = ['primary', 'info', 'success', 'secondary', 'accent'];
 export const ChipSizes = ['small', 'medium', 'large', 'xlarge'];
 export const ChipTypes = ['fill', 'outline', 'clickable-fill', 'clickable-outline'];
 export const ChipSizesWithCloseButton = ['medium', 'large', 'xlarge'];
@@ -160,7 +160,7 @@ export default {
 				types: ['fill', 'clickable-fill'],
 			};
 			const darkFillConfig = {
-				colors: ['primary', 'error'],
+				colors: ['primary', 'accent'],
 				types: ['clickable-fill'],
 			};
 
@@ -168,7 +168,7 @@ export default {
 			const isWhiteFill =
 				whiteFillConfig.types.includes(this.type) && whiteFillConfig.colors.includes(this.color);
 			const isExceptionDarkThemeCase =
-				this.color === 'error' && this.type === 'fill' && this.computedHasIcon && this.isHovered;
+				this.color === 'accent' && this.type === 'fill' && this.computedHasIcon && this.isHovered;
 
 			if (isDarkTheme) {
 				return this.color === 'primary' ? 'blue800' : 'red800';
@@ -332,8 +332,8 @@ export default {
 			}
 		}
 	}
-	&.error {
-		color: $error;
+	&.accent {
+		color: $accent;
 		border: 1px solid $red050;
 		background-color: $red050;
 
@@ -347,14 +347,14 @@ export default {
 
 		&.outline,
 		&.clickable-outline {
-			color: $error;
-			border: 1px solid $error;
+			color: $accent;
+			border: 1px solid $accent;
 			background-color: $white;
 
 			&.clickable,
 			&.with-icon {
 				@include state-style {
-					color: $error;
+					color: $accent;
 					background-color: $red050;
 				}
 			}

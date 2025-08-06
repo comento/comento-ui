@@ -20,7 +20,7 @@ import Icon from '@/components/icon/Icon.vue';
 import Typography from '@/components/typography/Typography.vue';
 import Loader from '@/components/loader/Loader.vue';
 
-export const RATING_BUTTON_COLORS = ['primary', 'info', 'error', 'secondary', 'success'];
+export const RATING_BUTTON_COLORS = ['primary', 'info', 'accent', 'secondary', 'success'];
 
 /**
  * @displayName c-rating-button
@@ -62,7 +62,7 @@ export default {
 				return {
 					primary: 'blue100',
 					info: 'gray200',
-					error: 'red100',
+					accent: 'red100',
 					secondary: 'orange100',
 					success: 'green100',
 				}[this.color];
@@ -103,7 +103,7 @@ export default {
 			background: $gray100;
 		}
 	}
-	&.error {
+	&.accent {
 		@include state-style {
 			background: $red000;
 		}

@@ -63,11 +63,11 @@ const colorMap = {
 		stroke: green800,
 		fill: white,
 	},
-	error: {
+	accent: {
 		stroke: red100,
 		fill: red600,
 	},
-	'error-reversed': {
+	'accent-reversed': {
 		stroke: red800,
 		fill: white,
 	},
@@ -106,7 +106,7 @@ export default {
 			},
 		},
 		/**
-		 * 색상(primary, light-primary, success, error, secondary, info)
+		 * 색상(primary, light-primary, success, accent, secondary, info)
 		 */
 		color: {
 			type: String,
