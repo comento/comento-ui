@@ -46,7 +46,7 @@ import Typography from '@/components/typography/Typography.vue';
 import { colors } from '@/utils/constants/color.js';
 import IconButton from '@/components/button/IconButton.vue';
 
-export const AlertTypes = ['information', 'notice', 'success', 'error', 'image'];
+export const AlertTypes = ['info', 'primary', 'success', 'accent', 'image'];
 
 /**
  * @displayName c-alert
@@ -55,11 +55,11 @@ export default {
 	name: 'Alert',
 	props: {
 		/**
-		 * 타입(information, notice, success, error, image)
+		 * 타입(info, primary, success, accent, image)
 		 */
 		type: {
 			type: String,
-			default: 'information',
+			default: 'info',
 			validator(value) {
 				return AlertTypes.includes(value);
 			},
@@ -115,14 +115,14 @@ export default {
 		},
 		iconTypeMap() {
 			return {
-				information: {
+				info: {
 					backgroundColor: 'gray000',
 					color: 'gray600',
 					icon: `IconInformation${this.iconSize}Line`,
 				},
-				notice: { backgroundColor: 'blue000', color: 'primary', icon: `IconMegaphone${this.iconSize}Line` },
+				primary: { backgroundColor: 'blue000', color: 'primary', icon: `IconMegaphone${this.iconSize}Line` },
 				success: { backgroundColor: 'green000', color: 'success', icon: `IconCheckRound${this.iconSize}Line` },
-				error: { backgroundColor: 'red000', color: 'error', icon: `IconExclamation${this.iconSize}Line` },
+				accent: { backgroundColor: 'red000', color: 'accent', icon: `IconExclamation${this.iconSize}Line` },
 			};
 		},
 	},
