@@ -3,7 +3,7 @@
 		<aside
 			v-if="sync_show"
 			class="c-application c-toast"
-			:class="[computedType, computedPosition]"
+			:class="[computedColor, computedPosition]"
 			v-on="$listeners"
 		>
 			<div v-if="$slots['icon']" class="c-toast--icon">
@@ -25,7 +25,7 @@ import Typography from '@/components/typography/Typography.vue';
 import Icon, { IconNames } from '@/components/icon/Icon.vue';
 import customValidator from '@/utils/custom-validator.js';
 
-export const toastTypes = ['basic', 'error', 'success', 'security'];
+export const toastColors = ['info', 'accent', 'success', 'primary'];
 export const toastPositions = ['top', 'bottom'];
 
 /**
@@ -43,14 +43,14 @@ export default {
 			default: '',
 			required: true,
 		},
-		type: {
+		color: {
 			/**
-			 * 타입(basic, error, success, security)
+			 * 색상(info, accent, success, primary)
 			 */
 			type: String,
-			default: 'basic',
+			default: 'info',
 			validator(value) {
-				return customValidator(value, toastTypes.includes(value), 'Toast', 'type');
+				return customValidator(value, toastColors.includes(value), 'Toast', 'color');
 			},
 		},
 		timeout: {
@@ -88,8 +88,8 @@ export default {
 				return this.show;
 			},
 		},
-		computedType() {
-			return this.type;
+		computedColor() {
+			return this.color;
 		},
 		computedPosition() {
 			return `position-${this.position}`;
@@ -150,16 +150,16 @@ export default {
 		@include flexbox();
 	}
 
-	&.basic {
+	&.info {
 		background: $gray850;
 	}
-	&.error {
-		background: $error;
+	&.accent {
+		background: $accent;
 	}
 	&.success {
 		background: $success;
 	}
-	&.security {
+	&.primary {
 		background: $primary;
 	}
 

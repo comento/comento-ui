@@ -8,7 +8,7 @@ import SupportingText from '@/components/supportingText/SupportingText.vue';
 		color: {
 			control: {
 				type: 'select',
-				options: ['info', 'primary', 'error'],
+				options: ['info', 'primary', 'accent'],
 			},
 			table: {
 				type: { summary: 'string' },
@@ -46,7 +46,7 @@ export const Basic = (args, { argTypes }) => ({
 				<div>
 					<SupportingText color="info">메시지는 선택사항입니다.</SupportingText>
 					<SupportingText color="primary">메시지는 선택사항입니다.</SupportingText>
-					<SupportingText color="error">메시지는 선택사항입니다.</SupportingText>
+					<SupportingText color="accent">메시지는 선택사항입니다.</SupportingText>
 				</div>
 			`,
 			components: { SupportingText },

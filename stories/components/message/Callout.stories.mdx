@@ -1,6 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Callout, { CalloutTypes, CalloutSizes } from '@/components/callout/Callout.vue';
-import Icon from '@/components/icon/Icon';
+import Callout, { CalloutColors, CalloutSizes } from '@/components/callout/Callout.vue';
 
 <Meta
   title="Message/Callout"
@@ -13,11 +12,11 @@ import Icon from '@/components/icon/Icon';
         type: "text"
       },
     },
-    type: {
-      description: "보여주려는 정보의 종류",
+    color: {
+      description: "색상",
       control: {
         type: "select",
-        options: CalloutTypes,
+        options: CalloutColors,
       },
     },
     size: {
@@ -65,7 +64,8 @@ export const Default = (args, { argTypes }) => ({
     template: `
         <Callout
             v-if="showCallout"
-            :type="type" :size="size"
+            :color="color"
+			:size="size"
             :full="full"
             :paddings="paddings"
             :closable="closable"
@@ -103,16 +103,16 @@ export const Default = (args, { argTypes }) => ({
         <div>
             <div style="margin-bottom: 10px">
                 <div>
-                    <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout color='info'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout type='error'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout color='accent'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout color='success'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout type='notice'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout color='primary'>문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
             <div style="margin-bottom: 10px">
@@ -150,29 +150,29 @@ export const Default = (args, { argTypes }) => ({
             </div>
         </div>
             `,
-      components: { Callout, Icon },
+      components: { Callout },
     }}
   </Story>
 </Canvas>
 
-### Types
+### Colors
 
 <Canvas>
-    <Story name="Types" height="100px">
+    <Story name="Colors" height="100px">
     {{
         template: `
             <div>
                 <div>
-                    <Callout type='information'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout color='info'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout type='error'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout color='accent'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout type='success'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout color='success'>문구가 들어가는 자리입니다.</Callout>
                 </div>
                 <div>
-                    <Callout type='notice'>문구가 들어가는 자리입니다.</Callout>
+                    <Callout color='primary'>문구가 들어가는 자리입니다.</Callout>
                 </div>
             </div>
             `,

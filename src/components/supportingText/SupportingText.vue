@@ -20,7 +20,7 @@ export default {
 	name: 'SupportingText',
 	props: {
 		/**
-		 * 색상(info, primary, error)
+		 * 색상(info, primary, accent)
 		 */
 		color: {
 			type: String,
