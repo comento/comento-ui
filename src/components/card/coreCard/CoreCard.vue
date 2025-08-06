@@ -11,7 +11,7 @@
 				<CoreCardContent type="body" v-html="body" />
 				<RatingGroup>
 					<IconRating icon-name="IconCommentSmallLine" color="primary" :text="computedRepliesCount" />
-					<IconRating icon-name="IconLikeSmallLine" color="error" :text="computedLikeCount" />
+					<IconRating icon-name="IconLikeSmallLine" color="accent" :text="computedLikeCount" />
 				</RatingGroup>
 			</div>
 

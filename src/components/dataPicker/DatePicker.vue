@@ -32,7 +32,7 @@ import uniqueId from '@/utils/unique-id.js';
 import SupportingText from '@/components/supportingText/SupportingText.vue';
 
 export const valueTypes = ['format', 'date', 'timestamp'];
-export const colors = ['primary', 'success', 'info', 'error'];
+export const colors = ['primary', 'success', 'info', 'accent'];
 
 /**
  * @displayName c-date-picker
@@ -73,7 +73,7 @@ export default {
 			default: false,
 		},
 		/**
-		 * 색상(primary, success, info, error)
+		 * 색상(primary, success, info, accent)
 		 */
 		color: {
 			type: String,
@@ -166,10 +166,10 @@ export default {
 			}
 		}
 	}
-	&.error {
+	&.accent {
 		&::v-deep .c-input {
 			&:focus {
-				border-color: $error;
+				border-color: $accent;
 			}
 		}
 	}

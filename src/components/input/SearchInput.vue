@@ -24,7 +24,7 @@
 				v-if="sync_value.length > 0"
 				name="IconCloseRoundSmallFill"
 				size="medium"
-				:color="transparent ? 'gray200' : 'gray300'"
+				:color="transparent ? 'gray200' : 'gray400'"
 				class="icon_reset"
 				role="button"
 				tabindex="2"
@@ -135,6 +135,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$search-input-padding: 12px;
+
 .search_input_container {
 	@include clearfix();
 	@include flexbox();
@@ -187,12 +189,12 @@ export default {
 		@include transition(all 0.2s ease);
 		border: 0;
 		background-color: $gray100;
-		padding: 10px 36px 10px 58px;
+		padding: 10px 40px 10px 48px;
 		@include body2();
 		width: 300px;
 		color: $gray800;
 		@include mobile {
-			padding: 7.5px 36px 7.5px 58px;
+			padding: 7.5px 40px 7.5px 48px;
 			@include body1();
 		}
 
@@ -208,7 +210,7 @@ export default {
 	.search_input_icon_wrapper {
 		position: absolute;
 		z-index: 1;
-		right: 14px;
+		right: $search-input-padding;
 		top: 50%;
 		transform: translateY(-50%);
 		@include flexbox();
@@ -219,7 +221,7 @@ export default {
 		}
 
 		&.left {
-			left: 0px !important;
+			left: 0 !important;
 			z-index: 1;
 			width: max-content;
 		}
@@ -227,7 +229,6 @@ export default {
 		.icon_reset {
 			cursor: pointer;
 			position: relative;
-			margin: 0 4px 0 8px;
 			display: block;
 			z-index: 2;
 			@include mobile {
@@ -236,12 +237,9 @@ export default {
 		}
 		.icon_search {
 			position: relative;
-			margin-left: 14px;
+			margin-left: $search-input-padding;
 			display: block;
 			z-index: 2;
-			@include mobile {
-				margin-left: 14px;
-			}
 		}
 	}
 }

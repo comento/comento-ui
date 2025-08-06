@@ -55,11 +55,11 @@
 </template>
 
 <script>
+import Button from '@/components/button/Button.vue';
 import NewCol from '@/components/grid/NewCol.vue';
-import Tabs from '@/components/tabs/Tabs.vue';
 import NewGrid from '@/components/grid/NewGrid.vue';
 import NewRow from '@/components/grid/NewRow.vue';
-import Button from '@/components/button/Button.vue';
+import Tabs from '@/components/tabs/Tabs.vue';
 import windowMixin from '@/mixins/windowMixin.js';
 
 /**
@@ -118,7 +118,7 @@ export default {
 $active-bar-transparent: white;
 $hover-background-transparent: rgba(21, 22, 23, 0.1);
 .c-sub-header {
-	width: 100vw;
+	width: 100%;
 	top: 24px;
 	left: 0;
 	background-color: $white;

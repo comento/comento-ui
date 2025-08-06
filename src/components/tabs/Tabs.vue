@@ -284,7 +284,7 @@ export default {
 		}
 	}
 	&.c-tabs--menu-container:not(.c-tabs--vertical) {
-		border-bottom-color: $light-gray;
+		border-bottom-color: $gray100;
 	}
 }
 /*&--blur-left {*/
