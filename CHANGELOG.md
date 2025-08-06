@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/comento/comento-ui/compare/v1.7.15...v1.8.0) (2025-08-06)
+
+
+### Bug Fixes
+
+* 검색창 닫기 아이콘 색상 변경 ([#1187](https://github.com/comento/comento-ui/issues/1187)) ([7241550](https://github.com/comento/comento-ui/commit/7241550e5f4a9b257c2b12d2405713bb7e78e33b))
+
+
+### Features
+
+* 디자인시스템 컬러값, 특정 컴포넌트 속성명 변경 ([#1186](https://github.com/comento/comento-ui/issues/1186)) ([20c2717](https://github.com/comento/comento-ui/commit/20c2717ffec8d22c02b17d67dbefc56885ad97ba))
+
+
+
 ## [1.7.15](https://github.com/comento/comento-ui/compare/v1.7.14...v1.7.15) (2025-07-21)
 
 
