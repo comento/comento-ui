@@ -1,3 +1,12 @@
+# [1.9.0](https://github.com/comento/comento-ui/compare/v1.8.0...v1.9.0) (2025-08-13)
+
+
+### Features
+
+* 디자인시스템 변경 컴포넌트 개발 ([#1189](https://github.com/comento/comento-ui/issues/1189)) ([257b515](https://github.com/comento/comento-ui/commit/257b515f5beaef4c3a430d5d19892f853114591e))
+
+
+
 # [1.8.0](https://github.com/comento/comento-ui/compare/v1.7.15...v1.8.0) (2025-08-06)
 
 
