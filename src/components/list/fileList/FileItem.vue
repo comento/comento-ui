@@ -1,15 +1,18 @@
 <template>
-	<ListItem class="c-application c-file-item--container" @click="handleClickFileItem({ file, index })">
+	<ListItem class="c-application px-10" size="large" @click="handleClickFileItem({ file, index })">
 		<div class="c-file-item--content" @click.stop="handleClickFileItemContent({ file, index })">
-			<template v-if="isRemovable">
-				<Loader v-if="isLoading" class="c-file-item--content-icon" size="small" />
-				<Icon v-else class="c-file-item--content-icon" name="IconFileSmallLine" color="gray700" />
-			</template>
-			<Typography type="body2" color="gray700" class="text-truncate">{{ file.title || file.name }}</Typography>
+			<div class="icon-wrapper">
+				<Loader v-if="isRemovable && isLoading" size="small" />
+				<Icon v-else-if="isRemovable && isError" name="IconExclamationSmallFill" color="error" />
+				<img v-else src="https://cdn.comento.kr/images/illust/illust-file.svg" alt="" />
+			</div>
+			<Typography type="body2" :color="isError ? 'error' : 'gray700'" :font-weight="400" class="text-truncate">
+				{{ file.title || file.name }}
+			</Typography>
 		</div>
 		<Icon
 			v-if="isRemovable"
-			name="IconTrashSmallLine"
+			name="IconCloseSmallLine"
 			color="gray500"
 			style="flex-shrink: 0"
 			@click.stop="handleClickFileTrashIcon({ file, index })"
@@ -59,6 +62,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		isError: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	methods: {
 		handleClickFileItem({ file, index }) {
@@ -87,12 +94,17 @@ export default {
 			@include flexbox();
 			@include align-items(center);
 			overflow: hidden;
-			&-icon {
-				cursor: pointer;
-				flex-shrink: 0;
-				margin-right: 4px;
-			}
+			gap: 8px;
 		}
 	}
+}
+
+.icon-wrapper {
+	width: 20px;
+	height: 20px;
+	@include flexbox();
+	@include align-items(center);
+	@include justify-content(center);
+	flex: none;
 }
 </style>

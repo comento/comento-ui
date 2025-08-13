@@ -1,5 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Tooltip from '@/components/tooltip/Tooltip.vue';
+import Tooltip, { TOOLTIP_COLORS } from '@/components/tooltip/Tooltip.vue';
 import { placements } from '@/utils/constants/tooltip';
 import Icon from '@/components/icon/Icon';
 import NewGrid from '@/components/grid/NewGrid.vue';
@@ -40,6 +40,13 @@ import NewCol from '@/components/grid/NewCol.vue';
             type: "text",
         },
     },
+	color: {
+		description: "색상",
+		control: {
+			type: "select",
+			options: TOOLTIP_COLORS,
+		},
+	},
   }}
 />
 
@@ -47,7 +54,7 @@ export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Tooltip, Icon },
   template: `<div style="width: 100%; display: flex; justify-content: center;">
-                 <Tooltip :placement="placement" :container="container">
+                 <Tooltip :placement="placement" :container="container" :color="color">
                      <Icon name="IconProfileLargeFill"></Icon>
                      <template v-slot:popover>
                            <div>{{ text }}</div>
@@ -120,19 +127,19 @@ export const Default = (args, { argTypes }) => ({
                     </NewRow>
                     <NewRow>
                         <NewCol class="flex flex-row justify-around" style="height: 40px; margin-bottom: 40px">
-                            <Tooltip placement="right-top" open>
+                            <Tooltip placement="right-top" open color="black">
                                 <Icon name="IconProfileLargeFill"></Icon>
                                     <template v-slot:popover>
                                         <div>right-top</div>
                                     </template>
                             </Tooltip>
-                            <Tooltip placement="right" open>
+                            <Tooltip placement="right" open color="black">
                                 <Icon name="IconProfileLargeFill"></Icon>
                                     <template v-slot:popover>
                                         <div>right</div>
                                     </template>
                             </Tooltip>
-                            <Tooltip placement="right-bottom" open>
+                            <Tooltip placement="right-bottom" open color="black">
                                 <Icon name="IconProfileLargeFill"></Icon>
                                     <template v-slot:popover>
                                         <div>right-bottom</div>
@@ -142,19 +149,19 @@ export const Default = (args, { argTypes }) => ({
                     </NewRow>
                     <NewRow>
                       <NewCol class="flex flex-row justify-around" style="height: 40px">
-                        <Tooltip placement="left-top" open>
+                        <Tooltip placement="left-top" open color="black">
                           <Icon name="IconProfileLargeFill"></Icon>
                           <template v-slot:popover>
                             <div>left-top</div>
                           </template>
                         </Tooltip>
-                        <Tooltip placement="left" open>
+                        <Tooltip placement="left" open color="black">
                           <Icon name="IconProfileLargeFill"></Icon>
                           <template v-slot:popover>
                             <div>left</div>
                           </template>
                         </Tooltip>
-                        <Tooltip placement="left-bottom" open>
+                        <Tooltip placement="left-bottom" open color="black">
                           <Icon name="IconProfileLargeFill"></Icon>
                           <template v-slot:popover>
                             <div>left-bottom</div>

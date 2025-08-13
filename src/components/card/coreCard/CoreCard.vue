@@ -3,12 +3,12 @@
 		<Box :paddings="[18, 20, 16, 20]" :has-border="!isMobile" border-color="gray200">
 			<div class="c-core-card--content-wrapper">
 				<slot name="chips" />
-				<Content type="overline">
+				<CoreCardContent type="overline">
 					<Typography element="span" v-html="overlineLeft" />
 					· <Typography element="span" v-html="overlineRight" />
-				</Content>
-				<Content type="title" v-html="title" />
-				<Content type="body" v-html="body" />
+				</CoreCardContent>
+				<CoreCardContent type="title" v-html="title" />
+				<CoreCardContent type="body" v-html="body" />
 				<RatingGroup>
 					<IconRating icon-name="IconCommentSmallLine" color="primary" :text="computedRepliesCount" />
 					<IconRating icon-name="IconLikeSmallLine" color="accent" :text="computedLikeCount" />
@@ -33,11 +33,11 @@
 <script>
 import Box from '@/components/box/Box.vue';
 import Divider from '@/components/divider/Divider.vue';
-import NarrowButton from '@/components/button/NarrowButton';
-import Content from '@/components/content/Content';
-import RatingGroup from '@/components/rating/RatingGroup';
-import IconRating from '@/components/rating/IconRating';
-import Typography from '@/components/typography/Typography';
+import NarrowButton from '@/components/button/NarrowButton.vue';
+import CoreCardContent from '@/components/card/coreCard/CoreCardContent.vue';
+import RatingGroup from '@/components/rating/RatingGroup.vue';
+import IconRating from '@/components/rating/IconRating.vue';
+import Typography from '@/components/typography/Typography.vue';
 
 /**
  * 멘토링 카드
@@ -96,7 +96,7 @@ export default {
 		NarrowButton,
 		Divider,
 		Box,
-		Content,
+		CoreCardContent,
 		Typography,
 	},
 };
@@ -112,7 +112,7 @@ export default {
 	}
 
 	&--content-wrapper {
-		::v-deep.c-content--body {
+		::v-deep.core-card-content--body {
 			@include ellipsis(4, normal);
 			@include pc {
 				@include ellipsis(3, normal);

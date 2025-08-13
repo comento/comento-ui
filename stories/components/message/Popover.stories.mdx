@@ -1,12 +1,14 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Popover from '@/components/popover/Popover.vue';
+import Popover, { POPOVER_COLORS } from '@/components/popover/Popover.vue';
 import { placements } from '@/utils/constants/tooltip';
-import Typography from '@/components/typography/Typography';
-import Icon from '@/components/icon/Icon';
-import Button from '@/components/button/Button';
+import Typography from '@/components/typography/Typography.vue';
+import Icon from '@/components/icon/Icon.vue';
+import Button from '@/components/button/Button.vue';
 import NewGrid from '@/components/grid/NewGrid.vue';
 import NewRow from '@/components/grid/NewRow.vue';
 import NewCol from '@/components/grid/NewCol.vue';
+import List from '@/components/list/list/List.vue';
+import ListItem from '@/components/list/list/ListItem.vue';
 
 <Meta
   title="Message/Popover"
@@ -41,17 +43,24 @@ import NewCol from '@/components/grid/NewCol.vue';
             type: "text",
         },
     },
+  	color: {
+		description: "색상",
+		control: {
+			type: "select",
+			options: POPOVER_COLORS,
+		}
+	}
   }}
 />
 
 export const Default = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { Popover, Icon },
+  components: { Popover, Icon, Typography },
   template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-                <Popover :placement="placement" :padding-x="paddingX" :container="container">
-   			        <Icon name="IconProfileLargeFill"></Icon>
+                <Popover :placement="placement" :padding-x="paddingX" :container="container" :color="color">
+   			        <Icon name="IconProfileLargeFill" />
    			            <template v-slot:popover>
-   				            <div>menu 1</div>
+   				            <Typography :color="color === 'white' ? 'black' : 'white'">menu 1</Typography>
    			            </template>
    			    </Popover>
    			 </div>`
@@ -284,22 +293,22 @@ export const Default = (args, { argTypes }) => ({
                     </NewRow>
                     <NewRow class="mt-40">
                         <NewCol class="flex flex-row justify-around" style="height: 40px">
-                            <Popover placement="right-top" :open="true">
+                            <Popover placement="right-top" :open="true" color="black">
                                 <Icon name="IconProfileLargeFill"></Icon>
                                     <template v-slot:popover>
-                                        <div>right-top</div>
+                                        <Typography color="white">right-top</Typography>
                                     </template>
                             </Popover>
-                            <Popover placement="right" :open="true">
+                            <Popover placement="right" :open="true" color="black">
                                 <Icon name="IconProfileLargeFill"></Icon>
                                     <template v-slot:popover>
-                                        <div>right</div>
+										<Typography color="white">right</Typography>
                                     </template>
                             </Popover>
-                            <Popover placement="right-bottom" :open="true">
+                            <Popover placement="right-bottom" :open="true" color="black">
                                 <Icon name="IconProfileLargeFill"></Icon>
                                     <template v-slot:popover>
-                                        <div>right-bottom</div>
+										<Typography color="white">right-bottom</Typography>
                                     </template>
                             </Popover>
                         </NewCol>
@@ -316,42 +325,49 @@ export const Default = (args, { argTypes }) => ({
     <Story name="Content" height="200px">
         {{
             template: `
-                <div style="width: 100%; height: 100px; display: flex; justify-content: space-around; align-items: center">
-                    <Popover placement="bottom-right" :open="true">
-                        <Icon name="IconProfileLargeFill"></Icon>
-                            <template v-slot:popover>
-                                <Typography type="body2">Title</Typography>
-                                <Typography type="caption1" color="gray800">content</Typography>
-                                <Button>button</Button>
-                            </template>
-                    </Popover>
-                    <Popover placement="bottom" :open="true">
-                        <Icon name="IconProfileLargeFill"></Icon>
-                            <template v-slot:popover>
-                                <Typography type="body2">Title</Typography>
-                                <Typography type="caption1" color="gray800">content</Typography>
-                                <Button>button</Button>
-                            </template>
-                    </Popover>
-                    <Popover placement="bottom-left" :open="true">
-                        <Icon name="IconProfileLargeFill"></Icon>
-                            <template v-slot:popover>
-                                <Typography type="body2">Title</Typography>
-                                <Typography type="caption1" color="gray800">content</Typography>
-                                <Button>button</Button>
-                            </template>
-                    </Popover>
-                    <Popover placement="right" :open="true">
-                        <Icon name="IconProfileLargeFill"></Icon>
-                            <template v-slot:popover>
-                                <Typography type="body2">Title</Typography>
-                                <Typography type="caption1" color="gray800">content</Typography>
-                                <Button>button</Button>
-                            </template>
-                    </Popover>
-                 </div>
+				<div>
+					<div style="width: 100%; height: 100px; display: flex; justify-content: space-around; align-items: center">
+						<Popover placement="bottom-right" :open="true">
+							<Icon name="IconProfileLargeFill"></Icon>
+							<template v-slot:popover>
+								<List size="small">
+									<ListItem size="small">
+										<Typography type="caption1" color="gray800">수강생 명단</Typography>
+									</ListItem>
+									<ListItem size="small">
+										<Typography type="caption1" color="gray800">클래스 가이드</Typography>
+									</ListItem>
+								</List>
+							</template>
+						</Popover>
+						<Popover placement="bottom" :open="true">
+							<Icon name="IconProfileLargeFill"></Icon>
+							<template v-slot:popover>
+								<Typography type="body2">Title</Typography>
+								<Typography type="caption1" color="gray800">content</Typography>
+								<Button>button</Button>
+							</template>
+						</Popover>
+						<Popover placement="bottom-left" :open="true" color="black">
+							<Icon name="IconProfileLargeFill"></Icon>
+							<template v-slot:popover>
+								<Typography type="body2" color="white">Title</Typography>
+								<Typography type="caption1" color="white">content</Typography>
+								<Button>button</Button>
+							</template>
+						</Popover>
+						<Popover placement="right" :open="true" color="black">
+							<Icon name="IconProfileLargeFill"></Icon>
+							<template v-slot:popover>
+								<Typography type="body2" color="white">Title</Typography>
+								<Typography type="caption1" color="white">content</Typography>
+								<Button>button</Button>
+							</template>
+						</Popover>
+					</div>
+				</div>
         `,
-          components: { Popover, Icon, Typography, Button },
+          components: { Popover, Icon, Typography, Button, List, ListItem },
         }}
     </Story>
 </Canvas>
