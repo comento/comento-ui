@@ -2,6 +2,9 @@
 	<article class="c-application c-empty-box" :class="full && 'full'">
 		<div v-if="type === 'emphasized'" class="c-empty-box--emphasized-container">
 			<Box :paddings="[40, 16, 40, 16]">
+				<div class="flex mb-16 justify-center">
+					<slot name="illust" />
+				</div>
 				<Typography type="body1" color="gray700" align="center" :font-weight="600">
 					<slot name="title" />
 				</Typography>
@@ -61,7 +64,7 @@ export default {
 		 */
 		type: {
 			type: String,
-			default: 'simple',
+			default: 'emphasized',
 			validator(value) {
 				const isValid = Types.indexOf(value) !== -1;
 				if (!isValid) {

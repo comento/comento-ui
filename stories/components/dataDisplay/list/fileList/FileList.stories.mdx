@@ -67,7 +67,6 @@ export const Default = (args, { argTypes }) => ({
                 <div :style="full ? 'width: 100%' : ''">
                  <FileInput v-if="isRemovable" @uploadFiles="handleUploadFiles"/>
                  <FileSummary v-else :full="full" :length="filesData.length" />
-                 <Divider type="dash" style="margin-top: 8.5px; margin-bottom: 8.5px;"/>
                  <FileList :files="filesData"
                     :is-removable="isRemovable"
                     :full="full"
@@ -78,7 +77,7 @@ export const Default = (args, { argTypes }) => ({
                  />
                 </div>
              </div>`,
-   components: { FileList, Divider, FileSummary, FileInput },
+   components: { FileList, FileSummary, FileInput },
 });
 
 # FileList

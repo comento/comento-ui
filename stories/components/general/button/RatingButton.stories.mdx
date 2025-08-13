@@ -1,6 +1,5 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import Typography from '@/components/typography/Typography';
-import RatingButton, { RATING_BUTTON_COLORS } from "@/components/button/RatingButton";
+import RatingButton, { RATING_BUTTON_COLORS, RATING_BUTTON_SIZES } from "@/components/button/RatingButton";
 import { IconNames } from "@/components/icon/Icon";
 
 <Meta
@@ -39,7 +38,15 @@ import { IconNames } from "@/components/icon/Icon";
             control: {
                 type: "boolean",
             }
-        }
+        },
+		size: {
+			description: "크기",
+			defaultValue: "small",
+			control: {
+				type: "select",
+				options: RATING_BUTTON_SIZES,
+			}
+		}
     }}
 />
 
@@ -47,7 +54,7 @@ export const Default = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { RatingButton },
     template: `
-        <RatingButton :icon-name="iconName" :color="color" :text="text" :loading="loading" :disabled="disabled" />
+        <RatingButton :icon-name="iconName" :color="color" :text="text" :loading="loading" :disabled="disabled" :size="size" />
     `,
 });
 
@@ -62,9 +69,9 @@ export const Default = (args, { argTypes }) => ({
 <ArgsTable story="Default" />
 
 ## Stories
-### All
+### Colors
 <Canvas>
-    <Story name="All" height="100px">
+    <Story name="Colors" height="100px">
         {{
             template: `
                 <div>
@@ -99,4 +106,35 @@ export const Default = (args, { argTypes }) => ({
             components: { RatingButton },
         }}
     </Story>
+</Canvas>
+
+### Sizes
+<Canvas>
+	<Story name="Sizes" height="100px">
+		{{
+			template: `
+				<div>
+					<div v-for="item in RATING_BUTTON_SIZES" :key="item" class="flex">
+						<RatingButton
+							color="info"
+							:size="item"
+							text="button 0"
+						/>
+						<RatingButton
+							color="info"
+							:size="item"
+							loading
+							text="button 0"
+						/>
+					</div>
+				</div>
+			`,
+			data() {
+				return {
+					RATING_BUTTON_SIZES,
+				};
+			},
+			components: { RatingButton },
+		}}
+	</Story>
 </Canvas>

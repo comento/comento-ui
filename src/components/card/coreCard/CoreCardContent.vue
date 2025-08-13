@@ -4,8 +4,7 @@
 		:type="contentItems[type].type"
 		:element="contentItems[type].element"
 		:color="computedColor"
-		class="c-application c-content"
-		:class="`c-content--${type}`"
+		:class="`core-card-content--${type}`"
 	>
 		<slot />
 	</Typography>
@@ -19,12 +18,8 @@ import { colorKeys } from '@/utils/constants/color.js';
 
 export const contentTypes = ['overline', 'title', 'body', 'caption'];
 
-/**
- * 주로 게시글의 본문에 사용
- * @displayName c-content
- */
 export default {
-	name: 'Content',
+	name: 'CoreCardContent',
 	props: {
 		/**
 		 * overline, title, body, caption
@@ -34,7 +29,7 @@ export default {
 			default: 'body',
 			validator(value) {
 				const isValid = contentTypes.indexOf(value) !== -1;
-				return customValidator(value, isValid, 'Content', 'type');
+				return customValidator(value, isValid, 'CoreCardContent', 'type');
 			},
 		},
 		color: {
@@ -42,7 +37,7 @@ export default {
 			default: null,
 			validator(value) {
 				const isValid = colorKeys.indexOf(value) !== -1;
-				return customValidator(value, isValid, 'Content', 'color');
+				return customValidator(value, isValid, 'CoreCardContent', 'color');
 			},
 		},
 	},
@@ -69,7 +64,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-content {
+.core-card-content {
 	position: relative;
 	&--overline {
 		margin-bottom: 6px;

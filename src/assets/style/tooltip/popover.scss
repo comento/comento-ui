@@ -7,15 +7,6 @@
       a {
         display: inline-block;
       }
-      & > * {
-        cursor: pointer;
-        &:hover {
-          background: $gray100;
-        }
-        &:not(:last-child) {
-          margin-bottom: 4px;
-        }
-      }
     }
   }
 }

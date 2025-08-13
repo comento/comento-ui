@@ -194,6 +194,44 @@ export const Default = (args, { argTypes }) => ({
     </Story>
 </Canvas>
 
+### With Two ActionButton
+<Canvas>
+	<Story name="WithTwoActionButton" height="100px">
+		{{
+			data: () => ({
+				show: false,
+			}),
+			template: `
+                <div>
+                    <Button @click="show = true">Open</Button>
+                    <BasicModal
+                        :show.sync="show"
+                        align="left"
+                        show-action-button
+						success-message="Primary"
+                    >
+                        <template v-slot:title>
+                          이용약관 및 유의사항
+                        </template>
+                        <template v-slot:content>
+                            - 이용권 특성상 구매 후 중도 해지 및 이에 따른 환불이 불가능합니다.<br />
+                            - 일부 콘텐츠는 작성자 또는 답변자 요청으로 열람이 제한될 수 있습니다.<br />
+                            - 취소하면 결제에 사용된 할인 쿠폰은 소멸되며 재사용할 수 없습니다.<br />
+                            - 결제에 따른 개인정보는 '개인정보 처리방침'에 근거하여 관리됩니다.
+                        </template>
+						<template v-slot:secondary-button>
+							<Button color="light-primary" size="large" full>Secondary</Button>
+						</template>
+                    </BasicModal>
+                </div>
+            `,
+			components: {
+				BasicModal, Button
+			}
+		}}
+	</Story>
+</Canvas>
+
 ### Scroll
 <Canvas>
     <Story name="Scroll" height="100px">

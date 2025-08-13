@@ -1,10 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import UserInformation, { userInformationTypes } from '@/components/content/UserInformation';
-import UserInformationName from "@/components/content/UserInformationName";
-import UserInformationCaption from "@/components/content/UserInformationCaption";
-import UserInformationChipGroup from "@/components/content/UserInformationChipGroup";
-import UserInformationCompany from "@/components/content/UserInformationCompany";
-import Content from '@/components/content/Content';
+import UserInformation, { userInformationTypes } from '@/components/userInformation/UserInformation';
+import UserInformationName from "@/components/userInformation/UserInformationName";
+import UserInformationCaption from "@/components/userInformation/UserInformationCaption";
+import UserInformationChipGroup from "@/components/userInformation/UserInformationChipGroup";
+import UserInformationCompany from "@/components/userInformation/UserInformationCompany";
 import Icon from '@/components/icon/Icon';
 import Avatar from '@/components/avatar/Avatar.vue';
 import ChipGroup from '@/components/chips/ChipGroup';
@@ -12,7 +11,7 @@ import Chip from '@/components/chips/Chip';
 import Divider from '@/components/divider/Divider.vue';
 
 <Meta
-    title="Data Display/Content/UserInformation"
+    title="Data Display/UserInformation"
     component={ UserInformation }
     argTypes={{
         type: {
@@ -39,7 +38,7 @@ import Divider from '@/components/divider/Divider.vue';
 
 export const Basic = (args, { argTypes }) => ({
     props: Object.keys(argTypes),
-    components: { UserInformation, Content, Avatar, Icon, ChipGroup, Chip, UserInformationName, UserInformationCompany, UserInformationCaption, UserInformationChipGroup },
+    components: { UserInformation, Avatar, Icon, ChipGroup, Chip, UserInformationName, UserInformationCompany, UserInformationCaption, UserInformationChipGroup },
     data() {
         return {
             matchedItems: ['회사', '산업', '직무', '학교'],
@@ -135,7 +134,7 @@ export const Basic = (args, { argTypes }) => ({
             template: `
               <div>
               <template v-for="({ name, company, matchedItems, size, type }, index) in sampleItems">
-                <UserInformation :type="type" :key="'user-information' + index">
+                <UserInformation :type="type" :key="'user-information' + index" class="mb-30">
                   <template v-slot:avatar>
                     <Avatar type="nickname" :text="name.substr(0, 1)" :size="size"/>
                   </template>
@@ -169,40 +168,7 @@ export const Basic = (args, { argTypes }) => ({
                     </template>
                   </template>
                 </UserInformation>
-                <Divider :key="'divider' + index" class="my-8" />
               </template>
-              <UserInformation type="simple">
-                <template v-slot:avatar>
-                  <Avatar type="profile" size="xsmall"/>
-                </template>
-                <template v-slot:name>
-                  <UserInformationName>
-                    질문자
-                  </UserInformationName>
-                </template>
-              </UserInformation>
-              <Divider class="my-8" />
-              <UserInformation type="normal">
-                <template v-slot:avatar>
-                  <Avatar type="profile" size="small"/>
-                </template>
-                <template v-slot:name>
-                  <UserInformationName>
-                    질문자
-                  </UserInformationName>
-                </template>
-              </UserInformation>
-              <Divider class="my-8" />
-              <UserInformation type="full">
-                <template v-slot:avatar>
-                  <Avatar type="profile" size="medium"/>
-                </template>
-                <template v-slot:name>
-                  <UserInformationName>
-                    질문자
-                  </UserInformationName>
-                </template>
-              </UserInformation>
               </div>
             `,
             components: { UserInformation, Icon, ChipGroup, Chip, Avatar, Divider, UserInformationName, UserInformationCaption, UserInformationChipGroup, UserInformationCompany },

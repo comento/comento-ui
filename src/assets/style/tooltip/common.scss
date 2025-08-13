@@ -104,4 +104,14 @@
     z-index: 3;
     @include shadow1();
   }
+
+  &.black {
+    .c-popover--inner, .c-tooltip--inner {
+      background-color: $gray850;
+      @include shadow5();
+    }
+    .c-tooltip--arrow, .c-popover--arrow {
+      border-color: $gray850;
+    }
+  }
 }

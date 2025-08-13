@@ -1,10 +1,11 @@
 <template>
-	<List class="c-file-list--container" :class="computedClass">
+	<List v-if="hasFiles" class="c-file-list--container" :class="computedClass">
 		<FileItem
 			v-for="(item, index) in files"
 			:key="`file-${index}`"
 			:file="item.file"
 			:is-loading="item.isLoading"
+			:is-error="item.isError"
 			:index="index"
 			:is-removable="isRemovable"
 			@clickFileDownloadIcon="handleClickFileDownloadIcon"
@@ -44,6 +45,9 @@ export default {
 		computedClass() {
 			return { full: this.full };
 		},
+		hasFiles() {
+			return this.files && this.files.length > 0;
+		},
 	},
 	methods: {
 		handleClickFileDownloadIcon(payload) {
@@ -65,6 +69,10 @@ export default {
 
 <style lang="scss" scoped>
 .c-file-list--container {
+	border: 1px solid $gray200;
+	@include border-radius(6px);
+	margin-top: 8px;
+	padding: 4px;
 	&.full {
 		width: 100%;
 	}
