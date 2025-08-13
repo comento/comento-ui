@@ -2,8 +2,8 @@
 	<v-popover
 		class="c-application"
 		:placement="mapPlacement"
-		:handle-resize="true"
-		popover-base-class="c-popover"
+		handle-resize
+		:popover-base-class="`c-popover ${color}`"
 		popover-arrow-class="c-popover--arrow"
 		popover-inner-class="c-popover--inner"
 		:popper-options="popperOptions"
@@ -15,7 +15,7 @@
 		<slot> </slot>
 		<template slot="popover">
 			<div class="c-pointer c-popover--content-wrapper" :style="styles">
-				<slot name="popover"> </slot>
+				<slot name="popover" />
 			</div>
 		</template>
 	</v-popover>
@@ -23,6 +23,8 @@
 
 <script>
 import { placements, placementMap } from '@/utils/constants/tooltip.js';
+
+export const POPOVER_COLORS = ['white', 'black'];
 
 /**
  * @displayName c-popover
@@ -70,6 +72,13 @@ export default {
 		container: {
 			type: [Boolean, String],
 			default: false,
+		},
+		color: {
+			type: String,
+			default: 'white',
+			validator(value) {
+				return POPOVER_COLORS.includes(value);
+			},
 		},
 	},
 	computed: {

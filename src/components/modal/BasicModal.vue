@@ -23,7 +23,12 @@
 			</div>
 
 			<!-- button 영역 -->
-			<div v-if="showActionButton" class="c-modal--action-button-wrapper">
+			<div
+				v-if="showActionButton"
+				class="c-modal--action-button-wrapper"
+				:class="{ 'has-secondary': $slots['secondary-button'] }"
+			>
+				<slot name="secondary-button" />
 				<Button size="large" :loading="loading" :color="buttonColor" full @click="successCallback">
 					{{ successMessage }}
 				</Button>
@@ -134,7 +139,7 @@ export default {
 <style lang="scss" scoped>
 .c-modal {
 	&--wrapper {
-		padding: 32px 0;
+		padding: 40px 0 32px;
 		&.scroll {
 			.c-modal--content-wrapper {
 				padding-bottom: 4px;
@@ -169,7 +174,7 @@ export default {
 	}
 
 	&--title-wrapper {
-		padding: 8px 32px 16px 32px;
+		padding: 0 32px 16px 32px;
 	}
 
 	&--content-wrapper {
@@ -187,6 +192,11 @@ export default {
 	}
 	&--action-button-wrapper {
 		padding: 24px 32px 0 32px;
+		&.has-secondary {
+			@include flexbox();
+			@include flex-direction(row);
+			gap: 8px;
+		}
 	}
 }
 </style>

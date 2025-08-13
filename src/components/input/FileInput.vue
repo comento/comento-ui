@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-file-input" :class="classes">
 		<label for="files">
-			<FileButton :text="buttonText" :disabled="disabled" @clickFileButton="handleClickFileButton" />
+			<FileButton :text="buttonText" :disabled="disabled" :full="full" @clickFileButton="handleClickFileButton" />
 			<input
 				id="files"
 				ref="files"
@@ -87,9 +87,6 @@ export default {
 <style lang="scss" scoped>
 .c-file {
 	&-input {
-		&:hover {
-			background-color: $gray100;
-		}
 		&.full {
 			width: 100%;
 		}

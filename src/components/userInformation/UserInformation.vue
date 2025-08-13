@@ -69,7 +69,6 @@ export default {
 		}
 	}
 	&.full {
-		padding: 2px 0 16px 0;
 		.name-company-wrapper {
 			@include flexbox();
 			@include flex-direction(row);
@@ -87,7 +86,6 @@ export default {
 		}
 	}
 	&.normal {
-		padding: 2px 0 8px 0;
 		.information-wrapper {
 			min-height: 33px;
 		}
@@ -96,7 +94,6 @@ export default {
 		}
 	}
 	&.simple {
-		padding: 2px 0;
 		.avatar-wrapper {
 			margin-right: 6px;
 		}

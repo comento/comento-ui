@@ -3,6 +3,7 @@ import NewGrid from '@/components/grid/NewGrid.vue';
 import NewRow from '@/components/grid/NewRow.vue';
 import NewCol from '@/components/grid/NewCol.vue';
 import EmptyBox, { Types } from '@/components/emptyBox/EmptyBox.vue';
+import EmptyIllust from '@/components/emptyBox/EmptyIllust.vue';
 import Typography from '@/components/typography/Typography';
 
 <Meta
@@ -114,6 +115,34 @@ export const Default = (args, { argTypes }) => ({
                                 </template>
                                 <template v-slot:link>
                                     모집 중인 캠프 보기
+                                </template>
+                            </EmptyBox>
+                        </NewCol>
+                    </NewRow>
+                </NewGrid>`,
+		}}
+	</Story>
+</Canvas>
+
+<Canvas>
+	<Story name="Emphasized With Graphic" height="120px">
+		{{
+			components: { EmptyBox, EmptyIllust, Typography, NewGrid, NewRow, NewCol },
+			template: `<NewGrid>
+                    <NewRow>
+                        <NewCol :col-lg="12" :col-sm="4" class="flex justify-around align-center">
+                            <EmptyBox type="emphasized">
+								<template v-slot:illust>
+									<EmptyIllust type="other" />
+								</template>
+                                <template v-slot:title>
+                                    제출한 과제가 없습니다.
+                                </template>
+                                <template v-slot:contents>
+                                    아래를 눌러 과제를 제출하세요.
+                                </template>
+                                <template v-slot:link>
+                                    과제 제출하기
                                 </template>
                             </EmptyBox>
                         </NewCol>

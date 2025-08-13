@@ -12,7 +12,7 @@ export default {
 			type: String,
 			default: '',
 			validator(value) {
-				return ['', 'shadow1', 'shadow2', 'shadow3', 'shadow4'].indexOf(value) !== -1;
+				return ['', 'shadow1', 'shadow2', 'shadow3', 'shadow4', 'shadow5', 'shadow6'].indexOf(value) !== -1;
 			},
 		},
 	},
@@ -39,6 +39,12 @@ export default {
 	}
 	&--shadow4 {
 		@include shadow4();
+	}
+	&--shadow5 {
+		@include shadow5();
+	}
+	&--shadow6 {
+		@include shadow6();
 	}
 }
 </style>

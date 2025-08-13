@@ -1,16 +1,16 @@
 <template>
-	<NarrowButton size="medium" :class="classes" @click="$emit('clickFileButton')">
-		{{ text }}
+	<Button size="medium" color="info" :disabled="disabled" :full="full" @click="$emit('clickFileButton')">
 		<template v-slot:left-icon>
-			<Icon name="IconPlusSmallLine" color="gray600" :class="classes" />
+			<Icon name="IconPlusSmallLine" color="gray600" />
 		</template>
-	</NarrowButton>
+		{{ text }}
+	</Button>
 </template>
 
 <script>
-import NarrowButton from '@/components/button/NarrowButton.vue';
 import Icon from '@/components/icon/Icon.vue';
 import customValidator from '@/utils/custom-validator.js';
+import Button from '@/components/button/Button.vue';
 
 /**
  * @displayName c-file-button
@@ -29,14 +29,13 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-	},
-	computed: {
-		classes() {
-			return { 'c-not-allowed': this.disabled };
+		full: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	components: {
-		NarrowButton,
+		Button,
 		Icon,
 	},
 };

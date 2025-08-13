@@ -1,7 +1,7 @@
 <template>
 	<div class="c-application c-icon-rating" v-bind="$attrs" v-on="$listeners">
 		<Icon :name="iconName" :color="color" class="mr-4" />
-		<Typography type="body2" :color="color">
+		<Typography :type="typographyType" :font-weight="400" :color="color">
 			{{ text }}
 		</Typography>
 	</div>
@@ -10,6 +10,7 @@
 <script>
 import Icon from '@/components/icon/Icon.vue';
 import Typography from '@/components/typography/Typography.vue';
+export const IconRatingSizes = ['small', 'large'];
 
 /**
  * @displayName c-icon-rating
@@ -28,6 +29,21 @@ export default {
 		text: {
 			type: [String, Number],
 			required: true,
+		},
+		/**
+		 * 크기(small, large)
+		 */
+		size: {
+			type: String,
+			default: 'small',
+			validator(value) {
+				return IconRatingSizes.includes(value);
+			},
+		},
+	},
+	computed: {
+		typographyType() {
+			return this.size === 'large' ? 'body1' : 'body2';
 		},
 	},
 	components: {

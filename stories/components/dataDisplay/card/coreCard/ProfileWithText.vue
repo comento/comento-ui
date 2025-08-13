@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-profile-with-text">
+	<div class="profile-with-text">
 		<div v-if="$slots['avatar']" class="avatar-wrapper">
 			<slot name="avatar" />
 		</div>
@@ -20,9 +20,6 @@
 <script>
 import Typography from '@/components/typography/Typography.vue';
 
-/**
- * @displayName c-profile-with-text
- */
 export default {
 	name: 'ProfileWithText',
 	components: { Typography },
@@ -30,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-profile-with-text {
+.profile-with-text {
 	padding: 2px 0 16px;
 	@include flexbox();
 	@include flex-direction(row);

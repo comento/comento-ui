@@ -103,3 +103,33 @@ export const Default = (args, { argTypes }) => ({
         }}
     </Story>
 </Canvas>
+
+### With Button
+<Canvas>
+	<Story name="WitButton" height="100px">
+		{{
+			data: () => ({
+				show: false,
+			}),
+			template: `
+                <div>
+                    <Button @click="show = true">Open</Button>
+                    <Toast
+                      :show.sync="show"
+                      position="top"
+                      type="basic"
+                      icon="IconSecurityLargeFill"
+                      message="북마크에 저장했어요."
+                    >
+						<template #button>
+							<Button>보기</Button>
+						</template>
+					</Toast>
+                </div>
+            `,
+			components: {
+				Toast, Button, Icon
+			}
+		}}
+	</Story>
+</Canvas>

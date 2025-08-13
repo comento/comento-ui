@@ -3,7 +3,6 @@ import FileInput from '@/components/input/FileInput';
 import FileList from '@/components/list/fileList/FileList';
 import FileSummary from '@/components/list/fileList/FileSummary';
 import Typography from '@/components/typography/Typography';
-import Divider from '@/components/divider/Divider.vue';
 
 <Meta
   title="Data Entry/FileInput"
@@ -63,6 +62,9 @@ export const Default = (args, { argTypes }) => ({
     },
     handleClickFileItemContent(payload) {
         alert('clickItemContent')
+    },
+    handleClickFileTrashIcon(payload) {
+        this.files = this.files.filter((item, index) => index !== payload.index);
     }
   },
   template: `<div style="width: 100%; display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
@@ -74,15 +76,15 @@ export const Default = (args, { argTypes }) => ({
                     :disabled="disabled"
                     @uploadFiles="handleUploadFiles"
                  />
-                 <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
                  <FileList :files="files"
                     :full="full"
                     isRemovable
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
                     @clickFileItemContent="handleClickFileItemContent"
+                    @clickFileTrashIcon="handleClickFileTrashIcon"
                  />
               </div>`,
-   components: { FileInput, FileList, Divider },
+   components: { FileInput, FileList },
 });
 
 # FileInput
@@ -105,9 +107,9 @@ export const Default = (args, { argTypes }) => ({
               return {
                   files: [],
                   createFiles: [],
-                  editFiles: [],
-                  mockFile: { file: new File(["foo"], "foo.txt", { type: "text/plain",}), isLoading: false},
-                  mockFiles: [ { file: new File(["foo"], "foo.txt", { type: "text/plain",}), isLoading: false} ],
+                  errorFiles: [],
+                  mockFile: { file: new File(["foo"], "foo.txt", { type: "text/plain" }), isLoading: false },
+                  mockFiles: [{ file: new File(["foo"], "foo.txt", { type: "text/plain" }), isLoading: false }],
               };
           },
           methods: {
@@ -125,18 +127,27 @@ export const Default = (args, { argTypes }) => ({
                 alert('clickFileItemContent')
             },
             handleCreateUploadFiles(files) {
-               const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
-               this.createFiles = [...this.createFiles, ...filesWithLoading];
+				const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: true }));
+				this.createFiles = [...this.createFiles, ...filesWithLoading];
+				setInterval(() => {
+					const lastIndex = this.createFiles.length - 1;
+					this.createFiles[lastIndex].isLoading = false;
+				}, 1500);
             },
-            handleEditUploadFiles(files) {
-                const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
-                this.editFiles = [...this.editFiles, ...filesWithLoading];
+            handleErrorUploadFiles(files) {
+				const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: true, isError: false }));
+				this.errorFiles = [...this.errorFiles, ...filesWithLoading];
+				setInterval(() => {
+					const lastIndex = this.errorFiles.length - 1;
+					this.errorFiles[lastIndex].isLoading = false;
+					this.errorFiles[lastIndex].isError = true;
+				}, 1500);
             },
             handleCreateClickTrashIcon(payload) {
                 this.createFiles = this.createFiles.filter((item, index) => index !== payload.index);
             },
-            handleEditClickTrashIcon(payload) {
-                this.editFiles = this.editFiles.filter((item, index) => index !== payload.index);
+            handleErrorClickTrashIcon(payload) {
+                this.errorFiles = this.errorFiles.filter((item, index) => index !== payload.index);
             },
             handleClickMockFileDownloadIcon(payload) {
                 this.mockFiles[payload.index].isLoading = true;
@@ -150,29 +161,26 @@ export const Default = (args, { argTypes }) => ({
           },
             template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                         <div style="width: 100%; margin-bottom: 30px;">
-                            <Typography type="body2">생성 시</Typography>
+                            <Typography type="body2">성공</Typography>
                             <FileInput full
                               @uploadFiles="handleCreateUploadFiles"
                             />
-                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
                             <FileList :files="createFiles" isRemovable @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
-                            <Typography type="body2">수정 시</Typography>
+                            <Typography type="body2">실패</Typography>
                             <FileInput full
-                              @uploadFiles="handleEditUploadFiles"
+                              @uploadFiles="handleErrorUploadFiles"
                             />
-                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
-                            <FileList :files="editFiles" isRemovable @clickFileTrashIcon="handleEditClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <FileList :files="errorFiles" isRemovable @clickFileTrashIcon="handleErrorClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
-                            <Typography type="body2">완료 시</Typography>
+                            <Typography type="body2">완료</Typography>
                             <FileSummary :length="mockFiles.length" @clickAllFileDownloadButton="handleClickAllFileDownloadButton"/>
-                            <Divider type="dash" style="margin-top: 12px; margin-bottom: 8px;"/>
                             <FileList :files="mockFiles" @clickFileDownloadIcon="handleClickMockFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                       </div>`,
-             components: { FileInput, FileList, FileSummary, Divider, Typography },
+             components: { FileInput, FileList, FileSummary, Typography },
         }}
     </Story>
 </Canvas>

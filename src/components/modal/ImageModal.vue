@@ -39,6 +39,9 @@ import { aligns } from '@/components/modal/BasicModal.vue';
 import Button, { buttonColors } from '@/components/button/Button.vue';
 import Typography from '@/components/typography/Typography.vue';
 
+/**
+ * @displayName c-image-modal
+ */
 export default {
 	name: 'ImageModal',
 	props: {
@@ -108,7 +111,7 @@ export default {
 <style lang="scss" scoped>
 .c-modal {
 	&--wrapper {
-		padding: 32px 0;
+		padding: 40px 0 32px;
 		&.scroll {
 			.c-modal--content-wrapper {
 				padding-bottom: 4px;
@@ -143,7 +146,7 @@ export default {
 	}
 
 	&--title-wrapper {
-		padding: 8px 32px 16px 32px;
+		padding: 24px 32px 16px 32px;
 	}
 
 	&--content-wrapper {
@@ -164,6 +167,7 @@ export default {
 	}
 	&--image {
 		padding: 0 32px;
+		display: block;
 	}
 }
 </style>
