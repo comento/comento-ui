@@ -3,10 +3,15 @@
 		<div class="c-file-item--content" @click.stop="handleClickFileItemContent({ file, index })">
 			<div class="icon-wrapper">
 				<Loader v-if="isRemovable && isLoading" size="small" />
-				<Icon v-else-if="isRemovable && isError" name="IconExclamationSmallFill" color="error" />
+				<Icon v-else-if="isRemovable && isError" name="IconExclamationSmallFill" color="accent" />
 				<img v-else src="https://cdn.comento.kr/images/illust/illust-file.svg" alt="" />
 			</div>
-			<Typography type="body2" :color="isError ? 'error' : 'gray700'" :font-weight="400" class="text-truncate">
+			<Typography
+				type="body2"
+				:color="isRemovable && isError ? 'accent' : 'gray700'"
+				:font-weight="400"
+				class="text-truncate"
+			>
 				{{ file.title || file.name }}
 			</Typography>
 		</div>
