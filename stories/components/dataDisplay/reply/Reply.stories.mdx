@@ -3,12 +3,17 @@ import Reply from '@/components/reply/Reply.vue';
 import Avatar from '@/components/avatar/Avatar.vue';
 import Typography from '@/components/typography/Typography.vue';
 import Icon from '@/components/icon/Icon.vue';
+import IconButton from '@/components/button/IconButton.vue';
 import UserInformation from '@/components/userInformation/UserInformation.vue';
 import UserInformationName from "@/components/userInformation/UserInformationName.vue";
 import UserInformationCaption from "@/components/userInformation/UserInformationCaption.vue";
 import UserInformationCompany from "@/components/userInformation/UserInformationCompany.vue";
 import ReplyActionsExample from './ReplyActionsExample.vue';
 import ReplyInteractionsExample from './ReplyInteractionsExample.vue';
+import Popover from '@/components/popover/Popover.vue';
+import List from '@/components/list/list/List.vue';
+import ListItem from '@/components/list/list/ListItem.vue';
+import Textarea from '@/components/textarea/Textarea.vue';
 import nl2br from '../../../../src/utils/nl2br';
 
 <Meta
@@ -120,10 +125,15 @@ export const Basic = (args, { argTypes }) => ({
 				return {
 					nickname: '레오나',
 					company: '코멘토',
+					isEditing: false,
+					comment: '댓글 내용이 표시됩니다.\n두줄일 경우 이렇게 표시 됩니다.',
 				};
 			},
 			methods: {
 				nl2br,
+				editComment() {
+					this.isEditing = true;
+				},
 			},
 			template: `
                 <div>
@@ -150,7 +160,8 @@ export const Basic = (args, { argTypes }) => ({
 							</UserInformation>
                         </template>
 						<template v-slot:value>
-							<span v-html="nl2br('댓글 내용이 표시됩니다.<br />두줄일 경우 이렇게 표시 됩니다.')" />
+							<Typography element="span" color="gray500" :font-weight="400" class="mr-4">@닉네임</Typography>
+							댓글 내용이 표시됩니다.<br />두줄일 경우 이렇게 표시 됩니다.
 						</template>
 						<template v-slot:actions>
 							<ReplyActionsExample placement="bottom-right" />
@@ -160,7 +171,7 @@ export const Basic = (args, { argTypes }) => ({
 						</template>
                     </Reply>
 					<p class="mt-30 mb-10">type: simple</p>
-                    <Reply>
+                    <Reply :is-editing="isEditing">
                         <template v-slot:user-information>
 							<UserInformation type="simple">
 								<template v-slot:avatar>
@@ -182,11 +193,25 @@ export const Basic = (args, { argTypes }) => ({
 							</UserInformation>
                         </template>
 						<template v-slot:value>
-							<Typography element="span" color="gray500" :font-weight="400" class="mr-4">@닉네임</Typography>
-							댓글 내용이 표시됩니다.<br />두줄일 경우 이렇게 표시 됩니다.
+							<Textarea v-if="isEditing" :value.sync="comment" type="reply" @submit="isEditing = false" />
+							<template v-else>
+								<span v-html="nl2br(comment)" />
+							</template>
 						</template>
 						<template v-slot:actions>
-							<ReplyActionsExample placement="bottom-right" />
+							<Popover placement="bottom" class="reply-actions-popover">
+								<IconButton icon-name="IconThreeDotSmallFill" color="gray400" />
+								<template v-slot:popover>
+									<List size="large">
+										<ListItem size="large" @click="editComment">
+											<Typography type="body2" color="gray800" :font-weight="400" class="flex flex-row align-center">
+												<Icon name="IconWritingSmallLine" color="gray700" class="mr-10" />
+												수정하기
+											</Typography>
+										</ListItem>
+									</List>
+								</template>
+							</Popover>
 						</template>
 						<template v-slot:interactions>
 							<ReplyInteractionsExample/>
@@ -205,6 +230,11 @@ export const Basic = (args, { argTypes }) => ({
 				Avatar,
 				Typography,
 				Icon,
+				Popover,
+				List,
+				ListItem,
+				IconButton,
+				Textarea,
 			},
 		}}
 	</Story>
