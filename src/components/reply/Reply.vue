@@ -3,7 +3,16 @@
 		<div class="c-reply--user-information" :class="isSimpleType ? 'mb-10' : 'mb-8'">
 			<slot name="user-information" />
 		</div>
-		<Typography v-linkify:options="{ className: 'linkified' }" type="body1" :font-weight="400" color="gray800">
+		<div v-if="isEditing">
+			<slot name="value" />
+		</div>
+		<Typography
+			v-else
+			v-linkify:options="{ className: 'linkified' }"
+			type="body1"
+			:font-weight="400"
+			color="gray800"
+		>
 			<slot name="value" />
 		</Typography>
 		<div v-if="$slots['actions']" class="c-reply--actions">
@@ -28,6 +37,10 @@ export default {
 		type: {
 			type: String,
 			default: 'default',
+		},
+		isEditing: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	computed: {
