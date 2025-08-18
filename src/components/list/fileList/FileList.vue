@@ -1,24 +1,11 @@
 <template>
-	<List v-if="hasFiles" class="c-file-list--container" :class="computedClass">
-		<FileItem
-			v-for="(item, index) in files"
-			:key="`file-${index}`"
-			:file="item.file"
-			:is-loading="item.isLoading"
-			:is-error="item.isError"
-			:index="index"
-			:is-removable="isRemovable"
-			@clickFileDownloadIcon="handleClickFileDownloadIcon"
-			@clickFileItemContent="handleClickFileItemContent"
-			@clickFileItem="handleClickFileItem"
-			@clickFileTrashIcon="handleClickFileTrashIcon"
-		/>
+	<List v-if="$slots.default" class="c-file-list--container" :class="computedClass">
+		<slot />
 	</List>
 </template>
 
 <script>
 import List from '@/components/list/list/List.vue';
-import FileItem from '@/components/list/fileList/FileItem.vue';
 
 /**
  * @displayName c-file-list
@@ -26,16 +13,6 @@ import FileItem from '@/components/list/fileList/FileItem.vue';
 export default {
 	name: 'FileList',
 	props: {
-		files: {
-			type: Array,
-			default() {
-				return null;
-			},
-		},
-		isRemovable: {
-			type: Boolean,
-			default: false,
-		},
 		full: {
 			type: Boolean,
 			default: false,
@@ -45,25 +22,8 @@ export default {
 		computedClass() {
 			return { full: this.full };
 		},
-		hasFiles() {
-			return this.files && this.files.length > 0;
-		},
 	},
-	methods: {
-		handleClickFileDownloadIcon(payload) {
-			this.$emit('clickFileDownloadIcon', payload);
-		},
-		handleClickFileItemContent(payload) {
-			this.$emit('clickFileItemContent', payload);
-		},
-		handleClickFileTrashIcon(payload) {
-			this.$emit('clickFileTrashIcon', payload);
-		},
-		handleClickFileItem(payload) {
-			this.$emit('clickFileItem', payload);
-		},
-	},
-	components: { List, FileItem },
+	components: { List },
 };
 </script>
 
