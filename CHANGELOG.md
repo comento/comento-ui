@@ -1,3 +1,12 @@
+## [1.9.1](https://github.com/comento/comento-ui/compare/v1.9.0...v1.9.1) (2025-08-18)
+
+
+### Features
+
+* Reply isEditing props 추가 ([#1191](https://github.com/comento/comento-ui/issues/1191)) ([50c82c7](https://github.com/comento/comento-ui/commit/50c82c7a9345858361a39d157027a7ffec4e0255))
+
+
+
 # [1.9.0](https://github.com/comento/comento-ui/compare/v1.8.0...v1.9.0) (2025-08-13)
 
 
