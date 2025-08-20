@@ -1,69 +1,75 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import FileList from '@/components/list/fileList/FileList.vue';
-import FileInput from "@/components/input/FileInput.vue";
+import FileInput from '@/components/input/FileInput.vue';
 import FileSummary from '@/components/list/fileList/FileSummary.vue';
 import FileItem from '@/components/list/fileList/FileItem.vue';
 
 <Meta
-  title="Data Display/List/FileList"
-  component={ FileList }
-  argTypes={{
-    files: {
-      description: "파일 리스트",
-      defaultValue: [
-        {
-          file: { name: "1.png"}, isLoading: false, isError: false,
-        },
-        {
-          file: { name: "2.png"}, isLoading: false, isError: false,
-        },
-        {
-          file: { name: "3.png"}, isLoading: false, isError: false,
-        },
-      ],
-      control: {
-        type: "array",
-      },
-    },
-    isRemovable: {
-      type: Boolean,
-      control: {
-        type: "boolean",
-      }
-    },
-  }}
+	title="Data Display/List/FileList"
+	component={FileList}
+	argTypes={{
+		files: {
+			description: '파일 리스트',
+			defaultValue: [
+				{
+					file: { name: '1.png' },
+					isLoading: false,
+					isError: false,
+				},
+				{
+					file: { name: '2.png' },
+					isLoading: false,
+					isError: false,
+				},
+				{
+					file: { name: '3.png' },
+					isLoading: false,
+					isError: false,
+				},
+			],
+			control: {
+				type: 'array',
+			},
+		},
+		isRemovable: {
+			type: Boolean,
+			control: {
+				type: 'boolean',
+			},
+		},
+	}}
 />
 
 export const Default = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  data() {
-    return {
-      filesData: this.files,
-    };
-  },
-  methods: {
-    handleClickFileDownloadIcon(payload) {
-        this.filesData[payload.index].isLoading = true;
-        setInterval(() => {
-            this.filesData[payload.index].isLoading = false;
-        }, 3000);
-    },
-      handleClickFileItem(payload) {
-        if(this.isRemovable) return this.handleClickFileTrashIcon(payload);
-        this.filesData[payload.index].isLoading = true;
-        setInterval(() => {
-          this.filesData[payload.index].isLoading = false;
-        }, 3000);
-    },
-    handleClickFileTrashIcon(payload) {
-        this.filesData = this.filesData.filter((item, index) => index !== payload.index);
-    },
-    handleUploadFiles(files) {
-      const filesWithLoading = Object.values(files).map(file => ({file: file, isLoading: false}));
-      this.filesData = [...this.filesData, ...filesWithLoading];
-    },
-  },
-  template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
+	props: Object.keys(argTypes),
+	data() {
+		return {
+			filesData: this.files,
+		};
+	},
+	methods: {
+		handleClickFileDownloadIcon(payload) {
+			this.filesData[payload.index].isLoading = true;
+			setInterval(() => {
+				this.filesData[payload.index].isLoading = false;
+			}, 3000);
+		},
+		handleClickFileItem(payload) {
+			if (this.isRemovable) return this.handleClickFileTrashIcon(payload);
+			this.filesData[payload.index].isLoading = true;
+			setInterval(() => {
+				this.filesData[payload.index].isLoading = false;
+			}, 3000);
+		},
+		handleClickFileTrashIcon(payload) {
+			this.filesData = this.filesData.filter((item, index) => index !== payload.index);
+		},
+		handleUploadFiles(files) {
+			const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: false }));
+			this.filesData = [...this.filesData, ...filesWithLoading];
+		},
+	},
+	template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
                 <div :style="full ? 'width: 100%' : ''">
                  <FileInput v-if="isRemovable" @uploadFiles="handleUploadFiles"/>
                  <FileSummary v-else :full="full" :length="filesData.length" />
@@ -84,7 +90,7 @@ export const Default = (args, { argTypes }) => ({
 				</FileList>
                 </div>
              </div>`,
-   components: { FileList, FileSummary, FileInput, FileItem },
+	components: { FileList, FileSummary, FileInput, FileItem },
 });
 
 # FileList
@@ -92,9 +98,7 @@ export const Default = (args, { argTypes }) => ({
 **FileList** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
-  {Default.bind({})}
+	{Default.bind({})}
 </Story>
 
 <ArgsTable story="Default" />
-
-
