@@ -3,6 +3,7 @@ import FileList from '@/components/list/fileList/FileList.vue';
 import FileInput from '@/components/input/FileInput.vue';
 import FileSummary from '@/components/list/fileList/FileSummary.vue';
 import FileItem from '@/components/list/fileList/FileItem.vue';
+import LinkItem from '@/components/list/fileList/LinkItem.vue';
 
 <Meta
 	title="Data Display/List/FileList"
@@ -27,9 +28,13 @@ import FileItem from '@/components/list/fileList/FileItem.vue';
 					isError: false,
 				},
 			],
-			control: {
-				type: 'array',
-			},
+		},
+		links: {
+			defaultValue: [
+				{
+					link: 'https://comento.kr',
+				},
+			],
 		},
 		isRemovable: {
 			type: Boolean,
@@ -44,7 +49,7 @@ export const Default = (args, { argTypes }) => ({
 	props: Object.keys(argTypes),
 	data() {
 		return {
-			filesData: this.files,
+			filesData: [...this.files, ...this.links],
 		};
 	},
 	methods: {
@@ -76,6 +81,7 @@ export const Default = (args, { argTypes }) => ({
                  <FileList :full="full">
 					<template v-for="(item, index) in filesData" :key="'file-' + index">
 						<FileItem
+							v-if="item.file"
 							:file="item.file"
 							:index="index"
 							:is-removable="isRemovable"
@@ -86,11 +92,19 @@ export const Default = (args, { argTypes }) => ({
 							@clickFileItemContent="handleClickFileItem"
 							@clickFileTrashIcon="handleClickFileTrashIcon"
 						/>
+						<LinkItem
+							v-if="item.link"
+							:link="item.link"
+							:index="index"
+							:is-removable="isRemovable"
+							@clickLinkItemContent="handleClickFileItem"
+							@clickLinkTrashIcon="handleClickFileTrashIcon"
+						/>
 					</template>
 				</FileList>
                 </div>
              </div>`,
-	components: { FileList, FileSummary, FileInput, FileItem },
+	components: { FileList, FileSummary, FileInput, FileItem, LinkItem },
 });
 
 # FileList
