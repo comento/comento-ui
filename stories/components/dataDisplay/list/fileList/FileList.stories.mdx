@@ -77,7 +77,7 @@ export const Default = (args, { argTypes }) => ({
 	template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
                 <div :style="full ? 'width: 100%' : ''">
                  <FileInput v-if="isRemovable" @uploadFiles="handleUploadFiles"/>
-                 <FileSummary v-else :full="full" :length="filesData.length" />
+                 <FileSummary v-else :full="full" :length="files.length" />
                  <FileList :full="full">
 					<template v-for="(item, index) in filesData" :key="'file-' + index">
 						<FileItem
