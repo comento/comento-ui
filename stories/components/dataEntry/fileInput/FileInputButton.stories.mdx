@@ -1,6 +1,7 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import FileInputButton from '@/components/fileInput/FileInputButton.vue';
 import FileInputList from '@/components/fileInput/FileInputList.vue';
+import FileInputFileItem from '@/components/fileInput/FileInputFileItem.vue';
 import Typography from '@/components/typography/Typography.vue';
 import FileSummary from './FileSummary.vue';
 
@@ -76,15 +77,25 @@ export const Default = (args, { argTypes }) => ({
                     :disabled="disabled"
                     @uploadFiles="handleUploadFiles"
                  />
-                 <FileInputList :files="files"
+                 <FileInputList
                     :full="full"
-                    isRemovable
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
                     @clickFileItemContent="handleClickFileItemContent"
                     @clickFileTrashIcon="handleClickFileTrashIcon"
-                 />
+                 >
+					<FileInputFileItem
+						v-for="(item, index) in files"
+						:key="'file-' + index"
+						:file="item.file"
+						:index="index"
+						is-removable
+						:is-loading="item.isLoading"
+						:is-error="item.isError"
+						@clickFileTrashIcon="handleClickFileTrashIcon"
+					/>
+				</FileInputList>
               </div>`,
-   components: { FileInputButton, FileInputList },
+   components: { FileInputButton, FileInputList, FileInputFileItem },
 });
 
 # FileInputButton
@@ -106,10 +117,56 @@ export const Default = (args, { argTypes }) => ({
           data() {
               return {
                   files: [],
-                  createFiles: [],
-                  errorFiles: [],
-                  mockFile: { file: new File(["foo"], "foo.txt", { type: "text/plain" }), isLoading: false },
-                  mockFiles: [{ file: new File(["foo"], "foo.txt", { type: "text/plain" }), isLoading: false }],
+                  createFiles: [
+					  {
+						  file: new File(
+							  ['파일 내용'],
+							  'foo.txt',
+							  {
+								  name: 'foo.txt',
+								  type: 'text/plain',
+							  }
+						  ),
+						  isLoading: false,
+					  },
+				  ],
+                  errorFiles: [
+					  {
+						  file: new File(
+							  ['파일 내용'],
+							  'foo.txt',
+							  {
+								  name: 'foo.txt',
+								  type: 'text/plain',
+							  }
+						  ),
+						  isError: true,
+					  },
+				  ],
+                  mockFile: {
+					  file: new File(
+						  ['파일 내용'],
+						  'foo.txt',
+						  {
+							  name: 'foo.txt',
+							  type: 'text/plain',
+						  }
+					  ),
+					  isLoading: false,
+				  },
+                  mockFiles: [
+					  {
+						  file: new File(
+							  ['파일 내용'],
+							  'foo.txt',
+							  {
+								  name: 'foo.txt',
+								  type: 'text/plain',
+							  }
+						  ),
+						  isLoading: false,
+					  }
+				  ],
               };
           },
           methods: {
@@ -162,27 +219,62 @@ export const Default = (args, { argTypes }) => ({
             template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                         <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">성공</Typography>
-                            <FileInputButton full
-                              @uploadFiles="handleCreateUploadFiles"
+                            <FileInputButton
+								full
+								@uploadFiles="handleCreateUploadFiles"
                             />
-                            <FileInputList :files="createFiles" isRemovable @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <FileInputList full>
+								<FileInputFileItem
+									v-for="(item, index) in createFiles"
+									:key="'file-' + index"
+									:file="item.file"
+									:index="index"
+									:is-loading="item.isLoading"
+									is-removable
+									@clickFileTrashIcon="handleCreateClickTrashIcon"
+									@clickFileItemContent="handleClickFileItemContent"
+								 />
+							</FileInputList>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">실패</Typography>
-                            <FileInputButton full
-                              @uploadFiles="handleErrorUploadFiles"
+                            <FileInputButton
+								full
+								@uploadFiles="handleErrorUploadFiles"
                             />
-                            <FileInputList :files="errorFiles" isRemovable @clickFileTrashIcon="handleErrorClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+							<FileInputList>
+								<FileInputFileItem
+									v-for="(item, index) in errorFiles"
+									:key="'file-' + index"
+									:file="item.file"
+									:index="index"
+									is-removable
+									:is-loading="item.isLoading"
+									:is-error="item.isError"
+									@clickFileTrashIcon="handleErrorClickTrashIcon"
+									@clickFileItemContent="handleClickFileItemContent"
+								/>
+							</FileInputList>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">완료</Typography>
                             <FileSummary show-download-button @clickAllFileDownloadButton="handleClickAllFileDownloadButton">
 								첨부파일 ({{ mockFiles.length }}개)
 							</FileSummary>
-                            <FileInputList :files="mockFiles" @clickFileDownloadIcon="handleClickMockFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <FileInputList>
+								<FileInputFileItem
+									v-for="(item, index) in mockFiles"
+									:key="'file-' + index"
+									:file="item.file"
+									:index="index"
+									:is-loading="item.isLoading"
+									@clickFileTrashIcon="handleCreateClickTrashIcon"
+									@clickFileItemContent="handleClickFileItemContent"
+								 />
+							</FileInputList>
                         </div>
                       </div>`,
-             components: { FileInputButton, FileInputList, FileSummary, Typography },
+             components: { FileInputButton, FileInputList, FileSummary, Typography, FileInputFileItem },
         }}
     </Story>
 </Canvas>
