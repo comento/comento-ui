@@ -3,7 +3,7 @@ import FileInputList from '@/components/fileInput/FileInputList.vue';
 import FileInputButton from '@/components/fileInput/FileInputButton.vue';
 import FileInputFileItem from '@/components/fileInput/FileInputFileItem.vue';
 import FileInputLinkItem from '@/components/fileInput/FileInputLinkItem.vue';
-import FileSummary from '@/components/fileInput/FileSummary.vue';
+import FileSummary from './FileSummary.vue';
 import Typography from '@/components/typography/Typography.vue';
 
 <Meta
@@ -71,7 +71,7 @@ export const Default = (args, { argTypes }) => ({
 	template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
                 <div :style="full ? 'width: 100%' : ''">
                  <FileInputButton v-if="isRemovable" @uploadFiles="handleUploadFiles"/>
-                 <FileSummary v-else :full="full" :length="files.length" />
+                 <FileSummary v-else :full="full" show-download-button>첨부파일 ({{ filesData.length }}개)</FileSummary>
                  <FileInputList :full="full">
 					<template v-for="(item, index) in filesData">
 						<FileInputFileItem
@@ -158,7 +158,7 @@ export const Default = (args, { argTypes }) => ({
 			},
 			template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
 				<div class="w-full mb-30">
-					<Typography type="body2" color="gray600" :font-weight="400">링크 ({{ links.length }}개)</Typography>
+					<FileSummary>링크 ({{ links.length }}개)</FileSummary>
 					<FileInputList full>
 						<FileInputLinkItem
 							v-for="(item, index) in links"
@@ -170,7 +170,7 @@ export const Default = (args, { argTypes }) => ({
 					</FileInputList>
 				</div>
 				<div class="w-full">
-					<Typography type="body2" color="gray600" :font-weight="400">첨부파일 ({{ files.length }}개)</Typography>
+					<FileSummary>첨부파일 ({{ files.length }}개)</FileSummary>
 					<FileInputList full>
 						<FileInputFileItem
 							v-for="(item, index) in files"
@@ -187,7 +187,7 @@ export const Default = (args, { argTypes }) => ({
 					</FileInputList>
 				</div>
 			</div>`,
-			components: { FileInputList, FileSummary, FileInputButton, FileInputFileItem, FileInputLinkItem, Typography },
+			components: { FileInputList, FileSummary, FileInputButton, FileInputFileItem, FileInputLinkItem },
 		}}
 	</Story>
 </Canvas>
@@ -247,7 +247,7 @@ export const Default = (args, { argTypes }) => ({
 			},
 			template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
 				<div class="w-full mb-30">
-					<Typography type="body2" color="gray600" :font-weight="400">링크 ({{ links.length }}개)</Typography>
+					<FileSummary>링크 ({{ links.length }}개)</FileSummary>
 					<FileInputList full>
 						<FileInputLinkItem
 							v-for="(item, index) in links"
@@ -258,7 +258,7 @@ export const Default = (args, { argTypes }) => ({
 					</FileInputList>
 				</div>
 				<div class="w-full">
-					<FileSummary full :length="files.length" />
+					<FileSummary full show-download-button>첨부파일 ({{ files.length }}개)</FileSummary>
 					<FileInputList full>
 						<FileInputFileItem
 							v-for="(item, index) in files"
@@ -274,7 +274,7 @@ export const Default = (args, { argTypes }) => ({
 					</FileInputList>
 				</div>
 			</div>`,
-			components: { FileInputList, FileSummary, FileInputButton, FileInputFileItem, FileInputLinkItem, Typography },
+			components: { FileInputList, FileSummary, FileInputButton, FileInputFileItem, FileInputLinkItem },
 		}}
 	</Story>
 </Canvas>
