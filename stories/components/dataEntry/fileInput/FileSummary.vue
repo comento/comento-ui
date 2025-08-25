@@ -1,7 +1,11 @@
 <template>
-	<div class="c-application c-file--summary" :class="computedClass">
-		<Typography type="body2" color="gray600" :font-weight="400"> 첨부파일 ({{ length }}개) </Typography>
-		<Button size="small" color="info" @click="$emit('clickAllFileDownloadButton')"> 전체 다운로드 </Button>
+	<div class="file--summary" :class="computedClass">
+		<Typography type="body2" color="gray600" :font-weight="400">
+			<slot />
+		</Typography>
+		<Button v-if="showDownloadButton" size="small" color="info" @click="$emit('clickAllFileDownloadButton')">
+			전체 다운로드
+		</Button>
 	</div>
 </template>
 
@@ -10,7 +14,7 @@ import Button from '@/components/button/Button.vue';
 import Typography from '@/components/typography/Typography.vue';
 
 /**
- * @displayName c-file-summary
+ * @displayName file-summary
  */
 export default {
 	name: 'FileSummary',
@@ -20,6 +24,10 @@ export default {
 			default: 0,
 		},
 		full: {
+			type: Boolean,
+			default: false,
+		},
+		showDownloadButton: {
 			type: Boolean,
 			default: false,
 		},
@@ -37,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-file--summary {
+.file--summary {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
