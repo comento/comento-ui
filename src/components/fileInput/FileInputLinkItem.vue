@@ -4,9 +4,9 @@
 			<div class="icon-wrapper">
 				<img src="https://cdn.comento.kr/images/illust/illust-link.svg" alt="" />
 			</div>
-			<Typography type="body2" color="gray700" :font-weight="400" class="text-truncate">
+			<a :href="link" target="_blank" class="text-truncate linkified">
 				{{ link }}
-			</Typography>
+			</a>
 		</div>
 		<Icon
 			v-if="isRemovable"
@@ -20,7 +20,6 @@
 
 <script>
 import ListItem from '@/components/list/list/ListItem.vue';
-import Typography from '@/components/typography/Typography.vue';
 import Icon from '@/components/icon/Icon.vue';
 
 /**
@@ -52,7 +51,6 @@ export default {
 	},
 	components: {
 		Icon,
-		Typography,
 		ListItem,
 	},
 };
