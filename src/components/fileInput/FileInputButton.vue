@@ -1,5 +1,5 @@
 <template>
-	<div class="c-application c-file-input" :class="classes">
+	<div class="c-application c-file-input-button" :class="classes">
 		<label for="files">
 			<FileButton :text="buttonText" :disabled="disabled" :full="full" @clickFileButton="handleClickFileButton" />
 			<input
@@ -23,10 +23,10 @@ import customValidator from '@/utils/custom-validator.js';
 import FileButton from '@/components/button/FileButton.vue';
 
 /**
- * @displayName c-file-input
+ * @displayName c-file-input-button
  */
 export default {
-	name: 'FileInput',
+	name: 'FileInputButton',
 	props: {
 		accept: {
 			type: String,
@@ -85,15 +85,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-file {
-	&-input {
-		&.full {
-			width: 100%;
-		}
-		&.disabled {
-			label {
-				cursor: not-allowed;
-			}
+.c-file-input-button {
+	&.full {
+		width: 100%;
+	}
+	&.disabled {
+		label {
+			cursor: not-allowed;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 <template>
-	<List v-if="$slots.default" class="c-file-list--container" :class="computedClass">
+	<List v-if="$slots.default" class="c-file-input-list--container" :class="computedClass">
 		<slot />
 	</List>
 </template>
@@ -8,10 +8,10 @@
 import List from '@/components/list/list/List.vue';
 
 /**
- * @displayName c-file-list
+ * @displayName c-file-input-list
  */
 export default {
-	name: 'FileList',
+	name: 'FileInputList',
 	props: {
 		full: {
 			type: Boolean,
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-file-list--container {
+.c-file-input-list--container {
 	border: 1px solid $gray200;
 	@include border-radius(6px);
 	margin-top: 8px;

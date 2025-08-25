@@ -1,6 +1,6 @@
 <template>
 	<ListItem class="c-application px-10" size="large" @click="handleClickFileItem({ file, index })">
-		<div class="c-file-item--content" @click.stop="handleClickFileItemContent({ file, index })">
+		<div class="c-file-input-file-item--content" @click.stop="handleClickFileItemContent({ file, index })">
 			<div class="icon-wrapper">
 				<Loader v-if="isRemovable && isLoading" size="small" />
 				<Icon v-else-if="isRemovable && isError" name="IconExclamationSmallFill" color="accent" />
@@ -41,10 +41,10 @@ import Loader from '@/components/loader/Loader.vue';
 import Typography from '@/components/typography/Typography.vue';
 
 /**
- * @displayName c-file-item
+ * @displayName c-file-input-file-item
  */
 export default {
-	name: 'FileItem',
+	name: 'FileInputFileItem',
 	props: {
 		file: {
 			// 파일은 내장 타입이 없음.
@@ -91,16 +91,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-file {
-	&-item {
-		&--content {
-			height: 20px;
-			cursor: pointer;
-			@include flexbox();
-			@include align-items(center);
-			overflow: hidden;
-			gap: 8px;
-		}
+.c-file-input-file-item {
+	&--content {
+		height: 20px;
+		@include flexbox();
+		@include align-items(center);
+		overflow: hidden;
+		gap: 8px;
 	}
 }
 

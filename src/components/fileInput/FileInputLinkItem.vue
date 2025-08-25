@@ -1,6 +1,6 @@
 <template>
 	<ListItem class="c-application px-10" size="large">
-		<div class="c-link-item--content" @click.stop="handleClickLinkItemContent({ link, index })">
+		<div class="c-file-input-link-item--content" @click.stop="handleClickLinkItemContent({ link, index })">
 			<div class="icon-wrapper">
 				<img src="https://cdn.comento.kr/images/illust/illust-link.svg" alt="" />
 			</div>
@@ -24,10 +24,10 @@ import Typography from '@/components/typography/Typography.vue';
 import Icon from '@/components/icon/Icon.vue';
 
 /**
- * @displayName c-link-item
+ * @displayName c-file-input-link-item
  */
 export default {
-	name: 'LinkItem',
+	name: 'FileInputLinkItem',
 	props: {
 		index: {
 			type: Number,
@@ -59,16 +59,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-link {
-	&-item {
-		&--content {
-			height: 20px;
-			cursor: pointer;
-			@include flexbox();
-			@include align-items(center);
-			overflow: hidden;
-			gap: 8px;
-		}
+.c-file-input-link-item {
+	&--content {
+		height: 20px;
+		cursor: pointer;
+		@include flexbox();
+		@include align-items(center);
+		overflow: hidden;
+		gap: 8px;
 	}
 }
 

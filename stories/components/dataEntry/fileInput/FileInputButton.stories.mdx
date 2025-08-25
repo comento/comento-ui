@@ -1,12 +1,12 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import FileInput from '@/components/input/FileInput';
-import FileList from '@/components/list/fileList/FileList';
-import FileSummary from '@/components/list/fileList/FileSummary';
-import Typography from '@/components/typography/Typography';
+import FileInputButton from '@/components/fileInput/FileInputButton.vue';
+import FileInputList from '@/components/fileInput/FileInputList.vue';
+import Typography from '@/components/typography/Typography.vue';
+import FileSummary from '@/components/fileInput/FileSummary.vue';
 
 <Meta
-  title="Data Entry/FileInput"
-  component={ FileInput }
+  title="Data Entry/FileInput/FileInputButton"
+  component={ FileInputButton }
   argTypes={{
     accept: {
       description: "입력가능한 파일의 확장자목록<br/>형식은 오른쪽 defaultValue 참고",
@@ -68,7 +68,7 @@ export const Default = (args, { argTypes }) => ({
     }
   },
   template: `<div style="width: 100%; display: flex; justify-content: center; align-items: flex-start; flex-direction: column;">
-                 <FileInput
+                 <FileInputButton
                     :accept="accept"
                     :multiple="multiple"
                     :full="full"
@@ -76,7 +76,7 @@ export const Default = (args, { argTypes }) => ({
                     :disabled="disabled"
                     @uploadFiles="handleUploadFiles"
                  />
-                 <FileList :files="files"
+                 <FileInputList :files="files"
                     :full="full"
                     isRemovable
                     @clickFileDownloadIcon="handleClickFileDownloadIcon"
@@ -84,12 +84,12 @@ export const Default = (args, { argTypes }) => ({
                     @clickFileTrashIcon="handleClickFileTrashIcon"
                  />
               </div>`,
-   components: { FileInput, FileList },
+   components: { FileInputButton, FileInputList },
 });
 
-# FileInput
+# FileInputButton
 
-**FileInput** 컴포넌트의 문서입니다.
+**FileInputButton** 컴포넌트의 문서입니다.
 
 <Story name="Default" height="100px">
   {Default.bind({})}
@@ -162,25 +162,25 @@ export const Default = (args, { argTypes }) => ({
             template: `<div style="width: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                         <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">성공</Typography>
-                            <FileInput full
+                            <FileInputButton full
                               @uploadFiles="handleCreateUploadFiles"
                             />
-                            <FileList :files="createFiles" isRemovable @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <FileInputList :files="createFiles" isRemovable @clickFileTrashIcon="handleCreateClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                         <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">실패</Typography>
-                            <FileInput full
+                            <FileInputButton full
                               @uploadFiles="handleErrorUploadFiles"
                             />
-                            <FileList :files="errorFiles" isRemovable @clickFileTrashIcon="handleErrorClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <FileInputList :files="errorFiles" isRemovable @clickFileTrashIcon="handleErrorClickTrashIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                          <div style="width: 100%; margin-bottom: 30px;">
                             <Typography type="body2">완료</Typography>
                             <FileSummary :length="mockFiles.length" @clickAllFileDownloadButton="handleClickAllFileDownloadButton"/>
-                            <FileList :files="mockFiles" @clickFileDownloadIcon="handleClickMockFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
+                            <FileInputList :files="mockFiles" @clickFileDownloadIcon="handleClickMockFileDownloadIcon" @clickFileItemContent="handleClickFileItemContent"/>
                         </div>
                       </div>`,
-             components: { FileInput, FileList, FileSummary, Typography },
+             components: { FileInputButton, FileInputList, FileSummary, Typography },
         }}
     </Story>
 </Canvas>
