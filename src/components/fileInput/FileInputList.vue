@@ -1,5 +1,5 @@
 <template>
-	<List v-if="$slots.default" class="c-file-input-list--container" :class="computedClass">
+	<List class="c-file-input-list--container" :class="{ 'is-empty': !$slots.default, ...computedClass }">
 		<slot />
 	</List>
 </template>
@@ -35,6 +35,9 @@ export default {
 	padding: 4px;
 	&.full {
 		width: 100%;
+	}
+	&.is-empty {
+		display: none;
 	}
 }
 </style>
