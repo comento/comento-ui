@@ -75,13 +75,13 @@ export const Default = (args, { argTypes }) => ({
                     :full="full"
                     :button-text="buttonText"
                     :disabled="disabled"
-                    @uploadFiles="handleUploadFiles"
+                    @upload-files="handleUploadFiles"
                  />
                  <FileInputList
                     :full="full"
-                    @clickFileDownloadIcon="handleClickFileDownloadIcon"
-                    @clickFileItemContent="handleClickFileItemContent"
-                    @clickFileTrashIcon="handleClickFileTrashIcon"
+                    @download-item="handleClickFileDownloadIcon"
+                    @click-item-content="handleClickFileItemContent"
+                    @remove-item="handleClickFileTrashIcon"
                  >
 					<FileInputFileItem
 						v-for="(item, index) in files"
@@ -91,7 +91,7 @@ export const Default = (args, { argTypes }) => ({
 						is-removable
 						:is-loading="item.isLoading"
 						:is-error="item.isError"
-						@clickFileTrashIcon="handleClickFileTrashIcon"
+						@remove-item="handleClickFileTrashIcon"
 					/>
 				</FileInputList>
               </div>`,
@@ -221,7 +221,7 @@ export const Default = (args, { argTypes }) => ({
                             <Typography type="body2">성공</Typography>
                             <FileInputButton
 								full
-								@uploadFiles="handleCreateUploadFiles"
+								@upload-files="handleCreateUploadFiles"
                             />
                             <FileInputList full>
 								<FileInputFileItem
@@ -231,8 +231,8 @@ export const Default = (args, { argTypes }) => ({
 									:index="index"
 									:is-loading="item.isLoading"
 									is-removable
-									@clickFileTrashIcon="handleCreateClickTrashIcon"
-									@clickFileItemContent="handleClickFileItemContent"
+									@remove-item="handleCreateClickTrashIcon"
+									@click-item-content="handleClickFileItemContent"
 								 />
 							</FileInputList>
                         </div>
@@ -240,7 +240,7 @@ export const Default = (args, { argTypes }) => ({
                             <Typography type="body2">실패</Typography>
                             <FileInputButton
 								full
-								@uploadFiles="handleErrorUploadFiles"
+								@upload-files="handleErrorUploadFiles"
                             />
 							<FileInputList>
 								<FileInputFileItem
@@ -251,8 +251,8 @@ export const Default = (args, { argTypes }) => ({
 									is-removable
 									:is-loading="item.isLoading"
 									:is-error="item.isError"
-									@clickFileTrashIcon="handleErrorClickTrashIcon"
-									@clickFileItemContent="handleClickFileItemContent"
+									@remove-item="handleErrorClickTrashIcon"
+									@click-item-content="handleClickFileItemContent"
 								/>
 							</FileInputList>
                         </div>
@@ -268,8 +268,8 @@ export const Default = (args, { argTypes }) => ({
 									:file="item.file"
 									:index="index"
 									:is-loading="item.isLoading"
-									@clickFileTrashIcon="handleCreateClickTrashIcon"
-									@clickFileItemContent="handleClickFileItemContent"
+									@remove-item="handleCreateClickTrashIcon"
+									@click-item-content="handleClickFileItemContent"
 								 />
 							</FileInputList>
                         </div>

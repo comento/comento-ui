@@ -1,5 +1,5 @@
 <template>
-	<ListItem class="c-application px-10" size="large">
+	<ListItem class="c-application px-10" size="large" @click="handleClickLinkItem({ link, index })">
 		<div class="c-file-input-link-item--content" @click.stop="handleClickLinkItemContent({ link, index })">
 			<div class="icon-wrapper">
 				<img src="https://cdn.comento.kr/images/illust/illust-link.svg" alt="" />
@@ -43,11 +43,14 @@ export default {
 		},
 	},
 	methods: {
+		handleClickLinkItem({ link, index }) {
+			this.$emit('click-item', { link, index });
+		},
 		handleClickLinkItemContent({ link, index }) {
-			this.$emit('clickLinkItemContent', { link, index });
+			this.$emit('click-item-content', { link, index });
 		},
 		handleClickLinkTrashIcon({ link, index }) {
-			this.$emit('clickLinkTrashIcon', { link, index });
+			this.$emit('remove-item', { link, index });
 		},
 	},
 	components: {

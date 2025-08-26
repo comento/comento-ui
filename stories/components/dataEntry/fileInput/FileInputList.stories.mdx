@@ -69,7 +69,7 @@ export const Default = (args, { argTypes }) => ({
 	},
 	template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
                 <div :style="full ? 'width: 100%' : ''">
-                 <FileInputButton v-if="isRemovable" @uploadFiles="handleUploadFiles"/>
+                 <FileInputButton v-if="isRemovable" @upload-files="handleUploadFiles"/>
                  <FileSummary v-else :full="full" show-download-button>첨부파일 ({{ filesData.length }}개)</FileSummary>
                  <FileInputList :full="full">
 					<template v-for="(item, index) in filesData">
@@ -80,10 +80,10 @@ export const Default = (args, { argTypes }) => ({
 							:is-removable="isRemovable"
 							:is-loading="item.isLoading"
 							:is-error="item.isError"
-							@clickFileDownloadIcon="handleClickFileDownloadIcon"
-							@clickFileItem="handleClickFileItem"
-							@clickFileItemContent="handleClickFileItem"
-							@clickFileTrashIcon="handleClickFileTrashIcon"
+							@download-item="handleClickFileDownloadIcon"
+							@click-item="handleClickFileItem"
+							@click-item-content="handleClickFileItem"
+							@remove-item="handleClickFileTrashIcon"
 						/>
 					</template>
 				</FileInputList>
@@ -150,13 +150,16 @@ export const Default = (args, { argTypes }) => ({
 				handleClickFileTrashIcon(payload) {
 					this.files = this.files.filter((item, index) => index !== payload.index);
 				},
+				handleClickLinkTrashIcon(payload) {
+					this.links = this.links.filter((item, index) => index !== payload.index);
+				},
 				handleUploadFiles(files) {
 					const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: false }));
 					this.files = [...this.files, ...filesWithLoading];
 				},
 			},
 			template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
-				<div class="w-full mb-30">
+				<div v-if="links.length" class="w-full mb-30">
 					<FileSummary>링크 ({{ links.length }}개)</FileSummary>
 					<FileInputList full>
 						<FileInputLinkItem
@@ -165,10 +168,11 @@ export const Default = (args, { argTypes }) => ({
 							:link="item.link"
 							:index="index"
 							is-removable
+							@remove-item="handleClickLinkTrashIcon"
 						/>
 					</FileInputList>
 				</div>
-				<div class="w-full">
+				<div v-if="files.length" class="w-full">
 					<FileSummary>첨부파일 ({{ files.length }}개)</FileSummary>
 					<FileInputList full>
 						<FileInputFileItem
@@ -179,9 +183,9 @@ export const Default = (args, { argTypes }) => ({
 							is-removable
 							:is-loading="item.isLoading"
 							:is-error="item.isError"
-							@clickFileItem="handleClickFileItem"
-							@clickFileItemContent="handleClickFileItem"
-							@clickFileTrashIcon="handleClickFileTrashIcon"
+							@click-item="handleClickFileItem"
+							@click-item-content="handleClickFileItem"
+							@remove-item="handleClickFileTrashIcon"
 						/>
 					</FileInputList>
 				</div>

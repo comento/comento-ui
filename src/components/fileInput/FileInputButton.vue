@@ -69,7 +69,7 @@ export default {
 	methods: {
 		handleFilesUpload() {
 			const uploadedFiles = this.$refs.files.files;
-			this.$emit('uploadFiles', uploadedFiles);
+			this.$emit('upload-files', uploadedFiles);
 		},
 		handleClickFileButton() {
 			this.$refs.files.click();

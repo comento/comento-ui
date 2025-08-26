@@ -76,16 +76,16 @@ export default {
 	},
 	methods: {
 		handleClickFileItem({ file, index }) {
-			this.$emit('clickFileItem', { file, index });
+			this.$emit('click-item', { file, index });
 		},
 		handleClickFileDownloadIcon({ file, index }) {
-			this.$emit('clickFileDownloadIcon', { file, index });
+			this.$emit('download-item', { file, index });
 		},
 		handleClickFileItemContent({ file, index }) {
-			this.$emit('clickFileItemContent', { file, index });
+			this.$emit('click-item-content', { file, index });
 		},
 		handleClickFileTrashIcon({ file, index }) {
-			this.$emit('clickFileTrashIcon', { file, index });
+			this.$emit('remove-item', { file, index });
 		},
 	},
 	components: { Icon, Loader, Typography, ListItem },
