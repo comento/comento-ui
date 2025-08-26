@@ -4,7 +4,6 @@ import FileInputButton from '@/components/fileInput/FileInputButton.vue';
 import FileInputFileItem from '@/components/fileInput/FileInputFileItem.vue';
 import FileInputLinkItem from '@/components/fileInput/FileInputLinkItem.vue';
 import FileSummary from './FileSummary.vue';
-import Typography from '@/components/typography/Typography.vue';
 
 <Meta
 	title="Data Entry/FileInput/FileInputList"
@@ -49,14 +48,14 @@ export const Default = (args, { argTypes }) => ({
 	methods: {
 		handleClickFileDownloadIcon(payload) {
 			this.filesData[payload.index].isLoading = true;
-			setInterval(() => {
+			setTimeout(() => {
 				this.filesData[payload.index].isLoading = false;
 			}, 3000);
 		},
 		handleClickFileItem(payload) {
 			if (this.isRemovable) return this.handleClickFileTrashIcon(payload);
 			this.filesData[payload.index].isLoading = true;
-			setInterval(() => {
+			setTimeout(() => {
 				this.filesData[payload.index].isLoading = false;
 			}, 3000);
 		},
@@ -144,7 +143,7 @@ export const Default = (args, { argTypes }) => ({
 				handleClickFileItem(payload) {
 					if (this.isRemovable) return this.handleClickFileTrashIcon(payload);
 					this.files[payload.index].isLoading = true;
-					setInterval(() => {
+					setTimeout(() => {
 						this.files[payload.index].isLoading = false;
 					}, 3000);
 				},
@@ -229,14 +228,14 @@ export const Default = (args, { argTypes }) => ({
 			methods: {
 				handleClickFileDownloadIcon(payload) {
 					this.files[payload.index].isLoading = true;
-					setInterval(() => {
+					setTimeout(() => {
 						this.files[payload.index].isLoading = false;
 					}, 3000);
 				},
 				handleClickFileItem(payload) {
 					if (this.isRemovable) return this.handleClickFileTrashIcon(payload);
 					this.files[payload.index].isLoading = true;
-					setInterval(() => {
+					setTimeout(() => {
 						this.files[payload.index].isLoading = false;
 					}, 3000);
 				},

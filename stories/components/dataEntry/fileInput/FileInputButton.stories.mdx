@@ -57,7 +57,7 @@ export const Default = (args, { argTypes }) => ({
     },
     handleClickFileDownloadIcon(payload) {
         this.files[payload.index].isLoading = true;
-        setInterval(() => {
+		setTimeout(() => {
             this.files[payload.index].isLoading = false;
         }, 3000);
     },
@@ -176,7 +176,7 @@ export const Default = (args, { argTypes }) => ({
             },
             handleClickFileDownloadIcon(payload) {
                 this.files[payload.index].isLoading = true;
-                setInterval(() => {
+                setTimeout(() => {
                     this.files[payload.index].isLoading = false;
                 }, 3000);
             },
@@ -186,7 +186,7 @@ export const Default = (args, { argTypes }) => ({
             handleCreateUploadFiles(files) {
 				const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: true }));
 				this.createFiles = [...this.createFiles, ...filesWithLoading];
-				setInterval(() => {
+				setTimeout(() => {
 					const lastIndex = this.createFiles.length - 1;
 					this.createFiles[lastIndex].isLoading = false;
 				}, 1500);
@@ -194,7 +194,7 @@ export const Default = (args, { argTypes }) => ({
             handleErrorUploadFiles(files) {
 				const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: true, isError: false }));
 				this.errorFiles = [...this.errorFiles, ...filesWithLoading];
-				setInterval(() => {
+				setTimeout(() => {
 					const lastIndex = this.errorFiles.length - 1;
 					this.errorFiles[lastIndex].isLoading = false;
 					this.errorFiles[lastIndex].isError = true;
@@ -208,7 +208,7 @@ export const Default = (args, { argTypes }) => ({
             },
             handleClickMockFileDownloadIcon(payload) {
                 this.mockFiles[payload.index].isLoading = true;
-                setInterval(() => {
+                setTimeout(() => {
                     this.mockFiles[payload.index].isLoading = false;
                 }, 3000);
              },
