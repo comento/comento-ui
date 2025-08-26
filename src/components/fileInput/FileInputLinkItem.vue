@@ -28,17 +28,18 @@ import Icon from '@/components/icon/Icon.vue';
 export default {
 	name: 'FileInputLinkItem',
 	props: {
+		link: {
+			type: String,
+			required: true,
+		},
 		index: {
 			type: Number,
 			default: -1,
+			required: true,
 		},
 		isRemovable: {
 			type: Boolean,
 			default: false,
-		},
-		link: {
-			type: String,
-			required: true,
 		},
 	},
 	methods: {

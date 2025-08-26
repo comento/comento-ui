@@ -48,6 +48,7 @@ export default {
 	props: {
 		file: {
 			// 파일은 내장 타입이 없음.
+			required: true,
 		},
 		/**
 		 * 파일 리스트 내부 인덱스
@@ -55,6 +56,7 @@ export default {
 		index: {
 			type: Number,
 			default: -1,
+			required: true,
 		},
 		/**
 		 * 수정 or 다운로드
