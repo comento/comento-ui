@@ -1,3 +1,12 @@
+# [1.10.0](https://github.com/comento/comento-ui/compare/v1.9.1...v1.10.0) (2025-08-27)
+
+
+### Features
+
+* FileInput 관련 컴포넌트 위계 및 네이밍  변경, 신규 컴포넌트 추가 ([#1193](https://github.com/comento/comento-ui/issues/1193)) ([cb5034e](https://github.com/comento/comento-ui/commit/cb5034ed8aed020385d39154b9ad76034e60865e))
+
+
+
 ## [1.9.1](https://github.com/comento/comento-ui/compare/v1.9.0...v1.9.1) (2025-08-18)
 
 
