@@ -270,9 +270,9 @@ export const Default = (args, { argTypes }) => ({
 							:index="index"
 							:is-loading="item.isLoading"
 							:is-error="item.isError"
-							@clickFileDownloadIcon="handleClickFileDownloadIcon"
-							@clickFileItem="handleClickFileItem"
-							@clickFileItemContent="handleClickFileItem"
+							@download-item="handleClickFileDownloadIcon"
+							@click-item="handleClickFileItem"
+							@click-item-content="handleClickFileItem"
 						/>
 					</FileInputList>
 				</div>
