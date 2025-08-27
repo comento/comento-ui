@@ -1,0 +1,283 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import FileInputList from '@/components/fileInput/FileInputList.vue';
+import FileInputButton from '@/components/fileInput/FileInputButton.vue';
+import FileInputFileItem from '@/components/fileInput/FileInputFileItem.vue';
+import FileInputLinkItem from '@/components/fileInput/FileInputLinkItem.vue';
+import FileSummary from './FileSummary.vue';
+
+<Meta
+	title="Data Entry/FileInput/FileInputList"
+	component={FileInputList}
+	argTypes={{
+		files: {
+			description: '파일 리스트',
+			defaultValue: [
+				{
+					file: { name: '1.png' },
+					isLoading: false,
+					isError: false,
+				},
+				{
+					file: { name: '2.png' },
+					isLoading: false,
+					isError: false,
+				},
+				{
+					file: { name: '3.png' },
+					isLoading: false,
+					isError: false,
+				},
+			],
+		},
+		isRemovable: {
+			type: Boolean,
+			control: {
+				type: 'boolean',
+			},
+		},
+	}}
+/>
+
+export const Default = (args, { argTypes }) => ({
+	props: Object.keys(argTypes),
+	data() {
+		return {
+			filesData: this.files,
+		};
+	},
+	methods: {
+		handleClickFileDownloadIcon(payload) {
+			this.filesData[payload.index].isLoading = true;
+			setTimeout(() => {
+				this.filesData[payload.index].isLoading = false;
+			}, 3000);
+		},
+		handleClickFileItem(payload) {
+			if (this.isRemovable) return this.handleClickFileTrashIcon(payload);
+			this.filesData[payload.index].isLoading = true;
+			setTimeout(() => {
+				this.filesData[payload.index].isLoading = false;
+			}, 3000);
+		},
+		handleClickFileTrashIcon(payload) {
+			this.filesData = this.filesData.filter((item, index) => index !== payload.index);
+		},
+		handleUploadFiles(files) {
+			const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: false }));
+			this.filesData = [...this.filesData, ...filesWithLoading];
+		},
+	},
+	template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
+                <div :style="full ? 'width: 100%' : ''">
+                 <FileInputButton v-if="isRemovable" @upload-files="handleUploadFiles"/>
+                 <FileSummary v-else :full="full" show-download-button>첨부파일 ({{ filesData.length }}개)</FileSummary>
+                 <FileInputList :full="full">
+					<template v-for="(item, index) in filesData">
+						<FileInputFileItem
+							:key="'file-' + index"
+							:file="item.file"
+							:index="index"
+							:is-removable="isRemovable"
+							:is-loading="item.isLoading"
+							:is-error="item.isError"
+							@download-item="handleClickFileDownloadIcon"
+							@click-item="handleClickFileItem"
+							@click-item-content="handleClickFileItem"
+							@remove-item="handleClickFileTrashIcon"
+						/>
+					</template>
+				</FileInputList>
+                </div>
+             </div>`,
+	components: { FileInputList, FileSummary, FileInputButton, FileInputFileItem },
+});
+
+# FileInputList
+
+**FileInputList** 컴포넌트의 문서입니다.<br />
+`FileInputList`, `FileInputFileItem`, `FileInputLinkItem`을 조합해서 사용합니다.
+
+<Story name="Default" height="100px">
+	{Default.bind({})}
+</Story>
+
+<ArgsTable story="Default" />
+
+## Stories
+
+### Upload
+
+<Canvas>
+	<Story name="Upload" height="100px">
+		{{
+			data() {
+				return {
+					files: [
+						{
+							file: { name: '1.png' },
+							isLoading: false,
+							isError: false,
+						},
+						{
+							file: { name: '2.png' },
+							isLoading: false,
+							isError: false,
+						},
+						{
+							file: { name: '3.png' },
+							isLoading: false,
+							isError: false,
+						},
+					],
+					links: [
+						{
+							link: 'https://comento.kr',
+						},
+						{
+							link: 'https://edu.potens.ai',
+						},
+					],
+				};
+			},
+			methods: {
+				handleClickFileItem(payload) {
+					if (this.isRemovable) return this.handleClickFileTrashIcon(payload);
+					this.files[payload.index].isLoading = true;
+					setTimeout(() => {
+						this.files[payload.index].isLoading = false;
+					}, 3000);
+				},
+				handleClickFileTrashIcon(payload) {
+					this.files = this.files.filter((item, index) => index !== payload.index);
+				},
+				handleClickLinkTrashIcon(payload) {
+					this.links = this.links.filter((item, index) => index !== payload.index);
+				},
+				handleUploadFiles(files) {
+					const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: false }));
+					this.files = [...this.files, ...filesWithLoading];
+				},
+			},
+			template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
+				<div v-if="links.length" class="w-full mb-30">
+					<FileSummary>링크 ({{ links.length }}개)</FileSummary>
+					<FileInputList full>
+						<FileInputLinkItem
+							v-for="(item, index) in links"
+							:key="'link-' + index"
+							:link="item.link"
+							:index="index"
+							is-removable
+							@remove-item="handleClickLinkTrashIcon"
+						/>
+					</FileInputList>
+				</div>
+				<div v-if="files.length" class="w-full">
+					<FileSummary>첨부파일 ({{ files.length }}개)</FileSummary>
+					<FileInputList full>
+						<FileInputFileItem
+							v-for="(item, index) in files"
+							:key="'file-' + index"
+							:file="item.file"
+							:index="index"
+							is-removable
+							:is-loading="item.isLoading"
+							:is-error="item.isError"
+							@click-item="handleClickFileItem"
+							@click-item-content="handleClickFileItem"
+							@remove-item="handleClickFileTrashIcon"
+						/>
+					</FileInputList>
+				</div>
+			</div>`,
+			components: { FileInputList, FileSummary, FileInputButton, FileInputFileItem, FileInputLinkItem },
+		}}
+	</Story>
+</Canvas>
+
+### Download
+
+<Canvas>
+	<Story name="Download" height="100px">
+		{{
+			data() {
+				return {
+					files: [
+						{
+							file: { name: '1.png' },
+							isLoading: false,
+							isError: false,
+						},
+						{
+							file: { name: '2.png' },
+							isLoading: false,
+							isError: false,
+						},
+						{
+							file: { name: '3.png' },
+							isLoading: false,
+							isError: false,
+						},
+					],
+					links: [
+						{
+							link: 'https://comento.kr',
+						},
+						{
+							link: 'https://edu.potens.ai',
+						},
+					],
+				};
+			},
+			methods: {
+				handleClickFileDownloadIcon(payload) {
+					this.files[payload.index].isLoading = true;
+					setTimeout(() => {
+						this.files[payload.index].isLoading = false;
+					}, 3000);
+				},
+				handleClickFileItem(payload) {
+					if (this.isRemovable) return this.handleClickFileTrashIcon(payload);
+					this.files[payload.index].isLoading = true;
+					setTimeout(() => {
+						this.files[payload.index].isLoading = false;
+					}, 3000);
+				},
+				handleUploadFiles(files) {
+					const filesWithLoading = Object.values(files).map(file => ({ file: file, isLoading: false }));
+					this.files = [...this.files, ...filesWithLoading];
+				},
+			},
+			template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
+				<div class="w-full mb-30">
+					<FileSummary>링크 ({{ links.length }}개)</FileSummary>
+					<FileInputList full>
+						<FileInputLinkItem
+							v-for="(item, index) in links"
+							:key="'link-' + index"
+							:link="item.link"
+							:index="index"
+						/>
+					</FileInputList>
+				</div>
+				<div class="w-full">
+					<FileSummary full show-download-button>첨부파일 ({{ files.length }}개)</FileSummary>
+					<FileInputList full>
+						<FileInputFileItem
+							v-for="(item, index) in files"
+							:key="'file-' + index"
+							:file="item.file"
+							:index="index"
+							:is-loading="item.isLoading"
+							:is-error="item.isError"
+							@clickFileDownloadIcon="handleClickFileDownloadIcon"
+							@clickFileItem="handleClickFileItem"
+							@clickFileItemContent="handleClickFileItem"
+						/>
+					</FileInputList>
+				</div>
+			</div>`,
+			components: { FileInputList, FileSummary, FileInputButton, FileInputFileItem, FileInputLinkItem },
+		}}
+	</Story>
+</Canvas>

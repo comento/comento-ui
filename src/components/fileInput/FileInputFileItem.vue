@@ -1,12 +1,17 @@
 <template>
 	<ListItem class="c-application px-10" size="large" @click="handleClickFileItem({ file, index })">
-		<div class="c-file-item--content" @click.stop="handleClickFileItemContent({ file, index })">
+		<div class="c-file-input-file-item--content" @click.stop="handleClickFileItemContent({ file, index })">
 			<div class="icon-wrapper">
 				<Loader v-if="isRemovable && isLoading" size="small" />
-				<Icon v-else-if="isRemovable && isError" name="IconExclamationSmallFill" color="error" />
+				<Icon v-else-if="isRemovable && isError" name="IconExclamationSmallFill" color="accent" />
 				<img v-else src="https://cdn.comento.kr/images/illust/illust-file.svg" alt="" />
 			</div>
-			<Typography type="body2" :color="isError ? 'error' : 'gray700'" :font-weight="400" class="text-truncate">
+			<Typography
+				type="body2"
+				:color="isRemovable && isError ? 'accent' : 'gray700'"
+				:font-weight="400"
+				class="text-truncate"
+			>
 				{{ file.title || file.name }}
 			</Typography>
 		</div>
@@ -36,13 +41,14 @@ import Loader from '@/components/loader/Loader.vue';
 import Typography from '@/components/typography/Typography.vue';
 
 /**
- * @displayName c-file-item
+ * @displayName c-file-input-file-item
  */
 export default {
-	name: 'FileItem',
+	name: 'FileInputFileItem',
 	props: {
 		file: {
 			// 파일은 내장 타입이 없음.
+			required: true,
 		},
 		/**
 		 * 파일 리스트 내부 인덱스
@@ -50,6 +56,7 @@ export default {
 		index: {
 			type: Number,
 			default: -1,
+			required: true,
 		},
 		/**
 		 * 수정 or 다운로드
@@ -69,16 +76,16 @@ export default {
 	},
 	methods: {
 		handleClickFileItem({ file, index }) {
-			this.$emit('clickFileItem', { file, index });
+			this.$emit('click-item', { file, index });
 		},
 		handleClickFileDownloadIcon({ file, index }) {
-			this.$emit('clickFileDownloadIcon', { file, index });
+			this.$emit('download-item', { file, index });
 		},
 		handleClickFileItemContent({ file, index }) {
-			this.$emit('clickFileItemContent', { file, index });
+			this.$emit('click-item-content', { file, index });
 		},
 		handleClickFileTrashIcon({ file, index }) {
-			this.$emit('clickFileTrashIcon', { file, index });
+			this.$emit('remove-item', { file, index });
 		},
 	},
 	components: { Icon, Loader, Typography, ListItem },
@@ -86,16 +93,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-file {
-	&-item {
-		&--content {
-			height: 20px;
-			cursor: pointer;
-			@include flexbox();
-			@include align-items(center);
-			overflow: hidden;
-			gap: 8px;
-		}
+.c-file-input-file-item {
+	&--content {
+		height: 20px;
+		@include flexbox();
+		@include align-items(center);
+		overflow: hidden;
+		gap: 8px;
 	}
 }
 
