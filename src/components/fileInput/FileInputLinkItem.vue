@@ -34,7 +34,6 @@ export default {
 		},
 		index: {
 			type: Number,
-			default: -1,
 			required: true,
 		},
 		isRemovable: {
