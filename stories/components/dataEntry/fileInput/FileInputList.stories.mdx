@@ -123,11 +123,6 @@ export const Default = (args, { argTypes }) => ({
 							isLoading: false,
 							isError: false,
 						},
-						{
-							file: { name: '3.png' },
-							isLoading: false,
-							isError: false,
-						},
 					],
 					links: [
 						{
@@ -159,38 +154,33 @@ export const Default = (args, { argTypes }) => ({
 				},
 			},
 			template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
-				<div v-if="links.length" class="w-full mb-30">
-					<FileSummary>링크 ({{ links.length }}개)</FileSummary>
-					<FileInputList full>
-						<FileInputLinkItem
-							v-for="(item, index) in links"
-							:key="'link-' + index"
-							:link="item.link"
-							:index="index"
-							is-removable
-							@remove-item="handleClickLinkTrashIcon"
-						/>
-					</FileInputList>
-				</div>
-				<div v-if="files.length" class="w-full">
-					<FileSummary>첨부파일 ({{ files.length }}개)</FileSummary>
-					<FileInputList full>
-						<FileInputFileItem
-							v-for="(item, index) in files"
-							:key="'file-' + index"
-							:file="item.file"
-							:index="index"
-							is-removable
-							:is-loading="item.isLoading"
-							:is-error="item.isError"
-							@click-item="handleClickFileItem"
-							@click-item-content="handleClickFileItem"
-							@remove-item="handleClickFileTrashIcon"
-						/>
-					</FileInputList>
-				</div>
+				<FileInputButton @upload-files="handleUploadFiles"/>
+				<FileInputList full v-if="files.length">
+					<FileInputFileItem
+						v-for="(item, index) in files"
+						:key="'file-' + index"
+						:file="item.file"
+						:index="index"
+						is-removable
+						:is-loading="item.isLoading"
+						:is-error="item.isError"
+						@click-item="handleClickFileItem"
+						@click-item-content="handleClickFileItem"
+						@remove-item="handleClickFileTrashIcon"
+					/>
+				</FileInputList>
+				<FileInputList full v-if="links.length">
+					<FileInputLinkItem
+						v-for="(item, index) in links"
+						:key="'link-' + index"
+						:link="item.link"
+						:index="index"
+						is-removable
+						@remove-item="handleClickLinkTrashIcon"
+					/>
+				</FileInputList>
 			</div>`,
-			components: { FileInputList, FileSummary, FileInputButton, FileInputFileItem, FileInputLinkItem },
+			components: { FileInputList, FileInputButton, FileInputFileItem, FileInputLinkItem },
 		}}
 	</Story>
 </Canvas>
@@ -249,18 +239,7 @@ export const Default = (args, { argTypes }) => ({
 				},
 			},
 			template: `<div style="width: 100%; display: flex; align-items: flex-start; flex-direction: column;">
-				<div class="w-full mb-30">
-					<FileSummary>링크 ({{ links.length }}개)</FileSummary>
-					<FileInputList full>
-						<FileInputLinkItem
-							v-for="(item, index) in links"
-							:key="'link-' + index"
-							:link="item.link"
-							:index="index"
-						/>
-					</FileInputList>
-				</div>
-				<div class="w-full">
+				<div class="w-full mb-16">
 					<FileSummary full show-download-button>첨부파일 ({{ files.length }}개)</FileSummary>
 					<FileInputList full>
 						<FileInputFileItem
@@ -273,6 +252,17 @@ export const Default = (args, { argTypes }) => ({
 							@download-item="handleClickFileDownloadIcon"
 							@click-item="handleClickFileItem"
 							@click-item-content="handleClickFileItem"
+						/>
+					</FileInputList>
+				</div>
+				<div class="w-full">
+					<FileSummary>링크 ({{ links.length }}개)</FileSummary>
+					<FileInputList full>
+						<FileInputLinkItem
+							v-for="(item, index) in links"
+							:key="'link-' + index"
+							:link="item.link"
+							:index="index"
 						/>
 					</FileInputList>
 				</div>
