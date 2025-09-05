@@ -127,6 +127,7 @@ export default {
 	color: $white;
 	@include transform(translate(-50%));
 	padding: 14px 16px;
+	min-height: 52px;
 	text-align: center;
 	z-index: 9999;
 	@include border-radius(8px);
