@@ -1,3 +1,13 @@
+## [1.10.1](https://github.com/comento/comento-ui/compare/v1.10.0...v1.10.1) (2025-10-16)
+
+
+### Bug Fixes
+
+* 디자인시스템 QA 이슈 수정 ([#1195](https://github.com/comento/comento-ui/issues/1195)) ([0636f06](https://github.com/comento/comento-ui/commit/0636f064c8a38818cffa3e9dd370acacb65a2a3f))
+* 자동완성 색상 힌트 추가 ([#1196](https://github.com/comento/comento-ui/issues/1196)) ([465c11d](https://github.com/comento/comento-ui/commit/465c11d675e77523e78ea638aa36a36c31c993c6))
+
+
+
 # [1.10.0](https://github.com/comento/comento-ui/compare/v1.9.1...v1.10.0) (2025-08-27)
 
 
