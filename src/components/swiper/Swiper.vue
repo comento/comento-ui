@@ -133,7 +133,7 @@ export default {
 			},
 		},
 		/**
-		 * 화살표 색상(light, dark)
+		 * 화살표 색상(light, dark, gray)
 		 */
 		controlsColor: {
 			type: String,
