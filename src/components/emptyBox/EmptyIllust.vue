@@ -3,7 +3,17 @@
 </template>
 
 <script>
-const ILLUST_SOURCES = ['bookmark', 'class', 'contents', 'credit', 'other', 'payment', 'reply', 'review', 'search'];
+export const ILLUST_SOURCES = [
+	'bookmark',
+	'class',
+	'contents',
+	'credit',
+	'other',
+	'payment',
+	'reply',
+	'review',
+	'search',
+];
 
 export default {
 	name: 'EmptyIllust',
